@@ -1,0 +1,3112 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/lighting/">
+      
+      
+      
+        <link rel="prev" href="../terrain/">
+      
+      
+        <link rel="next" href="../materials/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>La lumière et les ombres - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="./.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              La lumière et les ombres
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-soleil-le-ciel-et-le-sol" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le soleil, le ciel et le sol
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-ombres-du-soleil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les ombres du soleil
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-brouillard-et-le-halo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le brouillard et le halo
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le brouillard et le halo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-brouillard-volumetrique-des-rayons-de-lumiere" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le brouillard volumétrique : des rayons de lumière
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-brouillard-dans-une-seule-zone-le-volume-de-brouillard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Un brouillard dans une seule zone : le volume de brouillard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#des-rayons-de-soleil-sans-brume-lair-lumineux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Des rayons de soleil sans brume : l'air lumineux
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-lumieres-placees" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les lumières placées
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-lumiere-des-feux-et-des-effets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La lumière des feux et des effets
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-qualite-du-rendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La qualité du rendu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-soleil-le-ciel-et-le-sol" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le soleil, le ciel et le sol
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-ombres-du-soleil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les ombres du soleil
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-brouillard-et-le-halo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le brouillard et le halo
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le brouillard et le halo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-brouillard-volumetrique-des-rayons-de-lumiere" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le brouillard volumétrique : des rayons de lumière
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-brouillard-dans-une-seule-zone-le-volume-de-brouillard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Un brouillard dans une seule zone : le volume de brouillard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#des-rayons-de-soleil-sans-brume-lair-lumineux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Des rayons de soleil sans brume : l'air lumineux
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-lumieres-placees" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les lumières placées
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-lumiere-des-feux-et-des-effets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La lumière des feux et des effets
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-qualite-du-rendu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La qualité du rendu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="la-lumiere-et-les-ombres">La lumière et les ombres<a class="headerlink" href="#la-lumiere-et-les-ombres" title="Permanent link">&para;</a></h1>
+<p>La lumière d'une scène vient du <strong>soleil</strong>, du <strong>ciel</strong> et du <strong>sol</strong>, et des lumières que vous placez. Elle se règle dans les réglages du jeu : désélectionnez tout (ou cliquez sur la ligne du jeu, tout en haut de l'onglet Scène), section <strong>Ciel et lumière</strong>.</p>
+<h2 id="le-soleil-le-ciel-et-le-sol">Le soleil, le ciel et le sol<a class="headerlink" href="#le-soleil-le-ciel-et-le-sol" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Couleur du soleil</strong>, <strong>Intensité du soleil</strong></td>
+<td>La couleur et la force de sa lumière. Une surface blanche face au soleil prend exactement sa couleur.</td>
+</tr>
+<tr>
+<td><strong>Direction du soleil</strong></td>
+<td>D'où il éclaire (X, Y, Z) : Y positif, il est en haut. Les ombres partent à l'opposé.</td>
+</tr>
+<tr>
+<td><strong>Ciel</strong></td>
+<td>La couleur de la lumière du ciel : elle éclaire tout, même à l'ombre, et se reflète sur ce qui est lisse ou en métal.</td>
+</tr>
+<tr>
+<td><strong>Lumière venant du sol</strong></td>
+<td>La lumière renvoyée par le sol, qui éclaire le dessous des objets.</td>
+</tr>
+<tr>
+<td><strong>Exposition</strong></td>
+<td>La quantité de lumière qui arrive à l'image, comme sur un appareil photo. Avec l'exposition automatique, elle s'ajoute à ce que l'œil a choisi.</td>
+</tr>
+<tr>
+<td><strong>Exposition automatique</strong></td>
+<td>Comme l'œil qui s'habitue : en entrant dans un endroit sombre (une maison éclairée par une petite fenêtre, une grotte), l'image s'éclaircit en une seconde ou deux, et revient en sortant, sans éblouir. Au soleil, l'image ne change pas. Allumée par défaut, aussi pour les scènes faites avant elle.</td>
+</tr>
+<tr>
+<td><strong>Éclaircir jusqu'à</strong></td>
+<td>Combien de fois plus claire l'image peut devenir dans le noir : <strong>1</strong> jamais, <strong>4</strong> par défaut (une pièce sombre devient lisible, sans devenir le plein jour).</td>
+</tr>
+<tr>
+<td><strong>Assombrir jusqu'à</strong></td>
+<td>Combien de fois plus sombre elle peut devenir sous une lumière très forte : <strong>1</strong> jamais (par défaut : une scène au soleil reste telle que vous l'avez réglée), <strong>2 à 4</strong> pour un éblouissement en sortant d'une grotte.</td>
+</tr>
+<tr>
+<td><strong>Temps d'adaptation</strong></td>
+<td>Le temps qu'il faut à l'œil pour s'habituer au noir : <strong>1,5 s</strong> par défaut ; il s'habitue trois fois plus vite à la lumière. <strong>0</strong> : aussitôt.</td>
+</tr>
+</tbody>
+</table>
+<p>Dans l'éditeur, les vues montrent l'image une fois l'œil habitué ; c'est dans le jeu qu'on la voit s'éclaircir peu à peu. Un passage vers une autre scène ou une téléportation arrive déjà habitué, sans éclair. La nuit reste la nuit : avec le cycle du jour et de la nuit (ou un script qui baisse le soleil), l'œil n'éclaircit que ce qui est plus sombre que le jour présent ; une maison sombre à midi s'éclaircit, la nuit tombée non. Les scripts la règlent avec <code>game.set_environment</code> (<code>auto_exposure</code>, <code>auto_exposure_brighten</code>, <code>auto_exposure_darken</code>, <code>auto_exposure_seconds</code>).</p>
+<h2 id="les-ombres-du-soleil">Les ombres du soleil<a class="headerlink" href="#les-ombres-du-soleil" title="Permanent link">&para;</a></h2>
+<p>Les objets, les personnages, le terrain et les plantes portent leur ombre au soleil : sur le sol, sur l'eau et les uns sur les autres, et aussi sur la fumée, la poussière, la pluie ou la neige qui passent dessous, et sur les décalcomanies. L'objet que tient un personnage aussi. Les ombres sont douces sur leurs bords et ne scintillent pas quand la caméra bouge.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Ombres du soleil</strong></td>
+<td>Décochée : pas d'ombres du soleil, un rendu plus léger.</td>
+</tr>
+<tr>
+<td><strong>Qualité des ombres</strong></td>
+<td>Pour le soleil <strong>et</strong> les lumières (celles des feux comprises). <strong>Selon l'ordinateur</strong> : basse sur une puce graphique intégrée (la plupart des portables), haute sur une carte graphique. <strong>Haute</strong> : nettes jusqu'au bout. <strong>Moyenne</strong> : une tranche d'ombre de moins au loin, moins de lumières à ombres. <strong>Basse</strong> : plus floues de près, plus légères à dessiner. <strong>Désactivées</strong> : aucune ombre, ni du soleil ni des lumières, le plus léger. Dans l'éditeur, elle ne passe jamais au-dessus de la <strong>Qualité des vues</strong> (Préférences) ; le jeu, lui, la suit. Le joueur peut aussi choisir la sienne dans le menu du jeu (ligne <strong>Ombres</strong>).</td>
+</tr>
+<tr>
+<td><strong>Distance des ombres</strong></td>
+<td>Jusqu'où, autour de la caméra, elles se dessinent (150 m par défaut). Au-delà, elles s'effacent doucement. Plus la distance est grande, moins elles sont fines de près : pour un jeu vu de près (un donjon), 50 à 100 m suffisent.</td>
+</tr>
+<tr>
+<td><strong>Douceur des ombres</strong></td>
+<td>Adoucit leur bord comme sous un vrai soleil : l'ombre reste nette au pied d'un objet et s'adoucit en s'en éloignant (l'ombre d'un poteau, nette à sa base, floue au bout). C'est la taille du soleil dans le ciel, en degrés : <strong>0</strong> nettes (par défaut), <strong>0,5</strong> le vrai soleil, <strong>2 à 4</strong> un ciel voilé, jusqu'à <strong>10</strong> très douces.</td>
+</tr>
+</tbody>
+</table>
+<p>Les ombres se voient aussi dans la vue de l'éditeur, sauf en fil de fer seul.</p>
+<div class="admonition tip">
+<p class="admonition-title">Si le jeu rame sur un portable</p>
+<p>Réduisez la <strong>Distance des ombres</strong>, ou passez la <strong>Qualité des ombres</strong> à <strong>Basse</strong>, ou <strong>Désactivées</strong> en dernier recours. Sur une puce intégrée, <strong>Selon l'ordinateur</strong> prend déjà la Basse. La <strong>Douceur des ombres</strong> coûte un peu plus en Haute et en Moyenne (la pénombre se cherche à chaque point) ; en Basse, elle n'est qu'un flou fixe, presque gratuit.</p>
+</div>
+<h2 id="le-brouillard-et-le-halo">Le brouillard et le halo<a class="headerlink" href="#le-brouillard-et-le-halo" title="Permanent link">&para;</a></h2>
+<p>Au loin, la scène se fond toujours doucement dans la couleur du <strong>Fond</strong>, au lieu d'être coupée net : c'est le brouillard d'horizon, sans réglage. Pour plus, dans <strong>Ciel et lumière</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Distance du brouillard</strong></td>
+<td>Un brouillard sur toute la scène : à cette distance, il cache presque tout de sa couleur. 0 : aucun. Une brume légère : 300 à 800 m ; un brouillard épais : 40 à 100 m. Il cache aussi ce qui est trop loin pour être dessiné.</td>
+</tr>
+<tr>
+<td><strong>Couleur du brouillard</strong></td>
+<td>Celle que prend ce qui est dans le brouillard, et le ciel derrière lui.</td>
+</tr>
+<tr>
+<td><strong>Altitude du brouillard</strong>, <strong>Éclaircie en altitude</strong></td>
+<td>Un brouillard qui reste en bas (une vallée, un marais, la brume sur la mer) : à son altitude il a l'épaisseur réglée, plus bas il épaissit, plus haut il s'éclaircit de moitié tous les tant de mètres (5 à 30). 0 : partout pareil.</td>
+</tr>
+<tr>
+<td><strong>Halo des lumières fortes</strong></td>
+<td>Une lueur douce autour de ce qui brille très fort : une matière qui émet de la lumière, le soleil qui brille sur l'eau ou le métal, une lampe toute proche. 1 par défaut, discrète ; 0 : aucune. Le sable ou la neige en plein soleil n'en ont pas.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="le-brouillard-volumetrique-des-rayons-de-lumiere">Le brouillard volumétrique : des rayons de lumière<a class="headerlink" href="#le-brouillard-volumetrique-des-rayons-de-lumiere" title="Permanent link">&para;</a></h3>
+<p>Allumez <strong>Brouillard volumétrique</strong> (dans <strong>Ciel et lumière</strong>) pour que la lumière du soleil se voie dans l'air, avec l'ombre de ce qui la cache : des rayons entre les arbres et par les fenêtres, une brume plus sombre sous les feuillages, plus claire en regardant vers le soleil. Le brouillard garde sa <strong>Distance</strong> et sa <strong>Couleur</strong> (il cache autant qu'avant) ; il marche aussi sans brouillard, grâce à l'air.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Rayons dans l'air</strong></td>
+<td>Un air à peine chargé qui montre les rayons même sans brouillard. 0 : aucun ; 0,2 par défaut, surtout en regardant vers le soleil ; 1 : très marqués, de biais aussi. Dans une pièce, un peu de brouillard (de la poussière) montre les rayons des fenêtres.</td>
+</tr>
+<tr>
+<td><strong>Diffusion vers le soleil</strong></td>
+<td>Combien la brume brille plus en regardant vers le soleil. 0 : pareil partout ; 0,3 par défaut ; 0,6 à 0,9 : un fort halo autour du soleil, des rayons éclatants à contre-jour.</td>
+</tr>
+</tbody>
+</table>
+<p>Les rayons demandent un soleil assez bas pour passer entre les choses (une <strong>Direction du soleil</strong> dont la hauteur, la deuxième valeur, est faible), et quelque chose qui fait de l'ombre : des arbres, des murs. Avec le ray tracing, l'ombre dans la brume vient des rayons, à travers les trous des feuillages ; sans lui, des cartes d'ombre : même allure.</p>
+<div class="admonition note">
+<p class="admonition-title">Selon l'ordinateur</p>
+<p>En qualité <strong>Basse</strong> (une puce intégrée), le brouillard reste celui d'avant, sans ses rayons. En Moyenne (les vues de l'éditeur) et en Haute, il est léger : quelques centièmes de milliseconde par image sur une carte graphique récente, et la même chose quelle que soit la taille de l'image.</p>
+</div>
+<h3 id="un-brouillard-dans-une-seule-zone-le-volume-de-brouillard">Un brouillard dans une seule zone : le volume de brouillard<a class="headerlink" href="#un-brouillard-dans-une-seule-zone-le-volume-de-brouillard" title="Permanent link">&para;</a></h3>
+<p>Le brouillard de <strong>Ciel et lumière</strong> couvre toute la carte. Pour une brume qui reste à sa place (le fond d'une vallée, un sous-bois, un marais, la fumée d'une grotte), choisissez <strong>Créer &gt; Volume de brouillard</strong> : une boîte invisible que le brouillard remplit, et qui s'efface vers ses bords. Déplacez-la et changez son échelle comme un objet ; plusieurs volumes peuvent se chevaucher. Ses réglages sont ceux du système <a href="../reference/systems/brouillard/">Volume de brouillard</a> : sa <strong>Visibilité</strong> (à cette distance, on n'y voit presque plus rien), sa <strong>Couleur</strong>, ses <strong>Bords adoucis</strong>, et <strong>Plus épais en bas</strong> pour une brume qui reste au sol.</p>
+<p>Avec le brouillard volumétrique allumé, le volume prend les rayons et les ombres du soleil : un volume dans une forêt, sans brouillard dans <strong>Ciel et lumière</strong> (Distance à 0), montre des rayons là seulement. En qualité Basse, et loin de la caméra (au-delà de la distance des ombres), il se dessine sans ses ombres, mais toujours à sa place.</p>
+<h3 id="des-rayons-de-soleil-sans-brume-lair-lumineux">Des rayons de soleil sans brume : l'air lumineux<a class="headerlink" href="#des-rayons-de-soleil-sans-brume-lair-lumineux" title="Permanent link">&para;</a></h3>
+<p>Pour des rayons de soleil dans une forêt ou une pièce, comme la poussière qu'éclaire le soleil, sans voile sur le reste, choisissez <strong>Créer &gt; Air lumineux</strong> (ou, dans les propriétés d'un volume de brouillard, <strong>Sorte : Air lumineux (rayons seulement)</strong>). C'est un air presque invisible : il ne se voit que là où le soleil le traverse, surtout en regardant vers le soleil, et l'air à l'ombre reste clair. Sa <strong>Visibilité de l'air</strong> règle la force des rayons (200 m par défaut ; 100 m pour des rayons forts, 400 m pour une trace légère) ; il n'a pas de couleur (il prend celle du soleil). Il lui faut le brouillard volumétrique allumé, en qualité Haute ou Moyenne, et un soleil assez bas qui passe entre des feuillages ou des murs ; en qualité Basse, il ne se voit pas.</p>
+<table>
+<thead>
+<tr>
+<th>Vous voulez</th>
+<th>Choisissez</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Des rayons de soleil dans la forêt, par une fenêtre</td>
+<td><strong>Air lumineux</strong></td>
+</tr>
+<tr>
+<td>La brume d'une vallée, d'un marais, une fumée</td>
+<td><strong>Volume de brouillard</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="les-lumieres-placees">Les lumières placées<a class="headerlink" href="#les-lumieres-placees" title="Permanent link">&para;</a></h2>
+<p>Une lampe, une torche, un lampadaire, une fenêtre éclairée, un projecteur sur une scène : <strong>Créer &gt; Lumière</strong> (dans la liste de la scène). Elle apparaît un peu au-dessus de là où vous regardez ; déplacez-la comme un objet.</p>
+<ul>
+<li>Une <strong>Ampoule</strong> éclaire tout autour d'elle ; un <strong>Projecteur</strong> éclaire dans un cône, vers le bas de l'objet : tournez-le pour viser.</li>
+<li>Sa <strong>Couleur</strong> est celle de l'objet. Son <strong>Intensité</strong> est sa force à 1 m : elle décroît avec la distance, et s'éteint doucement à sa <strong>Portée</strong>.</li>
+<li>Il peut y en avoir beaucoup : chaque point de l'image ne calcule que les lumières qui l'atteignent. Gardez des portées courtes (une pièce : 5 à 10 m), c'est ce qui coûte.</li>
+<li><strong>Ombres de la lumière</strong> : ce qu'elle éclaire porte son ombre. Seules quelques lumières à la fois en ont, les plus proches de la caméra (six projecteurs, ou une ampoule, en qualité basse ; le double en haute). Gardez-les pour celles qui comptent.</li>
+<li><strong>Douceur de l'ombre</strong> (avec ses ombres) : la taille de ce qui éclaire, en mètres. <strong>0</strong> nette, <strong>0,05</strong> une ampoule nue, <strong>0,3</strong> une lanterne ou un globe. Comme au soleil, l'ombre reste nette au pied d'un objet et s'adoucit en s'en éloignant.</li>
+<li>Pour qu'elles se voient, il faut un peu de nuit : baissez l'<strong>Intensité du soleil</strong> et assombrissez le <strong>Ciel</strong> et la <strong>Lumière venant du sol</strong>.</li>
+<li>Elles éclairent tout ce qui est autour : les objets et le terrain, mais aussi l'<strong>eau</strong> (une lampe au bord d'un lac s'y reflète), la <strong>fumée</strong>, la <strong>poussière</strong>, la pluie et la neige qui passent près d'elles, et les <strong>décalcomanies</strong>. Le feu, les étincelles et la magie font leur propre lumière : elles ne les changent pas.</li>
+</ul>
+<h2 id="la-lumiere-des-feux-et-des-effets">La lumière des feux et des effets<a class="headerlink" href="#la-lumiere-des-feux-et-des-effets" title="Permanent link">&para;</a></h2>
+<p>Un <strong>feu</strong>, une <strong>explosion</strong>, de la <strong>magie</strong>, des <strong>étincelles</strong> ou l'éclair d'un <strong>impact</strong> éclairent ce qui les entoure : chacun porte sa propre lumière, sans rien à poser à côté. Elle suit l'effet, prend sa couleur (un feu bleu éclaire en bleu), grandit avec sa <strong>Taille</strong>, s'allume avec lui et s'éteint après ses dernières flammes. Celle du feu <strong>vacille</strong> et bouge un peu avec les flammes ; celle de l'explosion est un éclair qui s'éteint en moins d'une seconde ; celle de la magie ondule lentement.</p>
+<p>Le feu, l'explosion et la magie portent des <strong>ombres</strong> : un cube à côté d'un feu de camp fait son ombre sur le sol et sur le mur derrière lui, douce comme la largeur des flammes. Les étincelles et l'impact, trop brefs, n'en ont pas. L'objet qui porte l'effet (les bûches d'un feu de camp, la tête d'une torche) ne fait pas d'ombre à sa propre lumière.</p>
+<p>Dans les propriétés de l'effet (système <strong>Effet de particules</strong>) :</p>
+<ul>
+<li><strong>Lumière de l'effet</strong> : <strong>Avec ses ombres</strong> (par défaut), <strong>Sans ombres</strong> (la lumière seule, plus légère), ou <strong>Aucune</strong> (l'effet ne fait que se dessiner).</li>
+<li><strong>Force de la lumière</strong> : multipliée ; 0,5 pour une lueur discrète, 2 pour un brasier qui éclaire tout le camp.</li>
+</ul>
+<p>Ces lumières comptent avec les lumières placées : les plus proches de la caméra d'abord, dans la même limite (et la même limite d'ombres). Elles suivent la <strong>Qualité des ombres</strong>, se voient dans la vue de l'éditeur pendant que vous réglez l'effet, et ne changent rien à la partie : seulement l'image.</p>
+<p>En jeu, le <a href="../triggers/">Déclencheur</a> les allume, les éteint (<strong>Allumer une lumière</strong>, <strong>Éteindre une lumière</strong>, <strong>tour à tour</strong>) ou change leur couleur : un levier qui allume une lampe, une alarme qui passe au rouge. Les scripts le font avec <code>game.light</code> et <code>game.set_light</code> (voir la <a href="../reference/scripts/">référence des scripts</a>). Cacher une lumière l'éteint aussi.</p>
+<p>Quand le jeu sauvegarde la partie, les lumières y entrent : une lampe allumée, éteinte, changée de couleur ou de force pendant la partie revient telle quelle au chargement, sans rien à écrire (voir <a href="../saves/">Les sauvegardes de partie</a>).</p>
+<h2 id="la-qualite-du-rendu">La qualité du rendu<a class="headerlink" href="#la-qualite-du-rendu" title="Permanent link">&para;</a></h2>
+<p>WorldMint choisit au démarrage une qualité du rendu selon l'ordinateur : <strong>Basse</strong> sur une puce graphique intégrée, <strong>Haute</strong> sur une carte graphique. Les réglages en <strong>Selon l'ordinateur</strong> la suivent. Pour essayer l'autre, lancez le jeu avec <code>--qualite basse</code> ou <code>--qualite haute</code>.</p>
+<p>Elle règle aussi le terrain : en <strong>Basse</strong>, le relief se simplifie un peu plus tôt au loin, le détail d'une grande carte se charge jusqu'à 500 m au lieu de 1 km, et les plantes s'arrêtent à 60 % de leur distance (voir <a href="../terrain/#les-grandes-cartes-2-et-4-km">Le terrain</a>).</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../terrain/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Le terrain">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Le terrain
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../materials/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Les matériaux">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Les matériaux
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

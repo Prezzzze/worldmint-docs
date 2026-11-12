@@ -1,0 +1,3190 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/terrain/">
+      
+      
+      
+        <link rel="prev" href="../projects/">
+      
+      
+        <link rel="next" href="../lighting/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Le terrain - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="./.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Le terrain
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generer-un-monde" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Générer un monde
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importer-un-relief" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Importer un relief
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-grandes-cartes-2-et-4-km" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les grandes cartes (2 et 4 km)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lobjet-terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'objet Terrain
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sculpter-et-peindre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sculpter et peindre
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les régions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leau" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'eau
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="L&#x27;eau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leau-stylisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'eau stylisée
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-qui-flotte" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qui flotte
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-vegetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La végétation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retoucher-une-plante" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Retoucher une plante
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#generer-un-monde" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Générer un monde
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importer-un-relief" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Importer un relief
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-grandes-cartes-2-et-4-km" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les grandes cartes (2 et 4 km)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lobjet-terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'objet Terrain
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sculpter-et-peindre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sculpter et peindre
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-regions" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les régions
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#leau" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'eau
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="L&#x27;eau">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#leau-stylisee" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'eau stylisée
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-qui-flotte" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qui flotte
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-vegetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La végétation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#retoucher-une-plante" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Retoucher une plante
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="le-terrain">Le terrain<a class="headerlink" href="#le-terrain" title="Permanent link">&para;</a></h1>
+<p>Sans terrain, le sol d'une scène est fait de vos objets (un grand plan, des dalles). Un <strong>terrain</strong> est une carte avec du relief, des régions (forêt, plage, neige...), de l'eau et de la végétation, que vous générez, puis retouchez au pinceau.</p>
+<p><img alt="Un monde généré" src="../assets/captures/terrain-genere.png" /></p>
+<h2 id="generer-un-monde">Générer un monde<a class="headerlink" href="#generer-un-monde" title="Permanent link">&para;</a></h2>
+<p>Désélectionnez tout (ou cliquez sur la ligne du jeu, tout en haut de l'onglet Scène) : les propriétés montrent la section <strong>Terrain</strong>. Réglez, puis cliquez sur <strong>Générer un monde</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Taille</strong></td>
+<td>Le côté de la carte carrée : <strong>256 m</strong>, <strong>512 m</strong>, <strong>1 024 m</strong>, <strong>2 km</strong> ou <strong>4 km</strong> (voir <a href="#les-grandes-cartes-2-et-4-km">Les grandes cartes</a>).</td>
+</tr>
+<tr>
+<td><strong>Relief</strong></td>
+<td>0 : presque plat. 1 : collines et montagnes. 2 : très escarpé.</td>
+</tr>
+<tr>
+<td><strong>Détails du relief</strong></td>
+<td>La part des bosses et des creux, entre les grandes formes (0 à 1).</td>
+</tr>
+<tr>
+<td><strong>Altitude max.</strong></td>
+<td>La hauteur des plus hauts sommets, avec un relief de 1.</td>
+</tr>
+<tr>
+<td><strong>Niveau de la côte</strong></td>
+<td>Sous cette part de l'altitude : plages et marais, que l'eau viendra couvrir.</td>
+</tr>
+<tr>
+<td><strong>Forme</strong></td>
+<td><strong>Terre jusqu'au bord</strong>, <strong>Un continent</strong>, <strong>Plusieurs continents</strong> ou <strong>Archipel</strong> : des terres jusqu'au bord de la carte, ou entourées d'une mer qui va jusqu'à l'horizon.</td>
+</tr>
+<tr>
+<td><strong>Mer</strong></td>
+<td>Une mer au niveau de la côte : elle couvre tout ce qui est plus bas. Toujours présente autour de continents ou d'îles.</td>
+</tr>
+<tr>
+<td><strong>Bords raccordés</strong></td>
+<td>Le bord gauche prolonge le bord droit, le haut prolonge le bas : une carte qui pourra faire le tour du monde. (Le jeu ne passe pas encore d'un bord à l'autre.)</td>
+</tr>
+<tr>
+<td><strong>Régions</strong></td>
+<td><strong>Neige</strong>, <strong>Roche</strong>, <strong>Forêt</strong>, <strong>Plaine</strong>, <strong>Désert</strong>, <strong>Marais</strong>, <strong>Plage</strong>. Décochez celles dont vous ne voulez pas : leurs zones prennent la région voisine la plus logique. Une carte garde au moins une région.</td>
+</tr>
+<tr>
+<td><strong>Variante</strong></td>
+<td>Un numéro : la même variante donne le même monde. La flèche <strong>Une autre variante</strong> en tire une au hasard.</td>
+</tr>
+</tbody>
+</table>
+<p>Le terrain devient l'objet <strong>Terrain</strong> de la scène, avec ses régions et son eau rangées dedans. Les objets déjà posés se reposent sur le nouveau relief.</p>
+<p>Avec un terrain, cette section s'appelle <strong>Relief, régions et mer</strong> (sur l'objet Terrain) et son bouton <strong>Générer à nouveau</strong> : il remplace le relief et les régions, mais les objets des régions gardent leur nom, leur couleur et leurs systèmes. <strong>Retirer le terrain</strong> le supprime. <strong>Ctrl+Z</strong> revient en arrière dans les deux cas.</p>
+<h2 id="importer-un-relief">Importer un relief<a class="headerlink" href="#importer-un-relief" title="Permanent link">&para;</a></h2>
+<p><strong>Importer un relief</strong> (dans la même section) fait la carte d'après une <strong>carte des hauteurs</strong> : une image en niveaux de gris où le blanc est le plus haut, comme en font les outils de relief (World Machine, Gaea) et les convertisseurs de données réelles.</p>
+<ul>
+<li><strong>Les fichiers</strong> : une image <strong>PNG</strong>, sur 16 bits de préférence (65 536 hauteurs au lieu de 256 : pas de marches sur les pentes douces), ou un fichier brut <strong>.raw</strong> ou <strong>.r16</strong> (des hauteurs sur 16 bits, sans en-tête, dans l'ordre des PC ; <strong>.r8</strong> sur 8 bits). L'image doit être carrée.</li>
+<li><strong>La boîte qui suit</strong> montre l'image (« 1025 × 1025 points, sur 16 bits ») et demande comment la poser :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Mètres par point</strong></td>
+<td>La distance entre deux points de l'image : 1 025 points à 1 m font une carte de 1 024 m. Une carte ne dépasse pas 4 km de côté.</td>
+</tr>
+<tr>
+<td><strong>Altitude du noir</strong></td>
+<td>L'altitude des points noirs de l'image, en mètres.</td>
+</tr>
+<tr>
+<td><strong>Altitude du blanc</strong></td>
+<td>L'altitude des points blancs.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Importer</strong> pose le relief. Les régions et la mer suivent les réglages de <strong>Générer un monde</strong> (les régions cochées, le niveau de la côte, la mer, la variante), comme pour un monde généré. Les objets posés se reposent sur le nouveau relief, et <strong>Ctrl+Z</strong> rend l'ancien terrain.</li>
+<li>Une image dont le nombre de cases (ses points moins un) n'est pas un multiple de 64 est rééchantillonnée : la carte garde sa taille en mètres.</li>
+</ul>
+<h2 id="les-grandes-cartes-2-et-4-km">Les grandes cartes (2 et 4 km)<a class="headerlink" href="#les-grandes-cartes-2-et-4-km" title="Permanent link">&para;</a></h2>
+<p>Au-delà de 1 024 m, la carte est une <strong>grande carte</strong>. Elle se règle, se sculpte et se peint comme les autres ; seule sa façon d'être dessinée change :</p>
+<ul>
+<li><strong>Le sol se dessine en détail autour de la caméra</strong> : jusqu'à 1 km en qualité Haute, 500 m en qualité Basse (la qualité se choisit selon la carte graphique). Plus loin, un <strong>relief simplifié</strong> (une hauteur tous les 4 m, ses couleurs à 4 m près) prend le relais. Quand la caméra avance, le détail se charge peu à peu, sans à-coup.</li>
+<li><strong>La génération d'une carte de 4 km</strong> prend quelques secondes.</li>
+<li><strong>En jeu</strong>, le sol se touche par carrés de 256 m, comme une seule pièce : le joueur et les personnages passent de l'un à l'autre sans le sentir.</li>
+</ul>
+<p><strong>Sur toutes les cartes, le relief se simplifie au loin</strong> : chaque morceau de 64 m se dessine avec 64, 32, 16, 8 ou 4 carreaux par côté, selon la place qu'il prend à l'écran. On ne change de finesse que lorsque l'écart du relief tient sous un point de l'écran (un et demi en qualité Basse) : la différence ne se voit pas. Sous les bords de chaque morceau, une <strong>jupe</strong> (un ruban de sol vertical, invisible d'ordinaire) bouche les fentes qui s'ouvriraient entre deux finesses.</p>
+<h2 id="lobjet-terrain">L'objet Terrain<a class="headerlink" href="#lobjet-terrain" title="Permanent link">&para;</a></h2>
+<p>Sélectionnez <strong>Terrain</strong> dans la liste de la scène (ou cliquez sur le sol, ou <strong>Régler le terrain</strong> dans les réglages du jeu). Ses propriétés :</p>
+<ul>
+<li><strong>Position et taille</strong> : le terrain se déplace, mais ne tourne pas et ne change pas d'échelle ;</li>
+<li><strong>Relief, régions et mer</strong> : les réglages de génération ci-dessus ;</li>
+<li><strong>Régions</strong> : <strong>Nouvelle région</strong> crée une région à vous, à peindre où vous voulez (nommez-la, donnez-lui sa couleur et ses systèmes). Le nouvel objet est choisi, et l'outil <strong>Peindre</strong> pris ;</li>
+<li><strong>Fondu entre régions</strong> : la largeur du dégradé d'une région à l'autre (0 : des limites nettes) ;</li>
+<li><strong>Systèmes</strong> : un système posé sur le Terrain vaut pour toutes ses régions.</li>
+</ul>
+<h2 id="sculpter-et-peindre">Sculpter et peindre<a class="headerlink" href="#sculpter-et-peindre" title="Permanent link">&para;</a></h2>
+<p>Avec un terrain dans la scène, la colonne d'outils à gauche de la vue montre sept outils : <strong>Colline</strong>, <strong>Creuser</strong>, <strong>Aplatir</strong>, <strong>Lisser</strong>, <strong>Rampe</strong>, <strong>Peindre</strong>, <strong>Remplir</strong>. Un outil pris, le clic gauche dans la vue sculpte au lieu de choisir. Le détail de chaque outil et de sa barre d'options (<strong>Taille</strong>, <strong>Force</strong>, <strong>Région</strong>) est dans <a href="../editor/viewport/#les-outils-du-terrain">La vue 3D</a>.</p>
+<p><img alt="L'outil Peindre et sa barre d'options" src="../assets/captures/terrain-peindre.png" /></p>
+<ul>
+<li>Pendant qu'on sculpte, les pentes trop raides pour le joueur s'affichent en rouge.</li>
+<li><strong>Rampe</strong> : glissez d'un point à un autre pour un chemin en pente régulière.</li>
+<li><strong>Remplir</strong> : cliquez au fond d'un creux ; l'eau le remplit jusqu'à son bord et devient un <strong>Lac</strong> (« Lac créé : sa surface est à 12 m »). Rien ne se remplit si l'eau s'écoulerait : creusez d'abord un creux.</li>
+<li>Chaque coup de pinceau s'annule d'un <strong>Ctrl+Z</strong>. <strong>Échap</strong> repose l'outil.</li>
+<li><strong>Matériaux</strong> : couvrez le sol de vrais matériaux (herbe, roche, neige, sable...) et peignez-les au pinceau. Voir <a href="../materials/#les-materiaux-du-sol">Les matériaux</a>.</li>
+</ul>
+<h2 id="les-regions">Les régions<a class="headerlink" href="#les-regions" title="Permanent link">&para;</a></h2>
+<p>Chaque région est un objet rangé dans le <strong>Terrain</strong>, avec une pastille de sa couleur dans la liste. Dans la vue, un premier clic sur le sol choisit le Terrain, un second la région sous la souris. Ses propriétés :</p>
+<ul>
+<li>ce qu'elle couvre (« 23 % de la carte ») ;</li>
+<li><strong>Régions</strong> : <strong>Peindre cette région</strong> prend l'outil Peindre avec elle ;</li>
+<li><strong>Végétation</strong> : voir plus bas ;</li>
+<li><strong>Apparence</strong> : sa <strong>Couleur</strong> ;</li>
+<li><strong>Systèmes</strong> : ils s'appliquent à ce qui s'y trouve. Par exemple le système <strong>Sons</strong> et son réglage de surface : des pas qui crissent sur la neige.</li>
+</ul>
+<p><strong>Supprimer</strong> une région (touche <strong>Suppr</strong>) demande quelle région prendra ses zones (« Ses zones prendront cette région : »). Son objet part avec ses systèmes ; <strong>Ctrl+Z</strong> rend tout. Le terrain garde au moins une région.</p>
+<h2 id="leau">L'eau<a class="headerlink" href="#leau" title="Permanent link">&para;</a></h2>
+<p>La <strong>Mer</strong> et chaque <strong>Lac</strong> sont des objets rangés dans le Terrain. Ils couvrent ce qui est plus bas que leur niveau.</p>
+<ul>
+<li><strong>Style</strong> : <strong>Réaliste</strong> (des vagues fines, des reflets, une eau transparente) ou <strong>Stylisée</strong>, pour un jeu low poly (voir plus bas).</li>
+<li><strong>Sorte d'eau</strong> : une eau toute faite, <strong>Mer</strong>, <strong>Mer agitée</strong>, <strong>Lagon</strong>, <strong>Lac</strong>, <strong>Étang</strong>, <strong>Mer low poly</strong> ou <strong>Lac low poly</strong> : la houle, les couleurs, la transparence et l'écume d'un coup (les deux dernières passent aussi en style Stylisée). Tout reste réglable ensuite.</li>
+<li><strong>Niveau</strong> : la hauteur de la surface. Plus haut, l'eau couvre plus de terres.</li>
+<li><strong>Vagues</strong> : la hauteur des plus grandes vagues. 0 : une eau calme, comme un miroir.</li>
+<li><strong>Longueur des vagues</strong> : d'une crête à la suivante. Courte, un clapot ; longue, une houle du large. Des vagues plus courtes s'y ajoutent toujours.</li>
+<li><strong>Direction de la houle</strong> : vers où vont les vagues, en degrés.</li>
+<li><strong>Agitation</strong> : le vent sur l'eau, de 0 (des vagues rondes et régulières) à 1 (des crêtes pointues qui se croisent, de l'écume).</li>
+<li><strong>Couleur de l'eau profonde</strong> et <strong>Couleur près des rives</strong> : l'eau passe de l'une à l'autre avec sa profondeur.</li>
+<li><strong>Transparence</strong> : jusqu'où l'on voit à travers l'eau. Près des rives, on voit le fond ; plus loin, il s'efface dans la couleur de l'eau.</li>
+<li><strong>Écume</strong> : sur les crêtes, le long des rives et autour de ce qui touche l'eau (un rocher, un ponton, une caisse qui flotte).</li>
+<li><strong>Sillages</strong> : le V qui s'ouvre derrière un bateau, l'eau battue dans son sillage, les ronds autour d'un nageur ou d'une caisse qui flotte. Ils ne se voient qu'à l'image. 0 : aucun.</li>
+<li><strong>Systèmes</strong> : ils s'appliquent à qui y marche (des pas qui éclaboussent).</li>
+</ul>
+<p>L'eau reflète le ciel, le soleil et les lumières de la scène (une lampe au bord d'un lac y trace son reflet) ; en qualité <strong>Haute</strong>, elle reflète aussi le décor, montre le fond un peu déformé par les vagues, et le soleil y dessine des reflets mouvants (caustiques). Les vagues bougent avec le temps du jeu : ce que vous voyez est ce que la physique fait flotter.</p>
+<p>Dans une eau assez profonde, le joueur nage, à sa <strong>Vitesse de nage</strong> (dans ses <a href="../editor/properties/#deplacements">propriétés</a>) : il suit la surface, monte et descend avec elle, et une eau qui avance l'emporte doucement. <strong>Suppr</strong> retire une étendue d'eau.</p>
+<h3 id="leau-stylisee">L'eau stylisée<a class="headerlink" href="#leau-stylisee" title="Permanent link">&para;</a></h3>
+<p>Pour un jeu low poly, choisissez le style <strong>Stylisée</strong> : la surface est faite de <strong>facettes plates</strong>, des triangles posés sur une grille fixe du monde, que des vagues plus douces et plus lisibles soulèvent ; chaque facette prend sa teinte selon sa pente face au soleil. Les couleurs vont de la <strong>Couleur près des rives</strong> à celle de l'<strong>eau profonde</strong> en paliers nets, l'écume borde les rives et ce qui touche l'eau d'une <strong>bande nette</strong>, les plus hautes crêtes blanchissent et les sillages se tracent en traits d'écume. L'eau reflète le ciel et le soleil (en une tache nette), pas le décor, et laisse voir le fond sans le déformer. Ses réglages en plus :</p>
+<ul>
+<li><strong>Taille des facettes</strong> : le côté des triangles, en mètres. Grands, une eau très low poly ; petits, plus de détail.</li>
+<li><strong>Force des facettes</strong> : à 1, chaque facette a sa propre teinte ; vers 0, la surface s'adoucit, avec les mêmes vagues.</li>
+<li><strong>Paliers de couleur</strong> : le nombre de teintes de la rive au large (0 ou 1 : un dégradé continu).</li>
+<li><strong>Largeur de l'écume</strong> : la largeur de la bande blanche le long des rives et autour des objets.</li>
+</ul>
+<p>Le style ne dépend pas de la <strong>qualité</strong> du rendu : une eau stylisée le reste sur un ordinateur puissant. La qualité en règle seulement le coût : en <strong>Haute</strong>, une seconde bande d'écume va et vient au large de la première, et les lumières placées y tracent leur reflet ; en <strong>Basse</strong>, la mer a un maillage plus grossier. À qualité égale, l'eau stylisée coûte moins cher que l'eau réaliste. Ce qui flotte et nage suit les facettes dessinées.</p>
+<h3 id="ce-qui-flotte">Ce qui flotte<a class="headerlink" href="#ce-qui-flotte" title="Permanent link">&para;</a></h3>
+<p>L'eau porte ce qui bouge : les objets du système <a href="../physics-zones/">Physique</a> flottent, coulent ou restent entre deux eaux, selon leur réglage <strong>Dans l'eau</strong> ; l'eau les freine, les fait tanguer avec les vagues et les emporte quand elle avance. Les morceaux d'un objet brisé font de même, et une <a href="../vehicles-joints/#les-poupees-de-chiffon">poupée de chiffon</a> flotte. Un <a href="../vehicles-joints/#le-bateau">bateau</a> navigue dessus et s'échoue sur la terre. Le fluide n'est pas simulé : c'est la surface de l'eau qui porte, ce qui reste léger pour l'ordinateur.</p>
+<h2 id="la-vegetation">La végétation<a class="headerlink" href="#la-vegetation" title="Permanent link">&para;</a></h2>
+<p>Pour faire pousser des arbres, des buissons, de l'herbe ou des rochers sur une région :</p>
+<ol>
+<li>Sélectionnez la région.</li>
+<li>Glissez un modèle depuis la bibliothèque sur la zone de la section <strong>Végétation</strong> (« Glissez ici un modèle de l'explorateur : il poussera sur cette région. »).</li>
+</ol>
+<p>Le modèle devient une <strong>sorte de plante</strong>, un objet rangé dans la région, et pousse sur toute la région. Glissez d'autres modèles pour faire pousser plusieurs sortes. La section <strong>Végétation</strong> de la région liste ses sortes et leur nombre de plantes ; un clic en choisit une.</p>
+<p>Les propriétés d'une sorte de plante (« Elle pousse sur sa région. Ses réglages et ses systèmes valent pour toutes ses plantes. ») :</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Effet</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Densité</strong></td>
+<td>Le nombre de plantes pour 100 m². Changer la densité refait le semis : les retouches à la main peuvent ne plus tomber sur les mêmes plantes.</td>
+</tr>
+<tr>
+<td><strong>Taille min.</strong>, <strong>Taille max.</strong></td>
+<td>Chaque plante prend une taille au hasard entre les deux.</td>
+</tr>
+<tr>
+<td><strong>Pente max.</strong></td>
+<td>Rien ne pousse sur un sol plus raide.</td>
+</tr>
+<tr>
+<td><strong>Enfoncer dans le sol</strong></td>
+<td>Chaque plante est posée au plus bas du sol sous son pied, puis enfoncée d'autant : le pied paraît sortir de terre.</td>
+</tr>
+<tr>
+<td><strong>Visible jusqu'à</strong></td>
+<td>Au-delà, elle ne se dessine plus : moins loin, le jeu va plus vite. En qualité Basse (une puce intégrée), les plantes s'arrêtent à 60 % de cette distance.</td>
+</tr>
+<tr>
+<td><strong>Autre semis</strong></td>
+<td>D'autres places pour toutes ses plantes. Les retouches à la main sont oubliées.</td>
+</tr>
+<tr>
+<td><strong>Tronc</strong> (section <strong>En jeu</strong>)</td>
+<td>Le diamètre qui arrête le joueur en jeu. 0 : on passe au travers (herbes, fleurs, buissons).</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Choisir toutes ses plantes</strong> : pour les retoucher ou leur poser un système ensemble.</li>
+<li><strong>Remettre toutes les plantes en place</strong> : oublie les retouches à la main (s'il y en a).</li>
+<li><strong>Ne plus le faire pousser</strong> : retire cette sorte de plante.</li>
+<li>Un système posé sur la sorte de plante vaut pour toutes ses plantes : par exemple <strong>Collecte</strong>, pour des arbres à abattre.</li>
+</ul>
+<h2 id="retoucher-une-plante">Retoucher une plante<a class="headerlink" href="#retoucher-une-plante" title="Permanent link">&para;</a></h2>
+<p>Une plante se choisit d'un clic dans la vue, ou dans la liste de la scène, sous sa sorte de plante (avec le mot « plante »). <strong>Ctrl + clic</strong> et le rectangle en prennent plusieurs. Ce n'est pas un objet de la scène, mais elle se retouche comme un objet et garde sa retouche si le terrain change :</p>
+<ul>
+<li><strong>Position</strong>, <strong>Rotation</strong>, <strong>Taille</strong>, ou le gizmo ;</li>
+<li><strong>Poser au sol</strong> (<strong>Fin</strong>) ;</li>
+<li><strong>Remettre à sa place</strong> : telle que semée, avec sa place, sa rotation et sa taille d'origine ;</li>
+<li><strong>Effacer</strong> (<strong>Suppr</strong>) : elle ne repoussera pas, même si le terrain change ;</li>
+<li><strong>En faire un objet</strong> : elle quitte sa sorte de plante et devient un objet de la scène, à la même place. Pas besoin pour lui poser un système ;</li>
+<li><strong>Choisir sa sorte de plante</strong> ;</li>
+<li><strong>Systèmes</strong> : une plante peut porter ses propres systèmes, et reste une plante.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../projects/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Projets et scènes">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Projets et scènes
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lighting/" class="md-footer__link md-footer__link--next" aria-label="Suivant: La lumière et les ombres">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                La lumière et les ombres
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

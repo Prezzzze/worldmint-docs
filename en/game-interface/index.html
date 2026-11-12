@@ -1,0 +1,3544 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/game-interface/">
+      
+      
+      
+        <link rel="prev" href="../vehicles-joints/">
+      
+      
+        <link rel="next" href="../videos/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>The game interface: menus, lists, text fields - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              The game interface: menus, lists, text fields
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Game tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-interface-can-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the interface can show
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the interface can show">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The mouse
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text fields
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gamepad-and-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Gamepad and keyboard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-a-screen-with-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawing a screen with the mouse
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-made-windows-menu-dialogue-inventory-shop-quest-log-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ready-made windows: Menu, Dialogue, Inventory, Shop, Quest log, Map
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ready-made windows: Menu, Dialogue, Inventory, Shop, Quest log, Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-the-title-screen-and-the-pause" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Menu: the title screen and the pause
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogue-a-character-who-talks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dialogue: a character who talks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-the-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inventory: the window
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shop-a-merchant-who-sells" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shop: a merchant who sells
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quest-log-quests-that-move-on-by-themselves" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quest log: quests that move on by themselves
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-saved-game-keeps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What a saved game keeps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-the-minimap-the-big-map-and-its-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Map: the minimap, the big map and its markers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface-system-the-look-of-everything-shown" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Interface system: the look of everything shown
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asking-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Asking the agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-interface-can-show" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the interface can show
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the interface can show">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The mouse
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#text-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Text fields
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gamepad-and-keyboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Gamepad and keyboard
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-a-screen-with-the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawing a screen with the mouse
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ready-made-windows-menu-dialogue-inventory-shop-quest-log-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ready-made windows: Menu, Dialogue, Inventory, Shop, Quest log, Map
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ready-made windows: Menu, Dialogue, Inventory, Shop, Quest log, Map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#menu-the-title-screen-and-the-pause" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Menu: the title screen and the pause
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dialogue-a-character-who-talks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dialogue: a character who talks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#inventory-the-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inventory: the window
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shop-a-merchant-who-sells" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shop: a merchant who sells
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quest-log-quests-that-move-on-by-themselves" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quest log: quests that move on by themselves
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-saved-game-keeps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What a saved game keeps
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#map-the-minimap-the-big-map-and-its-markers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Map: the minimap, the big map and its markers
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface-system-the-look-of-everything-shown" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Interface system: the look of everything shown
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asking-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Asking the agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="the-game-interface-menus-lists-text-fields">The game interface: menus, lists, text fields<a class="headerlink" href="#the-game-interface-menus-lists-text-fields" title="Permanent link">&para;</a></h1>
+<p>Everything your game shows on top of the scene (a pause menu, a shop, a dialogue box, an inventory, a chat window, a screen to enter your name) is the <strong>game interface</strong>. A fixed interface is <a href="#drawing-a-screen-with-the-mouse">drawn with the mouse</a>; what changes shape while playing is built by the game's scripts, which the agent writes for you: describe to it what you want to see. Its look, on the other hand, is set without code, with the <strong>Interface</strong> system.</p>
+<h2 id="what-the-interface-can-show">What the interface can show<a class="headerlink" href="#what-the-interface-can-show" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Element</th>
+<th>What it is</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Text</strong></td>
+<td>A text, which wraps by itself within the given width. It can have words in <strong>bold</strong> and words in color.</td>
+</tr>
+<tr>
+<td><strong>Button</strong></td>
+<td>A clickable button, with a text or an image.</td>
+</tr>
+<tr>
+<td><strong>Text field</strong></td>
+<td>A box where the player types text: their name, a message, a code.</td>
+</tr>
+<tr>
+<td><strong>Image</strong></td>
+<td>An image from the library: an icon, a portrait.</td>
+</tr>
+<tr>
+<td><strong>Bar</strong></td>
+<td>A gauge that fills up: health, stamina, progress.</td>
+</tr>
+<tr>
+<td><strong>Panel</strong></td>
+<td>A background that arranges what it contains: in a column, in a row or in a grid. Panels nest: a menu in a panel, inventory slots in a grid.</td>
+</tr>
+<tr>
+<td><strong>Scrolling list</strong></td>
+<td>A panel with a fixed height: when its content is longer, the mouse wheel over it scrolls it, with a thin scroll bar.</td>
+</tr>
+</tbody>
+</table>
+<p>The game places the elements of a panel itself, one after the other: there are no positions to work out.</p>
+<h3 id="the-mouse">The mouse<a class="headerlink" href="#the-mouse" title="Permanent link">&para;</a></h3>
+<p>In the game, the cursor is hidden and the mouse turns the camera. When the game opens an interface you click in (an inventory, a menu), it shows the cursor: the camera no longer turns with the mouse, and the <strong>Basic combat</strong> system no longer strikes. The agent takes care of it when it writes the menu.</p>
+<h3 id="text-fields">Text fields<a class="headerlink" href="#text-fields" title="Permanent link">&para;</a></h3>
+<p>A text field behaves the same way in every game made with WorldMint:</p>
+<ul>
+<li><strong>A click</strong> on the field selects it and puts the cursor there: what the player types is written where the cursor is. <strong>Backspace</strong> erases the character before the cursor, <strong>Delete</strong> the one after.</li>
+<li><strong>The arrows</strong>, <strong>Home</strong> and <strong>End</strong> move the cursor; with <strong>Ctrl</strong>, the arrows jump a whole word (and Backspace erases it).</li>
+<li><strong>Shift</strong> with the arrows, or dragging the mouse with the button held, <strong>selects</strong> text; <strong>Ctrl+A</strong> selects everything. A letter typed replaces the selection.</li>
+<li><strong>Ctrl+C</strong>, <strong>Ctrl+X</strong> and <strong>Ctrl+V</strong> copy, cut and paste, with the Windows clipboard: a name copied elsewhere can be pasted.</li>
+<li><strong>On a gamepad</strong>, once the field is selected: the d-pad moves the cursor, <strong>A</strong> validates, <strong>B</strong> leaves the field. Writing needs a keyboard.</li>
+<li><strong>While a field is selected</strong>, the player does not move and no game control fires: typing "w" writes a w, without moving the character.</li>
+<li><strong>Enter validates the field and leaves it.</strong> The game receives the text, and the player can move again.</li>
+<li><strong>Escape</strong>, or a click elsewhere, leaves the field without validating it.</li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Keeping the field active after Enter</p>
+<p>For a chat window, you often want to send several messages in a row, without clicking in the field again. That is not the standard behavior: it takes a script that selects the field again after each message. Ask the agent for it, for example: "In the chat window, after Enter, send the message, empty the field and keep it active."</p>
+</div>
+<h3 id="gamepad-and-keyboard">Gamepad and keyboard<a class="headerlink" href="#gamepad-and-keyboard" title="Permanent link">&para;</a></h3>
+<p>Every window of the game can also be used without a mouse, with nothing to write: the game finds its buttons by itself.</p>
+<table>
+<thead>
+<tr>
+<th>Gamepad</th>
+<th>Keyboard</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>D-pad</strong> or <strong>left stick</strong></td>
+<td><strong>Arrow keys</strong></td>
+<td>Moves to the next button in that direction, by its place on screen. Held, it keeps moving: you go down a long list without pressing for each line.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Tab</strong></td>
+<td>Moves to the next button, and back to the first after the last.</td>
+</tr>
+<tr>
+<td><strong>A</strong></td>
+<td><strong>Enter</strong></td>
+<td>Clicks the chosen button.</td>
+</tr>
+<tr>
+<td><strong>B</strong></td>
+<td><strong>Escape</strong></td>
+<td>Closes the window, or goes back (from the options to the pause).</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The chosen button shows from afar: lighter, with a thick frame in the accent color of the <strong>Interface</strong> system.</li>
+<li><strong>With a gamepad</strong>, a window that opens chooses its first button at once. <strong>With a keyboard</strong>, the first arrow shows the chosen button, the next one moves it.</li>
+<li>A list that scrolls follows the chosen button.</li>
+<li>While choosing in a window, the character does not move, and the buttons used by the window do not fire their control: <strong>A</strong> does not jump, the d-pad does not drink a potion.</li>
+<li>The mouse works as before: as soon as it moves, the frame disappears, and the hovered button becomes the chosen one.</li>
+</ul>
+<p>The engine does this for every window: the systems' windows as well as those the agent writes. The button that <strong>B</strong> and <strong>Escape</strong> click is the one the window marks as its "Close" or "Back" button; a window without one (a dialogue in progress) lets <strong>Escape</strong> open the pause, as usual.</p>
+<h2 id="drawing-a-screen-with-the-mouse">Drawing a screen with the mouse<a class="headerlink" href="#drawing-a-screen-with-the-mouse" title="Permanent link">&para;</a></h2>
+<p>A fixed interface (a score, a health or ammo bar, a timer, a help panel, a workshop menu) is <strong>drawn</strong>, without code, and seen without starting the game.</p>
+<p><img alt="The interface editor: the palette, the game screen at its size, and the properties of the chosen element" src="../assets/captures/editeur-interface.png" /></p>
+<ol>
+<li><strong>Game</strong> tab, <strong>Interface screens</strong> section: <strong>New screen</strong>. The game screen opens above the 3D view, at the size of the game window; the list at the top right also shows it in 16/9, 4/3, 21/9 or as a phone held upright.</li>
+<li><strong>The palette</strong> places a <strong>Text</strong>, a <strong>Button</strong>, a <strong>Bar</strong>, an <strong>Image</strong>, a <strong>Panel</strong> or a <strong>Text field</strong>: a click places it in the centre, or drag it where you want it. A chosen panel receives what you place: it arranges it itself, in a column, a row or a grid.</li>
+<li><strong>With the mouse</strong>: a click chooses an element, drag it to move it, pull its handles to resize it. <strong>Delete</strong> removes it, the arrow keys nudge it. Each gesture is undone with <strong>Ctrl+Z</strong>.</li>
+<li><strong>The properties</strong>, on the right: the text, the size, the colors (chosen, or <strong>from the theme</strong> of the Interface system), the layout of a panel.</li>
+</ol>
+<p><strong>The anchor.</strong> Each element holds on to a corner, an edge or the centre of the screen, chosen in the nine-point grid of <strong>Position and size</strong>. A score anchored top right stays in that corner on a wide screen as on a narrow one; a help bar anchored at the bottom stays centred at the bottom. Changing the anchor does not move the element.</p>
+<p><strong>What it shows in the game</strong>, <strong>Value shown in the game</strong> section, without code:</p>
+<table>
+<thead>
+<tr>
+<th>Read from</th>
+<th>For example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>An announcement of the game</strong></td>
+<td><strong>The player's health</strong>, in one click: the <code>sante.change</code> announcement of the Health system, its <code>vie</code> field out of its <code>max</code> field. A bar fills up, a text writes "Health: 75 / 100" with the format <code>Health: {valeur} / {max}</code>.</td>
+</tr>
+<tr>
+<td><strong>A value of the game</strong></td>
+<td>A score a script gives with <code>game.set_value("score", 12)</code>, shown by "Score: {valeur}".</td>
+</tr>
+<tr>
+<td><strong>An object's system</strong></td>
+<td>A value of a system placed on the player or on a named object.</td>
+</tr>
+</tbody>
+</table>
+<p>In the editor, a bound value shows an example (75 out of 100), to see the room it will take.</p>
+<p><strong>Buttons</strong>, <strong>On click</strong> section: a button sends its <strong>announcement</strong> (for example <code>atelier.fabriquer</code>), which a <a href="../triggers/">Trigger</a> rule (<em>when</em>: an event) or a script answers; <strong>Then</strong>, it can close its screen, open another one on top, replace it with another, or open and close a screen.</p>
+<p><strong>When to show it</strong>, in the screen's properties (nothing chosen): from the start of the game, on <strong>announcements</strong> (<code>atelier.ouvrir</code>, which a Trigger sends when the player enters the workshop), or with a game <strong>control</strong> that opens and closes it (I for an inventory). A screen with buttons <strong>shows the cursor</strong>; a menu can <strong>pause the game</strong>.</p>
+<p><img alt="The same kind of screen in the game: health, score, the help at the bottom, and the workshop opened by an announcement" src="../assets/captures/jeu-interface.png" /></p>
+<p>In the game, the screen is placed by the same calculation as in the editor: what you draw is what the player sees. A script can still touch it: <code>game.screen_show("atelier")</code>, <code>game.screen_hide("atelier")</code>, and <code>game.hud_set("jeu/score", {text = "10"})</code> for an element, named "screen/element". The agent also draws screens for you, and prefers a drawn screen to a script for a fixed interface: you can then touch it up with the mouse.</p>
+<h2 id="ready-made-windows-menu-dialogue-inventory-shop-quest-log-map">Ready-made windows: Menu, Dialogue, Inventory, Shop, Quest log, Map<a class="headerlink" href="#ready-made-windows-menu-dialogue-inventory-shop-quest-log-map" title="Permanent link">&para;</a></h2>
+<p>Six systems give the game its most common windows, without a script. They are activated in the <strong>Game</strong> tab, <strong>Systems</strong> section, and take the look of the <strong>Interface</strong> system. While they are open, the world can stop: the player, enemies, rolling objects and game time wait, and only clicks on the window count. All of them also work with a gamepad and a keyboard (see <a href="#gamepad-and-keyboard">Gamepad and keyboard</a>), and a saved game keeps them as they were (see <a href="#what-a-saved-game-keeps">What a saved game keeps</a>).</p>
+<h3 id="menu-the-title-screen-and-the-pause">Menu: the title screen and the pause<a class="headerlink" href="#menu-the-title-screen-and-the-pause" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>The title screen</strong>: at start, the game's title and the <strong>Play</strong>, <strong>Options</strong> and <strong>Quit</strong> buttons, over the stopped, darkened game. The title is the one from the game settings (<strong>Window</strong> section), or the one written in the <strong>Title shown</strong> setting.</li>
+<li><strong>The pause</strong>: <strong>Escape</strong> (or <strong>Start</strong> on a gamepad) stops the game and opens <strong>Resume</strong>, <strong>Options</strong> and <strong>Quit</strong>. Escape closes it.</li>
+<li><strong>The options</strong>, arranged in sections, one per tab: <strong>Sound</strong> (the master volume and each group of the sound mixer, in steps of 10%), <strong>Display</strong> (the language of a translated game, the graphics) and <strong>Controls</strong> (the key of each control: click it, then press the new one; Escape cancels). A section too long for the screen (many sound groups, many controls) scrolls with the mouse wheel or the gamepad: the window never overflows.</li>
+<li>The menu's texts are in French or English, after the player's language.</li>
+</ul>
+<p>Its settings and events are in <a href="../reference/systems/menu/">the Menu system reference</a>.</p>
+<h3 id="dialogue-a-character-who-talks">Dialogue: a character who talks<a class="headerlink" href="#dialogue-a-character-who-talks" title="Permanent link">&para;</a></h3>
+<p>Place the <strong>Dialogue</strong> system on a character: they talk when the player uses them (<strong>E</strong>). Their lines show one by one in a window at the bottom of the screen, under their name, with the player's answers as buttons.</p>
+<p>A dialogue reads like a flowchart. It is a list of rows, in order, of four kinds:</p>
+<ul>
+<li><strong>The character says</strong>: a line. Without answers, it has a <strong>Next</strong> button (or <strong>End</strong> when nothing follows).</li>
+<li><strong>The player answers</strong>: an answer, placed under the line it answers. There can be as many as needed. An answer can be offered only under a condition: if the player carries an item (10 "Gold" to pay a toll), if a mark is set, if they already talked to the character.</li>
+<li><strong>Test</strong>: a question the dialogue asks the game, to choose what comes next. Either yes or no: <em>does the player carry a Key?</em>, <em>is the mark "met_the_king" set?</em>, with a next step for yes and one for no. Or by a number: <em>how many talks already finished?</em>, <em>how much Gold do they carry?</em>.</li>
+<li><strong>Test exit</strong>: under a "by a number" test, where to go from a given number on. 0, 1, 2, 3, then 4: the last one counts for "4 and more".</li>
+</ul>
+<p>The dialogue starts at the <strong>first row</strong>. Each row says where to go next: another row's <strong>label</strong> (a word naming it, such as <code>friend</code>), <code>fin</code>, or nothing for the next row. A row that has a label starts another branch: the talk stops before it instead of going into it.</p>
+<p>A row can also <strong>set a mark</strong>, a word the whole game remembers (the king blesses, the guard recognises it later), and <strong>send an event</strong> such as <code>door.open</code>. A <a href="../triggers/">Trigger</a> rule "When the event <code>door.open</code>" on the door then makes it disappear, without writing code.</p>
+<p>A guard who loses patience at every visit, then lets in who has the key:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Kind</th>
+<th>Content</th>
+<th>Then</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Test</td>
+<td>Do they carry a Key?</td>
+<td>yes: <code>in</code>; no: the next row</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Test</td>
+<td>By the talks already finished</td>
+<td>its exits</td>
+</tr>
+<tr>
+<td>3 to 7</td>
+<td>Test exits</td>
+<td>0, 1, 2, 3, 4 and more</td>
+<td><code>key</code>, <code>again</code>, <code>nothing</code>, <code>enough</code>, <code>dungeon</code></td>
+</tr>
+<tr>
+<td>8</td>
+<td>The character says</td>
+<td><code>key</code>: "You need a key."</td>
+<td></td>
+</tr>
+<tr>
+<td>9</td>
+<td>The character says</td>
+<td><code>again</code>: "You again?"</td>
+<td></td>
+</tr>
+<tr>
+<td>…</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>12</td>
+<td>The character says</td>
+<td><code>dungeon</code>: "To the dungeon!" (sends <code>dungeon</code>)</td>
+<td></td>
+</tr>
+<tr>
+<td>13</td>
+<td>The character says</td>
+<td><code>in</code>: "Ah, you have the key. Come in."</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The <strong>Show the map</strong> button, in the character's properties, shows it as a flowchart, from top to bottom: <strong>Start</strong>, one box per line, one diamond per test, a named arrow for each answer or exit ("Yes", "No", "4 and more"), and an <strong>End</strong> at the end of each branch. Branches spread side by side; drag to move the map, and zoom with <strong>Ctrl + wheel</strong>. <strong>Show all</strong> fits it whole in the window, <strong>Actual size</strong> puts it back to its size.</p>
+<p>The dialogue can also be changed in the map, and <strong>Ctrl+Z</strong> undoes it:</p>
+<ul>
+<li><strong>drag the circle</strong> at the start of an arrow onto a box to make it lead there (or to an <strong>End</strong>); dropped in the void, it offers to create the step it will lead to;</li>
+<li><strong>right-click the background</strong>: add a line, a yes or no test, or a test by a number;</li>
+<li><strong>right-click a box</strong>: add an answer (or an exit), or delete the step;</li>
+<li><strong>right-click an arrow's name</strong>: make it lead to the end, or delete the answer or exit.</li>
+</ul>
+<p>The texts themselves are changed in the properties: a click on a box brings you there. In the map, a label that leads nowhere shows in red. In the properties list, rows are ordered with the <strong>Move up</strong> and <strong>Move down</strong> arrows.</p>
+<p>Its settings are in <a href="../reference/systems/dialogue/">the Dialogue system reference</a>.</p>
+<h3 id="inventory-the-window">Inventory: the window<a class="headerlink" href="#inventory-the-window" title="Permanent link">&para;</a></h3>
+<p>The <strong>Inventory</strong> system now has its window: the <strong>I</strong> key (or <strong>Back</strong> on a gamepad) opens and closes it. It shows one slot per kind of item carried, with its quantity, in a grid; beyond four rows, it scrolls with the mouse wheel. A click on a slot tells the game (<code>inventaire.choisi</code>): eating an apple or equipping a sword is something to ask the agent. See <a href="../reference/systems/inventaire/">the Inventory system reference</a>.</p>
+<h3 id="shop-a-merchant-who-sells">Shop: a merchant who sells<a class="headerlink" href="#shop-a-merchant-who-sells" title="Permanent link">&para;</a></h3>
+<p>Place the <strong>Shop</strong> system on a merchant: when the player uses them (<strong>E</strong>), a window opens with their items, their prices, the player's money, and a <strong>Buy</strong> button per item. The world stops while shopping (setting <strong>Stop the game while shopping</strong>).</p>
+<p>The money is a <strong>kind of inventory item</strong>, such as "Gold" or "Coin": the player picks it up, receives it as a quest reward, like any item. The <strong>Money</strong> setting says which one this merchant accepts.</p>
+<p>What they sell is a list, in the merchant's properties, one <strong>item</strong> per row:</p>
+<table>
+<thead>
+<tr>
+<th>Setting of an item</th>
+<th>What it says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Item</strong></td>
+<td>The kind of item sold, as the inventory stores it, such as "Sword".</td>
+</tr>
+<tr>
+<td><strong>They sell it</strong></td>
+<td>Unticked, the merchant only buys it back: no <strong>Buy</strong> button.</td>
+</tr>
+<tr>
+<td><strong>How many per purchase</strong></td>
+<td>10 for a quiver of 10 arrows.</td>
+</tr>
+<tr>
+<td><strong>Price</strong></td>
+<td>What one purchase costs, in the merchant's money.</td>
+</tr>
+<tr>
+<td><strong>Stock at the start</strong></td>
+<td>How many purchases before they run out: 1 for a unique sword, 0 for no limit.</td>
+</tr>
+<tr>
+<td><strong>Buy-back</strong></td>
+<td>What the merchant pays if the player sells them one: a <strong>Sell</strong> button appears. 0: they buy none.</td>
+</tr>
+</tbody>
+</table>
+<p>Buying takes the price from the inventory, then gives the item; selling does the reverse, one item at a time. The window says it clearly when money is missing ("You need 5 more Gold."), when the inventory has no room left (the player then keeps their money), or when an item is sold out.</p>
+<p>Each purchase and each sale tells the game (<code>boutique.achat</code>, <code>boutique.vente</code>): a sound, a quest step ("Buy a sword"), a <a href="../triggers/">Trigger</a> rule.</p>
+<p><strong>A merchant who also has a Dialogue talks first.</strong> The player uses them: the conversation opens, alone. On its last line, next to <strong>End</strong>, a <strong>Show me your goods</strong> button closes the conversation and opens the shop. Nothing to untick, nothing to write. To put the way into the shop elsewhere in the conversation (an answer "Show me your weapons" in the middle), give that answer the event <code>boutique.ouvrir</code> with the next step <code>fin</code>: the Dialogue then does not add its own button. Unticking <strong>Opens when the player uses it</strong> also removes that button: the shop then only opens through <code>boutique.ouvrir</code>.</p>
+<p>Its settings are in <a href="../reference/systems/boutique/">the Shop system reference</a>.</p>
+<h3 id="quest-log-quests-that-move-on-by-themselves">Quest log: quests that move on by themselves<a class="headerlink" href="#quest-log-quests-that-move-on-by-themselves" title="Permanent link">&para;</a></h3>
+<p>The <strong>Quest log</strong> system is for the whole game. Its quests are written in its setting <strong>The quests and their steps</strong>, <strong>Game</strong> tab, <strong>Systems</strong> section: a <strong>Quest</strong> row, then its <strong>Step</strong> rows, in order.</p>
+<p>A <strong>quest</strong> has a title, a description, and a start:</p>
+<ul>
+<li><strong>when the game starts</strong>;</li>
+<li><strong>when an event happens</strong>: a Dialogue answer ("I accept" sends <code>wolves.accepted</code>), a Trigger rule;</li>
+<li><strong>when a mark is set</strong> by a Dialogue;</li>
+<li><strong>when another quest ends</strong>: a chain of quests.</li>
+</ul>
+<p>A <strong>step</strong> says what to do ("Defeat 3 wolves") and what ends it:</p>
+<ul>
+<li><strong>an event</strong>, as many times as needed, and only for the object named if one is given: <code>sante.mort</code> for "Wolf", 3 times, counts three wolves defeated (and not the bear); <code>dialogue.fin</code> for "Miller", a talk with him finished; <code>zone.entree</code> for a zone, a place reached;</li>
+<li><strong>a mark</strong> set by a Dialogue;</li>
+<li><strong>items carried</strong>: 3 "Wolf pelt" in the inventory;</li>
+<li><strong>items handed over</strong>: on an event (<code>dialogue.fin</code> for "Miller"), if the player carries 3 "Wolf pelt", the inventory takes them back and the step is done. Otherwise, an announcement says how many are missing ("Not enough: Wolf pelt 2/3").</li>
+</ul>
+<p>Steps are done one after the other (the log does not reveal what comes next), or all at the same time if <strong>Steps one after the other</strong> is unticked. When all are done, the quest ends and gives its <strong>reward</strong> (items, such as 50 "Gold"). A finished quest or step can also <strong>set a mark</strong> (the miller thanks the player, his Dialogue sees it) and <strong>send an event</strong> (a Trigger rule makes the bridge appear).</p>
+<p>A quest can also <strong>fail</strong> (setting <strong>Fails</strong>): when an event happens (<code>sante.mort</code> for "Merchant": the merchant to escort is dead), when a mark is set, or when time runs out (<strong>Time to finish it</strong>, in seconds of play: the tracker and the log show what is left). The player can <strong>abandon</strong> it from the log (<strong>Abandon</strong> button, a second press confirms), unless <strong>The player can abandon it</strong> is unticked. A failed or abandoned quest gives no reward; it can set its own mark and send its own event (the miller complains), and, if <strong>Can be taken up again</strong> is ticked, what gives it gives it again from the start.</p>
+<p>What the player sees:</p>
+<ul>
+<li><strong>an announcement</strong> at the top of the screen for each new quest, each step done and each quest finished (with its reward), failed or abandoned;</li>
+<li><strong>the current step</strong>, on the right of the screen, with the progress ("Defeat 3 wolves (2/3)");</li>
+<li><strong>the log</strong>, with the <strong>J</strong> key (or <strong>→</strong> on a gamepad): the quests in progress with their steps, then the finished ones, then the failed or abandoned ones. It scrolls with the mouse wheel, and the same key closes it.</li>
+</ul>
+<p>A miller who asks to hunt the wolves:</p>
+<table>
+<thead>
+<tr>
+<th>Row</th>
+<th>Kind</th>
+<th>Content</th>
+<th>Starts or ends</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Quest</td>
+<td>"The mill's wolves", reward 50 Gold</td>
+<td>when the event <code>wolves.accepted</code> happens (the miller's "I accept" answer)</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Step</td>
+<td>"Defeat 3 wolves", sets the mark <code>wolves_hunted</code></td>
+<td>the event <code>sante.mort</code> for "Wolf", 3 times</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Step</td>
+<td>"Go back to the miller"</td>
+<td>the event <code>wolves.returned</code> (the answer "Here they are", offered if the mark <code>wolves_hunted</code> is set)</td>
+</tr>
+</tbody>
+</table>
+<p>Its settings and events are in <a href="../reference/systems/quetes/">the Quest log system reference</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">No map yet</p>
+<p>Unlike the Dialogue, quests do not have a map view yet: they are written in the settings list, and the agent can write them for you.</p>
+</div>
+<h3 id="what-a-saved-game-keeps">What a saved game keeps<a class="headerlink" href="#what-a-saved-game-keeps" title="Permanent link">&para;</a></h3>
+<p>When the game saves (a key, a checkpoint: ask the agent, which has a recipe for it), every system stores its own state in the save, and takes it back when loading:</p>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>What it keeps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inventory</strong></td>
+<td>What the player carries, kind by kind.</td>
+</tr>
+<tr>
+<td><strong>Quest log</strong></td>
+<td>The quests started, finished, failed or abandoned, the steps done, what is already counted ("2 wolves out of 3"), the time left to a timed quest.</td>
+</tr>
+<tr>
+<td><strong>Shop</strong></td>
+<td>What each merchant has left of the items with a limited stock.</td>
+</tr>
+<tr>
+<td><strong>Dialogue</strong></td>
+<td>The marks set, and the conversations already had with each one.</td>
+</tr>
+</tbody>
+</table>
+<p>The player therefore goes on where they were: in the middle of a quest, after a purchase. Items given back when loading do not make the pickup sound.</p>
+<p>The game also keeps <strong>the world</strong>: what the game changed in every scene visited (an object hidden, moved, destroyed or copied, a light, a door opened, the camera...) comes back as it was when loading. Nothing to do for it: see <a href="../saves/">Saved games</a>.</p>
+<h3 id="map-the-minimap-the-big-map-and-its-markers">Map: the minimap, the big map and its markers<a class="headerlink" href="#map-the-minimap-the-big-map-and-its-markers" title="Permanent link">&para;</a></h3>
+<p>The <strong>Map</strong> system is for the whole game, and is also placed on the objects to mark. Once activated:</p>
+<ul>
+<li><strong>the minimap</strong>, in a corner of the screen (bottom right by default), shows the world around the player, seen from above. The player is the white arrow in the middle; a small <strong>N</strong> marks north. It can be round or square, bigger or smaller, show nearer or farther, and turn with the player instead of keeping north at the top;</li>
+<li><strong>the big map</strong> opens with the <strong>M</strong> key (or <strong>↓</strong> on a gamepad) and closes the same way: the whole scene, with the player and the markers, their name written under them. The <strong>wheel</strong> zooms around the mouse, <strong>holding</strong> the mouse drags the map, and so do the gamepad's <strong>left stick</strong> and the walking keys. On a gamepad, the <strong>right trigger</strong> (RT) zooms in and the <strong>left trigger</strong> (LT) zooms out while held; on a keyboard, <strong>Page Up</strong> and <strong>Page Down</strong>. They are two controls of the game, <strong>Zoom the big map in</strong> and <strong>Zoom the big map out</strong>, whose keys can be changed in the Game tab. The world stops meanwhile (setting <strong>Stop the game while the big map is open</strong>).</li>
+</ul>
+<p>The picture of the map is taken by the game itself: when the game starts, it photographs the scene from above (the terrain, its waters, its plants, the buildings), without the player or the characters, who move. It can be replaced by a <strong>drawn map</strong> (setting <strong>Drawn map</strong>): by default, it covers the same square of the world as the game's picture; otherwise, you give its west edge, its north edge and its side, in meters.</p>
+<p><strong>A marker</strong>, without code: place the <strong>Map</strong> system on an object (a town, a cave, a chest). In its properties:</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it says</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Name on the map</strong></td>
+<td>Written under the marker on the big map. Empty: the object's name, without number.</td>
+</tr>
+<tr>
+<td><strong>Shape of the marker</strong></td>
+<td>Circle, diamond, triangle, square, star, or an image (a sword icon for the forge).</td>
+</tr>
+<tr>
+<td><strong>Color of the marker</strong>, <strong>Size of the marker</strong></td>
+<td>Its color (it tints an image), and its size: 2 for a town.</td>
+</tr>
+<tr>
+<td><strong>When it shows on the map</strong></td>
+<td><strong>Always</strong>; <strong>once discovered up close</strong>, when the player comes within the <strong>discovery distance</strong> (a message announces it; a saved game keeps the places discovered); or <strong>hidden</strong>, except as a quest objective.</td>
+</tr>
+<tr>
+<td><strong>Objective of the quest</strong></td>
+<td>The title of a quest: while it is in progress (or only during the step given), this marker is its objective.</td>
+</tr>
+</tbody>
+</table>
+<p>Placed on a folder, the system gives a single marker for everything it holds, in place of the folder.</p>
+<p><strong>What marks itself</strong>: merchants (<strong>Shop</strong> system, a golden diamond) and characters who talk (<strong>Dialogue</strong> system, a light blue circle), named after their shop or their character. Placing <strong>Map</strong> on one of them chooses its look.</p>
+<p><strong>Quest objectives</strong>: during a step of the <strong>Quest log</strong> (above) that aims at named objects ("Defeat 3 wolves", for <strong>Wolf</strong>), their markers are ringed with the <strong>color of the objectives</strong>, even when usually hidden; on the minimap, a far objective stays at its edge, in its direction. The Quest log is not changed: the map only listens to what it announces.</p>
+<p>The game can react when the big map opens or closes (<code>carte.ouverte</code>) and when a marker is discovered (<code>carte.decouvert</code>); a <a href="../triggers/">Trigger</a> rule or a Dialogue answer can reveal a place (<code>carte.reveler</code>), like a villager who points to the cave. Its settings and events are in <a href="../reference/systems/carte/">the Map system reference</a>.</p>
+<div class="admonition note">
+<p class="admonition-title">No fog of war yet</p>
+<p>The parts of the world where the player has not been yet are not hidden in black yet: only markers wait to be discovered.</p>
+</div>
+<h2 id="the-interface-system-the-look-of-everything-shown">The Interface system: the look of everything shown<a class="headerlink" href="#the-interface-system-the-look-of-everything-shown" title="Permanent link">&para;</a></h2>
+<p>The <strong>Interface</strong> system gives its style to the whole game interface, from one place. It applies to the whole game and is not placed on objects.</p>
+<ol>
+<li><strong>Game</strong> tab, <strong>Systems</strong> section: <strong>Activate</strong> under <strong>Interface</strong> (see <a href="../editor/game-tab/">The Game tab</a>).</li>
+<li>Open its card: its settings apply at once to everything the game shows. A color is chosen by clicking its swatch, which opens a color picker.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Panel background color</strong></td>
+<td>Menus, windows, lists.</td>
+</tr>
+<tr>
+<td><strong>Button and field background color</strong></td>
+<td>Buttons and text fields.</td>
+</tr>
+<tr>
+<td><strong>Accent color: hovered button, selected field, scroll bar</strong></td>
+<td>What is under the mouse or chosen.</td>
+</tr>
+<tr>
+<td><strong>Text color</strong></td>
+<td>All texts.</td>
+</tr>
+<tr>
+<td><strong>Text size (share of the screen height)</strong></td>
+<td>The text keeps the same relative size whatever the window.</td>
+</tr>
+<tr>
+<td><strong>Corner rounding (share of the screen height, 0: square corners)</strong></td>
+<td>The shape of panels, buttons and fields.</td>
+</tr>
+<tr>
+<td><strong>Background opacity (0: transparent, 1: solid)</strong></td>
+<td>Lets the game show through the backgrounds, or not.</td>
+</tr>
+</tbody>
+</table>
+<p>The exact values and their limits are in <a href="../reference/systems/interface/">the Interface system reference</a>.</p>
+<p>A script can give an element its own color or size: it wins over the theme. To keep control of the style from one place, ask the agent to use the theme rather than colors written in the scripts. Without the <strong>Interface</strong> system, the interface keeps its original look.</p>
+<h2 id="asking-the-agent">Asking the agent<a class="headerlink" href="#asking-the-agent" title="Permanent link">&para;</a></h2>
+<p>A few requests:</p>
+<ul>
+<li>"Add a title screen and a pause." The agent then activates the <strong>Menu</strong> system.</li>
+<li>"The blacksmith offers to repair the sword; if the player accepts, the workshop door opens." The agent places a <strong>Dialogue</strong> on the blacksmith and a <strong>Trigger</strong> rule on the door.</li>
+<li>"The blacksmith sells a sword for 30 gold coins and potions, and buys back wolf pelts." The agent places a <strong>Shop</strong> on the blacksmith.</li>
+<li>"The miller asks to hunt three wolves, for 50 gold coins." The agent writes the quest in the <strong>Quest log</strong>, and the answer that gives it in the miller's <strong>Dialogue</strong>.</li>
+<li>"At the start of the game, ask the player for their name, then show "Welcome, [name]!"."</li>
+<li>"A chat window at the bottom left, with a scrolling history."</li>
+<li>"Give the interface a dark and gold style." The agent then changes the settings of the <strong>Interface</strong> system, not every script.</li>
+</ul>
+<p>To check a menu, the agent runs the game without a window: it sees where each element was placed, what overflows a list, how the texts wrap, then looks at the game's image. You can also try it yourself with <strong>Play</strong> (<strong>F5</strong>).</p>
+<p>To go further, all the interface functions (<code>game.hud_panel</code>, <code>game.hud_input</code>...) are in <a href="../reference/scripts/#interface-building-blocks">the scripts reference</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../vehicles-joints/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Vehicles, joints and ragdolls">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Vehicles, joints and ragdolls
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../videos/" class="md-footer__link md-footer__link--next" aria-label="Next: Videos">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Videos
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

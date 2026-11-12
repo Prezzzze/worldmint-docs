@@ -1,0 +1,5550 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/agent-tools/">
+      
+      
+      
+        <link rel="prev" href="../scripts/">
+      
+      
+        <link rel="next" href="../agent-guide/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Ce que fait l'agent - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ce que fait l'agent
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-lit-de-chaque-outil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent lit de chaque outil
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent lit de chaque outil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scene_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project_rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>project_rules</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>plan_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan_step" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>plan_step</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets_folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>assets_folders</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>assets_search</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>asset_info</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_scatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_scatter</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_reference</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>screens_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>screens_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>screens_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipes_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>recipes_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_info</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_attach" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_attach</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_detach" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_detach</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_inherit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_inherit</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_update</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_apply</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_revert" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_revert</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_detach" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_detach</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_group</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_ungroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_ungroup</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_ground</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation_files_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>animation_files_search</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation_clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>animation_clips</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>player_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>world_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translations_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>translations_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translations_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>translations_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>controls_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>controls_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>controls_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixer_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>mixer_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_generate</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_brush" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_brush</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>water_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>water_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>water_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>vegetation_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>vegetation_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>vegetation_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_validate</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timeline_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timelines_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timelines_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timeline_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timeline_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_save" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_save</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history_undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>history_undo</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history_redo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>history_redo</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>material_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>material_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>material_apply</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_materials</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_paint_material" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_paint_material</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_material_at" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_material_at</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>world_map</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>area_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sectors_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sectors_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_focus</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_fill" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_fill</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_place_along" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_place_along</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large_world_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>large_world_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_blocks</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>library_search</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>library_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose_layers_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>pose_layers_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose_layers_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>pose_layers_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_animation_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_animation_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_animation_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_animation_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_fix_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_fix_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_fix_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_fix_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game_run" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>game_run</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenes_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scenes_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_open" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_open</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game_export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>game_export</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view_capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>view_capture</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-lit-de-chaque-outil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent lit de chaque outil
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent lit de chaque outil">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scene_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#project_rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>project_rules</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>plan_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plan_step" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>plan_step</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets_folders" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>assets_folders</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assets_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>assets_search</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#asset_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>asset_info</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_scatter" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_scatter</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_reference</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>screens_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>screens_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>screens_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipes_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>recipes_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_info" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_info</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_attach" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_attach</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_detach" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_detach</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_inherit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_inherit</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#systems_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>systems_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#modules_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>modules_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scripts_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scripts_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_update" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_update</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_apply</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_revert" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_revert</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_detach" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_detach</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prefab_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>prefab_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_group" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_group</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_ungroup" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_ungroup</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_ground" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_ground</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation_files_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>animation_files_search</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#animation_clips" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>animation_clips</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#player_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>player_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>world_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translations_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>translations_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#translations_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>translations_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>controls_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>controls_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#controls_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>controls_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mixer_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>mixer_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_generate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_generate</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_brush" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_brush</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>water_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>water_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#water_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>water_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>vegetation_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>vegetation_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vegetation_remove" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>vegetation_remove</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_validate" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_validate</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timeline_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timelines_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timelines_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timeline_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#timeline_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>timeline_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_save" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_save</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history_undo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>history_undo</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#history_redo" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>history_redo</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>material_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>material_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#material_apply" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>material_apply</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_materials</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_paint_material" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_paint_material</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#terrain_material_at" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>terrain_material_at</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#world_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>world_map</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#area_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>area_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sectors_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sectors_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sector_focus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>sector_focus</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_fill" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_fill</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#entities_place_along" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>entities_place_along</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#large_world_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>large_world_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shader_blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>shader_blocks</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library_search" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>library_search</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#library_add" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>library_add</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose_layers_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>pose_layers_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pose_layers_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>pose_layers_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_animation_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_animation_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_animation_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_animation_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_fix_get" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_fix_get</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#skeleton_fix_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>skeleton_fix_set</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game_run" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>game_run</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scenes_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scenes_list</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_open" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_open</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_create" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_create</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scene_delete" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>scene_delete</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game_export" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>game_export</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#view_capture" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        <code>view_capture</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="ce-que-fait-lagent">Ce que fait l'agent<a class="headerlink" href="#ce-que-fait-lagent" title="Permanent link">&para;</a></h1>
+<p>L'agent ne touche à rien en dehors de ces outils, que l'éditeur lui donne : il n'a ni accès à vos fichiers, ni aux commandes de l'ordinateur. Chaque changement qu'il fait passe par l'historique de l'éditeur et s'annule par <strong>Ctrl+Z</strong>, ou par le bouton <strong>Annuler ces modifications</strong> sous sa réponse. Dans la conversation, chaque outil s'affiche par une courte phrase : c'est la colonne « Dans la conversation ».</p>
+<p>99 outils.</p>
+<table>
+<thead>
+<tr>
+<th>Outil</th>
+<th>Dans la conversation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#scene_get"><code>scene_get</code></a></td>
+<td>Lecture de la scène</td>
+</tr>
+<tr>
+<td><a href="#project_rules"><code>project_rules</code></a></td>
+<td>Lecture des règles du projet</td>
+</tr>
+<tr>
+<td><a href="#plan_set"><code>plan_set</code></a></td>
+<td>Écriture du plan</td>
+</tr>
+<tr>
+<td><a href="#plan_step"><code>plan_step</code></a></td>
+<td>Avancement du plan</td>
+</tr>
+<tr>
+<td><a href="#assets_folders"><code>assets_folders</code></a></td>
+<td>Lecture de la bibliothèque</td>
+</tr>
+<tr>
+<td><a href="#assets_search"><code>assets_search</code></a></td>
+<td>Recherche dans la bibliothèque : …</td>
+</tr>
+<tr>
+<td><a href="#asset_info"><code>asset_info</code></a></td>
+<td>Examen d'un modèle</td>
+</tr>
+<tr>
+<td><a href="#entities_create"><code>entities_create</code></a></td>
+<td>Création d'objets (…)</td>
+</tr>
+<tr>
+<td><a href="#entities_scatter"><code>entities_scatter</code></a></td>
+<td>Remplissage d'une zone</td>
+</tr>
+<tr>
+<td><a href="#scripts_reference"><code>scripts_reference</code></a></td>
+<td>Lecture du guide des scripts</td>
+</tr>
+<tr>
+<td><a href="#scripts_set"><code>scripts_set</code></a></td>
+<td>Écriture d'un script</td>
+</tr>
+<tr>
+<td><a href="#screens_set"><code>screens_set</code></a></td>
+<td>Dessin d'un écran d'interface</td>
+</tr>
+<tr>
+<td><a href="#screens_get"><code>screens_get</code></a></td>
+<td>Lecture des écrans d'interface</td>
+</tr>
+<tr>
+<td><a href="#screens_delete"><code>screens_delete</code></a></td>
+<td>Suppression d'un écran d'interface</td>
+</tr>
+<tr>
+<td><a href="#scripts_get"><code>scripts_get</code></a></td>
+<td>Lecture d'un script</td>
+</tr>
+<tr>
+<td><a href="#modules_list"><code>modules_list</code></a></td>
+<td>Lecture des systèmes de jeu</td>
+</tr>
+<tr>
+<td><a href="#recipes_get"><code>recipes_get</code></a></td>
+<td>Lecture d'une recette</td>
+</tr>
+<tr>
+<td><a href="#modules_info"><code>modules_info</code></a></td>
+<td>Lecture des systèmes de jeu</td>
+</tr>
+<tr>
+<td><a href="#modules_add"><code>modules_add</code></a></td>
+<td>Ajout d'un système de jeu</td>
+</tr>
+<tr>
+<td><a href="#modules_remove"><code>modules_remove</code></a></td>
+<td>Retrait d'un système de jeu</td>
+</tr>
+<tr>
+<td><a href="#systems_attach"><code>systems_attach</code></a></td>
+<td>Pose d'un système sur des objets</td>
+</tr>
+<tr>
+<td><a href="#systems_set"><code>systems_set</code></a></td>
+<td>Réglage d'un système sur un objet</td>
+</tr>
+<tr>
+<td><a href="#systems_detach"><code>systems_detach</code></a></td>
+<td>Retrait d'un système d'un objet</td>
+</tr>
+<tr>
+<td><a href="#systems_inherit"><code>systems_inherit</code></a></td>
+<td>Héritage d'un système</td>
+</tr>
+<tr>
+<td><a href="#systems_get"><code>systems_get</code></a></td>
+<td>Lecture des systèmes d'un objet</td>
+</tr>
+<tr>
+<td><a href="#modules_set"><code>modules_set</code></a></td>
+<td>Réglage d'un système de jeu</td>
+</tr>
+<tr>
+<td><a href="#scripts_delete"><code>scripts_delete</code></a></td>
+<td>Suppression d'un script</td>
+</tr>
+<tr>
+<td><a href="#entities_update"><code>entities_update</code></a></td>
+<td>Modification d'objets (…)</td>
+</tr>
+<tr>
+<td><a href="#prefab_create"><code>prefab_create</code></a></td>
+<td>Création d'un objet réutilisable</td>
+</tr>
+<tr>
+<td><a href="#prefab_list"><code>prefab_list</code></a></td>
+<td>Lecture des objets réutilisables</td>
+</tr>
+<tr>
+<td><a href="#prefab_apply"><code>prefab_apply</code></a></td>
+<td>Mise à jour d'un objet réutilisable et de ses copies</td>
+</tr>
+<tr>
+<td><a href="#prefab_revert"><code>prefab_revert</code></a></td>
+<td>Copie remise comme son modèle</td>
+</tr>
+<tr>
+<td><a href="#prefab_detach"><code>prefab_detach</code></a></td>
+<td>Copie détachée de son modèle</td>
+</tr>
+<tr>
+<td><a href="#prefab_delete"><code>prefab_delete</code></a></td>
+<td>Suppression d'un objet réutilisable</td>
+</tr>
+<tr>
+<td><a href="#entities_group"><code>entities_group</code></a></td>
+<td>Regroupement d'objets dans un dossier</td>
+</tr>
+<tr>
+<td><a href="#entities_ungroup"><code>entities_ungroup</code></a></td>
+<td>Dossier défait, ses objets gardés</td>
+</tr>
+<tr>
+<td><a href="#entities_delete"><code>entities_delete</code></a></td>
+<td>Suppression d'objets (…)</td>
+</tr>
+<tr>
+<td><a href="#entities_ground"><code>entities_ground</code></a></td>
+<td>Pose au sol (…)</td>
+</tr>
+<tr>
+<td><a href="#animation_files_search"><code>animation_files_search</code></a></td>
+<td>Recherche d'animations : …</td>
+</tr>
+<tr>
+<td><a href="#animation_clips"><code>animation_clips</code></a></td>
+<td>Lecture des animations</td>
+</tr>
+<tr>
+<td><a href="#player_set"><code>player_set</code></a></td>
+<td>Réglage du joueur</td>
+</tr>
+<tr>
+<td><a href="#world_set"><code>world_set</code></a></td>
+<td>Réglage du monde</td>
+</tr>
+<tr>
+<td><a href="#translations_get"><code>translations_get</code></a></td>
+<td>Lecture des traductions du jeu</td>
+</tr>
+<tr>
+<td><a href="#translations_set"><code>translations_set</code></a></td>
+<td>Écriture des traductions du jeu</td>
+</tr>
+<tr>
+<td><a href="#controls_list"><code>controls_list</code></a></td>
+<td>Lecture des commandes du jeu</td>
+</tr>
+<tr>
+<td><a href="#controls_set"><code>controls_set</code></a></td>
+<td>Réglage d'une commande du jeu</td>
+</tr>
+<tr>
+<td><a href="#controls_remove"><code>controls_remove</code></a></td>
+<td>Retrait d'une commande du jeu</td>
+</tr>
+<tr>
+<td><a href="#mixer_set"><code>mixer_set</code></a></td>
+<td>Réglage de la table de mixage</td>
+</tr>
+<tr>
+<td><a href="#terrain_generate"><code>terrain_generate</code></a></td>
+<td>Création du terrain</td>
+</tr>
+<tr>
+<td><a href="#terrain_brush"><code>terrain_brush</code></a></td>
+<td>Retouche du terrain</td>
+</tr>
+<tr>
+<td><a href="#water_add"><code>water_add</code></a></td>
+<td>Ajout d'une étendue d'eau</td>
+</tr>
+<tr>
+<td><a href="#water_set"><code>water_set</code></a></td>
+<td>Réglage de l'eau</td>
+</tr>
+<tr>
+<td><a href="#water_remove"><code>water_remove</code></a></td>
+<td>Retrait d'une étendue d'eau</td>
+</tr>
+<tr>
+<td><a href="#vegetation_add"><code>vegetation_add</code></a></td>
+<td>Ajout de végétation</td>
+</tr>
+<tr>
+<td><a href="#vegetation_set"><code>vegetation_set</code></a></td>
+<td>Réglage de la végétation</td>
+</tr>
+<tr>
+<td><a href="#vegetation_remove"><code>vegetation_remove</code></a></td>
+<td>Retrait de végétation</td>
+</tr>
+<tr>
+<td><a href="#scene_validate"><code>scene_validate</code></a></td>
+<td>Vérification de la scène</td>
+</tr>
+<tr>
+<td><a href="#timeline_set"><code>timeline_set</code></a></td>
+<td><code>timeline_set</code></td>
+</tr>
+<tr>
+<td><a href="#timelines_list"><code>timelines_list</code></a></td>
+<td><code>timelines_list</code></td>
+</tr>
+<tr>
+<td><a href="#timeline_get"><code>timeline_get</code></a></td>
+<td><code>timeline_get</code></td>
+</tr>
+<tr>
+<td><a href="#timeline_delete"><code>timeline_delete</code></a></td>
+<td><code>timeline_delete</code></td>
+</tr>
+<tr>
+<td><a href="#scene_save"><code>scene_save</code></a></td>
+<td>Enregistrement de la scène</td>
+</tr>
+<tr>
+<td><a href="#history_undo"><code>history_undo</code></a></td>
+<td>Annulation</td>
+</tr>
+<tr>
+<td><a href="#history_redo"><code>history_redo</code></a></td>
+<td>Rétablissement</td>
+</tr>
+<tr>
+<td><a href="#material_list"><code>material_list</code></a></td>
+<td>Lecture des matériaux</td>
+</tr>
+<tr>
+<td><a href="#material_set"><code>material_set</code></a></td>
+<td>Réglage d'un matériau</td>
+</tr>
+<tr>
+<td><a href="#material_apply"><code>material_apply</code></a></td>
+<td>Pose d'un matériau</td>
+</tr>
+<tr>
+<td><a href="#terrain_materials"><code>terrain_materials</code></a></td>
+<td>Matériaux du sol</td>
+</tr>
+<tr>
+<td><a href="#terrain_paint_material"><code>terrain_paint_material</code></a></td>
+<td>Peinture du sol</td>
+</tr>
+<tr>
+<td><a href="#terrain_material_at"><code>terrain_material_at</code></a></td>
+<td>Lecture du sol</td>
+</tr>
+<tr>
+<td><a href="#world_map"><code>world_map</code></a></td>
+<td>Lecture de la carte</td>
+</tr>
+<tr>
+<td><a href="#area_get"><code>area_get</code></a></td>
+<td>Lecture d'une partie de la carte</td>
+</tr>
+<tr>
+<td><a href="#sectors_list"><code>sectors_list</code></a></td>
+<td>Lecture des secteurs</td>
+</tr>
+<tr>
+<td><a href="#sector_create"><code>sector_create</code></a></td>
+<td>Création d'un secteur</td>
+</tr>
+<tr>
+<td><a href="#sector_set"><code>sector_set</code></a></td>
+<td>Réglage d'un secteur</td>
+</tr>
+<tr>
+<td><a href="#sector_delete"><code>sector_delete</code></a></td>
+<td>Suppression d'un secteur</td>
+</tr>
+<tr>
+<td><a href="#sector_focus"><code>sector_focus</code></a></td>
+<td>Choix du secteur de travail</td>
+</tr>
+<tr>
+<td><a href="#entities_fill"><code>entities_fill</code></a></td>
+<td>Remplissage d'une zone, par règles</td>
+</tr>
+<tr>
+<td><a href="#entities_place_along"><code>entities_place_along</code></a></td>
+<td>Placement le long d'un tracé</td>
+</tr>
+<tr>
+<td><a href="#large_world_set"><code>large_world_set</code></a></td>
+<td>Réglage du grand monde</td>
+</tr>
+<tr>
+<td><a href="#shader_list"><code>shader_list</code></a></td>
+<td>Lecture des shaders</td>
+</tr>
+<tr>
+<td><a href="#shader_get"><code>shader_get</code></a></td>
+<td>Lecture d'un shader</td>
+</tr>
+<tr>
+<td><a href="#shader_set"><code>shader_set</code></a></td>
+<td>Écriture d'un shader</td>
+</tr>
+<tr>
+<td><a href="#shader_blocks"><code>shader_blocks</code></a></td>
+<td>Lecture des blocs de shader</td>
+</tr>
+<tr>
+<td><a href="#library_search"><code>library_search</code></a></td>
+<td>Recherche dans la bibliothèque en ligne : …</td>
+</tr>
+<tr>
+<td><a href="#library_add"><code>library_add</code></a></td>
+<td>Ajout d'un asset en ligne au projet</td>
+</tr>
+<tr>
+<td><a href="#pose_layers_get"><code>pose_layers_get</code></a></td>
+<td>Lecture du squelette et de ses retouches</td>
+</tr>
+<tr>
+<td><a href="#pose_layers_set"><code>pose_layers_set</code></a></td>
+<td>Retouche de la pose</td>
+</tr>
+<tr>
+<td><a href="#skeleton_animation_get"><code>skeleton_animation_get</code></a></td>
+<td>Lecture des mouvements du squelette</td>
+</tr>
+<tr>
+<td><a href="#skeleton_animation_set"><code>skeleton_animation_set</code></a></td>
+<td>Création d'un mouvement</td>
+</tr>
+<tr>
+<td><a href="#skeleton_fix_get"><code>skeleton_fix_get</code></a></td>
+<td>Lecture du squelette à corriger</td>
+</tr>
+<tr>
+<td><a href="#skeleton_fix_set"><code>skeleton_fix_set</code></a></td>
+<td>Correction du squelette</td>
+</tr>
+<tr>
+<td><a href="#game_run"><code>game_run</code></a></td>
+<td>Essai du jeu</td>
+</tr>
+<tr>
+<td><a href="#scenes_list"><code>scenes_list</code></a></td>
+<td>Lecture des scènes du jeu</td>
+</tr>
+<tr>
+<td><a href="#scene_open"><code>scene_open</code></a></td>
+<td>Ouverture d'une scène</td>
+</tr>
+<tr>
+<td><a href="#scene_create"><code>scene_create</code></a></td>
+<td>Création d'une scène</td>
+</tr>
+<tr>
+<td><a href="#scene_delete"><code>scene_delete</code></a></td>
+<td>Suppression d'une scène</td>
+</tr>
+<tr>
+<td><a href="#game_export"><code>game_export</code></a></td>
+<td>Export du jeu</td>
+</tr>
+<tr>
+<td><a href="#view_capture"><code>view_capture</code></a></td>
+<td>Regard sur la scène</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ce-que-lagent-lit-de-chaque-outil">Ce que l'agent lit de chaque outil<a class="headerlink" href="#ce-que-lagent-lit-de-chaque-outil" title="Permanent link">&para;</a></h2>
+<p>La description exacte que l'agent reçoit pour chaque outil (en anglais).</p>
+<h3 id="scene_get"><code>scene_get</code><a class="headerlink" href="#scene_get" title="Permanent link">&para;</a></h3>
+<p>Read the scene: revision, player, world settings, scripts, a summary of the objects grouped by name (with counts, tags and asset), and one page of objects with their world bounds. Call this before editing. Use name_contains, tag, limit and offset to read other objects. To change many objects at once, you do not need their ids: entities_update and entities_delete accept a where filter.</p>
+<h3 id="project_rules"><code>project_rules</code><a class="headerlink" href="#project_rules" title="Permanent link">&para;</a></h3>
+<p>Read how to work in this editor: the method for large requests, how to prove your work, how to build worlds. Read this first if you have not been given it.</p>
+<h3 id="plan_set"><code>plan_set</code><a class="headerlink" href="#plan_set" title="Permanent link">&para;</a></h3>
+<p>Write or rewrite your plan for a large request: the user sees it in the chat, and it survives if the conversation restarts. 4 to 10 steps, in order, each with a check saying how you will prove it works. Dropping a step that is not done requires dropped_because. Steps already done keep their evidence.</p>
+<h3 id="plan_step"><code>plan_step</code><a class="headerlink" href="#plan_step" title="Permanent link">&para;</a></h3>
+<p>Update one step of your plan, by its number from 1. Mark a step doing when you start it. done requires evidence: what you actually observed that proves it works, not what you intended, and is refused while objects float. blocked requires evidence too: what stopped you.</p>
+<h3 id="assets_folders"><code>assets_folders</code><a class="headerlink" href="#assets_folders" title="Permanent link">&para;</a></h3>
+<p>List the folders of the asset library: their paths, how many models each one has, and how many are in formats the engine cannot read yet. Call this when the user names a pack or a folder. If what they name is not there, tell them instead of using something else.</p>
+<h3 id="assets_search"><code>assets_search</code><a class="headerlink" href="#assets_search" title="Permanent link">&para;</a></h3>
+<p>Search every folder of the asset library by words in the file path (all words must match, including words of the folder or pack name). Returns objects you can place; with kind "image", images for game.hud_image and interface screens (UI packs, icons), each with its size in pixels; with kind "sound", sounds for game.sound and game.music (WAV, MP3, OGG, FLAC); with kind "video", videos for game.video and game.hud_video (MP4, M4V, MOV).</p>
+<h3 id="asset_info"><code>asset_info</code><a class="headerlink" href="#asset_info" title="Permanent link">&para;</a></h3>
+<p>Inspect an asset before placing it: real size in metres, pivot, triangles, skeleton. Check sizes: assets from different packs may not share a scale. For an animated character, bone_positions gives where each bone starts at rest, in the model's own frame, in metres (unscaled): use it to find the hand when the model has no hand bone. legs_for_feet_on_ground counts the legs the engine recognises for placeFeet.</p>
+<h3 id="entities_create"><code>entities_create</code><a class="headerlink" href="#entities_create" title="Permanent link">&para;</a></h3>
+<p>Add objects to the scene, as a single undoable step. Prefer one call with many objects over many calls.</p>
+<h3 id="entities_scatter"><code>entities_scatter</code><a class="headerlink" href="#entities_scatter" title="Permanent link">&para;</a></h3>
+<p>Fill an area with many copies of an asset in one call: a large floor, a forest, a field of rocks. pattern "grid" lays them every spacing metres and covers the size; pattern "random" places count of them, at least spacing apart, with the same result for the same seed. A single undoable step. Use this for open spaces rather than listing objects one by one.</p>
+<h3 id="scripts_reference"><code>scripts_reference</code><a class="headerlink" href="#scripts_reference" title="Permanent link">&para;</a></h3>
+<p>Read this before writing a script: how game scripts work, with every function they can call and an example. Whatever rules the user's game has are written as scripts: how characters behave, pickups, doors, score, HUD, and an ending if it has one.</p>
+<h3 id="scripts_set"><code>scripts_set</code><a class="headerlink" href="#scripts_set" title="Permanent link">&para;</a></h3>
+<p>Create or replace a game script, as one undoable step. It runs when the game runs, and is refused if it does not compile, with the line of the error. Keep related logic in one script.</p>
+<h3 id="screens_set"><code>screens_set</code><a class="headerlink" href="#screens_set" title="Permanent link">&para;</a></h3>
+<p>Create or replace an interface screen of the game, as one undoable step: a score, an ammo bar, a help panel, a workshop menu. The user sees it and changes it with the mouse in the editor (Game tab, Interface screens): prefer it to game.hud_* calls in a script for an interface that does not change shape. The engine places it like the HUD, and makes it live without code: bound values, buttons that send their event, screens shown or hidden by an event or a control. To rename it, give its current name in name and the new one in screen.name.
+screen = {name, visible (shown from the start, default true), show_on: [events], hide_on: [events], toggle: a control name that opens and closes it, cursor (shows the mouse cursor while shown, for buttons), pause (pauses the world while shown), elements: [...]}.
+element = {name (unique in the screen, no /), kind: text|button|bar|image|panel|input, parent: a panel of the screen (it then places the element; anchor only aligns it left, center or right), anchor: top_left|top|top_right|left|center|right|bottom_left|bottom|bottom_right (the point of the screen holding it, and of the element: it stays in that corner on every screen shape), offset: [x, y] from that point in fractions of the screen (x of the width, y of the height; [-0.02, 0.03] from top_right), w, h (fractions of the width and height), auto_w, auto_h (fit the content; a button or field in a panel takes the panel's width), text ([b]bold[/b], [color=#rrggbb]...[/color]), size (text height, fraction of the screen height; left out: the Interface theme), color, text_color (#rrggbb; left out: the theme), opacity, image (a project image file), placeholder, max_length, value (bar, 0 to 1), layout: column|row|grid, columns, gap, padding, scroll, event (button: the event sent on click, with {cible = "screen/element", ecran, element}; the Trigger reacts to it with quand = evenement), then: nothing|close|open|replace|toggle and then_screen (button: what it does to its screen or another), binding}.
+UI pack images (assets_search kind image gives each image's size in pixels; never guess it): background (button, panel, bar: an image drawn instead of the color; button: its normal state), background_hover, background_pressed, background_disabled (button states; left out: the normal image), disabled (button: greyed out, does not click; scripts change it with game.hud_set(key, {disabled=})), fill_image (bar: the filled part, cut by the value without stretching), fill: left_to_right|right_to_left|bottom_to_top|top_to_bottom, uv: [u0, v0, u1, v1] (0 to 1: the part of the file shown by an image, or by a button's icon image; an icon in a sprite sheet of 4 x 4 cells: [col/4, row/4, (col+1)/4, (row+1)/4]), slice: [left, top, right, bottom] (a stretchable 9-slice frame for the background, an image and the bar fill: margins in pixels of the image, the corners keep their size, the edges and middle stretch), slice_edges: stretch|repeat, slice_scale (corner size: 1 is one image pixel per screen pixel at 1080 pixels high).
+binding = {source: event|value|system, name (the event, such as sante.change; the value a script sets with game.set_value; the system), field (the field read: vie), target (event: joueur, an object's name, or empty for anyone; system: the object carrying it, joueur by default), max_field (the field giving the maximum: max) or max (a number), format (text: "Vie : {valeur} / {max}"), decimals}.
+Scripts reach a screen with game.screen_show, game.screen_hide, game.set_value and game.hud_set("screen/element", {text=...}).</p>
+<h3 id="screens_get"><code>screens_get</code><a class="headerlink" href="#screens_get" title="Permanent link">&para;</a></h3>
+<p>Read the interface screens of the game. Without a name, lists them; with a name, returns the whole screen in the format of screens_set.</p>
+<h3 id="screens_delete"><code>screens_delete</code><a class="headerlink" href="#screens_delete" title="Permanent link">&para;</a></h3>
+<p>Delete an interface screen, as one undoable step.</p>
+<h3 id="scripts_get"><code>scripts_get</code><a class="headerlink" href="#scripts_get" title="Permanent link">&para;</a></h3>
+<p>Read the game scripts. Without a name, lists them; with a name, returns its code.</p>
+<h3 id="modules_list"><code>modules_list</code><a class="headerlink" href="#modules_list" title="Permanent link">&para;</a></h3>
+<p>List the tested game modules shipped with the editor, such as health or inventory: what each does, its settings, the events it sends and listens to, and whether this game uses it. Prefer adding a module to rewriting what it does. Add one only when the user asked for what it does, or agreed to it.</p>
+<h3 id="recipes_get"><code>recipes_get</code><a class="headerlink" href="#recipes_get" title="Permanent link">&para;</a></h3>
+<p>Tested Luau recipes for common behaviors: game phases, waves, door and key, timer, dialogue, trigger zones. Without id: the list, with when to use each. With id: its code and notes. Read the list before writing such a behavior yourself, then adapt the recipe to the user's game: its names, tags and values.</p>
+<h3 id="modules_info"><code>modules_info</code><a class="headerlink" href="#modules_info" title="Permanent link">&para;</a></h3>
+<p>Read how to use a module: its notes for you, and the fields of the events it sends and listens to.</p>
+<h3 id="modules_add"><code>modules_add</code><a class="headerlink" href="#modules_add" title="Permanent link">&para;</a></h3>
+<p>Add a module to this game, with the modules it needs, as one undoable step. Its scripts become ordinary scripts of the game, which you and the user may change. settings: only those to change from their defaults.</p>
+<h3 id="modules_remove"><code>modules_remove</code><a class="headerlink" href="#modules_remove" title="Permanent link">&para;</a></h3>
+<p>Remove a module and its scripts from this game, as one undoable step, even if its scripts were changed. Refused while another added module needs it.</p>
+<h3 id="systems_attach"><code>systems_attach</code><a class="headerlink" href="#systems_attach" title="Permanent link">&para;</a></h3>
+<p>Place an activated module on objects or groups, with their values: each object or group has its own (an early skeleton and a boss do not have the same health). Placed on a group, it applies to all its children; a child can change a value for itself with systems_set. Modules it needs on the same object are placed too. values: only those to change from the defaults, among the module's settings with scope "object". One undoable step.</p>
+<h3 id="systems_set"><code>systems_set</code><a class="headerlink" href="#systems_set" title="Permanent link">&para;</a></h3>
+<p>Change the values of a module on one object or group. A value set to null is no longer changed here: it comes back from the group, or the default. Setting a value on a child of a group that carries the module makes this child differ from the others. One undoable step.</p>
+<h3 id="systems_detach"><code>systems_detach</code><a class="headerlink" href="#systems_detach" title="Permanent link">&para;</a></h3>
+<p>Remove a module from one object or group, with its values. Its children no longer carry it, unless placed on them. One undoable step.</p>
+<h3 id="systems_inherit"><code>systems_inherit</code><a class="headerlink" href="#systems_inherit" title="Permanent link">&para;</a></h3>
+<p>Cut or restore, on one folder or object, the inheritance of a module from the folders above it. Cut: neither it nor what it contains receives the module or its values from above; it can then carry its own, starting from the defaults (systems_attach). Example: Health on "Plants", cut on its subfolder "Bushes", then Health with less health placed on "Bushes". One undoable step.</p>
+<h3 id="systems_get"><code>systems_get</code><a class="headerlink" href="#systems_get" title="Permanent link">&para;</a></h3>
+<p>Read the modules that apply to an object, placed on it or on one of its groups, with its final values and where each comes from: this object, a group, or the default.</p>
+<h3 id="modules_set"><code>modules_set</code><a class="headerlink" href="#modules_set" title="Permanent link">&para;</a></h3>
+<p>Change the game-wide settings of a module added to this game (scope "game"). Values per object or group go through systems_set. Only the given settings change, as one undoable step.</p>
+<h3 id="scripts_delete"><code>scripts_delete</code><a class="headerlink" href="#scripts_delete" title="Permanent link">&para;</a></h3>
+<p>Delete a game script, as one undoable step.</p>
+<h3 id="entities_update"><code>entities_update</code><a class="headerlink" href="#entities_update" title="Permanent link">&para;</a></h3>
+<p>Change objects: asset, position, rotation, scale, name, color, collider, tags, visible. Only the given fields change. A single undoable step. Either list updates by id, or change every object matching where with the same set of values: use this to change a whole floor at once.</p>
+<h3 id="prefab_create"><code>prefab_create</code><a class="headerlink" href="#prefab_create" title="Permanent link">&para;</a></h3>
+<p>Make a reusable object from an object and everything it contains: build one house, then place as many copies as you like with entities_create or entities_scatter and the asset "prefab:Name". Nothing moves. Correcting one copy and calling prefab_apply corrects them all.</p>
+<h3 id="prefab_list"><code>prefab_list</code><a class="headerlink" href="#prefab_list" title="Permanent link">&para;</a></h3>
+<p>List the reusable objects of this scene: their pieces, their copies, and which copies were changed without being applied.</p>
+<h3 id="prefab_apply"><code>prefab_apply</code><a class="headerlink" href="#prefab_apply" title="Permanent link">&para;</a></h3>
+<p>Make this copy the new definition: every other copy takes the same pieces, each keeping its own place. Give the id of the copy, or of a piece in it.</p>
+<h3 id="prefab_revert"><code>prefab_revert</code><a class="headerlink" href="#prefab_revert" title="Permanent link">&para;</a></h3>
+<p>Give this copy back the shape of its definition, losing its changes. Its place, name and tags stay.</p>
+<h3 id="prefab_detach"><code>prefab_detach</code><a class="headerlink" href="#prefab_detach" title="Permanent link">&para;</a></h3>
+<p>Make this copy ordinary objects, which no longer follow the definition.</p>
+<h3 id="prefab_delete"><code>prefab_delete</code><a class="headerlink" href="#prefab_delete" title="Permanent link">&para;</a></h3>
+<p>Delete the definition of a reusable object. Its copies stay in the scene, as ordinary objects.</p>
+<h3 id="entities_group"><code>entities_group</code><a class="headerlink" href="#entities_group" title="Permanent link">&para;</a></h3>
+<p>Put objects in a new folder object, as a single undoable step: a house made of walls and a roof becomes one thing to move, turn, duplicate or ground. Give ids, or a where filter. The objects do not move.</p>
+<h3 id="entities_ungroup"><code>entities_ungroup</code><a class="headerlink" href="#entities_ungroup" title="Permanent link">&para;</a></h3>
+<p>Take the objects out of a folder object, and delete the folder. The objects do not move.</p>
+<h3 id="entities_delete"><code>entities_delete</code><a class="headerlink" href="#entities_delete" title="Permanent link">&para;</a></h3>
+<p>Delete objects, by ids or by a where filter, as a single undoable step. What they contain is deleted with them. The player cannot be deleted.</p>
+<h3 id="entities_ground"><code>entities_ground</code><a class="headerlink" href="#entities_ground" title="Permanent link">&para;</a></h3>
+<p>Rest objects on the surface below them, by ids or by a where filter, lowest first, so stacks settle correctly. A folder goes down as one block, keeping its shape.</p>
+<h3 id="animation_files_search"><code>animation_files_search</code><a class="headerlink" href="#animation_files_search" title="Permanent link">&para;</a></h3>
+<p>Search the animation clip files in the library. Give character_asset to learn, for each file found, whether it was made for that character's skeleton (skeleton_fit): a file with the same bone names but other bone lengths is adapted to the character (adapted_to_character: its rotations only, the hips scaled), and fits; a file made for a skeleton whose bones have other names (Mixamo, Unreal, Blender, Unity...) is borrowed through a bone map found from the names and the shape of both skeletons (borrowed_from_other_skeleton), and fits too: check it with animation_clips. With borrowAnimations off (player_set), only files with the same bone names fit.</p>
+<h3 id="animation_clips"><code>animation_clips</code><a class="headerlink" href="#animation_clips" title="Permanent link">&para;</a></h3>
+<p>List the clips in an animation file, with their durations for a character's skeleton, and whether the file was made for that skeleton (skeleton_fit). Use a file only if it fits. One made for other proportions of the same skeleton is adapted to the character (adapted_to_character): it fits, played with the character's proportions. One made for a skeleton whose bones have other names is borrowed (borrowed_from_other_skeleton): bone_map then says which bone of the file each body bone of the character follows, found by name or by shape; fix a bone marked check, or a wrong one, with player_set boneMap {character bone: file bone, or "" for none}.</p>
+<h3 id="player_set"><code>player_set</code><a class="headerlink" href="#player_set" title="Permanent link">&para;</a></h3>
+<p>Choose the controlled character and tune it. Every field is optional and merged with the current values, as one undoable step: if any value is refused, nothing changes. animation is the state graph, and from may be "*". The first valid transition wins. Condition parameters: speed, speedFraction, verticalSpeed, grounded, airTime, jump, moveInput, run, stateTime, stateProgress, forwardSpeed and sideSpeed (m/s seen from the character: negative backwards, positive to its right), strafing (1 while it faces the camera). A state may have back, left and right clips, and the diagonals forwardLeft, forwardRight, backLeft, backRight (8 directions when the file has them), blended by direction while the player faces the camera (faceCamera, or faceCameraAction held): walking sideways and backwards. placeFeet sets the feet on slopes and steps. The default graph has the states idle, walk, run, jump_start, air, land, using clip names that only suit some models (Idle_A, Walking_A, Running_A, Jump_Start, Jump_Idle, Jump_Land): with any other model, read its clips with animation_clips and give your own graph.</p>
+<h3 id="world_set"><code>world_set</code><a class="headerlink" href="#world_set" title="Permanent link">&para;</a></h3>
+<p>Change the game's window, lighting, simulation, camera planes and character walking (navigation). Only the given fields change, as one undoable step.</p>
+<h3 id="translations_get"><code>translations_get</code><a class="headerlink" href="#translations_get" title="Permanent link">&para;</a></h3>
+<p>Read the game's translations: its original language, the languages it offers, and every text the player sees (found in the systems' settings, the title, the controls' names and game.t("...") in scripts), each with where it appears and its translation in each offered language, or null when missing. The systems' own texts (the Menu's "Jouer", the Map's "Carte"...) are listed too, in the original language, with "builtin": what the system already says in other languages (French, English), shown to the player while the table has no translation for that language: they are not missing there, but translate them for every other offered language, and you may replace a built-in one. Call it before translations_set.</p>
+<h3 id="translations_set"><code>translations_set</code><a class="headerlink" href="#translations_set" title="Permanent link">&para;</a></h3>
+<p>Write translations into the table of one offered language: the text exactly as written in the game (from translations_get), and its translation. An empty translation removes it. Keep the [b]...[/b] and [color=...] tags and the {1}, {2} or {outil} marks of the original. The table is a file of the project: this is not undone by history_undo.</p>
+<h3 id="controls_list"><code>controls_list</code><a class="headerlink" href="#controls_list" title="Permanent link">&para;</a></h3>
+<p>List the game's controls: every action the scripts read with game.action, game.pressed or game.released, its key, its gamepad button, the name the player sees, and where it comes from: the game, a module that declares it (combat.basique: block), or the engine (moving, running, jumping, pause on Escape).</p>
+<h3 id="controls_set"><code>controls_set</code><a class="headerlink" href="#controls_set" title="Permanent link">&para;</a></h3>
+<p>Add a control to the game, or change one: one per key the game uses, never a key read directly. name is what scripts read (game.pressed("open_inventory")); key is a key name from controls_list (e, i, tab, f1, space, lshift, mouse_left, mouse_right, wheel_up...); pad a gamepad button (pad_a, pad_y, pad_lb, pad_up...); label the name the player sees in a key menu, in the user's language ("Open the inventory"). Changing a control a module declares, or a movement, keeps its name and sets the game's own key.</p>
+<h3 id="controls_remove"><code>controls_remove</code><a class="headerlink" href="#controls_remove" title="Permanent link">&para;</a></h3>
+<p>Remove a control the game added. A control declared by a module, or a movement, cannot be removed: change its key with controls_set instead, or remove the module.</p>
+<h3 id="mixer_set"><code>mixer_set</code><a class="headerlink" href="#mixer_set" title="Permanent link">&para;</a></h3>
+<p>Change the game's sound mixer (game settings, Sound mixer section; scene_get shows it in world.mixer). Every sound belongs to a group: music, effects, ambience, voice, ui are always there, and the user can add more (a radio, a boss's voice). groups: each item changes the given fields of the group with that id or name, or adds a group with a new id: volume 0..1 (the game's balance; the player's options menu multiplies it), muted, muffle 0..1 (always muffled, like a radio behind a wall: 0 clear, 1 under water), label (the name the user sees). remove: ids of added groups to delete (the five default groups stay). ducking replaces the automatic lowering rules: while a sound of when plays, lower goes down to level of its volume in attack seconds, and comes back in release seconds (default: voice lowers music to 0.4). In scripts, a sound picks its group with game.sound(file, {group = "ambience"}); game.mute and game.muffle change a group while playing (a cave, under water), and a trigger rule can too. unfocused: what the game's sound does when its window is minimized or the player switches to another window: mute (the default), lower (to unfocused_level 0..1 of its volume) or keep.</p>
+<h3 id="terrain_generate"><code>terrain_generate</code><a class="headerlink" href="#terrain_generate" title="Permanent link">&para;</a></h3>
+<p>Make the scene's terrain (a map with relief and biomes), or give the existing one a new relief. Only when the user asked for a world, a map or a new relief: replacing a terrain loses the user's sculpting and painting, so it needs replace true. Objects resting on the ground follow the new relief; the vegetation of biomes that remain is kept. shape: land (hills to the edges), continent (one land surrounded by sea), continents (several), archipelago (islands). without_biomes: biome ids the world must not have (snow, desert...).</p>
+<h3 id="terrain_brush"><code>terrain_brush</code><a class="headerlink" href="#terrain_brush" title="Permanent link">&para;</a></h3>
+<p>Change part of the terrain, like the user's brushes: raise (a hill), lower (a hollow, a valley), flatten (a building site, a square), smooth, ramp (a slope between two points, like a road up a hill), paint (give a biome to the ground: a sand path, a field). points are world [x, z] centres: several points make a stroke along them, in one undoable step (space them about a radius apart; raise and lower add up where circles overlap). Objects in the area do not move: ground them afterwards with entities_ground (the result lists them).</p>
+<h3 id="water_add"><code>water_add</code><a class="headerlink" href="#water_add" title="Permanent link">&para;</a></h3>
+<p>Fill the hollow under a world point [x, z] with a lake, up to where it would overflow: dig a hollow first with terrain_brush lower if there is none. The lake is an object inside the terrain object.</p>
+<h3 id="water_set"><code>water_set</code><a class="headerlink" href="#water_set" title="Permanent link">&para;</a></h3>
+<p>Change a water object of the terrain (the sea or a lake): its surface height (higher covers more land), its rendering (realistic, or stylized for a low poly game), its look (a ready-made style first, then any setting), its swell, colours, clarity, foam and wakes. The waves you set are the ones the game's floating objects, swimmers and boats follow, in both renderings.</p>
+<h3 id="water_remove"><code>water_remove</code><a class="headerlink" href="#water_remove" title="Permanent link">&para;</a></h3>
+<p>Remove a water object of the terrain (a lake, or the sea): its area becomes dry land.</p>
+<h3 id="vegetation_add"><code>vegetation_add</code><a class="headerlink" href="#vegetation_add" title="Permanent link">&para;</a></h3>
+<p>Sow a model over a biome, like the user dragging it onto the biome's Vegetation: thousands of plants (trees, bushes, rocks, grass), placed by themselves, drawn in one go, editable by the user plant by plant. Use this for forests and any repeated nature on a terrain, never entities_scatter. It makes a plant kind object inside the biome: attach systems to it to give them to all its plants (collecte for trees to chop). Returns the plant kind's id and how many plants it sowed.</p>
+<h3 id="vegetation_set"><code>vegetation_set</code><a class="headerlink" href="#vegetation_set" title="Permanent link">&para;</a></h3>
+<p>Change a plant kind (density, sizes, slope, sinking, trunk, draw distance), as one undoable step. Changing the density resows it: plants the user edited by hand may move.</p>
+<h3 id="vegetation_remove"><code>vegetation_remove</code><a class="headerlink" href="#vegetation_remove" title="Permanent link">&para;</a></h3>
+<p>Stop sowing a plant kind: its plants and its object go away, with the systems attached to it.</p>
+<h3 id="scene_validate"><code>scene_validate</code><a class="headerlink" href="#scene_validate" title="Permanent link">&para;</a></h3>
+<p>Check the scene without changing it: player, colliders, ground under the player, animation clips, whether every object is connected to the ground, and whether characters that walk (game.walk_to) stand on walkable ground the player can reach. Fix every error before game_run.</p>
+<h3 id="timeline_set"><code>timeline_set</code><a class="headerlink" href="#timeline_set" title="Permanent link">&para;</a></h3>
+<p>Create or replace an animation made by hand, or a cutscene, as one undoable step. The engine plays it; the user sees it on the timeline at the bottom of the editor and edits it with the mouse. kind animation: object tracks only (and events): a door that opens, a platform that rises or comes and goes, a drawbridge, a blinking object. kind cutscene: also cameras, characters, sounds, subtitles and events; while it plays the player has no control, and gets it back at the end. Each object track has keyframes per channel: position, rotation (degrees, as rotation_degrees), scale, visible (always step), color ([r, g, b] 0 to 1). Give them in the WORLD, as entities_update would: they are stored relative to the object's parent, so moving the parent later keeps the animation. A channel without keys does not change the object. Its children follow it. Rotation from 0 to 360 is a full turn. Play it from the Trigger (actions animation / cinematique, with an event at the end), from a script (game.play_timeline), or from the start with autoplay. Check it with view_capture (timeline, time) and in game with game_run (play_timeline on a segment, capture_steps).</p>
+<h3 id="timelines_list"><code>timelines_list</code><a class="headerlink" href="#timelines_list" title="Permanent link">&para;</a></h3>
+<p>List the animations made by hand and the cutscenes of the open scene: id, name, kind, length, how it plays, its objects and cues, and what it names that no longer exists.</p>
+<h3 id="timeline_get"><code>timeline_get</code><a class="headerlink" href="#timeline_get" title="Permanent link">&para;</a></h3>
+<p>Read one animation or cutscene in full, in the format of timeline_set, with values in the world: to change it, edit this and give it back.</p>
+<h3 id="timeline_delete"><code>timeline_delete</code><a class="headerlink" href="#timeline_delete" title="Permanent link">&para;</a></h3>
+<p>Delete an animation or a cutscene, only when the user asks. Trigger rules and scripts that play it then fail: fix them.</p>
+<h3 id="scene_save"><code>scene_save</code><a class="headerlink" href="#scene_save" title="Permanent link">&para;</a></h3>
+<p>Save the scene file. The user's scene is otherwise only changed in memory.</p>
+<h3 id="history_undo"><code>history_undo</code><a class="headerlink" href="#history_undo" title="Permanent link">&para;</a></h3>
+<p>Undo the last change, whether made by you or by the user.</p>
+<h3 id="history_redo"><code>history_redo</code><a class="headerlink" href="#history_redo" title="Permanent link">&para;</a></h3>
+<p>Redo the last undone change.</p>
+<h3 id="material_list"><code>material_list</code><a class="headerlink" href="#material_list" title="Permanent link">&para;</a></h3>
+<p>List the materials: those of the project (files materials/*.wmmat, with how many objects use each) and the starter library (stone, wood, metal, grass, sand, snow, dirt, rock... real PBR textures, CC0). A starter material is copied into the project the first time you use it, by its path, in material_apply, material_set (from) or terrain_materials.</p>
+<h3 id="material_set"><code>material_set</code><a class="headerlink" href="#material_set" title="Permanent link">&para;</a></h3>
+<p>Create a project material, or change one: every object and terrain layer using it changes with it (a shared material). Give path to change an existing one; otherwise name makes a new file. from copies a starter material (or another one) as the starting point, with its textures. placement world lays the textures by the world on the three axes, without stretching on scaled objects (best for walls, floors, rocks); model follows the model's UVs.</p>
+<h3 id="material_apply"><code>material_apply</code><a class="headerlink" href="#material_apply" title="Permanent link">&para;</a></h3>
+<p>Put a material on objects (base shapes or models): it replaces the model's own materials, on all its parts. material is a project path or a starter library path (copied into the project); an empty string gives the objects back their model's materials.</p>
+<h3 id="terrain_materials"><code>terrain_materials</code><a class="headerlink" href="#terrain_materials" title="Permanent link">&para;</a></h3>
+<p>Cover the terrain with real materials instead of the flat colors of its biomes, and set them up. cover gives each biome a starter material (grass, rock, snow, sand, mud) and three automatic rules (rock on slopes, snow on peaks, sand by the water). Then: add materials as layers (16 at most), set the material of a biome, replace the automatic rules, or turn it all off. Rules apply in order, the last one wins; hand painting (terrain_paint_material) wins over all of them.</p>
+<h3 id="terrain_paint_material"><code>terrain_paint_material</code><a class="headerlink" href="#terrain_paint_material" title="Permanent link">&para;</a></h3>
+<p>Paint a material on the ground, over the biomes and the automatic rules, like the user's Materials brush: area fills a polygon (a field, a square, a beach), path follows a line (a road, a river bank: points are its bends, radius half its width), dabs paints a circle at each point. erase gives the ground back to the biomes and rules. One undoable step.</p>
+<h3 id="terrain_material_at"><code>terrain_material_at</code><a class="headerlink" href="#terrain_material_at" title="Permanent link">&para;</a></h3>
+<p>Read what covers the ground at world points [x, z]: the dominant material, the share of each layer (biome, automatic rules and painting together), and how much of it is painted by hand.</p>
+<h3 id="world_map"><code>world_map</code><a class="headerlink" href="#world_map" title="Permanent link">&para;</a></h3>
+<p>Read a summary of the whole map, made for large worlds that are too big to read object by object: its size, a text map of the ground (one letter per region, ~ for water), where the objects are (one character per 256 m tile), the sectors with their objects, and the large-world settings. Call this first on a large map, then read one part at a time with area_get. For an image of the whole map or of a sector, use view_capture with view top and area.</p>
+<h3 id="area_get"><code>area_get</code><a class="headerlink" href="#area_get" title="Permanent link">&para;</a></h3>
+<p>Read one part of the map instead of the whole scene: a sector, a 256 m tile, a rectangle or a circle's square. Returns how many objects stand there, grouped by name, what the ground is like (heights, regions, water, steep share), the sectors it touches, and one page of objects (placed objects: a building counts once, with its parts counted). Use name_contains, tag, limit and offset for the next pages; summary_only to skip the list. Without area, the sector you focus on.</p>
+<h3 id="sectors_list"><code>sectors_list</code><a class="headerlink" href="#sectors_list" title="Permanent link">&para;</a></h3>
+<p>List the sectors of the map: named rectangles the user and you use to find your way, to work on one part at a time, and to lock what must not change. For each: its limits, how many objects stand in it, and whether it is locked. Says which sector you focus on.</p>
+<h3 id="sector_create"><code>sector_create</code><a class="headerlink" href="#sector_create" title="Permanent link">&para;</a></h3>
+<p>Create a sector: a named rectangle of the map, in the user's language (Harbour, Old town, North forest). Give its limits as min and max [x, z], as a tile "x_z", or as center and radius. focus: true works on it at once (sector_focus). A single undoable step.</p>
+<h3 id="sector_set"><code>sector_set</code><a class="headerlink" href="#sector_set" title="Permanent link">&para;</a></h3>
+<p>Change a sector: rename it, move its limits (min and max, or tile), or lock and unlock it. A locked sector refuses every change in it, to the user and to you, until it is unlocked: lock or unlock only when the user asks. A single undoable step.</p>
+<h3 id="sector_delete"><code>sector_delete</code><a class="headerlink" href="#sector_delete" title="Permanent link">&para;</a></h3>
+<p>Remove a sector, only when the user asks: its objects stay where they are. Refused for a locked sector. A single undoable step.</p>
+<h3 id="sector_focus"><code>sector_focus</code><a class="headerlink" href="#sector_focus" title="Permanent link">&para;</a></h3>
+<p>Work on one sector: scene_get then lists only its objects (and counts the rest), area_get reads it by default, and creating objects outside it is refused unless you give outside_focus. The user sees it in the editor, where the other sectors are hidden. An empty sector works on the whole map again. Not an edit: nothing to undo.</p>
+<h3 id="entities_fill"><code>entities_fill</code><a class="headerlink" href="#entities_fill" title="Permanent link">&para;</a></h3>
+<p>Fill a part of a large map with copies of an asset or a reusable object (prefab:Name), by rules instead of by hand: a forest on the hills, rocks in the mountains, houses on flat dry land. Copies stand on the ground, at least spacing apart, and only where every rule holds: regions (biomes), slope, height, away from water, away from what is already there (clearance). count or density_per_hectare says how many. The answer counts what each rule turned down, to adjust. A single undoable step, in one folder.</p>
+<h3 id="entities_place_along"><code>entities_place_along</code><a class="headerlink" href="#entities_place_along" title="Permanent link">&para;</a></h3>
+<p>Place copies of an asset or a reusable object (prefab:Name) along a path on the ground: lamp posts along a road, a fence, a row of trees, houses facing a street. points is the path [[x, z], ...]; a copy every spacing metres, at each sideways offset (left is negative, right positive: [-7, 7] for both sides of a road). facing turns the model's forward axis (+z): along the path, toward it, away from it, or random; add yaw_offset_degrees if the model faces another way, and check with view_capture. Spots under water are skipped. A single undoable step, in one folder.</p>
+<h3 id="large_world_set"><code>large_world_set</code><a class="headerlink" href="#large_world_set" title="Permanent link">&para;</a></h3>
+<p>The settings of a large world in one place. large_world saves the scene in 256 m pieces and lets far objects sleep in the game. activity_radius_m: how far around the player things stay awake (300 m by default, the same on every computer). always_active_systems: systems whose objects never sleep. always_active turns objects on or off as always active (a messenger crossing the map, a patrolling boss): keep them few, they cost every step. always_active_budget: how many may stay awake before scene_validate and the editor warn (100 by default; advice, not a limit). Only the given fields change, as one undoable step. The answer says how many objects are always active, counted as the game does (the tag, or a system of always_active_systems).</p>
+<h3 id="shader_list"><code>shader_list</code><a class="headerlink" href="#shader_list" title="Permanent link">&para;</a></h3>
+<p>List the creator shaders: those of the project (files shaders/*.wmshader in code, shaders/*.wmgraph in connected blocks: whether each passed the three checks, its problems by line (and block), its params, how many materials use it) and the ready-made recipes shipped with the editor (hologram, dissolve, wind in foliage, glowing rim, stylized water, lava, blinking), each in code and in blocks. A recipe is copied into the project by shader_set (from). Prefer a recipe and its params to writing a shader; when the creator works with blocks, take the .wmgraph one.</p>
+<h3 id="shader_get"><code>shader_get</code><a class="headerlink" href="#shader_get" title="Permanent link">&para;</a></h3>
+<p>Read a creator shader: its code, its params, and whether it passed the three checks (with the problems, by line). path is a project shader or a recipe path from shader_list. For a .wmgraph: graph (the blocks, as JSON) and code (what the blocks become, read-only); a problem names its block.</p>
+<h3 id="shader_set"><code>shader_set</code><a class="headerlink" href="#shader_set" title="Permanent link">&para;</a></h3>
+<p>Create or change a creator shader of the project: shaders/&lt;name&gt;.wmshader with code (the whole text), or shaders/&lt;name&gt;.wmgraph with graph (the whole block graph, as JSON: see shader_blocks), or from (a recipe path or another project shader) to start from it. The answer is the result of the three checks (text, sandbox, the engine's real shader) with messages by line: when refused, the file is still saved but objects keep the last valid version (or their base material); fix the lines and call it again before saying it works. Never change a shader from a pack: copy it with from. Then put it on a material with material_set (shader, shader_params) and look at it with view_capture (two moments for a moving shader). </p>
+<h3 id="shader_blocks"><code>shader_blocks</code><a class="headerlink" href="#shader_blocks" title="Permanent link">&para;</a></h3>
+<p>The blocks of a .wmgraph shader (the connected blocks the creator sees in the Blocks window): each type, its name and tooltip as shown to the creator, its inputs (with the value a free input takes), its fields, its output size, and where it works (surface, vertices). Read it before writing or changing a graph. </p>
+<h3 id="library_search"><code>library_search</code><a class="headerlink" href="#library_search" title="Permanent link">&para;</a></h3>
+<p>Search the online asset library for free 3D models (CC0 or CC BY), in the sources the user enabled (the Online folder of the Assets panel). The search runs on this computer: every word must match the name, author, category or tags. Returns ids for library_add, with each model's author, licence, source and download size. If no source is enabled, tell the user they can enable one in Assets &gt; Online &gt; Sources; never ask for an address yourself. Prefer the user's own library (assets_search) when it has what is needed.</p>
+<h3 id="library_add"><code>library_add</code><a class="headerlink" href="#library_add" title="Permanent link">&para;</a></h3>
+<p>Download one model of the online library into the project, with its licence: the files are checked (size, fingerprint, format), read by the engine, and copied into assets/ with a LICENCE.txt next to them. Returns the asset path to use with entities_create, and its author and licence. A model already in the project is not downloaded again. Tell the user what you added, by whom, and under which licence: a CC BY model must be credited, and the game export lists the credits for them.</p>
+<h3 id="pose_layers_get"><code>pose_layers_get</code><a class="headerlink" href="#pose_layers_get" title="Permanent link">&para;</a></h3>
+<p>Read a skinned model's skeleton and its pose layers. A pose layer is a hand correction added on top of the model's animations: a few bones turned by an angle (degrees around the character's own axes at rest, facing +Z: x points to its left, y up, z forward; +x leans an upward bone such as the back or neck forward, and swings a hanging arm backward: -x brings a hanging arm or leg forward). It applies to one clip (clip), to every clip (no clip) or to the seated pose the game builds on a vehicle (clip "@conduite"), with a weight from 0 to 1, for every character using this model (player, characters, other players). Returns each bone with its role (hips, spine, left_hand...), side and parent, and the layers.</p>
+<h3 id="pose_layers_set"><code>pose_layers_set</code><a class="headerlink" href="#pose_layers_set" title="Permanent link">&para;</a></h3>
+<p>Replace all the pose layers of a skinned model, as one undoable step (read them first with pose_layers_get, change what is needed, send the whole list). Each layer: name, clip (a clip name, none for every clip, "@conduite" for the seated vehicle pose), weight 0..1, enabled, bones {bone name: [x, y, z] degrees}, positions {bone name: [x, y, z]} to move the hips (or a root) in model units, around the character's axes (e.g. [0, -0.1, 0] crouches by 10 cm on a model in metres), and optionally mirror "left_to_right" or "right_to_left" to copy one side onto the other. Small angles (5 to 30 degrees) are usually enough. Game scripts can switch a layer per character with game.pose_layer(id, name, weight). An empty list removes them all.</p>
+<h3 id="skeleton_animation_get"><code>skeleton_animation_get</code><a class="headerlink" href="#skeleton_animation_get" title="Permanent link">&para;</a></h3>
+<p>Read the moves (skeleton animations) made in the tool for a skinned model: files animations/*.wmanim of the project, played like any clip of the model (player animation graph, systems' animation settings, timelines, game.play). Without name: the list of the model's moves, and all its clip names. With name: that move's keyframes, per bone: rotation keys in degrees around the character's own axes at rest (x to its left, y up, z forward; the same angles as pose layers, relative to the rest pose), position keys (hips) in model units relative to rest, ease linear/smooth/step. A clip of the model's files can be read as keyframes too (sampled 10 times per second), to correct it. Read the bones with pose_layers_get.</p>
+<h3 id="skeleton_animation_set"><code>skeleton_animation_set</code><a class="headerlink" href="#skeleton_animation_set" title="Permanent link">&para;</a></h3>
+<p>Create, replace or remove a move (skeleton animation) of a skinned model, as one undoable step. It is saved as animations/&lt;name&gt;.wmanim and plays like any clip of the model, under its name: in the player animation graph, the systems' animation settings (gathering, combat, enemies, dialogue...), timelines, game.play. bones: {bone name: {rotation: [{t: seconds, v: [x, y, z] degrees, ease: linear|smooth|step}], position: [{t, v: [x, y, z]}]}}: rotations around the character's own axes at rest, relative to the rest pose (like pose layers; small angles, 5 to 40 degrees); position for the hips only, in model units. Given bones replace the move's bones (merge: true keeps the other bones). from_clip starts from an existing clip of the model (sampled 10 times per second). A looping move whose channel starts at t=0 goes back to its first key at the end: a walk cycle needs keys for contact, passing, opposite contact, passing. mirror left_to_right copies the left side's rotation keys onto the right side, seen in a mirror (for a walk, give the other side opposite phases by hand instead). remove: true deletes the move. To put a point somewhere rather than compute angles, use move (any bone: the hips move, a hand or a foot bends the two bones above it, a middle bone turns the bones carrying it) or reach. Check the result with view_capture or game_run captures.</p>
+<h3 id="skeleton_fix_get"><code>skeleton_fix_get</code><a class="headerlink" href="#skeleton_fix_get" title="Permanent link">&para;</a></h3>
+<p>Read a skinned model's skeleton at rest and its corrections. Many models (above all auto-rigged ones: Meshy, Mixamo auto-rig) have joints placed beside where the limb should bend: a knee behind the leg, an elbow inside the arm. A correction moves or turns a joint inside the model at rest without moving the model (the skin stays where it is), removes a joint (its skin goes to its parent) or adds one (an attach point for a weapon, or a bone that takes the skin around it). Every animation then bends around the corrected joints. Returns each bone (name, parent, role, rest position in model units, the same units as move and position), the skeleton size, and the current correction.</p>
+<h3 id="skeleton_fix_set"><code>skeleton_fix_set</code><a class="headerlink" href="#skeleton_fix_set" title="Permanent link">&para;</a></h3>
+<p>Correct a skinned model's skeleton, as one undoable step; the model file is never changed (the correction is stored in the project, per model, and follows the model when it is renamed). Read the bones first with skeleton_fix_get. Operations, all optional, applied in this order: reset (true: back to the original skeleton, before the others); restore (bone names: their correction and removal are undone); place ({bone: [x, y, z]}: put the joint at this rest position, in model space and model units; its children follow unless alone); bones ({bone: {move: [x, y, z] model units, turn: [x, y, z] degrees around the character's axes, alone: true to leave its children where they were}}: replaces that bone's correction); remove (bone names: the joint disappears, its skin goes to its parent, its children are attached to the parent at the same place; the root cannot be removed); add ([{name, parent, position: [x, y, z] rest position in model units, skin: true to take the parent's skin beyond it, so it bends that part like a tail tip; without skin it is an attach point for game.attach / hand_bone}]). Animations of the file, borrowed animations, .wmanim motions and pose layers then bend around the corrected joints.</p>
+<h3 id="game_run"><code>game_run</code><a class="headerlink" href="#game_run" title="Permanent link">&para;</a></h3>
+<p>Play the game without a window, with scripted inputs, and report what happened: position, jumps, animation states, and what the scripts did: errors, game.log lines, HUD contents, objects left per tag, events sent (counted by name, and per target for events with a cible field, with the first and last step: hits taken before falling), what the characters driven by scripts did (metres walked, still present or not, the step they were removed), the videos that played (file, full screen or in the HUD, seconds watched, and whether they finished, were skipped or stopped), and the outcome (won or lost, at which step). The same inputs always give the same result. A segment with fight plays like a simple player: it walks to the nearest object carrying fight.tag (a system counts: @ennemis) that is still there and has not received sante.mort, and presses the attack when in reach. The report's fight part lists each target it struck: its first press, how many presses, and the step it fell (sante.mort, or removed), so the time an enemy takes to fall does not depend on the game's events. Use it to measure a fight: how long an enemy takes to fall, how long the player survives. A segment with no move and no action measures what happens when the player does nothing. Each input segment holds for a number of simulation steps (60 per second by default). move is [right, forward], relative to the camera, which starts behind the character. capture_steps returns an image of the game at those steps (4 at most); while the game shows the cursor, the image draws it where the segment put it. To test an interface, show the cursor from the game, then move it with mouse and click with buttons: drag and drop is a press, segments that move the mouse with the button held, then a release. The scripts part has a profile: each script (systems included) with its cost per step in milliseconds (average_ms, worst_ms, percent_of_step), the worst share of its time budget it used (time_budget_used_worst, 1 means stopped as an endless loop), its memory, and near_limit when it gets close to a limit; the heaviest comes first. Times are measured on this machine and vary a little between runs: compare scripts with each other, and optimise the ones at the top. To understand a bug without adding game.log lines, use inspect: at each point (script, line, from step), the game notes the script's variables just before that line runs (locals of the function and of its callers, the script's globals, shared) and goes on; scripts.inspections returns them, or reached: false if the line never ran. Several players (a game with the Multiplayer setting): players adds simulated players to the same game, without a network, as guests of the host: each one joins at join_step, plays its own inputs (the same segments) and leaves at leave_step. The report's scripts.players.guests lists each one: where they are, how far they walked, what they drive, whether they swim, have a menu open, and their own HUD (hud: key -&gt; text). The same inputs give the same game.</p>
+<h3 id="scenes_list"><code>scenes_list</code><a class="headerlink" href="#scenes_list" title="Permanent link">&para;</a></h3>
+<p>List the scenes of this game: one per place (a village, a house inside, a cave, a level). For each: whether it is open, whether the game starts there, its arrival points, and its passages (where each leads). Every other tool works on the open scene.</p>
+<h3 id="scene_open"><code>scene_open</code><a class="headerlink" href="#scene_open" title="Permanent link">&para;</a></h3>
+<p>Open another scene of this game to work on it. Refused while the open scene has unsaved changes: call scene_save first. The player, systems, scripts and game settings stay the same: they belong to the whole game.</p>
+<h3 id="scene_create"><code>scene_create</code><a class="headerlink" href="#scene_create" title="Permanent link">&para;</a></h3>
+<p>Create a new, empty scene in this game: another place, such as the inside of a house, a cave or a next level. Its name is a file name (no / \ : * ? " &lt; &gt; |). It opens unless open is false. Then build its ground, add arrival points (entities_create with arrival: true), and link it with passages (the passage module) both ways.</p>
+<h3 id="scene_delete"><code>scene_delete</code><a class="headerlink" href="#scene_delete" title="Permanent link">&para;</a></h3>
+<p>Delete a scene of this game, only when the user asks. It is set aside in the project's work folder, not erased. Refused for the start scene, the last scene, and the scene that holds the player's character. The answer lists the passages and scripts that still lead to it: fix them.</p>
+<h3 id="game_export"><code>game_export</code><a class="headerlink" href="#game_export" title="Permanent link">&para;</a></h3>
+<p>Build a standalone Windows copy of the game, which runs without the editor, in the export folder beside the scene, and check that it starts. It carries the scene as it is now, with only the files it uses. Use it only when the user asks. A previous export of this game is replaced. Tell the user about any warnings: a warning means something may be missing from the exported game.</p>
+<h3 id="view_capture"><code>view_capture</code><a class="headerlink" href="#view_capture" title="Permanent link">&para;</a></h3>
+<p>Look at the scene as it is in the editor, and get an image back. view: perspective, top, bottom, front, back, left, right. mode: normal, polygons, wireframe. Frames the given objects, or the whole scene. For perspective, yaw_degrees turns around the scene, and pitch_degrees is the height of the camera above the horizon: positive looks down from above (30 by default), negative looks up from under the ground. If an image looks dark, check the camera before changing the lighting. camera_id looks through a placed camera, as the game will: view, focus_ids, yaw and pitch are then ignored. timeline and time show an animation or cutscene (timeline_set) at that second: its objects posed as the game will pose them, and a camera it moves where it is then. area frames one part of a large map instead of objects: a sector, a 256 m tile or a rectangle; view top gives the map seen from the sky, perspective with a low pitch_degrees (5 to 10) a view across it close to eye level. Every object shows, even outside the sector you focus on.</p>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>engine/agent/agent_tools.cpp</code>, <code>engine/agent/agent_tools_materials.cpp</code>, <code>engine/agent/agent_tools_shaders.cpp</code>, <code>apps/editor/editor_agent.cpp</code>, <code>apps/editor/editor_chat_view.cpp</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../scripts/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Les scripts de jeu (Luau)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Les scripts de jeu (Luau)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../agent-guide/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Le guide de l&#x27;agent">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Le guide de l'agent
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

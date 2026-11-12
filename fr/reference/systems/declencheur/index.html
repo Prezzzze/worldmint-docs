@@ -1,0 +1,3396 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/declencheur/">
+      
+      
+      
+        <link rel="prev" href="../decalcomanie/">
+      
+      
+        <link rel="next" href="../particules/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Déclencheur - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Déclencheur
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages sur chaque objet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Règle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-declencheur" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Trigger (<code>declencheur</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trigger (declencheur)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages sur chaque objet">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Règle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#trigger-declencheur" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Trigger (<code>declencheur</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Trigger (declencheur)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="declencheur">Déclencheur<a class="headerlink" href="#declencheur" title="Permanent link">&para;</a></h1>
+<p>Des règles « quand… alors… » sans écrire de code : quand le joueur entre dans une zone, utilise un levier, quand un boss meurt… alors une porte s'ouvre, un coffre apparaît, la partie se gagne. Avec les actions toutes faites, et celles écrites pour ce jeu.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>declencheur</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>10</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>oui</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans l'onglet <strong>Jeu</strong>, section <strong>Systèmes</strong>, en ouvrant la carte du système.</p>
+<p>Aucun.</p>
+<h2 id="reglages-sur-chaque-objet">Réglages sur chaque objet<a class="headerlink" href="#reglages-sur-chaque-objet" title="Permanent link">&para;</a></h2>
+<p>Dans les <strong>Propriétés</strong> d'un objet ou d'un dossier qui porte le système, section <strong>Systèmes</strong>. Un dossier transmet ses valeurs à ce qu'il contient ; un objet peut changer une valeur pour lui seul.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Règles : quand… alors…</td>
+<td>La liste des règles de cet objet. Chacune dit quand elle se déclenche et ce qu'elle fait alors : ouvrir une porte, faire apparaître un coffre, finir la partie… Ajoutez-en autant qu'il faut.</td>
+<td><code>regles</code></td>
+<td>Liste de « Règle »</td>
+<td>(vide)</td>
+<td>une ligne par « Règle » : <a href="#champs-regles">ses champs</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-regles">Les champs de chaque « Règle »<a class="headerlink" href="#champs-regles" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Règle » a son cadre, numéroté ; <strong>Ajouter : Règle</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quand</td>
+<td>Ce qui lance la règle : quelqu'un entre ou sort de cet objet s'il porte le système Zone, le joueur l'utilise (Interaction), il meurt (Santé), le début du jeu, un temps écoulé, ou un événement nommé.</td>
+<td><code>quand</code></td>
+<td>Choix dans une liste</td>
+<td>Quelqu'un entre dans cette zone (système Zone)</td>
+<td><code>entree</code> : Quelqu'un entre dans cette zone (système Zone)<br><code>sortie</code> : Quelqu'un sort de cette zone (système Zone)<br><code>utilise</code> : Le joueur l'utilise (système Interaction)<br><code>mort</code> : Il meurt (système Santé)<br><code>debut</code> : Au début du jeu<br><code>delai</code> : Après un temps<br><code>evenement</code> : Quand un événement arrive<br><code>casse</code> : Son articulation casse (système Articulation)</td>
+</tr>
+<tr>
+<td>Nom de l'événement (par exemple sante.mort, ou un nom du jeu)<br><em>affiché seulement si <strong>Quand</strong> est « Quand un événement arrive »</em></td>
+<td>Le nom exact de l'événement attendu, comme « sante.mort », ou un nom choisi pour votre jeu et envoyé par une autre règle (« Envoyer un événement ») ou par un script.</td>
+<td><code>evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Après combien de secondes de jeu (« à chaque fois » : toutes les tant de secondes)<br><em>affiché seulement si <strong>Quand</strong> est « Après un temps »</em></td>
+<td>Combien de secondes après le début de la partie la règle se lance. Avec « À chaque fois », elle se relance toutes les tant de secondes : 10 pour une vague toutes les dix secondes.</td>
+<td><code>secondes</code></td>
+<td>Nombre</td>
+<td>5</td>
+<td>de 0 à 86 400</td>
+</tr>
+<tr>
+<td>Combien de fois</td>
+<td>Une seule fois : la règle ne sert qu'une fois dans la partie (une porte qui s'ouvre pour de bon). À chaque fois : elle se relance à chaque déclenchement (un levier qu'on actionne encore et encore).</td>
+<td><code>fois</code></td>
+<td>Choix dans une liste</td>
+<td>Une seule fois</td>
+<td><code>une</code> : Une seule fois<br><code>chaque</code> : À chaque fois</td>
+</tr>
+<tr>
+<td>Attendre avant d'agir (secondes)</td>
+<td>Un délai, en secondes, entre le déclenchement et l'action. 0 : tout de suite ; 2 : le piège se referme deux secondes après le passage du joueur.</td>
+<td><code>attente</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 3600</td>
+</tr>
+<tr>
+<td>Alors</td>
+<td>Ce que fait la règle : montrer, cacher ou détruire un objet, faire apparaître une copie, téléporter le joueur, changer de scène, finir la partie, jouer un son ou une vidéo, assourdir ou couper le son, afficher un message, jouer une animation ou une cinématique… et les actions écrites pour ce jeu.</td>
+<td><code>action</code></td>
+<td>Choix dans une liste</td>
+<td>Cacher un objet</td>
+<td><code>montrer</code> : Montrer un objet<br><code>cacher</code> : Cacher un objet<br><code>basculer</code> : Montrer ou cacher, tour à tour<br><code>allumer</code> : Allumer une lumière<br><code>eteindre</code> : Éteindre une lumière<br><code>basculer_lumiere</code> : Allumer ou éteindre une lumière, tour à tour<br><code>couleur_lumiere</code> : Changer la couleur d'une lumière<br><code>detruire</code> : Détruire un objet<br><code>copier</code> : Faire apparaître une copie<br><code>teleporter</code> : Téléporter le joueur à un objet<br><code>solide</code> : Rendre solide (ou rallumer une zone)<br><code>traversable</code> : Rendre traversable (ou éteindre une zone)<br><code>scene</code> : Aller à une autre scène<br><code>finir</code> : Finir la partie<br><code>son</code> : Jouer un son<br><code>assourdir</code> : Assourdir le son (sous l'eau, derrière un mur)<br><code>couper_son</code> : Couper ou rétablir un groupe de sons<br><code>video</code> : Jouer une vidéo<br><code>message</code> : Afficher un message<br><code>pousser</code> : Pousser un objet mobile (système Physique)<br><code>envoyer</code> : Envoyer un événement<br><code>remplir_besoin</code> : Remplir un besoin (système Besoins : la faim, la fatigue…)<br><code>ouvrir</code> : Ouvrir (une porte, un pont-levis : système Articulation)<br><code>fermer</code> : Fermer (système Articulation)<br><code>casser</code> : Casser son articulation : il tombe<br><code>chiffon</code> : Faire tomber inerte (poupée de chiffon)<br><code>relever</code> : Le relever (poupée de chiffon)<br><code>animation</code> : Jouer une animation<br><code>cinematique</code> : Jouer une cinématique<br><code>arreter_animation</code> : Arrêter une animation<br><code>effet</code> : Jouer un effet (feu, éclats, explosion…)<br><code>arreter_effet</code> : Arrêter un effet<br>et les actions réutilisables écrites pour ce jeu (rangées sous « Écrites pour ce jeu ») : voir <a href="../../../triggers/#les-actions-reutilisables">Le Déclencheur</a></td>
+</tr>
+<tr>
+<td>Sur quel objet (vide : celui-ci)<br><em>affiché seulement si <strong>Alors</strong> est « Montrer un objet », « Cacher un objet », « Montrer ou cacher, tour à tour », « Détruire un objet », « Faire apparaître une copie », « Téléporter le joueur à un objet », « Rendre solide (ou rallumer une zone) », « Rendre traversable (ou éteindre une zone) », « Jouer un son », « Pousser un objet mobile (système Physique) », « Ouvrir (une porte, un pont-levis : système Articulation) », « Fermer (système Articulation) », « Casser son articulation : il tombe », « Faire tomber inerte (poupée de chiffon) », « Le relever (poupée de chiffon) », « Jouer un effet (feu, éclats, explosion…) », « Arrêter un effet », « Allumer une lumière », « Éteindre une lumière », « Allumer ou éteindre une lumière, tour à tour » ou « Changer la couleur d'une lumière »</em></td>
+<td>L'objet sur lequel agit la règle : la porte à ouvrir, le coffre à montrer, l'endroit où téléporter le joueur. Vide : l'objet qui porte la règle.</td>
+<td><code>cible</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nouvelle couleur de la lumière<br><em>affiché seulement si <strong>Alors</strong> est « Changer la couleur d'une lumière »</em></td>
+<td>La couleur que prend la lumière : une alarme rouge, une lampe qui passe au vert quand l'énigme est résolue.</td>
+<td><code>couleur</code></td>
+<td>Couleur</td>
+<td><span class="wm-couleur" style="background:#ffd27f"></span> <code>#ffd27f</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Où la faire apparaître (vide : là où est l'objet copié)<br><em>affiché seulement si <strong>Alors</strong> est « Faire apparaître une copie »</em></td>
+<td>Un objet qui marque où la copie apparaît, par exemple un point caché devant une grotte. Vide : la copie apparaît à la place de l'objet copié.</td>
+<td><code>lieu</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Scène<br><em>affiché seulement si <strong>Alors</strong> est « Aller à une autre scène »</em></td>
+<td>La scène où la règle emmène le joueur. Il y garde son inventaire, sa vie et le reste.</td>
+<td><code>scene</code></td>
+<td>Scène du jeu</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Point d'arrivée<br><em>affiché seulement si <strong>Alors</strong> est « Aller à une autre scène »</em></td>
+<td>Le point d'arrivée de cette scène où le joueur apparaît, tourné comme lui. Aucun : à la place du joueur dans cette scène.</td>
+<td><code>arrivee</code></td>
+<td>Point d'arrivée de la scène choisie dans <strong>Scène</strong></td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Résultat<br><em>affiché seulement si <strong>Alors</strong> est « Finir la partie »</em></td>
+<td>Comment la partie se finit : par une victoire ou par une défaite.</td>
+<td><code>resultat</code></td>
+<td>Choix dans une liste</td>
+<td>Victoire</td>
+<td><code>won</code> : Victoire<br><code>lost</code> : Défaite</td>
+</tr>
+<tr>
+<td>Texte à afficher<br><em>affiché seulement si <strong>Alors</strong> est « Finir la partie » ou « Afficher un message »</em></td>
+<td>Le texte montré au joueur : le message à l'écran, ou le texte de fin de partie (« Le trésor est à vous ! »).</td>
+<td><code>texte</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Durée du message (secondes)<br><em>affiché seulement si <strong>Alors</strong> est « Afficher un message »</em></td>
+<td>Combien de secondes le message reste à l'écran avant de s'effacer. 3 suffit pour une phrase courte.</td>
+<td><code>duree</code></td>
+<td>Nombre</td>
+<td>3</td>
+<td>de 0.5 à 60</td>
+</tr>
+<tr>
+<td>Son<br><em>affiché seulement si <strong>Alors</strong> est « Jouer un son »</em></td>
+<td>Le fichier son joué depuis la cible de la règle : on l'entend plus fort de près.</td>
+<td><code>son</code></td>
+<td>Son de la bibliothèque</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Quels sons (un groupe de la table de mixage, ou tout le son)<br><em>affiché seulement si <strong>Alors</strong> est « Assourdir le son (sous l'eau, derrière un mur) » ou « Couper ou rétablir un groupe de sons »</em></td>
+<td>Le groupe de la table de mixage (onglet Jeu) que la règle assourdit ou coupe : la musique, l'ambiance, les voix… Tout le son du jeu : tous les groupes à la fois, comme sous l'eau.</td>
+<td><code>groupe</code></td>
+<td>Groupe de la table de mixage</td>
+<td><code>master</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Assourdi (0 : son clair de nouveau, 1 : sous l'eau)<br><em>affiché seulement si <strong>Alors</strong> est « Assourdir le son (sous l'eau, derrière un mur) »</em></td>
+<td>Combien le son est étouffé : 0 le rend clair (pour la règle qui le rétablit, à la sortie de l'eau), 0,5 comme derrière une porte, 1 comme sous l'eau.</td>
+<td><code>assourdi</code></td>
+<td>Nombre</td>
+<td>0.8</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>En combien de secondes<br><em>affiché seulement si <strong>Alors</strong> est « Assourdir le son (sous l'eau, derrière un mur) »</em></td>
+<td>Le temps, en secondes, que met le son à s'étouffer ou à redevenir clair. 0 : d'un coup ; 0,5 : comme une tête qui plonge.</td>
+<td><code>fondu</code></td>
+<td>Nombre</td>
+<td>0.5</td>
+<td>de 0 à 10</td>
+</tr>
+<tr>
+<td>Couper (décoché : le rétablir)<br><em>affiché seulement si <strong>Alors</strong> est « Couper ou rétablir un groupe de sons »</em></td>
+<td>Coché : le groupe se tait, par exemple l'ambiance pendant une scène racontée. Décoché : il revient, pour la règle qui le rétablit.</td>
+<td><code>coupe</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Vidéo<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une vidéo »</em></td>
+<td>La vidéo jouée en plein écran, avec son son : une introduction, une fin, un moment de l'histoire. Le monde s'arrête pendant ce temps. Fichiers MP4.</td>
+<td><code>video</code></td>
+<td>Vidéo de la bibliothèque</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Le joueur peut la passer<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une vidéo »</em></td>
+<td>Coché : Échap, Entrée, Espace, un clic ou A à la manette passent la vidéo. Décoché : elle se regarde jusqu'au bout.</td>
+<td><code>passer</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Événement envoyé à la fin (facultatif)<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une vidéo »</em></td>
+<td>Un nom d'événement envoyé quand la vidéo finit ou est passée (« intro_finie ») : une autre règle (« Quand un événement arrive ») enchaîne la suite, comme changer de scène.</td>
+<td><code>fin</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Son de la vidéo (groupe de la table de mixage)<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une vidéo »</em></td>
+<td>Le groupe de la table de mixage où passe le son de la vidéo. Voix par défaut : une cinématique parle, et la musique du jeu baisse pendant ce temps. Musique pour un clip sans paroles.</td>
+<td><code>groupe_video</code></td>
+<td>Groupe de la table de mixage</td>
+<td><code>voice</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Force, en s'éloignant du joueur (m/s)<br><em>affiché seulement si <strong>Alors</strong> est « Pousser un objet mobile (système Physique) »</em></td>
+<td>La vitesse donnée à l'objet poussé, à l'horizontale et à l'opposé du joueur, en mètres par seconde : 6, un bon coup de pied dans un ballon. L'objet doit porter le système Physique.</td>
+<td><code>force</code></td>
+<td>Nombre</td>
+<td>6</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Vers le haut (m/s)<br><em>affiché seulement si <strong>Alors</strong> est « Pousser un objet mobile (système Physique) »</em></td>
+<td>La vitesse donnée vers le haut, en mètres par seconde : 0 le fait filer au ras du sol, 5 le fait sauter.</td>
+<td><code>hauteur</code></td>
+<td>Nombre</td>
+<td>2</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Événement à envoyer (un nom du jeu, ou d'un système)<br><em>affiché seulement si <strong>Alors</strong> est « Envoyer un événement »</em></td>
+<td>Le nom de l'événement envoyé : un nom choisi pour votre jeu (« porte_ouverte ») ou celui d'un système. D'autres règles (« Quand un événement arrive ») et les scripts peuvent l'attendre.</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Besoin à remplir (son nom)<br><em>affiché seulement si <strong>Alors</strong> est « Remplir un besoin (système Besoins : la faim, la fatigue…) »</em></td>
+<td>Le nom du besoin, écrit comme dans la liste du système Besoins : « Fatigue », « Faim ». Le joueur qui a déclenché la règle le regagne : se reposer près du feu, un repas à l'auberge, une prière à l'autel.</td>
+<td><code>besoin</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>De combien<br><em>affiché seulement si <strong>Alors</strong> est « Remplir un besoin (système Besoins : la faim, la fatigue…) »</em></td>
+<td>Ce que le besoin regagne, sans dépasser sa réserve pleine : 100 sur 100 le remplit. Un besoin éteint dans le système Besoins ne change pas.</td>
+<td><code>montant</code></td>
+<td>Nombre</td>
+<td>50</td>
+<td>de 0 à 100 000</td>
+</tr>
+<tr>
+<td>Réglages de l'action<br><em>affiché seulement si <strong>Alors</strong> est une action réutilisable qui a des réglages</em></td>
+<td>Les réglages de l'action choisie quand c'est une action écrite pour ce jeu : une distance, une vitesse… Ils changent selon l'action.</td>
+<td><code>parametres</code></td>
+<td>Réglages de l'action choisie</td>
+<td>(vide)</td>
+<td>les réglages que déclare l'action réutilisable choisie dans <strong>Alors</strong></td>
+</tr>
+<tr>
+<td>Effet<br><em>affiché seulement si <strong>Alors</strong> est « Jouer un effet (feu, éclats, explosion…) »</em></td>
+<td>L'effet joué sur la cible : celui que porte la cible (son système Effet de particules, rallumé), ou un effet tout fait, joué une fois : des éclats, de la poussière, une explosion, de la magie…</td>
+<td><code>effet</code></td>
+<td>Choix dans une liste</td>
+<td>Celui posé sur la cible (système Effet de particules)</td>
+<td><code>objet</code> : Celui posé sur la cible (système Effet de particules)<br><code>eclats</code> : Éclats (de la couleur de la cible)<br><code>eclats_bois</code> : Éclats de bois<br><code>eclats_pierre</code> : Éclats de pierre<br><code>poussiere</code> : Poussière<br><code>feu</code> : Feu<br><code>fumee</code> : Fumée<br><code>explosion</code> : Explosion<br><code>etincelles</code> : Étincelles<br><code>impact</code> : Impact d'un coup<br><code>magie</code> : Magie<br><code>pluie</code> : Pluie<br><code>neige</code> : Neige</td>
+</tr>
+<tr>
+<td>Taille de l'effet<br><em>affiché seulement si <strong>Alors</strong> est « Jouer un effet (feu, éclats, explosion…) »</em></td>
+<td>La taille de l'effet tout fait : 1 sa taille habituelle, 0,5 deux fois plus petit, 3 pour une grosse explosion. Sans effet sur celui que porte la cible : il garde ses réglages.</td>
+<td><code>taille_effet</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0.05 à 20</td>
+</tr>
+<tr>
+<td>Animation<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une animation » ou « Arrêter une animation »</em></td>
+<td>L'animation faite dans la frise de l'éditeur (une porte qui s'ouvre, une plateforme qui monte). La rejouer la reprend au début.</td>
+<td><code>frise</code></td>
+<td>Animation ou cinématique de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Cinématique<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une cinématique »</em></td>
+<td>La cinématique faite dans la frise de l'éditeur. Pendant qu'elle joue, le joueur regarde ; à la fin, il reprend la main.</td>
+<td><code>cinematique</code></td>
+<td>Animation ou cinématique de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>À la fin, envoyer l'événement (facultatif)<br><em>affiché seulement si <strong>Alors</strong> est « Jouer une animation » ou « Jouer une cinématique »</em></td>
+<td>Un nom choisi pour votre jeu (« pont_baisse »), envoyé quand l'animation ou la cinématique se termine : une autre règle (« Quand un événement arrive ») peut alors enchaîner. Vide : rien.</td>
+<td><code>fin</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#besoinsremplir"><code>besoins.remplir</code></a></td>
+<td><code>besoin</code> (text), <code>montant</code> (number)</td>
+<td>Ask the besoins system to raise a need by its name, without using anything up: a meal at an inn, a Trigger rule, a script.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#zoneentree"><code>zone.entree</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something entered a zone (an object carrying the zone system): a player, a character or a moving object, depending on what the zone detects (joueur: every player). joueur is set when qui is a player. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#zonesortie"><code>zone.sortie</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something left a zone. Not announced for an object removed from the game while inside.</td>
+</tr>
+<tr>
+<td><a href="../../events/#interactionutiliser"><code>interaction.utiliser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id)</td>
+<td>The player used the object in reach: a door, a merchant, an item to pick up. Whoever owns that object decides what it does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santemort"><code>sante.mort</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id?)</td>
+<td>An object's health reached zero. What happens next belongs to the game: the health module does nothing else, unless its setting says to destroy the object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#articulationcassee"><code>articulation.cassee</code></a></td>
+<td><code>cible</code> (id), <code>autre</code> (id?)</td>
+<td>A joint (an object carrying the articulation system) gave way: pulled harder than its breaking force, or broken by the Trigger or game.joint_break. autre is the object it was attached to, missing when attached to the world. Announced by the engine.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="trigger-declencheur">Trigger (<code>declencheur</code>)<a class="headerlink" href="#trigger-declencheur" title="Permanent link">&para;</a></h3>
+<p>"When… then…" rules placed on objects, so the user gets a game reaction without code: when the player enters a zone, uses a lever, when a boss dies, at the start, after a time, or when an event happens… then show, hide or destroy an object, make a copy appear, teleport the player, go to a scene, end the game, play a sound, play a full-screen video, muffle or mute the sound, show a message, push a moving object, send an event — or run a reusable action written for this game.</p>
+<ul>
+<li>Place it on the object the rule is about (<code>systems_attach</code>), with its rules in <code>regles</code>: a list, one object per rule. Prefer it to a script for these reactions: the user sees and changes the rules in the object's properties.</li>
+<li>Each rule: <code>quand</code> (entree, sortie: the object carries <code>zone</code>; utilise: it carries <code>interaction</code>; mort: it carries <code>sante</code>; debut; delai with <code>secondes</code>; evenement with <code>evenement</code>, an event name), <code>fois</code> (une or chaque), <code>attente</code> (seconds before acting), <code>action</code>, and the fields of that action:</li>
+<li><code>cible</code> (an object id; empty: the object carrying the rule) for montrer, cacher, basculer, detruire, copier, teleporter (the player goes to it), solide, traversable (on a zone: switches it on or off), son, pousser.</li>
+<li>copier: <code>lieu</code> (an object where the copy appears; empty: where the copied object is). Usually the copied object is a hidden template.</li>
+<li>animation: <code>frise</code> (an animation's id, made with timeline_set) and <code>fin</code> (optional: an event sent when it ends, for another rule). cinematique: <code>cinematique</code> (a cutscene's id) and <code>fin</code>. arreter_animation: <code>frise</code>.</li>
+<li>scene: <code>scene</code> and <code>arrivee</code>. finir: <code>resultat</code> (won or lost) and <code>texte</code>. message: <code>texte</code>, <code>duree</code>. son: <code>son</code> (a sound file, from assets_search kind "sound"). assourdir: <code>groupe</code> (a sound mixer group, or <code>master</code> for all the sound), <code>assourdi</code> (0 clear again, 1 under water), <code>fondu</code> (seconds). couper_son: <code>groupe</code>, <code>coupe</code> (true mutes, false brings it back). video: <code>video</code> (an MP4 file, from assets_search kind "video"), <code>passer</code> (true: the player can skip it), <code>fin</code> (an event sent when it ends or is skipped, to chain the next rule; a video file that cannot be read still sends it), <code>groupe_video</code> (the mixer group of its sound, voice by default: the music lowers under it). pousser: <code>force</code>, <code>hauteur</code>. envoyer: <code>nom</code> (sends that event with cible, source and qui). remplir_besoin: <code>besoin</code> (a need's name, as in the <code>besoins</code> list: « Fatigue ») and <code>montant</code>: the player who triggered the rule gets it back (resting by a fire, a meal at an inn); a need switched off does not change.</li>
+<li><code>cible</code> also for ouvrir, fermer (a hinge or slider of the <code>articulation</code> system: a door, a drawbridge, an elevator; its motor drives it to its open or closed stop), casser (its joint gives way and it falls), chiffon (a character falls limp as a ragdoll) and relever (it gets back up).</li>
+<li>effet: <code>effet</code> (objet: lights again the effect the target carries with the <code>particules</code> system; or a ready-made effect played once on the target: eclats, eclats_bois, eclats_pierre, poussiere, feu, fumee, explosion, etincelles, impact, magie, pluie, neige) and <code>taille_effet</code> (its size, 1 by default). arreter_effet: puts out the effect the target carries (a campfire), and the looping effects scripts put on it.</li>
+<li>quand <code>casse</code>: the object's joint broke (it carries <code>articulation</code>): a bridge gives way, then a message.</li>
+<li><code>cible</code> (a placed light, created with a <code>light</code> field) for allumer (switch on), eteindre (switch off), basculer_lumiere (on or off in turn) and couleur_lumiere, with <code>couleur</code> ("#rrggbb"): a lamp lit by a lever, an alarm turning red.</li>
+<li>Example, a pressure plate that opens a door: a <code>zone</code> box named Plaque, and on it <code>{"regles": [{"quand": "entree", "action": "cacher", "cible": "&lt;door id&gt;"}]}</code>.</li>
+<li>Under water: a <code>zone</code> box over the water with <code>{"regles": [{"quand": "entree", "fois": "chaque", "action": "assourdir", "groupe": "master", "assourdi": 1}, {"quand": "sortie", "fois": "chaque", "action": "assourdir", "groupe": "master", "assourdi": 0}]}</code>.</li>
+<li>A brazier lit by a lever: the <code>particules</code> system on the brazier with <code>boucle</code> true, and on the lever <code>{"quand": "utilise", "fois": "chaque", "action": "effet", "effet": "objet", "cible": "&lt;brazier id&gt;"}</code>; another rule with <code>arreter_effet</code> puts it out. A barrel that explodes when hit: <code>{"quand": "mort", "action": "effet", "effet": "explosion", "taille_effet": 2}</code> then a rule that destroys it.</li>
+<li>A lever: <code>interaction</code> on the lever and a rule <code>{"quand": "utilise", "fois": "chaque", "action": "basculer", "cible": "&lt;door id&gt;"}</code>.</li>
+<li>A lamp switched by a lever: <code>{"quand": "utilise", "fois": "chaque", "action": "basculer_lumiere", "cible": "&lt;light id&gt;"}</code>.</li>
+<li>A drawbridge that lowers when the lever is used, then a chest appears: <code>{"quand": "utilise", "action": "animation", "frise": "pont_baisse", "fin": "pont_en_bas"}</code> on the lever, and <code>{"quand": "evenement", "evenement": "pont_en_bas", "action": "montrer", "cible": "&lt;chest id&gt;"}</code>. A door that moves (slides, swings) is an animation, not a reusable action.</li>
+</ul>
+<p>Reusable actions: when the user wants an effect no ready-made action does and that is not a set movement (a set movement such as a door that slides, a bridge that rises or a light that blinks is an animation: timeline_set, then the action animation), write it ONCE as a reusable action, never as a one-off script tied to one object:
+- A game script named <code>action.&lt;id&gt;</code> (<code>scripts_set</code>; id: lowercase letters, digits, <code>_</code>), which starts with its description in JSON between <code>--[[action</code> and <code>]]</code>: <code>label</code> and <code>description</code> in fr and en, and <code>fields</code> (settings like a module's: key, type number/text/boolean/choice/object/sound/video/scene, default, label in fr and en, min/max, options; a number takes decimals unless it has <code>"integer": true</code>, for a count).
+- Its code listens to <code>action.&lt;id&gt;</code>: <code>game.on("action.porte_glissante", function(e) ... end)</code>. <code>e.cible</code> is the rule's target (or the object carrying the rule), <code>e.source</code> the object carrying the rule, <code>e.qui</code> who triggered it, and each of its fields by key.
+- It then appears in the "Then" list of every Trigger, with its fields, next to the ready-made actions; a rule uses it with <code>"action": "&lt;id&gt;"</code> and its values in <code>parametres</code>. The user can reuse it on other objects without asking you again: tell them so.
+- Example: <code>--[[action {"label": {"fr": "Porte qui glisse", "en": "Sliding door"}, "description": {"fr": "La cible glisse sur le côté.", "en": "The target slides aside."}, "fields": [{"key": "distance", "type": "number", "default": 2, "min": 0, "max": 50, "label": {"fr": "Distance (m)", "en": "Distance (m)"}}]} ]]</code>, then the code.</p>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>One for the whole game: "the player" of a rule is the one who triggered it (who entered the zone, who used the object); its message is shown to that player only, and <code>teleporter</code> moves that player. Rules at the start or after a delay concern no one in particular: their message is shown to everyone.</p>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/declencheur/module.json</code>, <code>modules/declencheur/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../decalcomanie/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Décalcomanie">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Décalcomanie
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../particules/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Effet de particules">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Effet de particules
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

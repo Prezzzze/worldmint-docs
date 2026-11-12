@@ -1,0 +1,3490 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/systems/besoins/">
+      
+      
+      
+        <link rel="prev" href="../menu/">
+      
+      
+        <link rel="next" href="../particules/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Needs - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Needs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Game tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-besoins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Need”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-aliments" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Food”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-on-each-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings on each object
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#needs-besoins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Needs (<code>besoins</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Needs (besoins)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-besoins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Need”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-aliments" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Food”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-on-each-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings on each object
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#needs-besoins" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Needs (<code>besoins</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Needs (besoins)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="needs">Needs<a class="headerlink" href="#needs" title="Permanent link">&para;</a></h1>
+<p>What the player needs to live: hunger, thirst, tiredness, or whatever the game wants. Each need goes down over time; at zero, the player loses health. It goes back up by eating or drinking what the inventory holds, at a source in the world (a well, a bed) carrying this system, or through a Trigger rule. Each need can be switched off without losing its settings.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td><code>besoins</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>3</td>
+</tr>
+<tr>
+<td>Placed on objects</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Also activates</td>
+<td><a href="../sante/">Health</a></td>
+</tr>
+<tr>
+<td>Also needs, on the same object</td>
+<td><a href="../interaction/">Interaction</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-for-the-whole-game">Settings for the whole game<a class="headerlink" href="#settings-for-the-whole-game" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Game</strong> tab, <strong>Systems</strong> section, by opening the system's card.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The player's needs</td>
+<td>One row per need, with its name, its reserve, what it loses per minute and what happens at zero. Hunger and thirst by default; add tiredness, cold, or remove what your game does not want. Untick "On" to switch a need off without losing its settings.</td>
+<td><code>besoins</code></td>
+<td>List of “Need”</td>
+<td><code>[{'nom': 'Faim', 'actif': True, 'max': 100, 'baisse': 2, 'course': 0, 'degats': 1, 'vide': 'rien', 'couleur': '#d9893b'}, {'nom': 'Soif', 'actif': True, 'max': 100, 'baisse': 3, 'course': 1, 'degats': 1, 'vide': 'rien', 'couleur': '#3b9ad9'}]</code></td>
+<td>one line per “Need”: <a href="#champs-besoins">its fields</a></td>
+</tr>
+<tr>
+<td>What can be eaten and drunk</td>
+<td>The inventory items that raise a need when the player uses them up: a click on their slot in the inventory window. One item can have several rows: a watermelon feeds and quenches.</td>
+<td><code>aliments</code></td>
+<td>List of “Food”</td>
+<td>(empty)</td>
+<td>one line per “Food”: <a href="#champs-aliments">its fields</a></td>
+</tr>
+<tr>
+<td>A click in the inventory uses up a food</td>
+<td>Ticked: in the inventory window (I), a click on a food's slot eats or drinks it. Unticked: only through the event besoins.consommer, from a script or a Trigger rule.</td>
+<td><code>manger_fenetre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Use nothing up when the need is full</td>
+<td>Ticked: a food whose needs are all full is not eaten, and does not disappear for nothing.</td>
+<td><code>rien_si_plein</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Warning level (%)</td>
+<td>Below this share of the reserve, the bar blinks and the need is announced (besoins.bas): a sound, a message. 0: never a warning.</td>
+<td><code>alerte</code></td>
+<td>Number</td>
+<td>25</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Health regained per second, when satisfied</td>
+<td>The health points the player regains each second while all their needs are above the level below: well fed, they heal. 0: never.</td>
+<td><code>soin_rassasie</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100 000</td>
+</tr>
+<tr>
+<td>Satisfied above (%)</td>
+<td>The share of their reserve that every need must be above for the player to regain health.</td>
+<td><code>seuil_rassasie</code></td>
+<td>Number</td>
+<td>80</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Player speed when a need slows them down</td>
+<td>The share of their usual speed the player keeps while a need set to "walks slower" is at zero: 0.6 keeps 60 %.</td>
+<td><code>lenteur</code></td>
+<td>Number</td>
+<td>0.6</td>
+<td>from 0.1 to 1</td>
+</tr>
+<tr>
+<td>Show the bars</td>
+<td>Shows one bar per need on screen, with its name, under the health bar. Untick it if your game shows them its own way (a drawn screen, with besoins.change).</td>
+<td><code>afficher</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Horizontal position (0 to 1)</td>
+<td>Where the bars start, from left to right: 0 at the left edge of the screen, 1 at the right edge. 0.02 lines them up with the health bar.</td>
+<td><code>x</code></td>
+<td>Number</td>
+<td>0.02</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Vertical position of the first (0 to 1)</td>
+<td>Where the first bar sits, from top to bottom: 0 at the top of the screen, 1 at the bottom. The next ones line up under it.</td>
+<td><code>y</code></td>
+<td>Number</td>
+<td>0.1</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Width (share of the screen)</td>
+<td>The length of a full bar, as a share of the screen width.</td>
+<td><code>largeur</code></td>
+<td>Number</td>
+<td>0.18</td>
+<td>from 0.02 to 1</td>
+</tr>
+<tr>
+<td>Height (share of the screen)</td>
+<td>The thickness of a bar, as a share of the screen height.</td>
+<td><code>hauteur</code></td>
+<td>Number</td>
+<td>0.014</td>
+<td>from 0.005 to 0.2</td>
+</tr>
+<tr>
+<td>Gap between two bars</td>
+<td>The distance from one bar to the next, as a share of the screen height.</td>
+<td><code>ecart</code></td>
+<td>Number</td>
+<td>0.03</td>
+<td>from 0.005 to 0.3</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-besoins">The fields of each “Need”<a class="headerlink" href="#champs-besoins" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Need” has its own numbered frame; <strong>Add: Need</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The name the player sees next to its bar, such as "Hunger", "Thirst" or "Tiredness". Foods and sources name it exactly as written here.</td>
+<td><code>nom</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>On</td>
+<td>Ticked: the need counts in the game. Unticked: it is switched off, without losing its settings: no bar, it does not go down and never hurts; the foods and sources that raise it do nothing (the prompt says so, the food stays in the inventory). To try the game without tiredness, for example.</td>
+<td><code>actif</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Full reserve</td>
+<td>The value of the need when the player is satisfied, at the start of the game. Losses and what foods give are compared with it: with 100 and a loss of 2 per minute, it takes 50 minutes to reach zero.</td>
+<td><code>max</code></td>
+<td>Number</td>
+<td>100</td>
+<td>from 1 to 100 000</td>
+</tr>
+<tr>
+<td>Loss per minute</td>
+<td>What the need loses per minute of play, standing still or walking. 0: it never goes down by itself (tiredness that only comes from running).</td>
+<td><code>baisse</code></td>
+<td>Number</td>
+<td>2</td>
+<td>from 0 to 100 000</td>
+</tr>
+<tr>
+<td>Extra loss while running (per minute)</td>
+<td>What the need loses on top per minute of running: running makes one thirsty and tired. 0: running changes nothing.</td>
+<td><code>course</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100 000</td>
+</tr>
+<tr>
+<td>Health lost per second at zero</td>
+<td>The health points the player loses each second while this need is at zero. 0: it does not kill, only the effect chosen below.</td>
+<td><code>degats</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 100 000</td>
+</tr>
+<tr>
+<td>At zero, also</td>
+<td>What also happens while the need is at zero, until it goes back up: nothing, a slower walk (hunger), or no more running or jumping (tiredness).</td>
+<td><code>vide</code></td>
+<td>Choice in a list</td>
+<td>Nothing more</td>
+<td><code>rien</code>: Nothing more<br><code>lent</code>: The player walks slower<br><code>sans_course</code>: The player can no longer run or jump</td>
+</tr>
+<tr>
+<td>Color of its bar</td>
+<td>The color of this need's bar on screen: orange for hunger, blue for thirst, purple for tiredness.</td>
+<td><code>couleur</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#d9893b"></span> <code>#d9893b</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-aliments">The fields of each “Food”<a class="headerlink" href="#champs-aliments" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Food” has its own numbered frame; <strong>Add: Food</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Item (kind of inventory item)</td>
+<td>The kind of item used up, as the inventory stores it, such as "Apple", "Flask" or "Cooked meat". One goes each time.</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Need raised (its name)</td>
+<td>The name of the need it raises, written as in the list of needs: "Hunger" or "Thirst".</td>
+<td><code>besoin</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>By how much</td>
+<td>What it gives back to the need, without going past the full reserve: 30 out of 100 for an apple, 60 for a meal.</td>
+<td><code>montant</code></td>
+<td>Number</td>
+<td>30</td>
+<td>from 0 to 100 000</td>
+</tr>
+<tr>
+<td>Health given too</td>
+<td>The health points it also gives back, like a hot meal. 0: only the need.</td>
+<td><code>vie</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100 000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-on-each-object">Settings on each object<a class="headerlink" href="#settings-on-each-object" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Properties</strong> of an object or folder that carries the system, <strong>Systems</strong> section. A folder passes its values on to what it contains; an object can change a value for itself only.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Need raised when used (its name)</td>
+<td>An object of the world carrying this system raises this need when the player uses it (E): "Thirst" for a well or a river, "Tiredness" for a bed. Written as in the list of needs.</td>
+<td><code>source_besoin</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>By how much, each use</td>
+<td>What one use gives back to the need, without going past the full reserve: 100 fills it all.</td>
+<td><code>source_montant</code></td>
+<td>Number</td>
+<td>100</td>
+<td>from 0 to 100 000</td>
+</tr>
+<tr>
+<td>Prompt text (Drink, Sleep… empty: Interaction's)</td>
+<td>The word of the prompt in front of the source, such as "Drink" or "Sleep". Empty: the usual text of the Interaction system.</td>
+<td><code>source_verbe</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Wait between two uses (s)</td>
+<td>The time, in seconds of play, before the source works again: a well that fills up, a bed one cannot use again at once. 0: always ready.</td>
+<td><code>source_recharge</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 86 400</td>
+</tr>
+<tr>
+<td>Hours that pass when used (Day and night system)</td>
+<td>With the Day and night system, using it moves the clock on that much: 8 for a night in a bed. 0: time does not jump.</td>
+<td><code>source_heures</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 24</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<h3 id="what-it-announces">What it announces<a class="headerlink" href="#what-it-announces" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#besoinschange"><code>besoins.change</code></a></td>
+<td><code>besoin</code> (text), <code>valeur</code> (number), <code>max</code> (number)</td>
+<td>A need of the player (hunger, thirst, tiredness...) changed by a whole point, or is announced once when the game starts. besoin is its name as written in the needs list (original language).</td>
+</tr>
+<tr>
+<td><a href="../../events/#besoinsbas"><code>besoins.bas</code></a></td>
+<td><code>besoin</code> (text), <code>valeur</code> (number), <code>max</code> (number)</td>
+<td>A need went below the warning level of the besoins system (its bar blinks): a sound, a message, a quest hint.</td>
+</tr>
+<tr>
+<td><a href="../../events/#besoinsvide"><code>besoins.vide</code></a></td>
+<td><code>besoin</code> (text)</td>
+<td>A need reached zero: from now on the player loses health each second (and maybe walks slower or cannot run), until it goes back up.</td>
+</tr>
+<tr>
+<td><a href="../../events/#besoinsconsomme"><code>besoins.consomme</code></a></td>
+<td><code>objet</code> (text)</td>
+<td>The player ate or drank one item of the inventory (its foods list): it has been taken from the inventory and its needs raised.</td>
+</tr>
+<tr>
+<td><a href="../../events/#besoinssource"><code>besoins.source</code></a></td>
+<td><code>cible</code> (id), <code>besoin</code> (text), <code>montant</code> (number)</td>
+<td>The player used a source of the world carrying the besoins system (a well, a river, a bed): besoin went up by montant.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santeblesser"><code>sante.blesser</code></a></td>
+<td><code>cible</code> (id), <code>montant</code> (number), <code>source</code> (id?)</td>
+<td>Ask the health module to remove health from an object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santesoigner"><code>sante.soigner</code></a></td>
+<td><code>cible</code> (id), <code>montant</code> (number)</td>
+<td>Ask the health module to give health back, up to its maximum.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough.</td>
+</tr>
+<tr>
+<td><a href="../../events/#jour_nuitavancer"><code>jour_nuit.avancer</code></a></td>
+<td><code>heures</code> (number)</td>
+<td>Ask the day and night system to move the clock on by heures (a night in a bed: 8). Every hour, sunrise and sunset crossed are announced in order.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-it-listens-to">What it listens to<a class="headerlink" href="#what-it-listens-to" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#besoinsremplir"><code>besoins.remplir</code></a></td>
+<td><code>besoin</code> (text), <code>montant</code> (number)</td>
+<td>Ask the besoins system to raise a need by its name, without using anything up: a meal at an inn, a Trigger rule, a script.</td>
+</tr>
+<tr>
+<td><a href="../../events/#besoinsconsommer"><code>besoins.consommer</code></a></td>
+<td><code>objet</code> (text)</td>
+<td>Ask the besoins system to eat or drink one item of the inventory, as a click on its slot would: nothing happens if it is not a food or the player has none.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechoisi"><code>inventaire.choisi</code></a></td>
+<td><code>objet</code> (text), <code>total</code> (number)</td>
+<td>The player clicked a slot of the inventory window: objet is the kind of item, total how many they carry. What it does belongs to the game: eat, equip, read.</td>
+</tr>
+<tr>
+<td><a href="../../events/#interactionutiliser"><code>interaction.utiliser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id)</td>
+<td>The player used the object in reach: a door, a merchant, an item to pick up. Whoever owns that object decides what it does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santechange"><code>sante.change</code></a></td>
+<td><code>cible</code> (id), <code>vie</code> (number), <code>max</code> (number)</td>
+<td>An object's health changed, or is announced once when the game starts.</td>
+</tr>
+<tr>
+<td><a href="../../events/#languechange"><code>langue.change</code></a></td>
+<td><code>langue</code> (text)</td>
+<td>Sent by the engine when the player changes the game's language (game.set_language, the Menu options). A module redraws what it already shows: its texts go through game.t and game.language.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-a-script-can-replace-gameoverride">Points a script can replace (game.override)<a class="headerlink" href="#points-a-script-can-replace-gameoverride" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<ul>
+<li><code>besoins.baisse</code>: function(default, besoin, par_minute) -&gt; how much this need goes down per minute right now (number). The default is its baisse setting, plus its course setting while the player runs. To make thirst fall faster in the desert or at noon, hunger slower while sleeping.</li>
+</ul>
+<h2 id="what-the-agent-knows-about-this-system">What the agent knows about this system<a class="headerlink" href="#what-the-agent-knows-about-this-system" title="Permanent link">&para;</a></h2>
+<p>The text the agent reads before using this system.</p>
+<h3 id="needs-besoins">Needs (<code>besoins</code>)<a class="headerlink" href="#needs-besoins" title="Permanent link">&para;</a></h3>
+<p>Hunger, thirst, tiredness, or any need the game wants: each one goes down with the time of play, and at zero the player loses health. Add it once with <code>modules_add</code> (it needs <code>sante</code>: put <code>sante</code> on the player, and <code>barre_de_vie</code> to show the health). Use it whenever the user talks about eating, drinking, starving, sleeping or survival: never write a hunger script.</p>
+<ul>
+<li><strong>The needs</strong> (game setting <code>besoins</code>, <code>modules_set</code>): a list, one row per need, in the user's language. Hunger and thirst by default; add « Fatigue » or anything else, remove what the user did not ask for. Each row: <code>nom</code> (shown next to its bar, and how foods and sources name it), <code>actif</code> (true by default; false switches the need off without losing its settings: no bar, it does not fall, never hurts, and its foods and sources do nothing, saying so; a row without it is on), <code>max</code> (the full reserve, the value at the start), <code>baisse</code> (lost per minute of play), <code>course</code> (lost on top per minute of running), <code>degats</code> (health lost per second at zero; 0: it never kills), <code>vide</code> (also at zero: <code>rien</code>, <code>lent</code> (the player walks at <code>lenteur</code> of their speed), <code>sans_course</code> (no running nor jumping: tiredness)), <code>couleur</code> (its bar).</li>
+<li><strong>Tiredness (« Fatigue »)</strong> is a row of its own, like hunger: add it only when the user wants sleep to matter (<code>baisse</code> low or 0, <code>course</code> for running, <code>vide</code> <code>sans_course</code>, <code>degats</code> 0 so it never kills), and set <code>actif</code> false when they want to try the game without it, rather than deleting the row. Ask, or offer, how energy comes back; any mix works: <strong>sleep in a bed</strong> (a source: <code>source_besoin</code> « Fatigue », <code>source_verbe</code> « Dormir », <code>source_heures</code> 8 with <code>jour_nuit</code>), <strong>a food or drink</strong> (an <code>aliments</code> row: « Café », besoin « Fatigue »), or <strong>anything else</strong> through a <code>declencheur</code> rule with the action <code>remplir_besoin</code> (<code>besoin</code> « Fatigue », <code>montant</code>): resting by a campfire (a <code>zone</code> around it, <code>quand</code> entree, <code>fois</code> chaque), sitting on a bench (<code>quand</code> utilise), a prayer at an altar. Never a script for that.</li>
+<li><strong>Foods</strong> (game setting <code>aliments</code>): which inventory items raise which need, by how much (<code>objet</code>, <code>besoin</code> written as the need's <code>nom</code>, <code>montant</code>), and <code>vie</code> (health given too). One row per need an item raises: a watermelon feeds and quenches. The player eats with a click on its slot in the inventory window (I), as long as <code>manger_fenetre</code> is on; <code>rien_si_plein</code> keeps a food when its needs are full. The items themselves come from <code>inventaire</code> (picked up), <code>collecte</code> (gathered: berries from a bush), <code>fabrication</code> (cooked at a campfire) or <code>boutique</code>.</li>
+<li><strong>Sources in the world</strong>: place <code>besoins</code> on an object (<code>systems_attach</code>; <code>interaction</code> comes with it) and set <code>source_besoin</code> (the need's <code>nom</code>), <code>source_montant</code>, <code>source_verbe</code> (the prompt: « Boire », « Dormir »), <code>source_recharge</code> (seconds before it works again), <code>source_heures</code> (hours that pass, with <code>jour_nuit</code>: 8 for a bed). A well, a river bank, a bed, a spring.</li>
+<li><strong>Dosage</strong>: with <code>baisse</code> 2 per minute and <code>max</code> 100, hunger reaches zero after 50 minutes of play. Say the numbers to the user and check them with <code>game_run</code> (a long segment doing nothing): the player must have time to find food, and doing nothing must end badly if the user asked for a survival game.</li>
+<li>Game settings: <code>alerte</code> (% under which the bar blinks and <code>besoins.bas</code> is sent), <code>soin_rassasie</code> and <code>seuil_rassasie</code> (health regained per second while every need is above that %), <code>afficher</code> and the bars' place (<code>x</code>, <code>y</code>, <code>largeur</code>, <code>hauteur</code>, <code>ecart</code>: they line up under the health bar by default).</li>
+<li>Events announced: <code>besoins.change</code> (<code>besoin</code>, <code>valeur</code>, <code>max</code>), <code>besoins.bas</code>, <code>besoins.vide</code> (<code>besoin</code>), <code>besoins.consomme</code> (<code>objet</code>), <code>besoins.source</code> (<code>cible</code>, <code>besoin</code>, <code>montant</code>). Send <code>besoins.remplir</code> (<code>besoin</code>, <code>montant</code>) to raise a need without using anything (a meal at an inn; from a <code>declencheur</code> rule, use its action <code>remplir_besoin</code>, which sends it with these fields), <code>besoins.consommer</code> (<code>objet</code>) to eat an item from a script or a <code>declencheur</code> rule.</li>
+<li>Change how fast a need falls from your own script, never the module's: <code>game.override("besoins.baisse", function(default, besoin, par_minute) if besoin == "Soif" and game.has_tag(game.ground(game.player()) or "", "desert") then return par_minute * 2 end return default(besoin, par_minute) end)</code>.</li>
+<li>Saved games: <code>game.save</code> keeps every need and the sources' waiting time; <code>game.load</code> gives them back. Nothing to write.</li>
+<li>HUD keys start with <code>besoins.</code>: do not use that prefix in a game script. The bars are numbered among the needs that are on: <code>besoins.1</code> is the first bar shown.</li>
+<li>Testing: in <code>game_run</code>, read the report's <code>hud</code> (<code>besoins.1</code>, <code>besoins.1.nom</code>...) and the <code>besoins.*</code> events; a script listening to <code>sante.change</code> shows the health lost at zero.</li>
+</ul>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>One copy per player: each player has their own needs, bars, food and penalties; a source (a well, a bed) refills the player who uses it. A bed that moves the clock on (<code>jour_nuit.avancer</code>) moves it on for everyone: the day is shared.</p>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>modules/besoins/module.json</code>, <code>modules/besoins/AGENT.md</code>, <code>modules/events.json</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../menu/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Menu">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Menu
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../particules/" class="md-footer__link md-footer__link--next" aria-label="Next: Particle effect">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Particle effect
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

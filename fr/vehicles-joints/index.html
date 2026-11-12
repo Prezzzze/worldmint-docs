@@ -1,0 +1,3163 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/vehicles-joints/">
+      
+      
+      
+        <link rel="prev" href="../physics-zones/">
+      
+      
+        <link rel="next" href="../game-interface/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Véhicules, articulations et chiffons - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="./.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Véhicules, articulations et chiffons
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#les-articulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les articulations
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les articulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ouvrir-fermer-casser" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ouvrir, fermer, casser
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exemples
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-vehicules" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les véhicules
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les véhicules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-moto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La moto
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-bateau" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le bateau
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-poupees-de-chiffon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les poupées de chiffon
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demander-a-lagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Demander à l'agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#les-articulations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les articulations
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les articulations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ouvrir-fermer-casser" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ouvrir, fermer, casser
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemples" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Exemples
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-vehicules" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les véhicules
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les véhicules">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#la-moto" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La moto
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-bateau" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le bateau
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-poupees-de-chiffon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les poupées de chiffon
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#demander-a-lagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Demander à l'agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="vehicules-articulations-et-chiffons">Véhicules, articulations et chiffons<a class="headerlink" href="#vehicules-articulations-et-chiffons" title="Permanent link">&para;</a></h1>
+<p>Trois systèmes de jeu donnent aux objets une mécanique de vrai jeu, sans écrire de code : <strong>Articulation</strong>, pour ce qui tourne sur un gond, glisse sur un rail ou pend à une corde ; <strong>Véhicule</strong>, pour une voiture, une moto ou un bateau qu'on conduit ; <strong>Poupée de chiffon</strong>, pour un personnage qui tombe inerte puis se relève. Ils se règlent dans les <strong>Propriétés</strong>, et l'agent sait les poser pour vous.</p>
+<p>Comme pour la <a href="../physics-zones/">physique</a>, rien n'est propre à un pack de modèles : le point d'attache se prend sur la boîte du modèle, les roues sont mesurées sur leurs modèles, et la poupée de chiffon sur le squelette du personnage.</p>
+<h2 id="les-articulations">Les articulations<a class="headerlink" href="#les-articulations" title="Permanent link">&para;</a></h2>
+<p>Une articulation relie un objet à un autre, ou au monde : une porte sur ses gonds, un pont-levis, une roue sur un chariot, un tiroir, un ascenseur, un lustre, une planche qui cède sous un poids.</p>
+<ol>
+<li><strong>Activez le système</strong> : onglet <strong>Jeu</strong>, section <strong>Systèmes</strong>, <strong>Activer</strong> sous <strong>Articulation</strong>. Le système <strong>Physique</strong> s'active avec lui : l'objet articulé est un objet qui bouge.</li>
+<li><strong>Posez-le sur la partie qui bouge</strong> (la porte, pas le mur) : glissez <strong>Articulation</strong> depuis le dossier <strong>Systèmes</strong> de la bibliothèque, ou <strong>+ Système</strong> dans ses <strong>Propriétés</strong>. Donnez-lui une <strong>Masse</strong> sous <strong>Physique</strong> : 20 à 40 kg pour une porte.</li>
+<li><strong>Réglez-la</strong> sous <strong>Articulation</strong>. Quand l'objet est choisi, la vue 3D montre son point d'attache (un rond) et son axe (un trait) : on voit tout de suite si la porte tourne du bon côté.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sorte d'articulation</strong></td>
+<td><strong>Charnière</strong> (tourne autour d'un axe), <strong>Glissière</strong> (glisse le long d'un axe), <strong>Boule</strong> (tourne dans tous les sens autour d'un point), <strong>Fixe</strong> (tient en place jusqu'à casser), <strong>Corde</strong> (ne s'éloigne pas plus qu'une longueur), <strong>Ressort</strong> (revient à sa longueur).</td>
+</tr>
+<tr>
+<td><strong>Attaché à (vide : au monde)</strong></td>
+<td>L'objet qui le tient, choisi dans la scène : le chariot d'une roue, le meuble d'un tiroir. Vide, il est tenu là où il est posé.</td>
+</tr>
+<tr>
+<td><strong>Point d'attache</strong></td>
+<td>Où il est tenu, sur la boîte de son modèle : au centre, sur un côté, en bas, en haut, à l'avant ou à l'arrière.</td>
+</tr>
+<tr>
+<td><strong>Axe</strong></td>
+<td>Pour une charnière ou une glissière : <strong>Vertical</strong> (une porte, un ascenseur), <strong>De côté</strong> (un pont-levis, une roue), <strong>Avant-arrière</strong> (un tiroir).</td>
+</tr>
+<tr>
+<td><strong>Butées</strong></td>
+<td>Jusqu'où il tourne (en degrés) ou glisse (en mètres) depuis sa position de départ. Une charnière de −180 à 180 tourne sans fin, comme une roue. Pour une boule, de combien elle s'écarte.</td>
+</tr>
+<tr>
+<td><strong>Souplesse (0 : rigide)</strong></td>
+<td>Des butées qui amortissent comme un ressort ; pour un ressort, sa raideur.</td>
+</tr>
+<tr>
+<td><strong>Moteur</strong></td>
+<td><strong>Aucun</strong> : il bouge quand on le pousse. <strong>Vers une position</strong> : il reste fermé, et s'ouvre jusqu'à sa butée quand on le lui demande. <strong>À vitesse constante</strong> : il tourne ou glisse sans s'arrêter (un moulin, un tapis).</td>
+</tr>
+<tr>
+<td><strong>Force du moteur</strong></td>
+<td>500 pour une porte, 20 000 pour un ascenseur qui porte le joueur.</td>
+</tr>
+<tr>
+<td><strong>Ouvert au départ</strong></td>
+<td>Avec un moteur vers une position : il commence ouvert.</td>
+</tr>
+<tr>
+<td><strong>Force de rupture (N, 0 : incassable)</strong></td>
+<td>Au-delà, l'articulation cède et l'objet tombe : 800 pour une planche pourrie que le joueur casse en sautant dessus.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ouvrir-fermer-casser">Ouvrir, fermer, casser<a class="headerlink" href="#ouvrir-fermer-casser" title="Permanent link">&para;</a></h3>
+<p>Le <a href="../triggers/">Déclencheur</a> a les actions <strong>Ouvrir</strong>, <strong>Fermer</strong> et <strong>Casser son articulation</strong>, avec <strong>Sur quel objet</strong> : un levier (système <strong>Interaction</strong>) qui ouvre la porte, une zone devant le pont-levis qui le baisse. Et la règle <strong>Son articulation casse</strong> réagit quand elle cède : un message, un son, la suite de la partie.</p>
+<h3 id="exemples">Exemples<a class="headerlink" href="#exemples" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Une porte qu'on pousse</strong> : Charnière, point d'attache sur un côté, axe vertical, butées 0 et 100. Le joueur l'ouvre en marchant dedans.</li>
+<li><strong>Une porte qui s'ouvre au levier</strong> : la même, avec le moteur <strong>Vers une position</strong> et une force de 800 ; sur le levier, une règle <strong>Le joueur l'utilise</strong> → <strong>Ouvrir</strong>, sur la porte.</li>
+<li><strong>Un pont-levis</strong> : Charnière, point d'attache en bas, axe de côté, butées −90 et 0, moteur vers une position, <strong>Ouvert au départ</strong> ; une règle <strong>Fermer</strong> le baisse.</li>
+<li><strong>Un lustre</strong> : Boule, point d'attache en haut, butée 30 degrés.</li>
+<li><strong>Une planche qui cède</strong> : Fixe, force de rupture 800.</li>
+</ul>
+<h2 id="les-vehicules">Les véhicules<a class="headerlink" href="#les-vehicules" title="Permanent link">&para;</a></h2>
+<p>Le système <strong>Véhicule</strong> fait d'un modèle une voiture : ses roues tournent, braquent et suivent la suspension, et le joueur la conduit.</p>
+<ol>
+<li><strong>Activez le système</strong>, puis <strong>posez-le sur la voiture</strong> elle-même, ou sur le dossier qui range sa caisse et ses roues. Posez-la au sol.</li>
+<li><strong>Les roues</strong> : les objets rangés dans la voiture dont le nom contient « roue », « wheel », « tire », « tyre » ou « pneu » sont trouvés seuls. Sinon, listez-les dans <strong>Roues</strong>. Leur taille et leur place viennent de leurs modèles.</li>
+<li><strong>Un modèle d'un seul tenant</strong> (la voiture et ses roues dans un seul fichier, sans roues rangées à part) : avec <strong>Roues du modèle d'un seul tenant</strong> coché (c'est le réglage de départ), le système cherche ses roues dans le modèle lui-même, les pièces rondes posées en bas vues de côté. Quand la voiture est choisie, un rond marque chacune. En jeu, elles se détachent de la caisse et tournent comme de vraies roues.</li>
+<li>Si aucune n'est trouvée (des roues collées à la caisse), quatre roues invisibles la portent, aux coins de son dessous, et les roues du modèle ne tournent pas.</li>
+<li><strong>L'avant du modèle</strong> : la plupart regardent vers +Z. Quand la voiture est choisie, une flèche montre son avant, et un rond marque chaque roue trouvée. Les roues de l'avant braquent.</li>
+</ol>
+<p><strong>Monter et descendre</strong> : le joueur s'approche et appuie sur <strong>Utiliser</strong> (<strong>E</strong>, ou <strong>Y</strong> à la manette). Au volant, <strong>Avancer</strong> et <strong>Reculer</strong> accélèrent ou freinent puis passent en marche arrière, <strong>Aller à gauche</strong> et <strong>Aller à droite</strong> braquent, <strong>Sauter</strong> tient le frein à main. La caméra suit la voiture et revient derrière elle quand on ne la tourne pas. <strong>Utiliser</strong> à nouveau, et il descend du côté gauche.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Masse (kg)</strong></td>
+<td>Une voiture 1 200, un kart 150, un camion 8 000.</td>
+</tr>
+<tr>
+<td><strong>Puissance du moteur (N·m)</strong></td>
+<td>Elle fait accélérer : 600 pour une voiture, 150 pour un kart.</td>
+</tr>
+<tr>
+<td><strong>Vitesse maximale (km/h)</strong></td>
+<td>Au-delà, elle n'accélère plus.</td>
+</tr>
+<tr>
+<td><strong>Adhérence (1 : route sèche)</strong></td>
+<td>0,4 dérape comme sur la neige, 1,5 colle à la route.</td>
+</tr>
+<tr>
+<td><strong>Course de la suspension (m)</strong>, <strong>Raideur de la suspension</strong></td>
+<td>Une voiture souple ou ferme, un tout-terrain qui monte haut.</td>
+</tr>
+<tr>
+<td><strong>Braquage des roues avant (degrés)</strong></td>
+<td>Plus, elle tourne plus court.</td>
+</tr>
+<tr>
+<td><strong>Force des freins</strong></td>
+<td>Le frein à main bloque les roues arrière.</td>
+</tr>
+<tr>
+<td><strong>Aide à la conduite (1 : arcade)</strong></td>
+<td>1, comme dans un jeu d'arcade : lancée, elle braque moins, le volant tourne sans à-coup même au clavier, et elle suit la route sans tête-à-queue ni glissade (le frein à main la fait encore déraper). 0 : la physique seule, comme une simulation.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Le conducteur reste visible</strong> : assis à la place du conducteur (à gauche), les mains au volant, on le voit par les vitres ; sur une moto, à califourchon sur la selle, les mains au guidon, il penche avec elle. Sa place est mesurée sur le modèle. S'il s'enfonce dans le siège ou flotte au-dessus, réglez <strong>Siège : vers l'avant</strong>, <strong>vers le haut</strong> et <strong>vers la droite</strong> (en mètres). Si le personnage du joueur a une animation de conduite (son nom parle de conduire ou de s'asseoir : drive, ride, sit, seat…), elle est jouée ; sinon une pose assise est faite à partir de la sienne. <strong>Animation de conduite</strong> en choisit une autre. Décochez <strong>Conducteur visible</strong> pour le cacher, comme derrière des vitres teintées. À plusieurs, chacun voit les autres au volant.</p>
+<p>Une <a href="../physics-zones/#les-zones">zone</a> voit la voiture conduite comme le joueur : une ligne d'arrivée marche pour une course.</p>
+<p><strong>Copier une voiture en cours de partie</strong> : un script qui fait <code>game.clone</code> d'un véhicule (un modèle caché qui sert de patron, ou une voiture posée) obtient un autre véhicule, avec ses roues, que le joueur peut conduire. Une voiture cachée puis remontrée redevient aussi un véhicule.</p>
+<h3 id="la-moto">La moto<a class="headerlink" href="#la-moto" title="Permanent link">&para;</a></h3>
+<p>Un véhicule de la sorte <strong>Moto</strong> roule sur deux roues, l'une derrière l'autre. Posez le système sur la moto (ou le dossier qui range son cadre et ses roues), choisissez <strong>Sorte de véhicule</strong> : <strong>Moto</strong>, et réglez <strong>Masse</strong> (200 pour une moto, 110 pour un scooter) et <strong>Puissance du moteur</strong> (150) : les valeurs de départ sont celles d'une voiture.</p>
+<ul>
+<li><strong>Ses roues</strong> se trouvent comme celles d'une voiture : par leur nom, dans la liste <strong>Roues</strong>, ou dans un modèle d'un seul tenant. Celle de l'avant braque, celle de l'arrière pousse. Sans roue trouvée, deux roues invisibles la portent.</li>
+<li><strong>Elle tient debout seule</strong>, garée ou conduite, comme sur sa béquille, et <strong>penche dans les virages</strong>, d'autant plus qu'elle va vite.</li>
+<li><strong>Elle peut tomber</strong> : heurtée de côté (un rocher, une voiture) ou renversée dans un choc, elle se couche sur le flanc et son conducteur est jeté à terre (il tombe en chiffon s'il porte le système <strong>Poupée de chiffon</strong>). Pour la relever, il suffit de remonter dessus avec <strong>Utiliser</strong>.</li>
+<li>On la conduit comme une voiture, et la caméra la suit de la même façon.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Réglage (moto)</th>
+<th>Ce qu'il fait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Inclinaison dans les virages (degrés)</strong></td>
+<td>De combien elle penche au plus : 45 pour une moto de route, 55 pour une moto de course, 25 pour un scooter.</td>
+</tr>
+<tr>
+<td><strong>Équilibre (1 : ordinaire)</strong></td>
+<td>La force qui la tient debout : 2 très stable, 0,5 flottante.</td>
+</tr>
+<tr>
+<td><strong>Maniabilité (1 : ordinaire)</strong></td>
+<td>La vitesse à laquelle le guidon tourne : 2 vive, 0,5 lourde. Trop vive, un coup de guidon peut la coucher.</td>
+</tr>
+<tr>
+<td><strong>Choc qui la déséquilibre (m/s)</strong></td>
+<td>Un coup de côté plus brusque que cela lui fait perdre l'équilibre un instant : 4 ordinaire, 8 robuste, 0 jamais.</td>
+</tr>
+<tr>
+<td><strong>Peut tomber</strong></td>
+<td>Décoché : elle ne tombe jamais, comme dans un jeu d'arcade.</td>
+</tr>
+</tbody>
+</table>
+<p>Le <a href="../triggers/">Déclencheur</a> et les scripts savent quand elle tombe : l'événement <code>vehicule.tombe</code>.</p>
+<h3 id="le-bateau">Le bateau<a class="headerlink" href="#le-bateau" title="Permanent link">&para;</a></h3>
+<p>Un véhicule de la sorte <strong>Bateau</strong> flotte au lieu de rouler. Posez le système sur le bateau (ou le dossier qui range sa coque, son mât, sa cabine), choisissez <strong>Sorte de véhicule</strong> : <strong>Bateau</strong>, et posez-le sur l'eau d'un lac ou de la mer.</p>
+<ul>
+<li><strong>Sa coque est mesurée sur son modèle</strong> : sa longueur et sa largeur, tranche par tranche de l'arrière à l'avant, et son fond. Une proue effilée porte moins qu'un arrière large. De combien elle s'enfonce vient de sa <strong>Masse</strong> : l'eau qu'elle déplace pèse autant que lui. Son centre de gravité est à sa ligne d'eau : un mât ne le fait pas chavirer.</li>
+<li><strong>Un moteur à l'arrière le pousse</strong>, un gouvernail le tourne, d'autant mieux qu'il avance. On le conduit comme une voiture : <strong>Avancer</strong> pour accélérer, <strong>Reculer</strong> pour ralentir puis reculer, <strong>Aller à gauche</strong> et <strong>Aller à droite</strong> pour tourner. La caméra le suit.</li>
+<li><strong>Il tangue avec les vagues</strong> et suit la surface de l'eau ; un courant l'emporte.</li>
+<li><strong>Il s'échoue sur la terre</strong> : son moteur ne pousse que dans l'eau. Lancé vers une plage, il y monte un peu, puis reste posé.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Réglage (bateau)</th>
+<th>Ce qu'il fait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Masse (kg)</strong></td>
+<td>Un canot à moteur 1 200, une barque 150, un bateau de pêche 8 000. Plus lourd, il s'enfonce davantage.</td>
+</tr>
+<tr>
+<td><strong>Poussée du moteur (N)</strong></td>
+<td>Elle fait accélérer : 4 000 pour un canot de 1 200 kg, 800 pour une barque.</td>
+</tr>
+<tr>
+<td><strong>Vitesse maximale (km/h)</strong></td>
+<td>L'eau le freine de plus en plus : à pleine poussée, il plafonne à cette vitesse.</td>
+</tr>
+<tr>
+<td><strong>Virage, barre à fond (degrés par seconde)</strong></td>
+<td>40 pour un canot, 15 pour un gros bateau.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="les-poupees-de-chiffon">Les poupées de chiffon<a class="headerlink" href="#les-poupees-de-chiffon" title="Permanent link">&para;</a></h2>
+<p>Un personnage animé qui porte le système <strong>Poupée de chiffon</strong> tombe inerte : son corps est construit seul depuis son squelette (les os assez longs deviennent des membres, les doigts et les orteils suivent leur main ou leur pied), puis il peut se relever, et son animation reprend en douceur.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tombe inerte à sa mort (système Santé)</strong></td>
+<td>Quand sa santé tombe à zéro, il s'effondre, et reste à terre.</td>
+</tr>
+<tr>
+<td><strong>Tombe sous un choc plus fort que (m/s)</strong></td>
+<td>Un objet qui le heurte assez fort le renverse : un rocher qui roule, un tonneau lancé. 0 : jamais.</td>
+</tr>
+<tr>
+<td><strong>Se relève après un choc</strong>, <strong>Se relève après (s)</strong></td>
+<td>Renversé par un choc, il se relève une fois immobile depuis ce temps.</td>
+</tr>
+<tr>
+<td><strong>Masse (kg)</strong></td>
+<td>Le poids du corps, partagé entre ses membres.</td>
+</tr>
+<tr>
+<td><strong>Souplesse des membres (degrés)</strong></td>
+<td>45 est naturel, 20 tombe raide, 90 est très mou.</td>
+</tr>
+</tbody>
+</table>
+<p>Tombée dans l'eau, la poupée flotte, la tête et les épaules juste hors de l'eau, et dérive avec elle ; décochez <strong>Flotte dans l'eau</strong> pour qu'elle coule, comme un chevalier en armure.</p>
+<p>Le <a href="../triggers/">Déclencheur</a> a les actions <strong>Faire tomber inerte</strong> et <strong>Le relever</strong>. Le personnage doit être animé : un modèle sans squelette ne peut pas tomber en chiffon.</p>
+<h2 id="demander-a-lagent">Demander à l'agent<a class="headerlink" href="#demander-a-lagent" title="Permanent link">&para;</a></h2>
+<p>L'agent pose ces systèmes et vérifie son travail en lançant le jeu : le rapport lui dit l'angle atteint par chaque articulation et si elle a cassé, la vitesse atteinte par chaque véhicule, la distance parcourue et s'il s'est retourné (pour une moto : de combien elle a penché et combien de fois elle est tombée ; pour un bateau : s'il flotte ou s'est échoué, et de combien sa coque s'enfonce), et combien de fois chaque personnage est tombé et s'est relevé. Demandez-lui par exemple :</p>
+<ul>
+<li>« Une porte en bois dans l'entrée du château, qu'on pousse pour entrer. »</li>
+<li>« Un pont-levis qui se baisse quand on tire le levier. »</li>
+<li>« Une voiture garée devant la maison, que le joueur peut conduire. »</li>
+<li>« Une barque amarrée au ponton, pour traverser le lac. »</li>
+<li>« Une moto de course sur la ligne de départ, qui penche bien dans les virages. »</li>
+<li>« Les gardes tombent en chiffon quand ils meurent. »</li>
+</ul>
+<p>Tous les réglages : la référence des systèmes <a href="../reference/systems/articulation/">Articulation</a>, <a href="../reference/systems/vehicule/">Véhicule</a> et <a href="../reference/systems/chiffon/">Poupée de chiffon</a>.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../physics-zones/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: La physique, les zones et la marche des personnages">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                La physique, les zones et la marche des personnages
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../game-interface/" class="md-footer__link md-footer__link--next" aria-label="Suivant: L&#x27;interface du jeu : menus, listes, champs de saisie">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                L'interface du jeu : menus, listes, champs de saisie
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

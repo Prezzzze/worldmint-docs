@@ -1,0 +1,6058 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/interface/">
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../systems/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Every editor control - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Every editor control
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Game tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_11">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18" id="__nav_18_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_18_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_18">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adjusting-a-characters-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Adjusting a character's pose
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Creating a move
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editor-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Editor preferences
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-settings-nothing-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Game settings (nothing selected)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Materials
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Object properties
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shader-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shader blocks
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Systems
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-creation-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The creation assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's controls
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-languages-and-the-translations-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's languages and the Translations window
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's scenes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-sound-mixer-game-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's sound mixer (Game tab)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface-editor-game-tab-interface-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The interface editor (Game tab, Interface screens)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The library
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The menus
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-players-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The player's animations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-player-movement-camera-and-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The player: movement, camera and body
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-scene-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Scene tab
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-script-debugger-and-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The script debugger and profiler
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The terrain
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-timeline-animations-and-cutscenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The timeline: animations and cutscenes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vegetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Vegetation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_18_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_18_3" id="__nav_18_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_18_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_18_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#adjusting-a-characters-pose" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Adjusting a character's pose
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-move" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Creating a move
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#editor-preferences" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Editor preferences
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-settings-nothing-selected" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Game settings (nothing selected)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Materials
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#object-properties" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Object properties
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shader-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shader blocks
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Systems
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-creation-assistant" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The creation assistant
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-controls" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's controls
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-languages-and-the-translations-window" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's languages and the Translations window
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-scenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's scenes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-games-sound-mixer-game-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game's sound mixer (Game tab)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-interface-editor-game-tab-interface-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The interface editor (Game tab, Interface screens)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The library
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-menus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The menus
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-players-animations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The player's animations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-player-movement-camera-and-body" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The player: movement, camera and body
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-scene-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The Scene tab
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-script-debugger-and-profiler" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The script debugger and profiler
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-terrain" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The terrain
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-timeline-animations-and-cutscenes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The timeline: animations and cutscenes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vegetation" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Vegetation
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="every-editor-control">Every editor control<a class="headerlink" href="#every-editor-control" title="Permanent link">&para;</a></h1>
+<p>Every field, section, button and menu of the editor, area by area, with what it does. It is the text shown as a tooltip when you rest the mouse on it in the editor. The settings of game systems are described on <a href="../systems/">each system's page</a>.</p>
+<h2 id="adjusting-a-characters-pose">Adjusting a character's pose<a class="headerlink" href="#adjusting-a-characters-pose" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../poses/">Adjusting a character's pose</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a joint here</strong></td>
+<td>Adds a new joint, child of the chosen one, a little beyond it: you name it, then place it with the gizmo. Without skin it is an attach point (a weapon, a held object, particles); with « Take the skin around » it bends the part of the model beyond it. It can then be animated like the others.</td>
+</tr>
+<tr>
+<td><strong>Adjust the pose</strong></td>
+<td>Shows the skeleton in the view and the list of its bones. Click a bone, then turn it (E) or move its point (W) with the gizmo, or type its angles: the character changes before your eyes.</td>
+</tr>
+<tr>
+<td><strong>Adjusted move</strong></td>
+<td>The move the adjustment is added to: one move, every move, or "Seated on a vehicle", the pose the game gives the driver of a motorbike or a car.</td>
+</tr>
+<tr>
+<td><strong>Adjustment layer</strong></td>
+<td>A layer groups turned bones, for one move or for all of them. A model can have several ("Hands on the handlebar", "Hunched back"). The first adjustment creates one.</td>
+</tr>
+<tr>
+<td><strong>Adjustment strength</strong></td>
+<td>At 100%, bones turn by their full angle; at 50%, by half; at 0%, the adjustment does nothing.</td>
+</tr>
+<tr>
+<td><strong>Back to the original skeleton</strong></td>
+<td>Removes every correction of this model's skeleton: moved, turned, removed and added joints. Ctrl+Z brings them back.</td>
+</tr>
+<tr>
+<td><strong>Bend direction</strong></td>
+<td>When moving a hand or a foot: which way the elbow or knee bends. Automatic follows the model's rest pose if it is bent there, otherwise the elbow backward and the knee forward. Forward or backward force it, for a limb that is straight at rest or an animal's leg.</td>
+</tr>
+<tr>
+<td><strong>Bone gizmo</strong></td>
+<td>What the gizmo does on the chosen bone: Turn (E) rotates it; Move (W) takes its point where you drag it. The hips really move; a hand or a foot bends the two bones above it (the arm, the leg) without stretching them; an elbow, a knee, the head or the back turn the bones that carry them. The Move and Rotate buttons of the toolbar do the same.</td>
+</tr>
+<tr>
+<td><strong>Bone rotation</strong></td>
+<td>The angles added to this bone, in degrees, around the standing character's axes: X tilts it forward or back, Y turns it around, Z tilts it sideways.</td>
+</tr>
+<tr>
+<td><strong>Copy the left onto the right</strong></td>
+<td>Gives the right side the left side's adjustments, mirrored.</td>
+</tr>
+<tr>
+<td><strong>Copy the pose</strong></td>
+<td>Keeps this layer's angles to paste them elsewhere: in another layer, or on another character.</td>
+</tr>
+<tr>
+<td><strong>Copy the right onto the left</strong></td>
+<td>Gives the left side the right side's adjustments, mirrored.</td>
+</tr>
+<tr>
+<td><strong>Correct the skeleton</strong></td>
+<td>Correct the skeleton itself, not a move: put a joint back where the limb should bend (a knee behind the leg, an elbow inside the arm, common on an automatically rigged skeleton), turn it, remove it or add one. The model does not move: only its rest pose changes, and all its moves then bend around the new joint. The model file is never changed: the correction is stored in the project, for this model.</td>
+</tr>
+<tr>
+<td><strong>Delete the layer</strong></td>
+<td>Removes the layer and all its adjustments. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Finish adjusting</strong></td>
+<td>Hides the skeleton and gives back the object's gizmo. The adjustments stay saved.</td>
+</tr>
+<tr>
+<td><strong>Joint name</strong></td>
+<td>The new joint's name, as scripts, held objects and the agent will refer to it. It must differ from the skeleton's names.</td>
+</tr>
+<tr>
+<td><strong>Joint offset</strong></td>
+<td>How far this joint was moved inside the model at rest, along the character's axes (X to its left, Y up, Z forward), in model units. Drag or type; the Move gizmo (W) does the same in the view.</td>
+</tr>
+<tr>
+<td><strong>Joint rotation</strong></td>
+<td>How far this joint was turned on itself at rest, in degrees around the character's axes. Its axes change, the skin does not move: a limb that bent sideways then bends in the right plane. The Turn gizmo (E) does the same in the view.</td>
+</tr>
+<tr>
+<td><strong>Layer name</strong></td>
+<td>The layer's name, also used by scripts to switch it on or off (game.pose_layer).</td>
+</tr>
+<tr>
+<td><strong>Layer on</strong></td>
+<td>Off, the layer is kept but no longer plays: handy to compare before and after.</td>
+</tr>
+<tr>
+<td><strong>Mirror</strong></td>
+<td>On, the bone on the other side follows, as in a mirror: turning the left arm turns the right one too.</td>
+</tr>
+<tr>
+<td><strong>Moment of the move</strong></td>
+<td>The moment of the move that is shown. Play it, or stop it where the adjustment shows best.</td>
+</tr>
+<tr>
+<td><strong>Move the joint alone</strong></td>
+<td>Off, the joints below the one you correct follow it (moving the shoulder takes the arm and hand along). On, they stay where they were: only this joint moves, and the bone linking it to the next one gets longer or shorter.</td>
+</tr>
+<tr>
+<td><strong>Paste the pose</strong></td>
+<td>Puts the copied angles in this layer. Bones this model does not have are ignored.</td>
+</tr>
+<tr>
+<td><strong>Remove this joint</strong></td>
+<td>Removes this joint from the skeleton: the skin it moved now follows its parent, and the joints it carried are attached to its parent, at the same place. Its animations and adjustments are ignored. The root of the skeleton cannot be removed. Restore it with « Restore the joint ».</td>
+</tr>
+<tr>
+<td><strong>Reset everything</strong></td>
+<td>Removes every adjustment of the layer. The layer stays, empty.</td>
+</tr>
+<tr>
+<td><strong>Reset the bone</strong></td>
+<td>Removes this bone's adjustment: it goes back to the original move.</td>
+</tr>
+<tr>
+<td><strong>Reset this joint</strong></td>
+<td>This joint goes back to the place and orientation the model file gives it. The other corrections stay.</td>
+</tr>
+<tr>
+<td><strong>Show the skeleton</strong></td>
+<td>Draws the bones in the view: one point per bone, clickable. The chosen bone is highlighted, adjusted bones are green.</td>
+</tr>
+<tr>
+<td><strong>Skeleton bones</strong></td>
+<td>All the model's bones, as a tree, with a search. In brackets, what the bone is when recognised (Left hand, Back...); a dot marks an adjusted bone.</td>
+</tr>
+<tr>
+<td><strong>Skeleton pose</strong></td>
+<td>For an animated model: adjust its pose, bone by bone, on top of its moves. The adjustments apply to every character using this model, wherever the move plays in the game.</td>
+</tr>
+<tr>
+<td><strong>Take the skin around</strong></td>
+<td>The new joint takes from its parent the skin that lies beyond it, with a smooth transition around it: it then bends that part, like the tip of a tail or an ear. Off, it moves nothing: it is an attach point.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="creating-a-move">Creating a move<a class="headerlink" href="#creating-a-move" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../mouvements/">Creating a move</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Attach to a move</strong></td>
+<td>This adjustment targets a move the model no longer has (a changed animation file, a deleted move): choose the one it should adjust from now on, or all of them.</td>
+</tr>
+<tr>
+<td><strong>Attach to this model</strong></td>
+<td>A move or pose adjustments whose model is gone (deleted or moved outside the editor) no longer play: attaching them to this model makes them play again. Ctrl+Z undoes it.</td>
+</tr>
+<tr>
+<td><strong>Auto keyframe</strong></td>
+<td>On, turning a bone or moving its point (with the gizmo or its fields) sets a keyframe at the playhead. Off, only a keyframe already set at that moment changes.</td>
+</tr>
+<tr>
+<td><strong>Bone offset</strong></td>
+<td>For the hips (or the root): how much it rises, lowers or moves forward, in the model's units. In a move, a keyframe is set at the playhead; in an adjustment layer, the offset is added to the move. The Move gizmo (W) does the same with the mouse.</td>
+</tr>
+<tr>
+<td><strong>Close the loop</strong></td>
+<td>Copies the first pose to the end of the move: the loop restarts without a jolt. When looping, a bone with a keyframe at the start already goes back to it at the end.</td>
+</tr>
+<tr>
+<td><strong>Copy keyframes</strong></td>
+<td>Keeps the chosen keyframes and their spacing (Ctrl+C, with the mouse over the timeline), to paste them elsewhere in this move or in another one.</td>
+</tr>
+<tr>
+<td><strong>Create a move</strong></td>
+<td>Makes a whole move for this model (a walk, a wave, an attack), keyframe by keyframe, in the timeline. It starts from the rest pose, an existing move or the adjustment layer, and then plays like the moves of the files.</td>
+</tr>
+<tr>
+<td><strong>Delete the move</strong></td>
+<td>Removes this move from the project (Ctrl+Z brings it back). Systems that played it act without it.</td>
+</tr>
+<tr>
+<td><strong>Feet on the ground</strong></td>
+<td>On, turning or moving the hips, or leaning the back, leaves the feet where they are: the legs bend by themselves (to crouch, to lean).</td>
+</tr>
+<tr>
+<td><strong>Finish the move</strong></td>
+<td>Closes the move's timeline and goes back to pose adjustment. The move stays in the project, saved with it.</td>
+</tr>
+<tr>
+<td><strong>Interpolation</strong></td>
+<td>How each bone goes from the chosen keyframes to the next ones: linear (steady), smooth (slow at start and end), stepped (it jumps from one pose to the next).</td>
+</tr>
+<tr>
+<td><strong>Move length</strong></td>
+<td>The length of one round of the move, in seconds. It cannot cut keyframes: move them first.</td>
+</tr>
+<tr>
+<td><strong>Move name</strong></td>
+<td>The name under which systems, timelines and scripts play it (game.play). The same name as a move of the file replaces it everywhere. Renaming it makes the pose adjustments that target it follow, in a single Ctrl+Z.</td>
+</tr>
+<tr>
+<td><strong>Moves made in the tool</strong></td>
+<td>The moves created for this model. Choose one to edit it: the timeline shows its bones and their keyframes.</td>
+</tr>
+<tr>
+<td><strong>Onion skin</strong></td>
+<td>Shows the skeleton a little before (in green) and a little after (in the accent colour) the playhead, in pale lines, to tune a smooth gesture.</td>
+</tr>
+<tr>
+<td><strong>Paste keyframes</strong></td>
+<td>Pastes the copied keyframes at the playhead (Ctrl+V), with their spacing: the first lands at that moment. Bones this model does not have, and whatever would go past the length, are left out.</td>
+</tr>
+<tr>
+<td><strong>Paste keyframes here</strong></td>
+<td>Pastes the copied keyframes at the moment clicked in the timeline, with their spacing: the first lands at that moment. Bones this model does not have, and whatever would go past the length, are left out.</td>
+</tr>
+<tr>
+<td><strong>Remove keyframes</strong></td>
+<td>Removes the keyframes chosen in the timeline (Delete, with the mouse over the timeline). A bone left without keyframes leaves the move. Ctrl+Z brings them back.</td>
+</tr>
+<tr>
+<td><strong>Show all</strong></td>
+<td>Shows the whole length of the move in the timeline. Ctrl+wheel zooms around the mouse, Shift+wheel (or the bar under the tracks) scrolls.</td>
+</tr>
+<tr>
+<td><strong>Start from</strong></td>
+<td>What the move contains at first: nothing (the rest pose), an existing move read as keyframes (to correct it), or the chosen adjustment layer.</td>
+</tr>
+<tr>
+<td><strong>Starting move</strong></td>
+<td>The move copied as keyframes, ten per second, to correct it without touching the original file.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="editor-preferences">Editor preferences<a class="headerlink" href="#editor-preferences" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/preferences/">Preferences</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Accent color</strong></td>
+<td>The color of the editor's main buttons, of the selection and of its highlights.</td>
+</tr>
+<tr>
+<td><strong>Arrow keys step</strong></td>
+<td>How far the arrow keys nudge the selection (0.1 m by default): Shift for ten times more, Ctrl for ten times less. Page Up and Page Down move it up and down. Each press is undone with one Ctrl+Z.</td>
+</tr>
+<tr>
+<td><strong>Automatic backup</strong></td>
+<td>How often, in seconds, the editor keeps a copy of your work (60 by default); 0 turns it off. The copy is kept separately: it doesn't touch the scene file.</td>
+</tr>
+<tr>
+<td><strong>Close preferences</strong></td>
+<td>Goes back to the properties of what is selected.</td>
+</tr>
+<tr>
+<td><strong>Dark theme</strong></td>
+<td>A dark interface; unchecked, a light one.</td>
+</tr>
+<tr>
+<td><strong>Display</strong></td>
+<td>How the work views are drawn.</td>
+</tr>
+<tr>
+<td><strong>Gizmo size</strong></td>
+<td>The size of the handles that move, rotate and resize the selected object in the view.</td>
+</tr>
+<tr>
+<td><strong>Grid step</strong></td>
+<td>The spacing between grid lines, in meters, and the step for moves when snapping is on.</td>
+</tr>
+<tr>
+<td><strong>Interface size</strong></td>
+<td>Makes the editor's text and buttons bigger or smaller, from × 0.6 to × 3. The change applies when you release the field.</td>
+</tr>
+<tr>
+<td><strong>Lines kept</strong></td>
+<td>How many messages the console keeps; beyond that, the oldest are removed.</td>
+</tr>
+<tr>
+<td><strong>Navigation</strong></td>
+<td>How the 3D view moves with the mouse.</td>
+</tr>
+<tr>
+<td><strong>Orbit speed</strong></td>
+<td>How fast the view turns when you drag it with the right mouse button, around the point under the mouse (or the selection, with Ctrl).</td>
+</tr>
+<tr>
+<td><strong>Pan speed</strong></td>
+<td>How fast the view moves when you drag it with the middle mouse button (the wheel). At the default value, what is under the mouse follows it, near or far.</td>
+</tr>
+<tr>
+<td><strong>Place on ground when adding</strong></td>
+<td>An object added to the scene settles on whatever is below it, instead of staying in the air.</td>
+</tr>
+<tr>
+<td><strong>Placement</strong></td>
+<td>How objects are placed and moved in the 3D view.</td>
+</tr>
+<tr>
+<td><strong>Rotation step</strong></td>
+<td>The step for rotations with the gizmo when snapping is on, in degrees.</td>
+</tr>
+<tr>
+<td><strong>Saving</strong></td>
+<td>The automatic backup of your work.</td>
+</tr>
+<tr>
+<td><strong>Scale step</strong></td>
+<td>The step for size changes with the gizmo when snapping is on.</td>
+</tr>
+<tr>
+<td><strong>View anti-aliasing</strong></td>
+<td>Smooths the objects' edges in the work views, when their upscaling is off. None, the starting setting, keeps the picture as it is. TAA: sharp when the camera moves, the view is redrawn for a few frames after each gesture. SMAA: sharp, with no trail. FXAA: the lightest. Automatic follows the views' quality. The game has its own setting, in Game window.</td>
+</tr>
+<tr>
+<td><strong>View indirect lighting</strong></td>
+<td>Indirect lighting: light bounced by surfaces (a sunlit floor lights the walls, a room is lit through its window), ray traced with a light cache. High quality with ray tracing only; costs about 1 to 2 ms. On by default; off, the views keep the sky's ambient light. The player chooses their own in the game's menu.</td>
+</tr>
+<tr>
+<td><strong>View quality</strong></td>
+<td>How detailed the work views are: shadows, lights, water, glow, distant terrain and plants. Medium, the starting setting, keeps the editor smooth on a large scene, with four views; High shows the picture as the game draws it on a graphics card; Low helps a small computer. The game started with Play keeps its own quality, and the player chooses theirs in the game's menu. A view is only redrawn when something in it changes: at rest, the editor barely uses the graphics card.</td>
+</tr>
+<tr>
+<td><strong>View ray tracing</strong></td>
+<td>The work views' shadows and reflections drawn with real rays of light, on a graphics card that has it (NVIDIA RTX, AMD Radeon RX 6000 and later, Intel Arc). Automatic (the default): only on a dedicated graphics card, in Medium or High quality. On: always, even where the picture may slow down (an integrated chip, Low quality). Off: the usual shadows and reflections. The views only use it if the game allows it (Game window); the player chooses their own in the game's menu.</td>
+</tr>
+<tr>
+<td><strong>View upscaling</strong></td>
+<td>Draws the scene smaller in the work views, then enlarges it by blending the frames that follow one another: a modest graphics card draws faster, and the objects' edges no longer look like stairs. "Anti-aliasing only" keeps the full size and only smooths the edges. The game has its own setting: click "This game", at the top of the scene list, then Game window.</td>
+</tr>
+<tr>
+<td><strong>View upscaling method</strong></td>
+<td>What enlarges the work views' picture when their upscaling is on. None: WorldMint's own. FSR (all cards): AMD FSR, sharper, on every graphics card. DLSS (NVIDIA): on an NVIDIA GeForce RTX card, from the next start of the editor; as for the game, you first read what NVIDIA's license asks and give the folder of its files.</td>
+</tr>
+<tr>
+<td><strong>Zoom step</strong></td>
+<td>How much one notch of the wheel zooms: at 0.9, the view gets 10% closer. The lower the value, the faster the zoom.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="game-settings-nothing-selected">Game settings (nothing selected)<a class="headerlink" href="#game-settings-nothing-selected" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/properties/">The properties</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Activity radius</strong></td>
+<td>In a large world, in the game: beyond this distance around the player, in meters (in squares of 256 m), objects fall asleep. They still exist, but no longer move, walk or detect anything, until the player comes back. The same on every computer: the game plays the same everywhere. 300 m by default.</td>
+</tr>
+<tr>
+<td><strong>Adaptation time</strong></td>
+<td>The time the eye takes to get used to the dark, in seconds: 1.5 by default. It gets used to light three times faster, like a real eye. 0: at once.</td>
+</tr>
+<tr>
+<td><strong>Add a character size</strong></td>
+<td>Adds a size, with its own walkable areas: twice the typical character at first, to adjust afterwards. Each size is computed separately: add one only for characters really smaller or larger.</td>
+</tr>
+<tr>
+<td><strong>Allow ray tracing</strong></td>
+<td>Ray tracing draws shadows and reflections by casting real rays of light through the scene: more accurate shadows, sharp at the foot of objects and softer further away, and water, metal or glass reflecting the scenery, even what is off screen. Only some graphics cards have it (NVIDIA RTX, AMD Radeon RX 6000 and later, Intel Arc). Allowed (the default), the player chooses in the game's options: Automatic, On or Off; Automatic only uses it on a dedicated graphics card, in Medium or High quality. Turned off here, the game is always drawn without it, with the usual shadows and reflections.</td>
+</tr>
+<tr>
+<td><strong>Always active, advised</strong></td>
+<td>In a large world: how many objects may stay awake everywhere ("Always active") before the editor shows it in red and the agent is warned. Each costs at every moment of the game, wherever it is. Advice, not a limit: the game keeps them all awake. 100 by default.</td>
+</tr>
+<tr>
+<td><strong>Anti-aliasing</strong></td>
+<td>Smooths the objects' edges when upscaling is off (upscaling already does it). Automatic (the default) follows the player's quality: TAA in High and Medium (SMAA in a project created before November 2026), FXAA in Low. TAA: the sharpest when the camera moves, but each picture is rebuilt from the previous ones. SMAA: sharp, with no trail behind what moves. FXAA: the lightest, a little softer. None: stair-stepped edges. The player can change it in the game's menu, Display tab.</td>
+</tr>
+<tr>
+<td><strong>Anticipation</strong></td>
+<td>How far ahead in time a character sees an encounter coming, in seconds. Longer: it steps aside earlier and more calmly. Shorter: it brushes past the others.</td>
+</tr>
+<tr>
+<td><strong>Automatic exposure</strong></td>
+<td>The image slowly brightens when you walk into a dark place (a house, a cave) and comes back when you walk out, without dazzling: like the eye getting used to it. In sunlight, the image does not change. On by default. In the editor, the views show the image once the eye is used to it.</td>
+</tr>
+<tr>
+<td><strong>Avoidance quality</strong></td>
+<td>How many directions each character tries at each step before choosing. High: closer side steps, for more computing. Low: for crowds of several hundred.</td>
+</tr>
+<tr>
+<td><strong>Background</strong></td>
+<td>The color behind everything else, where there is nothing. In the distance, objects fade into it, as if in a haze.</td>
+</tr>
+<tr>
+<td><strong>Brighten up to</strong></td>
+<td>How many times brighter the image can get in the dark: 1 never, 4 by default (a dark room becomes readable without turning into daylight), 16 and more, you see almost as in daylight in a cellar. The night of a day and night cycle is not brightened: only what is darker than the current daylight.</td>
+</tr>
+<tr>
+<td><strong>Character height</strong></td>
+<td>A character's height, in meters: it walks under anything higher (a bridge, a branch), not under anything lower.</td>
+</tr>
+<tr>
+<td><strong>Character radius</strong></td>
+<td>Half a character's width, in meters: it keeps this distance from walls, and doesn't go into a passage narrower than twice that.</td>
+</tr>
+<tr>
+<td><strong>Character walking</strong></td>
+<td>The typical character for whom the walkable areas are computed: its size, and the slope and step it can climb. Enemies and the other characters that move on their own (game.walk_to) follow these areas, and avoid each other on the way. Other sizes (a small animal, a big monster) each have their own areas. Once the scene is saved, these areas are computed and stored in the project: the game reads them back when it starts. To see them: View menu, Walkable areas.</td>
+</tr>
+<tr>
+<td><strong>Characters avoid each other</strong></td>
+<td>Characters that walk on their own (game.walk_to) see each other coming, along with the player and the other characters, and step aside in time instead of bumping into each other or getting stuck in a corridor.</td>
+</tr>
+<tr>
+<td><strong>Choose the folder</strong></td>
+<td>Chooses the folder of the NVIDIA files; WorldMint checks they are all there and signed by NVIDIA.</td>
+</tr>
+<tr>
+<td><strong>Darken up to</strong></td>
+<td>How many times darker the image can get under a very strong light: 1 never (default: a sunny scene stays as you set it), 2 to 4 for a glare when walking out of a cave.</td>
+</tr>
+<tr>
+<td><strong>Distant detail</strong></td>
+<td>What gets simplified in the distance so that large maps stay smooth: lighter versions of models, the objects of a district merged into one, and distant plants as pictures. It all happens by itself, for any model; these settings turn it off or adjust it.</td>
+</tr>
+<tr>
+<td><strong>Distant plants as pictures</strong></td>
+<td>Beyond their drawing distance, trees and bushes become pictures of themselves, taken from 64 angles and always facing the camera: a forest stays visible from afar for almost nothing. The change fades in.</td>
+</tr>
+<tr>
+<td><strong>Download from NVIDIA</strong></td>
+<td>Opens NVIDIA's page to download Streamline and DLSS.</td>
+</tr>
+<tr>
+<td><strong>Edit the terrain</strong></td>
+<td>Selects the scene's Terrain object, to edit its relief, its regions and its sea.</td>
+</tr>
+<tr>
+<td><strong>Exposure</strong></td>
+<td>How much light reaches the image, as on a camera: 1 leaves the light as it is, higher brightens the image, lower darkens it (0.05 to 8). Very strong lights never turn abruptly white. With automatic exposure, it adds to what the eye chose: higher makes the whole game brighter.</td>
+</tr>
+<tr>
+<td><strong>Fog altitude</strong></td>
+<td>The altitude, in meters, where the fog has the set thickness. With thinning, it is thicker below and lighter above.</td>
+</tr>
+<tr>
+<td><strong>Fog color</strong></td>
+<td>The color of what is in the fog, and of the sky behind it: light grey for a mist, bluish for the distance, dark for a night.</td>
+</tr>
+<tr>
+<td><strong>Fog distance</strong></td>
+<td>A fog over the whole scene: at this distance, in meters, it hides almost everything in its color. 0: none, only the soft horizon fade remains. A light mist: 300 to 800 m; a thick fog: 40 to 100 m.</td>
+</tr>
+<tr>
+<td><strong>Folder of the NVIDIA files</strong></td>
+<td>The folder where you put sl.interposer.dll, sl.common.dll, sl.dlss.dll and nvngx_dlss.dll: each must be there, signed by NVIDIA.</td>
+</tr>
+<tr>
+<td><strong>Fullscreen</strong></td>
+<td>The game fills the whole screen, instead of a window.</td>
+</tr>
+<tr>
+<td><strong>Game window</strong></td>
+<td>The window the game runs in: its title, its size, fullscreen.</td>
+</tr>
+<tr>
+<td><strong>Glow of bright lights</strong></td>
+<td>The soft glow around what shines very brightly: a material giving off light, the sun on water or metal, a lamp close by. 0: none; 1 by default, discreet.</td>
+</tr>
+<tr>
+<td><strong>Height of this size</strong></td>
+<td>The height of the characters of this size, in meters: they walk under anything higher, and wade into water up to half this height.</td>
+</tr>
+<tr>
+<td><strong>Highest step</strong></td>
+<td>What a character steps over without a detour, in meters: a stair, a curb. Higher, it's an obstacle to walk around.</td>
+</tr>
+<tr>
+<td><strong>Large world</strong></td>
+<td>For a map of several kilometers: the scene is saved in pieces of 256 m, in a folder next to its file (".tuiles"), and only the pieces that changed are rewritten. In the game, what is far from the player falls asleep (see "Activity radius"). The previous file is kept next to it; unticking puts the scene back in a single file.</td>
+</tr>
+<tr>
+<td><strong>Light from the ground</strong></td>
+<td>The color of the light bounced back by the ground, which lights the underside of objects.</td>
+</tr>
+<tr>
+<td><strong>Loading around the player</strong></td>
+<td>In a large world, in the game: only the scenery near the player (and the camera showing the game) is loaded, in squares of 256 m. The rest is read in the background as you get closer, and freed as you move away: the game starts faster and takes less memory. What carries a tag or a system stays loaded everywhere. A script that looks for a scenery object by its name only finds it while it is loaded: give it a tag. On by default.</td>
+</tr>
+<tr>
+<td><strong>Loading budget</strong></td>
+<td>In a large world, in the game: the most time one frame gives, in milliseconds, to send the models of incoming scenery to the graphics card. Lower means fewer hitches; higher, distant scenery appears sooner. 4 ms by default.</td>
+</tr>
+<tr>
+<td><strong>Loading margin</strong></td>
+<td>In a large world, in the game: loaded scenery is only freed this much farther than the loading radius, in meters, so that a player going back and forth over a limit does not reload it over and over. 128 m by default.</td>
+</tr>
+<tr>
+<td><strong>Loading radius</strong></td>
+<td>In a large world, in the game: the scenery is loaded within this distance of the player, in meters. Never less than the activity radius plus 64 m. Beyond it, the scenery is drawn as simpler merged districts: a larger radius shows more detail, but takes more memory. The same on every computer. 600 m by default.</td>
+</tr>
+<tr>
+<td><strong>Max catch-up</strong></td>
+<td>After a slowdown, the most calculation steps the game catches up on in a single frame (1 to 100).</td>
+</tr>
+<tr>
+<td><strong>Max physics bodies</strong></td>
+<td>How many objects the game's physics can handle at once. It applies the next time the game starts.</td>
+</tr>
+<tr>
+<td><strong>Merged districts distance</strong></td>
+<td>From this distance to the camera, in meters, a 256 m square is drawn merged, fading over a short band. 600 m by default, in High quality: three quarters in Medium, half in Low (an integrated graphics chip).</td>
+</tr>
+<tr>
+<td><strong>Merged districts in the distance</strong></td>
+<td>In the distance, the fixed objects of a 256 m square (a block of houses, a farm) are drawn as a single simplified object, in the average color of each: this is what lets you see a city's skyline several kilometers away. Done in the background, and redone a few seconds after something changes there. The real objects come back as you get closer.</td>
+</tr>
+<tr>
+<td><strong>Multiplayer</strong></td>
+<td>Playing with several players: one player hosts the game on their PC, the others join it by its address, and each has their own character. The game is played on the host's computer: the others see and hear what it sends them. Off by default: a single-player game doesn't change.</td>
+</tr>
+<tr>
+<td><strong>Nearest visible distance</strong></td>
+<td>Anything closer to the camera than this distance, in meters, isn't drawn.</td>
+</tr>
+<tr>
+<td><strong>Network port</strong></td>
+<td>The "door" number through which the other players join the game, on the PC hosting it (48600 by default). Change it only if another program already uses it. On the first start, Windows may ask to allow the game on the network.</td>
+</tr>
+<tr>
+<td><strong>NVIDIA DLSS</strong></td>
+<td>What NVIDIA's license asks before using DLSS, and the folder of its files.</td>
+</tr>
+<tr>
+<td><strong>Objects always active</strong></td>
+<td>In a large world: the objects carrying this system stay awake even far from the player (a messenger crossing the map). Keep it for few objects: what stays awake far away costs at every moment of the game.</td>
+</tr>
+<tr>
+<td><strong>Objets toujours actifs dans la scène</strong></td>
+<td>How many objects of this scene stay awake everywhere: those with "Always active", and those carrying a system ticked "Objects always active". In red beyond the advised number.</td>
+</tr>
+<tr>
+<td><strong>Plant pictures distance</strong></td>
+<td>How far plants are drawn as pictures, in meters from the camera. 1,500 m by default, in High quality: two thirds in Medium, a third in Low (an integrated graphics chip). Beyond, nothing; they don't go further than the detailed terrain around the camera.</td>
+</tr>
+<tr>
+<td><strong>Play with several players</strong></td>
+<td>Starts the game twice on this PC: one window hosts the game, the other joins it as a guest. You try the game from both sides this way, without exporting or typing an address. Stopping the game closes both.</td>
+</tr>
+<tr>
+<td><strong>Players at most</strong></td>
+<td>How many players in a game, the host included: 2 to 8. Up to 4 works anywhere; beyond that, the host needs a good connection. One more player is refused with a clear message.</td>
+</tr>
+<tr>
+<td><strong>Radius of this size</strong></td>
+<td>Half the width of the characters of this size, in meters. A passage narrower than twice that isn't part of their walkable areas: a big monster doesn't go where a small one does.</td>
+</tr>
+<tr>
+<td><strong>Rate</strong></td>
+<td>How many steps the game computes each second: movement, physics. 60 by default.</td>
+</tr>
+<tr>
+<td><strong>Rays in the air</strong></td>
+<td>A slightly hazy air that shows the sun's rays even without fog: 0 none; 0.2 by default, mostly when looking toward the sun; 1 very strong, from the side too. In a room, add a little fog (dust) to see the rays from the windows.</td>
+</tr>
+<tr>
+<td><strong>Read NVIDIA's license</strong></td>
+<td>Opens the DLSS license on NVIDIA's site.</td>
+</tr>
+<tr>
+<td><strong>Scattering toward the sun</strong></td>
+<td>How much brighter the fog and the air shine when looking toward the sun than with your back to it: 0 the same in every direction, 0.3 by default, 0.6 to 0.9 a strong glow around the sun and very bright rays against the light.</td>
+</tr>
+<tr>
+<td><strong>Several players</strong></td>
+<td>Ticked, the game can be hosted and joined. Each guest arrives with a copy of the player's character, near the starting point; scripts see them arrive ("joueur.arrivee") and leave ("joueur.depart"). The catalog's systems don't all handle several players yet: they take care of the host's player.</td>
+</tr>
+<tr>
+<td><strong>Shadow distance</strong></td>
+<td>How far, in meters around the camera, shadows are drawn. Beyond that, they fade out gently. Further away also makes them a little less sharp up close (5 to 2000 m, 150 by default).</td>
+</tr>
+<tr>
+<td><strong>Shadow quality</strong></td>
+<td>How fine the shadows are, from the sun and from lights (fires included). Depends on the computer: low on an integrated graphics chip (a laptop), high on a graphics card; the player can also choose it in the game menu. High: sharp all the way. Medium: a little less far, fewer lights with shadows. Low: blurrier up close, lighter to draw. Off: no shadows at all, the lightest.</td>
+</tr>
+<tr>
+<td><strong>Shadow softness</strong></td>
+<td>Softens the edge of the sun's shadows, like a real sun: sharp at the foot of an object, softer and softer further from it. It is the size of the sun in the sky, in degrees. 0: sharp; 0.5: the real sun; 2 to 4: a hazy sky; up to 10: very soft. A little costlier on a small computer.</td>
+</tr>
+<tr>
+<td><strong>Simplified versions of models</strong></td>
+<td>From afar, each model is drawn with fewer triangles: half, a quarter, then a tenth, computed once on first load and kept in the project. The version is chosen from the object's size on screen, and changes from one to the next with a fade, without a jump.</td>
+</tr>
+<tr>
+<td><strong>Size name</strong></td>
+<td>The name of another character size, the one you read (Small, Large). Each character takes the smallest size it fits in, from the radius and height its script gives it (game.character).</td>
+</tr>
+<tr>
+<td><strong>Sky</strong></td>
+<td>The color of the light coming from the sky: it lights the top of objects, even where the sun doesn't reach.</td>
+</tr>
+<tr>
+<td><strong>Sky and light</strong></td>
+<td>The scene's lighting: the sun's light, the light coming from the sky and the ground, and the background color.</td>
+</tr>
+<tr>
+<td><strong>Steepest slope</strong></td>
+<td>The steepest slope a character climbs, in degrees. Beyond it, the ground isn't a walkable area.</td>
+</tr>
+<tr>
+<td><strong>Step of this size</strong></td>
+<td>What the characters of this size step over without a detour, in meters. A big one often steps over more than a small one.</td>
+</tr>
+<tr>
+<td><strong>Sun color</strong></td>
+<td>The color of the sunlight.</td>
+</tr>
+<tr>
+<td><strong>Sun direction</strong></td>
+<td>Where the sunlight comes from, -1 to 1 on X, Y and Z: with Y positive, the sun is up high and lights the top of objects.</td>
+</tr>
+<tr>
+<td><strong>Sun intensity</strong></td>
+<td>The strength of the sunlight, from 0 (off) to 20.</td>
+</tr>
+<tr>
+<td><strong>Sun shadows</strong></td>
+<td>Objects, terrain and plants cast their shadow in the sun, on the ground, the water and each other. Untick for lighter rendering, without shadows.</td>
+</tr>
+<tr>
+<td><strong>Synced with the screen</strong></td>
+<td>The game's frames follow the screen's refresh rate: the image doesn't tear when it moves.</td>
+</tr>
+<tr>
+<td><strong>Technical settings</strong></td>
+<td>What you almost never touch: how far you can see, the game's pace, the physics limits and the expected size of models.</td>
+</tr>
+<tr>
+<td><strong>Terrain</strong></td>
+<td>The scene's ground: its relief, its regions and its sea. Without a terrain, generate one here; with a terrain, its settings are on the Terrain object.</td>
+</tr>
+<tr>
+<td><strong>Thins out with height</strong></td>
+<td>Above its altitude, the fog halves every so many meters: a valley fog, a mist over water or a swamp (5 to 30 m). 0: the same everywhere.</td>
+</tr>
+<tr>
+<td><strong>Title</strong></td>
+<td>The title of the game window, and the name of the exported game.</td>
+</tr>
+<tr>
+<td><strong>Tolerated on-screen gap</strong></td>
+<td>How far a simplified version may stray from the real model, in screen pixels, before a finer version takes over. 1 by default: the difference doesn't show. Larger, the game is lighter, and distant objects a little less faithful.</td>
+</tr>
+<tr>
+<td><strong>Turn DLSS on</strong></td>
+<td>Turns DLSS on, once the box is checked and a valid folder chosen.</td>
+</tr>
+<tr>
+<td><strong>Updates per second</strong></td>
+<td>How many times per second the host sends each player where the players are and what moves: 20 by default. More is a little more precise and needs more connection; fewer, the opposite. The other players are shown a tenth of a second in the past, so they glide smoothly.</td>
+</tr>
+<tr>
+<td><strong>Upscaling</strong></td>
+<td>Draws the game's scene smaller, then enlarges it to the window's size by blending the frames that follow one another. Quality, Balanced, Performance and Ultra performance go from the sharpest to the fastest; "Anti-aliasing only" keeps the full size and only smooths the edges. Works on every graphics card. Off by default.</td>
+</tr>
+<tr>
+<td><strong>Upscaling method</strong></td>
+<td>What enlarges the game's picture when upscaling is on. None: WorldMint's own. FSR (all cards): AMD FSR, sharper, on every graphics card, already in WorldMint; with "Anti-aliasing only" it smooths edges without shrinking the picture. DLSS (NVIDIA): NVIDIA DLSS, on GeForce RTX cards; WorldMint doesn't provide it: choosing it shows you what NVIDIA's license asks (its logo when the game starts and in its credits, approved by NVIDIA), then asks for the folder of its files. Where the chosen method doesn't work, WorldMint's replaces it. The player can change it in the Menu (Display).</td>
+</tr>
+<tr>
+<td><strong>View distance</strong></td>
+<td>Beyond this distance, in meters, nothing is drawn; what gets close to it fades into the background color.</td>
+</tr>
+<tr>
+<td><strong>Volumetric fog</strong></td>
+<td>Sunlight shows in the air and in the fog, with the shadow of whatever hides it: rays of light between trees and through windows, a darker mist in the shade, a brighter one when looking toward the sun. The fog keeps its distance and color. Not on a small computer (Low quality): the usual fog. Off by default.</td>
+</tr>
+<tr>
+<td><strong>Warning: huge model</strong></td>
+<td>A model larger than this size, in meters, is flagged when it loads as having an unusual size.</td>
+</tr>
+<tr>
+<td><strong>Warning: tiny model</strong></td>
+<td>A model smaller than this size, in meters, is flagged when it loads as having an unusual size.</td>
+</tr>
+<tr>
+<td><strong>Width</strong></td>
+<td>The width of the game window, in pixels (64 to 16384).</td>
+</tr>
+</tbody>
+</table>
+<h2 id="materials">Materials<a class="headerlink" href="#materials" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../materials/">Materials</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Back to the region colors</strong></td>
+<td>Removes the ground materials, their rules and their painting: the terrain takes back the colors of its regions. Ctrl+Z to return.</td>
+</tr>
+<tr>
+<td><strong>Cover with materials</strong></td>
+<td>Gives each region a real material from the library (grass, rock, snow, sand, mud) and three rules: rock on slopes, snow at altitude, sand by the water.</td>
+</tr>
+<tr>
+<td><strong>Emitted light</strong></td>
+<td>The light the surface gives off by itself: its color, and its strength (0: none). For screens, lamps, lava.</td>
+</tr>
+<tr>
+<td><strong>Eraser</strong></td>
+<td>Erases the material painting: the ground takes back the one of its region and of the rules.</td>
+</tr>
+<tr>
+<td><strong>Ground material</strong></td>
+<td>The material that covers this region, before the automatic rules and the painting.</td>
+</tr>
+<tr>
+<td><strong>Ground materials</strong></td>
+<td>The real materials of the terrain: the one of each region, the automatic rules (slope, altitude, water's edge) and what you paint with the Materials brush, which wins.</td>
+</tr>
+<tr>
+<td><strong>Material</strong></td>
+<td>The material put on the object, instead of its model's colors: a file of the project, shared by every object that uses it. In a ground rule: the material it lays.</td>
+</tr>
+<tr>
+<td><strong>New material</strong></td>
+<td>Creates a material of the project and puts it on the selected objects; set it just below, seeing it on the sphere.</td>
+</tr>
+<tr>
+<td><strong>New rule</strong></td>
+<td>Adds an automatic rule: a material on steep slopes, at altitude, or by the water. The last rule wins.</td>
+</tr>
+<tr>
+<td><strong>Open the file</strong></td>
+<td>Opens the shader file (.wmshader) in your text editor. Each time you save it, WorldMint checks it, recompiles it and shows the result in the view.</td>
+</tr>
+<tr>
+<td><strong>Placement</strong></td>
+<td>On the model: the image follows its texture coordinates. Without stretching: it is laid by the world, at the same size on every face, even on an enlarged shape.</td>
+</tr>
+<tr>
+<td><strong>Reset the shader's settings</strong></td>
+<td>Gives each shader setting back the value its code gives it, for this material.</td>
+</tr>
+<tr>
+<td><strong>Shader</strong></td>
+<td>A creator shader changes how the surface looks (a hologram, a dissolve, lava, a glowing rim, cartoon water) or moves its vertices (wind in the leaves). Choose a recipe (in code or in blocks): it is copied into the project's shaders folder. “New shader in blocks” starts one to build with connected blocks, without code. Its settings appear just below, as sliders. While its code is refused, objects keep the last version that worked, or their base material, and the message says on which line.</td>
+</tr>
+<tr>
+<td><strong>Softness</strong></td>
+<td>0: the brush has a sharp edge. 1: a fade from the center to the edge.</td>
+</tr>
+<tr>
+<td><strong>Transition</strong></td>
+<td>The width of the transition from one material to the other, in degrees or meters; the edge waves so as not to draw a line.</td>
+</tr>
+<tr>
+<td><strong>Variation</strong></td>
+<td>Slightly lighter or darker areas, and the pattern blended with a larger copy of itself: the repetition of the images no longer shows. 0 turns it off.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="object-properties">Object properties<a class="headerlink" href="#object-properties" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/properties/">The properties</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Always active</strong></td>
+<td>In a large world: this object stays awake even far from the player (a messenger crossing the map, a boss on patrol). Otherwise it falls asleep beyond the activity radius. It is the tag "toujours_actif", which a script can also add or remove during the game.</td>
+</tr>
+<tr>
+<td><strong>Appearance</strong></td>
+<td>For an object: whether it blocks the player, its color, and whether it shows in the game. In the preferences: the editor's language, theme and interface size.</td>
+</tr>
+<tr>
+<td><strong>Apply to all copies</strong></td>
+<td>The changes made to this copy go into the reusable object, and all its copies take them on.</td>
+</tr>
+<tr>
+<td><strong>Arrival point</strong></td>
+<td>The spot where the player appears, facing the arrow, when a passage or a script brings them into this scene. It can't be seen in the game. When created, it lands on the ground at the center of the view.</td>
+</tr>
+<tr>
+<td><strong>Attached to bone</strong></td>
+<td>In the game, the object follows this bone as the character animates. Choosing a bone puts it there; then adjust it if needed, on the rest pose. A search filters the bone names; “None” lets it just follow the character.</td>
+</tr>
+<tr>
+<td><strong>Camera</strong></td>
+<td>A camera placed in the scene: it shows the game from where it stands, and can't be seen in it. When created, it takes the position and direction of the 3D view; its settings say what it looks at.</td>
+</tr>
+<tr>
+<td><strong>Center</strong></td>
+<td>The center of the selected objects, in meters. Changing it moves every object by the same amount.</td>
+</tr>
+<tr>
+<td><strong>Collision</strong></td>
+<td>The player and characters cannot pass through it: they bump into the object. With several objects selected, the switch applies to all of them.</td>
+</tr>
+<tr>
+<td><strong>Color</strong></td>
+<td>Tints the model or colors the shape: white changes nothing. For a terrain region or a body of water, the color of its ground or its water.</td>
+</tr>
+<tr>
+<td><strong>Detach from the reusable object</strong></td>
+<td>Turns it into an ordinary object: it keeps its current look, but no longer follows changes made to the other copies.</td>
+</tr>
+<tr>
+<td><strong>Details</strong></td>
+<td>What you rarely need: the object's real size, its model's triangle count, and the tags scripts use to find it.</td>
+</tr>
+<tr>
+<td><strong>Dimensions</strong></td>
+<td>The object's real size in meters, scale included: width (X) × height (Y) × depth (Z).</td>
+</tr>
+<tr>
+<td><strong>Discard my changes</strong></td>
+<td>This copy goes back to matching the reusable object: what you had changed on it is removed. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Field of view</strong></td>
+<td>The camera's viewing angle, in degrees (up to 150): larger shows a wider view; smaller narrows the image, like zooming in.</td>
+</tr>
+<tr>
+<td><strong>Held by the character</strong></td>
+<td>This object sits inside an animated character: it can follow one of its bones, like a sword in the hand or a bag on the back.</td>
+</tr>
+<tr>
+<td><strong>Kind of light</strong></td>
+<td>Bulb: it lights all around it. Spotlight: it lights in a cone, toward the bottom of the object; turn the object to aim.</td>
+</tr>
+<tr>
+<td><strong>Light</strong></td>
+<td>A placed light: a bulb lighting all around it, or a spotlight lighting in a cone. Its color is the object's color. The Trigger and scripts switch it on, off or change its color.</td>
+</tr>
+<tr>
+<td><strong>Light intensity</strong></td>
+<td>Its strength: the light received 1 m away, falling off with distance. 1 lights at 1 m like a sun of intensity 1. A torch: 2 to 5; a street lamp: 20 to 50.</td>
+</tr>
+<tr>
+<td><strong>Light range</strong></td>
+<td>How far it lights, in meters: beyond, nothing. A room: 5 to 10 m. A short range costs little: many small lights are fine.</td>
+</tr>
+<tr>
+<td><strong>Light's shadows</strong></td>
+<td>Objects lit by this light cast their shadow. Costlier: only a few lights at a time get them, the closest to the camera (a bulb counts as six spotlights). Keep them for the ones that matter.</td>
+</tr>
+<tr>
+<td><strong>Look at</strong></td>
+<td>“Straight ahead”: the camera looks along its rotation. Or an object in the scene: it keeps it in view and turns on its own.</td>
+</tr>
+<tr>
+<td><strong>Look through this camera</strong></td>
+<td>The 3D view moves to the camera's place and looks the way it does: you see what it will show in the game.</td>
+</tr>
+<tr>
+<td><strong>Move to current view</strong></td>
+<td>The camera takes the position and direction of the 3D view: frame the view first, then click.</td>
+</tr>
+<tr>
+<td><strong>Multiply size by</strong></td>
+<td>Grows or shrinks the whole selection around its center: 2 doubles its size, 0.5 halves it. The field then goes back to 1.</td>
+</tr>
+<tr>
+<td><strong>Nothing selected</strong></td>
+<td>Click an object, in the 3D view or in the scene list, or drag a rectangle in the view: its settings show up here. Ctrl adds to the selection.</td>
+</tr>
+<tr>
+<td><strong>On</strong></td>
+<td>Off, the light no longer lights but stays in place: the Trigger or a script can switch it back on during the game.</td>
+</tr>
+<tr>
+<td><strong>Opens the game</strong></td>
+<td>The game starts on this camera, instead of the one following the player.</td>
+</tr>
+<tr>
+<td><strong>Place on the bone</strong></td>
+<td>Puts it back in the bone's place and orientation, on the character's rest pose. Then adjust it if needed.</td>
+</tr>
+<tr>
+<td><strong>Position</strong></td>
+<td>Where the object is in the world, in meters: X (red), Y (green, up) and Z (blue). Click to type a value, or drag to adjust it.</td>
+</tr>
+<tr>
+<td><strong>Position and size</strong></td>
+<td>Where the object is, how it is turned, and its size. The gizmo in the 3D view does the same with the mouse.</td>
+</tr>
+<tr>
+<td><strong>Reusable object</strong></td>
+<td>This object is a copy of a reusable object. If you changed it, you can pass those changes on to every copy, or go back to the original.</td>
+</tr>
+<tr>
+<td><strong>Rotation</strong></td>
+<td>Its orientation, in degrees around X, Y and Z. A horizontal half-turn reads “0, 180, 0”.</td>
+</tr>
+<tr>
+<td><strong>Scale</strong></td>
+<td>Its size along each axis: 1 is the original size, 2 doubles it, 0.5 halves it.</td>
+</tr>
+<tr>
+<td><strong>Set as player</strong></td>
+<td>Makes this model the character you play: it moves with the game's controls, and the player camera follows it. Its settings then come first in the properties.</td>
+</tr>
+<tr>
+<td><strong>Shadow softness</strong></td>
+<td>Softens the edge of its shadows: the size of what gives the light, in meters. Sharp at the foot of an object, softer and softer further from it. 0: sharp; 0.05: a bare bulb; 0.3: a lantern, a globe; up to 2.</td>
+</tr>
+<tr>
+<td><strong>Spotlight opening</strong></td>
+<td>The width of its cone, in degrees (1 to 170): narrow for a beam on a stage, wide for a ceiling lamp. Its edge is softened.</td>
+</tr>
+<tr>
+<td><strong>System</strong></td>
+<td>Places a system already turned on in the Game tab on what is selected. Placed on a folder, it applies to everything the folder holds.</td>
+</tr>
+<tr>
+<td><strong>Systems</strong></td>
+<td>Ready-made game rules: health, combat, enemies, passages between scenes… You turn them on for the game in the Game tab, then place them on objects, each with its own settings.</td>
+</tr>
+<tr>
+<td><strong>Tags</strong></td>
+<td>Words scripts use to find the object (“enemy”, “coin”), separated by commas.</td>
+</tr>
+<tr>
+<td><strong>Triangles</strong></td>
+<td>The number of triangles in its model: the more there are, the more detailed the model, and the heavier it is to draw.</td>
+</tr>
+<tr>
+<td><strong>Turn by</strong></td>
+<td>Turns the whole selection around its center, by these degrees around X, Y and Z. The field then goes back to zero.</td>
+</tr>
+<tr>
+<td><strong>Visible in game</strong></td>
+<td>Unchecked, the object doesn't show in the game (a model that scripts copy, for example). It stays visible in the editor.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="shader-blocks">Shader blocks<a class="headerlink" href="#shader-blocks" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../shaders/">Shaders</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a block</strong></td>
+<td>Opens the list of blocks, sorted by family, with a search. The chosen block is placed in the middle of the graph. A right click on the background does the same, where you clicked; so does dropping a link in empty space, and the block arrives already connected.</td>
+</tr>
+<tr>
+<td><strong>Hide the code</strong></td>
+<td>Hides the code made by the blocks: the graph takes the whole width again.</td>
+</tr>
+<tr>
+<td><strong>Open the blocks</strong></td>
+<td>Opens this shader's blocks window, over the bottom of the view: you add, connect, move and delete blocks there, and the object changes at once above it. It closes when this material is no longer shown.</td>
+</tr>
+<tr>
+<td><strong>Show the code</strong></td>
+<td>Shows, next to the blocks, the code the blocks give, read-only: the one that is checked and compiled. To change it, change the blocks.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="systems">Systems<a class="headerlink" href="#systems" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/game-tab/">The Game tab</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Activate</strong></td>
+<td>Adds this system to the game, along with the systems it needs. Then place it on objects, if it is a system that goes on objects.</td>
+</tr>
+<tr>
+<td><strong>Actual size</strong></td>
+<td>Puts the map back to its normal size, the easiest to read: move around it by dragging.</td>
+</tr>
+<tr>
+<td><strong>Deactivate</strong></td>
+<td>Removes this system from the game. If it is placed on objects or its scripts were changed, the editor asks you to confirm first. Not possible while another system needs it.</td>
+</tr>
+<tr>
+<td><strong>Deactivate this system?</strong></td>
+<td>The system leaves the game, and the objects carrying it lose their values. Ctrl+Z brings everything back.</td>
+</tr>
+<tr>
+<td><strong>Keep</strong></td>
+<td>Gives up and closes the question: nothing is removed or deleted. Esc does the same.</td>
+</tr>
+<tr>
+<td><strong>Show all</strong></td>
+<td>Adjusts the zoom to see the whole map at once, in width and height.</td>
+</tr>
+<tr>
+<td><strong>Show the map</strong></td>
+<td>Opens this dialogue as a flowchart over the 3D view: Start at the top, one box per line, one diamond per test, a named arrow per answer or exit, and an End at the end of each branch. Drag to move it, Ctrl + wheel to zoom; a click brings you to the row here.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-agent">The agent<a class="headerlink" href="#the-agent" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../agent/">The agent</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A capture of the 3D view</strong></td>
+<td>Attaches a picture of what the active 3D view shows to the message, to show the agent what you see.</td>
+</tr>
+<tr>
+<td><strong>A file from the computer…</strong></td>
+<td>Attaches an image, a PDF or a text file chosen on the computer to the message. You can also drop it onto the agent panel.</td>
+</tr>
+<tr>
+<td><strong>Account</strong></td>
+<td>The agent in use (Claude or Codex) and the account it is connected with. You can change the connection here, or sign out.</td>
+</tr>
+<tr>
+<td><strong>Agent rules</strong></td>
+<td>The method the agent follows: a plan, a playable game at every step, and proof. You can customize it for this project, in an AGENT.md file.</td>
+</tr>
+<tr>
+<td><strong>Allow the agent</strong></td>
+<td>Opens the editor to an agent started from the terminal. Turned off, the access closes and the current conversation stops.</td>
+</tr>
+<tr>
+<td><strong>Another agent</strong></td>
+<td>Lets another agent, started from your terminal, connect to the editor. It keeps its own tools: only do this if you trust it.</td>
+</tr>
+<tr>
+<td><strong>Back</strong></td>
+<td>Leaves the settings and goes back to the agent panel.</td>
+</tr>
+<tr>
+<td><strong>Cancel</strong></td>
+<td>Gives up what is in progress and goes back, without changing anything.</td>
+</tr>
+<tr>
+<td><strong>Change connection</strong></td>
+<td>Goes back to the sign-in choices (subscription, API key...) to connect the agent another way.</td>
+</tr>
+<tr>
+<td><strong>Check again</strong></td>
+<td>Looks for the agent's program on the computer again, for example after you installed it yourself.</td>
+</tr>
+<tr>
+<td><strong>Confirm sign out</strong></td>
+<td>Really signs the agent out, or forgets its connection. Careful: depending on the agent, signing out applies to the whole computer, not only the editor.</td>
+</tr>
+<tr>
+<td><strong>Continue without updating</strong></td>
+<td>Connects the agent with the version already installed. Models that need a newer version will refuse to answer: the panel will offer the update again.</td>
+</tr>
+<tr>
+<td><strong>Copy the command</strong></td>
+<td>Copies the command to paste in your terminal to connect the other agent. It contains an access key: don't share it.</td>
+</tr>
+<tr>
+<td><strong>Install</strong></td>
+<td>Runs the official installer of the agent's program, which links the editor to your account. The panel updates when the installation is over.</td>
+</tr>
+<tr>
+<td><strong>Model</strong></td>
+<td>The AI model that answers. By default, the one your agent picks. The change applies from the next message.</td>
+</tr>
+<tr>
+<td><strong>Program</strong></td>
+<td>Where the agent's program is on the computer. Left empty, the editor finds it by itself.</td>
+</tr>
+<tr>
+<td><strong>Reasoning effort</strong></td>
+<td>How much the agent thinks before acting: the higher, the more it thinks, and the slower it is. The change applies from the next message.</td>
+</tr>
+<tr>
+<td><strong>See the installation page</strong></td>
+<td>Opens in your browser the page that explains how to install this program.</td>
+</tr>
+<tr>
+<td><strong>Technical details</strong></td>
+<td>Shows or hides the exact text of the problem and what the update wrote, for example to copy it into a help request.</td>
+</tr>
+<tr>
+<td><strong>The copied image</strong></td>
+<td>Attaches the copied image to the message, for example a screenshot (Ctrl+V in the message box). Greyed out when no image is copied.</td>
+</tr>
+<tr>
+<td><strong>Try again</strong></td>
+<td>After an error, checks the agent's connection again.</td>
+</tr>
+<tr>
+<td><strong>Undo these changes</strong></td>
+<td>Undoes in one go everything the agent changed in the scene during its last answer. Its changes can also be undone one by one with Ctrl+Z.</td>
+</tr>
+<tr>
+<td><strong>Update</strong></td>
+<td>Updates the agent's program without closing the editor (for Claude, this is “claude update”), checks the new version, then reconnects the agent. Use it when a model needs a newer version.</td>
+</tr>
+<tr>
+<td><strong>Use another agent</strong></td>
+<td>Opens the agent settings, to choose another agent (Claude or Codex) or set its program.</td>
+</tr>
+<tr>
+<td><strong>Use this key</strong></td>
+<td>Connects the agent with the API key pasted just above (Enter does the same). The key stays hidden on screen and is never written to the logs.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-creation-assistant">The creation assistant<a class="headerlink" href="#the-creation-assistant" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../getting-started/">Getting started</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Back</strong></td>
+<td>Goes back: to the previous question in the assistant, or to the folder opened just before in the library.</td>
+</tr>
+<tr>
+<td><strong>Launch</strong></td>
+<td>Sends the request to the agent: it first presents its plan and waits for your approval before building. If the agent isn't connected yet, the request waits, ready, in the conversation.</td>
+</tr>
+<tr>
+<td><strong>Next</strong></td>
+<td>Keeps the answers and moves to the next step. Greyed out while a required question has no answer.</td>
+</tr>
+<tr>
+<td><strong>Rebuild the text from the answers</strong></td>
+<td>Replaces the request text, which you edited, with a new text built from your current answers. Your edits are lost.</td>
+</tr>
+<tr>
+<td><strong>Save and close</strong></td>
+<td>Keeps the answers and the request in the project, and closes the assistant without sending anything to the agent.</td>
+</tr>
+<tr>
+<td><strong>Skip</strong></td>
+<td>Skips this step without answering: its default answers stay, and the request will only mention what was chosen.</td>
+</tr>
+<tr>
+<td><strong>Start from scratch</strong></td>
+<td>Closes the assistant without answering the questions, to build the game yourself. It can be reopened at any time from Game &gt; Creation assistant.</td>
+</tr>
+<tr>
+<td><strong>With the assistant</strong></td>
+<td>Starts the assistant's questions about your game. At the end, it prepares a request for the agent, to read over before launching it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-games-controls">The game's controls<a class="headerlink" href="#the-games-controls" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../controls/">Game controls</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add</strong></td>
+<td>Adds the control to the game. It needs a name not taken yet and a key.</td>
+</tr>
+<tr>
+<td><strong>Add a control</strong></td>
+<td>Creates a new control for the game: its name for scripts, its label for the player, and its key.</td>
+</tr>
+<tr>
+<td><strong>Controls</strong></td>
+<td>The game's keys: one control per action (jump, attack, use…), with its key and its gamepad button. Scripts read its name, the player sees its label; those of systems are added on their own.</td>
+</tr>
+<tr>
+<td><strong>Key</strong></td>
+<td>Click, then press the key, mouse button or wheel you want. Escape cancels.</td>
+</tr>
+<tr>
+<td><strong>Label for the player</strong></td>
+<td>The name the player sees, in a key menu for example. Left empty, it's the name for scripts.</td>
+</tr>
+<tr>
+<td><strong>Name for scripts</strong></td>
+<td>The name scripts use to read this control, without spaces (for example “parry”). It must not be taken already.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-games-languages-and-the-translations-window">The game's languages and the Translations window<a class="headerlink" href="#the-games-languages-and-the-translations-window" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../translations/">Translating your game</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a language</strong></td>
+<td>Offers one more language to players. The game picks the Windows language if it is offered, and the player can change it in the menu options. Removing a language keeps its table: adding it back finds its translations again.</td>
+</tr>
+<tr>
+<td><strong>Ask the agent to translate</strong></td>
+<td>Sends a request to the agent: it reads the texts without a translation and fills in the tables, without touching the original texts. You can then correct each cell.</td>
+</tr>
+<tr>
+<td><strong>Game languages</strong></td>
+<td>The language you write your game in, and the other languages you offer to players. Each offered language has its translation table, in the project's translations folder.</td>
+</tr>
+<tr>
+<td><strong>Only what is missing</strong></td>
+<td>Shows only the texts that still lack a translation in at least one language.</td>
+</tr>
+<tr>
+<td><strong>Original language</strong></td>
+<td>The language you write the game's texts in: lines, messages, title. A text without a translation shows in this language.</td>
+</tr>
+<tr>
+<td><strong>Translations...</strong></td>
+<td>Opens the Translations window: every text the player sees, one column per language, what is missing in red.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-games-scenes">The game's scenes<a class="headerlink" href="#the-games-scenes" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../projects/">Projects and scenes</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>An arrival point is missing</strong></td>
+<td>The player's character isn't in this scene, and it has no arrival point: the player would appear anywhere, maybe in empty space.</td>
+</tr>
+<tr>
+<td><strong>Create an arrival point</strong></td>
+<td>Places an arrival point where you are looking. Move and turn it: the player will appear there, facing its direction. Then start the game again.</td>
+</tr>
+<tr>
+<td><strong>Play anyway</strong></td>
+<td>Starts the game without an arrival point: the player appears where they are in their other scene.</td>
+</tr>
+<tr>
+<td><strong>Start the game here</strong></td>
+<td>Makes this scene the one where the game starts: the exported game will open on it. It then shows the Start tag.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-games-sound-mixer-game-tab">The game's sound mixer (Game tab)<a class="headerlink" href="#the-games-sound-mixer-game-tab" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../sound/">Sound and the sound mixer</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a ducking rule</strong></td>
+<td>Adds a ducking rule: then choose the group that plays and the one that gets quieter.</td>
+</tr>
+<tr>
+<td><strong>Add a group</strong></td>
+<td>Creates a new sound group (a radio, a boss's voice): its name is enough. Scripts and systems can then put their sounds in it.</td>
+</tr>
+<tr>
+<td><strong>Automatic ducking</strong></td>
+<td>Rules such as “while this group plays, that one gets quieter”: the music goes under the voices, the ambience under a cutscene. It comes back on its own once silence returns.</td>
+</tr>
+<tr>
+<td><strong>Down to</strong></td>
+<td>How much of its volume it keeps while lowered: 40% keeps it clearly audible, 0% silences it.</td>
+</tr>
+<tr>
+<td><strong>Fall time</strong></td>
+<td>The time, in seconds, it takes to get quieter: 0.2 s goes unnoticed, 0 makes it drop at once.</td>
+</tr>
+<tr>
+<td><strong>Game window in the background</strong></td>
+<td>What the game's sound does when the player minimizes its window or switches to another window (a browser, a chat): it mutes, gets quieter, or goes on. A game started in the background for a test always stays silent.</td>
+</tr>
+<tr>
+<td><strong>Group name</strong></td>
+<td>The name you see, and that the player sees in the Options menu. The name for scripts comes from it, in lowercase and without spaces.</td>
+</tr>
+<tr>
+<td><strong>Lower this group</strong></td>
+<td>The group that gets quieter meanwhile: usually the music.</td>
+</tr>
+<tr>
+<td><strong>Lowered to</strong></td>
+<td>How much of its volume the sound keeps when the window is not in front: 30% can still be heard without being in the way.</td>
+</tr>
+<tr>
+<td><strong>Muffled groups</strong></td>
+<td>A group muffled all the time, as if behind a wall or through a radio: 0 clear, 1 as under water. To muffle while playing, use a Trigger rule or a script instead.</td>
+</tr>
+<tr>
+<td><strong>Recovery time</strong></td>
+<td>The time, in seconds, it takes to come back once silence returns: 0.8 s brings it back gently.</td>
+</tr>
+<tr>
+<td><strong>Remove this ducking rule</strong></td>
+<td>Deletes this rule: the two groups no longer affect each other.</td>
+</tr>
+<tr>
+<td><strong>Sound mixer</strong></td>
+<td>The game's sound groups: music, effects, ambience, voices, interface, and those you add. Each has its volume, can be muted or muffled, and can get quieter on its own while another one plays.</td>
+</tr>
+<tr>
+<td><strong>The sound</strong></td>
+<td>Mute the sound: the game is silent while its window is not in front. Lower the sound: it goes on, quieter. Keep the sound: nothing changes.</td>
+</tr>
+<tr>
+<td><strong>While this group plays</strong></td>
+<td>The group that makes the other one quieter while one of its sounds is heard: usually the voices. A sound too far away to be heard does not count.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-interface-editor-game-tab-interface-screens">The interface editor (Game tab, Interface screens)<a class="headerlink" href="#the-interface-editor-game-tab-interface-screens" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../game-interface/">The game interface: menus, lists, text fields</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Aligned</strong></td>
+<td>In a column panel: left, centre or right.</td>
+</tr>
+<tr>
+<td><strong>Anchored to</strong></td>
+<td>The corner, edge or centre of the screen that holds the element. A score anchored top right stays in that corner on a wide screen as on a narrow one. Changing the anchor does not move it.</td>
+</tr>
+<tr>
+<td><strong>Announcement</strong></td>
+<td>The announcements of the systems added to the game. A script can send its own with game.emit: then write its name below.</td>
+</tr>
+<tr>
+<td><strong>Announcement name</strong></td>
+<td>The exact name of the announcement listened to, for example sante.change.</td>
+</tr>
+<tr>
+<td><strong>Announcement sent</strong></td>
+<td>The announcement sent on click, for example atelier.fabriquer: a Trigger (when: an event) or a script answers it.</td>
+</tr>
+<tr>
+<td><strong>Automatic height</strong></td>
+<td>On, the height follows the content: a panel around what it arranges, an image in its proportions, a field according to its text.</td>
+</tr>
+<tr>
+<td><strong>Automatic width</strong></td>
+<td>On, the width follows the content: a text on one line, a panel around what it arranges, a button as wide as its panel.</td>
+</tr>
+<tr>
+<td><strong>Back to the screen</strong></td>
+<td>Shows the properties of the screen itself, instead of those of the chosen element.</td>
+</tr>
+<tr>
+<td><strong>Background color</strong></td>
+<td>On, a chosen color; off, the panel or button color of the Interface system.</td>
+</tr>
+<tr>
+<td><strong>Background image</strong></td>
+<td>An image drawn instead of the background color: a frame from a UI pack. Set its stretchable frame so it keeps its corners.</td>
+</tr>
+<tr>
+<td><strong>Background image</strong></td>
+<td>The image of the empty bar, under the fill. Empty: a dark band.</td>
+</tr>
+<tr>
+<td><strong>Background opacity</strong></td>
+<td>How much the background hides the game behind: 0 transparent, 1 solid.</td>
+</tr>
+<tr>
+<td><strong>Bar</strong></td>
+<td>Places a bar that fills up: health, stamina, ammunition, a loading. Bind it to a value so it moves in the game.</td>
+</tr>
+<tr>
+<td><strong>Bar color</strong></td>
+<td>On, a chosen color (red for health, green for stamina); off, the accent color of the Interface system.</td>
+</tr>
+<tr>
+<td><strong>Bottom margin (pixels)</strong></td>
+<td>The height of the bottom edge, in pixels of the image.</td>
+</tr>
+<tr>
+<td><strong>Button</strong></td>
+<td>Places a button: on click, it sends its announcement (for the Trigger or a script) and can close or open a screen. For it to be clicked, the screen must show the cursor.</td>
+</tr>
+<tr>
+<td><strong>Cells per row</strong></td>
+<td>The number of cells on each row of the grid, all the same width.</td>
+</tr>
+<tr>
+<td><strong>Characters at most (0: no limit)</strong></td>
+<td>The number of letters the player can type; 0 for no limit.</td>
+</tr>
+<tr>
+<td><strong>Control that opens it</strong></td>
+<td>A control of the game (Game tab, Controls) that opens it, then closes it: I for an inventory, Tab for a map.</td>
+</tr>
+<tr>
+<td><strong>Corner size</strong></td>
+<td>1: one pixel of the image is one pixel of a screen 1080 pixels high, and grows with the screen. 2: corners twice as big.</td>
+</tr>
+<tr>
+<td><strong>Decimal places</strong></td>
+<td>How many digits after the decimal point for a number: 0 writes 38, 1 writes 37.6.</td>
+</tr>
+<tr>
+<td><strong>Delete the element</strong></td>
+<td>Removes the element, and what it contains if it is a panel. Delete does the same, with the mouse over the screen. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Delete the screen</strong></td>
+<td>Removes the screen from the game. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Disabled (greyed out, cannot be clicked)</strong></td>
+<td>On, the button is greyed out and reacts neither to clicks nor to the gamepad. A script enables it again with game.hud_set("screen/button", {disabled = false}).</td>
+</tr>
+<tr>
+<td><strong>Disabled image</strong></td>
+<td>The image of the disabled button. Empty: the normal image, faded.</td>
+</tr>
+<tr>
+<td><strong>Edges and middle</strong></td>
+<td>Stretch: the edges and the middle get longer. Repeat: they repeat at their size, like tiles (a pattern, a rope).</td>
+</tr>
+<tr>
+<td><strong>Element</strong></td>
+<td>The element's name, and what places it.</td>
+</tr>
+<tr>
+<td><strong>Element name</strong></td>
+<td>Its name, unique in the screen. A script touches it by "screen/name", for example game.hud_set("jeu/score", {text = "10"}).</td>
+</tr>
+<tr>
+<td><strong>Elements</strong></td>
+<td>Everything the screen contains, in the order they are drawn: the first one underneath. A click chooses one.</td>
+</tr>
+<tr>
+<td><strong>Field read</strong></td>
+<td>The field of the announcement or system that gives the value: vie for sante.change.</td>
+</tr>
+<tr>
+<td><strong>Fill image</strong></td>
+<td>The image of the filled part, cut by the value without being distorted. With a stretchable frame, it shrinks while keeping its ends.</td>
+</tr>
+<tr>
+<td><strong>Filled (0 to 1)</strong></td>
+<td>How full the bar is before a bound value changes it: 1 full, 0.5 half.</td>
+</tr>
+<tr>
+<td><strong>Fills</strong></td>
+<td>The direction in which the bar fills: left to right, right to left, bottom to top or top to bottom.</td>
+</tr>
+<tr>
+<td><strong>Format ({valeur}, {max})</strong></td>
+<td>The text shown, where {valeur} and {max} are replaced: "Health: {valeur} / {max}", "Score: [b]{valeur}[/b]". Empty: the value alone.</td>
+</tr>
+<tr>
+<td><strong>From whom (joueur for the player, an object, empty: anyone)</strong></td>
+<td>joueur to keep only what concerns the player, the name of an object (a boss), or nothing for everyone.</td>
+</tr>
+<tr>
+<td><strong>Gap between elements</strong></td>
+<td>The space between two elements of the panel, as a share of the screen height.</td>
+</tr>
+<tr>
+<td><strong>Greyed text of an empty field</strong></td>
+<td>A hint, greyed, until the player has typed something: "Your name".</td>
+</tr>
+<tr>
+<td><strong>Height (share of the screen)</strong></td>
+<td>Its height, as a share of the screen height: 0.05 is a twentieth.</td>
+</tr>
+<tr>
+<td><strong>Hidden by the announcements</strong></td>
+<td>The announcements that hide it, separated by commas: for example menu.jouer to hide a welcome screen.</td>
+</tr>
+<tr>
+<td><strong>Horizontal offset</strong></td>
+<td>The distance to its anchor point, as a share of the screen width: -0.02 moves it a little away from the right edge.</td>
+</tr>
+<tr>
+<td><strong>Hovered image</strong></td>
+<td>The image of the button when the mouse is over it. Empty: the normal image, outlined with the accent color.</td>
+</tr>
+<tr>
+<td><strong>Icon (optional)</strong></td>
+<td>A small image in the middle of the button (an inventory slot). It can be an icon taken from a sheet.</td>
+</tr>
+<tr>
+<td><strong>Image</strong></td>
+<td>Places an image from the project: a logo, an icon, a frame. Choose its file in its properties.</td>
+</tr>
+<tr>
+<td><strong>Image file</strong></td>
+<td>An image of the project or the library: drag it from the asset browser onto this field or onto the screen, or use “Choose…” in the list. It is copied into the project.</td>
+</tr>
+<tr>
+<td><strong>Image tint</strong></td>
+<td>On, the background image is tinted with this color; off, it keeps its own colors.</td>
+</tr>
+<tr>
+<td><strong>Images by state</strong></td>
+<td>The images of a button from a UI pack: normal, hovered by the mouse, pressed, disabled. A state left empty uses the normal image.</td>
+</tr>
+<tr>
+<td><strong>Inner margin</strong></td>
+<td>The space between the edge of the panel and what it contains, as a share of the screen height.</td>
+</tr>
+<tr>
+<td><strong>Interface screens</strong></td>
+<td>The screens the game shows on top of the scene: a score, a health bar, a help panel, a menu. They are drawn with the mouse, without code. A click opens one above the 3D view.</td>
+</tr>
+<tr>
+<td><strong>Layout</strong></td>
+<td>How the panel arranges what it contains: one under the other (a menu), side by side (a toolbar), or in a grid (an inventory).</td>
+</tr>
+<tr>
+<td><strong>Left margin (pixels)</strong></td>
+<td>The width of the left edge, in pixels of the image: the cut line shows on the preview.</td>
+</tr>
+<tr>
+<td><strong>Maximum</strong></td>
+<td>The value of a full bar, and what {max} shows.</td>
+</tr>
+<tr>
+<td><strong>Maximum field (empty: a number)</strong></td>
+<td>The field that gives the maximum (max for sante.change); empty, the maximum is the number below.</td>
+</tr>
+<tr>
+<td><strong>Move down</strong></td>
+<td>Moves it after the next element: it is drawn on top, and comes lower in its panel.</td>
+</tr>
+<tr>
+<td><strong>Move up</strong></td>
+<td>Moves it before the previous element: it is drawn underneath, and comes higher in its panel.</td>
+</tr>
+<tr>
+<td><strong>New screen</strong></td>
+<td>Creates an empty screen and opens it: place elements on it from the palette. It is shown from the start of the game, unless you change that.</td>
+</tr>
+<tr>
+<td><strong>No slicing</strong></td>
+<td>Removes the margins: the whole image stretches again.</td>
+</tr>
+<tr>
+<td><strong>Normal image</strong></td>
+<td>The image of the button at rest, instead of its color. Dropping an image from the asset browser onto the button puts it here.</td>
+</tr>
+<tr>
+<td><strong>On click</strong></td>
+<td>What the button does when the player clicks it.</td>
+</tr>
+<tr>
+<td><strong>Opacity from the theme</strong></td>
+<td>On, the background opacity comes from the Interface system; off, choose it.</td>
+</tr>
+<tr>
+<td><strong>Panel</strong></td>
+<td>Places a panel: a background that arranges what goes in it, in a column, a row or a grid, without placing each thing by hand. Choose it, then click an element of the palette to add it inside.</td>
+</tr>
+<tr>
+<td><strong>Part shown</strong></td>
+<td>The part of the image shown: the whole image, or a single icon of a sheet that holds several.</td>
+</tr>
+<tr>
+<td><strong>Pauses the game</strong></td>
+<td>While the screen is shown, the world stops: a menu, an inventory. Its control still works, to close it.</td>
+</tr>
+<tr>
+<td><strong>Pick from the sheet…</strong></td>
+<td>Opens the whole image: draw the rectangle of the icon you want, or give the size of a cell and click the cell. The chosen part replaces the whole image.</td>
+</tr>
+<tr>
+<td><strong>Placed in</strong></td>
+<td>The screen itself, where it is placed by its anchor, or a panel, which arranges it with the others.</td>
+</tr>
+<tr>
+<td><strong>Position and size</strong></td>
+<td>Where the element is anchored, its offset, and its size. Everything counts as a share of the screen: the interface keeps its shape on every window size.</td>
+</tr>
+<tr>
+<td><strong>Pressed image</strong></td>
+<td>The image of the button while it is being clicked. Empty: the normal image, a bit darker.</td>
+</tr>
+<tr>
+<td><strong>Preview</strong></td>
+<td>Shows the button in this state here, to see its images. Changes nothing in the game.</td>
+</tr>
+<tr>
+<td><strong>Read from</strong></td>
+<td>Where the value comes from: an announcement of the game (sante.change tells the health), a value a script gives with game.set_value, or an object's system.</td>
+</tr>
+<tr>
+<td><strong>Right margin (pixels)</strong></td>
+<td>The width of the right edge, in pixels of the image.</td>
+</tr>
+<tr>
+<td><strong>Screen</strong></td>
+<td>The screen's name and what it does when it is shown.</td>
+</tr>
+<tr>
+<td><strong>Screen name</strong></td>
+<td>Its name in the game. A script shows it with game.screen_show(name), and touches its elements by "name/element".</td>
+</tr>
+<tr>
+<td><strong>Scrolls with the wheel</strong></td>
+<td>With a chosen height: what goes beyond scrolls with the wheel, with a thin scroll bar. For a long list.</td>
+</tr>
+<tr>
+<td><strong>Shown by the announcements</strong></td>
+<td>The announcements that show it, separated by commas: for example atelier.ouvrir, which a Trigger sends when the player enters the workshop.</td>
+</tr>
+<tr>
+<td><strong>Shown when the game starts</strong></td>
+<td>On, the screen is there from the start: a score, a health bar. Off, it waits for an announcement, a control or a button: a menu, a help window.</td>
+</tr>
+<tr>
+<td><strong>Shows the cursor</strong></td>
+<td>While the screen is shown, the mouse cursor appears and the camera no longer turns: its buttons can be clicked.</td>
+</tr>
+<tr>
+<td><strong>Starting text</strong></td>
+<td>What the field holds when it appears.</td>
+</tr>
+<tr>
+<td><strong>Stretchable frame</strong></td>
+<td>Nine-piece slicing (9-slice): the corners keep their size, the edges and the middle stretch. A frame of any size, without distorted corners.</td>
+</tr>
+<tr>
+<td><strong>System read</strong></td>
+<td>The system whose value is read, on the player or on the object named below.</td>
+</tr>
+<tr>
+<td><strong>Text</strong></td>
+<td>Places a text: a title, a score, an instruction. It can show a value of the game, with [b]bold[/b] and [color=#ffd75a]colors[/color].</td>
+</tr>
+<tr>
+<td><strong>Text color</strong></td>
+<td>On, a chosen color; off, the one of the Interface system.</td>
+</tr>
+<tr>
+<td><strong>Text field</strong></td>
+<td>Places a field where the player types: a name, a code. Enter validates it, and the game receives the hud.valider announcement with the text.</td>
+</tr>
+<tr>
+<td><strong>Text shown</strong></td>
+<td>What it shows. [b]bold[/b] and [color=#ffd75a]color[/color] change the look of a part. A bound value replaces it in the game.</td>
+</tr>
+<tr>
+<td><strong>Text size (share of the height)</strong></td>
+<td>The height of the letters, as a share of the screen height: 0.03 is usual, 0.06 a big title.</td>
+</tr>
+<tr>
+<td><strong>Text size from the theme</strong></td>
+<td>On, the size comes from the Interface system: all texts change together. Off, choose it.</td>
+</tr>
+<tr>
+<td><strong>The other screen</strong></td>
+<td>The screen the button opens, replaces or toggles.</td>
+</tr>
+<tr>
+<td><strong>The player's health</strong></td>
+<td>In one click: the player's health, which the Health system announces. A bar fills up, a text writes "75 / 100".</td>
+</tr>
+<tr>
+<td><strong>The whole image</strong></td>
+<td>Shows the whole image again, instead of a part.</td>
+</tr>
+<tr>
+<td><strong>Then</strong></td>
+<td>What the button does to its screen: nothing, close it, open another on top, replace it with another, or open and close a screen.</td>
+</tr>
+<tr>
+<td><strong>Top margin (pixels)</strong></td>
+<td>The height of the top edge, in pixels of the image.</td>
+</tr>
+<tr>
+<td><strong>Value name</strong></td>
+<td>The name a script gives: game.set_value("score", 12) fills the value "score".</td>
+</tr>
+<tr>
+<td><strong>Value shown in the game</strong></td>
+<td>What the element shows during the game, without code: the player's health, a score, a value of a system. In the editor, an example (75 out of 100) shows the room it will take.</td>
+</tr>
+<tr>
+<td><strong>Vertical offset</strong></td>
+<td>The distance to its anchor point, as a share of the screen height: 0.03 moves it a little below the top edge.</td>
+</tr>
+<tr>
+<td><strong>When to show it</strong></td>
+<td>What shows and hides the screen during the game: announcements of the game, or a key.</td>
+</tr>
+<tr>
+<td><strong>Width (share of the screen)</strong></td>
+<td>Its width, as a share of the screen width: 0.25 is a quarter. A text wraps at this width.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-library">The library<a class="headerlink" href="#the-library" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/library/">The library</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a folder</strong></td>
+<td>Adds to the library a folder of your computer that holds models, sounds or videos: pick it with Browse, or paste its path. It applies to all your projects.</td>
+</tr>
+<tr>
+<td><strong>Add to project</strong></td>
+<td>Downloads this asset into the project without placing it: its files are checked, then copied into assets/ with a LICENCE.txt file giving its author, source and licence.</td>
+</tr>
+<tr>
+<td><strong>Browse</strong></td>
+<td>Opens a window to choose the folder to add to the library.</td>
+</tr>
+<tr>
+<td><strong>Copy path</strong></td>
+<td>Copies the full location of the file on the computer, to paste it elsewhere.</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Deletes what is chosen: the selected objects (Del key), a script, a reusable object or a game scene. Ctrl+Z undoes it; a deleted scene is set aside in the project instead.</td>
+</tr>
+<tr>
+<td><strong>Library address</strong></td>
+<td>The address of a library index in the WorldMint format (https://…, or http://127.0.0.1:… for a demo on this computer). Press Enter to add it; the cross removes it.</td>
+</tr>
+<tr>
+<td><strong>Move to</strong></td>
+<td>Puts this project model in another project folder (or drag it onto a folder). Whatever uses it follows: the objects of every scene, its moves, its pose adjustments. Ctrl+Z puts it back. A .gltf, .obj or .fbx, which keep files next to them, can only be renamed in place.</td>
+</tr>
+<tr>
+<td><strong>Open</strong></td>
+<td>Opens what is chosen: a library folder shows its contents, a game scene opens in the editor.</td>
+</tr>
+<tr>
+<td><strong>Open file location</strong></td>
+<td>Opens the folder that contains this file in File Explorer.</td>
+</tr>
+<tr>
+<td><strong>Open in File Explorer</strong></td>
+<td>Opens this folder in File Explorer.</td>
+</tr>
+<tr>
+<td><strong>Open the asset's page</strong></td>
+<td>Opens this asset's page on its source's website in the browser.</td>
+</tr>
+<tr>
+<td><strong>Place in the scene</strong></td>
+<td>Adds this model or reusable object to the scene, where the active view is looking. A double-click, or dragging it into the view, does the same.</td>
+</tr>
+<tr>
+<td><strong>Poly Haven</strong></td>
+<td>Free 3D models from polyhaven.com, in the public domain (CC0): you can use, change and sell them in your games. The "Powered by Poly Haven" notice stays shown under their previews, as their site asks.</td>
+</tr>
+<tr>
+<td><strong>Refresh</strong></td>
+<td>Reads the catalogues of the online sources again, to see the assets added since.</td>
+</tr>
+<tr>
+<td><strong>Sources</strong></td>
+<td>Chooses where the assets of the Online folder come from: the free models of Poly Haven, or a library address. No source is chosen at first, and nothing is contacted before. Nothing about you is sent: your searches run on this computer.</td>
+</tr>
+<tr>
+<td><strong>Watch</strong></td>
+<td>Opens this video in the Windows player, to watch it before putting it in the game. In the game, the Trigger ("Play a video" action) or a script plays it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-menus">The menus<a class="headerlink" href="#the-menus" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/menus/">Menus and shortcuts</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Agent</strong></td>
+<td>The agent is the AI assistant that builds your game in the editor, with your own account. Here: its conversation and its settings.</td>
+</tr>
+<tr>
+<td><strong>Agent settings</strong></td>
+<td>Opens the agent settings: account, model, reasoning effort, program, and the rules it follows.</td>
+</tr>
+<tr>
+<td><strong>Close</strong></td>
+<td>Closes this window or panel. In a dialog, Esc does the same.</td>
+</tr>
+<tr>
+<td><strong>Console</strong></td>
+<td>The console lists the editor's messages: what was just done, and errors. It also opens with a click on the status bar, at the very bottom.</td>
+</tr>
+<tr>
+<td><strong>Conversation</strong></td>
+<td>Opens the Agent panel on the conversation, ready to type.</td>
+</tr>
+<tr>
+<td><strong>Copy</strong></td>
+<td>Keeps a copy of the selected objects, with what they contain, to paste it later (Ctrl+C).</td>
+</tr>
+<tr>
+<td><strong>Crash reports</strong></td>
+<td>Opens in File Explorer the folder where the editor and your games keep their crash reports. They stay on this computer: nothing is sent without your consent.</td>
+</tr>
+<tr>
+<td><strong>Create</strong></td>
+<td>Adds a new object to the scene: a folder, a camera, an arrival point, a zone, or a basic shape (cube, sphere, cylinder, capsule, plane).</td>
+</tr>
+<tr>
+<td><strong>Create a project from this scene...</strong></td>
+<td>For a scene that isn't in any project: turns it into a project, copying the models it uses into it. The original scene isn't changed.</td>
+</tr>
+<tr>
+<td><strong>Creation assistant...</strong></td>
+<td>Reopens the assistant that asks a few questions about your game and turns them into a request for the agent. Answers already given are kept. Available in a project.</td>
+</tr>
+<tr>
+<td><strong>Cut</strong></td>
+<td>Copies the selected objects, then removes them from the scene, to paste them elsewhere (Ctrl+X).</td>
+</tr>
+<tr>
+<td><strong>Delete the report</strong></td>
+<td>Erases the report from this computer. If several are waiting, all of them are erased.</td>
+</tr>
+<tr>
+<td><strong>Do nothing</strong></td>
+<td>Closes this question without sending anything. The report stays in the reports folder (Help menu), and the question isn't asked again.</td>
+</tr>
+<tr>
+<td><strong>Don't recover</strong></td>
+<td>Sets the automatic backup aside and keeps the scene as it was saved. The backup is put aside, not erased.</td>
+</tr>
+<tr>
+<td><strong>Don't save</strong></td>
+<td>Drops the unsaved changes and goes on (opening another scene, quitting...). They won't be offered for recovery.</td>
+</tr>
+<tr>
+<td><strong>Duplicate</strong></td>
+<td>Makes a copy of what is chosen, placed right next to it (Ctrl+D for the selected objects). For a game scene, creates a new identical scene.</td>
+</tr>
+<tr>
+<td><strong>Edit</strong></td>
+<td>Undo and redo, then cut, copy, paste, duplicate or delete the selected objects.</td>
+</tr>
+<tr>
+<td><strong>Export game...</strong></td>
+<td>Turns your game into a standalone folder with its own program, which anyone can run on Windows without WorldMint. Greyed out while the game has no player.</td>
+</tr>
+<tr>
+<td><strong>File</strong></td>
+<td>Projects and scenes: create, open, save, export the game. It also holds the preferences, and the way to quit the editor.</td>
+</tr>
+<tr>
+<td><strong>Four views</strong></td>
+<td>Splits the 3D view into four, each with its own viewpoint, or goes back to a single view (Q).</td>
+</tr>
+<tr>
+<td><strong>Frame selection</strong></td>
+<td>Brings the views close to the selection, so you see all of it (F). With nothing selected, shows the whole scene.</td>
+</tr>
+<tr>
+<td><strong>Game</strong></td>
+<td>What applies to the whole game. The tab gathers its controls and systems; the menu starts the game, stops it, and reopens the creation assistant.</td>
+</tr>
+<tr>
+<td><strong>Grid</strong></td>
+<td>Shows or hides the ground grid in the 3D view.</td>
+</tr>
+<tr>
+<td><strong>Group</strong></td>
+<td>Puts the selected objects in a new folder, to move or set them up together (Ctrl+G).</td>
+</tr>
+<tr>
+<td><strong>Help</strong></td>
+<td>The list of keyboard shortcuts, and the choice of the editor's language.</td>
+</tr>
+<tr>
+<td><strong>Invert selection</strong></td>
+<td>Selects the objects that weren't selected and deselects the others (Ctrl+I). Objects hidden in the view are left out.</td>
+</tr>
+<tr>
+<td><strong>Keep working</strong></td>
+<td>Closes this question without doing anything: you stay on the scene, with your changes.</td>
+</tr>
+<tr>
+<td><strong>Keyboard shortcuts</strong></td>
+<td>Shows the list of the editor's keyboard shortcuts. Esc closes it.</td>
+</tr>
+<tr>
+<td><strong>Language</strong></td>
+<td>Chooses the editor's language, for example Français or English. The interface changes right away.</td>
+</tr>
+<tr>
+<td><strong>Left panel</strong></td>
+<td>Shows or hides the left column: the Scene, Game and Scripts tabs.</td>
+</tr>
+<tr>
+<td><strong>Library</strong></td>
+<td>Shows or hides the library, below the 3D view: your models and sounds, arranged like in File Explorer.</td>
+</tr>
+<tr>
+<td><strong>Licenses</strong></td>
+<td>Shows the licenses of the open-source software inside WorldMint and the exported games. The same file goes with every game.</td>
+</tr>
+<tr>
+<td><strong>Make a reusable object</strong></td>
+<td>Turns the chosen object into a reusable object: you can place it as many times as you like, and all its copies change together. It appears in the library, in the Reusable objects folder.</td>
+</tr>
+<tr>
+<td><strong>New conversation</strong></td>
+<td>Clears the current conversation and starts an empty one. The work already done in the scene stays.</td>
+</tr>
+<tr>
+<td><strong>New project...</strong></td>
+<td>Creates a project, a folder that will hold your whole game, then offers the creation assistant. You first choose where to put it.</td>
+</tr>
+<tr>
+<td><strong>New scene...</strong></td>
+<td>Asks where to save a new scene, then opens it empty (Ctrl+N). In a project, the + button of the scene list is simpler.</td>
+</tr>
+<tr>
+<td><strong>Normal</strong></td>
+<td>Shows the active 3D view normally, with its colors and lighting. The Z key cycles through Normal, Polygons and Wireframe.</td>
+</tr>
+<tr>
+<td><strong>Object</strong></td>
+<td>Create objects, and act on the selected ones: reusable object, groups, placing on the ground, rotation, size and collision.</td>
+</tr>
+<tr>
+<td><strong>Open project folder</strong></td>
+<td>Opens the project folder in File Explorer, to find its files.</td>
+</tr>
+<tr>
+<td><strong>Open project...</strong></td>
+<td>Opens an existing project: pick its .worldmint file, inside the project folder.</td>
+</tr>
+<tr>
+<td><strong>Open recent scene</strong></td>
+<td>The scenes you opened last, to go back to one in a click. Hover one to see its path.</td>
+</tr>
+<tr>
+<td><strong>Open the license file</strong></td>
+<td>Opens the THIRD_PARTY_NOTICES.txt file in Notepad, to read or print it.</td>
+</tr>
+<tr>
+<td><strong>Open the report</strong></td>
+<td>Opens the report's folder in File Explorer: the log (journal.txt), the program's state (plantage.dmp) and the version (infos.json).</td>
+</tr>
+<tr>
+<td><strong>Open...</strong></td>
+<td>Opens a scene file (.wmscene) chosen in a window (Ctrl+O). If the current scene has changes, the editor first offers to save them.</td>
+</tr>
+<tr>
+<td><strong>Paste</strong></td>
+<td>Adds the copied or cut objects to the scene, slightly shifted so they don't stack on the originals (Ctrl+V). The pasted objects are selected.</td>
+</tr>
+<tr>
+<td><strong>Place on ground</strong></td>
+<td>Moves the selected objects up or down so they rest on whatever lies beneath, the terrain or another object (End key).</td>
+</tr>
+<tr>
+<td><strong>Play</strong></td>
+<td>Starts the game in its own window so you can try it (F5). It first needs a player: a character set as the player.</td>
+</tr>
+<tr>
+<td><strong>Polygons</strong></td>
+<td>Shows the active view normally, with the polygon edges drawn on top: you see what the models are made of.</td>
+</tr>
+<tr>
+<td><strong>Preferences</strong></td>
+<td>The settings of the editor itself, for all your projects: language and appearance, snapping steps, view navigation, automatic backup, console. They appear in the right column.</td>
+</tr>
+<tr>
+<td><strong>Quit</strong></td>
+<td>Closes the editor. If there are unsaved changes, it offers to save them first.</td>
+</tr>
+<tr>
+<td><strong>Recover</strong></td>
+<td>Reopens the work from the automatic backup. The scene file doesn't change until you save: save to keep it.</td>
+</tr>
+<tr>
+<td><strong>Recover your work?</strong></td>
+<td>The editor closed without saving, and an automatic backup holds your work: choose whether to bring it back.</td>
+</tr>
+<tr>
+<td><strong>Redo</strong></td>
+<td>Redoes the last change you just undid (Ctrl+Y).</td>
+</tr>
+<tr>
+<td><strong>Reset rotation to zero</strong></td>
+<td>Clears any rotation of the selected objects: they go back to their original orientation.</td>
+</tr>
+<tr>
+<td><strong>Reset scale to 1</strong></td>
+<td>Gives the selected objects back their original size, with no enlarging or shrinking.</td>
+</tr>
+<tr>
+<td><strong>Right panel</strong></td>
+<td>Shows or hides the right column: the properties and the agent.</td>
+</tr>
+<tr>
+<td><strong>Save</strong></td>
+<td>Saves the open scene, and in a project the game settings too (Ctrl+S). When offered before switching scenes or quitting, it saves and then goes on.</td>
+</tr>
+<tr>
+<td><strong>Save as...</strong></td>
+<td>Saves the scene to another file, chosen in a window (Ctrl+Shift+S). The editor then keeps working on that new file.</td>
+</tr>
+<tr>
+<td><strong>Save your changes?</strong></td>
+<td>The scene has unsaved changes: save them, drop them, or keep working without changing anything.</td>
+</tr>
+<tr>
+<td><strong>Select</strong></td>
+<td>Select objects in one go: all of them, the opposite of the current selection, or none.</td>
+</tr>
+<tr>
+<td><strong>Select all</strong></td>
+<td>Selects every object in the scene, except those hidden in the view (Ctrl+A).</td>
+</tr>
+<tr>
+<td><strong>Select nothing</strong></td>
+<td>Deselects every object. Handy to get back to the game settings, shown when nothing is selected.</td>
+</tr>
+<tr>
+<td><strong>Send the report</strong></td>
+<td>Opens your email program on a ready message, or the page meant for reports, with the report's folder next to it: you attach the files and send it yourself.</td>
+</tr>
+<tr>
+<td><strong>Show everything again</strong></td>
+<td>Brings back into the view every object hidden with the eye in the scene list.</td>
+</tr>
+<tr>
+<td><strong>Show the whole scene</strong></td>
+<td>Brings the view back to the whole scene, seen from a little above: its objects, without the terrain they stand on. To find your way back when you went too far (Home key: in every view).</td>
+</tr>
+<tr>
+<td><strong>Stop</strong></td>
+<td>Stops what is running: the game, whose window closes (F5), or, in the library, the sound being played.</td>
+</tr>
+<tr>
+<td><strong>Third-party licenses</strong></td>
+<td>The open-source software WorldMint is built on, with the text of their licenses. Nothing to do: this file already goes with the editor and every exported game.</td>
+</tr>
+<tr>
+<td><strong>Translations</strong></td>
+<td>Opens or closes the Translations window: every text the player sees, with its translation in each language the game offers.</td>
+</tr>
+<tr>
+<td><strong>Turn collision off</strong></td>
+<td>Removes collision from the selected objects: they can be passed through again.</td>
+</tr>
+<tr>
+<td><strong>Turn collision on</strong></td>
+<td>Gives the selected objects a collision box: the player and characters can no longer pass through them.</td>
+</tr>
+<tr>
+<td><strong>Undo</strong></td>
+<td>Undoes the last change made to the scene, by you or by the agent (Ctrl+Z). Repeat to go further back.</td>
+</tr>
+<tr>
+<td><strong>Ungroup</strong></td>
+<td>Takes the contents out of the selected folder, then removes the now empty folder (Ctrl+Shift+G). The objects don't move.</td>
+</tr>
+<tr>
+<td><strong>View</strong></td>
+<td>The viewpoint and display of the active 3D view, the four views, the grid, and the panels to show or hide.</td>
+</tr>
+<tr>
+<td><strong>Walkable areas</strong></td>
+<td>Shows in color, over the ground, where the game's characters can walk (game.walk_to): in blue what they reach from the player's place, in orange the isolated spots they can't reach (a roof, a closed room). No color: too steep, too narrow, under water or inside an obstacle. It updates by itself, in the background, when the scene changes.</td>
+</tr>
+<tr>
+<td><strong>Walkable areas of the size</strong></td>
+<td>When the game has several character sizes (game settings, Character walking): chooses the one whose walkable areas are shown. A big monster's areas stop where it can't go, even if a small one can.</td>
+</tr>
+<tr>
+<td><strong>Wireframe</strong></td>
+<td>Shows only the edges of the models, without their surfaces, in the active view: you can see through them. The terrain shows like a map: shaded by its slope, tinted by its altitude, with its contour lines seen from above; it hides what is behind it, as in the normal view.</td>
+</tr>
+<tr>
+<td><strong>WorldMint stopped suddenly</strong></td>
+<td>The editor closed by itself last time, and left a report on this computer. You choose what to do with it; nothing is sent without you.</td>
+</tr>
+<tr>
+<td><strong>Your game stopped suddenly</strong></td>
+<td>A game started from the editor, or exported, closed by itself and left a report on this computer. Your scene isn't affected.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-players-animations">The player's animations<a class="headerlink" href="#the-players-animations" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/properties/">The properties</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add a sequence</strong></td>
+<td>Creates a switch from one situation to another, which happens when its conditions are true. At first, it waits for the move to finish.</td>
+</tr>
+<tr>
+<td><strong>Add a situation</strong></td>
+<td>Creates a new situation, with a name to change and a move to choose. Sequences then say when the character enters it.</td>
+</tr>
+<tr>
+<td><strong>Advanced animation settings</strong></td>
+<td>Fine-tuning: for each situation, its playback speed, whether it loops, and which one comes first; then the sequences, which say when to go from one to another.</td>
+</tr>
+<tr>
+<td><strong>Animation borrowing</strong></td>
+<td>On, an animation file made for another character is adapted to this one: to its proportions (taller, stockier), even when it comes from another tool whose bones have other names (Mixamo, Unreal, Blender, Unity…). Bones are found on their own, by their name and then by the shape of the skeleton. Off, moves are read as they are, by bone names: useful if the borrowing goes wrong.</td>
+</tr>
+<tr>
+<td><strong>Animation files</strong></td>
+<td>The library files the character's moves come from. An added file is copied into the project; the cross removes it.</td>
+</tr>
+<tr>
+<td><strong>Animations</strong></td>
+<td>The move the character plays in each situation: idle, walking, jumping… The eye shows it on the character, in the scene.</td>
+</tr>
+<tr>
+<td><strong>Bone matching</strong></td>
+<td>For a file made for a skeleton whose bones have other names: the bone of the file each bone of the character follows, found by name or by shape. A bone marked “to check” rests on a weak clue; choose another bone of the file if it is wrong, or “(none)” so that it keeps its rest pose.</td>
+</tr>
+<tr>
+<td><strong>By direction</strong></td>
+<td>The moves used when the character faces the camera instead of turning toward where it goes: backwards, left and right, and the diagonals (forward-left, back-right…) when the file has them. They are blended with the situation's move (forward) according to the direction taken, on 8 directions; a diagonal with no move is shared by its two neighbours (4 directions). Without them, that move is used in every direction.</td>
+</tr>
+<tr>
+<td><strong>Condition</strong></td>
+<td>Adds a condition to this sequence: a value of the character (its speed, whether it's on the ground…), a sign and a number. All its conditions must be true for it to happen.</td>
+</tr>
+<tr>
+<td><strong>Dust on landing</strong></td>
+<td>A little dust rises under the player when they land from a jump or a fall. Untick it for a game where it does not fit (in space, under water).</td>
+</tr>
+<tr>
+<td><strong>Feet on the ground</strong></td>
+<td>On a slope, a step or a terrain, each foot rests on the real ground (moving objects included: a platform, a boat, a vehicle) instead of floating or sinking, and the hips lower as needed, for the foot touching the ground only: the leg the animation lifts follows the body. The engine looks for the legs in the skeleton (a foot, a knee, a hip): without them, nothing changes.</td>
+</tr>
+<tr>
+<td><strong>File shown</strong></td>
+<td>The animation file whose bone matching is shown, when several come from another skeleton.</td>
+</tr>
+<tr>
+<td><strong>Largest feet gap</strong></td>
+<td>The largest height gap corrected under a foot, in meters: beyond it (a ledge, a hole), the foot follows the animation.</td>
+</tr>
+<tr>
+<td><strong>Move backwards</strong></td>
+<td>The move when it walks backwards. Without it, if there is a sideways move, the forward move plays in reverse.</td>
+</tr>
+<tr>
+<td><strong>Move to the left</strong></td>
+<td>The move when it steps sideways, to its left. Without it, the forward move.</td>
+</tr>
+<tr>
+<td><strong>Move to the right</strong></td>
+<td>The move when it steps sideways, to its right. Without it, the forward move.</td>
+</tr>
+<tr>
+<td><strong>Preview move</strong></td>
+<td>The move played in the preview: on the left as the file gives it, on the right replayed on the character. Both should strike the same pose.</td>
+</tr>
+<tr>
+<td><strong>Show all bones</strong></td>
+<td>Also shows the bones with no role in the body: fingers, helper bones. By default, only the body bones (hips, spine, head, arms, legs) and those chosen by hand are listed.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-player-movement-camera-and-body">The player: movement, camera and body<a class="headerlink" href="#the-player-movement-camera-and-body" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/properties/">The properties</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Acceleration</strong></td>
+<td>How quickly it gets up to speed and stops, in m/s²: the higher it is, the faster it responds to the controls.</td>
+</tr>
+<tr>
+<td><strong>Character body</strong></td>
+<td>The invisible shape that stops the character at walls and lets it climb steps: its width, its height, and what it can climb.</td>
+</tr>
+<tr>
+<td><strong>Distance</strong></td>
+<td>Its distance from the character, in meters (0.5 to 100). A wall in between brings it closer.</td>
+</tr>
+<tr>
+<td><strong>Face the camera</strong></td>
+<td>The character always faces where the camera looks, instead of turning toward where it goes: it then walks sideways or backwards, as in a shooter. Its moves by direction are set in each situation (Advanced animation settings).</td>
+</tr>
+<tr>
+<td><strong>Fall limit</strong></td>
+<td>A height, in meters: if the player falls below it, they reappear at their starting point. A movable object (Physics system) that drops below it disappears.</td>
+</tr>
+<tr>
+<td><strong>Gravity</strong></td>
+<td>The force pulling the character back to the ground, in m/s²: the stronger it is, the faster it falls and the lower it jumps.</td>
+</tr>
+<tr>
+<td><strong>Height</strong></td>
+<td>For the character's body: its height, in meters (at least twice its radius). For the game window: its height, in pixels.</td>
+</tr>
+<tr>
+<td><strong>Jump strength</strong></td>
+<td>Its speed as the jump starts, in meters per second: the higher it is, the higher it jumps.</td>
+</tr>
+<tr>
+<td><strong>Mass</strong></td>
+<td>How much the character weighs, in kilograms: the heavier it is, the less a thrown crate or a rolling rock knocks it, and the more easily it pushes what it meets. 70 kg for an adult.</td>
+</tr>
+<tr>
+<td><strong>Max tilt</strong></td>
+<td>The highest angle the player can give it with the mouse, in degrees (at most 89): near 89, it looks down on the character from straight above.</td>
+</tr>
+<tr>
+<td><strong>Maximum slope</strong></td>
+<td>The steepest slope it can walk up, in degrees (1 to 89). It can't walk up anything steeper.</td>
+</tr>
+<tr>
+<td><strong>Min tilt</strong></td>
+<td>The lowest angle the player can give it with the mouse, in degrees (at least -89): negative, it dips below the character and looks up.</td>
+</tr>
+<tr>
+<td><strong>Minimum distance</strong></td>
+<td>Even when a wall pushes it, it never gets closer to the character than this distance, in meters.</td>
+</tr>
+<tr>
+<td><strong>More camera settings</strong></td>
+<td>The limits of its tilt, and how it keeps clear of walls.</td>
+</tr>
+<tr>
+<td><strong>Mouse sensitivity</strong></td>
+<td>How many degrees the camera turns for each pixel the mouse moves. At 0, the mouse no longer turns it.</td>
+</tr>
+<tr>
+<td><strong>Movement</strong></td>
+<td>How the played character walks, runs, jumps and swims. While the game is running (F5), every change applies right away.</td>
+</tr>
+<tr>
+<td><strong>Obstacle margin</strong></td>
+<td>The space it keeps between itself and a wall, in meters, so it doesn't see through it.</td>
+</tr>
+<tr>
+<td><strong>Player camera</strong></td>
+<td>The camera that follows the character in the game: its distance, what it aims at, its angle, and how the mouse turns it.</td>
+</tr>
+<tr>
+<td><strong>Radius</strong></td>
+<td>The radius of its invisible body, in meters: the larger it is, the harder it is to squeeze between two obstacles.</td>
+</tr>
+<tr>
+<td><strong>Reset to defaults</strong></td>
+<td>Puts all the player settings back to their starting values: movement, player camera and body. Its animations don't change.</td>
+</tr>
+<tr>
+<td><strong>Return after obstacle</strong></td>
+<td>When a wall has pushed it closer to the character, how fast it returns to its distance, in meters per second.</td>
+</tr>
+<tr>
+<td><strong>Run speed</strong></td>
+<td>Its speed when running, while holding the run key, in meters per second (0 to 50).</td>
+</tr>
+<tr>
+<td><strong>Step height</strong></td>
+<td>The tallest step it climbs without jumping, in meters.</td>
+</tr>
+<tr>
+<td><strong>Swim speed</strong></td>
+<td>Its speed in water deep enough to swim, in meters per second.</td>
+</tr>
+<tr>
+<td><strong>Target height</strong></td>
+<td>The height of the point it looks at, in meters above the character's feet.</td>
+</tr>
+<tr>
+<td><strong>Tilt</strong></td>
+<td>Its angle when the game starts, in degrees: positive, it looks down at the character from above; negative, from below. It stays between the min and max tilt.</td>
+</tr>
+<tr>
+<td><strong>Turn speed</strong></td>
+<td>How quickly it turns to face where it is going, in degrees per second.</td>
+</tr>
+<tr>
+<td><strong>Walk speed</strong></td>
+<td>Its speed when walking, in meters per second (0 to 50).</td>
+</tr>
+<tr>
+<td><strong>While holding the control</strong></td>
+<td>A game control (Game controls, World tab): while the player holds it, the character faces where the camera looks, to aim for example. None: it always turns toward where it goes.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-scene-tab">The Scene tab<a class="headerlink" href="#the-scene-tab" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/scene-tab/">The Scene tab</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Create inside</strong></td>
+<td>Creates a new object inside this one: a folder, a camera, an arrival point, a zone, a particle effect, a decal or a basic shape.</td>
+</tr>
+<tr>
+<td><strong>Decal</strong></td>
+<td>Creates an invisible box that projects an image on the ground or the wall around its base: a footprint, an impact, a stain, a puddle, a sign. It carries the Decal system, turned on if needed; the box's scale sets the image's size.</td>
+</tr>
+<tr>
+<td><strong>Fog volume</strong></td>
+<td>Creates an invisible box filled with fog, which stays in its area: the mist of a valley, an undergrowth, a marsh. It carries the Fog volume system, turned on if needed: set its visibility, its colour and its edges in its properties; the box's scale sets its size. With volumetric fog, it catches the sun's rays.</td>
+</tr>
+<tr>
+<td><strong>Frame in the view</strong></td>
+<td>Brings the active view onto the whole sector. Double-clicking its name does the same.</td>
+</tr>
+<tr>
+<td><strong>Game scenes</strong></td>
+<td>The game's places, one per scene: a house, a cave, a level. A click opens one; the + creates another.</td>
+</tr>
+<tr>
+<td><strong>Glowing air</strong></td>
+<td>Creates an invisible box filled with an almost invisible air, which only shows the sun's rays where they cross it, like dust in a forest or a room: a Fog volume of kind Glowing air (rays only). It needs volumetric fog (Sky and light), in High or Medium quality, and a sun low enough to pass between foliage or walls. For a visible mist, choose Fog volume.</td>
+</tr>
+<tr>
+<td><strong>Lock</strong></td>
+<td>Freezes the sector: nothing moves, is created or deleted in it, its ground included, neither by you nor by the agent, until you unlock it. Handy for a finished district.</td>
+</tr>
+<tr>
+<td><strong>New script</strong></td>
+<td>Creates an empty script and opens it. Scripts give the game its rules; the agent can also write them for you.</td>
+</tr>
+<tr>
+<td><strong>Particle effect</strong></td>
+<td>Creates an invisible box giving off particles: a campfire, smoke, sparks, magic, rain or snow. It carries the Particle effect system, turned on if needed: choose the effect, its size and its colour in its properties. The effect already runs in the view.</td>
+</tr>
+<tr>
+<td><strong>Rename</strong></td>
+<td>Changes the name in place, as in File Explorer: Enter confirms, Escape cancels. For an object, the shortcut is F2. For a project model in the library (F2 too), the file is renamed and whatever uses it follows: the objects, its moves, its pose adjustments; Ctrl+Z puts it back.</td>
+</tr>
+<tr>
+<td><strong>Save script</strong></td>
+<td>Checks the script and saves it in the scene; if it has an error, it shows below the text. Ctrl+S in the text does the same.</td>
+</tr>
+<tr>
+<td><strong>Sectors</strong></td>
+<td>The named parts of a large map: the harbour, the old town, the north forest. The + draws a new one by clicking and dragging on the ground, in a view. Clicking a sector lets you work on it alone: the scene list, Ctrl+A and framing only see it, the other objects are hidden, and seen from above the rest of the map darkens. “Whole map” shows everything again. The padlock locks a sector: neither you nor the agent can change anything in it. The number on the right counts its objects (a building counts once).</td>
+</tr>
+<tr>
+<td><strong>Unlock</strong></td>
+<td>Reopens the sector: things can be changed in it again.</td>
+</tr>
+<tr>
+<td><strong>Whole map</strong></td>
+<td>Works on the whole map again: nothing is hidden.</td>
+</tr>
+<tr>
+<td><strong>Work on this sector</strong></td>
+<td>Shows only this sector: the scene list, the views, the selection and Ctrl+A are limited to it, the rest of the map is hidden (nothing is deleted). The agent works on the same sector.</td>
+</tr>
+<tr>
+<td><strong>Zone</strong></td>
+<td>Creates an invisible box that reports who enters and leaves it: a pressure plate, a trap, a finish line. It carries the Zone system, turned on if needed; set its size with the scale.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-script-debugger-and-profiler">The script debugger and profiler<a class="headerlink" href="#the-script-debugger-and-profiler" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../editor/scripts-tab/">The Scripts tab</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Calling functions</strong></td>
+<td>The functions that led here, from the nearest to the farthest, with their line and their local variables.</td>
+</tr>
+<tr>
+<td><strong>Continue</strong></td>
+<td>The game resumes until the next breakpoint (F5 key). Its window comes back to the front.</td>
+</tr>
+<tr>
+<td><strong>Marge des points d'arrêt</strong></td>
+<td>Click a line number to set a breakpoint (a red dot) or remove it. During a game, the game pauses just before this line, and you see the script's variables. An empty line or a comment stops at the next line.</td>
+</tr>
+<tr>
+<td><strong>Next line</strong></td>
+<td>Runs the highlighted line and stops at the next one in the same function (F10 key). A function called on this line runs in one go.</td>
+</tr>
+<tr>
+<td><strong>Shared variables</strong></td>
+<td>The shared table, common to all the game's scripts.</td>
+</tr>
+<tr>
+<td><strong>Step into the function</strong></td>
+<td>If the highlighted line calls a function of this script, stops at its first line (F11 key). Otherwise, like Next line.</td>
+</tr>
+<tr>
+<td><strong>Step out of the function</strong></td>
+<td>Finishes the current function and stops in the one that called it (Shift+F11). If the engine called it (on_update, for example), the game resumes until the next breakpoint.</td>
+</tr>
+<tr>
+<td><strong>Variables of the function</strong></td>
+<td>The local variables of the stopped function, as they are before the highlighted line. A table unfolds with a click.</td>
+</tr>
+<tr>
+<td><strong>Variables of the script</strong></td>
+<td>This script's global variables (those declared without local), without its functions. Each script has its own.</td>
+</tr>
+<tr>
+<td><strong>What slows down my game</strong></td>
+<td>During a game, the time each script takes every frame, the heaviest at the top, in milliseconds and as a share of the frame. The game's systems are scripts: they show up too. A red bar is getting close to a limit. Hover over a row for details, click to open the script. The last game's profile stays shown afterwards.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-terrain">The terrain<a class="headerlink" href="#the-terrain" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../terrain/">The terrain</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Black altitude</strong></td>
+<td>The altitude, in meters, of the image's black points: the lowest possible.</td>
+</tr>
+<tr>
+<td><strong>Blend between regions</strong></td>
+<td>The width, in meters, of the color blend from one region to the next. 0: sharp borders.</td>
+</tr>
+<tr>
+<td><strong>Choppiness</strong></td>
+<td>The wind on the water, from 0 to 1: 0, round and regular waves; 1, sharp crests, crossing waves, stronger ripples and foam on the crests.</td>
+</tr>
+<tr>
+<td><strong>Clarity</strong></td>
+<td>How far one sees through the water, in meters: small, murky water; large, a clear lagoon where the bottom shows far from the shores.</td>
+</tr>
+<tr>
+<td><strong>Color near the shores</strong></td>
+<td>The color of shallow water, where the bottom can still be seen: turquoise over sand, green in a pond.</td>
+</tr>
+<tr>
+<td><strong>Color steps</strong></td>
+<td>Stylized water: the number of shades from the shore to the open water, from the color near the shores to the deep water color. 0 or 1: a smooth gradient; 3: three crisp color bands.</td>
+</tr>
+<tr>
+<td><strong>Deep water color</strong></td>
+<td>The color of the water where the bottom can no longer be seen: it is the color of the water object.</td>
+</tr>
+<tr>
+<td><strong>Facet size</strong></td>
+<td>Stylized water: the side, in meters, of the flat triangles that make the surface. Large, very low poly water; small, more detail. Waves shorter than three facets do not show.</td>
+</tr>
+<tr>
+<td><strong>Facet strength</strong></td>
+<td>Stylized water, from 0 to 1: at 1, each facet has its own crisp shade, from its slope facing the sun; toward 0, the surface smooths out, with the same waves. Floating things follow the facets in any case.</td>
+</tr>
+<tr>
+<td><strong>Foam</strong></td>
+<td>The white foam, from 0 to 1: on wave crests, along the shores and around whatever touches the water. 0: none.</td>
+</tr>
+<tr>
+<td><strong>Foam width</strong></td>
+<td>Stylized water: the width, in meters, of the white foam band along the shores and around whatever touches the water. In High quality, a second thinner band comes and goes beyond the first. The foam is also set with Foam (0: none).</td>
+</tr>
+<tr>
+<td><strong>Import</strong></td>
+<td>Lays the heightmap as the terrain's relief, with the regions and sea set for “Generate a world”. Ctrl+Z to go back.</td>
+</tr>
+<tr>
+<td><strong>Import a relief</strong></td>
+<td>Makes the map from a heightmap: a grayscale image where white is the highest (preferably a 16-bit PNG, or a raw .raw or .r16 file), like World Machine, Gaea or real-data converters make. You then choose its scale and altitudes. Up to 4 km per side.</td>
+</tr>
+<tr>
+<td><strong>Kind of water</strong></td>
+<td>A ready-made kind of water: sea, stormy sea, lagoon, lake, pond, low poly sea or low poly lake. Choosing one sets the swell, the colors, the clarity and the foam at once; the two low poly kinds also switch the water to the Stylized style. Everything stays adjustable afterwards.</td>
+</tr>
+<tr>
+<td><strong>Level</strong></td>
+<td>The height of the water surface, in meters. Higher, the water covers more land: the sea rises, a lake overflows its hollow.</td>
+</tr>
+<tr>
+<td><strong>Meters per point</strong></td>
+<td>The distance between two points of the image, in meters: a 1,025-point image at 1 m makes a 1,024 m map. A map is at most 4 km per side.</td>
+</tr>
+<tr>
+<td><strong>New region</strong></td>
+<td>A region of your own, to paint wherever you want: name it and give it its color and systems.</td>
+</tr>
+<tr>
+<td><strong>Paint this region</strong></td>
+<td>Takes the Paint tool with this region: click and drag on the ground, in the view, to spread it.</td>
+</tr>
+<tr>
+<td><strong>Regions</strong></td>
+<td>The large areas of the ground: snow, rock, forest, grassland, desert, swamp, beach. Each one is an object with its color, plants and systems. When generating, untick those you do not want: their areas take the most fitting neighboring region.</td>
+</tr>
+<tr>
+<td><strong>Remove the terrain</strong></td>
+<td>Deletes the terrain from the scene, with everything stored in it: its regions, its water, its plants. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Sea</strong></td>
+<td>A sea at the coast level: it covers everything lower. It is always there around continents or islands.</td>
+</tr>
+<tr>
+<td><strong>Seamless edges</strong></td>
+<td>The left edge continues the right edge, and the top continues the bottom: a map that can wrap around the world. The game does not cross from one edge to the other yet.</td>
+</tr>
+<tr>
+<td><strong>Shape</strong></td>
+<td>The shape of the land: up to the edge of the map, one continent, several continents or an archipelago. Except with land up to the edge, a sea surrounds it up to the horizon.</td>
+</tr>
+<tr>
+<td><strong>Size</strong></td>
+<td>For the map: its side (256 m, 512 m, 1,024 m, 2 km or 4 km), used at the next generation. Beyond 1,024 m, a large map: the ground is drawn in detail around the camera and simplified in the distance. For a plant: its size compared with its model (× 1: as is, × 2: twice as big).</td>
+</tr>
+<tr>
+<td><strong>Style</strong></td>
+<td>The look of the water, chosen for the game. Realistic: fine waves, reflections of the sky and the scenery, see-through water where the bottom shows. Stylized: for a low poly game, a surface of flat facets, gentle readable waves, bold color steps and crisp foam bands; it costs less. Floating and swimming things follow the drawn waves in both cases. The render quality (Low, Medium, High) only sets the cost: stylized water stays stylized on a powerful computer.</td>
+</tr>
+<tr>
+<td><strong>Swell direction</strong></td>
+<td>Where the waves go, in degrees, like a compass laid on the terrain. The smaller waves stray from it a little.</td>
+</tr>
+<tr>
+<td><strong>Variant</strong></td>
+<td>The number that sets how the world is drawn: the same number, with the same settings, gives the same map again. The button next to it picks another one at random.</td>
+</tr>
+<tr>
+<td><strong>Vegetation</strong></td>
+<td>The plant kinds growing on this region, with their count. Drag a model from the explorer into the frame (a tree, a bush, grass, a rock): it grows over the whole region.</td>
+</tr>
+<tr>
+<td><strong>Wakes</strong></td>
+<td>The wakes and ripples around whatever moves in the water, from 0 to 1: the V opening behind a boat, the churned water in its wake, the rings around a swimmer or a floating crate. They are only drawn: floating things do not feel them. 0: none.</td>
+</tr>
+<tr>
+<td><strong>Wave length</strong></td>
+<td>The distance from one crest to the next, for the biggest waves, in meters. Short: a chop; long: an ocean swell. Shorter waves are always added on top.</td>
+</tr>
+<tr>
+<td><strong>Waves</strong></td>
+<td>The height of the biggest waves, in meters. 0: calm water, like a mirror.</td>
+</tr>
+<tr>
+<td><strong>White altitude</strong></td>
+<td>The altitude, in meters, of the image's white points: the highest possible.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="the-timeline-animations-and-cutscenes">The timeline: animations and cutscenes<a class="headerlink" href="#the-timeline-animations-and-cutscenes" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../animation/">Animate and make cutscenes</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Add here</strong></td>
+<td>Adds a moment where you clicked: a camera, a character (the selected one), a sound, a subtitle or an event, to set in the row above.</td>
+</tr>
+<tr>
+<td><strong>Animation</strong></td>
+<td>Creates an animation of the selected objects (a door that opens, a platform that rises) and opens it in the timeline, with a first keyframe of each as it is.</td>
+</tr>
+<tr>
+<td><strong>Animation timeline</strong></td>
+<td>Shows or hides the timeline, at the bottom of the view: there you animate objects frame by frame and put cutscenes together.</td>
+</tr>
+<tr>
+<td><strong>Can be skipped</strong></td>
+<td>The player can skip the cutscene with Esc (or Start): everything is set as at its end, and its events are sent.</td>
+</tr>
+<tr>
+<td><strong>Cutscene</strong></td>
+<td>Creates a cutscene and opens it in the timeline: cameras, characters, sounds, subtitles and events, while the player watches.</td>
+</tr>
+<tr>
+<td><strong>Delete the timeline</strong></td>
+<td>Removes this animation or cutscene from the scene. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Fade to black</strong></td>
+<td>A fade to black of this length, centred on the camera change.</td>
+</tr>
+<tr>
+<td><strong>From the start of the game</strong></td>
+<td>Plays the timeline as soon as the game starts: a platform that comes and goes, an intro cutscene. Otherwise a Trigger rule or a script starts it.</td>
+</tr>
+<tr>
+<td><strong>Glide</strong></td>
+<td>The camera glides from the previous one during this time, instead of cutting at once.</td>
+</tr>
+<tr>
+<td><strong>Keyframe</strong></td>
+<td>Sets a keyframe of the selected objects, as they show, at the playhead. An object that already has its row also gets one as soon as you move, turn or scale it.</td>
+</tr>
+<tr>
+<td><strong>Keyframe here</strong></td>
+<td>Sets a keyframe of the object, as it shows, where you clicked.</td>
+</tr>
+<tr>
+<td><strong>Lecture de l'animation</strong></td>
+<td>Once: it stops at its end. Loop: it starts again. There and back: it goes back in reverse, forever (a platform that comes and goes).</td>
+</tr>
+<tr>
+<td><strong>Length</strong></td>
+<td>The length of the timeline, in seconds. It cannot cut keyframes off: move them first.</td>
+</tr>
+<tr>
+<td><strong>Looping</strong></td>
+<td>The character's animation repeats forever, instead of playing once.</td>
+</tr>
+<tr>
+<td><strong>Music</strong></td>
+<td>A music: it loops, and replaces the one that was playing. Otherwise, a sound played once.</td>
+</tr>
+<tr>
+<td><strong>Name</strong></td>
+<td>The name you see in the lists. The id does not change: the rules and scripts that play it still find it.</td>
+</tr>
+<tr>
+<td><strong>New animation</strong></td>
+<td>A new animation, with the selected objects as they are as its first keyframe.</td>
+</tr>
+<tr>
+<td><strong>New cutscene</strong></td>
+<td>A new ten-second cutscene: add its moments by right-clicking its rows.</td>
+</tr>
+<tr>
+<td><strong>Remove the keyframe</strong></td>
+<td>Removes this keyframe: the object goes straight from the previous one to the next.</td>
+</tr>
+<tr>
+<td><strong>Remove this object from the timeline</strong></td>
+<td>Removes this object's row and all its keyframes: it stays where it is in the scene.</td>
+</tr>
+<tr>
+<td><strong>Règle de la frise</strong></td>
+<td>The seconds of the timeline. Click or drag to move the playhead: the view shows the objects at that moment.</td>
+</tr>
+<tr>
+<td><strong>Vers l'image clé suivante</strong></td>
+<td>How the object goes from this keyframe to the next: linear (at a steady pace), smooth (it starts and stops gently), in steps (it waits, then jumps).</td>
+</tr>
+<tr>
+<td><strong>Visible</strong></td>
+<td>Shows or hides the object from this moment on: a blinking light, a bridge that appears.</td>
+</tr>
+<tr>
+<td><strong>World stopped</strong></td>
+<td>During the cutscene, the rest of the world stops: enemies, physics, scripts. Only it goes on, with its characters. Otherwise the world lives around it.</td>
+</tr>
+<tr>
+<td><strong>Événement envoyé</strong></td>
+<td>The name of the event sent at this moment: a Trigger rule ("When an event happens") or a script can wait for it.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="vegetation">Vegetation<a class="headerlink" href="#vegetation" title="Permanent link">&para;</a></h2>
+<p>Explained in detail: <a href="../../terrain/">The terrain</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Density</strong></td>
+<td>The number of plants per 100 m². Changing the density redoes the sowing: hand edits may no longer land on the same plants.</td>
+</tr>
+<tr>
+<td><strong>Erase</strong></td>
+<td>Removes the selected plant (Delete key). It will not grow back, even if the terrain changes.</td>
+</tr>
+<tr>
+<td><strong>In game</strong></td>
+<td>How its plants behave during the game.</td>
+</tr>
+<tr>
+<td><strong>Max. size</strong></td>
+<td>The largest size of a plant, compared with its model (× 2: twice as big). Each plant takes a random size between the min. size and the max. size.</td>
+</tr>
+<tr>
+<td><strong>Max. slope</strong></td>
+<td>The steepest slope it grows on, in degrees: nothing grows on steeper ground. Lower it to keep cliffs bare.</td>
+</tr>
+<tr>
+<td><strong>Min. size</strong></td>
+<td>The smallest size of a plant, compared with its model (× 1: as is). Each plant takes a random size between the min. size and the max. size.</td>
+</tr>
+<tr>
+<td><strong>Put all plants back</strong></td>
+<td>Forgets all hand edits of this kind: each plant goes back to the place, rotation and size it was sown with, and erased ones grow back.</td>
+</tr>
+<tr>
+<td><strong>Put back in place</strong></td>
+<td>As sown: the plant goes back to its original place, rotation and size.</td>
+</tr>
+<tr>
+<td><strong>Reseed</strong></td>
+<td>New random places for all its plants. Hand edits are forgotten.</td>
+</tr>
+<tr>
+<td><strong>Select all its plants</strong></td>
+<td>Selects all the plants of this kind, to edit them or place a system on them together. A system placed on the plant kind already applies to all of them.</td>
+</tr>
+<tr>
+<td><strong>Select its plant kind</strong></td>
+<td>Selects the plant kind that sowed this plant: its sowing settings and systems apply to all its plants.</td>
+</tr>
+<tr>
+<td><strong>Sink into the ground</strong></td>
+<td>Each plant is set at the lowest point of the ground under its foot, then sunk by this much, in meters: the foot seems to come out of the earth.</td>
+</tr>
+<tr>
+<td><strong>Sowing</strong></td>
+<td>How this plant kind spreads over its region: how many, what size, on which slopes.</td>
+</tr>
+<tr>
+<td><strong>Stop growing it</strong></td>
+<td>Removes this plant kind from its region: all its plants disappear. Ctrl+Z brings it back.</td>
+</tr>
+<tr>
+<td><strong>Trunk</strong></td>
+<td>The diameter, in meters, that stops the player in the game. 0: you walk through (grass, flowers, bushes).</td>
+</tr>
+<tr>
+<td><strong>Visible up to</strong></td>
+<td>The distance, in meters, beyond which its plants are no longer drawn (60 % of this distance in Low quality, on an integrated chip). Closer, the game runs faster: grass can stop early, trees further away.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>help/*.json</code>, <code>locales/*.json</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="Previous: Reference">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Reference
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../systems/" class="md-footer__link md-footer__link--next" aria-label="Next: Game systems">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Game systems
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>
