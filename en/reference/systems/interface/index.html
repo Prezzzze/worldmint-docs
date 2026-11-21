@@ -1,0 +1,3884 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/systems/interface/">
+      
+      
+      
+        <link rel="prev" href="../interaction/">
+      
+      
+        <link rel="next" href="../inventaire/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Interface - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Interface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game's systems and settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creator mode
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: screens, menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hosting your own lobby
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Your data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What's new
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Death and respawn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-habillage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Dressed element”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interface (<code>interface</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface (interface)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dressing-the-interface-with-a-ui-pack-the-image-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dressing the interface with a UI pack: the image theme
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dressing the interface with a UI pack: the image theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-pack-in-the-worldmint-format-interface_pack_apply-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A pack in the WorldMint format: <code>interface_pack_apply</code> first
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-right-images-in-a-pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Finding the right images in a pack
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-habille-linterface-avec-mon-pack-ui_modern" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: « habille l'interface avec mon pack UI_Modern »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Knowledge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Race
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Round
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Status effects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-habillage" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Dressed element”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interface-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interface (<code>interface</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Interface (interface)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#dressing-the-interface-with-a-ui-pack-the-image-theme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dressing the interface with a UI pack: the image theme
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dressing the interface with a UI pack: the image theme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-pack-in-the-worldmint-format-interface_pack_apply-first" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A pack in the WorldMint format: <code>interface_pack_apply</code> first
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#finding-the-right-images-in-a-pack" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Finding the right images in a pack
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-habille-linterface-avec-mon-pack-ui_modern" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example: « habille l'interface avec mon pack UI_Modern »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="interface">Interface<a class="headerlink" href="#interface" title="Permanent link">&para;</a></h1>
+<p>The look of the game's menus, buttons, lists and text fields: the colors of backgrounds, text and what is selected, the text size, the rounding of corners, and an image theme (an interface pack) laid on each kind of element. Everything the game shows uses them, except what a script chooses itself.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td><code>interface</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Placed on objects</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Run by the engine</td>
+<td>yes: the engine runs it itself, without a script</td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-for-the-whole-game">Settings for the whole game<a class="headerlink" href="#settings-for-the-whole-game" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Systems</strong> panel (Developer mode), by opening the system's card.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Panel background color</td>
+<td>The background color of the panels the game shows: menus, windows, lists.</td>
+<td><code>fond_panneaux</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#14171f"></span> <code>#14171f</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Button and field background color</td>
+<td>The background color of buttons and of the fields you type in, in the game's menus.</td>
+<td><code>fond_boutons</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#262933"></span> <code>#262933</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Accent color: hovered button, selected field, scroll bar</td>
+<td>The color that shows what you are pointing at: the button under the mouse, the selected field, the scroll bar.</td>
+<td><code>accent</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#3d8cff"></span> <code>#3d8cff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Alert color: a refusal being signalled</td>
+<td>The color that says "no" for a moment: the slot of an item too heavy to pick up lights up in this color. An "alert" image in the image theme replaces it.</td>
+<td><code>alerte</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#e8543f"></span> <code>#e8543f</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Text color</td>
+<td>The color of the game's texts, except those a script colors itself.</td>
+<td><code>texte</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#ffffff"></span> <code>#ffffff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Text size (share of the screen height)</td>
+<td>The height of texts, as a share of the screen height: 0.03 is a usual size, 0.05 a big text. It follows the window size.</td>
+<td><code>taille_texte</code></td>
+<td>Number</td>
+<td>0.03</td>
+<td>from 0.01 to 0.2</td>
+</tr>
+<tr>
+<td>Corner rounding (share of the screen height, 0: square corners)</td>
+<td>The rounding of panel and button corners, as a share of the screen height: 0 for square corners, 0.02 for well-rounded ones.</td>
+<td><code>arrondi</code></td>
+<td>Number</td>
+<td>0.009</td>
+<td>from 0 to 0.1</td>
+</tr>
+<tr>
+<td>Background opacity (0: transparent, 1: solid)</td>
+<td>How much the backgrounds hide what is behind them: 0 transparent, 1 solid. 0.85 lets the game show faintly behind the menus.</td>
+<td><code>opacite</code></td>
+<td>Number</td>
+<td>0.85</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Image theme: the interface pack</td>
+<td>The images of an interface pack, laid by the engine on each kind of element of every system: windows, buttons, fields, bars, slots, tooltips, titles, scroll bars. One row per kind, plus variants per role (barre.vie). A kind without an image keeps the color drawing above. Each player, guests included, draws them on their own screen.</td>
+<td><code>habillage</code></td>
+<td>List of “Dressed element”</td>
+<td><code>[{'sorte': 'panneau', 'role': ''}, {'sorte': 'bouton', 'role': ''}, {'sorte': 'champ', 'role': ''}, {'sorte': 'barre', 'role': ''}, {'sorte': 'case', 'role': ''}, {'sorte': 'infobulle', 'role': ''}, {'sorte': 'titre', 'role': ''}, {'sorte': 'defilement', 'role': ''}]</code></td>
+<td>one line per “Dressed element”: <a href="#champs-habillage">its fields</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-habillage">The fields of each “Dressed element”<a class="headerlink" href="#champs-habillage" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Dressed element” has its own numbered frame; <strong>Add: Dressed element</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of element</td>
+<td>What this row dresses: all windows, all buttons, all bars… With a role below, only the elements that carry it.</td>
+<td><code>sorte</code></td>
+<td>Choice in a list</td>
+<td>Panels and windows</td>
+<td><code>panneau</code>: Panels and windows<br><code>bouton</code>: Buttons<br><code>champ</code>: Text fields<br><code>barre</code>: Bars (health, XP, stamina…)<br><code>case</code>: Slots (inventory, hotbar)<br><code>infobulle</code>: Tooltips<br><code>titre</code>: Window titles<br><code>defilement</code>: Scroll bars<br><code>cadre</code>: Frames laid on top (minimap, map)<br><code>coche</code>: Checkboxes (yes/no choices)</td>
+</tr>
+<tr>
+<td>Role (empty: the whole kind)</td>
+<td>A variant for the elements of one role, such as barre.vie, barre.xp, barre.endurance, barre.besoin, case.inventaire, case.barre_rapide, fenetre.inventaire, titre.fenetre or bouton.fermer; and by meaning: bouton.principal (the main action of a window: Buy, Make, Learn…), bouton.danger (what destroys or gives up: Drop, Abandon a quest), bouton.recompense (collecting a reward), case.rare (the slot of an item rare or better). A role without its own row takes its parent's, then its kind's: barre.vie.boss takes barre.vie, bouton.danger.jeter takes bouton.danger. Lowercase words separated by dots.</td>
+<td><code>role</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Image (normal, or the background)</td>
+<td>The element's image at rest: the background of a panel, tooltip, title, bar or scroll bar; a button, slot or field; the unticked box of a checkbox (a small square left of the label). Drag it from the library. Without an image, the element keeps its drawing in colors.</td>
+<td><code>image</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Hovered image<br><em>shown only if <strong>Kind of element</strong> is “Buttons” or “Slots (inventory, hotbar)”</em></td>
+<td>Under the mouse, or aimed at with the gamepad. Without it: the normal image, outlined in the accent color.</td>
+<td><code>survol</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Pressed image<br><em>shown only if <strong>Kind of element</strong> is “Buttons” or “Slots (inventory, hotbar)”</em></td>
+<td>During the click. Without it: the normal image, darkened.</td>
+<td><code>appui</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Greyed image (disabled)<br><em>shown only if <strong>Kind of element</strong> is “Buttons”, “Slots (inventory, hotbar)” or “Checkboxes (yes/no choices)”</em></td>
+<td>When it cannot be clicked. Without it: the normal image, greyed and faded.</td>
+<td><code>grise</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Selected image<br><em>shown only if <strong>Kind of element</strong> is “Buttons”, “Slots (inventory, hotbar)” or “Checkboxes (yes/no choices)”</em></td>
+<td>The open tab, the chosen hotbar slot; for a checkbox, the ticked box. Without it: the normal image, tinted with the accent color and outlined.</td>
+<td><code>choisi</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Alert image (a refusal)<br><em>shown only if <strong>Kind of element</strong> is “Buttons”, “Slots (inventory, hotbar)” or “Panels and windows”</em></td>
+<td>For a moment, when the game refuses something: the slot of an item too heavy. Without it: the normal image, veiled and outlined in the alert color.</td>
+<td><code>alerte</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Active image (being typed in)<br><em>shown only if <strong>Kind of element</strong> is “Text fields”</em></td>
+<td>The field the player is typing in. Without it: the normal image, outlined in the accent color.</td>
+<td><code>actif</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Fill<br><em>shown only if <strong>Kind of element</strong> is “Bars (health, XP, stamina…)”</em></td>
+<td>The full part of the bar: laid over the whole bar, then cut to the value, without stretching.</td>
+<td><code>remplissage</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Frame laid on top<br><em>shown only if <strong>Kind of element</strong> is “Bars (health, XP, stamina…)”</em></td>
+<td>A frame drawn over the fill, like an ornate border.</td>
+<td><code>cadre</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Thumb<br><em>shown only if <strong>Kind of element</strong> is “Scroll bars”</em></td>
+<td>The part that slides in the scroll bar; the normal image is its background.</td>
+<td><code>curseur</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Left margin (image pixels)</td>
+<td>The stretchable frame: the corners keep their size, the edges stretch one way, the middle both. Measure the thickness of the image's border, in pixels; the preview shows the cut lines. 0 everywhere: the whole image stretches.</td>
+<td><code>marge_gauche</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1024, as a whole number</td>
+</tr>
+<tr>
+<td>Top margin (image pixels)</td>
+<td>The stretchable frame: the corners keep their size, the edges stretch one way, the middle both. Measure the thickness of the image's border, in pixels; the preview shows the cut lines. 0 everywhere: the whole image stretches.</td>
+<td><code>marge_haut</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1024, as a whole number</td>
+</tr>
+<tr>
+<td>Right margin (image pixels)</td>
+<td>The stretchable frame: the corners keep their size, the edges stretch one way, the middle both. Measure the thickness of the image's border, in pixels; the preview shows the cut lines. 0 everywhere: the whole image stretches.</td>
+<td><code>marge_droite</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1024, as a whole number</td>
+</tr>
+<tr>
+<td>Bottom margin (image pixels)</td>
+<td>The stretchable frame: the corners keep their size, the edges stretch one way, the middle both. Measure the thickness of the image's border, in pixels; the preview shows the cut lines. 0 everywhere: the whole image stretches.</td>
+<td><code>marge_bas</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1024, as a whole number</td>
+</tr>
+<tr>
+<td>Size of the corners on screen</td>
+<td>1: one image pixel makes one pixel of a 1080-high screen, and grows with the screen. 0.5 for corners twice as thin.</td>
+<td><code>echelle</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.05 to 8</td>
+</tr>
+<tr>
+<td>Tint</td>
+<td>Multiplied with the image: white keeps it as it is.</td>
+<td><code>teinte</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#ffffff"></span> <code>#ffffff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Color of the text laid on it</td>
+<td>The color of the texts on this image: a button, a slot, a title, a tooltip, the lines of a window. Automatic: dark text on a light image, light text on a dark one, from its brightness. A text a script colors keeps its color.</td>
+<td><code>texte</code></td>
+<td>Color</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Color of greyed text (disabled)<br><em>shown only if <strong>Kind of element</strong> is “Buttons”, “Slots (inventory, hotbar)” or “Text fields”</em></td>
+<td>The text of a button that cannot be clicked, like "Improve" with no point to spend. Automatic: a softer version of the chosen text, still readable on the image.</td>
+<td><code>texte_inactif</code></td>
+<td>Color</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Opacity (0: invisible, 1: solid)</td>
+<td>The image's opacity. A menu fading in fades it further.</td>
+<td><code>opacite</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Also tint with the element's color</td>
+<td>Ticked: the image also takes the color the game gives the element, such as the red of the health bar. For a grey image made to be tinted.</td>
+<td><code>couleur_element</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="what-the-agent-knows-about-this-system">What the agent knows about this system<a class="headerlink" href="#what-the-agent-knows-about-this-system" title="Permanent link">&para;</a></h2>
+<p>The text the agent reads before using this system.</p>
+<h3 id="interface-interface">Interface (<code>interface</code>)<a class="headerlink" href="#interface-interface" title="Permanent link">&para;</a></h3>
+<p>The look of everything the game shows on screen: panels, buttons, text fields, texts. The system has no script: the engine applies it to the HUD. Add it once with <code>modules_add</code>; it is for the whole game, not placed on objects.</p>
+<p>Before any interface work, read the method: <code>guide_get</code> with id <code>interface</code> (see AGENT.md).</p>
+<ul>
+<li>Its settings (<code>modules_set</code>) are the default look of every HUD element: <code>fond_panneaux</code> (panel background), <code>fond_boutons</code> (button and field background), <code>accent</code> (hovered button, selected field, scroll bar), <code>texte</code> (text color) as <code>#rrggbb</code> colors; <code>taille_texte</code> (text height, a share of the screen height, 0.03 by default); <code>arrondi</code> (corner rounding, a share of the screen height, 0 for square corners); <code>opacite</code> (background opacity, 0 to 1).</li>
+<li>A value a script gives (<code>color</code>, <code>alpha</code>, <code>size</code>, <code>text_color</code>) wins over the theme. To let the user restyle the whole interface from one place, do not give colors in scripts: use the theme.</li>
+<li>When the user asks for a style ("dark and gold", "like a parchment", "bigger text"), change these settings instead of every script.</li>
+<li>Without the system, the HUD keeps its former look (texts slightly bigger than buttons).</li>
+<li>Build menus with <code>game.hud_panel</code> and <code>parent</code> (see <code>scripts_reference</code>): the engine places the elements, wraps texts, scrolls long lists, and announces <code>hud.clic</code> and <code>hud.valider</code>.</li>
+<li>Check a menu in <code>game_run</code>: the report's <code>hud</code> gives each element's <code>rect</code> as the engine placed it, <code>hidden</code> for what is outside a scrolled panel's frame, <code>lines</code> for wrapped texts, and <code>role</code> (the theme row that dresses it). Then look at it with <code>capture_steps</code>.</li>
+</ul>
+<h4 id="dressing-the-interface-with-a-ui-pack-the-image-theme">Dressing the interface with a UI pack: the image theme<a class="headerlink" href="#dressing-the-interface-with-a-ui-pack-the-image-theme" title="Permanent link">&para;</a></h4>
+<p><strong>Rule: to dress the interface with a pack, set the theme (<code>habillage</code>); never lay images over the elements.</strong> No script that puts a <code>game.hud_image</code> on every button, bar or window: it breaks when a window moves, and those images fill the HUD sent to each guest until it is cut. The engine lays the theme itself when it draws, on every player's screen (guests included: their game has the same settings; only each element's <code>role</code> travels).</p>
+<p><code>habillage</code> is a list of rows (<code>modules_set</code> <code>interface</code> <code>habillage</code>). Each row dresses one kind of element (<code>sorte</code>), or one role of it (<code>role</code>):</p>
+<table>
+<thead>
+<tr>
+<th><code>sorte</code></th>
+<th>What it dresses</th>
+<th>Its images</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>panneau</code></td>
+<td>panels and windows</td>
+<td><code>image</code> (the frame)</td>
+</tr>
+<tr>
+<td><code>bouton</code></td>
+<td>buttons</td>
+<td><code>image</code> (normal), <code>survol</code> (hovered), <code>appui</code> (pressed), <code>grise</code> (disabled), <code>choisi</code> (selected: the open tab), <code>alerte</code> (a refusal, for a moment)</td>
+</tr>
+<tr>
+<td><code>champ</code></td>
+<td>text fields</td>
+<td><code>image</code> (normal), <code>actif</code> (being typed in)</td>
+</tr>
+<tr>
+<td><code>barre</code></td>
+<td>bars (health, XP, stamina, needs)</td>
+<td><code>image</code> (the background), <code>remplissage</code> (the fill: laid over the whole bar then cut to the value, never stretched), <code>cadre</code> (a frame drawn on top)</td>
+</tr>
+<tr>
+<td><code>case</code></td>
+<td>slots (inventory grid, hotbar)</td>
+<td><code>image</code> (normal), <code>survol</code>, <code>appui</code>, <code>grise</code>, <code>choisi</code> (the chosen hotbar slot), <code>alerte</code> (the slot of an item refused as too heavy)</td>
+</tr>
+<tr>
+<td><code>infobulle</code></td>
+<td>tooltips</td>
+<td><code>image</code></td>
+</tr>
+<tr>
+<td><code>titre</code></td>
+<td>window titles</td>
+<td><code>image</code> (a banner behind the title text)</td>
+</tr>
+<tr>
+<td><code>defilement</code></td>
+<td>scroll bars</td>
+<td><code>image</code> (the track), <code>curseur</code> (the thumb)</td>
+</tr>
+<tr>
+<td><code>cadre</code></td>
+<td>frames laid on top of what they surround, with no background of their own: the minimap (<code>cadre.minicarte</code>) and the big map (<code>cadre.carte</code>)</td>
+<td><code>image</code> (a ring or an ornate border, drawn over the map and its markers, under the player's arrow; without an image, nothing)</td>
+</tr>
+<tr>
+<td><code>coche</code></td>
+<td>the box of a yes/no button (role <code>coche…</code>, such as <code>coche.option</code> for the yes/no choices of the <code>menu</code> Options screen): a small square left of the label, never stretched over the button; the button's background stays the <code>bouton</code> row's</td>
+<td><code>image</code> (unticked), <code>choisi</code> (ticked), <code>grise</code> (disabled)</td>
+</tr>
+</tbody>
+</table>
+<p>Each row also has: <code>marge_gauche</code>, <code>marge_haut</code>, <code>marge_droite</code>, <code>marge_bas</code> (the 9-slice margins, in pixels of the image: the corners keep their size, the edges stretch one way, the middle both; 0 everywhere stretches the whole image), <code>echelle</code> (corner size on screen, 1: one image pixel per pixel of a 1080-high screen), <code>teinte</code> (<code>#rrggbb</code>, multiplied), <code>opacite</code> (0 to 1), <code>couleur_element</code> (true: the image also takes the color the game gives the element, for a grey image made to be tinted, such as a fill tinted red for health and blue for XP), <code>texte</code> and <code>texte_inactif</code> (<code>#rrggbb</code>, or empty: automatic): the color of the text laid on the image (button and slot labels, titles, tooltips, the lines of a dressed window) and of greyed text. Left empty, the engine picks dark text on a light image and light text on a dark one, from the image's average brightness; text a script colors keeps its color. With a light pack (parchment, cream buttons), check the captures: set <code>texte</code> if the automatic choice does not suit the pack.</p>
+<ul>
+<li>A state without its image takes the normal image, shaded by the engine (darker pressed, greyed disabled, outlined in the accent color when hovered or selected, veiled and outlined in the <code>alerte</code> color (#rrggbb setting, red by default) when it signals a refusal). In your scripts, <code>alert = true</code> on a button or panel (<code>game.hud_set(key, {alert = false})</code> to end it) signals a refusal the same way. A kind without any image keeps the color drawing (the color settings above).</li>
+<li><strong>Roles.</strong> The systems tag their elements: <code>barre.vie</code> (health bar), <code>barre.xp</code> (the progression bar), <code>barre.endurance</code>, <code>barre.besoin</code> (needs), <code>barre.volume</code> (menu), <code>case.inventaire</code> (inventory grid), <code>case.barre_rapide</code> (hotbar slots), <code>panneau.barre_rapide</code>, <code>fenetre.inventaire</code>, <code>fenetre.fabrication</code>, <code>fenetre.savoir</code>, <code>fenetre.quetes</code>, <code>fenetre.boutique</code>, <code>fenetre.dialogue</code>, <code>fenetre.personnage</code> (progression), <code>fenetre.construction</code> (the building catalog), <code>case.construction</code> (its slots), <code>panneau.construction</code> (the placing panel), <code>panneau.touches</code> (the key bar of the building mode and of the title screen), <code>fenetre.menu</code>, <code>fenetre.carte</code>, <code>cadre.minicarte</code> and <code>cadre.carte</code> (the map frames, kind <code>cadre</code>), <code>panneau.suivi_quete</code>, <code>panneau.annonce</code>, <code>panneau.file</code> (crafting queue), <code>titre.inventaire</code>, <code>titre.fabrication</code>, <code>titre.savoir</code>, <code>titre.quetes</code>, <code>titre.boutique</code>, <code>titre.dialogue</code>, <code>titre.personnage</code>, <code>titre.construction</code>, <code>titre.menu</code>, <code>titre.carte</code>, <code>bouton.fermer</code>, <code>bouton.onglet</code>, <code>bouton.choix</code> (dialogue answers); <code>champ.chat</code> is the chat line.</li>
+<li><strong>Roles by meaning.</strong> The systems also tag their buttons by what they do, so a pack's « primary », « danger » or « reward » buttons and its « rare » slots find their place:</li>
+<li><code>bouton.principal</code>: the main action of a window: Buy and Sell (<code>boutique</code>), Make and the station's Upgrade (<code>fabrication</code>), Learn or Study (<code>savoir</code>), Spend a point (<code>progression</code>), Take all (<code>butin</code>), Upgrade at the workshop (<code>equipement</code>), and <code>bouton.principal.lancer</code> (Start, <code>manche</code>).</li>
+<li><code>bouton.danger</code>: what destroys or gives up: Abandon a quest (<code>quetes</code>), Reset the spent points (<code>progression</code>), Remove a gem when it is destroyed (<code>equipement</code>), and <code>bouton.danger.jeter</code> (Drop, <code>inventaire</code>; it was <code>bouton.jeter</code>).</li>
+<li><code>bouton.recompense</code>: collecting a reward. No system has such a button yet: give it to yours (<code>role = "bouton.recompense"</code>).</li>
+<li><code>case.rare</code>: the slot of an item rare or better: the inventory grid, the hotbar, the equipment slots and the « Take all » window. It wins over the slot's role (a rare hotbar slot is <code>case.rare</code>, not <code>case.barre_rapide</code>). « Rare or better »: the item's rarity is at least the rank of the rarity the game counts as rare (the <code>butin</code> setting <code>protection_rang</code>, « Rare » by default); if no rarity has that name (renamed rarities), the 3rd rarity of the list and the rarer ones. Only unique copies have a rarity.</li>
+<li><code>coche.option</code>: a yes/no choice of the <code>menu</code> Options screen (ticked when yes: <code>selected = true</code>). In your scripts, give <code>role = "coche.&lt;something&gt;"</code> and <code>selected = &lt;the value&gt;</code> to a yes/no button: with a <code>coche</code> row, its box is that row's image, drawn left of the label; without one, the engine draws a plain box there (filled with the accent colour and ticked when <code>selected</code>); the button's background stays a button's.</li>
+<li>A role without its own row takes its parent, then its kind: <code>bouton.danger.jeter</code> takes <code>bouton.danger</code>, then <code>bouton</code>; without any theme row, nothing changes on screen. A <code>case.rare</code> row without a « selected » or « hovered » image shades its own image for those states; give it those images if the pack has them. Buttons whose meaning is not one of these keep <code>bouton</code> or their role (<code>bouton.fermer</code>, <code>bouton.onglet</code>, <code>bouton.choix</code>). A row with a <code>role</code> is a variant: it wins for those elements; what it has no image for comes from its kind's row, with that row's margins. A role without a row takes its kind; <code>barre.vie.boss</code> takes <code>barre.vie</code> first.</li>
+<li>The first word of a role is the kind: <code>fenetre</code> or <code>panneau</code>, <code>bouton</code>, <code>champ</code>, <code>barre</code>, <code>case</code> (a button or a panel), <code>titre</code> (a text or a panel), <code>infobulle</code>. In your own scripts, give <code>role = "..."</code> to <code>game.hud_*</code> (and <code>selected = true</code> to the open tab or the chosen slot). <code>role = "fond.barre.vie"</code> marks a colored backing (the dark band under a bar) that is not drawn once the theme dresses <code>barre.vie</code>.</li>
+<li>
+<p>An element whose script gives its own images (<code>background</code>, <code>fill_image</code> in a drawn screen) keeps them: the theme dresses the rest.</p>
+</li>
+<li>
+<p><strong>The minimap's ring.</strong> A row <code>{"sorte": "cadre", "role": "cadre.minicarte", "image": "&lt;the ring&gt;"}</code> lays it over the minimap; the dark outline the map draws by default disappears (its dark disc stays where the map does not reach). Set the <code>carte</code> setting <code>cadre_marge</code> (a share of the map's size, 0.06 to 0.12 for a thick ring) so the map stays inside the ring. A row <code>panneau</code> never dresses a frame; the former role <code>panneau.minicarte</code> no longer exists (it was drawn under the map).</p>
+</li>
+<li><strong>Images go into the project.</strong> An image chosen from the library (by <code>modules_set</code>, or in the editor) is copied into the project and kept by its path there: the game and its export do not depend on the library folder. A theme whose images still point outside the project shows a warning in the editor, with « Copier dans le projet ».</li>
+</ul>
+<h5 id="a-pack-in-the-worldmint-format-interface_pack_apply-first">A pack in the WorldMint format: <code>interface_pack_apply</code> first<a class="headerlink" href="#a-pack-in-the-worldmint-format-interface_pack_apply-first" title="Permanent link">&para;</a></h5>
+<p>A pack in the WorldMint format is a folder with <code>theme.json</code> (<code>palette</code>, <code>sprites</code> with their <code>nineSlice</code> margins), <code>PNG/Default</code> and <code>PNG/Double</code>, and the same base image names in every pack (<code>panel_window</code>, <code>button_primary_normal</code>, <code>slot_square_empty</code>, <code>progress_track_horizontal</code>, <code>banner_title</code>, <code>minimap_frame_mint</code>...). For such a pack, never build the rows by hand: call <code>interface_pack_apply</code> <code>{"pack": "&lt;the pack folder, or its folder name in the library&gt;"}</code> (<code>"cadre": "gold"</code> or <code>"pond"</code> for another minimap ring, <code>"dry_run": true</code> to see the reply without changing anything). In one undoable step it adds the <code>interface</code> system if missing, replaces <code>habillage</code> with every kind and role (2× images, margins doubled, <code>echelle</code> 0.5; banner and ring margins measured on the images), sets the colors measured on the images (the palette names do not say the color), and sets the <code>carte</code> system's <code>cadre_marge</code> to the ring's thickness. Its reply lists the rows, the colors, the base images the pack lacks (those elements keep their look) and the pack's <code>extensions</code> (name, size, pivot, path): lay those yourself in drawn screens (<code>screens_set</code>) when the game needs them. Then check the result in <code>game_run</code> and <code>capture_steps</code> as below. A pack without the WorldMint base (its own names) is refused: dress it by hand with the method below.</p>
+<h5 id="finding-the-right-images-in-a-pack">Finding the right images in a pack<a class="headerlink" href="#finding-the-right-images-in-a-pack" title="Permanent link">&para;</a></h5>
+<p>Never guess a file name or a size. <code>assets_search</code> with kind <code>image</code> and the pack's name gives every image with its size in pixels; then search by what each piece is: <code>assets_search</code> <code>{"query": "UI_Modern button", "kind": "image"}</code>, then <code>panel</code>, <code>window</code>, <code>frame</code>, <code>bar</code>, <code>fill</code>, <code>slot</code>, <code>input</code>, <code>tooltip</code>, <code>scroll</code>, <code>title</code> or <code>header</code>, and words like <code>hover</code>, <code>pressed</code>, <code>disabled</code>, <code>selected</code> for the states. Check a candidate with <code>asset_info</code> (and look at it in a capture) before choosing: a frame has a border all around and a plain middle; measure its border in pixels for the margins (a 64 × 64 panel with a 12-pixel rim: 12 on each side). Prefer images of the same pack and style for every kind.</p>
+<h5 id="example-habille-linterface-avec-mon-pack-ui_modern">Example: « habille l'interface avec mon pack UI_Modern »<a class="headerlink" href="#example-habille-linterface-avec-mon-pack-ui_modern" title="Permanent link">&para;</a></h5>
+<ol>
+<li><code>modules_add</code> <code>interface</code> if the game does not have it.</li>
+<li><code>assets_search</code> <code>{"query": "UI_Modern", "kind": "image"}</code>: list the pack, then search each kind (<code>UI_Modern panel</code>, <code>UI_Modern button</code>, <code>UI_Modern bar</code>...). Look at the candidates; note each size and the thickness of its border.</li>
+<li><code>modules_set</code> <code>interface</code> <code>habillage</code> with one row per kind found, and variants where the pack has them:
+<div class="highlight"><pre><span></span><code><span class="p">[</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"panneau"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/panel_window.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">24</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"titre"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/header.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">16</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bouton"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/button_normal.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"survol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/button_hover.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"appui"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/button_pressed.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"grise"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/button_disabled.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"champ"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/input.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"actif"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/input_focus.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barre"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/bar_back.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"remplissage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/bar_fill_grey.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"couleur_element"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barre"</span><span class="p">,</span><span class="w"> </span><span class="nt">"role"</span><span class="p">:</span><span class="w"> </span><span class="s2">"barre.vie"</span><span class="p">,</span><span class="w"> </span><span class="nt">"remplissage"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/bar_fill_red.png"</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"case"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/slot.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"choisi"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/slot_selected.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"infobulle"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/tooltip.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_gauche"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_droite"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">},</span>
+<span class="w">  </span><span class="p">{</span><span class="nt">"sorte"</span><span class="p">:</span><span class="w"> </span><span class="s2">"defilement"</span><span class="p">,</span><span class="w"> </span><span class="nt">"image"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/scroll_track.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"curseur"</span><span class="p">:</span><span class="w"> </span><span class="s2">"UI_Modern/scroll_thumb.png"</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_haut"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span><span class="w"> </span><span class="nt">"marge_bas"</span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">}</span>
+<span class="p">]</span>
+</code></pre></div>
+   (These file names are an example: use the ones <code>assets_search</code> returned.)</li>
+<li>Check: <code>game_run</code> opening a window (the inventory with I), then <code>capture_steps</code>: corners sharp, borders not stretched, text readable on the images, nothing spilling out. Adjust the margins or <code>echelle</code> if the corners look blurred or too thick. Say to the user which image went where; they change any of it in the editor (Systems tab, Interface, « Thème en images »), which shows the cut lines and a preview.</li>
+</ol>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>The interface theme is the same for every player: each one's game draws it, guests included.</p>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>modules/interface/module.json</code>, <code>modules/interface/AGENT.md</code>, <code>modules/events.json</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../interaction/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interaction">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Interaction
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../inventaire/" class="md-footer__link md-footer__link--next" aria-label="Next: Inventory">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Inventory
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

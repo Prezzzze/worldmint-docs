@@ -1,0 +1,4098 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/savoir/">
+      
+      
+      
+        <link rel="prev" href="../sante/">
+      
+      
+        <link rel="next" href="../soins/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Savoir - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Savoir
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-connaissances" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-gains" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Gain »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-savoir" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Knowledge (<code>savoir</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Knowledge (savoir)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recipes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-connaissances" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-gains" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Gain »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#knowledge-savoir" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Knowledge (<code>savoir</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Knowledge (savoir)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recipes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="savoir">Savoir<a class="headerlink" href="#savoir" title="Permanent link">&para;</a></h1>
+<p>Ce que le joueur sait faire, et comment il l'apprend : des connaissances qui débloquent des recettes de la Fabrication, des pièces de la Construction ou ce que le jeu veut. Chacune s'apprend d'une ou plusieurs façons : connue dès le départ, en obtenant un objet, en étudiant un objet à une table de recherche, avec des points dans un arbre, en lisant un plan, auprès d'un personnage ou d'une quête, en analysant des objets du monde, ou à force de fabriquer. Une fenêtre (K) montre ce qui est connu, ce qui peut s'apprendre et comment.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>savoir</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>oui</td>
+</tr>
+<tr>
+<td>Active aussi</td>
+<td><a href="../inventaire/">Inventaire</a>, <a href="../interaction/">Interaction</a></td>
+</tr>
+<tr>
+<td>Demande aussi, sur le même objet</td>
+<td><a href="../interaction/">Interaction</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans le panneau <strong>Systèmes</strong> (mode Développeur), en ouvrant la carte du système.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les connaissances, ce qu'elles débloquent et comment les apprendre</td>
+<td>Chaque connaissance est une ligne « Connaissance » (son nom, sa catégorie), suivie de ses lignes : « Il faut d'abord » (une autre connaissance), « Débloque » (une recette, une pièce ou une étiquette) et « S'apprend » (une façon de l'apprendre ; plusieurs lignes, plusieurs façons). Une recette ou une pièce débloquée par une connaissance reste fermée tant qu'elle n'est pas apprise.</td>
+<td><code>connaissances</code></td>
+<td>Liste de « Ligne »</td>
+<td><code>[{'sorte': 'connaissance', 'nom': 'Outils de pierre', 'description': 'La hache, la pioche et la lance de pierre.', 'categorie': 'Outils', 'secrete': False}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Hache'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Pioche'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Lance'}, {'sorte': 'moyen', 'moyen': 'depart'}, {'sorte': 'connaissance', 'nom': 'Cuisine au feu', 'description': 'Cuire la viande, le poisson et les baies au feu de camp.', 'categorie': 'Cuisine', 'secrete': False}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Viande cuite'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Poisson grillé'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Baies grillées'}, {'sorte': 'moyen', 'moyen': 'depart'}, {'sorte': 'connaissance', 'nom': 'Travail du fer', 'description': "Fondre le minerai à la forge, puis faire des outils en fer à l'établi solide. S'apprend en trouvant du minerai de fer.", 'categorie': 'Outils', 'secrete': False}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Fer'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Hache de fer'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Pioche de fer'}, {'sorte': 'moyen', 'moyen': 'objet', 'objet': 'Minerai de fer'}, {'sorte': 'connaissance', 'nom': 'Boulangerie', 'description': "Cuire le pain et le ragoût au four. S'apprend en obtenant de la farine.", 'categorie': 'Cuisine', 'secrete': False}, {'sorte': 'prerequis', 'prerequis': 'Cuisine au feu'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Pain'}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Ragoût'}, {'sorte': 'moyen', 'moyen': 'objet', 'objet': 'Farine'}, {'sorte': 'connaissance', 'nom': 'Arc', 'description': "Fabriquer des arcs à l'établi solide. S'apprend en étudiant un arc trouvé à une table de recherche.", 'categorie': 'Armes', 'secrete': False}, {'sorte': 'debloque', 'debloque': 'recette', 'debloque_nom': 'Arc'}, {'sorte': 'moyen', 'moyen': 'etude', 'objet': 'Arc', 'nombre': 1, 'cout': '', 'cout_nombre': 1, 'table': ''}]</code></td>
+<td>une ligne par « Ligne » : <a href="#champs-connaissances">ses champs</a></td>
+</tr>
+<tr>
+<td>Points au départ</td>
+<td>Les points que le joueur a en commençant, à dépenser dans les connaissances qui s'apprennent avec des points.</td>
+<td><code>points_depart</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Ce qui donne des points</td>
+<td>Chaque ligne : un événement et les points qu'il rapporte au joueur, comme « fabrication.fabrique » (fabriquer), « sante.mort » avec « Loup » (vaincre un loup), « quetes.fin » ou un passage de niveau. Une règle du Déclencheur « Donner des points » en donne aussi.</td>
+<td><code>gains</code></td>
+<td>Liste de « Gain »</td>
+<td>(vide)</td>
+<td>une ligne par « Gain » : <a href="#champs-gains">ses champs</a></td>
+</tr>
+<tr>
+<td>Un savoir pour tout le groupe (à plusieurs)</td>
+<td>Dans une partie à plusieurs : coché, ce que l'un apprend, tous le savent, et les points sont à tous. Décoché, chacun apprend pour lui. Sans effet dans une partie à un joueur.</td>
+<td><code>commun</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Fenêtre du savoir avec une touche (K)</td>
+<td>Coché : la commande Ouvrir le savoir (K) ouvre la fenêtre des connaissances, et la referme. Décoché : seulement les tables de recherche, ou l'événement savoir.ouvrir.</td>
+<td><code>fenetre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Arrêter le jeu quand la fenêtre est ouverte</td>
+<td>Coché : le monde s'arrête tant que la fenêtre du savoir est ouverte. Décoché : le jeu continue derrière.</td>
+<td><code>pause_fenetre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Annoncer ce qui est appris</td>
+<td>Coché : un petit message en haut de l'écran dit « Appris : Arc » et ce que donne une analyse (« Analyse : 2/3 »).</td>
+<td><code>annoncer</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Fermer les recettes et les pièces pas encore apprises</td>
+<td>Coché : une recette ou une pièce débloquée par une connaissance ne se fabrique ou ne se pose qu'une fois celle-ci apprise ; le refus dit comment l'apprendre. Décoché : le savoir ne ferme rien, il ne fait que montrer et annoncer.</td>
+<td><code>verrouiller</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Largeur de la fenêtre (ancienne)</td>
+<td>Ne sert plus : la fenêtre est maintenant l'écran « Savoir ». Pour l'élargir, tirez la poignée de sa forme « Fenêtre » dans l'éditeur d'écrans : ses lignes suivent. Gardé pour les jeux qui l'avaient réglé.</td>
+<td><code>largeur</code></td>
+<td>Nombre</td>
+<td>0.6</td>
+<td>de 0.3 à 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-connaissances">Les champs de chaque « Ligne »<a class="headerlink" href="#champs-connaissances" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ligne » a son cadre, numéroté ; <strong>Ajouter : Ligne</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorte de ligne</td>
+<td>Une connaissance, avec son nom ; ou une ligne qui appartient à la connaissance au-dessus d'elle : ce qu'il faut connaître d'abord, ce qu'elle débloque, ou une façon de l'apprendre.</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Connaissance</td>
+<td><code>connaissance</code> : Connaissance<br><code>prerequis</code> : Il faut d'abord<br><code>debloque</code> : Débloque<br><code>moyen</code> : S'apprend</td>
+</tr>
+<tr>
+<td>Nom<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Connaissance »</em></td>
+<td>Le nom que voit le joueur, comme « Travail du fer » ou « Arc ». Il nomme aussi la connaissance dans les événements et les autres lignes.</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Description<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Connaissance »</em></td>
+<td>Une phrase sous le nom, dans la fenêtre du savoir : ce qu'elle permet.</td>
+<td><code>description</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Catégorie (vide : aucune)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Connaissance »</em></td>
+<td>Un mot qui range les connaissances en onglets dans la fenêtre, comme « Outils », « Armes » ou « Construction ».</td>
+<td><code>categorie</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Icône (facultative)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Connaissance »</em></td>
+<td>Une petite image montrée devant le nom dans la fenêtre, de préférence carrée sur un fond transparent.</td>
+<td><code>icone</code></td>
+<td>Image de la bibliothèque</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Cachée tant qu'elle n'est pas apprise<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Connaissance »</em></td>
+<td>Coché : la fenêtre ne la montre qu'une fois apprise, comme une découverte. Décoché : elle s'y voit dès le début, avec la façon de l'apprendre.</td>
+<td><code>secrete</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Connaissance à connaître d'abord<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Il faut d'abord »</em></td>
+<td>Le nom d'une autre connaissance, écrit comme sur sa ligne : celle-ci ne s'apprend qu'une fois celle-là connue, quelle que soit la façon. Plusieurs lignes : il les faut toutes. La fenêtre les montre en arbre.</td>
+<td><code>prerequis</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ce qu'elle débloque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Débloque »</em></td>
+<td>Une recette, qui ne se fabrique qu'une fois la connaissance apprise ; une pièce, qui ne se pose qu'après ; ou une étiquette libre, comme « nage », qu'une règle du Déclencheur (« Seulement si le joueur connaît »), un script ou un test de Dialogue (une marque du même mot) peut regarder.</td>
+<td><code>debloque</code></td>
+<td>Choix dans une liste</td>
+<td>Une recette (système Fabrication)</td>
+<td><code>recette</code> : Une recette (système Fabrication)<br><code>piece</code> : Une pièce (système Construction)<br><code>etiquette</code> : Une étiquette (pour les scripts, le Déclencheur, les Dialogues)</td>
+</tr>
+<tr>
+<td>Son nom<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Débloque »</em></td>
+<td>Le nom de la recette (ce qu'elle donne, comme « Hache en fer »), de la pièce (comme « Mur en pierre ») ou de l'étiquette, écrit comme dans son système.</td>
+<td><code>debloque_nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Comment<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend »</em></td>
+<td>Une façon d'apprendre cette connaissance. Mettez-en autant de lignes que vous voulez : la première remplie suffit. Une règle du Déclencheur « Apprendre » ou l'événement savoir.apprendre l'apprend aussi, toujours.</td>
+<td><code>moyen</code></td>
+<td>Choix dans une liste</td>
+<td>En obtenant un objet (ramassé ou fabriqué)</td>
+<td><code>depart</code> : Connue dès le départ<br><code>objet</code> : En obtenant un objet (ramassé ou fabriqué)<br><code>etude</code> : En étudiant un objet à une table de recherche<br><code>points</code> : Avec des points (arbre de compétences)<br><code>plan</code> : En lisant un plan (l'objet est consommé)<br><code>evenement</code> : Quand un événement arrive (un personnage, un Dialogue, une quête)<br><code>marque</code> : Quand une marque est posée (Dialogue, Quêtes)<br><code>analyse</code> : En analysant des objets du monde<br><code>fabrication</code> : À force de fabriquer quelque chose</td>
+</tr>
+<tr>
+<td>Objet (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « En obtenant un objet (ramassé ou fabriqué) », « En étudiant un objet à une table de recherche », « En lisant un plan (l'objet est consommé) » ou « À force de fabriquer quelque chose »</em></td>
+<td>La sorte d'objet, telle que l'inventaire la range : celle qu'il faut obtenir (« Minerai de fer »), étudier à la table (« Arc »), lire (« Plan de forge »), ou fabriquer (« Flèche »).</td>
+<td><code>objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « En étudiant un objet à une table de recherche », « Avec des points (arbre de compétences) », « En analysant des objets du monde » ou « À force de fabriquer quelque chose »</em></td>
+<td>À la table : combien d'exemplaires l'étude consomme. Avec des points : combien elle coûte. Analyser : combien d'analyses il faut. Fabriquer : combien de fois.</td>
+<td><code>nombre</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Coût en plus (sorte d'objet, vide : aucun)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « En étudiant un objet à une table de recherche »</em></td>
+<td>Ce que l'étude consomme en plus de l'objet étudié, comme « Ferraille ». Vide : seulement l'objet.</td>
+<td><code>cout</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien en plus<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « En étudiant un objet à une table de recherche »</em></td>
+<td>Combien du coût en plus l'étude consomme : 75 ferrailles.</td>
+<td><code>cout_nombre</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Table de recherche (vide : n'importe laquelle)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « En étudiant un objet à une table de recherche »</em></td>
+<td>Le nom de la table devant laquelle on l'étudie, comme « Établi d'artisan », écrit comme sur la table. Vide : n'importe quel objet du monde qui porte ce système comme table de recherche.</td>
+<td><code>table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nom de l'événement<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « Quand un événement arrive (un personnage, un Dialogue, une quête) »</em></td>
+<td>Le nom exact de l'événement qui l'apprend, comme « forgeron.lecon » : envoyé par une réponse d'un Dialogue (un personnage qui enseigne), la fin d'une quête, ou une règle du Déclencheur.</td>
+<td><code>evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Marque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « S'apprend » ; affiché seulement si <strong>Comment</strong> est « Quand une marque est posée (Dialogue, Quêtes) »</em></td>
+<td>Le mot de la marque, posée par un Dialogue ou une quête, comme « forgeron_ami ». Si elle l'est déjà, la connaissance s'apprend aussitôt.</td>
+<td><code>marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-gains">Les champs de chaque « Gain »<a class="headerlink" href="#champs-gains" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Gain » a son cadre, numéroté ; <strong>Ajouter : Gain</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom de l'événement</td>
+<td>Le nom exact de l'événement, comme « fabrication.fabrique », « sante.mort » ou « quetes.fin ».</td>
+<td><code>evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement pour l'objet nommé (vide : n'importe lequel)</td>
+<td>Le nom de l'objet que l'événement doit concerner, sans numéro : avec sante.mort et « Loup », seuls les loups vaincus comptent ; avec fabrication.fabrique, le nom de ce qui est fabriqué.</td>
+<td><code>cible</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Points</td>
+<td>Combien de points chaque fois.</td>
+<td><code>points</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-sur-chaque-objet">Réglages sur chaque objet<a class="headerlink" href="#reglages-sur-chaque-objet" title="Permanent link">&para;</a></h2>
+<p>Dans les <strong>Propriétés</strong> d'un objet ou d'un dossier qui porte le système, section <strong>Systèmes</strong>. Un dossier transmet ses valeurs à ce qu'il contient ; un objet peut changer une valeur pour lui seul.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cet objet est</td>
+<td>Une table de recherche : l'utiliser (E) ouvre l'étude des objets qu'on y apprend, comme un établi de recherche, n'importe quel modèle. Un objet à analyser : l'utiliser compte une analyse pour sa connaissance, comme une épave ou une plante inconnue.</td>
+<td><code>role</code></td>
+<td>Choix dans une liste</td>
+<td>Une table de recherche</td>
+<td><code>table</code> : Une table de recherche<br><code>analyse</code> : Un objet à analyser</td>
+</tr>
+<tr>
+<td>Nom de cette table (vide : le nom de l'objet, sans numéro)<br><em>affiché seulement si <strong>Cet objet est</strong> est « Une table de recherche »</em></td>
+<td>Le nom que les connaissances étudiées « à une table » demandent, comme « Établi d'artisan ». Vide : son nom sans numéro.</td>
+<td><code>nom_table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Connaissance qu'il fait avancer<br><em>affiché seulement si <strong>Cet objet est</strong> est « Un objet à analyser »</em></td>
+<td>Le nom de la connaissance, écrit comme sur sa ligne, qui a une façon « En analysant des objets du monde ». Chaque objet analysé compte une fois.</td>
+<td><code>analyse</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Disparaît une fois analysé<br><em>affiché seulement si <strong>Cet objet est</strong> est « Un objet à analyser »</em></td>
+<td>Coché : l'objet quitte le monde quand il est analysé, comme un fragment ramassé. Décoché : il reste, et ne compte plus.</td>
+<td><code>analyse_retirer</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="commandes-ajoutees-au-jeu">Commandes ajoutées au jeu<a class="headerlink" href="#commandes-ajoutees-au-jeu" title="Permanent link">&para;</a></h2>
+<p>Elles apparaissent dans le panneau <strong>Commandes du jeu</strong> (mode Développeur), où l'on peut changer leur touche.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Nom pour les scripts</th>
+<th>Touche</th>
+<th>Manette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ouvrir le savoir</td>
+<td><code>knowledge</code></td>
+<td>K</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#savoirappris"><code>savoir.appris</code></a></td>
+<td><code>connaissance</code> (text), <code>moyen</code> (text), <code>categorie</code> (text), <code>etiquettes</code> (text)</td>
+<td>The player learned a knowledge (version 26): connaissance is its name (original language), moyen how (depart, objet, etude, points, plan, evenement, marque, analyse, fabrication, apprendre), categorie its category, etiquettes the tags it unlocks, separated by commas. Each tag is also set as a Dialogue mark of the same word.</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoirpoints"><code>savoir.points</code></a></td>
+<td><code>points</code> (number), <code>gain</code> (number)</td>
+<td>The player's knowledge points changed (version 26): points is the new total, gain what was added (negative when spent in the tree).</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoiranalyse"><code>savoir.analyse</code></a></td>
+<td><code>connaissance</code> (text), <code>compte</code> (number), <code>besoin</code> (number), <code>cible</code> (id)</td>
+<td>The player analysed an object of the world (version 26): cible, which counts for the knowledge connaissance; compte analyses done, besoin needed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoirrefus"><code>savoir.refus</code></a></td>
+<td><code>connaissance</code> (text), <code>raison</code> (text)</td>
+<td>A knowledge could not be learned (version 26): raison says why, in the player's language (what is needed first, missing points or items, a game script's refusal).</td>
+</tr>
+<tr>
+<td><a href="../../events/#dialoguemarquer"><code>dialogue.marquer</code></a></td>
+<td><code>marque</code> (text), <code>retirer</code> (boolean?)</td>
+<td>Ask the dialogue system to set a mark, from a script or another system; with retirer true, to remove it. Dialogue conditions then see it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#savoirapprendre"><code>savoir.apprendre</code></a></td>
+<td><code>connaissance</code> (text), <code>joueur</code> (id?)</td>
+<td>Ask the knowledge system to teach connaissance to the player (version 26), even without what it needs first: a Trigger rule, a master in a Dialogue, a quest's reward. A game script can still refuse it (savoir.permise).</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoirdonner_points"><code>savoir.donner_points</code></a></td>
+<td><code>points</code> (number), <code>joueur</code> (id?)</td>
+<td>Ask the knowledge system to give points to the player (version 26), to spend in the knowledge window: a level gained, a book read.</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoirouvrir"><code>savoir.ouvrir</code></a></td>
+<td><code>table</code> (text?)</td>
+<td>Ask the knowledge system to open its window (version 26); with table, the study of that research table's items.</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoiretudier"><code>savoir.etudier</code></a></td>
+<td><code>objet</code> (text), <code>table</code> (text?)</td>
+<td>Ask the knowledge system to study objet as at the research table named table (empty or missing: any table), as its button would (version 26). Refused, with savoir.refus, if something is missing.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?), <code>fiche</code> (number?), <code>jete</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up. For a unique copy (version 15), objet is its kind, fiche its record's number, total how many of that kind. With several stacks of a kind (version 21), total counts all of them; jete is true when a slot was dropped on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechoisi"><code>inventaire.choisi</code></a></td>
+<td><code>objet</code> (text), <code>total</code> (number), <code>fiche</code> (number?), <code>double</code> (boolean?), <code>case</code> (text?)</td>
+<td>The player clicked a slot of the inventory window: objet is the kind of item, total how many they carry. What it does belongs to the game: eat, equip, read. case (version 21) is the slot's key ("Wood~2" for a second stack).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairemanque"><code>inventaire.manque</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Items could not be removed: there are not enough.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireplein"><code>inventaire.plein</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>reste</code> (number?)</td>
+<td>An item could not be added: every slot holds another kind of item (or another unique copy), or (version 21) every stack of its kind is full. reste: picked up in part, how many stayed on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationfabrique"><code>fabrication.fabrique</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>etabli</code> (text), <code>cible</code> (text?), <code>xp</code> (number?), <code>piste</code> (text?)</td>
+<td>The player crafted a recipe: its ingredients left the inventory and objet (quantite of it) came in, at once or at the end of its time in the queue. etabli is the kind of station where it was made (empty bare-handed), cible the station object (missing bare-handed).</td>
+</tr>
+<tr>
+<td><a href="../../events/#interactionutiliser"><code>interaction.utiliser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id)</td>
+<td>The player used the object in reach: a door, a merchant, an item to pick up. Whoever owns that object decides what it does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#dialoguemarque"><code>dialogue.marque</code></a></td>
+<td><code>marque</code> (text)</td>
+<td>A dialogue set a mark: a word the game remembers (a line shown, an answer chosen). Every dialogue's conditions can use it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#languechange"><code>langue.change</code></a></td>
+<td><code>langue</code> (text)</td>
+<td>Sent by the engine when the player changes the game's language (game.set_language, the Menu options). A module redraws what it already shows: its texts go through game.t and game.language.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-quun-script-peut-remplacer-gameoverride">Points qu'un script peut remplacer (game.override)<a class="headerlink" href="#points-quun-script-peut-remplacer-gameoverride" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<ul>
+<li><code>savoir.permise</code> : function(default, connaissance, moyen) -&gt; true, or false and the reason shown (text): whether this knowledge can be learned now. connaissance is its name (original language), moyen the way (depart, objet, etude, points, plan, evenement, marque, analyse, fabrication, apprendre). The default is true. To ask for a level, a place, a time of day.</li>
+<li><code>savoir.texte</code> : function(default, key) -&gt; the text the knowledge window shows for that key: titre, titre_table, points, aucune, fermer, tout, connu, a_apprendre, verrouille, il_faut, apprendre, etudier, appris, deja, pas_assez, manque, refus, etude_rien, analyse, comment, moyen_depart, moyen_objet, moyen_etude, moyen_etude_table, moyen_cout, moyen_points, moyen_plan, moyen_evenement, moyen_marque, moyen_analyse, moyen_fabrication, moyen_autre, a_apprendre_raison, invite_table, invite_analyse. It may hold {connaissance}, {objet}, {n}, {total}, {table}, {liste} and {raison}, replaced afterwards (in the player's language). The default is the game's translation of the text in the original language; without one, French or English, after the player's language.</li>
+</ul>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="knowledge-savoir">Knowledge (<code>savoir</code>)<a class="headerlink" href="#knowledge-savoir" title="Permanent link">&para;</a></h3>
+<p>What the player knows how to do, and how they learn it: the research / tech tree / blueprint / recipe-discovery system of survival games, in user data. Activating it activates inventory and interaction; placing it on an object places interaction there too.</p>
+<ul>
+<li><strong>Knowledges</strong>: the game setting <code>connaissances</code>, a list of rows. A <code>connaissance</code> row (<code>nom</code>, <code>description</code>, <code>categorie</code>: a tab of the window, <code>icone</code>: an image, <code>secrete</code>: hidden until learned) is followed by its own rows:</li>
+<li><code>prerequis</code> (<code>prerequis</code>: another knowledge's name): needed first, whatever the way. Several rows: all needed. The window draws them as a tree.</li>
+<li><code>debloque</code> (<code>debloque</code>: <code>recette</code> | <code>piece</code> | <code>etiquette</code>, <code>debloque_nom</code>): a Crafting recipe (the name of what it gives) or a Building piece (its name) that stays closed until the knowledge is learned (game setting <code>verrouiller</code>, on); or a free tag, which the Trigger condition, scripts and Dialogue tests can look at (learning it also sets a Dialogue mark of the same word).</li>
+<li><code>moyen</code> (<code>moyen</code>, then its fields): one way to learn it. Add several rows for several ways; the first met is enough.<ul>
+<li><code>depart</code>: known from the start.</li>
+<li><code>objet</code> + <code>objet</code>: when the player obtains that kind of item (picked up, crafted, given). Learned later if what it needs first is missing then.</li>
+<li><code>etude</code> + <code>objet</code>, <code>nombre</code> (used up), <code>cout</code> and <code>cout_nombre</code> (optional extra cost, used up too), <code>table</code> (a research table's name, empty: any): studied at a research table.</li>
+<li><code>points</code> + <code>nombre</code>: bought with points in the window (K).</li>
+<li><code>plan</code> + <code>objet</code>: reading a plan; a click on its slot in the inventory window uses one up (not if already known).</li>
+<li><code>evenement</code> + <code>evenement</code>: an event name; send it from a Dialogue answer (<code>annonce</code>), a quest's end (<code>annonce</code>), a Trigger rule (<code>envoyer</code>) or a script.</li>
+<li><code>marque</code> + <code>marque</code>: a Dialogue or quest mark.</li>
+<li><code>analyse</code> + <code>nombre</code>: analysing that many objects of the world (see below).</li>
+<li><code>fabrication</code> + <code>objet</code>, <code>nombre</code>: crafting that recipe that many times (learning by doing).</li>
+</ul>
+</li>
+<li><strong>Research table</strong>: any object (an imported model) with this system (<code>systems_attach</code>), object setting <code>role</code> <code>table</code> (the default), <code>nom_table</code> (empty: its name without number). Using it (E) opens the study of what can be learned there.</li>
+<li><strong>Objects to analyse</strong>: object setting <code>role</code> <code>analyse</code>, <code>analyse</code> = the knowledge's name, <code>analyse_retirer</code> to remove it once analysed. Each object counts once. Tag many objects (wrecks, plants) the same way.</li>
+<li><strong>Points</strong>: <code>points_depart</code>; the list <code>gains</code> (<code>evenement</code>, <code>cible</code>: only for the object named, <code>points</code>), e.g. <code>fabrication.fabrique</code> 1, <code>sante.mort</code> with <code>Wolf</code> 2, <code>quetes.fin</code> 5; the Trigger action <code>donner_points</code>; the event <code>savoir.donner_points</code>.</li>
+<li><strong>Trigger</strong>: actions <code>apprendre</code> (<code>connaissance</code>; ignores what is needed first) and <code>donner_points</code> (<code>points</code>); every rule has <code>condition</code> (<code>aucune</code>, <code>connait</code>, <code>ignore</code>) and <code>condition_valeur</code> (a knowledge or a tag): a door only an initiate opens.</li>
+<li><strong>Events</strong>: it announces <code>savoir.appris</code> (<code>connaissance</code>, <code>moyen</code>, <code>categorie</code>, <code>etiquettes</code>), <code>savoir.points</code>, <code>savoir.analyse</code>, <code>savoir.refus</code>; it listens to <code>savoir.apprendre</code> (without <code>connaissance</code>, since version 4: the first one the player does not know yet), <code>savoir.donner_points</code>, <code>savoir.ouvrir</code> (<code>table</code> optional), <code>savoir.etudier</code>.</li>
+<li><strong>Hooks</strong>: <code>savoir.permise</code> (refuse learning now: a level, a place), <code>savoir.texte</code> (every text of the window). It answers <code>fabrication.permise</code>, <code>construction.permise</code>, <code>declencheur.condition</code> and <code>interaction.texte</code> itself: do not override those to lock recipes, write a knowledge instead.</li>
+<li>A recipe of Crafting can also name its own knowledge (passed to <code>fabrication.permise</code> as an extra argument): it is closed until that knowledge or tag is known.</li>
+<li>Window: control <code>knowledge</code> (K) (<code>fenetre</code>), <code>pause_fenetre</code>. <code>largeur</code> (old) is no longer used: widen the window by its screen.</li>
+<li>Its window and its announcement are two screens delivered by the system (<code>modules/savoir/ecrans/</code>), which its script shows and fills:</li>
+<li>« Savoir »: <code>Fenêtre</code>, <code>Titre</code>, <code>Points</code>, the list <code>Onglets</code> (row <code>Onglet</code>: Tout, then each category; the system's action <code>onglet</code>), the list <code>Liste</code> (it scrolls past the height given in its file), whose row <code>Ligne</code> holds <code>Retrait</code> (one step of the tree per level: its width in the file), <code>Icône</code>, <code>Nom</code> (the knowledge, its state, how to learn it), <code>Apprendre</code> (a button, the action <code>apprendre</code>: with points, or Étudier at a research table) and <code>Vide</code> (nothing to learn, alone on its row); then <code>Message</code> and <code>Fermer</code> (action <code>fermer</code>).</li>
+<li>« Annonce du savoir » (top centre): <code>Annonce</code> (« Appris : Arc », an analysis).
+  Change their look, places and sizes with <code>screens_set</code> (styles, not hand-made values): the rows' text takes what the window's width leaves, so widen <code>Fenêtre</code> and the rows follow. Never draw them again with <code>game.hud_*</code>, and never edit the system.</li>
+<li>Gamepad and keyboard: B or Escape closes the window (<code>Savoir/Fermer</code> is its back button), like A or Enter on Close; the tabs and the Apprendre buttons are reached like any other button.</li>
+<li>Testing: in <code>game_run</code>, press <code>knowledge</code> and read the report's <code>hud</code>: <code>Savoir/Titre</code>, <code>Savoir/Points</code>, the rows <code>Savoir/Nom#&lt;row&gt;</code> and <code>Savoir/Apprendre#&lt;row&gt;</code>, the tabs <code>Savoir/Onglet#&lt;n&gt;</code>, <code>Savoir/Message</code>; the announcement <code>Annonce du savoir/Annonce</code>.</li>
+<li>Saved games keep what is learned, the points, the analyses and the counters.</li>
+</ul>
+<h4 id="recipes">Recipes<a class="headerlink" href="#recipes" title="Permanent link">&para;</a></h4>
+<p>Write names in the user's language. Recipes and pieces must already exist in <code>fabrication</code> / <code>construction</code>.</p>
+<ul>
+<li><strong>The default (a new game, the logic Khalil chose for survival)</strong>: the default rows match the default recipes of <code>fabrication</code>: « Outils de pierre » (Hache, Pioche, Lance) and « Cuisine au feu » (Viande cuite, Poisson grillé, Baies grillées) known from the start (<code>moyen depart</code>); « Travail du fer » (Fer, Hache de fer, Pioche de fer) learned by obtaining « Minerai de fer » (<code>moyen objet</code>); « Boulangerie » (Pain, Ragoût) by obtaining « Farine », after « Cuisine au feu »; « Arc » studied at a research table (<code>moyen etude</code>, <code>objet</code> « Arc », the bow found is used up). So for « un jeu de survie », keep this logic (learn by obtaining an ingredient, study at a research table, a few known from the start), rename it in the user's words, and place one research table (any model, <code>role</code> <code>table</code>) near the workbench. Switch to points (ARK) or another style below only if the user asks.</li>
+<li><strong>Like Rust</strong> (research table + scrap, then a tech tree): a research table (any bench model, <code>role</code> <code>table</code>, <code>nom_table</code> "Research table"). Each weapon or tool: a knowledge <code>debloque recette</code>, with <code>moyen etude</code> (<code>objet</code> the item itself, <code>cout</code> "Scrap", <code>cout_nombre</code> 75). The tree: knowledges with <code>prerequis</code> and <code>moyen points</code>; <code>gains</code> give points for <code>collecte.recolte</code> or crafting. Shared tech for a team: <code>commun</code> on.</li>
+<li><strong>Like Valheim</strong> (discover by holding an ingredient; station level): each recipe's knowledge with <code>moyen objet</code> = its key ingredient ("Copper" teaches "Bronze axe"); chain them with <code>prerequis</code> (bronze needs copper smelting). The station level belongs to Crafting (its workbench name/level); the knowledge just opens the recipe. No window needed: <code>fenetre</code> can stay on as a codex.</li>
+<li><strong>Like Enshrouded</strong> (craftsmen unlock recipes): a character with a Dialogue whose answer sends an event (<code>annonce</code> "blacksmith.rescued"); knowledges with <code>moyen evenement</code> on it; or a quest's end (<code>annonce</code>); or a Trigger rule <code>apprendre</code> on the rescued NPC. Categories per craftsman ("Blacksmith", "Alchemist").</li>
+<li><strong>Like ARK</strong> (engrams with level points): every knowledge <code>moyen points</code> (<code>nombre</code> = its cost) and <code>prerequis</code>; <code>gains</code> on the level-up event of the game (or <code>quetes.fin</code>, <code>sante.mort</code> with <code>cible</code>); <code>points_depart</code> for the first ones.</li>
+<li><strong>Like Subnautica</strong> (scan fragments): fragments are objects with <code>role</code> <code>analyse</code> and <code>analyse_retirer</code>; the knowledge <code>moyen analyse</code> <code>nombre</code> 3.</li>
+<li><strong>Blueprints</strong>: an item "Forge blueprint" to pick up (<code>inventaire</code>), and a knowledge <code>moyen plan</code> <code>objet</code> "Forge blueprint".</li>
+<li><strong>Learning by doing</strong>: <code>moyen fabrication</code> <code>objet</code> "Arrow" <code>nombre</code> 20 teaches "Iron arrows".</li>
+</ul>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>One copy per player: each learns for themselves, with their own points (their copy answers the recipe and piece locks for them only), and sees their own window and announcements. The game setting <code>commun</code> ("One knowledge for the whole group") shares what is learned and the points; the host's save keeps it.</p>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/savoir/module.json</code>, <code>modules/savoir/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../sante/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Santé">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Santé
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../soins/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Soins">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Soins
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

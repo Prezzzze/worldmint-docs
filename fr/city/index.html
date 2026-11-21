@@ -1,0 +1,4139 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/city/">
+      
+      
+      
+        <link rel="prev" href="../terrain/">
+      
+      
+        <link rel="next" href="../lighting/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Villes et routes - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="./.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Villes et routes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ou-trouver-loutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Où trouver l'outil
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-une-ville" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Générer une ville
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plusieurs-villes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Plusieurs villes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracer-des-rues" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tracer des rues
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-worldmint-fabrique-autour-des-rues" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que WorldMint fabrique autour des rues
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-routes-hors-de-la-ville" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les routes hors de la ville
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-matieres-des-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les matières des routes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-chemins-peints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les chemins peints
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-galerie-des-profils" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La galerie des profils
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regler-un-profil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Régler un profil
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-matieres-dune-seule-rue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les matières d'une seule rue
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lentretien-dune-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'entretien d'une route
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dessiner-des-quartiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dessiner des quartiers
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dessiner des quartiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regler-un-style-ou-creer-le-sien" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Régler un style, ou créer le sien
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-densite-dun-quartier" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La densité d'un quartier
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-vue-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La vue plan
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-parcelles-et-leurs-retouches" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les parcelles et leurs retouches
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-mode-batiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le mode Bâtiments
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-pres-et-de-loin-la-distance-des-facades" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        De près et de loin : la distance des façades
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-kit-de-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Un kit de façade
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-carte-du-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La carte du jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-raccourcis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les raccourcis
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avec-lagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Avec l'agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-qui-est-enregistre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qui est enregistré
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#une-extension-payante" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Une extension payante
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limites-connues" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Limites connues
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ou-trouver-loutil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Où trouver l'outil
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generer-une-ville" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Générer une ville
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#plusieurs-villes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Plusieurs villes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracer-des-rues" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tracer des rues
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-worldmint-fabrique-autour-des-rues" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que WorldMint fabrique autour des rues
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-routes-hors-de-la-ville" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les routes hors de la ville
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-matieres-des-routes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les matières des routes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-chemins-peints" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les chemins peints
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-galerie-des-profils" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La galerie des profils
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#regler-un-profil" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Régler un profil
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-matieres-dune-seule-rue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les matières d'une seule rue
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lentretien-dune-route" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        L'entretien d'une route
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dessiner-des-quartiers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Dessiner des quartiers
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dessiner des quartiers">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#regler-un-style-ou-creer-le-sien" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Régler un style, ou créer le sien
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-densite-dun-quartier" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La densité d'un quartier
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-vue-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La vue plan
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-parcelles-et-leurs-retouches" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les parcelles et leurs retouches
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-mode-batiments" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Le mode Bâtiments
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#de-pres-et-de-loin-la-distance-des-facades" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        De près et de loin : la distance des façades
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-kit-de-facade" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Un kit de façade
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#la-carte-du-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        La carte du jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-raccourcis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les raccourcis
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#avec-lagent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Avec l'agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-qui-est-enregistre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qui est enregistré
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#une-extension-payante" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Une extension payante
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#limites-connues" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Limites connues
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="villes-et-routes">Villes et routes<a class="headerlink" href="#villes-et-routes" title="Permanent link">&para;</a></h1>
+<p>L'outil <strong>Villes et routes</strong> dessine une ville sur le relief. Vous tracez le plan (les rues, leur profil, leurs carrefours, les quartiers), ou vous le faites générer d'un coup ; WorldMint fabrique la chaussée, les trottoirs, le marquage, les passages piétons, les arbres d'alignement et les ponts, et aplanit le relief dessous.</p>
+<p>C'est l'extension <strong>Villes et routes</strong> : elle apparaît d'elle-même dans l'éditeur quand elle est installée (voir <a href="#une-extension-payante">Une extension payante</a>).</p>
+<p><img alt="L'outil Villes et routes en mode Rues : deux rues qui se croisent, le menu d'une rue au clic droit, la barre d'options en bas de la vue et les profils de rue à droite" src="../assets/captures/ville-rues.png" /></p>
+<h2 id="ou-trouver-loutil">Où trouver l'outil<a class="headerlink" href="#ou-trouver-loutil" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Dans la palette</strong>, à gauche de la vue : l'icône de carte (sous les outils du terrain quand la scène en a un). Prise, elle ouvre sa <strong>barre d'options</strong> en bas de la vue : <strong>Rues</strong> ou <strong>Quartiers</strong>, <strong>Vue plan</strong>, le profil ou le style des prochains tracés, une aide (le <strong>i</strong>) et la croix qui range l'outil (comme <strong>Échap</strong>).</li>
+<li><strong>Dans les propriétés</strong>, quand rien n'est sélectionné (<strong>Ce jeu</strong>) : la section <strong>Villes et routes</strong>. Elle donne le nombre de rues et de carrefours et leur longueur, la liste des <strong>Villes</strong> et le bouton <strong>Nouvelle ville…</strong>, la liste des <strong>Profils de rue</strong>, l'interrupteur <strong>Vue plan</strong>, la liste des <strong>Quartiers</strong> et celle des <strong>Styles de quartier</strong>.</li>
+</ul>
+<h2 id="generer-une-ville">Générer une ville<a class="headerlink" href="#generer-une-ville" title="Permanent link">&para;</a></h2>
+<p>Pour partir d'une ville entière plutôt que d'une page blanche :</p>
+<ol>
+<li>Section <strong>Villes et routes</strong> des propriétés, sous <strong>Villes</strong> : <strong>Nouvelle ville…</strong>.</li>
+<li>Tracez la zone de la ville sur le terrain (un rectangle glissé, ou un contour point par point ; voir <a href="#plusieurs-villes">Plusieurs villes</a>), puis Entrée. Une fenêtre s'ouvre, avec la surface de la zone, le <strong>nom</strong> de la ville et son <strong>ambiance</strong>.</li>
+<li>La ville se pose dans la zone, sans toucher aux autres villes.</li>
+<li><strong>Graine</strong> : un nombre. Le même nombre redonne la même ville ; <strong>Au hasard</strong> en tire un autre.</li>
+<li><strong>Quartiers</strong> : cochez les styles voulus (centre d'affaires, centre ancien, résidentiel dense, pavillons, zone commerciale, zone industrielle, port, quartier américain, grands ensembles, bord de mer) et donnez la part de chacun ; le pourcentage à côté dit ce qu'elle donne. Les plus centraux vont au milieu, les pavillons au bord, le port et le bord de mer au bord de l'eau (décochés s'il n'y a pas d'eau).</li>
+<li><strong>Générer</strong>.</li>
+</ol>
+<p><img alt="La fenêtre « Générer une ville » : la graine et les quartiers voulus" src="../assets/captures/ville-generer.png" /></p>
+<p>La ville se fabrique en arrière-plan : la ligne d'état dit « Génération de la ville… », et l'éditeur reste libre. Vous obtenez des quartiers, des rues entre eux, deux avenues qui traversent la ville en suivant le relief, et les rues de chaque quartier selon son style (en grille, en tracé ancien et sinueux, en pavillons avec leurs impasses), chacune avec un nom. Une zone presque toute sous l'eau ne reçoit ni quartier ni rue.</p>
+<p>La ville arrive en <strong>une seule étape</strong> : un <strong>Ctrl+Z</strong> la retire d'un coup, relief compris. Si la scène a déjà des rues, la fenêtre le dit et le bouton devient <strong>Remplacer la ville</strong> : les profils de rue et les styles de quartier sont gardés, et Ctrl+Z rend l'ancienne ville.</p>
+<p><img alt="Une ville générée : ses rues et ses carrefours sur le relief, et le nom d'une avenue au survol" src="../assets/captures/ville-generee.png" /></p>
+<p>Ensuite, modelez-la avec les gestes ci-dessous : une ville générée se modifie comme une ville tracée à la main.</p>
+<h2 id="plusieurs-villes">Plusieurs villes<a class="headerlink" href="#plusieurs-villes" title="Permanent link">&para;</a></h2>
+<p>Une carte peut porter plusieurs petites villes collées, chacune avec son nom et son ambiance.</p>
+<ol>
+<li>Dans la section <strong>Villes et routes</strong>, sous <strong>Villes</strong>, cliquez sur <strong>Nouvelle ville…</strong> : l'outil se prend.</li>
+<li>Tracez la zone de la ville sur le terrain :</li>
+<li><strong>Rectangle</strong> : glissez sur le terrain. Tirez ensuite un coin pour l'agrandir, le rond au-dessus pour le tourner.</li>
+<li><strong>Contour</strong> : un clic par point (pour suivre une côte, par exemple). Un double-clic ou Entrée ferme le contour, Retour
+     arrière retire le dernier point, Échap annule. Fermé, chaque point se déplace en le glissant.</li>
+<li>Le tracé s'aimante au bord d'une ville voisine (à quelques mètres) : les deux villes se touchent sans se recouvrir. Une zone
+   qui recouvre une autre ville devient <strong>rouge</strong>, avec la raison au survol.</li>
+<li>Entrée ou <strong>Continuer…</strong> ouvre la fenêtre : la surface de la zone, le <strong>nom</strong> de la ville (tiré au hasard, à changer à
+   volonté), son <strong>ambiance</strong> (européenne, américaine, bord de mer…), la graine et les quartiers. <strong>Générer</strong> ajoute la ville
+   sans toucher aux autres ; ses rues se raccordent à celles de la voisine, à la frontière. Ctrl+Z la retire.</li>
+</ol>
+<p>La liste <strong>Villes</strong> montre chaque ville, son ambiance et sa surface. Un clic en choisit une : son contour s'éclaire et la vue
+se cadre dessus. Ensuite :</p>
+<ul>
+<li>le champ du nom la <strong>renomme</strong> (Entrée garde le nom) ;</li>
+<li><strong>Régénérer</strong> la refait dans la même zone, avec une autre graine ; son nom est gardé ;</li>
+<li><strong>Supprimer</strong> retire ses rues, ses carrefours et ses quartiers ; les autres villes restent. Ctrl+Z la rend.</li>
+</ul>
+<p>La distance de l'aimant se règle dans les données du plan (<code>townSnapDistance</code>, 8 m par défaut ; 0 : sans aimant).</p>
+<h2 id="tracer-des-rues">Tracer des rues<a class="headerlink" href="#tracer-des-rues" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Prenez l'outil <strong>Villes et routes</strong>, en mode <strong>Rues</strong>.</li>
+<li>Choisissez le <strong>Profil</strong> des nouvelles rues dans la liste : chaque profil montre sa coupe (les voies et leur sens, le terre-plein, le stationnement, les trottoirs, les arbres). Les profils de départ sont l'avenue 2 × 2 voies, la rue à double sens, la rue à sens unique, la ruelle et la rue piétonne.</li>
+<li>Cliquez sur le relief pour poser les points de la rue. <strong>Entrée</strong>, ou un <strong>double-clic</strong>, la termine. <strong>Échap</strong> l'abandonne ; un <strong>clic droit</strong> retire le dernier point.</li>
+</ol>
+<p>La rue se voit tout de suite en traits. La chaussée arrive quelques instants après : pendant ce temps, la ligne d'état dit « Mise à jour de la ville… », et vous pouvez continuer à travailler. Une fois la chaussée faite, les traits se font discrets : les nœuds n'apparaissent qu'autour de la souris et sur la rue choisie. Au survol, une rue dit son nom et son profil.</p>
+<p><strong>Raccorder les rues</strong> :</p>
+<ul>
+<li>un point posé <strong>sur une rue</strong> ou <strong>sur un carrefour</strong> y raccorde la nouvelle rue et la termine : un carrefour en T ;</li>
+<li>une rue qui en <strong>croise</strong> une autre y fait un carrefour ;</li>
+<li>un clic sur un <strong>nœud</strong> (un bout de rue, un carrefour) y commence une nouvelle rue.</li>
+</ul>
+<p><strong>Modifier</strong> :</p>
+<ul>
+<li><strong>Glissez</strong> un nœud ou un point de passage : la rue suit, et la ville se refait autour au relâchement.</li>
+<li><strong>Un clic sur une rue</strong> la choisit (elle s'éclaire). <strong>Suppr</strong> la supprime, avec les nœuds qui ne relient plus rien ; la chaussée part, le relief revient. Un second clic sur la rue choisie y commence une nouvelle rue. Tant que l'outil Villes et routes est pris, <strong>Suppr</strong> ne supprime que la rue choisie, jamais un objet de la scène.</li>
+<li><strong>Clic droit sur une rue</strong> : <strong>Profil de la rue</strong> (la liste illustrée), <strong>Renommer la rue…</strong>, <strong>Supprimer la rue</strong>.</li>
+<li><strong>Clic droit sur un carrefour</strong> : <strong>Rond-point</strong> (un second choix lui rend sa forme ordinaire).</li>
+</ul>
+<h2 id="ce-que-worldmint-fabrique-autour-des-rues">Ce que WorldMint fabrique autour des rues<a class="headerlink" href="#ce-que-worldmint-fabrique-autour-des-rues" title="Permanent link">&para;</a></h2>
+<p>Rien de tout cela n'est à faire à la main : tout se refait quand le plan change, et revient tel quel quand on retire une rue.</p>
+<ul>
+<li><strong>Le relief aplani.</strong> Le terrain s'aplanit sous chaque rue, avec des talus doux (une pente de 1 pour 2) de chaque côté. Les rues suivent le relief dans la pente que permet leur profil (12 %, 8 % pour une avenue) ; les carrefours, leurs passages piétons et leurs lignes d'arrêt restent plans. Retirer la ville rend le relief d'origine, exactement.</li>
+<li><strong>Pas de murets.</strong> Le relief se raccorde toujours aux rues par un talus, jamais par un mur. Sur un flanc raide, le talus prend la place qu'il lui faut, et se raidit à son bout pour rejoindre le terrain ; il ne passe jamais au-dessus d'un trottoir ni d'une chaussée.</li>
+<li><strong>Les ponts.</strong> Une rue qui franchit un creux de plus de 3 m, ou de l'eau, devient un pont : un tablier, des garde-corps et des piles posées au sol (30 m au plus entre deux). La chaussée y entre sans marche.</li>
+<li><strong>Les arbres d'alignement</strong>, le long des trottoirs, à l'espacement que donne le profil, hors des carrefours et des ponts.</li>
+<li><strong>L'herbe dégagée.</strong> Les plantes semées par le terrain ne poussent ni sur la chaussée, ni sur les trottoirs, ni dans les carrefours : l'herbe s'arrête au bord du trottoir. Sous un pont, elles ne s'écartent que là où le sol est proche du tablier.</li>
+</ul>
+<h2 id="les-routes-hors-de-la-ville">Les routes hors de la ville<a class="headerlink" href="#les-routes-hors-de-la-ville" title="Permanent link">&para;</a></h2>
+<p>Le même outil trace aussi les routes des champs et de la montagne. Les profils de rue sont rangés en quatre <strong>familles</strong> : <strong>Ville</strong> (les rues, l'avenue, le boulevard, la rue pavée…), <strong>Campagne</strong> (la route départementale, la route nationale, la petite route de campagne), <strong>Montagne</strong> (la route de montagne) et <strong>Chemins</strong> (la piste forestière, le chemin de terre, le sentier, le chemin pavé). Une route se raccorde à une rue par un vrai carrefour.</p>
+<p>Une route de campagne n'a pas de trottoir, donc pas de bordure :</p>
+<ul>
+<li><strong>Les bas-côtés</strong> : une bande de chaque côté, au niveau de la route, entre la chaussée et le fossé. Aux carrefours, les coins sont de la chaussée jusqu'au bord ; le trottoir d'une rue qui y arrive se ferme par une bordure.</li>
+<li><strong>Les fossés</strong> : un creux de chaque côté, au-delà du bas-côté, creusé dans le sol. Retirer la route rend le sol d'origine. L'herbe et les plantes poussent dans le fossé.</li>
+<li><strong>Les barrières</strong> : une <strong>glissière</strong> en acier ou un <strong>garde-fou</strong>, posés des deux côtés, seulement là où le sol tombe à côté de la route, ou <strong>automatiquement</strong> : seulement là où une voiture peut sortir de la route, le long d'un remblai haut et à l'extérieur d'un virage trop serré pour la vitesse de conception de la route. Les routes hors de la ville (départementale, nationale, campagne, montagne) ont leurs glissières en automatique ; les rues de la ville n'en ont pas. Il n'y en a pas sur un pont (il a ses garde-corps), ni dans un carrefour, ni le long d'une rue bordée de trottoirs, ni en petits bouts isolés. Un modèle du projet peut remplacer la glissière fabriquée : il est répété le long de la route, à sa longueur mesurée.</li>
+<li><strong>Le marquage</strong> : <strong>complet</strong> (les lignes entre les voies, les lignes de rive au bord des voies, les passages piétons aux carrefours), <strong>rive seule</strong> (les deux lignes du bord) ou <strong>aucun</strong>. Une rue de ville n'a pas de ligne de rive : ses trottoirs la bordent.</li>
+<li><strong>Les arbres</strong> : sur une route sans trottoir, les arbres d'alignement se plantent au-delà du fossé.</li>
+</ul>
+<p>La largeur des bas-côtés et des fossés, la profondeur des fossés, la sorte de barrière et le marquage sont des réglages de chaque profil. La hauteur des glissières et des garde-fous, l'écart des poteaux et leur couleur sont des réglages communs à toute la ville. Une longue route (plusieurs kilomètres) se pose sans figer l'éditeur.</p>
+<h2 id="les-matieres-des-routes">Les matières des routes<a class="headerlink" href="#les-matieres-des-routes" title="Permanent link">&para;</a></h2>
+<p>Chaque partie d'une route a sa <strong>matière</strong> : la chaussée, les trottoirs, les bordures, les caniveaux, les bas-côtés et le marquage. Par défaut, l'outil <strong>fabrique lui-même</strong> ses matières, sans rien télécharger : asphalte, pavés, dalles, béton, granit, gravier, terre et peinture de marquage. Ce sont de vraies images (couleur, relief, brillance), sans raccord visible, à la bonne taille : un pavé fait une dizaine de centimètres, une dalle un demi-mètre. Elles sont rangées dans le dossier caché du projet et refaites seulement quand une recette change.</p>
+<p>Chaque matière a ses <strong>états</strong> : <strong>neuf</strong>, <strong>usé</strong>, <strong>fissuré</strong> ou <strong>rapiécé</strong> ; le marquage peut aussi être <strong>effacé</strong> (la peinture a des trous). L'état change d'une rue à l'autre, toujours le même pour le même plan :</p>
+<ul>
+<li>en ville, c'est le <strong>style du quartier</strong> qui décide (neuf au centre d'affaires, usé et rapiécé en zone industrielle, pavé au centre ancien) ;</li>
+<li>hors de la ville, c'est le profil de la route, ou l'<strong>entretien</strong> choisi pour une rue (neuf, usé, fissuré, rapiécé) ;</li>
+<li>une chaussée rapiécée a des <strong>rapiéçages</strong> : des rectangles d'enrobé plus neuf, posés dans les voies.</li>
+</ul>
+<p>Deux rues voisines ne montrent pas le même motif au même endroit, et le motif suit la rue dans ses virages. Dans un carrefour, il garde le sens de la rue la plus large : les pavés ne tournent pas d'un coup en passant de la rue au carrefour. Quand une rue continue d'un morceau à l'autre, le motif tourne avec elle, et autour d'un coin de trottoir, les dalles suivent la courbe de la bordure.</p>
+<p><strong>La bordure et le caniveau</strong>, comme dans une vraie rue :</p>
+<ul>
+<li>la <strong>bordure</strong> est une rangée de <strong>blocs</strong> de granit (ou de béton) qui tient le trottoir : on voit leur <strong>dessus</strong> (15 à 30 cm de large), leur <strong>arête</strong> côté chaussée, coupée en biais, et un <strong>joint</strong> tous les mètres environ. Le trottoir commence derrière elle. Dans le profil, groupe <strong>Bords</strong> : le dessus de la bordure, la longueur d'un bloc, le chanfrein ; sa couleur se règle avec la teinte de la bordure (jaune, comme à Miami) ;</li>
+<li>le <strong>caniveau</strong> est une bande de pavés ou de dalles au <strong>pied de la bordure</strong>, au niveau de la chaussée, où l'eau s'écoule (25 à 50 cm). Il est pris sur la chaussée : les voies ne bougent pas. Sa largeur se règle dans <strong>Bords</strong> (0 : sans caniveau) et sa matière à l'endroit <strong>Caniveau</strong>. Les rues de ville en ont un ; l'avenue moderne n'en a pas.</li>
+</ul>
+<p><strong>Remplacer une matière par un matériau du projet</strong> : chaque partie d'un profil peut prendre un matériau de votre projet (un fichier <code>.wmmat</code> du dossier <code>materials</code>, fait par exemple d'images de Poly Haven, d'ambientCG ou d'un pack). La taille de son motif est <strong>celle du matériau</strong> : réglez-la dans le matériau, la route la suit. Si le fichier manque, la route reprend la matière fabriquée et le dit (l'agent le voit aussi avec <code>city_check</code>). Le jeu exporté emporte les matières fabriquées et les images des matériaux utilisés.</p>
+<p><strong>Choisir en ligne…</strong> : sous la matière de chaque partie (dans le groupe <strong>Matières</strong> du profil), ce bouton ouvre une petite fenêtre de la <a href="../editor/library/">bibliothèque en ligne</a>, sur les sources que vous avez <strong>déjà choisies</strong> (dossier <strong>En ligne</strong> de l'explorateur d'assets, bouton <strong>Sources</strong> : Poly Haven, ambientCG). Sans source choisie, la fenêtre le dit et rien n'est contacté. Elle montre les textures, avec leur aperçu, leur <strong>licence</strong> et leur <strong>taille réelle</strong> ; le mot de la partie est cherché d'avance (« paving » pour le trottoir, « asphalt » pour la chaussée), changez-le à votre guise. Un clic télécharge la texture dans le projet (une barre de progression le montre, l'éditeur ne gèle pas), en fait un matériau à sa taille réelle, puis la pose sur la partie. <strong>Ctrl+Z</strong> la retire. Les mentions demandées par les sources (« Powered by Poly Haven ») restent en bas de la fenêtre.</p>
+<h2 id="les-chemins-peints">Les chemins peints<a class="headerlink" href="#les-chemins-peints" title="Permanent link">&para;</a></h2>
+<p>Le <strong>sentier</strong>, le <strong>chemin de terre</strong> et la <strong>piste forestière</strong> ne sont pas posés comme une route : ils sont <strong>peints dans le sol</strong>, comme au pinceau des matériaux du sol. Il n'y a ni chaussée, ni bordure, ni marquage : la terre ou le gravier se fondent dans l'herbe, avec un bord doux et un peu irrégulier. Un chemin usé est un peu moins marqué, et son bord plus irrégulier.</p>
+<ul>
+<li><strong>Le relief</strong> : sous un chemin, le sol n'est aplani qu'un peu (un réglage du profil : peu pour un sentier, davantage pour une piste). Le chemin suit la pente, sans talus ni mur.</li>
+<li><strong>Les plantes</strong> : rien ne pousse sur la largeur du chemin ; l'herbe et les arbres reviennent jusqu'à son bord.</li>
+<li><strong>Les carrefours</strong> : deux sentiers qui se rejoignent se fondent l'un dans l'autre. Un sentier qui arrive sur une rue commence au bord du carrefour, qui est posé comme les autres.</li>
+<li><strong>Les matériaux du sol</strong> : un chemin se peint avec les matériaux du sol. Si le terrain n'en a pas encore, le premier chemin les active (Terrain ▸ Matériaux du sol) ; Ctrl+Z les retire avec le chemin. Le sol peut avoir 16 matériaux au plus : s'il les a déjà, le chemin n'est pas peint et l'agent le signale.</li>
+<li><strong>Le retrait sans trace</strong> : retirer un chemin, ou Ctrl+Z, rend le sol exactement comme avant : le relief, la peinture du sol et les plantes.</li>
+</ul>
+<p>La matière d'un chemin (la terre, le gravier) est fabriquée dans le dossier du projet ; elle peut être remplacée par un matériau du projet dans le profil. La peinture du sol a une case par mètre : un sentier très étroit reste un peu flou vu de près.</p>
+<h2 id="la-galerie-des-profils">La galerie des profils<a class="headerlink" href="#la-galerie-des-profils" title="Permanent link">&para;</a></h2>
+<p>La liste <strong>Profil</strong> de la barre d'options, et la liste <strong>Profils de rue</strong> de la section, rangent les profils en quatre groupes : <strong>Ville</strong>, <strong>Campagne</strong>, <strong>Montagne</strong> et <strong>Chemins</strong>. Chaque profil montre sa coupe : ses voies et leur sens, son terre-plein, son stationnement, ses trottoirs, et hors de la ville ses bas-côtés (gris clair, au niveau de la chaussée), ses fossés (un creux sous le trait du sol) et ses barrières (deux petits traits debout). Un chemin peint dans le sol se montre en bande de terre fondue sur le trait du sol, sans épaisseur.</p>
+<h2 id="regler-un-profil">Régler un profil<a class="headerlink" href="#regler-un-profil" title="Permanent link">&para;</a></h2>
+<p>Dans la section, un clic sur un profil le choisit pour les prochaines rues et ouvre son réglage, en groupes repliables :</p>
+<ul>
+<li><strong>Général</strong> : la famille du profil (où il se range dans la galerie), sa surface (<strong>Revêtement</strong> : une chaussée en relief ; <strong>Peinte dans le sol</strong> : un chemin de terre, un sentier), rue piétonne, impasse voulue ;</li>
+<li><strong>Voies</strong> : la largeur et le sens de chaque voie, <strong>Ajouter une voie</strong>, et la croix pour en retirer une ;</li>
+<li><strong>Bords</strong> : le terre-plein, le stationnement, la largeur du trottoir et la hauteur de sa bordure, le dessus de la bordure, la longueur de ses blocs, son chanfrein, la largeur du caniveau, la largeur du bas-côté, la largeur et la profondeur du fossé, la barrière (aucune, glissière, garde-fou), sa place (des deux côtés, là où le sol tombe, ou automatique, avec la chute du sol, l'adhérence en virage, la marge avant et après un virage et la longueur la plus courte) et son modèle (<strong>Modèle de glissière…</strong>, un modèle du projet, ou la glissière fabriquée) ;</li>
+<li><strong>Marquage</strong> : complet, rive seule ou aucun ;</li>
+<li><strong>Relief</strong> : la pente la plus forte, le déblai et le remblai les plus grands, la vitesse de conception (la rue monte et descend en douceur, sans bosse, pour être prise à cette vitesse ; 0 : elle suit le relief), l'aplanissement, le bord fondu d'un chemin peint ;</li>
+<li><strong>Arbres</strong> : leur écart et leur hauteur ;</li>
+<li><strong>Matières</strong> : pour chaque endroit de la voie qui sert (la chaussée, le trottoir et sa bordure, le caniveau, le bas-côté, le marquage ; un chemin peint n'a que sa chaussée), la <strong>matière</strong> (une matière fabriquée par l'éditeur, avec sa pastille de couleur, ou un matériau de votre projet ; sans matériau dans le projet, la liste le dit), la <strong>teinte</strong>, et les <strong>états</strong> permis : chaque état a sa case et son poids au tirage (neuf, usé, fissuré, rapiécé ; le marquage peut être effacé, jamais fissuré ni rapiécé). Une matière choisie ici l'emporte sur celle que le style du quartier donne à ses rues (le béton des trottoirs de la zone industrielle, par exemple) ; laissée telle que livrée, c'est celle du quartier qui se voit.</li>
+</ul>
+<p>Un réglage refusé (une valeur hors des limites, aucun état permis) est dit en rouge sous le réglage, et le profil ne change pas. Chaque changement s'annule d'un <strong>Ctrl+Z</strong> ; un curseur tiré n'en fait qu'un. Les boutons : <strong>Nouveau profil</strong> (une copie du profil ouvert, à régler sans toucher aux rues qui gardent l'original), <strong>Renommer le profil…</strong>, <strong>Supprimer le profil</strong> (refusé tant qu'une rue s'en sert) et <strong>Rétablir ce profil</strong> (un profil livré retrouve ses valeurs d'origine).</p>
+<p>Dans le réglage d'un style de quartier, le groupe <strong>Rues et mobilier</strong> a aussi les <strong>États des rues</strong> (la part de chaque état, en %, pour les rues du quartier ; les parts font toujours 100 %, en changer une ajuste les autres : du neuf au centre d'affaires, de l'usé et du rapiécé en zone industrielle) et les <strong>Matières des rues du quartier</strong> (la chaussée et le trottoir des rues de ville : <strong>Celle du profil</strong>, une matière fabriquée comme les pavés du centre ancien, ou un matériau du projet). Une matière du projet choisie dans un profil l'emporte toujours.</p>
+<h2 id="les-matieres-dune-seule-rue">Les matières d'une seule rue<a class="headerlink" href="#les-matieres-dune-seule-rue" title="Permanent link">&para;</a></h2>
+<p><strong>Clic droit sur une rue ▸ Matières de cette rue…</strong> ouvre une petite fenêtre avec chaque partie de la rue : <strong>Chaussée</strong>, <strong>Trottoir</strong>, <strong>Bordure</strong>, <strong>Caniveau</strong>, <strong>Bas-côté</strong> et <strong>Marquage</strong>. Pour chacune : sa pastille et la liste des matières (les matières fabriquées, puis les matériaux du projet, qui remplacent la matière fabriquée), <strong>Choisir en ligne…</strong> pour une texture réaliste de la bibliothèque en ligne, une <strong>Teinte</strong>, et <strong>Revenir à celle du quartier</strong>. La matière choisie pour une rue passe avant celle de son quartier et de son profil : une ruelle pavée dans un quartier d'asphalte, une bordure jaune sur une seule avenue. Seules les tuiles de cette rue se refont, ni le relief ni la chaussée. Chaque changement s'annule d'un <strong>Ctrl+Z</strong>.</p>
+<h2 id="lentretien-dune-route">L'entretien d'une route<a class="headerlink" href="#lentretien-dune-route" title="Permanent link">&para;</a></h2>
+<p>L'état de chaque rue est tiré une fois pour toutes : le même plan donne toujours les mêmes états. En ville, il vient du style du quartier ; hors de tout quartier, ou pour un chemin peint, des poids du profil. <strong>Clic droit sur une rue ▸ Entretien</strong> l'impose à toute la rue : <strong>Selon le quartier</strong> (le tirage), <strong>Neuf</strong>, <strong>Usé</strong>, <strong>Fissuré</strong> ou <strong>Rapiécé</strong>. Au survol, une rue dit son profil et l'état de sa chaussée (« Usé, selon le quartier Zone industrielle », « Neuf, imposé »). Chaque choix s'annule d'un <strong>Ctrl+Z</strong>.</p>
+<h2 id="dessiner-des-quartiers">Dessiner des quartiers<a class="headerlink" href="#dessiner-des-quartiers" title="Permanent link">&para;</a></h2>
+<p>La ville se découpe en <strong>quartiers</strong>, chacun avec un <strong>style</strong> : centre d'affaires, centre ancien, résidentiel dense, pavillons, zone commerciale, zone industrielle, port, quartier américain (immeubles de brique, escaliers de secours, réservoirs d'eau sur les toits), grands ensembles (barres et tours des années 1970, loggias), bord de mer (enduit clair, arcades, toits en terrasse). Le style dit comment ses pâtés se découpent en parcelles et ce qui s'y bâtira : la taille des parcelles, la part bâtie, les étages, les retraits, les toits, les commerces.</p>
+<ol>
+<li>Dans la barre d'options de l'outil <strong>Villes et routes</strong>, passez de <strong>Rues</strong> à <strong>Quartiers</strong>.</li>
+<li>Choisissez le <strong>Style</strong> des nouveaux quartiers dans la galerie : chaque style montre sa couleur et une petite silhouette de ses bâtiments.</li>
+<li>Cliquez sur le relief pour poser les points de la zone (un point posé près d'un carrefour s'y colle). <strong>Entrée</strong>, ou un <strong>double-clic</strong>, la ferme ; <strong>Échap</strong> l'abandonne ; un <strong>clic droit</strong> retire le dernier point.</li>
+</ol>
+<p><img alt="Le mode Quartiers : un quartier « Pavillons » dessiné, et les réglages d'un style dans les propriétés" src="../assets/captures/ville-quartiers.png" /></p>
+<p>Pour modifier un quartier :</p>
+<ul>
+<li><strong>Un clic</strong> dans un quartier le choisit : ses points deviennent des poignées. <strong>Glissez</strong> un point pour changer sa forme. <strong>Suppr</strong> retire le quartier choisi (les rues restent).</li>
+<li><strong>Clic droit sur un point</strong> : <strong>Retirer ce point</strong> ; <strong>sur un côté</strong> : <strong>Ajouter un point sur ce côté</strong>.</li>
+<li><strong>Clic droit dans le quartier</strong> : <strong>Style du quartier</strong> (la galerie), <strong>Renommer le quartier…</strong>, <strong>Autre tirage</strong> (ses parcelles se redécoupent autrement), <strong>Supprimer le quartier</strong>.</li>
+</ul>
+<h3 id="regler-un-style-ou-creer-le-sien">Régler un style, ou créer le sien<a class="headerlink" href="#regler-un-style-ou-creer-le-sien" title="Permanent link">&para;</a></h3>
+<p>Dans la section <strong>Villes et routes</strong>, la liste <strong>Quartiers</strong> montre chaque quartier avec sa couleur, son style et son aire. Sous <strong>Styles de quartier</strong>, un clic sur un style ouvre ses réglages, rangés en groupes : <strong>Parcelles</strong>, <strong>Bâtiments</strong>, <strong>Commerces</strong>, <strong>Rues et mobilier</strong>, et sa <strong>couleur sur le plan</strong>. Chaque réglage a son infobulle.</p>
+<ul>
+<li><strong>Régler un style change tous ses quartiers.</strong> Pour n'en changer qu'un, faites d'abord un <strong>Nouveau style</strong> (une copie du style ouvert), réglez-le, puis donnez-le à ce quartier (clic droit › <strong>Style du quartier</strong>).</li>
+<li><strong>Renommer le style…</strong> change son nom ; <strong>Rétablir ce style</strong> rend à un style de départ ses valeurs d'origine ; <strong>Supprimer le style</strong> est refusé tant qu'un quartier s'en sert.</li>
+<li>Le groupe <strong>Façades</strong> donne la matière de chaque <strong>usage</strong> de façade du style (brique, enduit, pierre, tuiles…) : fabriquée, ou un matériau du projet, avec le même <strong>Choisir en ligne…</strong>. Il a aussi le <strong>Calque de salissure</strong>, une image du projet avec transparence (un calque <code>Leaking</code> d'ambientCG, par exemple, choisi en ligne parmi les <strong>calques</strong>). Ce réglage est <strong>préparé</strong> : la pose des façades le prendra à la place des salissures fabriquées ; vide, ce sont les salissures fabriquées.</li>
+<li>Le groupe <strong>Rues et mobilier</strong> sert à <strong>Générer une ville</strong> : le tracé des rues du quartier (en grille, organique ou pavillonnaire), la taille des pâtés, le profil de ses rues, sa place dans la ville (<strong>Centralité</strong>, <strong>Au bord de l'eau</strong>).</li>
+</ul>
+<p>Chaque geste s'annule d'un <strong>Ctrl+Z</strong> ; un curseur tiré n'en fait qu'un.</p>
+<h3 id="la-densite-dun-quartier">La densité d'un quartier<a class="headerlink" href="#la-densite-dun-quartier" title="Permanent link">&para;</a></h3>
+<p>Chaque quartier a son <strong>type</strong> (son style : centre ancien, affaires, pavillons, quartier populaire, quartier huppé…), qui fixe son allure, et une <strong>Densité</strong>, de 0 à 100 %, qui règle ce type d'un quartier à l'autre. Choisissez le quartier dans la liste <strong>Quartiers</strong> : le curseur <strong>Densité du quartier</strong> apparaît sous lui.</p>
+<ul>
+<li><strong>Plus haut</strong> : des pâtés plus petits, des parcelles plus étroites et moins profondes, plus de parcelles bâties, des bâtiments plus profonds (moins de cour perdue) et plus hauts, moins de jardins.</li>
+<li><strong>Plus bas</strong> : de grands pâtés, de grands terrains, plus de retrait sur la rue, des bâtiments plus bas, plus de jardins.</li>
+<li><strong>50 %</strong> : le style tel qu'il est réglé. C'est la densité d'un quartier d'une ville d'avant : rien n'y change tant que vous ne touchez pas au curseur.</li>
+</ul>
+<p>La fenêtre <strong>Générer une ville</strong> a aussi une <strong>Densité</strong>, donnée à tous les quartiers de la nouvelle ville ; elle change aussi la taille des pâtés de ses rues. Vous la réglez ensuite quartier par quartier. Deux types vont avec : le <strong>Quartier populaire</strong> (immeubles collés, serrés, de 4 à 7 étages, petits pâtés, façades étroites) et le <strong>Quartier huppé</strong> (villas de 2 à 3 niveaux sur de grands terrains, grands retraits, jardins, toits en pente) ; l'ambiance européenne les a tous les deux, l'américaine a le quartier huppé.</p>
+<p>Ce que la densité change, style par style, est dans le fichier des styles (<code>styles_quartier.json</code>) : <code>lowDensity</code> et <code>highDensity</code> donnent la valeur de certains réglages à 0 % et à 100 % (taille des pâtés, des parcelles, part bâtie, profondeur bâtie, étages, retraits, part plantée) ; entre les deux, WorldMint passe de l'un à l'autre. Un réglage absent ne change pas avec la densité.</p>
+<h2 id="la-vue-plan">La vue plan<a class="headerlink" href="#la-vue-plan" title="Permanent link">&para;</a></h2>
+<p>L'interrupteur <strong>Vue plan</strong> (dans la barre d'options et dans la section Villes et routes) montre la ville vue du dessus : la vue se cadre sur toute la ville, chaque quartier est rempli de la couleur de son style, les rues sont des traits clairs à leur largeur, avec leur nom. L'éteindre laisse la vue où elle est.</p>
+<p><img alt="La vue plan : les quartiers en couleurs, les rues en traits clairs avec leur nom" src="../assets/captures/ville-vue-plan.png" /></p>
+<h2 id="les-parcelles-et-leurs-retouches">Les parcelles et leurs retouches<a class="headerlink" href="#les-parcelles-et-leurs-retouches" title="Permanent link">&para;</a></h2>
+<p>Chaque pâté (l'espace entre les rues) est découpé en <strong>parcelles</strong> le long des rues, selon le style de son quartier : leur largeur sur rue, leur profondeur, la part bâtie. En mode Quartiers et dans la vue plan, chaque parcelle se dessine d'un contour fin ; une parcelle <strong>libre</strong> (cour, jardin, parking) est hachurée en vert pâle, une parcelle <strong>sans accès</strong> (trop étroite, ou le sol trop haut ou trop bas par rapport au trottoir) est en rouge, une parcelle <strong>retouchée</strong> porte un petit repère. Au survol, une bulle dit sa rue et son côté, sa façade, sa profondeur, sa pente, son quartier, son style et son accès. Le découpage se refait en arrière-plan : « Découpage des parcelles… » dans la ligne d'état.</p>
+<p>En mode Quartiers, un <strong>clic droit sur une parcelle</strong> propose, en tête du menu du quartier :</p>
+<ul>
+<li><strong>Laisser libre (cour, jardin, parking)</strong>, ou <strong>Bâtir</strong> pour une parcelle libre ;</li>
+<li><strong>Style de la parcelle ▸</strong> : un autre style pour cette seule parcelle ;</li>
+<li><strong>Revenir à la génération</strong> : retire sa retouche.</li>
+</ul>
+<p>Chaque retouche est une étape, que Ctrl+Z défait. Elle reste attachée à sa parcelle quand la ville se refait (un nœud déplacé, un style réglé), et la suit quand sa rue est coupée par un nouveau carrefour. Quand sa rue est supprimée, elle <strong>ne tient plus</strong> : rien n'est perdu, la section Villes et routes la montre sous <strong>Retouches qui ne tiennent plus</strong>, avec la raison. <strong>Rattacher à la plus proche</strong> la donne à la parcelle la plus proche de l'endroit où elle était ; <strong>Supprimer la retouche</strong> la retire.</p>
+<h2 id="le-mode-batiments">Le mode Bâtiments<a class="headerlink" href="#le-mode-batiments" title="Permanent link">&para;</a></h2>
+<p>Dans la barre de l'outil, <strong>Rues | Quartiers | Bâtiments</strong> : en mode <strong>Bâtiments</strong>, les bâtiments de la ville se calculent en arrière-plan (« Calcul des bâtiments… » dans la ligne d'état) ; l'éditeur ne se fige pas. Le bâtiment sous la souris s'entoure d'un contour fin ; un <strong>clic</strong> le choisit (un contour marqué). Un clic à côté de tout bâtiment, ou <strong>Échap</strong>, ne choisit plus rien.</p>
+<p>Le <strong>volet du bâtiment</strong> s'ouvre dans la section Villes et routes :</p>
+<ul>
+<li><strong>sa parcelle</strong> : sa rue et son côté, sa façade, sa profondeur, sa pente ;</li>
+<li><strong>Style</strong> : un autre style pour sa seule parcelle ;</li>
+<li><strong>Hauteur (étages)</strong> : les étages au-dessus du rez-de-chaussée, avec la hauteur en mètres à côté ;</li>
+<li><strong>Toit</strong> : Plat, En pente ou Terrasse ;</li>
+<li><strong>Façade</strong> : la recette des fenêtres, portes et balcons ;</li>
+<li><strong>Mur</strong> : la matière du mur, avec sa pastille, parmi celles de son style ; <strong>Autre…</strong> donne celles des autres styles de la ville ;</li>
+<li><strong>Teinte</strong> : la couleur du mur ; <strong>Teinte tirée</strong> rend celle de la génération ;</li>
+<li><strong>Commerce</strong> : Aucun, une sorte, ou <strong>Tiré par le style</strong> ;</li>
+<li>pour un <strong>bâtiment d'angle</strong> à deux ailes seulement : <strong>Forme de l'angle</strong> (Vif, Pan coupé ou Arrondi) et <strong>Usage de l'angle</strong> (l'usage du rez-de-chaussée d'angle : Commerce, Café, Hôtel, Habitation, Pharmacie, Banque ou Boulangerie : les vitrines, l'enseigne, le store ou la terrasse de la face d'angle) ;</li>
+<li><strong>Retouches de ce bâtiment</strong> : chaque réglage changé, avec sa croix pour le retirer ;</li>
+<li><strong>Remplacer par…</strong> : <strong>Un modèle de la bibliothèque…</strong> pose à la place un modèle du projet, en lieu marquant (sa face +z vers la rue) ; <strong>Rien : je le construis moi-même</strong> laisse la parcelle vide, en lieu marquant, pour vos propres objets ; son nom s'affiche au-dessus dans la vue, et la parcelle vide est entourée de pointillés ;</li>
+<li><strong>Verrouiller</strong> : le bâtiment reste tel quel, quoi que deviennent son style ou la graine de la ville ; un cadenas s'affiche au-dessus de lui. <strong>Déverrouiller</strong> le rend à la génération ;</li>
+<li><strong>Revenir à la génération</strong> : retire toutes ses retouches de bâtiment (son style et son usage restent).</li>
+</ul>
+<p>Un <strong>clic droit sur un bâtiment</strong> donne les mêmes actions, plus <strong>Plus haut d'un étage</strong> et <strong>Plus bas d'un étage</strong>. Chaque changement est une étape, que Ctrl+Z défait ; il reste attaché à sa parcelle quand la ville se refait.</p>
+<p>Un <strong>lieu marquant</strong> se choisit aussi d'un clic, sur sa parcelle. Son volet donne :</p>
+<ul>
+<li><strong>Nom</strong> : <strong>Renommer…</strong> ouvre le champ, Entrée le pose ;</li>
+<li><strong>Modèle</strong> (<strong>Changer le modèle…</strong>) : un autre modèle du projet, ou <strong>Rien : je le construis moi-même</strong> ;</li>
+<li><strong>Tourner de 90°</strong> : un quart de tour, pour mettre sa face avant côté rue ;</li>
+<li><strong>Taille</strong> : <strong>Taille réelle</strong> (mesurée sur le modèle) ou <strong>À la taille de la parcelle</strong> ;</li>
+<li><strong>Objets reliés</strong> : les objets de la scène que vous avez posés sur la parcelle et reliés à elle ; un clic dans la liste en choisit un. <strong>Relier les objets choisis</strong> ajoute les objets choisis dans la scène ; <strong>Délier</strong> retire ceux qui sont choisis (ils restent dans la scène). Un objet relié suit la parcelle si la rue bouge ; il n'est relié qu'à un lieu marquant.</li>
+</ul>
+<p>Les réglages de bâtiment d'un <strong>style</strong> (mode Quartiers, groupe <strong>Bâtiments</strong> de son réglage) : en plus des étages, des hauteurs, des retraits et des toits, <strong>Façade</strong> (la recette), <strong>Kit de façade</strong> (<strong>Modules fabriqués</strong>, ou un dossier de modèles du projet), <strong>Matières du mur</strong> (chacune avec sa pastille et <strong>Remplacer par un matériau du projet…</strong> ; <strong>Ajouter une matière</strong>, la croix pour la retirer), <strong>Usure</strong> (la part de Neuf, Usé et Fissuré, en % ; les parts font toujours 100 %, en changer une ajuste les autres), <strong>Écart sur les côtés</strong> (mini et maxi ; 0 : les bâtiments se touchent), <strong>Recul du dernier étage</strong>, <strong>Pente des toits</strong>, puis, pour les bâtiments d'angle à deux ailes, <strong>Forme de l'angle</strong> (la part de Vif, Pan coupé et Arrondi, en %) et <strong>Usage de l'angle</strong> (la part de chaque usage du rez-de-chaussée d'angle, en %), comme l'usure, le <strong>Rayon de l'arrondi</strong> et la <strong>Largeur du pan coupé</strong> (en mètres). Chaque changement est une étape ; un bâtiment verrouillé ne change pas.</p>
+<p>Deux bâtiments proches sans se toucher ne se regardent pas par les fenêtres : un mur qui n'est pas sur la rue et fait face à un autre bâtiment du pâté plus près que <strong>Mur aveugle en vis-à-vis</strong> (4 m par défaut) n'a aucune fenêtre à cet endroit ; plus près que <strong>Fenêtres rares en vis-à-vis</strong> (8 m par défaut), il garde une petite fenêtre sur deux ou trois, jamais en face de celles du voisin. La distance se mesure droit devant le mur, sur toute sa largeur : seule la partie proche d'un mur change, et un étage qui voit par-dessus le toit d'en face garde ses fenêtres. Les façades sur rue ne changent jamais. 0 et 0 : la règle ne joue pas.</p>
+<h2 id="de-pres-et-de-loin-la-distance-des-facades">De près et de loin : la distance des façades<a class="headerlink" href="#de-pres-et-de-loin-la-distance-des-facades" title="Permanent link">&para;</a></h2>
+<p>Chaque pâté se dessine avec ses façades complètes jusqu'à la <strong>Distance des façades</strong> (dans la section, sous <strong>Réglages de la génération</strong> ; 160 m par défaut), et au-delà comme une boîte légère de la même forme : les murs avec leur vraie matière et leur teinte, le toit, le soubassement, une plaque simple pour ce qui dépasse de plus de 50 cm (balcons, auvents, paliers d'escalier de secours, arcades), et les mêmes fenêtres aux mêmes places, éclairées pareil la nuit. Les deux se fondent l'une dans l'autre par un tramage, sans saut. La qualité <strong>Moyenne</strong> multiplie la distance par 0,75 (120 m), la <strong>Basse</strong> par 0,5 (80 m). <strong>0</strong> garde les façades complètes partout, sans boîte : plus lent dans une grande ville. La boîte d'une tour de 30 étages tient en une centaine de triangles, contre plus de 13 000 pour sa façade complète.</p>
+<p>L'agent la règle aussi (<code>city_style_set</code>, <code>kind: "generation"</code>, <code>values: {"facadeDistance": 200}</code>).</p>
+<h2 id="un-kit-de-facade">Un kit de façade<a class="headerlink" href="#un-kit-de-facade" title="Permanent link">&para;</a></h2>
+<p>Un <strong>kit de façade</strong> est un dossier de modèles du projet (des fenêtres, des portes, des vitrines, des pans de mur, achetés ou faits par vous) que les bâtiments d'un style utilisent à la place des modules fabriqués par WorldMint. Le dossier se choisit dans le groupe <strong>Bâtiments</strong> du style (<strong>Kit de façade</strong>) ; il est décrit par un fichier <code>kit.json</code>, posé dans le dossier lui-même. Les modèles ne sont jamais modifiés.</p>
+<p><strong>Décrire le kit…</strong> (sous <strong>Kit de façade</strong>) ouvre le volet qui écrit ce fichier. Chaque modèle du dossier y est montré avec sa vignette et ses mesures (« 1,20 × 1,50 × 0,30 m, 412 triangles »). Pour chacun, vous choisissez :</p>
+<ul>
+<li><strong>Rôle</strong> : Fenêtre, Porte-fenêtre, Porte, Entrée d'immeuble, Vitrine, Garage, Trumeau (mur plein), Mur-rideau, une bande (<strong>Socle</strong>, <strong>Bandeau ou cordon</strong>, <strong>Corniche</strong>), ou <strong>Pas dans la façade</strong> (un battant, une pièce d'un autre usage) ;</li>
+<li><strong>Face avant</strong> : le côté du modèle qui regarde la rue ; chacun des quatre boutons montre le modèle tourné comme il serait posé ;</li>
+<li><strong>Poids</strong> : sa part parmi les modèles de même rôle et de même taille ;</li>
+<li><strong>Remplace le mur</strong> : le modèle porte son propre mur, rien n'est fabriqué derrière lui ;</li>
+<li><strong>Battant</strong> (pour une porte) : un autre modèle du dossier, posé dans le cadre ;</li>
+<li><strong>Nœuds</strong> (pour une pièce prise dans un nœud) : « Ajouter un nœud à cette pièce » pose avec elle un autre nœud du même fichier, à sa place dans le fichier (un mur percé et sa fenêtre rangés à part) ; le battant aussi peut être un nœud ;</li>
+<li><strong>Travées</strong> et <strong>Étages</strong> : la place qu'il occupe (une porte de garage sur deux travées).</li>
+</ul>
+<p>Pour tout le kit : <strong>Étirement permis</strong> (en %) et la <strong>Matériaux du kit</strong>, où chaque nom de matériau lu dans les modèles reçoit son emplacement : Mur, Vitre, Cadre, Porte, Métal ou Moulure (un matériau non choisi est une moulure). Rien n'est rempli d'avance d'après un nom de fichier ou de matériau : tout est votre choix. Les problèmes du kit (un modèle illisible, sans triangles, trop lourd) sont dits en haut du volet.</p>
+<p>Les <strong>bandes</strong> du kit sont posées le long de la façade, à la place des bandes que WorldMint fabrique : le <strong>socle</strong> en bas, tout autour du bâtiment, coupé aux portes ; le <strong>bandeau ou cordon</strong> là où la recette met un bandeau (le plus proche en hauteur, s'il y en a plusieurs) ; la <strong>corniche</strong> en haut, là où la recette met une corniche. Chacune garde la hauteur de son modèle, est répétée par travée (étirée pour tomber juste) et coupée d'onglet aux angles. Sans bande d'un rôle, la bande fabriquée reste.</p>
+<p><strong>Enregistrer le kit</strong> écrit <code>kit.json</code> dans le dossier ; l'ancien est gardé en <code>kit.json.bak</code>. Un fichier n'est pas une étape de l'historique : Ctrl+Z ne le défait pas.</p>
+<p>Ce qui est mesuré, à la lecture : la taille de chaque modèle tourné vers la rue, ses triangles (au-delà de la limite d'une pièce de kit, il est simplifié), et son <strong>mur plein</strong>, la partie de son plan de mur qui va jusqu'à ses bords. Ce qui ne l'est pas : son rôle, sa face avant et ses matériaux, que vous seul décrivez. Pour remplir une case plus grande ou plus petite que lui, un modèle qui a du mur plein autour de son ouverture s'étire <strong>en neuf cases</strong> : seules les bandes de mur s'allongent ou se tassent, l'ouverture, son cadre et ses moulures gardent leur taille, et la brique garde sa densité. Sans mur plein, le modèle s'étire d'un bloc, d'au plus l'<strong>Étirement permis</strong> ; au-delà, la case garde le module fabriqué.</p>
+<p>Pour l'instant, le kit est décrit, lu et vérifié (<code>city_check</code> signale un kit qui a un problème) ; la pose de ses pièces sur les bâtiments arrive dans une prochaine version.</p>
+<h2 id="la-carte-du-jeu">La carte du jeu<a class="headerlink" href="#la-carte-du-jeu" title="Permanent link">&para;</a></h2>
+<p>Le bouton <strong>Faire la carte du jeu</strong>, sous la vue plan dans la section Villes et routes, écrit l'image du plan vu de dessus (les quartiers de la couleur de leur style, les chemins peints de la teinte de leur matière, les trottoirs et les chaussées en gris clairs, sans texte) dans <code>cartes/plan_ville.png</code>, dans le dossier du projet. Si le jeu a le système <strong>Carte</strong>, l'image devient sa carte dessinée, avec la zone qu'elle couvre : la mini-carte du jeu montre la ville, le nord en haut. C'est une étape : Ctrl+Z rend la carte d'avant. Sans le système Carte, l'image est seulement écrite, et le journal le dit. Refaites la carte après avoir changé la ville.</p>
+<h2 id="les-raccourcis">Les raccourcis<a class="headerlink" href="#les-raccourcis" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Geste</th>
+<th>En mode Rues</th>
+<th>En mode Quartiers</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Clic</strong> sur le relief</td>
+<td>Pose un point de la rue</td>
+<td>Pose un point de la zone</td>
+</tr>
+<tr>
+<td><strong>Entrée</strong>, <strong>double-clic</strong></td>
+<td>Termine la rue</td>
+<td>Ferme la zone</td>
+</tr>
+<tr>
+<td><strong>Clic droit</strong> pendant le tracé</td>
+<td>Retire le dernier point</td>
+<td>Retire le dernier point</td>
+</tr>
+<tr>
+<td><strong>Échap</strong></td>
+<td>Abandonne le tracé, ou ne plus rien choisir ; sinon range l'outil</td>
+<td>Pareil</td>
+</tr>
+<tr>
+<td><strong>Clic</strong> sur une rue, un quartier</td>
+<td>Choisit la rue</td>
+<td>Choisit le quartier</td>
+</tr>
+<tr>
+<td><strong>Glisser</strong> un nœud, un point</td>
+<td>Déplace la rue (une seule étape)</td>
+<td>Change la forme du quartier</td>
+</tr>
+<tr>
+<td><strong>Clic droit</strong> sur une rue, un carrefour, un quartier</td>
+<td>Profil, nom, supprimer ; rond-point</td>
+<td>Style, nom, autre tirage, supprimer ; retirer ou ajouter un point</td>
+</tr>
+<tr>
+<td><strong>Suppr</strong></td>
+<td>Supprime la rue choisie</td>
+<td>Supprime le quartier choisi</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Z</strong>, <strong>Ctrl+Y</strong></td>
+<td>Annule, rétablit</td>
+<td>Annule, rétablit</td>
+</tr>
+</tbody>
+</table>
+<h2 id="avec-lagent">Avec l'agent<a class="headerlink" href="#avec-lagent" title="Permanent link">&para;</a></h2>
+<p>L'agent travaille sur le même plan que vous, avec ses propres outils :</p>
+<table>
+<thead>
+<tr>
+<th>Outil de l'agent</th>
+<th>Ce qu'il fait</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>city_generate</code></td>
+<td>Génère une ville entière (une taille, des quartiers, une graine). Il vous demande avant de remplacer la vôtre. Il pose aussi une ville dans une zone (un contour, ou un rectangle tourné), avec son ambiance et son nom, à côté des autres.</td>
+</tr>
+<tr>
+<td><code>city_town_set</code></td>
+<td>Renomme une ville, la régénère dans sa zone avec une autre graine, ou la supprime.</td>
+</tr>
+<tr>
+<td><code>city_road_add</code></td>
+<td>Ajoute une rue entre deux lieux ou deux nœuds, avec un profil et un nom.</td>
+</tr>
+<tr>
+<td><code>city_road_set</code></td>
+<td>Change le profil, le nom ou le tracé d'une rue, la supprime ; fait d'un carrefour un rond-point ; impose son entretien (neuf, usé, fissuré, rapiécé) ou le rend au quartier ; choisit la matière et la teinte d'une partie de cette rue seule (<code>materials</code>). Il peut aussi refuser un pont sur une rue.</td>
+</tr>
+<tr>
+<td><code>city_get</code></td>
+<td>Lit le plan : les rues, les carrefours, les quartiers et les styles ; compte les pâtés, les parcelles et les bâtiments (lieux marquants, retouchés, verrouillés, étages moyen et maxi par style), liste les parcelles d'une rue et décrit un bâtiment.</td>
+</tr>
+<tr>
+<td><code>city_check</code></td>
+<td>Cherche ce qui cloche : une impasse non voulue, une pente trop forte, deux rues qui se croisent sans carrefour, un tronçon trop court, une parcelle sans accès ; et pour les bâtiments : une recette de façade ou une matière de mur inconnue, un kit de façade illisible, une parcelle trop peu profonde pour un bâtiment, un bâtiment enterré dans la pente, le modèle absent d'un lieu marquant, un bâtiment trop détaillé pour son budget de triangles.</td>
+</tr>
+<tr>
+<td><code>city_district_set</code></td>
+<td>Dessine un quartier, change son style, son nom ou son contour, refait son tirage, le supprime.</td>
+</tr>
+<tr>
+<td><code>city_style_set</code></td>
+<td>Crée ou règle un style de quartier (avec les états et les matières de ses rues, les matières de ses façades et son calque de salissure, <code>grimeDecal</code>) ou un profil de rue (ses voies, ses bords, son marquage, ses matières et leurs états). Un matériau du projet peut venir de la bibliothèque en ligne : l'agent le cherche avec <code>library_search</code> et l'ajoute avec <code>library_add</code>, sur les sources que vous avez choisies.</td>
+</tr>
+<tr>
+<td><code>city_building_set</code></td>
+<td>Retouche une parcelle et son bâtiment : la laisser libre, la bâtir, lui donner un autre style ; les étages, le toit, la façade, le mur, la teinte, le déplacement, le commerce ; le verrouiller tel qu'il est ; le remplacer par un lieu marquant (un modèle du projet, ou la parcelle laissée vide). Il retouche un bâtiment remarquable à la fois : pour tout un quartier, il change le style. Il rattache ou supprime une retouche qui ne tient plus.</td>
+</tr>
+<tr>
+<td><code>city_kit_set</code></td>
+<td>Décrit un kit de façade : sans <code>kit</code>, liste les modèles du dossier (taille, triangles, noms des matériaux) et le <code>kit.json</code> actuel ; avec <code>kit</code>, écrit <code>kit.json</code> (l'ancien gardé en <code>kit.json.bak</code>). Comme <strong>Décrire le kit…</strong> : rien n'est deviné d'un nom, et ce n'est pas une étape annulable.</td>
+</tr>
+</tbody>
+</table>
+<p>Chacun de ses gestes est une étape, qui s'annule d'un <strong>Ctrl+Z</strong>. Il vérifie son travail en regardant des images de la ville.</p>
+<p>Quelques demandes : « Génère une ville moyenne avec un port et un centre ancien », « Une avenue du port jusqu'à la colline », « Fais du carrefour de la mairie un rond-point », « Les pavillons au nord, en plus aéré », « Mets la mairie à l'angle de la place, et verrouille l'immeuble d'en face ».</p>
+<h2 id="ce-qui-est-enregistre">Ce qui est enregistré<a class="headerlink" href="#ce-qui-est-enregistre" title="Permanent link">&para;</a></h2>
+<p>Le plan (rues, quartiers, styles, profils) est enregistré dans la scène. La chaussée est rangée dans le dossier du projet (<code>.worldmint/ville/</code>) et emportée par l'export : <strong>un jeu exporté montre la ville sans l'extension</strong>. Hors d'un projet, les rues ne se montrent qu'en traits.</p>
+<p>La chaussée, les trottoirs et les ponts sont des objets <strong>produits par l'extension</strong> : ils se voient et se choisissent dans la scène, mais ne se déplacent ni ne se suppriment à la main. Pour les changer, on change le plan, avec l'outil Villes et routes.</p>
+<h2 id="une-extension-payante">Une extension payante<a class="headerlink" href="#une-extension-payante" title="Permanent link">&para;</a></h2>
+<p><strong>Villes et routes</strong> est une extension payante de WorldMint. Ce qui reste dans le moteur gratuit :</p>
+<ul>
+<li><strong>les jeux</strong> : un jeu fait avec la ville se joue et s'exporte partout, sans l'extension ;</li>
+<li><strong>les scènes</strong> : une scène qui a une ville s'ouvre aussi sans l'extension ; la chaussée s'y voit, et le plan de la ville est gardé intact ;</li>
+<li><strong>les prises génériques</strong> dont l'extension se sert (des outils ajoutés à l'éditeur et à l'agent, des objets produits et rangés dans le projet, des zones où le terrain ne sème pas de plantes, une vue de dessus cadrée) : elles servent à toutes les extensions, et sont décrites dans <a href="../extensions/">Écrire une extension</a>.</li>
+</ul>
+<p>Aujourd'hui, l'extension s'ouvre dès qu'elle est installée. Plus tard, elle dépendra de la licence de votre compte WorldMint ; sans licence, l'éditeur le dira une fois au démarrage, et les données de la ville resteront gardées dans vos scènes.</p>
+<h2 id="limites-connues">Limites connues<a class="headerlink" href="#limites-connues" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>Pas encore de bâtiments.</strong> Les quartiers et leurs styles préparent les parcelles et ce qui s'y bâtira, mais les bâtiments ne sont pas encore construits.</li>
+<li><strong>Un quartier dessiné plus grand que ses rues</strong> garde des parcelles du côté extérieur des rues du bord (une ville générée s'arrête à l'axe de ses rues du bord).</li>
+<li><strong>Les retouches qui ne tiennent plus</strong> : leurs boutons peuvent être à moitié coupés en bas du panneau.</li>
+<li><strong>Deux carrefours d'avenues très proches</strong> (une vingtaine de mètres) peuvent donner un raccord serré : écartez-les.</li>
+<li><strong>Dans la vue plan</strong>, les noms de deux rues voisines peuvent se chevaucher.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../terrain/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Le terrain">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Le terrain
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lighting/" class="md-footer__link md-footer__link--next" aria-label="Suivant: La lumière et les ombres">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                La lumière et les ombres
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

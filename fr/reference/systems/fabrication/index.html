@@ -1,0 +1,4215 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/fabrication/">
+      
+      
+      
+        <link rel="prev" href="../ennemis/">
+      
+      
+        <link rel="next" href="../interaction/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Fabrication - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Fabrication
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-recettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-stations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crafting-fabrication" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Crafting (<code>fabrication</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crafting (fabrication)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-kinds-of-stations-stations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The kinds of stations (<code>stations</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recipes-recettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The recipes (<code>recettes</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#giving-an-object-a-station-function-values-per-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Giving an object a station function (values per object)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-window-and-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The window and the queue
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events and hooks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-recettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-stations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crafting-fabrication" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Crafting (<code>fabrication</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Crafting (fabrication)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-kinds-of-stations-stations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The kinds of stations (<code>stations</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-recipes-recettes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The recipes (<code>recettes</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#giving-an-object-a-station-function-values-per-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Giving an object a station function (values per object)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-window-and-the-queue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The window and the queue
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events and hooks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="fabrication">Fabrication<a class="headerlink" href="#fabrication" title="Permanent link">&para;</a></h1>
+<p>Des recettes qui changent ce que porte le joueur en autre chose : trois bois et deux pierres font une hache. On fabrique à mains nues (C) ou à une station : un objet du monde, un modèle importé compris, à qui l'on donne une fonction que le jeu définit (Établi, Feu de camp, Four, Forge...), avec ses niveaux à améliorer, son combustible et sa file d'attente.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>fabrication</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>oui</td>
+</tr>
+<tr>
+<td>Active aussi</td>
+<td><a href="../inventaire/">Inventaire</a>, <a href="../interaction/">Interaction</a></td>
+</tr>
+<tr>
+<td>Demande aussi, sur le même objet</td>
+<td><a href="../interaction/">Interaction</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans le panneau <strong>Systèmes</strong> (mode Développeur), en ouvrant la carte du système.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les recettes et leurs ingrédients</td>
+<td>Chaque recette est une ligne « Recette » (ce qu'elle donne, où, en combien de temps), suivie de ses ingrédients, une ligne chacun. Une recette sans station se fabrique partout ; avec, seulement à l'une de ces stations, d'un niveau assez haut.</td>
+<td><code>recettes</code></td>
+<td>Liste de « Ligne »</td>
+<td><code>[{'sorte': 'recette', 'objet': 'Hache', 'categorie': 'Outils', 'quantite': 1, 'etabli': '', 'niveau_min': 1, 'temps': 0}, {'sorte': 'ingredient', 'ingredient': 'Bois', 'nombre': 3, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Pierre', 'nombre': 2, 'garde': False}, {'sorte': 'recette', 'objet': 'Pioche', 'categorie': 'Outils', 'quantite': 1, 'etabli': 'Établi', 'niveau_min': 1, 'temps': 3}, {'sorte': 'ingredient', 'ingredient': 'Bois', 'nombre': 3, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Pierre', 'nombre': 3, 'garde': False}, {'sorte': 'recette', 'objet': 'Lance', 'categorie': 'Armes', 'quantite': 1, 'etabli': 'Établi', 'niveau_min': 1, 'temps': 3}, {'sorte': 'ingredient', 'ingredient': 'Bois', 'nombre': 4, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Pierre', 'nombre': 1, 'garde': False}, {'sorte': 'recette', 'objet': 'Arc', 'categorie': 'Armes', 'quantite': 1, 'etabli': 'Établi', 'niveau_min': 2, 'temps': 5}, {'sorte': 'ingredient', 'ingredient': 'Bois', 'nombre': 6, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Fibre', 'nombre': 4, 'garde': False}, {'sorte': 'recette', 'objet': 'Fer', 'categorie': 'Matériaux', 'quantite': 1, 'etabli': 'Forge', 'niveau_min': 1, 'temps': 6}, {'sorte': 'ingredient', 'ingredient': 'Minerai de fer', 'nombre': 2, 'garde': False}, {'sorte': 'recette', 'objet': 'Hache de fer', 'categorie': 'Outils', 'quantite': 1, 'etabli': 'Établi', 'niveau_min': 2, 'temps': 8}, {'sorte': 'ingredient', 'ingredient': 'Bois', 'nombre': 2, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Fer', 'nombre': 3, 'garde': False}, {'sorte': 'recette', 'objet': 'Pioche de fer', 'categorie': 'Outils', 'quantite': 1, 'etabli': 'Établi', 'niveau_min': 2, 'temps': 8}, {'sorte': 'ingredient', 'ingredient': 'Bois', 'nombre': 2, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Fer', 'nombre': 3, 'garde': False}, {'sorte': 'recette', 'objet': 'Viande cuite', 'categorie': 'Nourriture', 'quantite': 1, 'etabli': 'Feu de camp, Four', 'niveau_min': 1, 'temps': 6}, {'sorte': 'ingredient', 'ingredient': 'Viande crue', 'nombre': 1, 'garde': False}, {'sorte': 'recette', 'objet': 'Poisson grillé', 'categorie': 'Nourriture', 'quantite': 1, 'etabli': 'Feu de camp, Four', 'niveau_min': 1, 'temps': 5}, {'sorte': 'ingredient', 'ingredient': 'Poisson cru', 'nombre': 1, 'garde': False}, {'sorte': 'recette', 'objet': 'Baies grillées', 'categorie': 'Nourriture', 'quantite': 1, 'etabli': 'Feu de camp', 'niveau_min': 1, 'temps': 3}, {'sorte': 'ingredient', 'ingredient': 'Baies', 'nombre': 3, 'garde': False}, {'sorte': 'recette', 'objet': 'Pain', 'categorie': 'Nourriture', 'quantite': 1, 'etabli': 'Four', 'niveau_min': 1, 'temps': 10}, {'sorte': 'ingredient', 'ingredient': 'Farine', 'nombre': 2, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Eau', 'nombre': 1, 'garde': False}, {'sorte': 'recette', 'objet': 'Ragoût', 'categorie': 'Nourriture', 'quantite': 1, 'etabli': 'Four', 'niveau_min': 1, 'temps': 12}, {'sorte': 'ingredient', 'ingredient': 'Viande crue', 'nombre': 1, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Légume', 'nombre': 2, 'garde': False}, {'sorte': 'ingredient', 'ingredient': 'Eau', 'nombre': 1, 'garde': False}]</code></td>
+<td>une ligne par « Ligne » : <a href="#champs-recettes">ses champs</a></td>
+</tr>
+<tr>
+<td>Les sortes de stations, leurs niveaux et leur combustible</td>
+<td>Chaque station est une ligne « Sorte de station », suivie de ses niveaux, chacun suivi de son coût. Ce sont des exemples : changez-les, ajoutez une Forge, une Table d'alchimie, ou supprimez-les. Un objet devient une station par sa « Fonction ».</td>
+<td><code>stations</code></td>
+<td>Liste de « Ligne »</td>
+<td><code>[{'sorte': 'station', 'nom': 'Établi', 'usage': 'rayon', 'rayon': 6, 'file': True, 'combustible': '', 'duree_combustible': 60, 'allumage': 'toujours'}, {'sorte': 'niveau', 'nom_niveau': 'Établi simple'}, {'sorte': 'niveau', 'nom_niveau': 'Établi solide'}, {'sorte': 'cout', 'objet': 'Bois', 'nombre': 10}, {'sorte': 'cout', 'objet': 'Pierre', 'nombre': 4}, {'sorte': 'niveau', 'nom_niveau': "Établi d'artisan"}, {'sorte': 'cout', 'objet': 'Bois', 'nombre': 20}, {'sorte': 'cout', 'objet': 'Fer', 'nombre': 5}, {'sorte': 'station', 'nom': 'Feu de camp', 'usage': 'interaction', 'rayon': 6, 'file': True, 'combustible': 'Bois', 'duree_combustible': 30, 'allumage': 'toujours'}, {'sorte': 'station', 'nom': 'Four', 'usage': 'interaction', 'rayon': 6, 'file': True, 'combustible': 'Bois', 'duree_combustible': 60, 'allumage': 'fabrication'}, {'sorte': 'station', 'nom': 'Forge', 'usage': 'interaction', 'rayon': 6, 'file': True, 'combustible': 'Bois', 'duree_combustible': 45, 'allumage': 'fabrication'}]</code></td>
+<td>une ligne par « Ligne » : <a href="#champs-stations">ses champs</a></td>
+</tr>
+<tr>
+<td>Fenêtre de fabrication avec une touche (C)</td>
+<td>Coché : la commande Ouvrir la fabrication (C) ouvre la fenêtre des recettes à mains nues, plus celles d'une station à portée, et la referme. Utiliser une station (E) ouvre la fenêtre avec ses recettes. Décoché : seulement les stations, ou l'événement fabrication.ouvrir.</td>
+<td><code>fenetre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Arrêter le jeu quand la fenêtre est ouverte</td>
+<td>Coché : le monde s'arrête tant que la fenêtre de fabrication est ouverte, et la file d'attente avec lui. Décoché : le jeu continue derrière, la faim, les ennemis et les fabrications en cours compris.</td>
+<td><code>pause_fenetre</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Devant une station, montrer aussi les recettes à mains nues</td>
+<td>Décoché : la fenêtre d'une station (ouverte avec E) ne montre que ses recettes, le feu de camp ne montre pas la hache ; les recettes à mains nues restent dans la fenêtre de fabrication (C). Coché : elles s'y ajoutent.</td>
+<td><code>mains_nues_station</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Montrer aussi les recettes qu'on ne peut pas encore faire</td>
+<td>Coché : toutes les recettes du lieu s'affichent, celles qui manquent d'ingrédients en gris avec ce qu'il faut. Décoché : seulement celles qu'on peut fabriquer tout de suite.</td>
+<td><code>montrer_impossibles</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Largeur de la fenêtre (ancienne)</td>
+<td>Ne sert plus : la fenêtre est maintenant l'écran « Fabrication » (en liste) ou « Fabrication détaillée ». Pour l'élargir, tirez la poignée de sa forme « Fenêtre » dans l'éditeur d'écrans. Gardé pour les jeux qui l'avaient réglé ; l'onglet d'un autre système (l'atelier de l'Équipement) le reçoit encore.</td>
+<td><code>largeur</code></td>
+<td>Nombre</td>
+<td>0.55</td>
+<td>de 0.3 à 1</td>
+</tr>
+<tr>
+<td>Allure de la fenêtre de fabrication</td>
+<td>Une liste : l'écran « Fabrication », chaque recette sur une ligne avec son bouton Fabriquer. Détaillée : l'écran « Fabrication détaillée », une fenêtre plus large comme dans les jeux de survie, avec une recherche, les catégories à gauche, les objets en cases, et à droite la fiche de l'objet choisi (ingrédients, temps, quantité, Fabriquer). L'onglet d'un autre système (l'atelier) s'ouvre dans l'écran « Fabrication ».</td>
+<td><code>disposition_fenetre</code></td>
+<td>Choix dans une liste</td>
+<td>Une liste (simple)</td>
+<td><code>liste</code> : Une liste (simple)<br><code>detaillee</code> : Détaillée : catégories, cases, fiche</td>
+</tr>
+<tr>
+<td>Rester près de la station pendant une fabrication</td>
+<td>Coché : la file d'attente s'arrête quand le joueur s'éloigne de la station, et reprend à son retour. Décoché : elle continue, et l'objet arrive dans l'inventaire où qu'il soit.</td>
+<td><code>rester_pres</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-recettes">Les champs de chaque « Ligne »<a class="headerlink" href="#champs-recettes" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ligne » a son cadre, numéroté ; <strong>Ajouter : Ligne</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorte de ligne</td>
+<td>Une recette, avec ce qu'elle donne et où ; ou un ingrédient, qui appartient à la recette au-dessus de lui.</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Recette</td>
+<td><code>recette</code> : Recette<br><code>ingredient</code> : Ingrédient</td>
+</tr>
+<tr>
+<td>Ce qu'elle donne (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>La sorte d'objet fabriquée, telle que l'inventaire la range, comme « Hache » ou « Torche ». Elle nomme aussi la recette dans les événements.</td>
+<td><code>objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Catégorie (vide : Autres)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>Le groupe où la fenêtre détaillée range cette recette, comme « Outils », « Armes » ou « Nourriture ». Vide : « Autres », en dernier.</td>
+<td><code>categorie</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien elle en donne<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>Combien d'exemplaires une fabrication donne : 4 pour quatre planches tirées d'un tronc.</td>
+<td><code>quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Stations où elle se fait (vide : à mains nues, partout)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>Le nom d'une sorte de station, comme « Feu de camp », ou plusieurs séparées par des virgules : « Feu de camp, Four ». Vide : partout, depuis la fenêtre de fabrication (C).</td>
+<td><code>etabli</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Niveau de station minimum<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>Le niveau que la station doit avoir atteint : 2 pour une recette qui demande un établi amélioré une fois.</td>
+<td><code>niveau_min</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100, en nombre entier</td>
+</tr>
+<tr>
+<td>Temps de fabrication (s)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>0 : tout de suite. Sinon, la recette entre dans la file d'attente et l'objet arrive à la fin (à une station qui prend le temps, ou à mains nues).</td>
+<td><code>temps</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 86 400</td>
+</tr>
+<tr>
+<td>XP donnée (système Progression)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>L'XP que gagne celui qui la fabrique, si le jeu a le système Progression. Sa vitesse de fabrication (une valeur de la Progression) divise le temps. 0 : aucune.</td>
+<td><code>xp</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1 000 000</td>
+</tr>
+<tr>
+<td>Piste qui reçoit l'XP (vide : la principale)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>L'identifiant d'une piste du système Progression, comme « cuisine » ou « forge ».</td>
+<td><code>piste_xp</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Connaissance demandée (vide : aucune)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Recette »</em></td>
+<td>Le nom d'une connaissance que le joueur doit avoir apprise, comme « Métallurgie ». Ce système ne la vérifie pas lui-même : un système de connaissances, ou un script du jeu, la lit et réserve la recette.</td>
+<td><code>connaissance</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ingrédient (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Ingrédient »</em></td>
+<td>Une sorte d'objet que la recette consomme, telle que l'inventaire la range, comme « Bois ».</td>
+<td><code>ingredient</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Ingrédient »</em></td>
+<td>Combien de cet ingrédient la recette consomme : 3 bois.</td>
+<td><code>nombre</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Il faut l'avoir, sans le consommer (un outil)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Ingrédient »</em></td>
+<td>Coché : le joueur doit l'avoir pour fabriquer, mais le garde, comme un marteau ou un couteau. Décoché : il est consommé.</td>
+<td><code>garde</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-stations">Les champs de chaque « Ligne »<a class="headerlink" href="#champs-stations" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ligne » a son cadre, numéroté ; <strong>Ajouter : Ligne</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorte de ligne</td>
+<td>Une sorte de station (son nom, comment on s'en sert, son combustible) ; un niveau de la station au-dessus ; ou ce que coûte le niveau au-dessus, une ligne par ingrédient.</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Sorte de station</td>
+<td><code>station</code> : Sorte de station<br><code>niveau</code> : Niveau<br><code>cout</code> : Coût du niveau</td>
+</tr>
+<tr>
+<td>Nom de la station<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station »</em></td>
+<td>Comme « Établi », « Feu de camp », « Four » ou « Forge ». Les recettes la demandent par ce nom, et un objet du monde la devient par sa « Fonction ».</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Comment on s'en sert<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station »</em></td>
+<td>En l'utilisant : il faut être devant et appuyer sur E (ou C tout près). Dans un rayon : ses recettes sont permises partout autour, dans la fenêtre (C), comme l'établi de Valheim.</td>
+<td><code>usage</code></td>
+<td>Choix dans une liste</td>
+<td>En l'utilisant (E), tout près</td>
+<td><code>interaction</code> : En l'utilisant (E), tout près<br><code>rayon</code> : Dans un rayon autour d'elle</td>
+</tr>
+<tr>
+<td>Rayon (m)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station » ; affiché seulement si <strong>Comment on s'en sert</strong> est « Dans un rayon autour d'elle »</em></td>
+<td>Jusqu'où, autour d'elle, ses recettes sont permises.</td>
+<td><code>rayon</code></td>
+<td>Nombre</td>
+<td>6</td>
+<td>de 1 à 100</td>
+</tr>
+<tr>
+<td>Les recettes y prennent leur temps (file d'attente)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station »</em></td>
+<td>Coché : une recette qui a un temps entre dans une file, montrée dans la fenêtre, et l'objet arrive dans l'inventaire à la fin. Décoché : tout s'y fabrique tout de suite.</td>
+<td><code>file</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Combustible (vide : aucun)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station »</em></td>
+<td>La sorte d'objet qu'elle brûle, comme « Bois » ou « Charbon ». Sans feu, elle ne fabrique pas : le joueur en ajoute depuis la fenêtre. Vide : elle n'en a pas besoin.</td>
+<td><code>combustible</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Secondes de feu par unité de combustible<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station »</em></td>
+<td>Combien de temps brûle une unité : 60 pour une minute par bûche.</td>
+<td><code>duree_combustible</code></td>
+<td>Nombre</td>
+<td>60</td>
+<td>de 1 à 86 400</td>
+</tr>
+<tr>
+<td>Quand le combustible brûle<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Sorte de station »</em></td>
+<td>Un feu de camp se consume même quand on n'y cuit rien ; un four ne brûle que pendant qu'il travaille.</td>
+<td><code>allumage</code></td>
+<td>Choix dans une liste</td>
+<td>Brûle tant qu'il reste du combustible (un feu de camp)</td>
+<td><code>toujours</code> : Brûle tant qu'il reste du combustible (un feu de camp)<br><code>fabrication</code> : Brûle seulement pendant une fabrication (un four)</td>
+</tr>
+<tr>
+<td>Nom du niveau<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Niveau »</em></td>
+<td>Comme « Établi simple » puis « Établi solide ». Le premier niveau sous une station est celui du départ ; chaque niveau suivant s'obtient en améliorant la station.</td>
+<td><code>nom_niveau</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Son modèle (un objet de la scène, caché)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Niveau »</em></td>
+<td>À ce niveau, la station prend l'apparence de cet objet : une copie est posée à sa place. Cachez l'objet (il sert de moule) et donnez-lui le système Fabrication. Vide : elle garde son apparence.</td>
+<td><code>modele</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ingrédient (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Coût du niveau »</em></td>
+<td>Ce que coûte l'amélioration vers le niveau au-dessus, comme « Bois ». Le coût du premier niveau ne sert pas : la station existe déjà.</td>
+<td><code>objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Coût du niveau »</em></td>
+<td>Combien de cet ingrédient l'amélioration consomme.</td>
+<td><code>nombre</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-sur-chaque-objet">Réglages sur chaque objet<a class="headerlink" href="#reglages-sur-chaque-objet" title="Permanent link">&para;</a></h2>
+<p>Dans les <strong>Propriétés</strong> d'un objet ou d'un dossier qui porte le système, section <strong>Systèmes</strong>. Un dossier transmet ses valeurs à ce qu'il contient ; un objet peut changer une valeur pour lui seul.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fonction de cet objet</td>
+<td>La sorte de station que devient cet objet, un modèle importé compris : un Four, un Établi, ou toute sorte que le jeu définit dans les stations. « D'après son nom » : son nom sans numéro, « Feu de camp 3 » est un Feu de camp.</td>
+<td><code>nom_etabli</code></td>
+<td>Choix dans une liste</td>
+<td>(vide)</td>
+<td>un nom de la liste <strong>stations</strong> de ce système, ou vide</td>
+</tr>
+<tr>
+<td>Niveau de départ</td>
+<td>Le niveau de cette station au début du jeu. Le joueur l'améliore ensuite depuis sa fenêtre (Améliorer), et la sauvegarde garde son niveau.</td>
+<td><code>niveau</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100, en nombre entier</td>
+</tr>
+<tr>
+<td>Combustible au départ (unités)</td>
+<td>Combien d'unités de combustible cette station a au début : 2 bûches pour un feu de camp déjà allumé. 0 : éteinte.</td>
+<td><code>combustible_depart</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+</tbody>
+</table>
+<h2 id="commandes-ajoutees-au-jeu">Commandes ajoutées au jeu<a class="headerlink" href="#commandes-ajoutees-au-jeu" title="Permanent link">&para;</a></h2>
+<p>Elles apparaissent dans le panneau <strong>Commandes du jeu</strong> (mode Développeur), où l'on peut changer leur touche.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Nom pour les scripts</th>
+<th>Touche</th>
+<th>Manette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ouvrir la fabrication</td>
+<td><code>craft</code></td>
+<td>C</td>
+<td>L3</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#fabricationfabrique"><code>fabrication.fabrique</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>etabli</code> (text), <code>cible</code> (text?), <code>xp</code> (number?), <code>piste</code> (text?)</td>
+<td>The player crafted a recipe: its ingredients left the inventory and objet (quantite of it) came in, at once or at the end of its time in the queue. etabli is the kind of station where it was made (empty bare-handed), cible the station object (missing bare-handed).</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationmanque"><code>fabrication.manque</code></a></td>
+<td><code>objet</code> (text), <code>manque</code> (text?), <code>etabli</code> (text?), <code>niveau</code> (number?), <code>combustible</code> (text?)</td>
+<td>A recipe could not be crafted: manque lists what is missing, in the player's language ("2 Wood, 1 Stone"), or etabli names the stations it needs (with niveau, the minimum level, when the station is too low), or combustible the fuel a station out of fire needs.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationcommencee"><code>fabrication.commencee</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>temps</code> (number), <code>etabli</code> (text), <code>cible</code> (text?)</td>
+<td>A recipe with a time joined the player's queue: its ingredients left the inventory; objet (quantite of it) comes in after temps seconds. etabli is the kind of station, cible the station object (missing bare-handed).</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationfinie"><code>fabrication.finie</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>etabli</code> (text), <code>cible</code> (text?)</td>
+<td>A recipe of the queue is done: objet (quantite of it) came into the inventory. fabrication.fabrique is announced too.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationstation_amelioree"><code>fabrication.station_amelioree</code></a></td>
+<td><code>cible</code> (text), <code>etabli</code> (text), <code>niveau</code> (number), <code>nom</code> (text), <code>ancienne</code> (text?)</td>
+<td>A station (cible, of the kind etabli) was upgraded to the level niveau, named nom (empty if the level has no name); its cost left the inventory. With a model for that level, cible is the new copy, and ancienne the object it replaced.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationallumee"><code>fabrication.allumee</code></a></td>
+<td><code>cible</code> (text), <code>etabli</code> (text)</td>
+<td>A station that burns fuel (cible, of the kind etabli) starts burning. Its particles effect (the particules system) is switched on with it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationcombustible_vide"><code>fabrication.combustible_vide</code></a></td>
+<td><code>cible</code> (text), <code>etabli</code> (text), <code>combustible</code> (text)</td>
+<td>A station (cible, of the kind etabli) burnt its last fuel (combustible): it stops crafting until fuel is added, and its particles effect is switched off.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationonglet"><code>fabrication.onglet</code></a></td>
+<td><code>joueur</code> (id), <code>onglet</code> (text), <code>cible</code> (id?), <code>etabli</code> (text?), <code>parent</code> (text?), <code>largeur</code> (number?)</td>
+<td>The crafting window opened another module's tab at a station (onglet, its key; parent, the empty panel to fill; largeur, the window's width), or left it (onglet empty). The module whose tab it is fills the panel.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#fabricationouvrir"><code>fabrication.ouvrir</code></a></td>
+<td><code>etabli</code> (text?), <code>cible</code> (text?), <code>onglet</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the crafting system to open its window, with the recipes of the station object cible, or of the kind of station named etabli (empty or missing: bare-handed): a Trigger rule, a button of a drawn screen. onglet opens it on another module's tab (equipement.atelier: the workshop). It opens for joueur only; without joueur, for the host only (never for every player).</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationfabriquer"><code>fabrication.fabriquer</code></a></td>
+<td><code>objet</code> (text), <code>etabli</code> (text?), <code>cible</code> (text?)</td>
+<td>Ask the crafting system to craft the recipe that gives objet, as its button would, at the station object cible, or at the kind of station named etabli (the nearest one of that kind within reach, else as if at a level 1 station), empty or missing: bare-handed. Refused, with fabrication.manque, if something is missing. A recipe with a time joins the queue.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationameliorer"><code>fabrication.ameliorer</code></a></td>
+<td><code>cible</code> (text)</td>
+<td>Ask the crafting system to upgrade the station cible to its next level, as its Upgrade button would: the player pays the cost. Refused, with a message in the window, if something is missing.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationalimenter"><code>fabrication.alimenter</code></a></td>
+<td><code>cible</code> (text), <code>quantite</code> (number?)</td>
+<td>Ask the crafting system to put quantite (1 if missing) of the fuel of the station cible into it, taken from the player's inventory, as its fuel button would.</td>
+</tr>
+<tr>
+<td><a href="../../events/#interactionutiliser"><code>interaction.utiliser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id)</td>
+<td>The player used the object in reach: a door, a merchant, an item to pick up. Whoever owns that object decides what it does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?), <code>fiche</code> (number?), <code>jete</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up. For a unique copy (version 15), objet is its kind, fiche its record's number, total how many of that kind. With several stacks of a kind (version 21), total counts all of them; jete is true when a slot was dropped on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireplein"><code>inventaire.plein</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>reste</code> (number?)</td>
+<td>An item could not be added: every slot holds another kind of item (or another unique copy), or (version 21) every stack of its kind is full. reste: picked up in part, how many stayed on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairemanque"><code>inventaire.manque</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Items could not be removed: there are not enough.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-quun-script-peut-remplacer-gameoverride">Points qu'un script peut remplacer (game.override)<a class="headerlink" href="#points-quun-script-peut-remplacer-gameoverride" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<ul>
+<li><code>fabrication.onglets</code> : function(default, infos) -&gt; a list of {cle, libelle}: the tabs other modules add to this station's window (infos: cible, the station; etabli, its kind; joueur). The default is an empty list: the window shows its recipes alone. With a tab, the window shows a row of tabs (the recipes first, labelled by the text onglet); the open tab of another module is the shape "Fabrication/Onglet ouvert" of the screen "Fabrication", which the module fills when fabrication.onglet announces it (its parent field). A station without recipes, fuel or level to gain opens on the first other tab. Equipment adds « Atelier » (repair, upgrade, set gems) at the stations its settings name. Call default(infos) and add yours to its list.</li>
+<li><code>fabrication.permise</code> : function(default, recette, infos) -&gt; true, or false and the reason shown (text): whether this recipe can be crafted now. recette is its title (the product's original name). infos (version 3) is a table: objet, quantite, etabli (the stations it asks for, as written), niveau (the minimum station level), temps (seconds), connaissance (the knowledge it asks for, as written; empty: none). The default is true. To unlock a recipe with a quest, a book read, a level, a knowledge learnt (the connaissance field). Call default(recette, infos) for the other cases.</li>
+<li><code>fabrication.texte</code> : function(default, key) -&gt; the text the crafting window shows for that key: titre, titre_etabli, aucune, fabriquer, fabriquer_n, tout, autres, categorie, recherche, temps, ingredient, garde, plus, moins, tout_max, choisir, introuvable, fermer, fabrique, manque, place, il_faut, il_faut_niveau, refus, niveau, feu, eteint, alimenter, ameliorer, ameliore, max, en_cours, attente_feu, trop_loin, annuler, commence, sans_combustible, disparue, onglet (the label of the recipes tab, shown when another module adds a tab). It may hold {objet}, {n}, {etabli}, {liste}, {secondes}, {combustible}, {nom}, {part}, {a} (how many the player has) and {raison}, replaced afterwards (in the player's language). The default is the game's translation of the text in the original language (translations_get lists them as built-in texts of the crafting window); without one, French or English, after the player's language.</li>
+</ul>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="crafting-fabrication">Crafting (<code>fabrication</code>)<a class="headerlink" href="#crafting-fabrication" title="Permanent link">&para;</a></h3>
+<p>Recipes that turn items of the inventory into another item: three wood and two stones make an axe; raw meat cooked at a campfire. Add it once with <code>modules_add</code> (with <code>inventaire</code> and <code>interaction</code>). Use it whenever the user talks about crafting, making, cooking, smelting, forging, a workbench, an oven, a forge or a kitchen: never write a crafting script. Version 3 (ADR-035): stations defined by the game, with levels, fuel and a queue. Version 4: a station's window shows only its own recipes. Version 8: a detailed window (<code>disposition_fenetre</code>), with categories, slots and a details panel.</p>
+<p>It has two game settings (<code>modules_set</code>), each a list of rows, in order, and two values per object.</p>
+<h4 id="the-kinds-of-stations-stations">The kinds of stations (<code>stations</code>)<a class="headerlink" href="#the-kinds-of-stations-stations" title="Permanent link">&para;</a></h4>
+<p>A <code>station</code> row starts a kind of station; the <code>niveau</code> rows under it are its levels, in order; the <code>cout</code> rows under a level are what upgrading to that level costs. <strong>Nothing is hard-coded</strong>: the default rows (Établi with 3 levels, Feu de camp burning wood, Four, Forge) are examples the user changes or deletes. Any game logic fits: Valheim (workbench radius, levels), Rust (furnace with fuel), Enshrouded, ARK...</p>
+<p><strong>The default survival progression</strong> (the rows of a new game, matching the default knowledges of <code>savoir</code>): bare-handed, a stone axe (« Hache »: 3 Bois, 2 Pierre); at the Établi level 1, « Pioche » and « Lance »; at level 2 (10 Bois, 4 Pierre), « Arc », « Hache de fer » and « Pioche de fer » (2 Bois, 3 Fer); level 3 costs 20 Bois and 5 Fer. The Feu de camp (burns Bois, 30 s a log) cooks « Viande cuite », « Poisson grillé », « Baies grillées »; the Four (burns Bois only while cooking) also does « Pain » and « Ragoût »; the Forge smelts « Fer » from 2 « Minerai de fer ». <strong>A campfire is a cooking station, not a workbench</strong>: never put tools on it. Rename everything in the user's words, and drop what their game does not have.</p>
+<ul>
+<li><code>station</code>: <code>nom</code> (the name recipes ask for, in the user's language: « Établi », « Forge », « Table d'alchimie »), <code>usage</code> (<code>interaction</code>: the player stands at it and presses E, or C right next to it; <code>rayon</code>: its recipes are allowed anywhere within <code>rayon</code> metres, in the window C), <code>file</code> (on: a recipe with a time joins a queue; off: everything is instant there), <code>combustible</code> (the item it burns, an inventory kind; empty: no fuel), <code>duree_combustible</code> (seconds of fire per unit), <code>allumage</code> (<code>toujours</code>: burns while fuel remains, a campfire; <code>fabrication</code>: burns only while crafting, an oven).</li>
+<li><code>niveau</code>: <code>nom_niveau</code> (« Établi simple »), <code>modele</code> (optional: a hidden object of the scene carrying <code>fabrication</code>, used as a mould: at this level a copy replaces the station, same place and turn, keeping its level and fire). The first level is the starting one; its cost is not used. A station without <code>niveau</code> rows has one level.</li>
+<li><code>cout</code>: <code>objet</code>, <code>nombre</code>: the price of the level above.</li>
+<li>Example, a forge that burns coal and has two levels: <code>{"sorte": "station", "nom": "Forge", "usage": "interaction", "combustible": "Charbon", "duree_combustible": 90, "allumage": "fabrication"}, {"sorte": "niveau", "nom_niveau": "Forge en pierre"}, {"sorte": "niveau", "nom_niveau": "Forge en fer"}, {"sorte": "cout", "objet": "Fer", "nombre": 10}</code>.</li>
+</ul>
+<h4 id="the-recipes-recettes">The recipes (<code>recettes</code>)<a class="headerlink" href="#the-recipes-recettes" title="Permanent link">&para;</a></h4>
+<p>A <code>recette</code> row starts a recipe; the <code>ingredient</code> rows under it are what it needs.</p>
+<ul>
+<li><code>recette</code>: <code>objet</code> (the item it gives, an inventory kind, in the user's language; it also names the recipe), <code>categorie</code> (version 8: its group in the detailed window, « Outils », « Nourriture »; empty: « Autres »), <code>quantite</code>, <code>etabli</code> (the kinds of stations where it is made, by their <code>nom</code>, several separated by commas: « Feu de camp, Four »; empty: bare-handed, anywhere), <code>niveau_min</code> (minimum station level), <code>temps</code> (seconds; 0: at once), <code>connaissance</code> (a knowledge name the player must have learnt; this module does not check it: a knowledge system or a game script does, through <code>fabrication.permise</code>; empty: none).</li>
+<li><code>ingredient</code>: <code>ingredient</code> (an inventory kind), <code>nombre</code>, <code>garde</code> (on: the player must have it but keeps it, a tool such as a hammer).</li>
+<li><strong>Cooking is only stations</strong>: a campfire, an oven, a kitchen are kinds of stations; any food is a recipe: <code>{"sorte": "recette", "objet": "Poisson grillé", "etabli": "Feu de camp, Four", "temps": 5}, {"sorte": "ingredient", "ingredient": "Poisson cru", "nombre": 1}</code>. Bread and stew at the oven only.</li>
+<li>A recipe at a level too low shows in grey with « Il faut : Établi niveau 2 »; a recipe of another station does not show.</li>
+</ul>
+<h4 id="giving-an-object-a-station-function-values-per-object">Giving an object a station function (values per object)<a class="headerlink" href="#giving-an-object-a-station-function-values-per-object" title="Permanent link">&para;</a></h4>
+<p>Attach the system to the object (<code>systems_attach</code>; <code>interaction</code> comes with it) and set <code>nom_etabli</code>, shown as « Fonction de cet objet »: one of the station names (a list in the inspector). <strong>Any object works, an imported model included</strong>: an imported oven model with <code>nom_etabli</code> « Four » is an oven. Empty: its name without trailing number (a « Feu de camp 3 » is a Feu de camp). <code>niveau</code>: its starting level. <code>combustible_depart</code>: units of fuel at the start (0: out).</p>
+<ul>
+<li>A station with fuel crafts only while it has fire; the window shows « Feu : 45 s (Bois) » or « Éteint » and a button « Ajouter : Bois » that takes one unit from the inventory. The queue stops when the fire dies and resumes when fed. If the object carries <code>particules</code> (flames, smoke), its effect is switched on and off with the fire.</li>
+<li><strong>Upgrade</strong>: the window of a station with a next level has « Améliorer (10 Bois, 4 Pierre) »; it takes the cost, raises the level (kept per object, in the save, the same for all players).</li>
+<li>A piece the player builds with <code>construction</code> keeps its model's systems: an oven model carrying <code>fabrication</code> becomes an oven wherever it is built.</li>
+<li>A kind of station used by an object but missing from <code>stations</code> behaves like version 2: one level, no fuel, used with E.</li>
+</ul>
+<h4 id="the-window-and-the-queue">The window and the queue<a class="headerlink" href="#the-window-and-the-queue" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The control <code>craft</code> (C, or the left stick pressed) opens the window with the bare-handed recipes, plus those of the nearest station in reach (its radius, or the hand's reach); using a station (E) opens it with <strong>only that station's recipes</strong> (version 4: the campfire does not show the axe; the bare-handed ones stay in the window C), unless <code>mains_nues_station</code> is ticked (off by default; a game made before version 4 keeps it on, as it was). Close with C again or Close (B / Escape). <code>montrer_impossibles</code> shows what cannot be made yet, in grey. <code>pause_fenetre</code> (off by default) stops the world while it is open, and the queue with it.</li>
+<li>A recipe with a time takes its ingredients at once and joins the player's queue, shown in the window with its progress and a Cancel button (the ingredients come back); window closed, the current one shows at the right of the screen. The item reaches the inventory at the end; if it does not fit, it waits for room. <code>rester_pres</code> on: the queue waits while the player is away from the station.</li>
+<li><strong>Two looks</strong> (version 8, <code>disposition_fenetre</code>): <code>liste</code> (default, and kept by older games): one row per recipe with its Craft button. <code>detaillee</code>: the wider window of survival games (Rust, Valheim, Enshrouded): at the top the station, its level, its fire (Add) and Upgrade, and a Search field; on the left the categories (« Tout » first, each with how many of its recipes can be made now; a recipe without <code>categorie</code> goes in « Autres », last; one category only: no column); in the middle the items as slots (the icon of the item kind of the inventory if it has one, else its name; impossible ones in grey); on the right the chosen recipe: its name, the item's description, the ingredients as « 2 / 3 Bois » (missing ones in the alert colour), the time, « Il faut : Établi niveau 2 », a quantity (− 1 +, Max: as many as the ingredients allow) and Craft (greyed when impossible); the queue at the bottom. <strong>Choose <code>detaillee</code> when the game has many recipes</strong> (more than about eight), for survival and role-playing games; give each recipe a <code>categorie</code> in the user's words (« Outils », « Armes », « Nourriture »). Keep <code>liste</code> for a handful of recipes. It is the screen « Fabrication détaillée » (see below); its keys: <code>Fabrication détaillée/Recherche</code> (the field), <code>Fabrication détaillée/Catégorie#N</code> (1: Tout), <code>Fabrication détaillée/Case#N</code> (<code>Case rare#N</code> for a rare item kind), <code>Fabrication détaillée/Nom</code>, <code>Ingrédients</code>, <code>Il faut</code>, <code>Nombre</code>, <code>Moins</code> / <code>Plus</code> / <code>Max</code>, <code>Fabriquer</code>. The Atelier tab of Equipment keeps its place in both looks (it opens in the screen « Fabrication »).</li>
+<li>Spell every item exactly as the inventory stores it: the same kind as what <code>collecte</code> gives (<code>ressource</code>) and what the player picks up.</li>
+</ul>
+<h4 id="events-and-hooks">Events and hooks<a class="headerlink" href="#events-and-hooks" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Announced: <code>fabrication.fabrique</code> (<code>objet</code>, <code>quantite</code>, <code>etabli</code>, <code>cible</code>?; at once or at the end of the queue), <code>fabrication.manque</code> (<code>objet</code>, <code>manque</code> or <code>etabli</code> with <code>niveau</code> or <code>combustible</code>), <code>fabrication.commencee</code> (<code>objet</code>, <code>quantite</code>, <code>temps</code>, <code>etabli</code>, <code>cible</code>?), <code>fabrication.finie</code>, <code>fabrication.station_amelioree</code> (<code>cible</code>, <code>etabli</code>, <code>niveau</code>, <code>nom</code>, <code>ancienne</code>?), <code>fabrication.allumee</code> and <code>fabrication.combustible_vide</code> (<code>cible</code>, <code>etabli</code>).</li>
+<li>Listened: <code>fabrication.ouvrir</code> (<code>cible</code>? or <code>etabli</code>?), <code>fabrication.fabriquer</code> (<code>objet</code>, <code>cible</code>? or <code>etabli</code>?), <code>fabrication.ameliorer</code> (<code>cible</code>), <code>fabrication.alimenter</code> (<code>cible</code>, <code>quantite</code>?): from a <code>declencheur</code> rule (« envoyer »), a drawn screen's button or a script. A Trigger rule « quand l'événement fabrication.station_amelioree » can play a sound or show a message.</li>
+<li>Reserve a recipe from your own script, never the module's: <code>game.override("fabrication.permise", function(default, recette, infos) if infos.connaissance == "Métallurgie" and not appris then return false, game.t("Il faut d'abord apprendre la métallurgie.") end return default(recette, infos) end)</code>. <code>infos</code> holds <code>objet</code>, <code>quantite</code>, <code>etabli</code>, <code>niveau</code>, <code>temps</code>, <code>connaissance</code>. A refused recipe is not shown.</li>
+<li>Texts follow the player's language; its own texts are built-in texts listed by <code>translations_get</code>. Change one with <code>game.override("fabrication.texte", ...)</code>.</li>
+<li>Saved games: the player's queue, and each station's level and fire (the host keeps them). An upgraded station replaced by its level's model is kept by the engine (copied objects).</li>
+<li><strong>Tabs from other modules</strong> (hook <code>fabrication.onglets</code>): at a station, another module may add a tab to this window instead of opening its own; the Equipment adds « Atelier » (repair, upgrade, set gems) at the stations its settings name. The window then shows « Fabrication » and « Atelier » under its title (<code>Fabrication/Onglet#1</code>, <code>Fabrication/Onglet#2</code>..., rows of the list <code>Onglets</code>); the other tab is the shape <code>Fabrication/Onglet ouvert</code>, which its module fills when the event <code>fabrication.onglet</code> announces it (its <code>parent</code> field). A station without recipes, fuel or level to gain opens on that tab. <code>fabrication.ouvrir {cible, onglet}</code> opens a precise tab. With several players, <code>fabrication.ouvrir</code> opens for its <code>joueur</code> only; without <code>joueur</code> (a rule, a script of the game), for the host only.</li>
+<li>The window is made of screens delivered by the system: « Fabrication » (<code>modules/fabrication/ecrans/fenetre.json</code>, the look <code>liste</code>, and another module's tab in both looks): <code>Fenêtre</code>, <code>Titre</code>, the list <code>Onglets</code> (row <code>Onglet</code>), <code>Onglet ouvert</code>, <code>Station</code>, <code>Actions de la station</code> (<code>Alimenter</code>, <code>Améliorer</code>), <code>Vide</code>, the list <code>Recettes</code> (row <code>Recette</code>: <code>Image</code>, <code>Nom</code>, <code>Fabriquer</code>), the list <code>File</code> (row <code>Ligne de la file</code>: <code>En cours</code>, <code>Annuler</code>), <code>Message</code>, <code>Fermer</code>. « Fabrication détaillée » (<code>ecrans/detaillee.json</code>): <code>Voile</code>, <code>Fenêtre</code>, <code>Entête</code> (<code>Titre</code>, <code>Recherche</code>), <code>Onglets</code>, <code>Ligne de la station</code>, <code>Corps</code> with the list <code>Catégories</code>, <code>Cases</code> (<code>Vide</code>, the grid list <code>Grille</code>, row <code>Place</code>: <code>Case</code>, <code>Case rare</code>) and <code>Fiche</code> (<code>Image</code>, <code>Nom</code>, <code>Choisir</code>, <code>Description</code>, <code>Ingrédients</code>, <code>Temps</code>, <code>Il faut</code>, <code>Quantité</code>, <code>Fabriquer</code>), the list <code>File</code> (with the gauge <code>Progression</code>), <code>Message</code>, <code>Fermer</code>. Their buttons send the system's actions (<code>onglet</code>, <code>alimenter</code>, <code>ameliorer</code>, <code>fabriquer</code>, <code>annuler</code>, <code>fermer</code>, and in the detailed one <code>categorie</code>, <code>case</code>, <code>moins</code>, <code>plus</code>, <code>max</code>). The script sets a few sizes from what it shows, as before the screens: the name beside an image, the list <code>Recettes</code> five rows high with more than five recipes, and in the detailed screen the height of <code>Corps</code> (0.36 with a queue, else 0.44), the width of <code>Cases</code>, the columns of <code>Grille</code> and the width of each <code>Place</code> (wider without categories). It reads the sizes the shapes have on screen (<code>Fenêtre</code>, <code>Message</code>, <code>Fiche</code>, <code>Catégories</code>): widen <code>Fenêtre</code> (or narrow <code>Fiche</code>) in the screen and the slots take the room left. Change their look, places and sizes with <code>screens_set</code> (styles, not hand-made values); never draw a crafting window with <code>game.hud_*</code>, and never edit the system. <code>largeur</code> is no longer used (kept for old games): resize the shape <code>Fenêtre</code>.</li>
+<li>Gamepad and keyboard: the window's buttons get the focus like every window (the detailed one starts on its first slot); B or Escape closes it (<code>Fabrication/Fermer</code>). Keys of a row: <code>Fabrication/Fabriquer#N</code>, <code>Fabrication/Annuler#N</code>, <code>Fabrication/En cours#N</code> (N counts the rows shown). The line of the crafting under way, window closed, is the screen « Fabrication en cours » delivered by the system (<code>modules/fabrication/ecrans/encours.json</code>, its shape <code>Ligne</code>, key <code>Fabrication en cours/Ligne</code>): move it or change its look with <code>screens_set</code>, never by drawing it again.</li>
+<li>Testing: in <code>game_run</code>, give the ingredients with <code>inventaire.ajouter</code> in a test script, then send <code>fabrication.fabriquer</code> with <code>cible</code> (the station's id), <code>fabrication.alimenter</code>, <code>fabrication.ameliorer</code>, or click <code>Fabrication/Fabriquer#N</code>; read the events and the inventory, and <code>Fabrication/Message</code>, in the report's <code>hud</code>.</li>
+</ul>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>One copy per player: each player has their own window, queue and ingredients (their own inventory). The stations are common: their level and fire are the same for everyone, burnt once per step.</p>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/fabrication/module.json</code>, <code>modules/fabrication/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../ennemis/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Ennemis">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Ennemis
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../interaction/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Interaction">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Interaction
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

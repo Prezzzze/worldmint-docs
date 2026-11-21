@@ -1,0 +1,5051 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/progression/">
+      
+      
+      
+        <link rel="prev" href="../chiffon/">
+      
+      
+        <link rel="next" href="../sante/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Progression - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Progression
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-pistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Piste »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Règle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Zone »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Sorte de points »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-recompenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Récompense »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Valeur »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Niveau requis »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#progression-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Progression (<code>progression</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progression (progression)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracks-pistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tracks (<code>pistes</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-xp-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Where XP comes from
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How much
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-level-gives-recompenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What a level gives (<code>recompenses</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Characteristics (<code>caracteristiques</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Values
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-levels-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Required levels (<code>requis</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-player-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the player sees
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hooks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presets-by-genre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Presets by genre
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-pistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Piste »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-regles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Règle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Zone »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-points" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Sorte de points »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-recompenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Récompense »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Valeur »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Niveau requis »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#progression-progression" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Progression (<code>progression</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Progression (progression)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tracks-pistes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Tracks (<code>pistes</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#where-xp-comes-from" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Where XP comes from
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-much" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How much
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-a-level-gives-recompenses" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What a level gives (<code>recompenses</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#characteristics-caracteristiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Characteristics (<code>caracteristiques</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#values" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Values
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#required-levels-requis" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Required levels (<code>requis</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-the-player-sees" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the player sees
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hooks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Hooks
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#presets-by-genre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Presets by genre
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="progression">Progression<a class="headerlink" href="#progression" title="Permanent link">&para;</a></h1>
+<p>L'expérience, les niveaux, les points et les caractéristiques (ADR-038). Des pistes (le personnage, la cuisine, le bûcheronnage...) avec chacune sa courbe ; de l'XP pour les ennemis vaincus, les quêtes, ce qu'on fabrique ou récolte et toute règle libre ; des récompenses à chaque niveau (points, bonus, connaissances, objets) ; des caractéristiques à répartir ; des niveaux requis ; une barre d'XP, « Niveau 5 ! » et la fenêtre Personnage (P). L'hôte garde la progression de chacun.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>progression</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>non</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans le panneau <strong>Systèmes</strong> (mode Développeur), en ouvrant la carte du système.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les pistes de progression</td>
+<td>Chaque piste a son XP, ses niveaux et sa courbe : le niveau du personnage en est une, « Cuisine » ou « Bûcheronnage » d'autres. La piste principale (le niveau que voient les autres joueurs) se choisit dans les réglages du jeu, section Progression.</td>
+<td><code>pistes</code></td>
+<td>Liste de « Piste »</td>
+<td><code>[{'cle': 'personnage', 'nom': 'Personnage', 'icone': '', 'cachee': False, 'courbe': {'forme': 'progressive', 'base': 100, 'hausse': 75, 'niveau_max': 50, 'paliers': [{'niveau': 20, 'facteur': 1.25}, {'niveau': 40, 'facteur': 1.25}], 'arrondi': 5, 'ecart': {'forme': 'lineaire', 'tolerance': 2, 'hausse': 0.1, 'plafond': 1.5, 'baisse': 0.2, 'plancher': 0.05}}, 'mort': 'aucune', 'mort_part': 10}]</code></td>
+<td>une ligne par « Piste » : <a href="#champs-pistes">ses champs</a></td>
+</tr>
+<tr>
+<td>Les ennemis vaincus donnent leur XP</td>
+<td>L'XP et le niveau de chaque ennemi se règlent sur lui, dans le système Ennemis (« XP donnée », « Niveau »). Un ennemi plus fort que le joueur rapporte plus, selon l'« écart » de la courbe.</td>
+<td><code>xp_ennemis</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Les quêtes finies donnent leur XP</td>
+<td>Le champ « XP » de chaque quête, dans le système Quêtes.</td>
+<td><code>xp_quetes</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Ce qu'on fabrique donne son XP</td>
+<td>Le champ « XP » de chaque recette, dans le système Fabrication.</td>
+<td><code>xp_fabrication</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Ce qu'on récolte donne son XP</td>
+<td>Le champ « XP » de chaque ressource, dans le système Collecte.</td>
+<td><code>xp_collecte</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Règles libres : quand tel événement arrive, tant d'XP</td>
+<td>Pour tout le reste : « dialogue.fin » 20 XP, « zone.entree » sur « Grotte » 50 XP, « savoir.appris » 30 XP à la piste « recherche ».</td>
+<td><code>regles</code></td>
+<td>Liste de « Règle »</td>
+<td>(vide)</td>
+<td>une ligne par « Règle » : <a href="#champs-regles">ses champs</a></td>
+</tr>
+<tr>
+<td>XP pour un lieu découvert (une zone, la première fois)</td>
+<td>Chaque zone (un objet qui porte le système Zone) où le joueur entre pour la première fois donne cette XP à la piste principale. 0 : rien.</td>
+<td><code>xp_decouverte</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1 000 000</td>
+</tr>
+<tr>
+<td>L'écart de niveau compte</td>
+<td>Coché : un ennemi plus fort rapporte plus, un bien plus faible presque rien, selon l'« écart » de la courbe de la piste.</td>
+<td><code>ecart_actif</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>La répétition rapporte moins</td>
+<td>Coché : la même action répétée souvent en peu de temps rapporte de moins en moins.</td>
+<td><code>repetition_actif</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Répétition : combien de fois avant de baisser</td>
+<td>Le nombre de gains de la même source, dans la fenêtre de temps, avant que ça baisse.</td>
+<td><code>repetition_seuil</code></td>
+<td>Nombre</td>
+<td>10</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Répétition : baisse à chaque fois en plus (0 à 1)</td>
+<td>0,1 : chaque fois de plus rapporte 10 % de moins que la précédente.</td>
+<td><code>repetition_baisse</code></td>
+<td>Nombre</td>
+<td>0.1</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Répétition : jamais moins que (0 à 1)</td>
+<td>0,1 : même très répétée, l'action garde 10 % de son XP.</td>
+<td><code>repetition_plancher</code></td>
+<td>Nombre</td>
+<td>0.1</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Répétition : fenêtre de temps (s)</td>
+<td>Les gains plus anciens ne comptent plus.</td>
+<td><code>repetition_fenetre</code></td>
+<td>Nombre</td>
+<td>300</td>
+<td>de 1 à 86 400</td>
+</tr>
+<tr>
+<td>Bonus de la première fois (0,5 : +50 %)</td>
+<td>Le premier ennemi d'une sorte, la première ressource, la première recette rapportent ce bonus en plus. 0 : aucun.</td>
+<td><code>premiere_bonus</code></td>
+<td>Nombre</td>
+<td>0.5</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Multiplicateurs par zone</td>
+<td>« ×1,5 dans les Terres brûlées » : une zone (un objet qui porte le système Zone) par son nom sans numéro, ou par une étiquette.</td>
+<td><code>zones</code></td>
+<td>Liste de « Zone »</td>
+<td>(vide)</td>
+<td>une ligne par « Zone » : <a href="#champs-zones">ses champs</a></td>
+</tr>
+<tr>
+<td>En groupe : qui gagne l'XP d'un ennemi</td>
+<td>Quand plusieurs joueurs combattent. Proches : à moins du rayon ci-dessous de l'ennemi, ou qui l'ont frappé. Au prorata des dégâts : les coups portés par le Combat, le Tir et les Ennemis disent qui a frappé ; sans eux, tout va au dernier coup.</td>
+<td><code>groupe</code></td>
+<td>Choix dans une liste</td>
+<td>Chacun reçoit tout (les joueurs proches)</td>
+<td><code>tous</code> : Chacun reçoit tout (les joueurs proches)<br><code>partage</code> : Partagé entre les joueurs proches<br><code>degats</code> : Au prorata des dégâts<br><code>dernier</code> : Seulement le dernier coup</td>
+</tr>
+<tr>
+<td>En groupe : rayon des joueurs proches (m)</td>
+<td>Les joueurs à moins de cette distance de l'ennemi vaincu comptent. 0 : seulement ceux qui l'ont frappé.</td>
+<td><code>rayon_groupe</code></td>
+<td>Nombre</td>
+<td>30</td>
+<td>de 0 à 10 000</td>
+</tr>
+<tr>
+<td>Mort : rayon pour récupérer l'XP perdue (m)</td>
+<td>Pour les pistes dont l'XP perdue est récupérable : s'approcher à cette distance du lieu de la mort la rend.</td>
+<td><code>rayon_recuperation</code></td>
+<td>Nombre</td>
+<td>2.5</td>
+<td>de 0.5 à 100</td>
+</tr>
+<tr>
+<td>Mort : ce qui marque l'XP à récupérer (facultatif)</td>
+<td>Un objet caché de la scène, copié au lieu de la mort tant que l'XP y attend (une tombe, une lueur). Vide : rien ne se voit.</td>
+<td><code>modele_recuperation</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Les sortes de points</td>
+<td>Les points que donnent les niveaux. Une sorte « pour le Savoir » va à l'arbre du système Savoir (ses connaissances à points).</td>
+<td><code>points</code></td>
+<td>Liste de « Sorte de points »</td>
+<td><code>[{'sorte': 'caracteristique', 'nom': 'Points de caractéristique', 'savoir': False}, {'sorte': 'talent', 'nom': 'Points de talent', 'savoir': True}]</code></td>
+<td>une ligne par « Sorte de points » : <a href="#champs-points">ses champs</a></td>
+</tr>
+<tr>
+<td>Ce que donne un niveau</td>
+<td>Chaque ligne : à quels niveaux, et quoi. Un bonus s'ajoute à chaque niveau atteint (+10 santé max par niveau).</td>
+<td><code>recompenses</code></td>
+<td>Liste de « Récompense »</td>
+<td><code>[{'piste': '', 'quand': 'tous', 'sorte': 'points', 'points_sorte': 'caracteristique', 'nombre': 1}, {'piste': '', 'quand': 'tous', 'sorte': 'bonus', 'valeur': 'sante_max', 'ajout': 10, 'pourcent': 0}, {'piste': '', 'quand': 'chaque', 'chaque': 5, 'a_partir': 5, 'sorte': 'points', 'points_sorte': 'talent', 'nombre': 1}]</code></td>
+<td>une ligne par « Récompense » : <a href="#champs-recompenses">ses champs</a></td>
+</tr>
+<tr>
+<td>Les caractéristiques</td>
+<td>Une ligne « Caractéristique » (son nom, son maximum, ce que coûte un point), suivie de ses lignes « Effet » : chaque point dépensé ajoute +n et/ou +% à une valeur modifiable. Aucun nom imposé.</td>
+<td><code>caracteristiques</code></td>
+<td>Liste de « Ligne »</td>
+<td><code>[{'sorte': 'caracteristique', 'nom': 'Force', 'description': 'Des coups plus forts, et plus de charge.', 'max': 20, 'cout': 1, 'points_sorte': 'caracteristique'}, {'sorte': 'effet', 'valeur': 'degats', 'ajout': 0, 'pourcent': 5}, {'sorte': 'effet', 'valeur': 'charge_max', 'ajout': 2, 'pourcent': 0}, {'sorte': 'caracteristique', 'nom': 'Vigueur', 'description': 'Plus de vie et de souffle.', 'max': 20, 'cout': 1, 'points_sorte': 'caracteristique'}, {'sorte': 'effet', 'valeur': 'sante_max', 'ajout': 10, 'pourcent': 0}, {'sorte': 'effet', 'valeur': 'endurance_max', 'ajout': 5, 'pourcent': 0}, {'sorte': 'caracteristique', 'nom': 'Agilité', 'description': 'Courir plus vite.', 'max': 10, 'cout': 1, 'points_sorte': 'caracteristique'}, {'sorte': 'effet', 'valeur': 'vitesse_deplacement', 'ajout': 0, 'pourcent': 2}]</code></td>
+<td>une ligne par « Ligne » : <a href="#champs-caracteristiques">ses champs</a></td>
+</tr>
+<tr>
+<td>Le joueur peut réinitialiser ses caractéristiques</td>
+<td>Un bouton « Réinitialiser » dans la fenêtre Personnage rend les points dépensés.</td>
+<td><code>reinitialiser</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Coût de la réinitialisation : objet (vide : gratuit)</td>
+<td>Une sorte d'objet de l'inventaire, comme « Or ».</td>
+<td><code>reinit_objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Coût de la réinitialisation : combien</td>
+<td>Combien de cet objet.</td>
+<td><code>reinit_nombre</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Valeurs en plus (pour les scripts)</td>
+<td>Le module déclare déjà sante_max, degats, endurance_max, endurance_recuperation, inventaire_places, charge_max, vitesse_recolte, vitesse_fabrication et vitesse_deplacement. Ajoutez-en (une défense, une chance de coup critique) : un script les lit par game.stat(joueur, nom).</td>
+<td><code>valeurs</code></td>
+<td>Liste de « Valeur »</td>
+<td>(vide)</td>
+<td>une ligne par « Valeur » : <a href="#champs-valeurs">ses champs</a></td>
+</tr>
+<tr>
+<td>Les niveaux requis</td>
+<td>« Niveau 10 » pour une épée, « Cuisine 5 » pour une recette. Vérifié chez l'hôte ; le refus dit ce qu'il faut.</td>
+<td><code>requis</code></td>
+<td>Liste de « Niveau requis »</td>
+<td>(vide)</td>
+<td>une ligne par « Niveau requis » : <a href="#champs-requis">ses champs</a></td>
+</tr>
+<tr>
+<td>Ennemis : comment ils grandissent avec leur niveau</td>
+<td>La santé, les dégâts et l'XP d'un ennemi grandissent par niveau au-dessus du premier.</td>
+<td><code>croissance_forme</code></td>
+<td>Choix dans une liste</td>
+<td>Linéaire : le même ajout à chaque niveau</td>
+<td><code>lineaire</code> : Linéaire : le même ajout à chaque niveau<br><code>exponentielle</code> : Exponentielle : de plus en plus vite</td>
+</tr>
+<tr>
+<td>Ennemis : santé en plus par niveau (0,08 : +8 %)</td>
+<td>Par niveau au-dessus du premier.</td>
+<td><code>croissance_sante</code></td>
+<td>Nombre</td>
+<td>0.08</td>
+<td>de 0 à 10</td>
+</tr>
+<tr>
+<td>Ennemis : dégâts en plus par niveau</td>
+<td>Par niveau au-dessus du premier.</td>
+<td><code>croissance_degats</code></td>
+<td>Nombre</td>
+<td>0.05</td>
+<td>de 0 à 10</td>
+</tr>
+<tr>
+<td>Ennemis : XP en plus par niveau</td>
+<td>Par niveau au-dessus du premier.</td>
+<td><code>croissance_xp</code></td>
+<td>Nombre</td>
+<td>0.1</td>
+<td>de 0 à 10</td>
+</tr>
+<tr>
+<td>Ennemis qui grandissent avec le temps : minutes d'un jour de jeu</td>
+<td>Sans le système Jour et nuit : la durée d'un jour qui compte. Avec lui, chaque lever du soleil compte un jour.</td>
+<td><code>minutes_par_jour</code></td>
+<td>Nombre</td>
+<td>20</td>
+<td>de 0.1 à 100 000</td>
+</tr>
+<tr>
+<td>Pseudo et niveau au-dessus des têtes</td>
+<td>Au-dessus de chaque autre joueur proche : son pseudo et le niveau de la piste principale (« Léa · Niv. 5 »), chez chaque joueur. Décoché par défaut : le moteur n'affiche pas de pseudo au-dessus des têtes.</td>
+<td><code>noms_tetes</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Pseudo au-dessus des têtes : distance (m)</td>
+<td>Au-delà, rien ne s'affiche.</td>
+<td><code>distance_noms</code></td>
+<td>Nombre</td>
+<td>30</td>
+<td>de 1 à 1000</td>
+</tr>
+<tr>
+<td>Barre d'XP</td>
+<td>Une barre de la piste principale, avec le niveau.</td>
+<td><code>barre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Barre : bord gauche (part de l'écran)</td>
+<td>0 : à gauche, 1 : à droite.</td>
+<td><code>barre_x</code></td>
+<td>Nombre</td>
+<td>0.3</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Barre : hauteur (part de l'écran)</td>
+<td>0 : en haut, 1 : en bas. Si la barre rapide de l'Inventaire est à cet endroit, la barre d'XP se pose juste au-dessus d'elle, à sa largeur.</td>
+<td><code>barre_y</code></td>
+<td>Nombre</td>
+<td>0.965</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Barre : largeur</td>
+<td>Part de la largeur de l'écran.</td>
+<td><code>barre_largeur</code></td>
+<td>Nombre</td>
+<td>0.4</td>
+<td>de 0.05 à 1</td>
+</tr>
+<tr>
+<td>Barre : épaisseur</td>
+<td>Part de la hauteur de l'écran.</td>
+<td><code>barre_hauteur</code></td>
+<td>Nombre</td>
+<td>0.012</td>
+<td>de 0.002 à 0.1</td>
+</tr>
+<tr>
+<td>Barre : couleur</td>
+<td>La couleur de l'XP gagnée.</td>
+<td><code>barre_couleur</code></td>
+<td>Couleur</td>
+<td><span class="wm-couleur" style="background:#7fb4ff"></span> <code>#7fb4ff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Montrer l'XP gagnée (« +45 XP »)</td>
+<td>Un instant, au-dessus de la barre, à droite. Une autre piste que la principale dit son nom : « +30 XP (Récolte) ».</td>
+<td><code>afficher_gain</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Durée de « +45 XP » (s)</td>
+<td>Combien de temps il reste à l'écran.</td>
+<td><code>duree_gain</code></td>
+<td>Nombre</td>
+<td>1.5</td>
+<td>de 0.2 à 30</td>
+</tr>
+<tr>
+<td>Annoncer « Niveau 5 ! »</td>
+<td>Au milieu de l'écran, avec le son et l'effet ci-dessous.</td>
+<td><code>annoncer_niveau</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Son d'un niveau gagné (facultatif)</td>
+<td>Joué pour ce joueur seulement.</td>
+<td><code>son_niveau</code></td>
+<td>Son de la bibliothèque</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Effet d'un niveau gagné</td>
+<td>Des particules autour du joueur.</td>
+<td><code>effet_niveau</code></td>
+<td>Choix dans une liste</td>
+<td>Magie</td>
+<td><code>` : Aucun&lt;br&gt;</code>magie<code>: Magie&lt;br&gt;</code>etincelles<code>: Étincelles&lt;br&gt;</code>fumee` : Fumée</td>
+</tr>
+<tr>
+<td>Durée de « Niveau 5 ! » (s)</td>
+<td>Combien de temps l'annonce reste.</td>
+<td><code>duree_niveau</code></td>
+<td>Nombre</td>
+<td>2.5</td>
+<td>de 0.5 à 30</td>
+</tr>
+<tr>
+<td>Fenêtre Personnage avec une touche (P)</td>
+<td>La touche se règle dans les commandes du jeu. Décoché : seulement l'événement progression.ouvrir.</td>
+<td><code>fenetre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Arrêter le jeu quand la fenêtre est ouverte</td>
+<td>À plusieurs, seul ce joueur est arrêté.</td>
+<td><code>pause_fenetre</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Largeur de la fenêtre</td>
+<td>Part de la largeur de l'écran.</td>
+<td><code>largeur</code></td>
+<td>Nombre</td>
+<td>0.5</td>
+<td>de 0.3 à 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-pistes">Les champs de chaque « Piste »<a class="headerlink" href="#champs-pistes" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Piste » a son cadre, numéroté ; <strong>Ajouter : Piste</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant (en minuscules, sans espace)</td>
+<td>Le nom court de la piste dans les événements, les sources et les niveaux requis, comme « personnage » ou « cuisine ». Ne le changez plus une fois le jeu sorti : la sauvegarde le garde.</td>
+<td><code>cle</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nom vu par le joueur</td>
+<td>Comme « Personnage » ou « Cuisine », traduit dans la langue du joueur.</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Icône (facultative)</td>
+<td>Une petite image devant son nom dans la fenêtre Personnage.</td>
+<td><code>icone</code></td>
+<td>Image de la bibliothèque</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Cachée tant qu'elle n'a pas commencé</td>
+<td>Coché : la fenêtre ne la montre qu'après la première XP gagnée sur elle, comme une découverte.</td>
+<td><code>cachee</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Courbe : l'XP de chaque niveau</td>
+<td>Combien d'XP coûte chaque niveau : une formule, un tableau collé d'un tableur, des paliers. L'éditeur la dessine, propose des préréglages et simule le temps de jeu. Son « écart » règle ce que rapporte un ennemi plus fort ou plus faible.</td>
+<td><code>courbe</code></td>
+<td>Courbe de progression</td>
+<td><code>{'forme': 'progressive', 'base': 100, 'hausse': 50, 'niveau_max': 50}</code></td>
+<td></td>
+</tr>
+<tr>
+<td>À la mort du joueur</td>
+<td>Ce que la mort coûte sur cette piste. On ne redescend jamais de niveau. Récupérable : l'XP attend à l'endroit de la mort ; y revenir la rend (une nouvelle mort avant efface l'ancienne).</td>
+<td><code>mort</code></td>
+<td>Choix dans une liste</td>
+<td>Aucune perte à la mort</td>
+<td><code>aucune</code> : Aucune perte à la mort<br><code>part</code> : Une part de l'XP du niveau en cours est perdue<br><code>recuperable</code> : Une part perdue, récupérable sur le lieu de la mort</td>
+</tr>
+<tr>
+<td>Part perdue (% de l'XP du niveau en cours)<br><em>affiché seulement si <strong>À la mort du joueur</strong> est « Une part de l'XP du niveau en cours est perdue » ou « Une part perdue, récupérable sur le lieu de la mort »</em></td>
+<td>10 : un dixième de ce qui a été gagné depuis le dernier niveau.</td>
+<td><code>mort_part</code></td>
+<td>Nombre</td>
+<td>10</td>
+<td>de 0 à 100</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-regles">Les champs de chaque « Règle »<a class="headerlink" href="#champs-regles" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Règle » a son cadre, numéroté ; <strong>Ajouter : Règle</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom de l'événement</td>
+<td>Le nom exact, comme « dialogue.fin » ou « boutique.achat ».</td>
+<td><code>evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement pour l'objet nommé (vide : n'importe lequel)</td>
+<td>Le nom de ce que l'événement concerne, sans numéro (un objet, une quête, une ressource, une connaissance).</td>
+<td><code>cible</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Piste (vide : la principale)</td>
+<td>L'identifiant de la piste qui reçoit l'XP.</td>
+<td><code>piste</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>XP</td>
+<td>L'XP donnée chaque fois, avant les multiplicateurs.</td>
+<td><code>xp</code></td>
+<td>Nombre</td>
+<td>10</td>
+<td>de 0 à 1 000 000</td>
+</tr>
+<tr>
+<td>Combien de fois</td>
+<td>Une seule fois : comme une découverte, gardée dans la sauvegarde.</td>
+<td><code>fois</code></td>
+<td>Choix dans une liste</td>
+<td>Chaque fois</td>
+<td><code>toujours</code> : Chaque fois<br><code>une</code> : Une seule fois par joueur</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-zones">Les champs de chaque « Zone »<a class="headerlink" href="#champs-zones" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Zone » a son cadre, numéroté ; <strong>Ajouter : Zone</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom de la zone ou étiquette</td>
+<td>Le nom de l'objet zone sans numéro, comme « Terres brûlées », ou une étiquette qu'il porte.</td>
+<td><code>zone</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Multiplicateur</td>
+<td>1,5 : la moitié en plus tant que le joueur y est.</td>
+<td><code>multiplicateur</code></td>
+<td>Nombre</td>
+<td>1.5</td>
+<td>de 0 à 1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-points">Les champs de chaque « Sorte de points »<a class="headerlink" href="#champs-points" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Sorte de points » a son cadre, numéroté ; <strong>Ajouter : Sorte de points</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td>Le nom court, comme « caracteristique » ou « talent ».</td>
+<td><code>sorte</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Nom vu par le joueur</td>
+<td>Comme « Points de talent ».</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Pour le Savoir (son arbre de connaissances)</td>
+<td>Coché : ces points vont au système Savoir, qui les garde et les dépense.</td>
+<td><code>savoir</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-recompenses">Les champs de chaque « Récompense »<a class="headerlink" href="#champs-recompenses" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Récompense » a son cadre, numéroté ; <strong>Ajouter : Récompense</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Piste (vide : la principale)</td>
+<td>L'identifiant de la piste dont les niveaux donnent cette récompense.</td>
+<td><code>piste</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Quand</td>
+<td>À chaque niveau, aux niveaux listés (5, 10, 20), ou tous les 10 à partir du 10.</td>
+<td><code>quand</code></td>
+<td>Choix dans une liste</td>
+<td>À chaque niveau</td>
+<td><code>tous</code> : À chaque niveau<br><code>liste</code> : À certains niveaux (une liste)<br><code>chaque</code> : Tous les N niveaux, à partir d'un niveau</td>
+</tr>
+<tr>
+<td>Niveaux (séparés par des virgules)<br><em>affiché seulement si <strong>Quand</strong> est « À certains niveaux (une liste) »</em></td>
+<td>Comme « 5, 10, 20 ».</td>
+<td><code>niveaux</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Tous les<br><em>affiché seulement si <strong>Quand</strong> est « Tous les N niveaux, à partir d'un niveau »</em></td>
+<td>Tous les combien de niveaux.</td>
+<td><code>chaque</code></td>
+<td>Nombre</td>
+<td>10</td>
+<td>de 1 à 1000, en nombre entier</td>
+</tr>
+<tr>
+<td>À partir du niveau<br><em>affiché seulement si <strong>Quand</strong> est « Tous les N niveaux, à partir d'un niveau »</em></td>
+<td>Le premier niveau qui la donne.</td>
+<td><code>a_partir</code></td>
+<td>Nombre</td>
+<td>10</td>
+<td>de 1 à 10 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Ce qu'elle donne</td>
+<td>Des points à dépenser, un bonus qui s'ajoute tout seul, un déblocage, ou un événement pour une règle du Déclencheur (un son, une porte qui s'ouvre).</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Des points</td>
+<td><code>points</code> : Des points<br><code>bonus</code> : Un bonus automatique à une valeur<br><code>connaissance</code> : Une connaissance (système Savoir)<br><code>objet</code> : Un objet dans l'inventaire<br><code>marque</code> : Une marque (Dialogues, Quêtes)<br><code>evenement</code> : Un événement (Déclencheur, scripts)</td>
+</tr>
+<tr>
+<td>Sorte de points<br><em>affiché seulement si <strong>Ce qu'elle donne</strong> est « Des points »</em></td>
+<td>L'identifiant d'une sorte de points, comme « caracteristique » ou « talent ».</td>
+<td><code>points_sorte</code></td>
+<td>Texte</td>
+<td><code>caracteristique</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Combien<br><em>affiché seulement si <strong>Ce qu'elle donne</strong> est « Des points » ou « Un objet dans l'inventaire »</em></td>
+<td>Combien de points ou d'objets.</td>
+<td><code>nombre</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Valeur modifiable<br><em>affiché seulement si <strong>Ce qu'elle donne</strong> est « Un bonus automatique à une valeur »</em></td>
+<td>sante_max, degats, endurance_max, endurance_recuperation, inventaire_places, charge_max, vitesse_recolte, vitesse_fabrication, vitesse_deplacement, ou une valeur du tableau « Valeurs en plus ».</td>
+<td><code>valeur</code></td>
+<td>Texte</td>
+<td><code>sante_max</code></td>
+<td></td>
+</tr>
+<tr>
+<td>+ un nombre<br><em>affiché seulement si <strong>Ce qu'elle donne</strong> est « Un bonus automatique à une valeur »</em></td>
+<td>Ajouté à la valeur à chaque niveau qui la donne.</td>
+<td><code>ajout</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de -1 000 000 à 1 000 000</td>
+</tr>
+<tr>
+<td>+ un pourcentage<br><em>affiché seulement si <strong>Ce qu'elle donne</strong> est « Un bonus automatique à une valeur »</em></td>
+<td>5 : +5 % de la valeur à chaque niveau qui le donne.</td>
+<td><code>pourcent</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de -100 à 10 000</td>
+</tr>
+<tr>
+<td>Son nom<br><em>affiché seulement si <strong>Ce qu'elle donne</strong> est « Une connaissance (système Savoir) », « Un objet dans l'inventaire », « Une marque (Dialogues, Quêtes) » ou « Un événement (Déclencheur, scripts) »</em></td>
+<td>Le nom de la connaissance ou de l'objet (comme dans leur système), le mot de la marque, ou le nom de l'événement envoyé (avec joueur, piste et niveau).</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-caracteristiques">Les champs de chaque « Ligne »<a class="headerlink" href="#champs-caracteristiques" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ligne » a son cadre, numéroté ; <strong>Ajouter : Ligne</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorte de ligne</td>
+<td>Une caractéristique, ou un effet de celle au-dessus.</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Caractéristique</td>
+<td><code>caracteristique</code> : Caractéristique<br><code>effet</code> : Effet</td>
+</tr>
+<tr>
+<td>Nom<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Caractéristique »</em></td>
+<td>Comme « Force » ou « Intelligence ».</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Description<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Caractéristique »</em></td>
+<td>Une phrase sous son nom dans la fenêtre.</td>
+<td><code>description</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Points au plus<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Caractéristique »</em></td>
+<td>Le rang le plus haut.</td>
+<td><code>max</code></td>
+<td>Nombre</td>
+<td>20</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Coût d'un rang (en points)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Caractéristique »</em></td>
+<td>Combien de points coûte un rang.</td>
+<td><code>cout</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Sorte de points dépensée<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Caractéristique »</em></td>
+<td>L'identifiant d'une sorte de points.</td>
+<td><code>points_sorte</code></td>
+<td>Texte</td>
+<td><code>caracteristique</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Valeur modifiable<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Effet »</em></td>
+<td>Comme sante_max, degats ou vitesse_deplacement.</td>
+<td><code>valeur</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>+ un nombre par rang<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Effet »</em></td>
+<td>Ajouté pour chaque rang.</td>
+<td><code>ajout</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de -1 000 000 à 1 000 000</td>
+</tr>
+<tr>
+<td>+ un pourcentage par rang<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Effet »</em></td>
+<td>3 : +3 % par rang.</td>
+<td><code>pourcent</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de -100 à 10 000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-valeurs">Les champs de chaque « Valeur »<a class="headerlink" href="#champs-valeurs" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Valeur » a son cadre, numéroté ; <strong>Ajouter : Valeur</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom</td>
+<td>En minuscules, comme « defense ».</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Valeur de départ</td>
+<td>Sa valeur sans bonus.</td>
+<td><code>base</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de -1 000 000 à 1 000 000</td>
+</tr>
+<tr>
+<td>Vue des autres joueurs</td>
+<td>Coché : envoyée à tous (au-dessus des têtes).</td>
+<td><code>partage</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-requis">Les champs de chaque « Niveau requis »<a class="headerlink" href="#champs-requis" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Niveau requis » a son cadre, numéroté ; <strong>Ajouter : Niveau requis</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ce qui demande un niveau</td>
+<td>Une zone refusée repousse le joueur là où il était.</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Un objet de l'inventaire (le tenir ou l'utiliser)</td>
+<td><code>objet</code> : Un objet de l'inventaire (le tenir ou l'utiliser)<br><code>recette</code> : Une recette (système Fabrication)<br><code>connaissance</code> : Une connaissance (système Savoir)<br><code>objet_monde</code> : Un objet du monde à utiliser (une porte)<br><code>zone</code> : Une zone où entrer</td>
+</tr>
+<tr>
+<td>Son nom</td>
+<td>Le nom de l'objet, de la recette, de la connaissance, ou de l'objet du monde sans numéro.</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Piste (vide : la principale)</td>
+<td>L'identifiant de la piste dont le niveau compte.</td>
+<td><code>piste</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Niveau requis</td>
+<td>Le niveau qu'il faut au moins.</td>
+<td><code>niveau</code></td>
+<td>Nombre</td>
+<td>5</td>
+<td>de 1 à 10 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Message du refus (vide : celui du jeu)</td>
+<td>Peut contenir {niveau} et {piste}. Vide : « Il faut le niveau {niveau} ({piste}). »</td>
+<td><code>message</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="commandes-ajoutees-au-jeu">Commandes ajoutées au jeu<a class="headerlink" href="#commandes-ajoutees-au-jeu" title="Permanent link">&para;</a></h2>
+<p>Elles apparaissent dans le panneau <strong>Commandes du jeu</strong> (mode Développeur), où l'on peut changer leur touche.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Nom pour les scripts</th>
+<th>Touche</th>
+<th>Manette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ouvrir la fenêtre Personnage</td>
+<td><code>character</code></td>
+<td>P</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#progressiondepenser"><code>progression.depenser</code></a></td>
+<td><code>joueur</code> (id?), <code>caracteristique</code> (text)</td>
+<td>Ask the Progression module to spend points on one rank of a characteristic (its name, as in its row) for the player: the host checks the points and the maximum, then answers progression.depense or progression.refus. The Character window sends it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionreinitialiser"><code>progression.reinitialiser</code></a></td>
+<td><code>joueur</code> (id?)</td>
+<td>Ask the Progression module to give back the points spent on characteristics (if the game allows it, for its cost). Answers progression.reinitialise or progression.refus.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressiondepense"><code>progression.depense</code></a></td>
+<td><code>joueur</code> (id), <code>caracteristique</code> (text), <code>rang</code> (number)</td>
+<td>A rank of a characteristic was bought: rang is its new rank. Its bonuses are already applied.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionrefus"><code>progression.refus</code></a></td>
+<td><code>joueur</code> (id), <code>raison</code> (text)</td>
+<td>Something was refused to the player by the Progression module: a required level (an item, a door, a zone), points missing, a maximum reached. raison is the text shown, already in the player's language.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionrecompense"><code>progression.recompense</code></a></td>
+<td><code>joueur</code> (id), <code>piste</code> (text), <code>niveau</code> (number), <code>sorte</code> (text), <code>nom</code> (text), <code>nombre</code> (number)</td>
+<td>A level gave one of its rewards: sorte is points, bonus, connaissance, objet, marque or evenement; nom its kind of points, value, knowledge, item, mark or event; nombre how many.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionniveau_ennemi"><code>progression.niveau_ennemi</code></a></td>
+<td><code>cible</code> (id), <code>niveau</code> (number)</td>
+<td>The Progression module gave an enemy its level (fixed, per zone, matched to the players or growing with time): its health and damage grew with it. To show it above its head.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionperte"><code>progression.perte</code></a></td>
+<td><code>joueur</code> (id), <code>piste</code> (text), <code>xp</code> (number), <code>recuperable</code> (boolean)</td>
+<td>The player died and lost xp on a track (never below its level). recuperable: the XP waits where they died.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionrecupere"><code>progression.recupere</code></a></td>
+<td><code>joueur</code> (id), <code>piste</code> (text), <code>xp</code> (number)</td>
+<td>The player came back where they died and recovered the xp lost on a track.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionreinitialise"><code>progression.reinitialise</code></a></td>
+<td><code>joueur</code> (id), <code>points</code> (number)</td>
+<td>The characteristics were reset: points is how many points came back.</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoirdonner_points"><code>savoir.donner_points</code></a></td>
+<td><code>points</code> (number), <code>joueur</code> (id?)</td>
+<td>Ask the knowledge system to give points to the player (version 26), to spend in the knowledge window: a level gained, a book read.</td>
+</tr>
+<tr>
+<td><a href="../../events/#savoirapprendre"><code>savoir.apprendre</code></a></td>
+<td><code>connaissance</code> (text), <code>joueur</code> (id?)</td>
+<td>Ask the knowledge system to teach connaissance to the player (version 26), even without what it needs first: a Trigger rule, a master in a Dialogue, a quest's reward. A game script can still refuse it (savoir.permise).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#dialoguemarquer"><code>dialogue.marquer</code></a></td>
+<td><code>marque</code> (text), <code>retirer</code> (boolean?)</td>
+<td>Ask the dialogue system to set a mark, from a script or another system; with retirer true, to remove it. Dialogue conditions then see it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#progressionxp"><code>progression.xp</code></a></td>
+<td><code>joueur</code> (id?), <code>cle</code> (text), <code>piste</code> (text), <code>gain</code> (number), <code>xp</code> (number), <code>niveau</code> (number), <code>source</code> (text)</td>
+<td>Sent by the engine (ADR-038) when a player gained XP on a track (game.progress_add_xp): gain is what was given after the global multiplier and the cap, xp the track's total, niveau its level, source where it came from, cle the player's key.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionniveau"><code>progression.niveau</code></a></td>
+<td><code>joueur</code> (id?), <code>cle</code> (text), <code>piste</code> (text), <code>niveau</code> (number), <code>ancien</code> (number)</td>
+<td>Sent by the engine for each level a player reached on a track (several levels at once: several events), also when an admin sets a level. The Progression module gives the rewards of that level; a Trigger rule can play a sound or open a door.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressiondepenser"><code>progression.depenser</code></a></td>
+<td><code>joueur</code> (id?), <code>caracteristique</code> (text)</td>
+<td>Ask the Progression module to spend points on one rank of a characteristic (its name, as in its row) for the player: the host checks the points and the maximum, then answers progression.depense or progression.refus. The Character window sends it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressiondepense"><code>progression.depense</code></a></td>
+<td><code>joueur</code> (id), <code>caracteristique</code> (text), <code>rang</code> (number)</td>
+<td>A rank of a characteristic was bought: rang is its new rank. Its bonuses are already applied.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionreinitialiser"><code>progression.reinitialiser</code></a></td>
+<td><code>joueur</code> (id?)</td>
+<td>Ask the Progression module to give back the points spent on characteristics (if the game allows it, for its cost). Answers progression.reinitialise or progression.refus.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionreinitialise"><code>progression.reinitialise</code></a></td>
+<td><code>joueur</code> (id), <code>points</code> (number)</td>
+<td>The characteristics were reset: points is how many points came back.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionrefus"><code>progression.refus</code></a></td>
+<td><code>joueur</code> (id), <code>raison</code> (text)</td>
+<td>Something was refused to the player by the Progression module: a required level (an item, a door, a zone), points missing, a maximum reached. raison is the text shown, already in the player's language.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionperte"><code>progression.perte</code></a></td>
+<td><code>joueur</code> (id), <code>piste</code> (text), <code>xp</code> (number), <code>recuperable</code> (boolean)</td>
+<td>The player died and lost xp on a track (never below its level). recuperable: the XP waits where they died.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionrecupere"><code>progression.recupere</code></a></td>
+<td><code>joueur</code> (id), <code>piste</code> (text), <code>xp</code> (number)</td>
+<td>The player came back where they died and recovered the xp lost on a track.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressiondonner"><code>progression.donner</code></a></td>
+<td><code>joueur</code> (id?), <code>xp</code> (number), <code>piste</code> (text?), <code>source</code> (text?)</td>
+<td>Ask the Progression module to give xp to the player (a Trigger rule, a script): it goes through the multipliers and the hook progression.gain, on the host. piste: a track's identifier (empty or missing: the main one); source: a short name for the repetition and the cap.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionouvrir"><code>progression.ouvrir</code></a></td>
+<td><code>joueur</code> (id?)</td>
+<td>Ask the Progression module to open the Character window of the player, as its key (P) does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santemort"><code>sante.mort</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id?)</td>
+<td>An object's health reached zero. What happens next belongs to the game: the health module does nothing else, unless its setting says to destroy the object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santeblesser"><code>sante.blesser</code></a></td>
+<td><code>cible</code> (id), <code>montant</code> (number), <code>source</code> (id?)</td>
+<td>Ask the health module to remove health from an object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesfin"><code>quetes.fin</code></a></td>
+<td><code>quete</code> (text), <code>xp</code> (number?), <code>piste</code> (text?), <code>groupe</code> (boolean?)</td>
+<td>A quest is finished: all its steps are done. Its reward, if any, has been asked to the inventory. xp and piste (version 28): its XP for the Progression module and the track that gets it (empty: the main one). groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationfabrique"><code>fabrication.fabrique</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>etabli</code> (text), <code>cible</code> (text?), <code>xp</code> (number?), <code>piste</code> (text?)</td>
+<td>The player crafted a recipe: its ingredients left the inventory and objet (quantite of it) came in, at once or at the end of its time in the queue. etabli is the kind of station where it was made (empty bare-handed), cible the station object (missing bare-handed).</td>
+</tr>
+<tr>
+<td><a href="../../events/#collecterecolte"><code>collecte.recolte</code></a></td>
+<td><code>cible</code> (id), <code>ressource</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>xp</code> (number?), <code>piste</code> (text?)</td>
+<td>A resource was used up and gave what it holds. The inventory, if present, has been asked to add it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#zoneentree"><code>zone.entree</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something entered a zone (an object carrying the zone system): a player, a character or a moving object, depending on what the zone detects (joueur: every player). joueur is set when qui is a player. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#zonesortie"><code>zone.sortie</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something left a zone. Not announced for an object removed from the game while inside.</td>
+</tr>
+<tr>
+<td><a href="../../events/#jour_nuitlever"><code>jour_nuit.lever</code></a></td>
+<td><code>jour</code> (number)</td>
+<td>The sun rose: day jour begins. Lamps tagged for the night went out.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueurarrivee"><code>joueur.arrivee</code></a></td>
+<td><code>joueur</code> (id), <code>numero</code> (number), <code>nom</code> (text)</td>
+<td>Sent by the engine, in a game with several players (the game setting Multiplayer), on the computer hosting the game, when a guest joins: joueur is their character (a copy of the player's), numero their place (1 to 7, the host being 0), nom the name they chose. game.players() lists them all. Scripts only run on the host.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueurprofil"><code>joueur.profil</code></a></td>
+<td><code>joueur</code> (id), <code>profil</code> (table), <code>nouveau</code> (boolean)</td>
+<td>Sent by the engine on the host (ADR-020 § 18) when a player enters with a character: joueur is their character, profil the choices they made on their own PC (game.profile_send) once the game's check accepted them (game.override("profil.verifier")), nouveau true for a character just created, false for one this world's save already had. The script applies only what it understands (hair, colors, name): the profile is plain data and can never give items or progress. Also sent on the host or in solo when the player on this PC calls game.profile_send.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueurreconnecte"><code>joueur.reconnecte</code></a></td>
+<td><code>joueur</code> (id), <code>numero</code> (number), <code>nom</code> (text)</td>
+<td>Sent by the engine on the host when a guest whose connection dropped comes back in time and takes their place again: same character, same bag, the same per-player scripts that kept running (no joueur.depart nor joueur.arrivee was sent). Meanwhile their character stood still. A module can show them a message or resend what is only shown once.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueurdepart"><code>joueur.depart</code></a></td>
+<td><code>joueur</code> (id), <code>numero</code> (number)</td>
+<td>Sent by the engine on the host when a guest leaves the game (they quit, or their connection was lost and they did not come back in time, the game setting Place kept after a drop): their character is removed right after. A module forgets what it kept for them.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairemanque"><code>inventaire.manque</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Items could not be removed: there are not enough.</td>
+</tr>
+<tr>
+<td><a href="../../events/#scenechange"><code>scene.change</code></a></td>
+<td><code>depuis</code> (text), <code>vers</code> (text)</td>
+<td>Sent by the engine once the player has arrived in another scene of the game (game.go_to, or a passage). Scripts keep running across scenes: this is when a module looks at the objects of the new scene.</td>
+</tr>
+<tr>
+<td><a href="../../events/#languechange"><code>langue.change</code></a></td>
+<td><code>langue</code> (text)</td>
+<td>Sent by the engine when the player changes the game's language (game.set_language, the Menu options). A module redraws what it already shows: its texts go through game.t and game.language.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-quun-script-peut-remplacer-gameoverride">Points qu'un script peut remplacer (game.override)<a class="headerlink" href="#points-quun-script-peut-remplacer-gameoverride" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<ul>
+<li><code>progression.gain</code> : function(default, joueur, piste, xp, source) -&gt; the XP given (a number; 0: nothing). Called before each gain, after the multipliers (level gap, repetition, first time, zone; the global multiplier comes after, in the engine). piste is the track's key, source names where it comes from (ennemi:Loup, quete:Titre, fabrication:Hache, collecte:Bois, regle:event, recuperation). For double XP at night, a bonus with a ring, nothing for a track in a place.</li>
+<li><code>progression.requis</code> : function(default, joueur, sorte, nom, piste, niveau) -&gt; true, or false and the text shown: whether the player may use what asks for a level. sorte: objet (hold or use an item), recette, connaissance, objet_monde (use an object of the world: a door), zone (enter a zone). The default compares the player's level on piste with niveau. To ask for a quest done, a knowledge, two tracks at once.</li>
+<li><code>progression.texte</code> : function(default, key) -&gt; the text shown for that key: titre, niveau, niveau_court, gain, monte, points, caracteristiques, depenser, reinitialiser, reinit_cout, fermer, pas_de_points, max_atteint, refus_requis, perdu, recupere, rien, xp. It may hold {n}, {piste}, {xp}, {requis}, {nom}, {niveau}, {objet}, replaced afterwards (in the player's language). The default is the game's translation of the text in the original language; without one, French or English, after the player's language.</li>
+</ul>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="progression-progression">Progression (<code>progression</code>)<a class="headerlink" href="#progression-progression" title="Permanent link">&para;</a></h3>
+<p>Experience, levels, points to spend and characteristics (ADR-038): the « level up » of RPGs, survival and action games, as user data. Add it once with <code>modules_add</code> when the user asks for levels, XP, skills that rise with use, characteristics (strength, agility...) or talent points; never write an XP script. The engine keeps the progress of each player (in the world's save, under their key; only the host writes); this module decides where XP comes from, how much, and what a level gives. Change what it does through its settings, its events and its hooks (<code>game.override</code>), never by editing it.</p>
+<h4 id="tracks-pistes">Tracks (<code>pistes</code>)<a class="headerlink" href="#tracks-pistes" title="Permanent link">&para;</a></h4>
+<p>Each row is a track: <code>cle</code> (identifier, lowercase: <code>personnage</code>, <code>cuisine</code>, <code>bucheronnage</code>), <code>nom</code> (shown, translated), <code>icone</code>, <code>cachee</code> (hidden in the window until its first XP), <code>courbe</code> (type <code>curve</code>: the XP of each level; the editor draws it, offers the presets « RPG classique », « Survie lente », « Arcade rapide », « Hardcore » and simulates the play time; its <code>ecart</code> sets what a stronger or weaker enemy gives), <code>mort</code> (<code>aucune</code> by default, <code>part</code>: lose <code>mort_part</code> % of the XP earned since the last level, never a level; <code>recuperable</code>: the same, but the XP waits where the player died, and coming back there returns it). The main track (the level others see) is the game setting <code>progression.mainTrack</code> (« personnage » by default). Tune a curve with <code>progression_simulate</code>, then <code>modules_set</code>.</p>
+<h4 id="where-xp-comes-from">Where XP comes from<a class="headerlink" href="#where-xp-comes-from" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Enemies</strong>: on each enemy group, in the <code>ennemis</code> system: <code>xp</code> (at its first level; 0: none), <code>piste_xp</code> (empty: the main track), its level <code>niveau_mode</code> = <code>fixe</code> (<code>niveau</code>), <code>zone</code> (random between <code>niveau_min</code> and <code>niveau_max</code>), <code>joueurs</code> (the players' average level + <code>niveau_ecart</code>, within <code>niveau_min</code>..<code>niveau_max</code>) or <code>temps</code> (+1 level every <code>jours_par_niveau</code> game days from <code>niveau</code>, up to <code>niveau_plafond</code>; a day is a sunrise of <code>jour_nuit</code>, or <code>minutes_par_jour</code>). Its level grows its health (<code>croissance_sante</code>, +8 % per level), damage (<code>croissance_degats</code>) and XP (<code>croissance_xp</code>), <code>croissance_forme</code> linear or exponential. Switch off with <code>xp_ennemis</code>.</li>
+<li><strong>Quests</strong> (<code>quetes</code>, on the quest row: <code>xp</code>, <code>piste_xp</code>), <strong>recipes</strong> (<code>fabrication</code>, on the recipe row: <code>xp</code>, <code>piste_xp</code>), <strong>resources</strong> (<code>collecte</code>, per object: <code>xp</code>, <code>piste_xp</code>); switches <code>xp_quetes</code>, <code>xp_fabrication</code>, <code>xp_collecte</code>. A quest of the whole group (<code>quetes</code> game setting <code>groupe</code>, its <code>quetes.fin</code> carries <code>groupe: true</code>) gives its XP to every player present, each on their own track with their own « +XP »; any other quest, to the player who finishes it.</li>
+<li><strong>Places discovered</strong>: <code>xp_decouverte</code> for the first entry in each zone (<code>zone</code> system).</li>
+<li><strong>Free rules</strong> (<code>regles</code>): <code>evenement</code>, <code>cible</code> (only for the object named), <code>piste</code>, <code>xp</code>, <code>fois</code> (<code>toujours</code> or <code>une</code>: once per player). E.g. <code>dialogue.fin</code> 20, <code>savoir.appris</code> 30 to <code>recherche</code>, <code>boutique.achat</code> 2 to <code>commerce</code>.</li>
+<li><strong>Anything else</strong>: emit <code>progression.donner</code> {xp, piste?, source?} from a script or a Trigger rule (<code>envoyer</code>).</li>
+</ul>
+<h4 id="how-much">How much<a class="headerlink" href="#how-much" title="Permanent link">&para;</a></h4>
+<p>The amount is multiplied by: the <strong>level gap</strong> (<code>ecart_actif</code>, the curve's <code>ecart</code>); <strong>repetition</strong> (<code>repetition_actif</code>, <code>repetition_seuil</code> gains of the same source within <code>repetition_fenetre</code> seconds, then −<code>repetition_baisse</code> each, never below <code>repetition_plancher</code>); the <strong>first time</strong> (<code>premiere_bonus</code>, 0.5 = +50 % for the first enemy of a kind, first resource, first recipe); <strong>zones</strong> (<code>zones</code>: a zone's name without number, or a tag, and its <code>multiplicateur</code>); then the hook <code>progression.gain</code>; the engine applies the global multiplier (<code>progression.xpMultiplier</code> × a dedicated server's <code>xp_multiplicateur</code>) and the per-minute cap.</p>
+<p><strong>In a group</strong> (<code>groupe</code>): <code>tous</code> (default: each nearby player gets it all), <code>partage</code> (split between nearby players), <code>degats</code> (in proportion to the damage each dealt: Combat, Shooting and Enemies say who hit; with no damage known, the last hit gets it all), <code>dernier</code> (the last hit only). Nearby: within <code>rayon_groupe</code> metres of the enemy, or who hit it.</p>
+<h4 id="what-a-level-gives-recompenses">What a level gives (<code>recompenses</code>)<a class="headerlink" href="#what-a-level-gives-recompenses" title="Permanent link">&para;</a></h4>
+<p>Rows: <code>piste</code> (empty: the main one), <code>quand</code> (<code>tous</code>, <code>liste</code> with <code>niveaux</code> « 5, 10, 20 », <code>chaque</code> every <code>chaque</code> levels from <code>a_partir</code>), <code>sorte</code>: <code>points</code> (<code>points_sorte</code>, <code>nombre</code>), <code>bonus</code> (<code>valeur</code>, <code>ajout</code> +n and/or <code>pourcent</code> +%, added for each such level: « +10 sante_max per level »), <code>connaissance</code> (<code>nom</code>: learnt in <code>savoir</code>), <code>objet</code> (<code>nom</code>, <code>nombre</code>: into the inventory), <code>marque</code> (<code>nom</code>: a Dialogue / quest mark), <code>evenement</code> (<code>nom</code>: an event with joueur, piste, niveau, for a Trigger rule: a sound, a door). Kinds of points: <code>points</code> rows (<code>sorte</code>, <code>nom</code> shown, <code>savoir</code>: those points go to the Knowledge system's tree, as <code>savoir.donner_points</code>). <code>progression.niveau</code> is also announced by the engine for each level.</p>
+<h4 id="characteristics-caracteristiques">Characteristics (<code>caracteristiques</code>)<a class="headerlink" href="#characteristics-caracteristiques" title="Permanent link">&para;</a></h4>
+<p>A <code>caracteristique</code> row (<code>nom</code>, <code>description</code>, <code>max</code> rank, <code>cout</code> points per rank, <code>points_sorte</code>) followed by its <code>effet</code> rows (<code>valeur</code>, <code>ajout</code> per rank, <code>pourcent</code> per rank). No name is imposed (Force, Vigueur, Agilité are examples). The player spends in the Character window; <code>reinitialiser</code> allows a reset, for <code>reinit_nombre</code> × <code>reinit_objet</code> (empty: free).</p>
+<h4 id="values">Values<a class="headerlink" href="#values" title="Permanent link">&para;</a></h4>
+<p>The module declares the values it drives, read by the other systems with their own setting as base: <code>sante_max</code> (Santé: max health; health follows when it rises), <code>degats</code> (Combat: the player's hits; Ennemis: an enemy's hits and shots), <code>endurance_max</code>, <code>endurance_recuperation</code> (Endurance), <code>inventaire_places</code> (Inventaire: slots), <code>charge_max</code> (Inventaire: the maximum load, when its weight <code>poids_actif</code> is on; « Force: +2 kg of load per point » is an <code>effet</code> row <code>charge_max</code> <code>ajout</code> 2, in the default characteristics), <code>vitesse_recolte</code> (Collecte: divides the hits a resource needs), <code>vitesse_fabrication</code> (Fabrication: divides a recipe's time), <code>vitesse_deplacement</code> (the engine: walk, run, swim; the inventory's weight adds a negative bonus from the source « poids », down to 0 when it stops the player). <code>valeurs</code> adds more for scripts (<code>game.stat(player, name)</code>). Without this module, those systems behave as before. Bonuses are given again from the saved progress at the start, when a player arrives and after a load.</p>
+<h4 id="required-levels-requis">Required levels (<code>requis</code>)<a class="headerlink" href="#required-levels-requis" title="Permanent link">&para;</a></h4>
+<p>Rows: <code>sorte</code> (<code>objet</code>: holding or using an inventory item; <code>recette</code>; <code>connaissance</code>; <code>objet_monde</code>: using an object, a door, by its name without number; <code>zone</code>: entering a zone, the player is pushed back), <code>nom</code>, <code>piste</code>, <code>niveau</code>, <code>message</code> (with {niveau} and {piste}; empty: « Il faut le niveau 5 (Personnage). »). Checked on the host. The hook <code>progression.requis</code> can ask for more (a quest done, two tracks).</p>
+<h4 id="what-the-player-sees">What the player sees<a class="headerlink" href="#what-the-player-sees" title="Permanent link">&para;</a></h4>
+<p><strong>Above heads</strong> (<code>noms_tetes</code>, off by default since the engine shows no name above heads; <code>distance_noms</code>, 30 m): the name and main level of each other player nearby, « Léa · Niv. 5 », on every player's screen (theme role <code>nom.joueur</code>; the head is measured on the body). Turn it on when the user wants players to see each other's level.</p>
+<p><strong>A Group panel</strong> made by a game script: <code>game.players()</code> lists the players, <code>game.player_name(id)</code> their names and <code>game.progress_level(id)</code> their main level; both work in a guest's game too, for every player (the host sends them, protocol 17 and 24). E.g. one <code>game.hud_text</code> line per player, <code>game.player_name(p) .. " · " .. game.progress_level(p)</code>, redrawn on <code>progression.niveau</code> and <code>joueur.arrivee</code>/<code>joueur.depart</code>. A Group panel already written by the game (Naufragés' « Groupe ») is a script of the game: to show the level there, edit that script (not a module), adding <code>game.progress_level(p)</code> after each player's name on the line it draws.</p>
+<p>An XP bar of the main track with its level (<code>barre</code>, <code>barre_x</code>, <code>barre_y</code>, <code>barre_largeur</code>, <code>barre_hauteur</code>, <code>barre_couleur</code>); when the Inventory's quick bar is where the XP bar is set (at the bottom, by default), the XP bar sits just above it, as wide as it. « +45 XP » for a moment, above the bar on the right (<code>afficher_gain</code>, <code>duree_gain</code>; another track says its name: « +30 XP (Récolte) »); « Niveau 5 ! » (<code>annoncer_niveau</code>, <code>son_niveau</code>, <code>effet_niveau</code>, <code>duree_niveau</code>); the Character window (action <code>character</code>, key P; <code>fenetre</code>, <code>pause_fenetre</code>, <code>largeur</code>): one row per track (level, bar, XP), the points, the characteristics with their « Améliorer » buttons (« Maximum » at the top rank), the reset. A guest's clicks are checked by the host. Texts: hook <code>progression.texte</code>.</p>
+<p><strong>Its screens (version 8).</strong> These are screens the system delivers as data, each player seeing their own: « Barre d'expérience » (<code>Fond</code>, <code>Barre</code>, the level label <code>Étiquette</code> with <code>Niveau</code>; its place follows <code>barre_x</code>/<code>barre_y</code>/<code>barre_largeur</code>/<code>barre_hauteur</code>, or sits above the Inventory's « Barre rapide »), « Gain d'expérience » (<code>Fond</code>, <code>Gain</code>: « +45 XP », at the bar's right end), « Passage de niveau » (<code>Annonce</code>: « Niveau 5 ! »), « Messages de la progression » (<code>Message</code>, and <code>Refus</code> for a refusal, at the top while the window is closed) and « Fiche du personnage » (the Character window: <code>Fenêtre</code>, <code>Titre</code>, the list <code>Pistes</code> whose rows hold <code>Piste</code> with <code>Nom</code>, <code>Niveau</code>, <code>Barre</code>, <code>XP</code>, or <code>Rien</code>; <code>Caractéristiques</code>, <code>Points</code>, the list <code>Liste des caractéristiques</code> whose rows <code>Rangée</code> hold <code>Caractéristique</code> and the button <code>Améliorer</code> (action <code>ameliorer</code>), <code>Réinitialiser</code> (action <code>reinitialiser</code>), <code>Message</code>, <code>Refus</code>, <code>Fermer</code> (action <code>fermer</code>, B or Escape)). Their keys in <code>game_run</code> are <code>screen/shape</code> (<code>Fiche du personnage/Améliorer#2</code>, <code>Gain d'expérience/Gain</code>). To change their look, size, colours or texts' style, the user edits them in the screen editor (Game tab, Interface screens), or you change them with <code>screens_set</code>; never edit the module. <code>largeur</code> scales the window and its rows from the sizes of its file. Only the name above heads (<code>progression.tete.&lt;player&gt;</code>) is still drawn by the script.</p>
+<h4 id="hooks">Hooks<a class="headerlink" href="#hooks" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>progression.gain</code>: <code>function(default, joueur, piste, xp, source) return xp * 2 end</code> (double XP at night).</li>
+<li><code>progression.requis</code>: <code>function(default, joueur, sorte, nom, piste, niveau) ... return false, "Finish the Old Mine first." end</code>.</li>
+<li><code>progression.texte</code>: <code>function(default, cle) if cle == "monte" then return "LEVEL {n}!" end return default(cle) end</code>.</li>
+</ul>
+<h4 id="presets-by-genre">Presets by genre<a class="headerlink" href="#presets-by-genre" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>RPG classique</strong>: one track <code>personnage</code>, curve « RPG classique », enemies <code>fixe</code> or <code>zone</code>, <code>groupe</code> <code>tous</code>, rewards 1 characteristic point per level, +10 <code>sante_max</code> per level, a talent point every 5 levels (<code>savoir</code>), quests 100 to 500 XP; Force +5 % <code>degats</code> and +2 <code>charge_max</code> (kg of load) per point.</li>
+<li><strong>Survie lente</strong>: tracks <code>personnage</code> plus <code>recolte</code>/<code>fabrication</code> (curve « Survie lente »), XP mostly from <code>collecte</code> and <code>fabrication</code> (5 to 20 each), enemies <code>temps</code> (+1 level every 2 days), <code>repetition_actif</code>, rewards <code>vitesse_recolte</code> +3 % per level of <code>recolte</code>; with the inventory's weight, +5 <code>charge_max</code> every 5 levels of <code>personnage</code>.</li>
+<li><strong>Arcade rapide</strong>: curve « Arcade rapide » (20 levels), enemies <code>joueurs</code> (the group's level), <code>ecart_actif</code> off, <code>groupe</code> <code>partage</code>, big « Niveau ! » announcements, +5 % <code>degats</code> per level.</li>
+<li><strong>Hardcore</strong>: curve « Hardcore », <code>mort</code> <code>recuperable</code> with <code>mort_part</code> 50, enemies <code>zone</code>, <code>groupe</code> <code>dernier</code>, <code>repetition_actif</code>, no reset (<code>reinitialiser</code> off).</li>
+</ul>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/progression/module.json</code>, <code>modules/progression/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../chiffon/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Poupée de chiffon">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Poupée de chiffon
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../sante/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Santé">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Santé
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>
