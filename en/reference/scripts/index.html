@@ -1,0 +1,4249 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/scripts/">
+      
+      
+      
+        <link rel="prev" href="../events/">
+      
+      
+        <link rel="next" href="../agent-tools/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Game scripts (Luau) - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Game scripts (Luau)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game's systems and settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creator mode
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: screens, menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hosting your own lobby
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Your data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What's new
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Companion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Death and respawn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Knowledge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Race
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Round
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shops of the city
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Status effects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finding-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Finding objects
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-and-changing-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Moving and changing objects
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Characters
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joints-vehicles-ragdolls-systems-articulation-vehicule-chiffon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Joints, vehicles, ragdolls (systems "articulation", "vehicule", "chiffon"
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation-skinned-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Animation (skinned objects)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-and-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Player and inputs
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placed-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Placed lights
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sun-and-the-sky-of-the-scene-being-played" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The sun and the sky of the scene being played
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-realistic-sky-game-settings-sky-and-weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The realistic sky (Game settings, Sky and weather)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placed-cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Placed cameras
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aiming-ranged-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Aiming (ranged weapons
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animations-made-by-hand-and-cutscenes-timelines-of-the-scene-made-in-the-editor-or-with-timeline_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Animations made by hand and cutscenes (timelines of the scene, made in the editor or with timeline_set)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        On screen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interface building blocks
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawn-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawn screens
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The mouse
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-offers-has-a-translation-table-in-the-project-translationscodejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        game offers has a translation table in the project, translations/&lt;code&gt;.json
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Graphics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules-and-events-see-modules_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modules and events (see modules_list)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sound
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-mixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sound mixer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Videos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-the-players-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Saving the player's progress
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranged-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ranged weapons
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ending-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ending and debugging
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-the-syntax-not-a-model-for-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example of the syntax, not a model for your game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#finding-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Finding objects
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moving-and-changing-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Moving and changing objects
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shooting
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characters" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Characters
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#joints-vehicles-ragdolls-systems-articulation-vehicule-chiffon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Joints, vehicles, ragdolls (systems "articulation", "vehicule", "chiffon"
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animation-skinned-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Animation (skinned objects)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#player-and-inputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Player and inputs
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placed-lights" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Placed lights
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-sun-and-the-sky-of-the-scene-being-played" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The sun and the sky of the scene being played
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-realistic-sky-game-settings-sky-and-weather" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The realistic sky (Game settings, Sky and weather)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#placed-cameras" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Placed cameras
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aiming-ranged-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Aiming (ranged weapons
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#animations-made-by-hand-and-cutscenes-timelines-of-the-scene-made-in-the-editor-or-with-timeline_set" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Animations made by hand and cutscenes (timelines of the scene, made in the editor or with timeline_set)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#on-screen" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        On screen
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interface-building-blocks" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Interface building blocks
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawn-screens" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawn screens
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-mouse" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The mouse
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#game-offers-has-a-translation-table-in-the-project-translationscodejson" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        game offers has a translation table in the project, translations/&lt;code&gt;.json
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphics" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Graphics
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modules-and-events-see-modules_list" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Modules and events (see modules_list)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sound
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sound-mixer" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Sound mixer
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#videos" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Videos
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#saving-the-players-progress" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Saving the player's progress
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ranged-weapons" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ranged weapons
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ending-and-debugging" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ending and debugging
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-of-the-syntax-not-a-model-for-your-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Example of the syntax, not a model for your game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="game-scripts-luau">Game scripts (Luau)<a class="headerlink" href="#game-scripts-luau" title="Permanent link">&para;</a></h1>
+<p>Scripts give the game its own rules. They are written in <a href="https://luau.org">Luau</a>, in the editor's <strong>Scripts</strong> tab, and the agent writes them for you. Here is the full reference, exactly as the agent reads it (tool <code>scripts_reference</code>).</p>
+<p>Game scripts are Luau, stored in the scene. They run on every simulation step, with the same result for the same inputs: there is no clock (only the date, game.today()), no file or network access, and math.random is seeded.</p>
+<p>A script may define on_start() and on_update(dt), and on_save() and on_load(state) to keep its state in a saved game (see Saving). Each script has its own global variables; the table <code>shared</code> is common to all scripts. An error stops that script and is listed by game_run.</p>
+<p>Objects are designated by id (a string). Positions are vectors: vec(x, y, z), with .x .y .z, arithmetic, and vector.magnitude(v), vector.normalize(v). Y is up, metres. A rotation is a yaw in radians; 0 faces +Z.</p>
+<h2 id="finding-objects">Finding objects<a class="headerlink" href="#finding-objects" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.player() -&gt; id                    game.find(name_or_id) -&gt; id or nil
+game.players() -&gt; {ids}. The character of every player: the one playing on this computer first, then, in a game with several players (the game setting Multiplayer), each guest who joined. The engine sends "joueur.arrivee" {joueur, numero, nom} when a guest joins and "joueur.depart" {joueur, numero} when they leave. A guest whose connection drops keeps their place (the game setting, 60 s by default): their character stands still, their per-player scripts keep running; back in time, the engine sends "joueur.reconnecte" {joueur, numero, nom} and neither depart nor arrivee. Particles (game.effect with a preset, game.stop_effect, game.object_effect) and full-screen videos (game.video) started by scripts on the host reach the guests like sounds: from a per-player copy or with {joueur = id}, that player only (the host does not show them); otherwise everyone, except one-shot particles too far from a guest.
+Several players: game.player() is the player whose action is being handled. A script whose first lines hold the line "-- multijoueur: par_joueur" runs once per player (the host's copy, then one for each guest who joins, with its own variables, its own HUD and its own saved state): inside it, game.player() is always its player. A listener of an event that carries a field joueur handles that player; game.each_player(function(id) ... end) runs the function once per player, as that player. Elsewhere game.player() is the host's own player: in a game with several players, say which player. An event emitted while handling a player gets joueur = that player if it has none; the per-player copies of a script only receive the events of their player, and those that name no player.
+game.player_name(id?) -&gt; the player's name, the same everywhere (chat, "joined"/"left" lines, above heads, the server console): their character's name (the "nom" of the profile sent with game.profile_send and accepted by the host), else the name they typed to join or host, else "Joueur N" (N = game.player_number); nil if id is not a player. In a guest's game it comes from the host.    game.set_player_name(id, name) -&gt; true, or false and why. A game with its own character creation gives the player's name (1 to 32 bytes of text): the host's or the server's game only (a guest's game is refused: "only the host (or the server) names players"); the new name reaches every player.    game.player_number(id?) -&gt; 1 for the host, then 2, 3...; 0 if id is not a player (game.player_number(id) &gt; 0 asks "is it a player?").
+The controls, the mouse and the body of a player take an optional last argument, the player: game.pressed("attack", id), game.action, game.released, game.player_forward(id), game.set_player_speed(scale, id), game.set_player_can_run(on, id), game.set_player_can_jump(on, id), game.player_running(id), game.player_jumped(id), game.player_landed(id), game.player_swimming(id), game.set_player_dead(dead, id), game.player_dead(id), game.show_cursor(on, id), game.cursor_shown(id), game.drive(vehicle, id), game.leave_vehicle(id), game.driving(id), game.active_camera(id), game.camera_view(id), game.using_pad(id), game.pause(on, reason, {actions}, id), game.paused(id). game.use_camera and game.use_player_camera take {joueur = id}. Without it: the player whose action is being handled.
+game.with_tag(tag, {asleep=false}?) -&gt; {ids}     game.near(pos_or_id, radius, tag?, {asleep=false}?) -&gt; {ids}, nearest first
+game.exists(id) -&gt; bool                game.name(id) -&gt; string
+game.awake(id) -&gt; bool. In a large world, objects in 256 m tiles beyond the activity radius around the player (300 m by default) are asleep: they still exist and can be read, but do not move, walk, animate or detect, and game.with_tag, game.with_system and game.near leave them out unless {asleep = true}. The engine sends "monde.sommeil" {objets} and "monde.reveil" {objets} when they fall asleep and wake up; compare game.time() on waking to catch up the time they slept. The tag "toujours_actif" (or a system listed in the game setting alwaysActiveSystems) keeps an object awake everywhere. Without "Large world", everything is awake.
+game.has_tag(id, tag)   game.add_tag(id, tag)   game.remove_tag(id, tag)
+game.data(id) -&gt; table or nil. The data an extension gave an object it made: a shop of a generated city (see Shops of the city), a traffic light or a speed limit sign (see Traffic lights of the city); nil for other objects.
+game.distance(a, b)                    game.line_of_sight(a, b) -&gt; bool, blocked by colliders. a and b: id or vector.
+</code></pre></div>
+<h2 id="moving-and-changing-objects">Moving and changing objects<a class="headerlink" href="#moving-and-changing-objects" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.position(id) -&gt; vector            game.set_position(id, v). Moves its collider too; teleports a character.
+game.rotation(id) -&gt; yaw               game.set_rotation(id, yaw)      game.face(id, pos_or_id)
+game.bounds(id) -&gt; low, high or nil. The box it fills in the world, what it contains included, measured on its models (hidden ones too): low.y is its foot, high - low its size. nil if it has no model. Never guess a model's size: measure it.
+game.scale(id) -&gt; vector               game.set_scale(id, number_or_vector). What it contains follows, along its own axes, as in the editor: their place, size and collider; the player put inside it moves with it, at their own size.
+game.go_to(scene, arrival?). Goes to another scene of the game (a building's inside, a cave, the next level), after a fade to black, at the object named arrival (an empty marker placed there), or where the player stands in that scene. Scripts keep running and keep their variables; the scene left stays as it was. Sends "scene.change" {depuis, vers} once there. game.bring_along(id, true|false): that object (a companion) enters with the player, with its children, the next scene it is not in yet; place it near the player on "scene.change".
+game.scene() -&gt; name of the current scene    game.scenes() -&gt; {names}. A scene's name is its file name, without folder or extension.
+game.start_scene() -&gt; the scene where the game starts for the player (the project's start scene), even when a test run starts from another scene; "" for a game of a single scene.
+game.visible(id) -&gt; bool               game.set_visible(id, bool)            game.set_solid(id, bool). false: it stops nobody any more, but stays visible (a tree falling).
+game.set_color(id, vec(r, g, b)): its color (sRGB, 0 to 1): tints its model, and colors an engine shape ("builtin:cube"). Online, guests see it on objects made with game.spawn (and their copies), not on objects placed in the scene.
+game.effect(id, kind, {duration=1, away_from=pos_or_id, after="destroy" or "hide"}?). The engine animates it around its base, whatever the model: "fall" (tips over, away from away_from), "collapse" (breaks into pieces of its own model that fall in a heap), "shrink", "burst" (breaks into pieces that fly out, bounce and fade), "shake" (trembles, then comes back). after="destroy" removes it at the end; after="hide" hides it and puts it back as it was, so it reappears upright when shown again. What it contains (its children) follows it, as with game.set_scale, and comes back with it.
+game.effect(preset, pos_or_id, {size=1, color=vec, amount=1, duration, loop=false, direction=vec, light=true, light_intensity=1, light_shadows=true}?) -&gt; handle. "feu", "explosion", "magie", "etincelles" and "impact" also give their own light (it follows the effect, flickers with a fire, grows with size, casts shadows for "feu", "explosion" and "magie"): light=false removes it, light_intensity multiplies it, light_shadows=false keeps it without shadows. It changes nothing in the game. Particles, simulated by the game (the same game gives the same particles) and drawn by the renderer. preset: "eclats" (chips; on an object they take its colour), "eclats_bois", "eclats_pierre", "poussiere" (dust spreading on the ground), "feu" (flames with a little smoke and sparks: a campfire at size 1, a torch at 0.4), "fumee", "explosion", "etincelles", "impact" (a hit: a flash, sparks, dust), "pluie", "neige" (falling from a disc around the place: size widens it), "magie", "faisceau" (a column of light rising straight from a point, on a soft glowing foot: marks loot from afar, by day and night; what passes in front hides it). On an object, a looping effect follows it. size scales the whole effect; amount the number of particles; duration in seconds (loop: 0 runs until game.stop_effect). direction: where chips or sparks fly (on an object, chips jump from the spot nearest the player, in its colour, toward the player). The report counts them under particles.
+game.stop_effect(handle). It stops emitting; its particles end their life.
+game.object_effect(id, on). Starts again (true) or stops (false) the effect an object carries with the "particules" system (a campfire lit or put out), and stops the looping effects scripts put on it.
+game.decal(image, pos_or_id, {size=1, normal=vec(0,1,0), angle=0, opacity=1, color=vec(1,1,1), life=0}?) -&gt; handle. Projects an image on the surfaces under it: a footprint, an impact, a stain, a puddle, a sign. image: "tache", "impact", "brulure", "flaque", "pas", "trace", or an image file of the project (PNG, JPEG). normal: the surface it lies on (up for the ground, a wall's outward direction). angle: radians around the normal. life: seconds before it fades, 0 to keep it. A game keeps a limited number of decals: the oldest disappears to make room. game.remove_decal(handle) removes one. The report counts them under decals.
+game.instance_layer(name, model, {shadows=true, distance=400}?). Creates (or changes) a named instance layer: one model drawn in series at many places, without one object per copy (parked cars, street furniture, a distant crowd). Thousands of copies cost a few draws: the renderer groups them in 64 m squares and only redraws the squares that changed. Copies are drawn, not simulated: no collider, no script, not saved. distance: beyond it (m), a square is not drawn; the model's LOD versions are used if it has them.
+game.set_instance(name, number, pos, {angle=0, scale=1, color=vec(1,1,1)}?). Puts or moves the copy with this number (a whole number of your choice, to change or remove it later). The model's lowest point sits on pos; angle: radians around the vertical. color multiplies the parts whose material name contains "carrosserie", "peinture", "teinte", "paint", "body" or "tint" (the car body, not its windows and tyres; color is sRGB, 0 to 1, like game.set_color), or the whole model if no part has such a name. game.remove_instance(name, number) -&gt; removed? game.remove_instance_layer(name) -&gt; removed?
+game.parent(id) -&gt; id or nil             game.children(id) -&gt; {id}. Moving, turning, scaling, hiding, cloning or destroying a parent carries its children along.
+game.clone(id, pos, {tags={...}, systems={module = {values}}}?) -&gt; new id. Clones a template (usually hidden, with visible: false), which keeps tags, collider, animations and systems; the clone is visible. systems gives the copy alone systems of the game on top of the template's, with these values over each object's defaults (and what they require: a boutique brings interaction): a clerk copied from the pool becomes a merchant one uses. A system that is not in the game is an error. A vehicle (car, motorbike, boat) clones into another vehicle you can drive, with its wheels.
+game.destroy(id). Removes it and its collider: a door or a wall can open that way. Not the player.
+game.attach(id, holder, {bone=, offset=vec(0,0,0), rotation=vec(0,0,0), like=}?). Holds an object on a bone of an animated character (the player, another player, a character): an axe in the hand, a torch, a bag on the back. It follows the bone as the character walks, runs, strikes or chops, and no longer blocks anything. bone: a bone of the holder (read them with asset_info); without it, the bone that holds things, found by measuring the skeleton (game.hand_bone). The object is placed on the bone at rest, offset (metres) and rotation (degrees) counted along the bone's axes. like: an object already placed on a bone in the editor (a hidden axe set in the hand by hand): its exact place on its bone is reused. A copy held this way is not kept by game.save: put it back in the hand after game.load (the inventaire system does it for the item held).
+game.detach(id). Lets go of it: it stays where it is, free.
+game.hand_bone(id) -&gt; bone name or nil. The bone of a character that holds things: a bone made for it under the right hand if the model has one (its name says slot, grip, weapon, prop...), else the right hand, found by its name (hand_r, RightHand, mixamorig:RightHand...) or by the shape of the skeleton. Nothing is assumed of a pack.
+game.body_bone(id, part) -&gt; bone name or nil. The bone of a part of a character's body, found by measuring its skeleton (names and shape, any pack): tete, cou, poitrine, bassin, epaule_gauche, epaule_droite, bras_gauche, bras_droit, avant_bras_gauche, avant_bras_droit, main_gauche, main_droite, cuisse_gauche, cuisse_droite, jambe_gauche, jambe_droite, pied_gauche, pied_droit. Never write a bone name of a pack: ask for the part.
+game.attach(id, holder, {weapon=true, front="auto", upright=false, hand="right", hold="auto"}). Holds it like a weapon, measured on its model, nothing assumed of the file: the barrel is its longest side, its front (the muzzle) the thinnest end (front "+x"..."-z" forces it), its top the side away from the grip; the grip goes into the palm of the hand (found by the bone roles), the barrel along the fingers, the top on the thumb side. upright: held across the fist like a bow. melee=true: a melee weapon or tool (sword, dagger, axe, hammer, mace, pickaxe, spear, staff), measured on its profile along its longest side: the handle is the longest run of round, narrow sections; the hand grips it from its end away from the head, at three times its thickness (the middle of a sword grip, low on a long haft); the front is the side with the most material outside the handle (the head, the blade and its guard; a uniform staff: its thicker end, else +), front "+x"..."-z" forces it; the handle goes across the palm, the head or blade on the thumb side, the edge along the fingers; grip_at: the hand from the back (0) to the front (1). hand "left": the left hand. length: its real length in metres for a 1.8 m holder (along the barrel; a bow's height), scaled to the holder's measured height (reference lengths: pistol 0.20, revolver 0.28, submachine gun 0.6, assault rifle 0.9, shotgun 1.0, sniper rifle 1.15, crossbow 0.8, bow 1.45, sword 0.95, dagger 0.3); 0 keeps the object's size. The weapon is also fitted to the holder's hand: its measured grip at most a tenth taller than the palm is wide (measured on the finger bones), its magazine no longer than the hand; the smaller scale wins (low-poly models are stocky). size: a multiplier applied after that (1.5 for a cartoon weapon). grip_at, guard_at: where the hand and the other hand hold, as a fraction of the length from the back (0, the stock) to the muzzle (1), for a model the measure gets wrong (default: measured on the side silhouette: the rear-most part hanging under the weapon that slants back, behind the magazine; a stock is skipped). hold: "auto" (default: "bow" if upright, "two_hands" if the weapon is longer than 60 % of the holder's arm or has a stock, else "one_hand"), "one_hand", "two_hands", "bow"; the arms follow the animation clips played (no hold pose is built by the engine). pose = a clip name (such as "Pistol_Aim_Neutral"): the weapon is fitted on that clip's pose, its grip in the fist measured on the finger bones (middle, ring and little finger curled around it), its barrel toward the character's front, then turned by a few degrees around the fist if it would go through the trunk, head or arms, and slid against the palm; the pose is taken at the middle of the clip; hands = another clip giving the fingers (a pack whose hands have no finger bones, such as KayKit: "Pistol_Aim_Neutral" or "Idle_Torch_Loop" closes the fist). It stays fixed to the hand bone, so it follows the fist in every clip (play the holding clips with game.play_upper). offset and rotation apply on top. Given only weapon (and front, upright, hand), an object already held keeps its bone, offset, rotation and like: the inventaire system's model in hand stays as the user set it. A like placed by hand in the editor wins.
+game.weapon(id, {front=, upright=}?) -&gt; {muzzle, direction, up, grip, length, front, grip_height, grip_at, guard_at} or nil. The weapon of an object, measured on its model, in the world, as it is held now: the muzzle where a shot starts, the barrel's direction, its length in metres, the height of its grip (metres), where the grip and the handguard are (fractions of the length from the back). front: "fin" (the thinnest end), "mesure", "debout" or "reglage" (with "+prise", "+garde" when grip_at, guard_at are given).
+game.hold_check(holder) -&gt; {penetration, arms, palm, support, palm_width, wrist, support_wrist, support_twist, correction, correction_wanted, hold, penetration_bone, penetration_at, arms_bone, arms_at} or nil. Checks the weapon held by a character in its pose of the moment, in metres: how deep the weapon's vertices go into its trunk and head capsules (penetration: aim at 0.01 or less) and into its arm and forearm capsules (arms, hands excluded), the distance from the palm of the holding hand and of the support hand to the weapon's surface (-1: that hand does not hold it; aim at 0.015 or less), the width of its palm. wrist and support_wrist: how far each wrist bends, in degrees, between the forearm and the hand (aim at 35 or less; -1: no support hand). support_twist: the roll of the support forearm against the upper arm, in degrees (aim at 60 or less: more shows as a twisted elbow). correction: how far the engine moved the support hand or slid the weapon after the clip, in metres (never more than 0.02: the clip of the weapon's family makes the pose); correction_wanted: how far it would have needed (more than 0.02: the clip is wrong for this weapon). penetration_bone and arms_bone: the bone of the deepest capsule; penetration_at and arms_at: where the deepest vertex is along the weapon, 0 at the butt, 1 at the muzzle (-1: no contact).
+game.hold_support(holder, target?, weight?) -&gt; boolean. The support hand of a weapon held two-handed with game.attach {support = true}: after the clip, only that hand moves (two-bone arm IK) onto the real weapon in hand. target "handguard" (default: the measured handguard; out of reach, the most forward point under the weapon the arm reaches, in front of the magazine, never the magazine nor empty air), "magazine" (the bottom of the measured magazine, during a reload) or "none" (the clip's hand); weight from 0 (the clip's hand) to 1 (on the weapon). false if the holder holds no weapon that way.
+game.spawn(file, position?) -&gt; id. An object made of a model file of the project (or a shape of the engine: "builtin:cube", "builtin:sphere", "builtin:cylinder", "builtin:capsule", "builtin:plane") during the game (a weapon held without an object of the scene for model, a projectile model): read once, then shared. Shipped weapons are cited "armes/&lt;pack&gt;/&lt;file&gt;" and are copied into the project when the game starts. Online, a copy made from such a file and attached with game.attach (a weapon in hand) is loaded by each guest from the same file of their copy of the game, attached the same way (give a path relative to the game). Left at the root (on the ground), such an object, an engine shape, and their copies reach guests too (protocol 25): shape or file, place, size, color (game.set_scale, game.set_color), and their removal.
+game.pool(template, count). Prepares count copies of a template, once, in on_start; a template with children (a car and its wheels, a character and its accessories) gives copies of the whole group. game.clone then takes one, back in the template's state (place, tags, color, systems; its children too, each at its own place), and game.destroy gives it back, hiding the whole group, which avoids rebuilding the world's list each time. Use it for what appears and disappears often: projectiles, coins, waves of enemies. A copy given back has gone for the game (game.exists is false), but its id can come back with a later game.clone: do not keep ids of destroyed objects. If the pool is empty, game.clone makes a new copy as usual.
+game.population_garder(reason, list) and game.population_touche(target, player?, how?) -&gt; bool. Used by the Population module: what the dynamic population never takes back. population_garder replaces the list (ids, or names) kept for a reason; population_touche says a player touched a pedestrian (it stays itself, "population.touche"), false if it is not one. game.population_laisse(target, player?, how?) -&gt; bool says a player left this population object (put down, dropped, parked): it is kept and saved. game.population_danger(place, radius?, strength?) is a danger there (a shot, an explosion): pedestrians around flee, cars heading there stop; a game sends "population.danger" {lieu, rayon?, force?} instead. A game script does not call them: add the tag population.garder (game.add_tag) or send "population.garder" / "population.liberer" {cible}.
+</code></pre></div>
+<h2 id="shooting">Shooting<a class="headerlink" href="#shooting" title="Permanent link">&para;</a></h2>
+<p>What a shot shows (ranged weapons). Everything here is images only and changes nothing in the game, except game.push_at. The point, the normal and the object hit come from the ray of the shot.</p>
+<div class="highlight"><pre><span></span><code>game.effect("bouche", muzzle, {direction = aim, size = 1}). The muzzle flash of a firearm: a few bright streaks along direction, a vivid star lasting a thirtieth of a second, a brief light and a faint wisp of smoke. It stays clean fired 10 times a second. muzzle: the front of the weapon, measured with game.bounds along the aim, never guessed. size scales it to the weapon: about 0.6 for a pistol, 1 for a rifle, 1.5 for a heavy gun (measure the weapon's length rather than guess).
+game.effect("impact_balle", point, {direction = normal, on = id}). A small, dry bullet impact: chips jump out along the normal of the surface, with a puff of dust (paler than the surface, so it shows on grey stone) and a tiny flash. on: the object hit; the chips and the dust take the colour of its surface at that point (wood, stone, metal), measured on its model. on works with any preset ("eclats" too); without it, the preset's colour or color. The colours of the scene's models are measured at the start of the game, in the background: a hit never waits for it (a model loaded that very moment takes the preset's colour once).
+game.effect("eclaboussure", point, {direction = vec(0, 1, 0)}). A splash where a shot hits a water surface (game.raycast with water = true says so: hit.water; a projectile announces "projectile.touche" with eau = true): drops jump up and fall back into the water, with a little spray.
+game.effect("impact_chair", point, {direction = normal, color = vec?}). A hit on a character: a small neutral puff and a few droplets. No gore by default; color chooses (vec(0.55, 0.05, 0.05) for blood, green for a monster).
+game.tracer(from, to, {color = vec(1, 0.85, 0.55), width = 0.025, speed = 250, length, duration}?). A bright streak flying from the muzzle to the point hit, at speed m/s (0: the whole line at once, a laser), length metres long (by default speed x 0.02, from 0.5 to 8), fading in duration seconds once arrived (0.05; 0.1 for a laser). from and to: vectors or ids. Cheap: hundreds at once; past the limit (512 in High quality, 384 Medium, 192 Low) the oldest goes. The report counts them under tracers.
+game.decal("trou", point, {normal = normal, size = 0.1, on = id, depth = 0.1, life = 0}?) -&gt; handle. A bullet hole on the surface hit. on: the object it lies on; the decal follows it when it moves, turns or grows, hides with it and goes when it is destroyed (on works for any game.decal). depth: the thickness of the projection box (by default from size, at least 0.3 m); about 0.1 for a hole, so it does not mark what is just behind. Holes have their own limit, twice that of other decals (256 in High quality): the oldest goes, and a burst never erases footprints or puddles. Never on characters: use "impact_chair".
+game.push_at(id, point, impulse, {fall = false}?) -&gt; moved. A push from the point hit, impulse in m/s whatever the mass (like game.push; 2 to 6 for a bullet, along the shot). A moving object (Physics system) leaves and spins according to where it is hit: a crate hit on a corner turns. A fallen character (ragdoll) is pushed by its part nearest the point, the rest follows. A standing character steps back, like game.push; fall = true makes it fall, as a ragdoll pushed from the point if it has an animated skeleton, else it tips over away from the shooter. A fixed object (a wall) does not move: false, without error, so it can be called on every hit. A death from a shot: on "sante.mort", game.push_at(id, point, aim * 4, {fall = true}).
+</code></pre></div>
+<h2 id="characters">Characters<a class="headerlink" href="#characters" title="Permanent link">&para;</a></h2>
+<p>Objects that walk on the ground, stopped by colliders and by each other, with gravity</p>
+<div class="highlight"><pre><span></span><code>game.character(id, {radius=0.4, height=1.8, turn_speed=540, idle="Idle", walk="Walking_A", run="Running_A", run_above=3.5, feet=false, feet_height=0.5, mass=70})
+  Makes it a character. With clip names, it plays them by itself according to its actual speed. feet=true sets its feet on the real ground (slopes, steps), its hips lowered as needed, if its skeleton has legs the engine recognises; feet_height is the largest gap corrected, in metres. mass, in kg (1 to 10000): how hard thrown or falling objects knock it, and how heavy what it pushes feels; the player's is in player_set (mass).
+  strafe=true: it no longer turns towards its movement but keeps the facing game.face or game.set_rotation gives it (a guard circling the player while watching him), and walks sideways or backwards with walk_directions and run_directions = {back=, left=, right=, forward_left=, forward_right=, back_left=, back_right=} (clip names, all optional): blended by direction, on 8 directions when the diagonals are given, 4 otherwise; a missing back plays walk in reverse, a missing side plays walk.
+game.walk(id, velocity). Call on each step it should move, in m/s. It turns towards its movement. Without a call, it stops.
+game.walk_to(id, pos_or_id, speed?) -&gt; "moving", "arrived", "blocked" or "asleep". Call on each step instead of game.walk: it follows the walkable areas (the terrain and the objects with a collider: around walls, up gentle slopes, under bridges) to reach the place, or follows an object. "arrived": right next to it. "blocked": no way there (the game_run report says why); it tries again every second. "asleep": far from the player in a large world, it waits until it wakes up (see game.awake). On the way, walkers avoid each other, the player and the other characters (game settings, navigation avoidance). It uses the walkable areas of the smallest character size it fits in (its radius and height, game settings navigation sizes): a giant does not squeeze through a small door. When an object with a collider is placed or removed (a tree cut down, game.set_solid), the walkable areas around it are redone in the background and used about 0.1 s later; an object that moves counts once it has stood still for 0.5 s (a shake or a falling copy changes nothing). Nothing to do in a script: never rebuild or wait for it.
+game.path(a, b) -&gt; {points} or nil. The way around obstacles from a to b, along the walkable areas, the last point being b (or the nearest walkable point to it). a and b: id or vector.
+game.route(a, b, {a_pied = false, portee = 60, axe = false, changement_voie = 15, demi_tour = 300}?) -&gt; {points = {vectors}, length = metres, par = "voies" | "navigation"} or nil. A route for a GPS or a driver, from a to b (ids or vectors). When the scene has a road network (a generated city: the lanes its extension writes in the cache, voies.json of each tile), it follows the lanes: by vehicle in their driving direction only, turning only where the lanes are linked (left-turn lanes, a roundabout by its ring, never through its island), never on a pedestrian-only street; a_pied = true walks the lanes both ways and turns back anywhere. Its first point is a (when off the road), then the nearest lane, and the last ones the lane nearest b, then b. Without a network, or when a or b is farther than portee metres from any lane, it is game.path (the walkable areas), par = "navigation". The network is read once per scene and kept; a route of 2 km takes a few milliseconds: call it when the target changes or the player strays, not every step. By vehicle it may change to the next lane of the same direction (to take a turn only that lane has), at the price of changement_voie metres added to the route, and turn back only at the end of a dead end, at the price of demi_tour metres. axe = true: the points are moved onto the middle of the streets of the map plan (game.map_plan), not the lane where one drives: the line of a GPS.
+game.push(id, impulse). A knockback that fades quickly; works on the player too. On a moving object (Physics system), a blow that changes its speed by impulse, in m/s, whatever its mass: game.push(crate, vec(0, 6, 0)) throws it up.
+game.velocity(id) -&gt; vector, in m/s: the player, a character or a moving object. Zero for an object that does not move by itself.
+</code></pre></div>
+<p>Physics: objects carrying the "physique" system (modules_add, then systems_attach on objects or a group) fall, roll, slide and are pushed by the player and characters walking into them: crates, barrels, balls, rocks. Their shape wraps their model (forme: boite, boule or cylindre); masse, frottement and rebond are per-object settings. The engine moves them: read where they are with game.position, place one with game.set_position (it starts again at rest), throw one with game.push. One that falls out of the world disappears. Characters' paths ignore them, since they move.</p>
+<p>Traffic lights of the city: every traffic light of a generated city (its pole and heads, tagged "feu") runs a cycle computed from game.time(), the same clock that lights its lamps: the arms along the widest street (groupe 0), then the crossing arms (groupe 1), each green, amber, then red, with a short all-red between them; two crossing groups are never green or amber together. game.data(light) -&gt; {feu = {carrefour = junction node id, groupe = 0 or 1, vert, orange, rouge_integral, periode = 2 x (vert + orange + rouge_integral), decalage (s, the junction's offset), etat = "vert" | "orange" | "rouge" now, reste = seconds before the next color}, vers = {x, z} (the direction drivers who read it travel), rue = segment id}. A car waits while etat ~= "vert" (and stops on "orange" if it can). The state at any time t: phase = (t + decalage - groupe * (vert + orange + rouge_integral)) mod periode; green below vert, amber below vert + orange, red after. Speed limit signs (tagged "limite_vitesse"): game.data(sign) -&gt; {limite_vitesse = value, unite = "mph" | "km/h", carrefour = the junction drivers come from, rue = segment id}.</p>
+<p>Shops of the city: every shop of a generated city is a place in the game, an object without model on the pavement before its door, facing it, tagged "commerce" and "commerce:&lt;kind&gt;" (commerce:banque, commerce:superette, commerce:cafe, commerce:vetements... the kinds of the city), always in the game (asleep far away). game.data(place) -&gt; {sorte = kind, nom = the shop's name, porte = vector (the middle of its door, on the ground), centre = vector (the middle of its room), visitable = true if it has a room one enters, horaires = {ouverture, fermeture} (hours of the day; equal: always open), batiment = its parcel id; a visitable shop also has vendeur = {role, position, regard} (where its clerk stands behind the counter, regard the horizontal direction they face, toward the room) and arrets = a list of {role, position, regard} (where customers stop: a shelf, the till, a chair)}. The system Commerces (module commerces) puts a clerk there and sells through the Shop: see its guide. The nearest bank: local bank = game.near(game.player(), 2000, "commerce:banque", {asleep = true})[1] (as the crow flies; nil if none). A visitable shop announces "commerce.entree" {lieu = the place, qui, joueur} when a player walks in through its door, and "commerce.sortie" {lieu, qui, joueur} when they walk out. A mission "go to the nearest bank": find it, show the way (a HUD arrow toward game.data(bank).porte), then game.on("commerce.entree", function(e) if e.lieu == bank then ... end end).</p>
+<p>Zones: objects carrying the "zone" system announce "zone.entree" {cible = the zone, qui = who entered} and "zone.sortie" {cible, qui} when something enters or leaves their box. Its detecte setting says who counts: joueur (default), personnages (the player and characters), objets (moving objects), tout. Usually an invisible box (visible: false): a zone works hidden. game.set_solid(zone, false) switches it off. A pressure plate, a trap, a finish line, a ball in a goal.</p>
+<h2 id="joints-vehicles-ragdolls-systems-articulation-vehicule-chiffon">Joints, vehicles, ragdolls (systems "articulation", "vehicule", "chiffon"<a class="headerlink" href="#joints-vehicles-ragdolls-systems-articulation-vehicule-chiffon" title="Permanent link">&para;</a></h2>
+<p>Set them with systems_set, the engine runs them):</p>
+<div class="highlight"><pre><span></span><code>game.joint_open(id), game.joint_close(id). A hinge or slider's motor drives it to its open or closed stop. game.joint_break(id) makes it give way.
+game.joint(id) -&gt; {kind, position, broken} or nil. position: degrees for a hinge, meters for a slider. "articulation.cassee" {cible, autre?} when one breaks.
+game.drive(id) puts the player at the wheel of a vehicle (a fallen motorbike is set back on its wheels); game.leave_vehicle() gets them out; game.driving() -&gt; the vehicle driven, or nil. The player also gets in and out with "interact".
+game.seat(id, vehicle, {clip, place}?) -&gt; true, or false and why: seats a character (not a player) at a passenger seat of a car or a motorbike, looping clip, a sitting clip of its own model (read game.clips; never a made-up pose); place 1 is beside the driver (behind on a motorbike), then the back seats; missing, the first free one. The vehicle settings passagers (how many seats) and passager_avant, passager_hauteur, passager_cote (meters) move the seats. It rides with the vehicle until game.seat(id, nil) gets it up. False (a boat, tinted windows, no free seat, no such clip): nothing changes.
+game.vehicle(id) -&gt; {speed (km/h), driven, flipped, boat, aground, motorbike, fallen, lean} or nil. aground: a boat resting on the bottom or the shore. fallen: a motorbike lying on its side; lean: how far it leans, in degrees (positive: to its right). "vehicule.monte" and "vehicule.descendu" {cible, qui}; "vehicule.tombe" {cible, qui?} when a motorbike falls over (qui: its rider, thrown off).
+game.ragdoll(id, on, push?). An animated character falls limp (on) or gets back up (false), push a vec in m/s. game.ragdolled(id) -&gt; true while down. "chiffon.tombe" and "chiffon.releve" {cible}.
+</code></pre></div>
+<h2 id="animation-skinned-objects">Animation (skinned objects)<a class="headerlink" href="#animation-skinned-objects" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.clips(id) -&gt; {names}              game.clip_length(id, clip) -&gt; seconds or nil
+game.play(id, clip, {loop=true, speed=1, fade=0.15}?). With loop=false, the clip plays once, then the character returns to its usual animation. With loop=false and hold=true, it stays on the clip's last frame until the next game.play (a death). On the player, this temporarily takes over from the animation graph: use it for attacks.
+game.play_upper(id, clip, {loop=true, speed=1, fade=0.15, up, down, hands}?), game.stop_upper(id, {fade}?). The clip plays on the upper body only (the spine, neck, head and arms, found on any skeleton) while the hips and legs keep their animation (walking, running): the spine blends in smoothly from the hips up. With loop=false, the clip plays once, then the upper body goes back to the last looping clip given to game.play_upper (or to the full-body animation). up and down are two clips of the same pose aiming 90° up and 90° down (Pistol_Aim_Up, Pistol_Aim_Down): while the character aims (game.aim, game.aim_at), they are blended by the aim pitch instead of leaning the spine. hands: a clip giving the fingers (taken at its middle), for a pack whose hands have no finger bones (KayKit): without it the character's fingers stay open. The chest keeps the heading the clip gives it around the vertical, whatever the legs' hips do: a clip that turns its hips (aiming side-on) still aims ahead.
+game.pose_layer(id, layer, weight). Pose layers are hand corrections of a model's animations (pose_layers_get/pose_layers_set): weight 0 switches one off, 1 on (true/false work too), in between a part of it; for this character only, until the game ends. A guard who stands straighter while alert, a wounded arm hanging lower.
+</code></pre></div>
+<h2 id="player-and-inputs">Player and inputs<a class="headerlink" href="#player-and-inputs" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.action(name) -&gt; held              game.pressed(name) -&gt; pressed on this step       game.released(name) -&gt; let go on this step
+  Actions are the game's controls (controls_list, controls_set): one per key the game uses, never a key read directly. By default "attack" (left mouse button) and "interact" (E); modules add theirs (block, heal). Moving, running, jumping and pausing are controls too: move_forward (w), move_back (s), move_left (a), move_right (d), run (lshift), jump (space), pause (escape). Escape does not close the game: if no script reads "pause", it frees the cursor.
+game.bindings() -&gt; {action = key}      game.bind(action, key). Changes a key during the game, for a key configuration menu. A gamepad button (pad_a, pad_b, pad_x, pad_y, pad_lb, pad_rb, pad_lt, pad_rt, pad_start, pad_back, pad_ls, pad_rs, pad_up, pad_down, pad_left, pad_right) changes the gamepad binding and leaves the key.
+game.pad_bindings() -&gt; {action = button}. By default: jump pad_a, attack pad_x, interact pad_y, run pad_lt, pause pad_start. The left stick moves, the right stick turns the camera.
+game.action_label(action) -&gt; text to show in a prompt: the key ("E") on keyboard, the button ("Y") when the player plays with a gamepad.
+game.action_name(action) -&gt; what the action is called for the player, in their language ("Jump", "Block"): for a key configuration menu.
+game.last_key() -&gt; the key pressed on this step, or nil. Key names: letters, digits, space, lshift, mouse_left, mouse_right...
+game.player_forward() -&gt; vector        game.set_player_speed(scale). 0 stops the player, 1 is normal.
+game.set_player_dead(dead, id?)        Dead: the player no longer moves, jumps nor acts (only "pause" still reaches the scripts), whatever their machine sends; their animation graph enters the state "mort" if it has one (the module "mort" adds it from its setting "animation"), held on its last frame, seen so by everyone. false: they stand up again. Decided by the host. Use the module "mort" rather than calling it yourself.
+game.player_dead(id?) -&gt; boolean
+game.set_player_can_run(bool)          game.set_player_can_jump(bool). Takes running or jumping away without stopping the walk: tiredness, a heavy load.
+game.player_running() -&gt; bool          game.player_jumped() -&gt; bool. On the last step: the player moved while running; the player left the ground by jumping.
+game.player_landed() -&gt; bool. On the last step: the player touched the ground again after a jump or a fall.
+game.player_swimming() -&gt; bool. In water deeper than about half its height, the player swims: it floats with its head out, moves at its swim speed, and cannot jump. The animation graph gets a "swimming" parameter (1 or 0) for a swim state.
+game.footsteps() -&gt; {ids}. Those whose foot touched the ground on the last step, read from their walk or run animation: the player and animated characters.
+game.ground(id) -&gt; id or nil. The object under its feet (one with a collider): a floor of stone, a wooden bridge. On a terrain: the biome object (Forest, Snow...), or the water object (Sea, Lake) when it stands in water.
+game.water_depth(id) -&gt; metres of water where it stands, 0 on dry ground. For wading, slowing down, drowning: the engine itself only draws water.
+Moving, running, jumping and the camera are handled by the engine: see player_set.
+</code></pre></div>
+<h2 id="placed-lights">Placed lights<a class="headerlink" href="#placed-lights" title="Permanent link">&para;</a></h2>
+<p>Objects created with a light field (a bulb, or a spot that points down from the object). Hiding one with set_visible switches it off too.</p>
+<div class="highlight"><pre><span></span><code>game.light(id) -&gt; {on, color, intensity, range, angle, kind, night_only, temperature} or nil if it is not a light. color is a vector (r, g, b), from 0 to 1. temperature is the ready-made tint its color matches (sodium, warm, neutral, cold), nil for another color.
+game.set_light(id, {on?, color?, intensity?, range?, angle?, night_only?, temperature?}). Only the given fields change: game.set_light(lamp, {on = false}) switches it off, {color = vec(1, 0.2, 0.1)} makes it red, {temperature = "sodium"} gives it the orange of street lamps (sodium 2000 K, warm 3000 K, neutral 4000 K, cold 5500 K), {night_only = true} makes it follow the night (off by day, on at dusk). Fails if the object is not a light. game.save keeps it: no need to save lights yourself.
+</code></pre></div>
+<h2 id="the-sun-and-the-sky-of-the-scene-being-played">The sun and the sky of the scene being played<a class="headerlink" href="#the-sun-and-the-sky-of-the-scene-being-played" title="Permanent link">&para;</a></h2>
+<p>A day and night cycle, a storm. Colors are vectors (r, g, b), from 0 to 1.</p>
+<div class="highlight"><pre><span></span><code>game.environment(authored?) -&gt; {sun_direction, sun_color, sun_intensity, sky_color, ground_color, background, exposure, fog_distance, fog_color, auto_exposure, auto_exposure_brighten, auto_exposure_darken, auto_exposure_seconds, color_grade, color_grade_strength, film_grain, motion_blur, depth_of_field, focus_distance, focus_blur, ambient_occlusion}. sun_direction points toward the sun (y up: high in the sky). authored=true gives the scene as the creator lit it, whatever the game changed since.
+game.set_environment({...}). Only the given fields change, from the next frame: game.set_environment({sun_intensity = 0.1, sky_color = vec(0.05, 0.07, 0.15)}) makes it night. game.save keeps it. The "jour_nuit" system turns the sun and the sky for you: prefer it to a hand-written cycle. Automatic exposure (auto_exposure, on by default; auto_exposure_brighten 1 to 64, auto_exposure_darken 1 to 64, auto_exposure_seconds 0 to 30) brightens dark rooms like an eye getting used to them; it only brightens relative to the light still there, so a night made with set_environment stays dark. The camera look too: color_grade (a look id: neutre, realiste, stylise, europeenne, americaine, bord_de_mer, or the scene's own), color_grade_strength 0 to 1, film_grain 0 to 1, motion_blur 0 to 1 (raise it while driving: game.set_environment({motion_blur = 0.6}), back to 0 on foot), depth_of_field true/false with focus_distance (m) and focus_blur 0 to 1 (a cutscene), ambient_occlusion 0 to 2 (how much corners and the foot of walls darken; 1 by default, 0 none). Grain, motion blur, depth of field and ambient occlusion are off on Low quality.
+</code></pre></div>
+<h2 id="the-realistic-sky-game-settings-sky-and-weather">The realistic sky (Game settings, Sky and weather)<a class="headerlink" href="#the-realistic-sky-game-settings-sky-and-weather" title="Permanent link">&para;</a></h2>
+<p>The sun, the moon and the stars at their place for a latitude, a date and a solar hour.</p>
+<div class="highlight"><pre><span></span><code>game.sky() -&gt; {enabled, hour, day, year, latitude, climate, style, night, daylight, sun, moon, moon_phase, night_darkness, day_minutes, haze}. hour is the local solar hour, from 0 to 24 (12: the sun at its highest); day is the day of the year (1 to 366); sun and moon are vectors pointing toward them (y up: above the horizon). night goes from 0 (day) to 1 (full night), daylight is the share of daylight left. enabled is false when the scene does not use the realistic sky.
+game.set_sky({hour?, day?, climate?, night_darkness?, day_minutes?, haze?, style?}). Only the given fields change, for this game (not the scene as placed), and game.save keeps them: game.set_sky({hour = 21.5}) jumps to the evening. Refused when the realistic sky is off, or out of range: hour 0 to 24 (24 excluded), day 1 to 366, climate one of the shipped climates (tempere_ete, tempere_hiver, mediterraneen, tropical, desertique, nordique_hiver, montagnard), night_darkness 0 (cinema night) to 1 (black night), day_minutes 0 (the hour stays) to 10080 (minutes of play for 24 hours), haze 0 (pure air) to 40 (milky distance), style "realistic" or "stylized" (bold colors chosen for each time of day: dawn, day, sunset, night; set in Sky and weather). A climate brings its typical haze (unless haze is given) and, in the simple mode, its typical date (unless day is given). While the hour moves, the engine sends "ciel.lever" and "ciel.coucher" {jour} at sunrise and sunset, and "ciel.heure" {heure, jour} at each whole hour.
+</code></pre></div>
+<h2 id="placed-cameras">Placed cameras<a class="headerlink" href="#placed-cameras" title="Permanent link">&para;</a></h2>
+<p>Objects created with a camera field, which show the game from where they stand. While one is active, the mouse does not turn the view, and the player moves relative to what it shows.</p>
+<div class="highlight"><pre><span></span><code>game.use_camera(id, {blend=0, joueur=id}?). blend is a smooth move in seconds; 0 cuts at once. Fails if the object is not a camera. With several players, only that player (joueur, or the player whose action is being handled) sees through it.
+game.use_player_camera({blend=0}?). Back to the camera that follows the player.
+game.rest_pose(player?). The player stands still at once in the rest state of its animation graph (its entry state, the idle clip), without blending: a menu that shows the character, stopped mid-step. While the world is paused and a placed camera shows the player, that clip keeps playing.
+game.spawn_camera(position, {look=pos_or_id, fov=57.3}?) -&gt; id. A placed camera made during the game, without a model (nobody sees it): it stands at position and looks toward look (a place or an object, tilt included), with fov the vertical field of view in degrees (5 to 150). Then game.use_camera(id, {joueur = id}); game.destroy(id) when done (the game returns to the player's camera). With several players, a guest made to look through it sees it from their side.
+game.active_camera() -&gt; id, or nil for the one that follows the player.
+game.cameras() -&gt; {ids}: the placed cameras of the current scene, in the scene's order.
+game.camera_view() -&gt; the kind of view the player has: "fixed" (a placed camera is active), "top_down" (the camera that follows the player never rises below 45 degrees: its lowest tilt, in the player settings, is 45 or more), "first_person" (its distance is 1 m or less) or "third_person". To aim like the game is seen: the centre of the screen with a character, the cursor from above.
+game.using_pad() -&gt; true while the player plays with a gamepad (always false for a guest, for now).
+Move or turn a placed camera like any object, with game.set_position and game.set_rotation. If it is destroyed, the game returns to the player's camera.
+</code></pre></div>
+<h2 id="aiming-ranged-weapons">Aiming (ranged weapons<a class="headerlink" href="#aiming-ranged-weapons" title="Permanent link">&para;</a></h2>
+<p>Guns, bows, crossbows, thrown grenades). The engine moves the camera and the body; the game decides when to aim (a control it reads, such as "aim") and what a shot does. Every function takes the player as an optional last argument, like the controls.</p>
+<div class="highlight"><pre><span></span><code>game.aim(on, {zoom=1.5, shoulder="droite", sensitivity=1, assist=0}?, player?). true starts aiming, false stops. In third person, the camera slides over the shoulder ("droite" or "gauche") and comes zoom times closer; in first person, the field of view narrows zoom times (1 to 8); from above (camera_view "top_down"), the player turns toward the cursor. While aiming, the player faces where it aims and walks sideways or backwards instead of turning toward where it goes (the animation graph's "strafing" is 1), and its upper body leans up or down with the aim, spread over its spine bones (any skeleton). sensitivity scales how fast the camera turns while aiming (0.05 to 4); assist (0 to 1), with a gamepad only, slows the aim near a target that has the "sante" system close to the centre of the screen and pulls it a little toward it. Each call sets all the options; the camera slides back when aiming stops. A holding pose (the arms holding a pistol or a bow) is a clip or a pose layer: game.play on the player, or game.pose_layer.
+game.aiming(player?) -&gt; bool.
+game.aim_ray(player?) -&gt; origin, direction. Where the player aims: the centre of the screen with a character (the ray starts at the player, not behind it), the cursor from above (level, at chest height), the player's front under a placed camera. A guest's ray uses its own camera.
+game.aim_point(distance, player?) -&gt; vector. What that ray hits first, within distance metres: scenery, terrain, colliders, moving bodies and characters (the player itself excepted); the end of the ray if nothing is hit. Shoot from the muzzle toward this point, so the shot goes where the centre of the screen shows.
+game.camera_kick(up_degrees, right_degrees?, player?). The recoil of a weapon: the view jumps up (and right; negative: left), then comes back smoothly in about a third of a second. A few degrees for a pistol, more for a shotgun. The aim ray follows the kicked view.
+game.aim_at(id, pos_or_id or nil). A character that is not a player (made with game.character) turns toward a place or an object and leans its upper body toward it, and keeps facing it while it walks (it walks sideways or backwards); nil stops it. For enemies that shoot: aim, wait for it to face the target, then fire from its weapon toward the target.
+</code></pre></div>
+<h2 id="animations-made-by-hand-and-cutscenes-timelines-of-the-scene-made-in-the-editor-or-with-timeline_set">Animations made by hand and cutscenes (timelines of the scene, made in the editor or with timeline_set)<a class="headerlink" href="#animations-made-by-hand-and-cutscenes-timelines-of-the-scene-made-in-the-editor-or-with-timeline_set" title="Permanent link">&para;</a></h2>
+<p>The engine plays them: objects take their keyframes, a cutscene shows its cameras, moves its characters, plays its sounds and subtitles, takes control away from the player and gives it back at the end.</p>
+<div class="highlight"><pre><span></span><code>game.play_timeline(id, {speed=1, from=0, end_event=nil}?). Plays it from the start (or from seconds); playing it again restarts it. end_event: an event name sent when it ends. Fails if there is no such timeline, or if another cutscene is playing.
+game.stop_timeline(id). Stops it where it is, objects left as they are.   game.timeline_playing(id) -&gt; bool.
+Sends "timeline.debut" {timeline, sorte} when one starts, and "timeline.fin" {timeline, sorte, passee, arretee} when it ends (passee: the player skipped the cutscene; arretee: stopped by game.stop_timeline). Its own events are sent with {timeline}.
+</code></pre></div>
+<h2 id="on-screen">On screen<a class="headerlink" href="#on-screen" title="Permanent link">&para;</a></h2>
+<p>Coordinates and sizes are fractions of the screen, from the top left. The key identifies an element: calling again updates it, in place. Elements are drawn in the order they were first created: create a background before what goes on it.</p>
+<div class="highlight"><pre><span></span><code>With several players, each player has their own HUD: an element made by a per-player script, inside game.each_player, or given {joueur = id}, is seen by that player only; one made by a script for the whole game is seen by everyone, even while it answers one player's event (say {joueur = game.player()} to show it to that player). A guest's HUD is sent to their computer and laid out there, at their screen's size; their clicks come back as "hud.clic" {cible, joueur}. Videos stay on the host's screen.
+game.hud_text(key, text, {x=0.5, y=0.5, size=0.035, color=vec(1,1,1), alpha=1, align="center", w=nil, font=nil}?). align: left, center, right. font: a font shipped with WorldMint ("inter", "manrope"...) or one added to the project ("projet:&lt;id&gt;"); nil, the game's. With w, the text wraps at word boundaries to that width.
+game.hud_bar(key, fraction, {x=0.02, y=0.02, w=0.2, h=0.02, color=vec(1,0.2,0.2), alpha=1, align="left"}?)
+game.hud_image(key, file, {x=0, y=0, w=0.1, h=0, color=vec(1,1,1), alpha=1, align="left", uv={0,0,1,1}, rotation=0, shape=nil}?). h=0 keeps the image's proportions. Find image files with assets_search and kind "image".
+  uv={u0, v0, u1, v1}: the part of the image shown, from 0 to 1; it may go past the image's edge, where nothing is drawn. rotation turns the picture inside its frame, clockwise, in radians. shape="circle" cuts it round, shape="rounded" into a rectangle with rounded corners of radius (a share of the screen height).
+  fit="cover" (with w and h): the picture covers its whole frame without being stretched, its extra edges cut off (a full-screen background: x=0, y=0, w=1, h=1). fit="contain": the whole picture fits in its frame with its proportions, centered (a logo).
+The map: the file "@map" is a view of the whole scene from above, north (-Z) at the top, drawn by the engine when the scene starts. game.map_area() -&gt; x, z, size: the square of the world it shows, in metres, from its north-west corner (smallest x and z); a point (px, pz) is at u = (px - x) / size, v = (pz - z) / size. game.map_refresh() draws it again (a bridge built, a wall knocked down). game.map_plan(theme?) -&gt; {fichier, apercu, x, z, cote, noms = {{texte, x, z, sorte}}, lignes, zones, eau} or nil: a vector plan of the same square, drawn once from the scene data (the streets of a generated city by importance, water, parks, squares, buildings, district names; the water and relief of the terrain) into two images of the game (fichier: detailed, apercu: for a far view), shown with game.hud_image like "@map". theme: {fond, rues = {paths, small streets, streets, main roads}, eau, parcs, places, batiments (false: none), largeur (street width factor), relief (0 to 1)}, colors "#rrggbb" or "#rrggbbaa". game.map_labels(boxes, line, {epaisseur, points = {{x, z, r}}, decalage}) -&gt; one place {x, z} per box {x, z, w, h}, or false: the names of a map moved off a route (line: {{x, z}...}, epaisseur: its half width), off the given discs (the player, the destination) and off each other, to the nearest free place within decalage, or hidden. The image "@trace:..." (the Map system writes it) draws a smooth thick line with a halo over the map, clipped like the map image. game.screen_aspect() -&gt; width / height of the screen: w = h / game.screen_aspect() makes a square. The "carte" system is a ready-made minimap and map window: prefer it.
+game.hud_button(key, text, {x=0.5, y=0.5, w=0.12, h=0.06, color=vec(0.15,0.16,0.2), alpha=0.85, align="center", text_color=vec(1,1,1), size=0.03, image=file, shape=nil, shape_color=vec(0.95,0.95,0.95), shape_label=nil, back=false, selected=false, role=nil}?)
+  A button with its exact area: a menu entry, an inventory slot (with an image, and its text as a quantity in the corner). Lighter under the cursor.
+  shape (without image): an icon drawn by the engine, no file: "circle", "diamond", "triangle", "square", "star", "drop", "heart", "arrow" (pointing up), "hourglass" or "sword", filled with shape_color; shape_label (two letters) is written in its middle; shape_rotation turns it (radians, clockwise: math.pi points an arrow down); the text goes under it. With an image, shape_label is a small label at the top left (a slot number, 16 bytes at most), the text (a quantity) at the bottom right.
+  back=true: the button that closes or goes back (Close, Back, Resume). B on a gamepad and Escape click it; Escape then does not reach the game as "pause".
+game.hud_at(x, y)? -&gt; key or nil. The element under that point (by default the cursor), the one drawn on top. Texts alone are not clickable: use a button. In a per-player copy (or game.each_player, {joueur = id}), it is that player's cursor over that player's own HUD, as laid out on their screen: a guest's hover works like the host's.
+game.hud_rect(key) -&gt; x, y, w, h or nil. Its area, top left corner first, where the engine placed it (inside a panel too).
+game.hud_remove(key). Removing a panel removes what it contains.
+game.hud_only(prefix?). A screen that covers the game (a title screen): while it is set, only the elements whose key starts with prefix ("menu.") are drawn and clickable for this player (several prefixes in a table, up to 8: {"carte.", "Grande carte/"}, a delivered screen and what its script draws around it); the rest of the HUD (the hotbar, a timer, the game's screens) is hidden, not removed. game.hud_only(nil) shows everything again. Each player has their own (a per-player copy sets it for its player, and it reaches guests). The cursor and subtitles stay. The Menu system uses it for its title screen; do not use it for a pause menu (the game stays visible behind it).
+</code></pre></div>
+<h2 id="interface-building-blocks">Interface building blocks<a class="headerlink" href="#interface-building-blocks" title="Permanent link">&para;</a></h2>
+<p>Menus, shops, dialogues, chat, name entry. Let panels place elements instead of writing positions by hand.</p>
+<div class="highlight"><pre><span></span><code>game.hud_panel(key, {x=0.5, y=0.5, w=nil, h=nil, align="center", color=, alpha=, layout="column", columns=2, gap=0.01, padding=0.015, scroll=false, parent=nil, radius=, outline=, outline_alpha=1, outline_width=1.5}?)
+  A background that places its children, in the order they were created, inside its padding and with gap between them (gap and padding are fractions of the screen height, the same on both sides). Without w or h, it fits its content.
+  layout "column": one under the other; a child without w takes the inner width (a text wraps to it). "row": side by side, centred in height. "grid": columns cells per row, all the same width.
+  gradient="right", "left", "down" or "up": a smooth gradient of its color, full on one side and fading out toward the side given (a shade that fades into the scene).
+parent=key, accepted by every hud_ function: the element goes in that panel, which must exist already; its x and y are ignored. Panels nest.
+role="barre.vie", accepted by every hud_ function: the element's role for the image theme of the "interface" system (its setting "habillage", an interface pack), which the engine lays on each kind of element when it draws, on every player's screen: panels and windows, buttons, text fields, bars, slots, tooltips, window titles, scroll bars. The first word says the kind: fenetre or panneau (a panel), bouton, champ, barre, case (a slot: a button or a panel), titre (a text or a panel: a window title), infobulle (a tooltip); the rest names a variant the theme may dress differently (barre.vie, barre.xp, barre.endurance, barre.besoin, case.inventaire, case.barre_rapide, fenetre.inventaire, titre.inventaire, bouton.fermer, bouton.onglet; by meaning: bouton.principal for the main action of a window, bouton.danger for what destroys or gives up, bouton.recompense for collecting a reward, case.rare for the slot of a rare-or-better item). Without a variant, a role takes its kind's images; an element with its own images keeps them. role="fond.barre.vie": a colored backing (the dark band under a bar) that is not drawn when the theme dresses barre.vie. Lowercase words separated by dots. selected=true (buttons and panels): the open tab, the chosen hotbar slot; it takes the theme's "selected" image. game.hud_set(key, {selected = true}) changes it. disabled=true (buttons): greyed out from the start, it does not click (game.hud_set changes it). alert=true (buttons and panels): signals a refusal for a moment (the slot of an item too heavy to pick up): the theme's "alerte" image, else a thick frame in the interface's alert color. game.hud_set(key, {alert = false}) ends it. To dress the interface with a pack, set the theme: never lay images over the elements.
+screen="options", accepted by every hud_ function: the screen of your system this element belongs to, when one system shows several screens with the same keys (a title screen, a pause menu and an options window all using "menu.titre"). Elements inside a panel take its screen. The user's screen retouches (moving, resizing, restyling an element in the editor) then apply on that screen only: moving "menu.titre" on the options does not move it on the title screen. Lowercase letters, digits and _. Leave it out for a key used on one screen only.
+shape="circle", "diamond", "triangle", "square", "star", "drop", "heart", "arrow", "hourglass" or "sword": the panel is drawn as that shape in its frame, a map marker; rotation turns it, clockwise in radians (a triangle points up at 0: an arrow).
+scroll=true with a h: when the content is taller, the mouse wheel over the panel scrolls it (the wheel then does not reach the game), with a thin scroll bar; its children are cut at its frame, neither drawn nor clickable outside it. Calling hud_panel again on each step keeps the scroll.
+game.hud_input(key, {x=0.5, y=0.5, w=0.25, h=nil, text="", placeholder="", max=0, secret=false, size=, parent=nil}?). A text field. A click selects it and puts the cursor there, then what the player types goes in it, at the cursor: the arrows, Home and End move the cursor (Ctrl: by word), Shift or dragging the mouse selects, Ctrl+A selects all, Ctrl+C, Ctrl+X and Ctrl+V copy, cut and paste (the system clipboard), Backspace and Delete erase, Enter validates, Escape or a click elsewhere leaves it. On a gamepad, once selected: the d-pad moves the cursor, A validates, B leaves. While a field is selected, the player does not move and no control fires. text only sets the value when the field is created: calling hud_input on each step keeps what was typed. max: most characters, 0 for no limit. secret = true: a password field: it shows one • per character, copy and cut do nothing, and the game_run report shows only the •; the hud.valider event carries an empty texte: read it with game.hud_value, and never print it.
+game.hud_value(key) -&gt; text or nil. What a field holds (or an element's text).   game.hud_set_value(key, text)
+game.hud_focus(key) selects a field; on a button, gives it the gamepad and keyboard focus (seen when the player uses them). game.hud_focus(nil) leaves both. Called while handling a guest (game.each_player, their per-player copy), it is for that guest: the button or field of their screen gets their focus on their PC; a key not on their screen is an error.
+game.hud_focused() -&gt; key or nil. The field being typed in, or the button with the visible gamepad or keyboard focus. In a per-player copy, that player's focus: a guest navigates on their own screen and the host knows what has their focus.
+Events sent by the engine: "hud.clic" {cible = the button's key} when a button is clicked (pressed then released on it, or chosen with the gamepad or keyboard); "hud.valider" {cible = the field's key, texte} when a field is validated with Enter. React to them with game.on instead of comparing game.hud_at() yourself.
+Gamepad and keyboard, with nothing to write: while the game shows the cursor, the engine finds the buttons of the window in front (the last created element without parent, a panel usually, that holds buttons). The d-pad, the left stick, the arrow keys and Tab move a visible focus from one button to the next by their place on screen (held, it repeats); A or Enter clicks it; B or Escape clicks the window's back button. A window that opens gives the focus to its first button when the player plays with a gamepad; with a keyboard, the first arrow shows it. A list that scrolls follows the focus. While a window has the focus the player does not move, and the controls bound to these buttons (jump on A, a potion on the d-pad) do not fire. The mouse hides the focus and keeps working as before.
+game.hud_navigation(false) leaves the gamepad to your script (a key configuration menu waiting for a key); game.hud_navigation(true) gives it back.
+Rich text, in hud_text and button texts: [b]bold[/b], [color=#ff8800]colored[/color]. Another tag is shown as it is.
+The "interface" system (modules_add): its game settings are the look of every element: panel and button backgrounds, accent color (hover, selected field, scroll bar), text color and size, corner rounding, background opacity. Values a script gives win over it.
+Example: game.hud_panel("menu", {y=0.2, w=0.3}) game.hud_text("titre", "[b]Pause[/b]", {parent="menu"}) game.hud_button("reprendre", "Resume", {parent="menu"})
+In game_run, a segment's text is typed into the selected field on its first step: "\b" erases, "\n" validates.
+</code></pre></div>
+<h2 id="drawn-screens">Drawn screens<a class="headerlink" href="#drawn-screens" title="Permanent link">&para;</a></h2>
+<p>Interface screens made in the editor or with screens_set (a score, an ammo bar, a help panel, a workshop menu). Prefer them to hud_ calls for a fixed interface: the user sees and changes them. They live by themselves: bound values, buttons that send their event, screens shown or hidden by an event or a control. Their elements are in the HUD under the key "screen/element".</p>
+<div class="highlight"><pre><span></span><code>game.screen_show(name)                  game.screen_hide(name)                  game.screen_shown(name) -&gt; bool
+game.screen_show(name, {inside = "screen/shape"}) shows a screen inside a shape of another screen that is shown: its shapes without parent go into that shape, placed by it, like the tab of another system's window (the Equipment's workshop in the Crafting tab). Shown this way it is made again each time; it leaves with that shape. An absent shape is an error.
+With several players, screen_show, screen_hide, screen_set and screen_list called while handling a player (game.each_player, a per-player script, a listener of that player's event) are for that player only: their screen, its values, its hidden shapes and its list rows; called for no player, they are for everyone (a guest who had their own copy of that screen gets everyone's again). A screen's command (its toggle action) opens and closes it for the player who pressed it, and its pause holds that player only when online.
+game.screen_set("screen/shape", {text=, value=, icon=, hidden=, disabled=, selected=, alert=, back=, placeholder=, background=, fit=, color=, text_color=, alpha=, offset=, text_px=, w=, h=, columns=, layout=, style=, shape=, shape_color=, shape_rotation=, shape_label=}). Fills a shape of a screen: only what is given changes. background is the image of the shape's fill (fitted as its fill.fit says; "" removes it); fit = "cover" (cropped to cover the shape, like a title screen background), "contain" (whole inside) or "stretch" sets how it fills the shape, like game.hud_image {fit =}; on an image shape, fit fits the picture itself in its frame (an item icon kept whole in its slot). text_color colors the text of a button, a field, and a text shape too (for a text shape, color does the same; text_color wins when both are given). back = true makes a button the one that closes or goes back: B on a gamepad and Escape click it; placeholder is the grey text of an empty field. offset = {x, y} moves it from its anchor, as in the screen file (fractions of the screen); text_px sets its text size, in pixels of a 1080 high screen; w and h set its size (fractions of the screen), columns the slots per row of a grid shape and layout ("column", "row", "grid") how its children are laid out (a window or a bar that follows a setting); style = a role style of the theme ("case.rare") gives the shape that row of the theme. value fills a gauge (0 to 1); icon is an image file of the game ("" removes it); shape, shape_color, shape_rotation and shape_label give a button an icon drawn by the engine, as game.hud_button does (shape "" removes it; an icon image wins over it); hidden = true takes the shape and what it holds off the screen, filled values kept for when it comes back; hidden = false brings it back, a shape hidden in the screen file too (its starting state). A missing shape (an optional one the user deleted, or a screen not shown) is ignored without error; an unknown screen is an error.
+game.screen_list("screen/list", { {Name = {text = "Apple"}, Icon = {icon = "apple.png"}}, ... }). Fills a list shape (list = true): its first child, with all it holds, is the row model, repeated once per row (200 at most). A list panel with a given height (not automatic) scrolls when its rows are taller, with the mouse wheel and the pad, like a panel with scroll. Each shape of the model is filled like screen_set, by its name, with the same fields (hidden, offset, text_px, background, fit, w, h, style...). hidden = true at the row level ({hidden = true, Name = {...}}) hides the whole row; Name = {hidden = true} hides one shape of the row. The shapes of row i are keyed "screen/&lt;name&gt;#&lt;i&gt;" (game.screen_set("bag/Name#3", ...) touches one row; a click on a row button gives element = "Slot#2"). A new call replaces the rows (what a previous call hid comes back unless this call hides it again); extra rows leave the screen. The model itself is never drawn.
+game.screen_has("screen/shape") -&gt; bool. The shape is in the screen as the game has it, shown or not: a system's optional shape may have been deleted.
+game.on_screen_action(action, function(info) ... end). A click on a screen's button whose "When clicked" is this action of the screen's system (declared in its module.json): info.id is the action, info.ecran and info.element the button.
+game.set_value(name, value). A value of the game (number, text or boolean; nil removes it) that a screen element bound to "value" shows: game.set_value("score", score). game.value(name) -&gt; it, or nil.
+game.hud_set(key, {text=, value=, color=, text_color=, alpha=, disabled=, selected=, alert=}). Changes only what is given of an element on screen, a drawn screen's element included ("score/total"); disabled = true greys a button out and it no longer clicks (its "disabled" image if it has one); a bound value replaces its text at the end of the step.
+A screen's button sends its event (if it has one) with {cible = "screen/element", ecran, element}, after "hud.clic": the Trigger system reacts to it with quand = evenement.
+</code></pre></div>
+<h2 id="the-mouse">The mouse<a class="headerlink" href="#the-mouse" title="Permanent link">&para;</a></h2>
+<p>The cursor is hidden and the mouse turns the camera, until the game shows the cursor for an interface (an inventory, a menu, a building mode).</p>
+<div class="highlight"><pre><span></span><code>game.show_cursor(bool, player?)        game.cursor_shown(player?) -&gt; bool. Each player has their own cursor. Shown, the camera no longer turns with the mouse, and combat.basique does not strike.
+game.mouse() -&gt; x, y or nil. Where the cursor is, in fractions of the screen like the HUD.
+game.mouse_down(button?) -&gt; held        game.mouse_pressed(button?)        game.mouse_released(button?). button: "left" (default), "right", "middle". For interfaces; gameplay uses controls.
+game.wheel() -&gt; notches on this step, up positive. A control can also use wheel_up or wheel_down as its key.
+game.stick() -&gt; x, y. The gamepad's left stick, from -1 to 1 (x to the right, y down), 0, 0 without a gamepad: to move a window's content, such as a map. Moving the player goes through controls.
+Drag and drop: on mouse_pressed take what game.hud_at() gives, move it with game.mouse() while mouse_down, and on mouse_released drop it on the slot under the cursor (game.hud_rect).
+game.pick({tag=, x=, y=}?) -&gt; id or nil, point or nil. What is under the cursor (or that point): the nearest visible object (with that tag if given), and the point hit, on it or on the ground, the terrain and colliders. To place a building where the player points.
+game.to_screen(pos_or_id) -&gt; x, y or nil. Where a place of the world is on screen, nil behind the camera: a name above a head, a marker.
+game.quit(). Closes the game: a "Quit" button of a menu.
+game.host({public?, code?, name?}) -&gt; true, or false and why. name: the host's name shown to the others (kept on this PC like the one typed to join; without it, the last one typed). Hosts a game with the "Multiplayer" game setting: others join on this PC's address, at the port of the setting. game.join(address, password?, name?) -&gt; true, or false and why. Joins the game hosted at "192.168.1.20" or "192.168.1.20:48600": this game then shows the host's game (its scripts stop here). name is the player's name shown to the others (game.player_name), kept on this PC for the next time; without it, the last one typed (game.network().player_name). game.join_code takes the same password and name. game.leave_online() stops hosting or leaves. Only the player on this PC asks; the game on screen does it (in game_run nothing happens: game.network() says available=false). The Menu module has Host and Join buttons: use it rather than your own.
+game.host({public=true, code=true}) also registers the hosted game with WorldMint's lobby service: public puts it in the list of this game's servers, code gives it a short code (game.network().code, such as "K7P-2QMX") that friends type. game.find_servers(text?) asks the lobby service for the public servers of this game and version (the answer arrives later in game.network().lobby.servers: {name, description, players, max, password, address}; lobby.searching is true meanwhile; lobby.error if the service is unreachable; lobby.available is false while the service is not set up). game.join_code(code) asks the service where a code leads, then joins like game.join. Joining by address always works, even without the service.
+game.network() -&gt; {available, mode, port, guests, address, error, error_reason, host_version, path, ping_ms, round_trip_ms, queue_bytes, queue_ms, out_kbit_s, in_kbit_s, dedicated, lobby, code, listed, player_name}. player_name: the name this player last typed to join or host (kept on this PC), to prefill a "Your name" field. path: how this player is linked to the host, "direct" (through the boxes), "relay" (through the relay server, slower) or "address" (joined by address); with ping_ms, the round trip in milliseconds. round_trip_ms: the game's own round trip (keys sent, then seen played by the host), queue_bytes and queue_ms: what waits to leave on the connection (a full queue raises the ping), out_kbit_s and in_kbit_s: the measured rates. A guest's copy of a per-player script reads its own (the host has none). error_reason: why joining failed, in one word: "no_answer" (the host never answered: a wrong address or code, the host not started, or a network that blocks online games), "timeout" (lost during the game), "password", "full"... "update_needed" or "host_outdated" (protocol 30: another version of the game than the host's, newer on the host or here), with host_version: the host's game version (game.version() is ours). available: the game can be hosted or joined here. mode: "solo", "host", "joining" or "guest". guests: how many joined. error: why the last host or join failed (a refusal, no answer). dedicated: true on a dedicated server (WorldMintServer.exe), a host with no player on its machine: game.players() lists only the guests, per-player scripts run only for guests, and game.player() outside a player (a per-player script, game.each_player, a listener of an event with joueur) is an error there. The server's messages reach scripts as "serveur.message" {texte, joueur?}.
+game.profile_send(table) -&gt; true, or false and why. The character made on the player's own PC (ADR-020 § 18; game setting "character": per_world by default, same_look, in_game). A player who joins a world where they have no character yet gets "profil.demande" {essai, raison, propose?} in their OWN game, before entering (their title screen and Menu still run there): show the creation screen, then send the choices once with game.profile_send({nom = "Lea", corps = "femme", coiffure = "Raie"}): at most 32 fields, names in lowercase letters, digits and _, values true/false, a number or one line of text of 64 bytes at most (2 KB in all). On the host, the game checks them: game.override("profil.verifier", function(default, profil, info) ... end) returns the profile (corrected if needed: no beard for a female body) to accept it, or nil and a reason text (written in the game's language; it is translated with game.t on the player's PC) to refuse it: the player gets "profil.demande" again with essai &gt; 0 and raison, and fixes it. Accepted, the player enters, the profile is kept in this world's save under their key, and the host's scripts get "joueur.profil" {joueur, profil, nouveau}: apply what you understand (the profile is only data, never items or progress). A player who comes back to this world gets "joueur.profil" with nouveau = false and never sees the creation again; another world asks again. On the host or in solo, game.profile_send checks and applies at once for the player of this PC. game.network().profile is "wanted" or "sent" while joining (profile_reason: the last refusal). game.profile() -&gt; the look kept on this PC with the setting same_look (to prefill a new world's creation), or nil. game.player_profile(id?) -&gt; what this world keeps for that player, or nil. game.player_has_character(id?) -&gt; true if that player already has a character in this world (a profile, or progress kept by its save). The setting in_game keeps the old way: nothing before entering, the game does its creation during play on the host.
+Progression (ADR-038; the "Progression" module builds on these: prefer it to your own). Values (stats): game.stat_define(name, {base, min, max, moteur?, partage?}) declares a value any player or object can have (sante_max, vitesse, degats_melee, charge_max...); moteur = "vitesse_deplacement" makes it multiply the player's walk, run and swim speed (base 1); partage = true sends it to every player in multiplayer (health above heads), otherwise each player only gets their own. game.stat(target, name) -&gt; the total: (base + every +n) x (1 + every %), kept between min and max, cached (cheap to read every step); nil if the value is not declared. game.stat_base(target, name), game.stat_set_base(target, name, value or nil for the default). game.stat_bonus(target, name, source, {add = 5, pct = 0.1}) sets the bonus of one named source ("niveau", "force", "equipement:epee"): setting it again replaces it, nil or {} removes it. game.stat_bonus_clear(target, source, name?) removes that source's bonuses (on one value or all) -&gt; how many. game.stat_parts(target, name) -&gt; {base, base_defaut, add, pct, total, min, max, sources = {source = {add, pct}}}. game.stat_all(target) -&gt; {name = total}. A value can have a displayed name: game.stat_define(name, {..., libelle = "Dégâts" or {fr = "Dégâts", en = "Damage"}}) (declaring it again without libelle keeps it); game.stat_name(name) -&gt; that name in the player's language, through the game's translations (without one: the name itself). Show values to players with game.stat_name, never their raw name. Targets are players (kept under their key, from scene to scene) or objects of this scene. Values are not saved: give bonuses again from the saved progress when a player arrives.
+Status effects (the "Effets temporaires" module, id alterations: add it first; its settings list the effects, each with its duration, stacking, value bonuses, regular damage or healing, particles). game.status_apply(target, id, {duree = s (0: until removed), source = id, cumul = n or "refaire"/"cumuler"/"ignorer"}?) -&gt; true, or false and the reason (unknown effect, refused by the hook alterations.avant, already active with "ignorer"). target: a player, an enemy, any object. game.status_remove(target, id or tag) -&gt; how many left (a tag removes every effect carrying it: an antidote removes "poison"). game.status_has(target, id or tag) -&gt; boolean. game.status_list(target) -&gt; {{id, nom, description, icone, genre = "bonus"/"malus", etiquettes, restant (nil: until removed), duree, cumul, source}}. Events: alterations.debut {cible, id, cumul, duree, encore, source}, alterations.fin {cible, id, raison = "fin"/"retire"/"mort"}, alterations.tic {cible, id, sorte = "degats"/"soins", montant}. Value bonuses go through game.stat_bonus with the source "alteration:&lt;id&gt;" and are removed exactly at the end. Without the module, these return nil and the reason.
+Progress, kept by the host in the world's save under the player's key (hero mode, game setting progression.hero: kept by the host across worlds). game.progress_define(track, curve, {sous_zero = true}?) declares a track (personnage, bucheronnage...) and its curve; sous_zero lets game.progress_set put it below zero (a reputation: -250 with the bandits; an XP track stays at 0 or more). A curve is a table: {forme = "lineaire"|"progressive"|"exponentielle"|"tableau", base = 100 (XP from level 1 to 2), hausse = 50 (progressive: each level costs that much more), facteur = 1.15 (exponentielle), tableau = {100, 250, 450} (the XP of each level; past its end the last repeats), niveau_max = 50, paliers = {{niveau = 20, facteur = 1.5}} (steeper from those levels, multiplied together), arrondi = 10}; a module setting of type "curve" holds one, drawn and simulated in the editor. game.progress(player?) -&gt; {pistes = {track = {xp, niveau, xp_niveau, xp_requis, progres, max, niveau_max}}, points = {kind = n}, depenses = {kind = n}, choix = {kind = {key = n}}, marques, principale}. game.progress_add_xp(player, track, amount, {source = "loup", plafond?, global = true}) -&gt; {gain, plafonne, avant, niveau, niveaux = {levels reached}, xp}: the amount is multiplied by the global XP multiplier (game setting x server), then capped per source and per minute (game setting progression.capPerMinute, or plafond); it announces "progression.xp" {joueur, cle, piste, gain, xp, niveau, source} and, for each level reached, "progression.niveau" {joueur, cle, piste, niveau, ancien}. game.progress_set(player, track, {niveau = 10} or {xp = 4500}) (admin, announces progression.niveau too). game.progress_points(player, kind, delta) -&gt; the new count (never below 0). game.progress_spend(player, kind, n, key) -&gt; true, or false and "not enough points": checks they have them, then keeps n points on key (force, savoir:feu). game.progress_refund(player, kind?) -&gt; points given back (their choices are erased). game.progress_first(player, mark) -&gt; true the first time only (kept: "ennemi:loup", "lieu:grotte"). game.progress_recent(player, source, seconds = 60) -&gt; how many gains from that source lately (for repetition). game.progress_levels() -&gt; {player = main level}. game.progress_level(player) -&gt; that player's main level (nil if not a player), in a guest's game too, for every player: the source of a Group panel (with game.players() and game.player_name, which also gives the others' names in a guest's game). Only the host, a dedicated server or a solo game writes: in a guest's game every write returns false (or nil) and "only the host changes progression"; a guest's game only shows what the host sends (its own progress, everyone's main level, its values and the shared ones of others, protocol 17). Writes return true, or false/nil and why.
+XP maths, the same as the editor's: game.xp_for_level(curve or track, n) -&gt; total XP to reach level n. game.xp_to_level(curve or track, xp) -&gt; {niveau, xp_niveau, xp_requis, progres, max}. game.xp_costs(curve) -&gt; the XP of each level. game.xp_gap(rule, source_level - player_level) -&gt; the level gap multiplier, rule {tolerance = 0, hausse = 0.1, plafond = 2, baisse = 0.2, plancher = 0, forme = "lineaire"|"exponentielle"}. game.xp_repetition(rule, count) -&gt; the repetition multiplier, rule {seuil = 10, baisse = 0.1, plancher = 0.1, fenetre = 300}. game.xp_multipliers({niveau_source, niveau_joueur, ecart = rule, repetitions, repetition = rule, premiere = true, bonus_premiere = 0.5, zone = 1.5, global?}) -&gt; {ecart, repetition, premiere, zone, global, total} (global defaults to game.xp_global()). game.xp_growth({forme, taux = {sante = 0.08, degats = 0.05, xp = 0.1}}, level) -&gt; {sante = 1.4...}: an enemy's growth by level. game.xp_enemy_level({mode = "fixe", niveau} | {mode = "zone", min, max} | {mode = "joueurs", ecart, min, max} | {mode = "temps", depart, jours_par_niveau, plafond}, {hasard, niveau_groupe, jours}) -&gt; its level. game.xp_simulate(curve, {{nom, xp, par_minute, niveau?}}, {ecart, global, jusqu_a}) -&gt; {niveaux = {{niveau, minutes, total_minutes}}, atteint, bloque, total_minutes}. game.xp_global() -&gt; the global XP multiplier.
+Unique items (ADR-039; the "Inventory" module uses them for kinds with "Unique copies"). Each unique copy of an item has a record kept with the world. game.item_create(kind, {rarete, nom, bonus = {{valeur = "degats", add = 3, pct = 0.05}}, usure, usure_max, amelioration, emplacements_gemmes, gemmes = {12, "rubis"}, niveau, donnees = {gravure = "Pour Lea", loups = 12}, porteur}?) -&gt; its number (never reused in this world), or nil and why; it announces "objet.cree" {numero, sorte}. game.item_get(number) -&gt; {numero, sorte, rarete, nom, bonus, usure, usure_max, amelioration, emplacements_gemmes, gemmes, niveau, donnees, porteur}, or nil. game.item_set(number, {fields}) -&gt; true, or false and why: all or nothing, every value checked (sorte and numero never change; donnees merges, a key set to nil is not sent by Luau: set it to "" or 0); it announces "objet.change" {numero, sorte, champs}. game.item_destroy(number) -&gt; true, or false and why; announces "objet.detruit" {numero, sorte}. porteur says what holds the record ("inventaire:&lt;player key&gt;", "objet:&lt;scene&gt;/&lt;id&gt;" on the ground, "script" by default for game.item_create): a record whose porteur is "" is removed when the world loads, and by game.item_collect() -&gt; how many were removed (also those on the ground of this scene whose object is gone). game.item_limits() -&gt; {fiches, bonus, donnees, nombre}; game.item_limits({fiches = 100000, bonus = 16, donnees = 32}) sets the limits (records per world, bonuses per record, free data per record). Only the host, a dedicated server or a solo game writes: in a guest's game every write returns false (or nil) and "only the host creates, changes or destroys items", and game.item_get only reads the records the host sent. game.item_citable(player, number) -&gt; true if that player may cite this record (theirs: porteur "&lt;module&gt;:&lt;their entity&gt;", or one everybody sees: on the ground, in a chest or a shop): check it on the host before acting on a guest's request. The Equipment module (ADR-039 § 6, § 7) uses usure/usure_max (wear: a record with usure_max &gt; 0 and usure 0 is broken and gives no bonus), amelioration (the upgrade level, shown as "+2" after the name) and gemmes (the kinds of the gems set, up to emplacements_gemmes); its requests equipement.reparer, equipement.ameliorer, equipement.sertir and equipement.desertir check game.item_citable, and the bonuses of a worn record are computed by shared.equipement.bonusEffectifs(record, kind) alone.
+game.chat_send(text, {joueur=nil}?). The chat of a game with several players (key T: players type a line, everyone sees it with the name of who wrote it): writes a message of the game in the chat box, to everyone, or only to one player (joueur: their character). Up to 1024 bytes, plain text shown as is (no markup). When a player writes, the host's scripts hear "chat.message" {joueur, nom, texte}; a line starting with "/" is a command for the admins, not a message (it is not sent to scripts). Arrivals, departures and the server's messages show in the chat too. The game setting "Chat" (Multiplayer) can turn players' messages off; game.chat_send still works.
+game.pause(on, reason="script", {actions}?, player?). In a game hosted online (several players), a menu does not stop the game: it only holds that player (their controls, except "pause" and the actions listed, and their movement), while the world goes on. Otherwise it pauses the world: the player, characters, physics, animations and game.time stop; the HUD still answers (hud.clic, hud.valider, scrolling). on_update keeps running with dt = 0, and the only controls that still reach scripts are "pause" (to resume) and the actions listed (the key that closes a window). Each reason holds the pause: a menu and a dialogue each pause with their own reason, and the game resumes when none holds it. game.paused() -&gt; true while paused. The Menu and Dialogue systems use it: prefer them to a hand-written pause menu.
+game.title() -&gt; the game's title (game settings, Window), in the player's language.
+game.version() -&gt; the game's version number (game settings, Publication: "1.0.4"), the one players see on the title screen; "" if the game has none.
+game.today() -&gt; today's date on this computer (the host's), as a number of days since 1 January 1970, local time: it changes once a day, at midnight. The only clock a script has, for what is given once a real day (the Quest log's daily quests with jour_repetition "reel"); for days of the game, listen to jour_nuit.lever.
+</code></pre></div>
+<p>Languages. The creator writes the game in their language (the original language, game settings, Languages). Each other language the</p>
+<h2 id="game-offers-has-a-translation-table-in-the-project-translationscodejson">game offers has a translation table in the project, translations/&lt;code&gt;.json<a class="headerlink" href="#game-offers-has-a-translation-table-in-the-project-translationscodejson" title="Permanent link">&para;</a></h2>
+<p>The text as written in the game, then its translation.</p>
+<div class="highlight"><pre><span></span><code>game.t(text, ...) -&gt; text. The text in the player's language, from the game's table; without a translation, the text as written.
+Write every text the player reads through it, as a literal: game.hud_text("score", game.t("Coins: {1}", gold)). {1}, {2}... are
+replaced after translation by the values that follow, so the word order can change from one language to another. The Translations
+window and translations_get find game.t("...") written with quotes; a text built with .. cannot be found nor translated.
+The systems already translate what the user typed in their settings (lines and answers of a Dialogue, messages of the Trigger, the
+title of the Menu, names): never wrap a system's text again.
+game.language() -&gt; the player's language ("fr", "en", "es"...): the system's language when the game offers it, else the original one,
+or what the player chose in the Menu options.  game.languages() -&gt; {codes}, the original first.  game.language_name(code?) -&gt; "Français".
+game.set_language(code) -&gt; bool. Changes the player's language and remembers it for the next plays; refused if the game does not
+offer it. The engine then sends "langue.change" {langue}: redraw the texts already on screen.
+</code></pre></div>
+<h2 id="graphics">Graphics<a class="headerlink" href="#graphics" title="Permanent link">&para;</a></h2>
+<p>What the player chooses for the picture, on top of the game settings (Window): for an options menu (the menu module does it).</p>
+<div class="highlight"><pre><span></span><code>game.graphics() -&gt; {quality = "low"|"medium"|"high"|"ultra", upscaling = "off"|"native"|"quality"|"balanced"|"performance"|"ultra_performance",
+upscaler = "none"|"dlss"|"fsr", dlss = bool, dlss_available = bool, fsr_available = bool, antialiasing = "auto"|"taa"|"smaa"|"fxaa"|"none"|"fsr2",
+shadows = "auto"|"high"|"medium"|"low"|"off", ray_tracing = "auto"|"on"|"off",
+ray_tracing_available = bool, ray_tracing_heavy = bool, ray_tracing_cut = bool, ray_tracing_effects = string, ray_tracing_slow = bool,
+ray_tracing_measuring = bool, indirect_light = bool, occlusion = "auto"|"on"|"off"},
+or nil when nothing is drawn (game_run without capture). quality also sets the
+particles budget. upscaler: what rebuilds the full-size picture when upscaling is not "off": "none" is WorldMint's own, "fsr" is AMD FSR 2
+(sharper, every card: fsr_available), "dlss" is NVIDIA DLSS (dlss_available is true only when the creator provided NVIDIA's files and the
+game enabled DLSS, on an RTX card); dlss is the older form (true when upscaler is "dlss").
+antialiasing: how edges are smoothed when upscaling is "off" (any other upscaling already smooths them); "auto" follows quality (TAA in
+high and medium, SMAA there in a project created before November 2026; FXAA in low), "taa" is sharp in motion but needs a redraw every frame (it turns upscaling "native" on), "smaa" is sharp
+with no trail, "fxaa" the lightest, "none" keeps jagged edges, "fsr2" is AMD FSR 2 at full size (sharper on thin lines,
+softer on foliage; never chosen by "auto").
+shadows: the player's shadow quality, for the sun and every light; "auto" (default) follows quality and the scene's shadow quality,
+"off" removes every shadow (the cheapest, rays included). ray_tracing: shadows drawn with rays; "auto" uses them only on a dedicated
+graphics card in medium and high quality, "on" forces them, "off" never. ray_tracing_available is true only when the card has it and
+the game allows it (window ray_tracing); ray_tracing_heavy is true when "on" forces it where it is heavy (an integrated chip, low
+quality): tell the player the picture may slow down. ray_tracing_cut is true when the renderer turned rays off because the graphics
+card's memory is full (shadows come back from shadow maps); another ray_tracing or quality choice makes it try again.
+In "auto", the game measures what rays cost on the player's card (the first seconds of a game, kept for that card and version) and
+removes effects one by one above the quality's budget (2.5 ms in medium, 4 ms in high): reflections, ambient occlusion, indirect
+light, placed lights' shadows, then the sun's shadow (shadow maps take over). ray_tracing_effects lists what is left
+("sun,reflections", "" for none); ray_tracing_slow is true when every effect was removed (too slow on this card);
+ray_tracing_measuring is true while it measures. "on" keeps every effect.
+indirect_light (true by default): light bounced by surfaces (a sunlit floor lights the walls, a room is lit through its window), ray
+traced with a light cache; used only in high quality with ray tracing on, it costs about 1 to 2 ms.
+occlusion: "Don't draw what is hidden" (objects fully behind buildings are not drawn, their shadows stay); "auto" (default) follows
+the creator's choice (world_set detail.occlusion), whose own "auto" is on in medium and high quality and off in low; "on" and "off"
+win over the creator's choice, in every quality.
+game.set_graphics({quality?, upscaling?, upscaler?, antialiasing?, shadows?, ray_tracing?, indirect_light?, occlusion?}) -&gt; bool (dlss = true|false still works). Changes only the fields given, from the next frame; false when nothing is
+drawn. Not kept by itself: save the player's choice (game.save with {systems = false}) and set it again in on_start.
+</code></pre></div>
+<h2 id="modules-and-events-see-modules_list">Modules and events (see modules_list)<a class="headerlink" href="#modules-and-events-see-modules_list" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.module_settings(module) -&gt; table. The settings of a module for the whole game, as the user set them.
+game.system(id, module) -&gt; table or nil. The values of a module for this object: a module is placed on objects or groups, and each one has its own values (a boss and a skeleton do not hit alike). nil if the object does not carry it.
+game.with_system(module, {hidden=false, asleep=false}?) -&gt; {ids}. Every visible object carrying it; with hidden=true, hidden ones too (a zone is usually an invisible box); with asleep=true, those asleep far away in a large world too (see game.awake). They also carry the tag "@module": game.near(pos, radius, "@sante") finds the nearest ones.
+game.system_owner(id, module) -&gt; id or nil. Where the object gets that module from: the nearest object or group, itself or above it, on which the module is placed (itself if it carries it alone); nil if the module does not apply to it. A module placed on a group gives it to every piece inside (game.with_system returns each piece, never a group without a model); pieces with the same owner are one thing: one marker, one place, one counter. A piece with its own values for the module is its own owner.
+game.emit(event, {fields}?). Announces an event: every listener runs now, in the order they subscribed, and receives the fields (an empty table if none).
+game.on(event, function(fields) ... end). Listens to an event, usually in on_start. An error in a listener stops that listener's script only.
+Modules talk only through events: listen to theirs, and send the ones they listen to. Your own scripts can use events too, with names of your own.
+game.override(name, function(default, ...) ... end). Replaces a point a module offers (see its overrides in modules_info), from a script of your own: never edit a module's script. The function receives the module's own behavior first: call default(...) to keep it, and change only what you need. Several scripts, modules included, can override the same point: each receives the previous one as default, so always call default for the cases you do not handle. If one fails, the error is reported and the chain skips it.
+Example: game.override("sante.degats", function(default, cible, brut, source, retenue) if game.has_tag(cible, "boss") then return 0 end return default(cible, brut, source, retenue) end)
+</code></pre></div>
+<h2 id="sound">Sound<a class="headerlink" href="#sound" title="Permanent link">&para;</a></h2>
+<p>Files are WAV, MP3, FLAC or OGG: find them with assets_search and kind "sound". In game_run nothing is heard: the report lists what played.</p>
+<div class="highlight"><pre><span></span><code>game.sound(file, {volume=1, pitch=1, loop=false, fade=0, at=pos_or_id, min_distance=2, max_distance=40, group="effects"}?) -&gt; handle. With at, the sound comes from that place, or follows that object: quieter far away, left or right of the camera. Without at, it is heard everywhere at the same level (a menu click, a fanfare).
+game.stop_sound(handle, {fade=0}?)       game.music(file, {volume=0.6, fade=1, group="music"}?). One music at a time, looping: a new one crossfades.
+game.stop_music({fade=1}?)
+game.music_over(file, {volume=0.6, fade=1, loop=true, group="music"}?). A music over the background one (a boss, a chase): the background music fades down to silence without stopping, this one fades in. game.music_back({fade=1}?) brings the background back where it is; without loop, the end of the piece does it by itself. A new one crossfades with the previous; game.music changes the background underneath (it stays down). The report lists it under sounds.music_over until it comes back. game.save keeps it: game.load resumes it about where it was, or brings the background back if none was playing over.
+</code></pre></div>
+<h2 id="sound-mixer">Sound mixer<a class="headerlink" href="#sound-mixer" title="Permanent link">&para;</a></h2>
+<p>Every sound belongs to a group of the game's mixer (game settings, Sound mixer): music, effects, ambience, voice, ui, and those the user added. group names one by its id or its name ("ambience" or "Ambiance"); without group, a sound goes to effects and the music to music. Pick the group that fits: a looping fire or wind in ambience, a character's line in voice, a menu click or a pickup chime in ui. The mixer sets each group's volume, can mute it, and lowers one while another plays (ducking: music under voices). Do not lower a music by hand when a line plays: put the line in voice.</p>
+<div class="highlight"><pre><span></span><code>game.volume(group or "master", 0..1). The player's level, on top of the game's mix: for an options menu (the menu module does it).
+game.mute(group or "master", true or false). Cuts a group, or all the sound, and brings it back (a cutscene without ambience).
+game.muffle(group or "master", 0..1, {fade=0.5}?). Muffled like under water or behind a wall: 0 clear, 0.5 behind a door, 1 under water. A trigger rule can do it too.
+game.sound_groups() -&gt; {{id, name}, ...}. The mixer's groups in order, name in the player's language: for an options menu.
+</code></pre></div>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<p>Files are MP4, M4V or MOV (H.264 video, AAC sound): find them with assets_search and kind "video". The game counts their time step by step, from the length written in the file: in game_run nothing is seen, but they start, end and announce their end at the same step as on screen, and the report lists them (videos: file, fullscreen, seconds watched, end "finished", "skipped", "stopped" or "playing").</p>
+<div class="highlight"><pre><span></span><code>game.video(file, {skip=true, event=nil, pause=true, volume=1, group="voice"}?) -&gt; handle. A full-screen cutscene, over the world and the HUD, with its sound: an intro, an ending, a story moment. Its sound goes to the voice group, so the music lowers under it; give another group of the mixer if it fits better. While it plays it takes the keyboard, mouse and gamepad: with skip, Escape, Enter, Space, a click, A or Start skip it. pause=true stops the world meanwhile. Starting another one replaces it.
+When it ends (finished, skipped or stopped), the engine announces "video.fin" {video=handle, fichier=file, passee=true if skipped}, and also your event if given: game.on("intro_done", function(e) game.go_to("Village") end). This is how you chain what comes next.
+game.hud_video(key, file, {x, y, w=0.3, h=0, loop=true, volume=1, group="effects", event=nil, alpha, align, parent}?) -&gt; handle. A video inside the HUD (a screen in a menu, an animated portrait), like game.hud_image: h=0 keeps the video's real proportions. Calling it again with the same key and file keeps it playing; game.hud_remove(key) stops it. volume=0 for a silent one.
+game.video_stop(handle)    game.video_playing(handle) -&gt; bool    game.video_time(handle) -&gt; seconds into the video, or nil once it ended (to time subtitles).
+A video on an object of the world (a television) is not available yet.
+</code></pre></div>
+<h2 id="saving-the-players-progress">Saving the player's progress<a class="headerlink" href="#saving-the-players-progress" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.save(slot, table) -&gt; true, or false and a reason. slot: lowercase letters, digits, _ and -, such as "game1". The table holds text, numbers, booleans, vectors, lists and tables with text keys: the state of the game (level, position, items), not the whole world. 1 MB at most.
+game.load(slot) -&gt; table, or nil if there is none.     game.has_save(slot) -&gt; bool     game.delete_save(slot)
+Saves are kept between plays of the player's game. In game_run they stay in memory: your tries never touch the player's saves.
+The systems keep their own state: game.save asks every script that defines on_save() for a table (its state: the inventory's items, the quests' progress, the shops' stocks, the dialogues' marks), and game.load gives each one back to its on_load(state). game.load called in on_start waits until every script has started. Do not save or re-add what a system keeps. The engine keeps the world too, in every scene visited: objects shown or hidden, solid or not, moved, turned, resized or pushed, destroyed (game.destroy) or copied (game.clone, game.pool), tags, lights, looping effects, decals, the active camera, timelines playing, joints, ragdolls, the vehicle driven, the player's speed and abilities. game.load puts each scene back as it was when saved; the player's own position is the game's to keep. Copies tagged population or population.&lt;kind&gt; (passers-by and cars of the dynamic population, with what they contain) are not saved: they are born again from the seed; a copy whose group carries population.garder (added by a script or a Trigger rule with game.add_tag) is saved and comes back. {systems = false} as the last argument of game.save or game.load leaves them out (to read a save without resuming it).
+A script of your own can do the same: function on_save() return {opened = opened} end   function on_load(state) opened = state.opened end. The state follows the rules of game.save; it is stored under the script's name.
+</code></pre></div>
+<h2 id="ranged-weapons">Ranged weapons<a class="headerlink" href="#ranged-weapons" title="Permanent link">&para;</a></h2>
+<p>Rays and projectiles (guns, bows, crossbows, grenades). The engine does the hard part; a script decides what a hit does (damage through sante.blesser). Melee stays with combat.basique: do not use these for a sword.</p>
+<div class="highlight"><pre><span></span><code>game.raycast(from, direction, distance=1000, {ignore=id or {ids}, tag=nil, water=false}?) -&gt; hit or nil. The first thing on the line: a collider (fixed or moving), the terrain, or a character (the player, other players, enemies, any animated model). hit = {id (nil for the terrain), point, normal (facing the shooter; on the terrain, that of the very triangle hit), distance, part, bone, water}.
+  water = true: the surface of water (seas, lakes, rivers of the terrain) stops the ray too: hit.water = true, id nil, point on the surface. Without it, a shot goes through water to the bottom. A ray that starts under water does not see the surface.
+  A character is hit by its real body, bone by bone, measured on its model: a shot between the legs or above a shoulder misses. part is "tete" (head), "torse" (torso), "bras" (arms) or "jambes" (legs), found by measuring the skeleton (any model: Mixamo, Quaternius, Meshy...); bone is the bone's name. A character without a skeleton is hit by its capsule: part and bone are nil.
+  Always ignore the shooter: {ignore = game.player()} (or the enemy that shoots). With tag, only objects carrying it count, and everything else is passed through (walls too): to find a target, not to shoot.
+  Cheap: hundreds of rays per second are fine. A hitscan gun is one ray per shot from the muzzle (or the camera) along the aim.
+game.projectile({from=, velocity=, gravity=1, radius=0.02, life=5, ignore=, model=nil, stick=false, stick_time=10, bounce=0, owner=nil, data=nil}) -&gt; handle. A projectile the engine moves on every step under gravity (a factor of the scene's: 0 flies straight, 1 falls like a stone). Each step it sweeps its whole path: nothing goes through a thin wall, even at 900 m/s. It never hits its owner. life in seconds.
+  model: a hidden object of the scene (an arrow, a rocket, a grenade); a copy of it follows the path, turned along its velocity (its longest side is its length, as placed in the scene), and goes back to a pool at the end. The projectile's point is the model's tip (its end furthest forward, measured on the model, wherever its pivot is): from is where the tip starts. Without model nothing is seen: an effect can follow it. Players who joined see the copies.
+  stick=true: it stays planted in what it hits by its tip (a sixth of its length goes in, at most 12 cm; the rest sticks out) and follows it (a moving enemy, the bone of an arm), then disappears after stick_time seconds. bounce (0 to 1): it bounces off what it hits keeping that share of its speed, then rests on the ground until its life ends (a grenade: life is its fuse).
+  Water: a projectile entering water announces "projectile.touche" with cible nil and eau = true (point on the surface: put game.effect("eclaboussure", e.point) there). It goes on, strongly slowed (a bullet stops within 2 m, an arrow within 1 m) and lighter: an arrow or a grenade sinks slowly to the bottom. A projectile without gravity stopped by water ends with raison "eau". To stop it at the surface instead: game.stop_projectile(e.projectile).
+  data: a table given back with its events (the weapon, the damage). Events: "projectile.touche" {projectile, owner, cible (nil for the terrain and water), point, normale, partie, os, vitesse, eau, data} at each hit; "projectile.fin" {projectile, owner, raison, point, data} when it is gone: raison is "touche", "duree" (life over: explode the grenade here), "plantee", "cible_partie", "eau" or "arrete".
+game.stop_projectile(handle) -&gt; true if it was still flying. Its "projectile.fin" (raison "arrete") is announced on the next step.
+Example: local hit = game.raycast(muzzle, aim, 200, {ignore = game.player()}) if hit and hit.id then game.emit("sante.blesser", {cible = hit.id, montant = hit.part == "tete" and 50 or 20, source = game.player()}) end
+</code></pre></div>
+<h2 id="ending-and-debugging">Ending and debugging<a class="headerlink" href="#ending-and-debugging" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>game.finish("won" or "lost", message?, players?). Stops the simulation; the game shows the message and offers to play again. Only for a game that has an ending.
+players (optional): each player's own end, { [player] = { outcome = "won" or "lost", titre = "1st", texte = "..." } }, a player being one of game.players(). Each player sees their own end screen: their titre (empty: Victory or Defeat from their outcome) and their texte (empty: message). Players left out see the game's end. Online, each guest receives their own.
+game.log(...). Shown in the report of game_run.
+game.time() -&gt; seconds                 game.dt() -&gt; seconds per step           game.step() -&gt; step number
+</code></pre></div>
+<h2 id="example-of-the-syntax-not-a-model-for-your-game">Example of the syntax, not a model for your game<a class="headerlink" href="#example-of-the-syntax-not-a-model-for-your-game" title="Permanent link">&para;</a></h2>
+<p>A dog that follows the player, and coins to collect.</p>
+<div class="highlight"><pre><span></span><code><span class="kd">local</span><span class="w"> </span><span class="nv">gold</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">on_start</span><span class="p">()</span>
+<span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">with_tag</span><span class="p">(</span><span class="s2">"dog"</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">    </span><span class="nv">game</span><span class="p">.</span><span class="nf">character</span><span class="p">(</span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">idle</span><span class="o">=</span><span class="s2">"Idle"</span><span class="p">,</span><span class="w"> </span><span class="nv">walk</span><span class="o">=</span><span class="s2">"Walking_A"</span><span class="p">})</span>
+<span class="w">  </span><span class="kr">end</span>
+<span class="kr">end</span>
+<span class="kr">function</span><span class="w"> </span><span class="nf">on_update</span><span class="p">(</span><span class="nv">dt</span><span class="p">)</span>
+<span class="w">  </span><span class="kd">local</span><span class="w"> </span><span class="nv">player</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">player</span><span class="p">()</span>
+<span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">with_tag</span><span class="p">(</span><span class="s2">"dog"</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">    </span><span class="kd">local</span><span class="w"> </span><span class="nv">to</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">position</span><span class="p">(</span><span class="nv">player</span><span class="p">)</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">position</span><span class="p">(</span><span class="nv">id</span><span class="p">)</span>
+<span class="w">    </span><span class="kr">if</span><span class="w"> </span><span class="nv">vector</span><span class="p">.</span><span class="nf">magnitude</span><span class="p">(</span><span class="nv">to</span><span class="p">)</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="kr">then</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">walk</span><span class="p">(</span><span class="nv">id</span><span class="p">,</span><span class="w"> </span><span class="nv">vector</span><span class="p">.</span><span class="nf">normalize</span><span class="p">(</span><span class="nv">to</span><span class="p">)</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="kr">end</span>
+<span class="w">  </span><span class="kr">end</span>
+<span class="w">  </span><span class="kr">for</span><span class="w"> </span><span class="nv">_</span><span class="p">,</span><span class="w"> </span><span class="nv">id</span><span class="w"> </span><span class="kr">in</span><span class="w"> </span><span class="nv">game</span><span class="p">.</span><span class="nf">near</span><span class="p">(</span><span class="nv">player</span><span class="p">,</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span><span class="w"> </span><span class="s2">"coin"</span><span class="p">)</span><span class="w"> </span><span class="kr">do</span>
+<span class="w">    </span><span class="nv">game</span><span class="p">.</span><span class="nf">destroy</span><span class="p">(</span><span class="nv">id</span><span class="p">)</span>
+<span class="w">    </span><span class="nv">gold</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">  </span><span class="kr">end</span>
+<span class="w">  </span><span class="nv">game</span><span class="p">.</span><span class="nf">hud_text</span><span class="p">(</span><span class="s2">"gold"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Gold: "</span><span class="w"> </span><span class="o">..</span><span class="w"> </span><span class="nv">gold</span><span class="p">,</span><span class="w"> </span><span class="p">{</span><span class="nv">x</span><span class="o">=</span><span class="mf">0.02</span><span class="p">,</span><span class="w"> </span><span class="nv">y</span><span class="o">=</span><span class="mf">0.07</span><span class="p">,</span><span class="w"> </span><span class="nv">align</span><span class="o">=</span><span class="s2">"left"</span><span class="p">})</span>
+<span class="kr">end</span>
+</code></pre></div>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>engine/script/script_runtime.cpp (scriptApiReference)</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../events/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System events">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System events
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../agent-tools/" class="md-footer__link md-footer__link--next" aria-label="Next: What the agent does">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                What the agent does
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

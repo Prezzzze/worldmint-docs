@@ -1,0 +1,4884 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/systems/tir/">
+      
+      
+      
+        <link rel="prev" href="../chiffon/">
+      
+      
+        <link rel="next" href="../manche/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Ranged weapons - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Ranged weapons
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game's systems and settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creator mode
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: screens, menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hosting your own lobby
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Your data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What's new
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Companion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Death and respawn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Knowledge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Race
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-armes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Weapon”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls-added-to-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controls added to the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ranged-weapons-tir" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ranged weapons (<code>tir</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ranged weapons (tir)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-player-gets-a-weapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How the player gets a weapon
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-model-in-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The model in hand
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-values-of-a-weapon-row-what-to-change-for-which-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The values of a weapon row (what to change for which game)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Game settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-other-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        With other systems
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events and override
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Check it
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Round
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shops of the city
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Status effects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-armes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Weapon”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls-added-to-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controls added to the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ranged-weapons-tir" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ranged weapons (<code>tir</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ranged weapons (tir)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-the-player-gets-a-weapon" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How the player gets a weapon
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-model-in-hand" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The model in hand
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-values-of-a-weapon-row-what-to-change-for-which-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The values of a weapon row (what to change for which game)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#game-settings" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Game settings
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#with-other-systems" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        With other systems
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-and-override" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events and override
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Check it
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="ranged-weapons">Ranged weapons<a class="headerlink" href="#ranged-weapons" title="Permanent link">&para;</a></h1>
+<p>Pistols, rifles, bows, crossbows and grenades: the player aims (right click), shoots (left click) and reloads (R). Each weapon is a row of settings: damage, head, fire rate, spread, recoil, magazine, ammunition. It hits what carries Health.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td><code>tir</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Placed on objects</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Also activates</td>
+<td><a href="../sante/">Health</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-for-the-whole-game">Settings for the whole game<a class="headerlink" href="#settings-for-the-whole-game" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Systems</strong> panel (Developer mode), by opening the system's card.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Weapons given at the start (names, separated by commas)</td>
+<td>The weapons each player has from the start, by their name in the "Weapons" list, such as "Pistol, Bow". With the Inventory, they go into their bag with their starting ammunition and are chosen in the bar; without it, the mouse wheel goes from one to the next. Empty: the player picks up their weapons.</td>
+<td><code>armes_depart</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Several players: players can hurt each other</td>
+<td>In a game with several players: ticked, a shot also hurts the other players (and a grenade its thrower). Unticked (the default), friends do not hurt each other. Like the setting of the same name in Basic combat.</td>
+<td><code>blesser_joueurs</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Reload by itself when the magazine is empty</td>
+<td>Ticked: shooting with an empty magazine reloads the weapon, if ammunition is left. Unticked: the player has to press Reload (R).</td>
+<td><code>recharge_auto</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Show the crosshair and the ammunition</td>
+<td>Shows on screen, while a ranged weapon is held: the crosshair, the marker when a shot hits, the ammunition and the reloading. Untick it if your game draws its own: shooting works the same.</td>
+<td><code>afficher</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Crosshair in the centre (opens up with the spread)</td>
+<td>Four lines around the place aimed at, as far apart as shots can stray: tight when aiming still, wide when running or after a burst.</td>
+<td><code>reticule</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Marker when a shot hits</td>
+<td>A brief cross in the centre when a shot hits what carries Health; bigger and in the "head" colour for a head shot.</td>
+<td><code>marqueur</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Crosshair colour</td>
+<td>The colour of the crosshair's lines and of the hit marker. A dark outline sets them apart from any background.</td>
+<td><code>couleur_reticule</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#ffffff"></span> <code>#ffffff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Colour of a head shot</td>
+<td>The colour of the marker when the shot hits the head: red by default, so it is recognised at a glance.</td>
+<td><code>couleur_tete</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#ff4d3a"></span> <code>#ff4d3a</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Flashes, trails, impacts and bullet holes</td>
+<td>Each shot shows the flash at the muzzle and the bullet's trail (if the weapon has them), an impact where it hits and a hole on walls. Untick it for a game without particles.</td>
+<td><code>effets</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Shoulder to aim over</td>
+<td>Over which shoulder the camera goes when the player aims, in third-person view.</td>
+<td><code>epaule</code></td>
+<td>Choice in a list</td>
+<td>Right</td>
+<td><code>droite</code>: Right<br><code>gauche</code>: Left</td>
+</tr>
+<tr>
+<td>View speed while aiming</td>
+<td>How fast the view turns while the player aims. It is already divided by the weapon's zoom, so a scope stays as easy to hold as a pistol: 1 usually suits, less for a steadier aim.</td>
+<td><code>sensibilite</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.05 to 4</td>
+</tr>
+<tr>
+<td>Aim assist with a gamepad (0: none)</td>
+<td>With a gamepad only: the view slows down near a target carrying Health and moves a little toward it. 0.3 helps without aiming for the player; 0 turns it off.</td>
+<td><code>aide</code></td>
+<td>Number</td>
+<td>0.3</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Action to shoot</td>
+<td>The game's control action that shoots ("attack": the left mouse button by default). While a ranged weapon is held, Basic combat does not strike with it.</td>
+<td><code>action</code></td>
+<td>Text</td>
+<td><code>attack</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Action to aim</td>
+<td>The action to hold to aim ("aim": the right mouse button, or the left trigger on a gamepad). The camera moves to the shoulder, comes closer by the weapon's zoom, and shots tighten.</td>
+<td><code>action_visee</code></td>
+<td>Text</td>
+<td><code>aim</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Action to reload</td>
+<td>The action that reloads the weapon held ("reload": R, or X on a gamepad).</td>
+<td><code>action_recharge</code></td>
+<td>Text</td>
+<td><code>reload</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Block action replaced by aiming</td>
+<td>Basic combat's block action ("block"), on the same key as aiming: while a ranged weapon is held, that key aims instead of blocking.</td>
+<td><code>action_parade</code></td>
+<td>Text</td>
+<td><code>block</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Healing action replaced by reloading</td>
+<td>The Healing module's "drink a potion" action ("heal"), on the same key as reloading (R): while a ranged weapon is held, R reloads and does not drink. Empty: both work together.</td>
+<td><code>action_soin</code></td>
+<td>Text</td>
+<td><code>heal</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip at rest, weapon in hand</td>
+<td>Played on the upper body while a firearm is in hand without aiming, while the legs walk or run. A clip of the player's character (Pistol_Idle_Loop of the UAL1 pack by default). Empty, or missing from its model: it keeps its animation.</td>
+<td><code>clip_repos</code></td>
+<td>Player animation</td>
+<td><code>Pistol_Idle_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip while aiming</td>
+<td>Played on the upper body while aiming with a firearm; the weapon is fitted on this clip's pose (the grip in its fist). Pistol_Aim_Neutral of the UAL1 pack by default.</td>
+<td><code>clip_visee</code></td>
+<td>Player animation</td>
+<td><code>Pistol_Aim_Neutral</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming up clip</td>
+<td>The same pose aiming straight up (90°): blended with the aiming clip by where the player looks. Empty: the back leans.</td>
+<td><code>clip_visee_haut</code></td>
+<td>Player animation</td>
+<td><code>Pistol_Aim_Up</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming down clip</td>
+<td>The same pose aiming straight down (90°): blended with the aiming clip by where the player looks. Empty: the back leans.</td>
+<td><code>clip_visee_bas</code></td>
+<td>Player animation</td>
+<td><code>Pistol_Aim_Down</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Shot clip</td>
+<td>Played once on the upper body at each firearm shot, then the aiming or rest clip takes over again.</td>
+<td><code>clip_tir</code></td>
+<td>Player animation</td>
+<td><code>Pistol_Shoot</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Reload clip</td>
+<td>Played on the upper body during the reload, sped up or slowed down to last the weapon's reload time.</td>
+<td><code>clip_recharge</code></td>
+<td>Player animation</td>
+<td><code>Pistol_Reload</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Throw clip (grenade)</td>
+<td>Played once on the upper body when a thrown weapon leaves (a grenade). OverhandThrow of the UAL2 pack by default.</td>
+<td><code>clip_lancer</code></td>
+<td>Player animation</td>
+<td><code>OverhandThrow</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Fingers clip</td>
+<td>The fingers taken from this clip (at its middle) during the weapon's gestures, and to fit the weapon in the fist. For clips of a pack whose hands have no fingers (KayKit: Ranged_2H_Aiming, Ranged_Bow_Aiming_Idle...): Pistol_Aim_Neutral or Idle_Torch_Loop close the fist. Empty: the fingers of the clip played.</td>
+<td><code>clip_mains</code></td>
+<td>Player animation</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip with a bow, aiming</td>
+<td>Played on the upper body while aiming with a bow: the left arm stretched toward the target, the string drawn to the corner of the mouth; the bow is fitted in its left fist. Bow_Aim_Loop of the worldmint-armes pack by default; without it on the character, Idle_Torch_Loop of UAL1.</td>
+<td><code>clip_arc</code></td>
+<td>Player animation</td>
+<td><code>Bow_Aim_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip with a bow, at rest</td>
+<td>Played on the upper body with a bow in hand, not aiming: the bow low and forward in the left hand. Empty: the bow's aiming clip.</td>
+<td><code>clip_arc_repos</code></td>
+<td>Player animation</td>
+<td><code>Bow_Idle_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Bow release clip</td>
+<td>Played once on the upper body when the arrow leaves: the right hand opens and moves back a little.</td>
+<td><code>clip_arc_tir</code></td>
+<td>Player animation</td>
+<td><code>Bow_Release</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Support hand on the weapon</td>
+<td>With a shoulder weapon, the left hand is put on the real weapon after the clip: on each weapon's measured handguard (or, out of the arm's reach, the most forward point it reaches under the weapon, never the magazine), and on the magazine during a reload. Unticked: the hand stays where the clip puts it.</td>
+<td><code>main_soutien</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip at rest, shoulder weapon</td>
+<td>Played on the upper body while a shoulder weapon (rifle, shotgun, sniper rifle, submachine gun, crossbow) is in hand without aiming: low ready, the muzzle down, the stock at the shoulder. Rifle_Idle_Loop of the worldmint-armes pack by default; missing from the character, the pistol clips are used.</td>
+<td><code>clip_fusil_repos</code></td>
+<td>Player animation</td>
+<td><code>Rifle_Idle_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming clip, shoulder weapon</td>
+<td>Played while aiming with a shoulder weapon: the stock in the shoulder pocket, the cheek on the stock, the left hand under the handguard; the weapon is fitted on this clip's right fist.</td>
+<td><code>clip_fusil_visee</code></td>
+<td>Player animation</td>
+<td><code>Rifle_Aim_Neutral</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming up clip, shoulder weapon</td>
+<td>A shoulder weapon aiming up (75°), blended by where the player looks.</td>
+<td><code>clip_fusil_visee_haut</code></td>
+<td>Player animation</td>
+<td><code>Rifle_Aim_Up</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming down clip, shoulder weapon</td>
+<td>A shoulder weapon aiming down (75°), blended by where the player looks.</td>
+<td><code>clip_fusil_visee_bas</code></td>
+<td>Player animation</td>
+<td><code>Rifle_Aim_Down</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Shot clip, shoulder weapon</td>
+<td>Played once at each shot of a shoulder weapon: the recoil into the shoulder (0.25 s).</td>
+<td><code>clip_fusil_tir</code></td>
+<td>Player animation</td>
+<td><code>Rifle_Shoot</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Reload clip, shoulder weapon</td>
+<td>Played during a shoulder weapon's reload, stretched to the reload time: the left hand goes to the magazine, down, back up, back to the handguard.</td>
+<td><code>clip_fusil_recharge</code></td>
+<td>Player animation</td>
+<td><code>Rifle_Reload</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip at rest, shotgun</td>
+<td>Played on the upper body while a weapon with the “shotgun” gestures is in hand without aiming: the right hand on the wrist of the stock, the left hand on the pump. Shotgun_Idle_Loop of the worldmint-armes pack; missing from the character, the rifle clips are used.</td>
+<td><code>clip_pompe_repos</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Idle_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming clip, shotgun</td>
+<td>Played while aiming with a shotgun; the weapon is fitted on this clip's right fist (on the wrist of the stock).</td>
+<td><code>clip_pompe_visee</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Aim_Neutral</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming up clip, shotgun</td>
+<td>A shotgun aiming up (75°), blended by where the player looks.</td>
+<td><code>clip_pompe_visee_haut</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Aim_Up</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming down clip, shotgun</td>
+<td>A shotgun aiming down (75°), blended by where the player looks.</td>
+<td><code>clip_pompe_visee_bas</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Aim_Down</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Shot clip, shotgun</td>
+<td>Played once at each shotgun shot: the recoil into the shoulder (0.3 s).</td>
+<td><code>clip_pompe_tir</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Shoot</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Pump clip, shotgun</td>
+<td>Played after the shot clip: the left hand pulls the pump back then pushes it forward (0.5 s). Empty: no pump gesture.</td>
+<td><code>clip_pompe_pompe</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Pump</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Reload clip, shotgun</td>
+<td>Played during a shotgun's reload, stretched to the reload time: three shells taken from the belt and slid in one by one from below.</td>
+<td><code>clip_pompe_recharge</code></td>
+<td>Player animation</td>
+<td><code>Shotgun_Reload</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip at rest, sniper rifle</td>
+<td>Played on the upper body while a weapon with the “sniper rifle” gestures is in hand without aiming: low ready, the muzzle down, the head upright. Sniper_Idle_Loop of the worldmint-armes pack; missing from the character, the rifle clips are used.</td>
+<td><code>clip_precision_repos</code></td>
+<td>Player animation</td>
+<td><code>Sniper_Idle_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming clip, sniper rifle</td>
+<td>Played while aiming with a weapon with the “sniper rifle” gestures: the scope at the eye, the head barely lowered; the weapon is fitted on this clip's right fist.</td>
+<td><code>clip_precision_visee</code></td>
+<td>Player animation</td>
+<td><code>Sniper_Aim_Neutral</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming up clip, sniper rifle</td>
+<td>Aiming up (75°), blended by where the player looks.</td>
+<td><code>clip_precision_visee_haut</code></td>
+<td>Player animation</td>
+<td><code>Sniper_Aim_Up</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming down clip, sniper rifle</td>
+<td>Aiming down (75°), blended by where the player looks.</td>
+<td><code>clip_precision_visee_bas</code></td>
+<td>Player animation</td>
+<td><code>Sniper_Aim_Down</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Shot clip, sniper rifle</td>
+<td>Played once at each shot: the recoil into the shoulder (0.25 s), a slight overshoot.</td>
+<td><code>clip_precision_tir</code></td>
+<td>Player animation</td>
+<td><code>Sniper_Shoot</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Reload clip, sniper rifle</td>
+<td>Played during the reload, stretched to its time: the left hand goes to the magazine, takes it out, puts one in, comes back under the weapon.</td>
+<td><code>clip_precision_recharge</code></td>
+<td>Player animation</td>
+<td><code>Sniper_Reload</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Arms clip at rest, crossbow</td>
+<td>Played on the upper body while a weapon with the “crossbow” gestures is in hand without aiming: low ready, the muzzle down, the head upright. Crossbow_Idle_Loop of the worldmint-armes pack; missing from the character, the rifle clips are used.</td>
+<td><code>clip_arbalete_repos</code></td>
+<td>Player animation</td>
+<td><code>Crossbow_Idle_Loop</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming clip, crossbow</td>
+<td>Played while aiming with a weapon with the “crossbow” gestures: the stock in the shoulder pocket, the left hand under the fore-end; the weapon is fitted on this clip's right fist.</td>
+<td><code>clip_arbalete_visee</code></td>
+<td>Player animation</td>
+<td><code>Crossbow_Aim_Neutral</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming up clip, crossbow</td>
+<td>Aiming up (75°), blended by where the player looks.</td>
+<td><code>clip_arbalete_visee_haut</code></td>
+<td>Player animation</td>
+<td><code>Crossbow_Aim_Up</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Aiming down clip, crossbow</td>
+<td>Aiming down (75°), blended by where the player looks.</td>
+<td><code>clip_arbalete_visee_bas</code></td>
+<td>Player animation</td>
+<td><code>Crossbow_Aim_Down</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Shot clip, crossbow</td>
+<td>Played once at each shot: the recoil into the shoulder (0.25 s), a slight overshoot.</td>
+<td><code>clip_arbalete_tir</code></td>
+<td>Player animation</td>
+<td><code>Crossbow_Shoot</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Reload clip, crossbow</td>
+<td>Played during the reload, stretched to its time: the left hand takes a bolt at the hip, lays it on the rail, draws the string back to the latch, comes back under the fore-end.</td>
+<td><code>clip_arbalete_recharge</code></td>
+<td>Player animation</td>
+<td><code>Crossbow_Reload</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Bow draw clip</td>
+<td>Played once when starting to aim with a bow: the bow rises toward the target, the right hand takes the string and draws it to the corner of the mouth (0.6 s); then the bow's aiming clip loops. Empty: no gesture.</td>
+<td><code>clip_arc_bander</code></td>
+<td>Player animation</td>
+<td><code>Bow_Draw</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Weapons</td>
+<td>One row per weapon, all of them editable: pistol, revolver, assault rifle, submachine gun, shotgun, sniper rifle, bow, crossbow and grenade are ready, with their shipped model. Its name is also the kind of Inventory item that puts it in hand ("Pistol"). Add a row for a weapon of your game.</td>
+<td><code>armes</code></td>
+<td>List of “Weapon”</td>
+<td><code>[{'nom': 'Pistolet', 'sorte': 'balle', 'degats': 20, 'tete': 2, 'chute_debut': 25, 'chute_fin': 60, 'degats_loin': 60, 'portee': 150, 'cadence': 5, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 2, 'dispersion_visee': 0.4, 'dispersion_marche': 1.5, 'dispersion_tir': 1, 'dispersion_retour': 8, 'recul': 2.5, 'recul_cote': 0.8, 'chargeur': 12, 'munitions': 'Balles', 'reserve': 48, 'rechargement': 1.3, 'zoom': 1.5, 'vitesse': 60, 'gravite': 1, 'duree': 6, 'modele_projectile': '', 'plante': False, 'rebond': 0, 'explosion': 0, 'poussee': 3, 'eclair': True, 'trainee': True, 'modele': '', 'modele_fichier': 'armes/quaternius-armes/Pistol_1.fbx', 'longueur': 0.2, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-a-feu/pistolet_1.wav, sons/armes-a-feu/pistolet_2.wav, sons/armes-a-feu/pistolet_3.wav', 'son_vide': 'sons/rechargements/clic_vide_1.wav, sons/rechargements/clic_vide_2.wav', 'son_recharge': 'sons/rechargements/chargeur_pistolet.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': '', 'gestes': 'arme_courte'}, {'nom': 'Revolver', 'sorte': 'balle', 'degats': 34, 'tete': 2, 'chute_debut': 25, 'chute_fin': 60, 'degats_loin': 60, 'portee': 150, 'cadence': 2, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 2, 'dispersion_visee': 0.3, 'dispersion_marche': 1.5, 'dispersion_tir': 1, 'dispersion_retour': 8, 'recul': 5, 'recul_cote': 0.8, 'chargeur': 6, 'munitions': 'Balles', 'reserve': 30, 'rechargement': 2.2, 'zoom': 1.5, 'vitesse': 60, 'gravite': 1, 'duree': 6, 'modele_projectile': '', 'plante': False, 'rebond': 0, 'explosion': 0, 'poussee': 3, 'eclair': True, 'trainee': True, 'modele': '', 'modele_fichier': 'armes/quaternius-armes/Revolver_1.fbx', 'longueur': 0.28, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-a-feu/revolver_1.wav, sons/armes-a-feu/revolver_2.wav', 'son_vide': 'sons/rechargements/clic_vide_3.wav', 'son_recharge': 'sons/rechargements/recharge_arme.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': '', 'gestes': 'arme_courte'}, {'nom': "Fusil d'assaut", 'sorte': 'balle', 'degats': 16, 'tete': 2, 'chute_debut': 35, 'chute_fin': 90, 'degats_loin': 60, 'portee': 200, 'cadence': 10, 'mode': 'automatique', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 3, 'dispersion_visee': 0.6, 'dispersion_marche': 2, 'dispersion_tir': 0.5, 'dispersion_retour': 10, 'recul': 1.6, 'recul_cote': 0.9, 'chargeur': 30, 'munitions': 'Balles', 'reserve': 90, 'rechargement': 2, 'zoom': 1.7, 'vitesse': 60, 'gravite': 1, 'duree': 6, 'modele_projectile': '', 'plante': False, 'rebond': 0, 'explosion': 0, 'poussee': 3, 'eclair': True, 'trainee': True, 'modele': '', 'modele_fichier': 'armes/quaternius-armes/AssaultRifle_2.fbx', 'longueur': 0.9, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-a-feu/fusil_assaut_1.wav, sons/armes-a-feu/fusil_assaut_2.wav, sons/armes-a-feu/fusil_assaut_3.wav', 'son_vide': 'sons/rechargements/clic_vide_1.wav, sons/rechargements/clic_vide_2.wav', 'son_recharge': 'sons/rechargements/chargeur_fusil.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': '', 'gestes': 'fusil'}, {'nom': 'Mitraillette', 'sorte': 'balle', 'degats': 11, 'tete': 2, 'chute_debut': 15, 'chute_fin': 45, 'degats_loin': 60, 'portee': 120, 'cadence': 14, 'mode': 'automatique', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 2.5, 'dispersion_visee': 1.2, 'dispersion_marche': 2, 'dispersion_tir': 0.5, 'dispersion_retour': 10, 'recul': 1, 'recul_cote': 0.9, 'chargeur': 32, 'munitions': 'Balles', 'reserve': 128, 'rechargement': 1.7, 'zoom': 1.4, 'vitesse': 60, 'gravite': 1, 'duree': 6, 'modele_projectile': '', 'plante': False, 'rebond': 0, 'explosion': 0, 'poussee': 3, 'eclair': True, 'trainee': True, 'modele': '', 'modele_fichier': 'armes/quaternius-armes/SubmachineGun_1.fbx', 'longueur': 0.6, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-a-feu/mitraillette_1.wav, sons/armes-a-feu/mitraillette_2.wav, sons/armes-a-feu/mitraillette_3.wav', 'son_vide': 'sons/rechargements/clic_vide_1.wav, sons/rechargements/clic_vide_2.wav', 'son_recharge': 'sons/rechargements/recharge_arme.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': '', 'gestes': 'fusil'}, {'nom': 'Fusil à pompe', 'sorte': 'balle', 'degats': 12, 'tete': 1.5, 'chute_debut': 8, 'chute_fin': 25, 'degats_loin': 20, 'portee': 40, 'cadence': 1.2, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 8, 'dispersion_hanche': 5, 'dispersion_visee': 4, 'dispersion_marche': 1, 'dispersion_tir': 0, 'dispersion_retour': 10, 'recul': 7, 'recul_cote': 2, 'chargeur': 6, 'munitions': 'Cartouches', 'reserve': 24, 'rechargement': 2.6, 'zoom': 1.3, 'vitesse': 60, 'gravite': 1, 'duree': 6, 'modele_projectile': '', 'plante': False, 'rebond': 0, 'explosion': 0, 'poussee': 6, 'eclair': True, 'trainee': True, 'modele': '', 'modele_fichier': 'armes/quaternius-armes/Shotgun_1.fbx', 'longueur': 1, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-a-feu/fusil_pompe_1.wav, sons/armes-a-feu/fusil_pompe_2.wav, sons/armes-a-feu/fusil_pompe_3.wav', 'son_vide': 'sons/rechargements/clic_vide_3.wav', 'son_recharge': 'sons/rechargements/pompe_armer.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': '', 'gestes': 'fusil_pompe'}, {'nom': 'Fusil de précision', 'sorte': 'balle', 'degats': 80, 'tete': 2.5, 'chute_debut': 120, 'chute_fin': 400, 'degats_loin': 80, 'portee': 500, 'cadence': 0.8, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 6, 'dispersion_visee': 0.05, 'dispersion_marche': 4, 'dispersion_tir': 3, 'dispersion_retour': 4, 'recul': 9, 'recul_cote': 1.5, 'chargeur': 5, 'munitions': 'Balles de précision', 'reserve': 20, 'rechargement': 2.4, 'zoom': 4, 'vitesse': 60, 'gravite': 1, 'duree': 6, 'modele_projectile': '', 'plante': False, 'rebond': 0, 'explosion': 0, 'poussee': 8, 'eclair': True, 'trainee': True, 'modele': '', 'modele_fichier': 'armes/quaternius-armes/SniperRifle_1.fbx', 'longueur': 1.15, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-a-feu/fusil_precision_1.wav, sons/armes-a-feu/fusil_precision_2.wav, sons/armes-a-feu/fusil_precision_3.wav', 'son_vide': 'sons/rechargements/clic_vide_3.wav', 'son_recharge': 'sons/rechargements/chargeur_fusil.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': '', 'gestes': 'precision'}, {'nom': 'Arc', 'sorte': 'projectile', 'degats': 45, 'tete': 2, 'chute_debut': 100, 'chute_fin': 200, 'degats_loin': 100, 'portee': 150, 'cadence': 1.2, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 1.5, 'dispersion_visee': 0.3, 'dispersion_marche': 1, 'dispersion_tir': 0, 'dispersion_retour': 5, 'recul': 0.5, 'recul_cote': 0, 'chargeur': 0, 'munitions': 'Flèches', 'reserve': 20, 'rechargement': 0, 'zoom': 1.5, 'vitesse': 55, 'gravite': 1, 'duree': 8, 'modele_projectile': '', 'plante': True, 'rebond': 0, 'explosion': 0, 'poussee': 2, 'eclair': False, 'trainee': False, 'modele': '', 'modele_fichier': 'armes/avramania-armes/mdvl_weapons_shortbow_01.glb', 'longueur': 1.45, 'avant_modele': 'auto', 'prise': 'debout', 'main': 'gauche', 'modele_projectile_fichier': 'armes/avramania-armes/mdvl_weapons_arrow_01.glb', 'taille_eclair': 1, 'son_tir': 'sons/arc-arbalete/arc_tir_1.wav, sons/arc-arbalete/arc_tir_2.wav, sons/arc-arbalete/arc_tir_3.wav', 'son_vide': '', 'son_recharge': '', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': 'sons/arc-arbalete/arc_bander_1.wav, sons/arc-arbalete/arc_bander_2.wav', 'son_impact': 'sons/explosions-magie/fleche_impact_1.wav, sons/explosions-magie/fleche_impact_2.wav, sons/explosions-magie/fleche_impact_3.wav', 'son_explosion': '', 'gestes': 'arc'}, {'nom': 'Arbalète', 'sorte': 'projectile', 'degats': 60, 'tete': 2, 'chute_debut': 100, 'chute_fin': 200, 'degats_loin': 100, 'portee': 200, 'cadence': 2, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 1.5, 'dispersion_visee': 0.2, 'dispersion_marche': 1, 'dispersion_tir': 0, 'dispersion_retour': 5, 'recul': 2, 'recul_cote': 0.3, 'chargeur': 1, 'munitions': 'Carreaux', 'reserve': 15, 'rechargement': 1.6, 'zoom': 1.8, 'vitesse': 80, 'gravite': 0.6, 'duree': 8, 'modele_projectile': '', 'plante': True, 'rebond': 0, 'explosion': 0, 'poussee': 3, 'eclair': False, 'trainee': False, 'modele': '', 'modele_fichier': 'armes/avramania-armes/mdvl_weapons_crossbow_01.glb', 'longueur': 0.8, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': 'armes/avramania-armes/mdvl_weapons_bolt_01.glb', 'taille_eclair': 1, 'son_tir': 'sons/arc-arbalete/arbalete_tir_1.wav, sons/arc-arbalete/arbalete_tir_2.wav, sons/arc-arbalete/arbalete_tir_3.wav', 'son_vide': '', 'son_recharge': 'sons/arc-arbalete/arbalete_recharge_1.wav, sons/arc-arbalete/arbalete_recharge_2.wav', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': 'sons/explosions-magie/fleche_impact_1.wav, sons/explosions-magie/fleche_impact_2.wav, sons/explosions-magie/fleche_impact_3.wav', 'son_explosion': '', 'gestes': 'arbalete'}, {'nom': 'Grenade', 'sorte': 'projectile', 'degats': 100, 'tete': 1, 'chute_debut': 0, 'chute_fin': 0, 'degats_loin': 100, 'portee': 60, 'cadence': 1, 'mode': 'coup_par_coup', 'rafale': 3, 'plombs': 1, 'dispersion_hanche': 0, 'dispersion_visee': 0, 'dispersion_marche': 0, 'dispersion_tir': 0, 'dispersion_retour': 5, 'recul': 0, 'recul_cote': 0, 'chargeur': 0, 'munitions': 'Grenade', 'reserve': 3, 'rechargement': 0, 'zoom': 1.2, 'vitesse': 16, 'gravite': 1, 'duree': 2.5, 'modele_projectile': '', 'plante': False, 'rebond': 0.35, 'explosion': 5, 'poussee': 10, 'eclair': False, 'trainee': False, 'modele': '', 'modele_fichier': '', 'longueur': 0, 'avant_modele': 'auto', 'prise': 'arme', 'main': 'droite', 'modele_projectile_fichier': '', 'taille_eclair': 1, 'son_tir': 'sons/armes-blanches/dague_coup_1.wav', 'son_vide': '', 'son_recharge': '', 'animation_tenue': '', 'animation_tir': '', 'animation_recharge': '', 'son_visee': '', 'son_impact': '', 'son_explosion': 'sons/explosions-magie/explosion_1.wav, sons/explosions-magie/explosion_2.wav, sons/explosions-magie/explosion_3.wav', 'gestes': 'auto'}]</code></td>
+<td>one line per “Weapon”: <a href="#champs-armes">its fields</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-armes">The fields of each “Weapon”<a class="headerlink" href="#champs-armes" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Weapon” has its own numbered frame; <strong>Add: Weapon</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name (the kind of item held in hand)</td>
+<td>The weapon's name, which is also the Inventory's kind of item: holding a "Pistol" in the bar puts this weapon in hand.</td>
+<td><code>nom</code></td>
+<td>Text</td>
+<td><code>Arme</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Kind of shot</td>
+<td>A bullet hits at once what is on the aiming line (firearms). A projectile flies, falls with gravity and can be seen: an arrow, a bolt, a grenade.</td>
+<td><code>sorte</code></td>
+<td>Choice in a list</td>
+<td>Bullet (hits at once, in a straight line)</td>
+<td><code>balle</code>: Bullet (hits at once, in a straight line)<br><code>projectile</code>: Projectile that flies and falls (arrow, bolt, grenade)</td>
+</tr>
+<tr>
+<td>Damage of a shot</td>
+<td>The health points a shot removes, before the target's armor; for a shotgun, those of each pellet. 20 against 100 health points: five shots.</td>
+<td><code>degats</code></td>
+<td>Number</td>
+<td>20</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+<tr>
+<td>Head multiplier</td>
+<td>Damage is multiplied by this number when the shot hits the head: 2 counts double, 1 like anywhere else. The head is found on each model's skeleton.</td>
+<td><code>tete</code></td>
+<td>Number</td>
+<td>2</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Full damage up to (m)</td>
+<td>Up to this distance, in metres, the shot does all its damage. Beyond it, damage drops until the next distance.</td>
+<td><code>chute_debut</code></td>
+<td>Number</td>
+<td>25</td>
+<td>from 0 to 10 000</td>
+</tr>
+<tr>
+<td>Weakest damage from (m)</td>
+<td>From this distance, in metres, the shot only does the share of damage below: a shotgun loses quickly, a sniper rifle hardly at all.</td>
+<td><code>chute_fin</code></td>
+<td>Number</td>
+<td>60</td>
+<td>from 0 to 10 000</td>
+</tr>
+<tr>
+<td>Share of damage kept far away (%)</td>
+<td>The share of damage left at the longest range, as a percentage: 100, the weapon loses nothing with distance; 20, a fifth is left.</td>
+<td><code>degats_loin</code></td>
+<td>Number</td>
+<td>60</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Range (m)</td>
+<td>How far, in metres, a bullet can hit; for a projectile, how far the point aimed at is looked for.</td>
+<td><code>portee</code></td>
+<td>Number</td>
+<td>150</td>
+<td>from 1 to 5000</td>
+</tr>
+<tr>
+<td>Most shots per second</td>
+<td>How many shots the weapon can make in one second: 5 for a pistol, 10 for an assault rifle, less than 1 for a sniper rifle.</td>
+<td><code>cadence</code></td>
+<td>Number</td>
+<td>5</td>
+<td>from 0.05 to 30</td>
+</tr>
+<tr>
+<td>Firing mode</td>
+<td>Single shot: one shot per press. Burst: a few shots in a row per press. Automatic: the weapon fires as long as the key is held, at its rate.</td>
+<td><code>mode</code></td>
+<td>Choice in a list</td>
+<td>Single shot (one shot per press)</td>
+<td><code>coup_par_coup</code>: Single shot (one shot per press)<br><code>rafale</code>: Burst (a few shots per press)<br><code>automatique</code>: Automatic (fires while held)</td>
+</tr>
+<tr>
+<td>Shots per burst<br><em>shown only if <strong>Firing mode</strong> is “Burst (a few shots per press)”</em></td>
+<td>How many shots each press fires, at the weapon's rate.</td>
+<td><code>rafale</code></td>
+<td>Number</td>
+<td>3</td>
+<td>from 2 to 20, as a whole number</td>
+</tr>
+<tr>
+<td>Pellets per shot</td>
+<td>How many bullets each shot fires, each with its own spread: 1 for most weapons, 8 for a shotgun.</td>
+<td><code>plombs</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 1 to 32, as a whole number</td>
+</tr>
+<tr>
+<td>Spread without aiming (°)</td>
+<td>By how many degrees at most a shot strays from the centre when the player shoots without aiming. 0: always in the centre.</td>
+<td><code>dispersion_hanche</code></td>
+<td>Number</td>
+<td>2</td>
+<td>from 0 to 45</td>
+</tr>
+<tr>
+<td>Spread while aiming (°)</td>
+<td>The same while the player aims: smaller, aiming pays off. A shotgun keeps a wide spray.</td>
+<td><code>dispersion_visee</code></td>
+<td>Number</td>
+<td>0.4</td>
+<td>from 0 to 45</td>
+</tr>
+<tr>
+<td>Extra spread while moving (°)</td>
+<td>The degrees added while the player walks or runs: shooting while still is more precise.</td>
+<td><code>dispersion_marche</code></td>
+<td>Number</td>
+<td>1.5</td>
+<td>from 0 to 45</td>
+</tr>
+<tr>
+<td>Extra spread at each shot (°)</td>
+<td>The degrees added by each shot, which then fade away: a long burst widens, measured shots stay precise.</td>
+<td><code>dispersion_tir</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 45</td>
+</tr>
+<tr>
+<td>Spread recovery (° per second)</td>
+<td>How fast the spread added by shots comes back to zero, in degrees per second.</td>
+<td><code>dispersion_retour</code></td>
+<td>Number</td>
+<td>8</td>
+<td>from 0 to 200</td>
+</tr>
+<tr>
+<td>Recoil upward (°)</td>
+<td>By how many degrees the view jumps up at each shot, before coming back by itself: 2 to 4 for a pistol, 6 to 10 for a shotgun.</td>
+<td><code>recul</code></td>
+<td>Number</td>
+<td>2.5</td>
+<td>from 0 to 45</td>
+</tr>
+<tr>
+<td>Sideways recoil, at random (°)</td>
+<td>At most how many degrees the view moves left or right at each shot, at random: a little makes the weapon feel alive.</td>
+<td><code>recul_cote</code></td>
+<td>Number</td>
+<td>0.8</td>
+<td>from 0 to 45</td>
+</tr>
+<tr>
+<td>Shots per magazine (0: no magazine)</td>
+<td>How many shots before reloading. 0: no magazine, each shot takes one piece of ammunition directly (a bow, grenades).</td>
+<td><code>chargeur</code></td>
+<td>Number</td>
+<td>12</td>
+<td>from 0 to 1000, as a whole number</td>
+</tr>
+<tr>
+<td>Ammunition (empty: endless)</td>
+<td>The kind of item the weapon uses up, such as "Bullets" or "Arrows": with the Inventory, it is picked up and counted in the bag. Empty: endless ammunition. For a grenade, its own name: each throw takes one.</td>
+<td><code>munitions</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Starting ammunition</td>
+<td>The ammunition the player gets with the weapon when it is given at the start (on top of a full magazine). Without the Inventory, it is the reserve the weapon keeps itself.</td>
+<td><code>reserve</code></td>
+<td>Number</td>
+<td>48</td>
+<td>from 0 to 100 000, as a whole number</td>
+</tr>
+<tr>
+<td>Reload time (s)</td>
+<td>How many seconds a reload lasts; the player cannot shoot meanwhile. Switching weapons interrupts it.</td>
+<td><code>rechargement</code></td>
+<td>Number</td>
+<td>1.4</td>
+<td>from 0 to 30</td>
+</tr>
+<tr>
+<td>Zoom while aiming</td>
+<td>How much closer the view comes when the player aims: 1.5 for most weapons, 4 or more for a sniper scope.</td>
+<td><code>zoom</code></td>
+<td>Number</td>
+<td>1.5</td>
+<td>from 1 to 8</td>
+</tr>
+<tr>
+<td>Projectile speed (m/s)<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>The speed at launch, in metres per second: about 55 for an arrow, 80 for a bolt, 15 for a thrown grenade.</td>
+<td><code>vitesse</code></td>
+<td>Number</td>
+<td>60</td>
+<td>from 1 to 2000</td>
+</tr>
+<tr>
+<td>Projectile gravity (1: normal)<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>How the projectile falls: 1 like a stone, 0 straight on (a magic ball), in between for an arrow that carries far.</td>
+<td><code>gravite</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 10</td>
+</tr>
+<tr>
+<td>Flight time, or fuse (s)<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>After this many seconds, the projectile goes. For a grenade that bounces, it is its fuse: it explodes at the end.</td>
+<td><code>duree</code></td>
+<td>Number</td>
+<td>6</td>
+<td>from 0.1 to 60</td>
+</tr>
+<tr>
+<td>Projectile model (a hidden object)<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>An object of the scene, usually hidden, a copy of which flies: an arrow, a grenade. Its longest side follows the path. Empty: the projectile cannot be seen.</td>
+<td><code>modele_projectile</code></td>
+<td>Object of the scene</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sticks in what it hits<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>Ticked: the arrow stays stuck in what it hits and follows it (a walking enemy), then goes after a few seconds.</td>
+<td><code>plante</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Bounce (0: stops at the first hit)<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>The share of its speed the projectile keeps when bouncing: 0.35 for a grenade that rolls a little. 0: it stops where it hits.</td>
+<td><code>rebond</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Explosion radius (m, 0: no explosion)</td>
+<td>The shot explodes where it ends: everything carrying Health within this radius, with no wall in between, loses damage that drops with distance, and what moves is blown away. 5 for a grenade.</td>
+<td><code>explosion</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Push on what is hit (m/s)</td>
+<td>How hard a shot pushes what it hits, from the point hit: a crate that spins, an enemy that steps back. 0: nothing moves.</td>
+<td><code>poussee</code></td>
+<td>Number</td>
+<td>3</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Flash at the muzzle</td>
+<td>A firearm makes a brief flash of light and a little smoke at the muzzle. Untick it for a bow or a silenced weapon.</td>
+<td><code>eclair</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Bright trail of the bullet<br><em>shown only if <strong>Kind of shot</strong> is “Bullet (hits at once, in a straight line)”</em></td>
+<td>A bright streak flies from the muzzle to the point hit, to see where the bullet goes.</td>
+<td><code>trainee</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Model held (a hidden object of the scene)</td>
+<td>Without the Inventory system, the object of the scene shown in the hand (put it in the character's hand in the editor, then hide it). With the Inventory, its "Models in hand" list shows it.</td>
+<td><code>modele</code></td>
+<td>Object of the scene</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Weapon model (a file)</td>
+<td>The file of the model held in hand when no object of the scene is chosen above and the Inventory shows none. The ready weapons have a model shipped with WorldMint (copied into the project with its licence when the game starts). The grip goes into the palm and the barrel follows the aim, measured on the model.</td>
+<td><code>modele_fichier</code></td>
+<td>model</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Real length of the weapon (m, 0: the object's)</td>
+<td>The weapon's real length, for a 1.8 m character: the model in hand (the row's file, or the Inventory's) is brought to this length, measured along the barrel (a bow's height), then scaled to the character's height measured on its model. Reference lengths: pistol 0.20 m, revolver 0.28, submachine gun 0.6, assault rifle 0.9, shotgun 1.0, sniper rifle 1.15, crossbow 0.8, bow 1.45 (sword 0.95, dagger 0.3). 0: the object's size is kept. An object placed by hand in the editor keeps its own.</td>
+<td><code>longueur</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 5</td>
+</tr>
+<tr>
+<td>Front of the model (the muzzle)</td>
+<td>The side of the model where the muzzle is: where the shot starts, turned toward the aim. Found by itself, it is the thinnest end of its longest axis (the stock and the grip are at the back). Choose an axis if a weapon is held backwards.</td>
+<td><code>avant_modele</code></td>
+<td>Choice in a list</td>
+<td>Found by itself (the thinnest end)</td>
+<td><code>auto</code>: Found by itself (the thinnest end)<br><code>+x</code>: +X<br><code>-x</code>: −X<br><code>+y</code>: +Y<br><code>-y</code>: −Y<br><code>+z</code>: +Z<br><code>-z</code>: −Z</td>
+</tr>
+<tr>
+<td>Way to hold</td>
+<td>A firearm or a crossbow: the grip in the palm, the barrel forward. A bow: upright in the fist, its length along the thumb, its wood forward.</td>
+<td><code>prise</code></td>
+<td>Choice in a list</td>
+<td>Like a firearm (the barrel along the fingers)</td>
+<td><code>arme</code>: Like a firearm (the barrel along the fingers)<br><code>debout</code>: Upright, like a bow (across the fist)</td>
+</tr>
+<tr>
+<td>Hand that holds</td>
+<td>The hand the weapon goes in, found by measuring the character's skeleton: usually the right one, the left one for a bow.</td>
+<td><code>main</code></td>
+<td>Choice in a list</td>
+<td>Right hand</td>
+<td><code>droite</code>: Right hand<br><code>gauche</code>: Left hand</td>
+</tr>
+<tr>
+<td>Size (1: real size)</td>
+<td>The weapon in hand takes its real length ("Length", for a 1.8 m character), scaled to the character's height measured on its model. This number makes it bigger or smaller: 1 usually, 1.5 for a cartoon weapon.</td>
+<td><code>taille</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.1 to 5</td>
+</tr>
+<tr>
+<td>Hold</td>
+<td>How the character holds the weapon. Two-handed: the butt against the shoulder, one hand on the grip, the other under the barrel, the weapon pointed along the aim (low across the body at rest). Like a bow: in the left hand, the arm stretched and the string drawn while aiming. Found by itself: a bow if it is held upright, two hands if the weapon is longer than three quarters of the arm, otherwise one hand.</td>
+<td><code>tenue</code></td>
+<td>Choice in a list</td>
+<td>Found by itself (from the weapon's length)</td>
+<td><code>auto</code>: Found by itself (from the weapon's length)<br><code>une_main</code>: One-handed (a pistol)<br><code>deux_mains</code>: Two-handed (a rifle: butt against the shoulder)<br><code>arc</code>: Like a bow (the string drawn while aiming)</td>
+</tr>
+<tr>
+<td>Grip (where the hand holds, -1: found by itself)</td>
+<td>Where the hand holds the weapon, along its length: 0 at the back (the stock), 1 at the muzzle. -1: the grip is measured on the model (the rear-most part hanging under the weapon, behind the magazine). Only set it for a model the measure gets wrong: the hand held the magazine or the stock.</td>
+<td><code>position_prise</code></td>
+<td>Number</td>
+<td>-1</td>
+<td>from -1 to 1</td>
+</tr>
+<tr>
+<td>Handguard (where the other hand holds, -1: found by itself)</td>
+<td>Two-handed, where the other hand supports the weapon, along its length: 0 at the back, 1 at the muzzle. -1: measured (under the barrel, in front of the magazine).</td>
+<td><code>position_garde_main</code></td>
+<td>Number</td>
+<td>-1</td>
+<td>from -1 to 1</td>
+</tr>
+<tr>
+<td>Projectile model (a file)<br><em>shown only if <strong>Kind of shot</strong> is “Projectile that flies and falls (arrow, bolt, grenade)”</em></td>
+<td>The file of the model that flies, when no hidden object is chosen above: an arrow, a bolt. Its longest side follows the path.</td>
+<td><code>modele_projectile_fichier</code></td>
+<td>model</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Size of the flash</td>
+<td>The flash already follows the weapon's length (bigger for a rifle than for a pistol); this number makes it bigger or smaller: 1 usually, 0.5 for a discreet weapon.</td>
+<td><code>taille_eclair</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.1 to 5</td>
+</tr>
+<tr>
+<td>Shot sound (optional)</td>
+<td>The sound played at each shot, from the player. Several files separated by commas: one at random at each shot, so a burst does not repeat the same bang. The ready-made weapons have the sounds shipped with the editor.</td>
+<td><code>son_tir</code></td>
+<td>Sound from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Empty sound (optional)</td>
+<td>The little click played when the player shoots without ammunition. Several files separated by commas: one at random.</td>
+<td><code>son_vide</code></td>
+<td>Sound from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Reload sound (optional)</td>
+<td>The sound played at the start of each reload. Several files separated by commas: one at random.</td>
+<td><code>son_recharge</code></td>
+<td>Sound from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sound when aiming (optional)</td>
+<td>The sound played when the player starts aiming: the string of a bow being drawn. Empty for a firearm. Several files separated by commas: one at random.</td>
+<td><code>son_visee</code></td>
+<td>Sound from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Impact sound (optional)</td>
+<td>The sound played where the shot lands: an arrow sticking in, a bolt. Once per thing hit. Several files separated by commas: one at random.</td>
+<td><code>son_impact</code></td>
+<td>Sound from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Explosion sound (optional)</td>
+<td>The sound played where the weapon explodes (a grenade, with an explosion radius). Several files separated by commas: one at random.</td>
+<td><code>son_explosion</code></td>
+<td>Sound from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Character's gestures</td>
+<td>Which upper-body clips this weapon plays: one family per kind of weapon, each with rest, aim, shot and reload clips made for it (handgun, rifle, shotgun, sniper rifle, crossbow), the bow (draw, aim, release), a grenade throw, or none. Found by themselves: a bow if held upright, a throw if it has no model, a shoulder weapon if held two-handed (or at least 45 cm long), otherwise a firearm.</td>
+<td><code>gestes</code></td>
+<td>Choice in a list</td>
+<td>Found by themselves</td>
+<td><code>auto</code>: Found by themselves<br><code>arme_courte</code>: Handgun (the pistol clips)<br><code>fusil</code>: Assault rifle, submachine gun (the rifle clips)<br><code>fusil_pompe</code>: Shotgun (wrist of the stock, pump)<br><code>precision</code>: Sniper rifle (the scope at the eye)<br><code>arbalete</code>: Crossbow<br><code>arme</code>: Firearm (old name of “Handgun”)<br><code>arc</code>: Bow (the bow clip)<br><code>lancer</code>: Throw (a grenade)<br><code>aucun</code>: None</td>
+</tr>
+<tr>
+<td>Aiming clip, instead of the setting (optional)</td>
+<td>A clip of the player's character played on the upper body while aiming with this weapon, instead of the « Arms clip while aiming ». Empty: the setting's.</td>
+<td><code>animation_tenue</code></td>
+<td>Player animation</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Shot clip, instead of the setting (optional)</td>
+<td>A clip of the player's character played once on the upper body at each shot of this weapon. Empty: the « Shot clip » (or the throw clip).</td>
+<td><code>animation_tir</code></td>
+<td>Player animation</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Reload clip, instead of the setting (optional)</td>
+<td>A clip of the player's character played on the upper body during this weapon's reload, lasting the reload time. Empty: the « Reload clip ».</td>
+<td><code>animation_recharge</code></td>
+<td>Player animation</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="controls-added-to-the-game">Controls added to the game<a class="headerlink" href="#controls-added-to-the-game" title="Permanent link">&para;</a></h2>
+<p>They appear in the <strong>Game controls</strong> panel (Developer mode), where you can change their key.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Name for scripts</th>
+<th>Key</th>
+<th>Gamepad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aim</td>
+<td><code>aim</code></td>
+<td>Right-click</td>
+<td>LT</td>
+</tr>
+<tr>
+<td>Reload</td>
+<td><code>reload</code></td>
+<td>R</td>
+<td>X</td>
+</tr>
+<tr>
+<td>Next weapon (without inventory)</td>
+<td><code>weapon_next</code></td>
+<td>Wheel down</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<h3 id="what-it-announces">What it announces<a class="headerlink" href="#what-it-announces" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#tirarme"><code>tir.arme</code></a></td>
+<td><code>arme</code> (text), <code>joueur</code> (id?)</td>
+<td>The ranged weapon in the player's hand changed (version 25): arme is its name in the tir module's list, "" when no ranged weapon is held (another item, empty hands).</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirtir"><code>tir.tir</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text), <code>origine</code> (vector), <code>direction</code> (vector)</td>
+<td>The player fired a ranged weapon (version 25), whether it hits or not: origine is the muzzle, direction the aim before spread. For a sound, a noise that alerts enemies, a counter.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirtouche"><code>tir.touche</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id), <code>arme</code> (text), <code>montant</code> (number), <code>partie</code> (text?), <code>point</code> (vector), <code>tete</code> (boolean)</td>
+<td>A shot of the player hit something carrying Health (version 25); the health module has been asked to remove montant (before armor). partie is tete, torse, bras or jambes (missing for an object or an explosion); tete is true for a head shot. All the pellets of one shotgun shot on the same target make one tir.touche.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirrecharge"><code>tir.recharge</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text), <code>etat</code> (text), <code>chargeur</code> (number), <code>reserve</code> (number)</td>
+<td>A reload of the weapon in hand (version 25): etat is debut (it starts), fin (the magazine is filled) or annule (the weapon was put away meanwhile). chargeur is what the magazine holds, reserve the ammunition left (-1: endless).</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirvide"><code>tir.vide</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text)</td>
+<td>The player pulled the trigger with nothing to shoot (version 25): an empty magazine or no ammunition left. For a click sound or a message.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirexplosion"><code>tir.explosion</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text), <code>point</code> (vector), <code>rayon</code> (number)</td>
+<td>A shot of the player exploded (version 25): a grenade at the end of its fuse or a rocket on impact. Health was removed within rayon metres, with no wall in between.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santeblesser"><code>sante.blesser</code></a></td>
+<td><code>cible</code> (id), <code>montant</code> (number), <code>source</code> (id?)</td>
+<td>Ask the health module to remove health from an object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#actionprise"><code>action.prise</code></a></td>
+<td><code>action</code> (text), <code>prise</code> (boolean), <code>par</code> (text), <code>joueur</code> (id?)</td>
+<td>A system takes a control action for itself, or gives it back (prise false) (version 24): gathering takes attack while the player aims at a resource that needs a tool, so the press chops instead of swinging a weapon. par names who says it ("collecte"). Fighting modules do not strike (nor block) with that action while any system holds it; tir takes attack, block and heal while a ranged weapon is held, so the right button aims and R reloads without drinking.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-it-listens-to">What it listens to<a class="headerlink" href="#what-it-listens-to" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#inventaireen_main"><code>inventaire.en_main</code></a></td>
+<td><code>objet</code> (text), <code>avant</code> (text), <code>place</code> (number), <code>chargement</code> (boolean?), <code>joueur</code> (id?), <code>fiche</code> (number?), <code>source</code> (text?)</td>
+<td>What the player holds in hand changed (version 24): the slot chosen in the inventory's bar (keys 1 to 9, wheel), an item used up, a load (chargement true). objet is the kind held, "" for empty hands; avant the one held before; place the bar slot (0: nothing). Gathering checks the tool held; a game script equips a sword with it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?), <code>fiche</code> (number?), <code>jete</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up. For a unique copy (version 15), objet is its kind, fiche its record's number, total how many of that kind. With several stacks of a kind (version 21), total counts all of them; jete is true when a slot was dropped on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#actionprise"><code>action.prise</code></a></td>
+<td><code>action</code> (text), <code>prise</code> (boolean), <code>par</code> (text), <code>joueur</code> (id?)</td>
+<td>A system takes a control action for itself, or gives it back (prise false) (version 24): gathering takes attack while the player aims at a resource that needs a tool, so the press chops instead of swinging a weapon. par names who says it ("collecte"). Fighting modules do not strike (nor block) with that action while any system holds it; tir takes attack, block and heal while a ranged weapon is held, so the right button aims and R reloads without drinking.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueuroccupe"><code>joueur.occupe</code></a></td>
+<td><code>occupe</code> (boolean), <code>par</code> (text)</td>
+<td>The player's hands are taken by something else than fighting (version 23): a building mode where the click places a piece, a tool being aimed. occupe true when it starts, false when it ends; par names who says it ("construction"), so several can overlap. Fighting modules do not strike nor block while any of them keeps the player busy.</td>
+</tr>
+<tr>
+<td><a href="../../events/#projectiletouche"><code>projectile.touche</code></a></td>
+<td><code>projectile</code> (number), <code>owner</code> (id?), <code>cible</code> (id?), <code>point</code> (vector), <code>normale</code> (vector), <code>partie</code> (text?), <code>os</code> (text?), <code>vitesse</code> (vector), <code>eau</code> (boolean?), <code>data</code> (table?)</td>
+<td>A projectile launched by game.projectile hit something: cible is the object hit (nil for the terrain and for water), partie the part of a character's body (tete, torse, bras, jambes; missing for an object), os the bone, vitesse its velocity on arrival (m/s), data the table given at launch. eau = true when it entered water (point on the surface): it goes on, strongly slowed, and sinks (put a splash there, game.effect("eclaboussure", e.point), or stop it with game.stop_projectile). Announced by the engine; a projectile that bounces announces each hit.</td>
+</tr>
+<tr>
+<td><a href="../../events/#projectilefin"><code>projectile.fin</code></a></td>
+<td><code>projectile</code> (number), <code>owner</code> (id?), <code>raison</code> (text), <code>point</code> (vector), <code>data</code> (table?)</td>
+<td>A projectile launched by game.projectile is gone: raison is touche (it hit and stopped), duree (its life ran out: a grenade explodes here), plantee (stuck, its delay is over), cible_partie (what it was stuck in disappeared), eau (a projectile without gravity stopped by water) or arrete (game.stop_projectile). point is where it ended. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirtenir"><code>tir.tenir</code></a></td>
+<td><code>arme</code> (text), <code>joueur</code> (id?)</td>
+<td>Without the Inventory, give a ranged weapon to the player (if they do not have it yet, with its starting ammunition) and put it in hand (version 25); arme "" puts it away. With the Inventory, use inventaire.ajouter and inventaire.tenir instead.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-a-script-can-replace-gameoverride">Points a script can replace (game.override)<a class="headerlink" href="#points-a-script-can-replace-gameoverride" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<ul>
+<li><code>tir.degats</code>: function(default, joueur, cible, degats, partie, arme) -&gt; the raw damage of one shot of the player on this target. degats: what the weapon row gives at that distance, head multiplier included (all the pellets of a shotgun shot that hit this target, added up; for a grenade, the share at that distance); partie: tete, torse, bras, jambes or nil; arme: the weapon's name. The default returns degats. For a weak spot, a critical hit, a boss hurt only by arrows.</li>
+</ul>
+<h2 id="what-the-agent-knows-about-this-system">What the agent knows about this system<a class="headerlink" href="#what-the-agent-knows-about-this-system" title="Permanent link">&para;</a></h2>
+<p>The text the agent reads before using this system.</p>
+<h3 id="ranged-weapons-tir">Ranged weapons (<code>tir</code>)<a class="headerlink" href="#ranged-weapons-tir" title="Permanent link">&para;</a></h3>
+<p>Pistols, rifles, shotguns, sniper rifles, bows, crossbows and grenades for the player: aim (<code>aim</code>, right mouse button / left trigger), shoot (<code>attack</code>), reload (<code>reload</code>, R / X). Activating it activates the health module. Add it only if the user asked for weapons that shoot or throw; melee stays with <code>combat.basique</code>.</p>
+<p><strong>Each weapon is a row of the game setting <code>armes</code></strong> (<code>modules_set</code>), never code. Nine rows are ready and playable, each with a model shipped with the editor: <code>Pistolet</code>, <code>Revolver</code>, <code>Fusil d'assaut</code>, <code>Mitraillette</code>, <code>Fusil à pompe</code>, <code>Fusil de précision</code>, <code>Arc</code>, <code>Arbalète</code>, <code>Grenade</code> (no model). Keep the rows the game uses, change their values, rename them in the user's language, add one for a new weapon (a row given with a few fields takes the defaults for the others). Never write a shooting script.</p>
+<h4 id="how-the-player-gets-a-weapon">How the player gets a weapon<a class="headerlink" href="#how-the-player-gets-a-weapon" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>With the inventory (best)</strong>: a weapon is a kind of item. Its row's <code>nom</code> is the inventory kind: an object carrying <code>inventaire</code> with <code>nom</code> "Pistolet" is picked up, goes in the bar, and holding it puts the weapon in hand (<code>inventaire.en_main</code>). Its model in the hand is the inventory's job (<code>en_main</code> rows, set with <code>attach_bone</code> and a capture). Ammunition is another kind of item (<code>munitions</code>: "Balles", "Flèches"...): boxes of bullets carry <code>inventaire</code> with that <code>nom</code> and a <code>quantite</code>.</li>
+<li><strong>Given at the start</strong>: the game setting <code>armes_depart</code> ("Pistolet, Arc"): with the inventory, they go into each player's bag with <code>reserve</code> ammunition; without it, the module keeps them and the wheel (<code>weapon_next</code>) switches. Without the inventory, <code>modele</code> is the hidden model shown in the hand. A script gives one later with <code>game.emit("tir.tenir", {arme = "Arc"})</code> (no inventory only; with it, <code>inventaire.ajouter</code>).</li>
+<li>A weapon arrives loaded the first time it is held.</li>
+</ul>
+<h4 id="the-model-in-hand">The model in hand<a class="headerlink" href="#the-model-in-hand" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Ready-made</strong>: each row's <code>modele_fichier</code> names a model shipped with the editor (<code>armes/quaternius-armes/Pistol_1.fbx</code>, <code>armes/avramania-armes/mdvl_weapons_shortbow_01.glb</code>...). It is copied into the project with its licence when the game starts. The bow and the crossbow also fly an arrow and a bolt (<code>modele_projectile_fichier</code>).</li>
+<li><strong>Change it</strong>: <code>weapon_library_list</code> gives every shipped weapon (40 firearms and accessories by Quaternius; bows, crossbows, swords, axes, shields by Avramania); put another <code>"armes/&lt;pack&gt;/&lt;file&gt;"</code>, or a model file of the project, in <code>modele_fichier</code>.</li>
+<li><strong>Real size</strong>: <code>longueur</code> is the weapon's real length in metres for a 1.8 m character (along the barrel; a bow's height). The model in hand (the row's file or the Inventory's copy) is brought to it, then scaled to the character's height measured on its model, whatever the file's own scale. Reference lengths: pistol 0.20, revolver 0.28, submachine gun 0.6, assault rifle 0.9, shotgun 1.0, sniper rifle 1.15, crossbow 0.8, bow 1.45; for scripts holding melee weapons (<code>game.attach {weapon = true, length = ...}</code>): sword 0.95, dagger 0.3. <code>taille</code> multiplies it (1: real size, 1.5 for a cartoon look). 0 keeps the object's size. An object of the scene in <code>modele</code> wins over the file (placed in the hand in the editor, its exact place is reused).</li>
+<li><strong>How it is held, measured on the model, never guessed</strong>: the barrel is the longest side; its front (the muzzle) is found by measuring (the thinnest end, the lighter half, the barrel at the top); the grip (what goes down under the barrel at the back) goes into the palm of the hand found by the skeleton's bone roles, the barrel along the fingers, the top on the thumb side. If a weapon is held backwards, set <code>avant_modele</code> to the axis of its front (<code>+x</code>, <code>-z</code>...), like the front of a vehicle. <code>prise</code> <code>debout</code> holds it upright across the fist (a bow), <code>main</code> <code>gauche</code> puts it in the left hand (a bow).</li>
+<li><strong>One hand, two hands or like a bow (<code>tenue</code>)</strong>: <code>auto</code> (default) finds it from the model: a bow if held upright, two hands if the weapon is longer than 60 % of the character's arm or has a stock (rifles, submachine guns, shotguns, crossbows), one hand otherwise (pistols, revolvers). The arms come from the shipped clips, played on the upper body only (<code>game.play_upper</code>) while the legs keep walking or running: never write a pose script for this (see « Gestures » below).</li>
+<li><strong>Where the hands hold (<code>position_prise</code>, <code>position_garde_main</code>)</strong>: -1 (default) measures them on the model's side silhouette: the grip is the rear-most part hanging under the weapon that slants back, behind the magazine (a stock is skipped; a pistol's slanted grip can reach the back end); the handguard is in front of the magazine. For a model the measure gets wrong (the hand on the magazine or in the stock), give a fraction of the length: 0 at the back, 1 at the muzzle. Check it with <code>game.weapon(id).grip_at</code>.</li>
+<li><strong>Fitted to the hand</strong>: after <code>longueur</code>, the weapon is made smaller if its grip is more than a tenth taller than the character's palm is wide, or its magazine longer than the hand (stocky low-poly models). <code>taille</code> multiplies the result. <code>game.hold_check(player)</code> measures the weapon in the body and the palms against the weapon.</li>
+<li><strong>With the inventory</strong>: its model in hand (its <code>en_main</code> row or the item picked up) is held the same way, its offsets and rotation kept on top; a model placed in the hand by hand in the editor keeps its place. A weapon given at the start with no model in the inventory shows the row's file.</li>
+<li><strong>Shots start at the muzzle measured on the model held</strong>, and the muzzle flash grows with the weapon's length (<code>taille_eclair</code> scales it).</li>
+<li><strong>Shoulder weapons and bows (version 7)</strong>: <code>gestes</code> <code>fusil</code> (auto for a weapon held two-handed or at least 45 cm long: rifles, shotguns, sniper rifles, submachine guns, crossbows) plays <code>clip_fusil_repos</code> / <code>clip_fusil_visee</code> / <code>clip_fusil_visee_haut</code> / <code>clip_fusil_visee_bas</code> / <code>clip_fusil_tir</code> / <code>clip_fusil_recharge</code> (Rifle_Idle_Loop, Rifle_Aim_Neutral, Rifle_Aim_Up, Rifle_Aim_Down, Rifle_Shoot, Rifle_Reload of the <code>animations/worldmint-armes</code> pack: stock at the shoulder); the bow plays <code>clip_arc_repos</code> (Bow_Idle_Loop), <code>clip_arc</code> (Bow_Aim_Loop) and <code>clip_arc_tir</code> (Bow_Release). The player's model needs the pack file <code>WorldMint_Armes.glb</code> among its animations (<code>animation_library_give</code>); without it the pistol clips (and Idle_Torch_Loop for a bow) are used as before. Version 8: <code>main_soutien</code> (on by default) puts the left hand on each weapon's measured handguard after the clip (two-bone IK of the arm; out of reach, the most forward point under the weapon it reaches, never the magazine) and on the magazine during a reload; untick it to keep the clip's hand.</li>
+<li><strong>Gestures (clips on the upper body, version 5; <code>clip_mains</code> since version 6)</strong>: game settings <code>clip_repos</code> (Pistol_Idle_Loop: weapon in hand, not aiming), <code>clip_visee</code> (Pistol_Aim_Neutral: aiming; the weapon is fitted on this clip's fist with <code>game.attach {pose}</code>), <code>clip_visee_haut</code> / <code>clip_visee_bas</code> (Pistol_Aim_Up / Pistol_Aim_Down: blended by the aim pitch instead of leaning the back), <code>clip_tir</code> (Pistol_Shoot, once per shot), <code>clip_recharge</code> (Pistol_Reload, stretched to the reload time), <code>clip_lancer</code> (OverhandThrow, a grenade), <code>clip_arc</code> (Idle_Torch_Loop: the shipped packs have no bow clip, this left fist held out is the closest). All on the upper body: the legs keep walking or running. Each row's <code>gestes</code> picks them: <code>auto</code> (a bow if held upright, a throw if it has no model, else a firearm), <code>arme</code>, <code>arc</code>, <code>lancer</code>, <code>aucun</code>; its <code>animation_tenue</code>, <code>animation_tir</code>, <code>animation_recharge</code> replace the setting's clip for that weapon. For another skeleton or pack, give its clip names (read with <code>animation_clips</code>); a missing clip is skipped. The UAL1 pistol clips hold the weapon two-handed at arm's length: long guns (rifle, shotgun, sniper, crossbow) are held the same way, pistol-style, until a pack with rifle clips is added (give its clips in these settings). The KayKit pack (<code>animations/kaykit-animations</code>, version 6) has rifle and bow clips (Ranged_2H_Aiming, Ranged_2H_Shoot, Ranged_2H_Reload, Ranged_Bow_Idle, Ranged_Bow_Aiming_Idle, Running_HoldingRifle), but they are made for a big-headed character: on a realistic human the rifle is held along the flank, 30 cm from the shoulder, and the left hand 35 to 45 cm from the weapon (measured with <code>game.hold_check</code>). Keep the UAL defaults for realistic characters; use the KayKit clips only for a character with KayKit proportions, with <code>clip_mains</code> (Fingers clip: Pistol_Aim_Neutral, Idle_Torch_Loop for a bow) when the character has finger bones, since KayKit hands have none and would stay open.</li>
+</ul>
+<h4 id="the-values-of-a-weapon-row-what-to-change-for-which-game">The values of a weapon row (what to change for which game)<a class="headerlink" href="#the-values-of-a-weapon-row-what-to-change-for-which-game" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>sorte</code>: <code>balle</code> (instant ray, firearms) or <code>projectile</code> (flies and falls: arrows, bolts, grenades, rockets).</li>
+<li>Damage: <code>degats</code> per shot (per pellet for a shotgun), <code>tete</code> the head multiplier (found on any skeleton), and the drop with distance: full up to <code>chute_debut</code> m, down to <code>degats_loin</code> % at <code>chute_fin</code> m. All pellets of one shot on a target add up into one hit.</li>
+<li>Rhythm: <code>cadence</code> (shots per second), <code>mode</code> (<code>coup_par_coup</code>, <code>rafale</code> with <code>rafale</code> shots, <code>automatique</code> while held), <code>plombs</code> per shot.</li>
+<li>Precision: <code>dispersion_hanche</code> (hip fire), <code>dispersion_visee</code> (aiming), <code>dispersion_marche</code> (added while moving), <code>dispersion_tir</code> (added per shot, fading at <code>dispersion_retour</code> °/s). The crosshair opens with it.</li>
+<li>Feel: <code>recul</code> (view kick up, degrees) and <code>recul_cote</code> (random sideways), <code>zoom</code> while aiming (1.5 usual, 4 for a scope), <code>poussee</code> (push on what is hit, from the point hit: a crate spins).</li>
+<li>Ammunition: <code>chargeur</code> (0: none, each shot takes from the reserve: a bow, grenades), <code>munitions</code> (an item kind; empty: endless), <code>reserve</code> (given with <code>armes_depart</code>, or kept by the module without inventory), <code>rechargement</code> seconds.</li>
+<li>Projectiles: <code>vitesse</code> (m/s), <code>gravite</code> (1 falls like a stone, 0 straight), <code>duree</code> (life, the fuse of a grenade), <code>modele_projectile</code> (a hidden object of the scene: an arrow, a grenade; its longest side follows the path), <code>plante</code> (sticks in what it hits and follows it), <code>rebond</code> (0 to 1).</li>
+<li><code>explosion</code>: radius in m (0: none). The shot explodes where it ends (at the end of its fuse if it bounces, on impact otherwise): everything carrying <code>sante</code> in the radius with no wall in between loses <code>degats</code> times a share falling to 0 at the edge, and what moves is pushed by <code>poussee</code>.</li>
+<li>Look and sound: <code>eclair</code> (muzzle flash, firearms), <code>trainee</code> (bullet trail), <code>son_tir</code> (each shot), <code>son_vide</code> (shot with no ammunition), <code>son_recharge</code> (start of a reload), <code>son_visee</code> (when aiming starts: a bow being drawn), <code>son_impact</code> (where the shot lands, once per thing hit: an arrow sticking in), <code>son_explosion</code> (where it explodes). Each takes one file or <strong>several separated by commas: one at random each time</strong> (a burst does not repeat the same bang).</li>
+<li><strong>Shipped sounds already set</strong> on the nine ready weapons (cited <code>"sons/&lt;pack&gt;/&lt;file&gt;"</code>, copied into the project with their licence when the game starts or is exported): Pistolet <code>armes-a-feu/pistolet_1..3</code>, empty <code>rechargements/clic_vide_1..2</code>, reload <code>rechargements/chargeur_pistolet</code>; Revolver <code>revolver_1..2</code>, <code>clic_vide_3</code>, <code>recharge_arme</code>; Fusil d'assaut <code>fusil_assaut_1..3</code>, <code>clic_vide_1..2</code>, <code>chargeur_fusil</code>; Mitraillette <code>mitraillette_1..3</code>, <code>clic_vide_1..2</code>, <code>recharge_arme</code>; Fusil à pompe <code>fusil_pompe_1..3</code>, <code>clic_vide_3</code>, <code>pompe_armer</code>; Fusil de précision <code>fusil_precision_1..3</code>, <code>clic_vide_3</code>, <code>chargeur_fusil</code>; Arc: shot <code>arc-arbalete/arc_tir_1..3</code>, aim <code>arc_bander_1..2</code>, impact <code>explosions-magie/fleche_impact_1..3</code>; Arbalète: shot <code>arbalete_tir_1..3</code>, reload <code>arbalete_recharge_1..2</code>, impact <code>fleche_impact_1..3</code>; Grenade: throw <code>armes-blanches/dague_coup_1</code> (a whoosh), explosion <code>explosions-magie/explosion_1..3</code>. A row the user adds starts silent: give it the family that fits (list in the main guide, « Ready-made sounds shipped with the editor »), or the user's own files. Empty a sound to silence it. The <code>_loin</code> gunshots are for distant enemies, not the player.</li>
+<li>Gestures: <code>gestes</code> (<code>auto</code>, <code>arme</code>, <code>arc</code>, <code>lancer</code>, <code>aucun</code>) and, optional, clips of the player's model read with <code>animation_clips</code>, never guessed, replacing the game settings for this weapon on the upper body: <code>animation_tenue</code> (while aiming), <code>animation_tir</code> (each shot), <code>animation_recharge</code> (stretched to the reload time).</li>
+<li>The muzzle is measured on the model held (<code>game.weapon</code>), whatever the model: never set it by hand; if it is at the wrong end, set <code>avant_modele</code>.</li>
+</ul>
+<p>Starting points by kind of game: an arcade shooter keeps the presets; a tactical game raises <code>tete</code> (3), lowers <code>dispersion_visee</code> and <code>cadence</code>, and gives few <code>reserve</code>; a survival game sets <code>munitions</code> on every weapon and places ammunition boxes to find; a fantasy game keeps <code>Arc</code> and <code>Arbalète</code> only; a party game sets <code>munitions</code> empty (endless) and <code>recharge_auto</code>.</p>
+<h4 id="game-settings">Game settings<a class="headerlink" href="#game-settings" title="Permanent link">&para;</a></h4>
+<p><code>armes_depart</code>, <code>blesser_joueurs</code>, <code>recharge_auto</code> (reload by itself when empty), <code>afficher</code> (the HUD: crosshair, hit marker, ammunition, reload bar; the weapon's name and ammunition, bottom right, are the screen « Arme et munitions » delivered by the system, shapes <code>Nom</code> and <code>Munitions</code>, HUD keys <code>Arme et munitions/Nom</code> and <code>Arme et munitions/Munitions</code>, which the user restyles in the screen editor; the crosshair, hit marker and reload bar follow the aimed point and stay drawn by the script, keys <code>tir.reticule.*</code>, <code>tir.marque.*</code>, <code>tir.recharge</code>), <code>reticule</code>, <code>marqueur</code>, <code>couleur_reticule</code>, <code>couleur_tete</code> (hit marker on a head shot), <code>effets</code> (flashes, trails, impacts, holes), <code>epaule</code> (droite/gauche), <code>sensibilite</code> (view speed while aiming, already divided by the zoom), <code>aide</code> (gamepad aim assist, 0 to 1), and the control names <code>action</code>, <code>action_visee</code>, <code>action_recharge</code>, and those it takes from other systems while a weapon is held: <code>action_parade</code> (block, Basic combat) and <code>action_soin</code> (heal, Healing).</p>
+<h4 id="with-other-systems">With other systems<a class="headerlink" href="#with-other-systems" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Targets: anything carrying <code>sante</code>. Its <code>invulnerabilite</code> (0.5 s by default) swallows hits that come faster: for an automatic weapon, set it to 0 (or 0.05) on the enemies.</li>
+<li><code>combat.basique</code> on the same player: while a ranged weapon is held, the module takes <code>attack</code> and <code>block</code> (event <code>action.prise</code>): the left click shoots, the right click aims instead of blocking. With another item or empty hands, the player strikes and blocks as before.</li>
+<li><code>soins</code> uses R too (<code>heal</code>): while a ranged weapon is held, the module takes <code>heal</code> too (<code>action.prise</code>, game setting <code>action_soin</code>), so R reloads and does not drink a potion; with another item or empty hands, R drinks. No need to move a key.</li>
+<li>While the cursor is shown or the player is busy (<code>joueur.occupe</code>), nothing shoots.</li>
+<li>Enemies that shoot back are the <code>ennemis</code> module, not this one.</li>
+</ul>
+<h4 id="events-and-override">Events and override<a class="headerlink" href="#events-and-override" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>tir.arme</code> (<code>arme</code>, "" for none), <code>tir.tir</code> (<code>source</code>, <code>arme</code>, <code>origine</code>, <code>direction</code>), <code>tir.touche</code> (<code>cible</code>, <code>source</code>, <code>arme</code>, <code>montant</code>, <code>partie</code>, <code>point</code>, <code>tete</code>), <code>tir.recharge</code> (<code>arme</code>, <code>etat</code> debut/fin/annule, <code>chargeur</code>, <code>reserve</code>), <code>tir.vide</code> (<code>arme</code>), <code>tir.explosion</code> (<code>arme</code>, <code>point</code>, <code>rayon</code>). For a sound of your own, a score for head shots, a noise that alerts enemies: <code>game.on</code>, or a <code>declencheur</code> rule on the event.</li>
+<li><code>game.override("tir.degats", function(default, joueur, cible, degats, partie, arme) ... end)</code>: a weak spot, a boss only arrows hurt, a critical hit. Return the damage.</li>
+</ul>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>One copy per player: each has their own magazines, reload, aim, crosshair and ammunition (their own bag). Players do not hurt each other (nor themselves with a grenade) unless <code>blesser_joueurs</code> is ticked.</p>
+<h4 id="check-it">Check it<a class="headerlink" href="#check-it" title="Permanent link">&para;</a></h4>
+<p><code>game_run</code> with captures: aim (hold <code>aim</code>), shoot (<code>attack</code>), reload (<code>reload</code>). Its report counts <code>shooting</code> (rays, projectiles, hits), <code>particles</code>, <code>decals</code> and <code>tracers</code>; the events above are in its logs if a script logs them.
+- <strong>Shotgun (version 9)</strong>: gestures <code>fusil_pompe</code> (the Shotgun preset's <code>gestes</code>; give it to any weapon without a separate pistol grip): settings <code>clip_pompe_repos</code>, <code>clip_pompe_visee</code>, <code>clip_pompe_visee_haut</code>, <code>clip_pompe_visee_bas</code>, <code>clip_pompe_tir</code>, <code>clip_pompe_pompe</code> (played after each shot clip: the left hand pulls the pump back and pushes it forward; the model's pump does not move), <code>clip_pompe_recharge</code> (shells slid in one by one from below). Shotgun_* clips of the worldmint-armes pack: the right fist on the measured wrist of the stock, the left hand on the pump. The support hand is the clip's during the pump and the reload, on the measured pump otherwise. Without the Shotgun_* clips on the character, the rifle clips are used. Rifle and shotgun clips: the weapon rises to the eye (the stock higher in the shoulder pocket, up to 6 cm), the head only tilts a little (10° at most); at rest the head stays as in the UAL source clip.</p>
+<ul>
+<li><strong>One clip set per weapon family (version 10)</strong>: <code>gestes</code> is <code>arme_courte</code> (pistols, revolvers: the UAL1 Pistol_* clips; <code>arme</code> is its old name), <code>fusil</code> (assault rifle, submachine gun: Rifle_<em>), <code>fusil_pompe</code> (Shotgun_</em>), <code>precision</code> (sniper rifle: Sniper_<em>, the scope at the eye), <code>arbalete</code> (Crossbow_</em>), <code>arc</code> (Bow_*: Bow_Draw is played when aiming starts, then Bow_Aim_Loop loops, Bow_Release at the shot), <code>lancer</code>, <code>aucun</code>. The presets have theirs. Each family's clips are game settings (<code>clip_precision_repos</code>, <code>clip_precision_visee</code>, <code>_visee_haut</code>, <code>_visee_bas</code>, <code>_tir</code>, <code>_recharge</code>, the same for <code>clip_arbalete_...</code>, and <code>clip_arc_bander</code>); a family clip missing from the character falls back to the rifle clip, then to the pistol clips. The clip makes the pose (left elbow bent, stock at the shoulder, sights at the eye); after it, the engine only corrects the support hand and the weapon by 2 cm at most (<code>game.hold_check</code> gives <code>correction</code> and <code>correction_wanted</code>: more than 0.02 means the clip does not fit this weapon or character: give its row another family or its own clips in <code>animation_tenue</code>...). During a reload or a pump the support hand is the clip's.</li>
+</ul>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>modules/tir/module.json</code>, <code>modules/tir/AGENT.md</code>, <code>modules/events.json</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../chiffon/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Ragdoll">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Ragdoll
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../manche/" class="md-footer__link md-footer__link--next" aria-label="Next: Round">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Round
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

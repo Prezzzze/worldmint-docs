@@ -1,0 +1,4590 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/population/">
+      
+      
+      
+        <link rel="prev" href="../physique/">
+      
+      
+        <link rel="next" href="../chiffon/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Population - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Population
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Accompagner
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commerces
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Zone »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-garees_modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-modeles_voitures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#population-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Population (<code>population</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Population (population)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filling-a-city-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Filling a city, step by step
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How it works
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cars-driving" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cars (driving)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-levels-niveaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simulation levels (<code>niveaux</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-never-taken-back-the-important-ones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Who is never taken back (the important ones)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-remembers-the-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it remembers (the memory)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactions-version-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reactions (version 5)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proving-it-game_run" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Proving it (<code>game_run</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightening-on-your-own-the-aimed-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Lightening on your own (the aimed machine)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Not yet
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-zones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Zone »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-garees_modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-modeles_voitures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#population-population" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Population (<code>population</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Population (population)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filling-a-city-step-by-step" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Filling a city, step by step
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        How it works
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cars-driving" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Cars (driving)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-levels-niveaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Simulation levels (<code>niveaux</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#who-is-never-taken-back-the-important-ones" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Who is never taken back (the important ones)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-remembers-the-memory" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it remembers (the memory)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reactions-version-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Reactions (version 5)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proving-it-game_run" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Proving it (<code>game_run</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lightening-on-your-own-the-aimed-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Lightening on your own (the aimed machine)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#not-yet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Not yet
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="population">Population<a class="headerlink" href="#population" title="Permanent link">&para;</a></h1>
+<p>Des passants qui naissent sur les trottoirs autour du joueur, hors de sa vue, marchent le long des rues et partent derrière lui. Rien n'est écrit dans la scène : seulement ces réglages. Les passants sont des copies de vos personnages modèles (cachés), réutilisées sans cesse. Ceux qui comptent ne sont jamais repris : ce que nomme une quête jusqu'à sa fin, un compagnon, un passant que le joueur a touché. Ils se souviennent : un passant parti revient le même pendant une minute, une voiture abîmée reste abîmée, et ce que le joueur laisse l'attend. Un coup de feu ou une explosion vide la rue autour : les passants fuient, les voitures qui y vont s'arrêtent.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>population</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>non</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans le panneau <strong>Systèmes</strong> (mode Développeur), en ouvrant la carte du système.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Faire vivre les rues</td>
+<td>Coché : des passants naissent autour du joueur sur les trottoirs de la ville. Décoché : personne.</td>
+<td><code>actif</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Monde dans les rues (× la densité)</td>
+<td>Le curseur général : 0 personne, 1 la densité réglée, 2 le double. Toujours borné par le nombre de passants au plus.</td>
+<td><code>curseur</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 4</td>
+</tr>
+<tr>
+<td>Passants pour 100 m de trottoir</td>
+<td>Combien de passants marchent sur 100 m de trottoir autour du joueur.</td>
+<td><code>passants_100m</code></td>
+<td>Nombre</td>
+<td>6</td>
+<td>de 0 à 200</td>
+</tr>
+<tr>
+<td>Densité par zone</td>
+<td>Une ligne par endroit qui n'a pas la densité générale : un quartier de la ville (son nom), un secteur de la carte (son nom), ou « partout ». Un quartier de la ville a déjà la densité de son style ; une ligne qui le nomme la remplace.</td>
+<td><code>zones</code></td>
+<td>Liste de « Zone »</td>
+<td>(vide)</td>
+<td>une ligne par « Zone » : <a href="#champs-zones">ses champs</a></td>
+</tr>
+<tr>
+<td>Qui on voit dans la rue</td>
+<td>Vos personnages modèles, d'ordinaire cachés dans la scène (un mannequin animé, par exemple animations/quaternius-ual1/UAL1_Standard.glb livré avec l'éditeur). Chaque passant est une copie de l'un d'eux, avec son propre clip de marche. Aucune ligne : les objets qui portent l'étiquette population.passant.</td>
+<td><code>modeles</code></td>
+<td>Liste de « Modèle »</td>
+<td>(vide)</td>
+<td>une ligne par « Modèle » : <a href="#champs-modeles">ses champs</a></td>
+</tr>
+<tr>
+<td>Passants au plus</td>
+<td>Le nombre de passants vivants à la fois, quelle que soit la densité : la machine n'en fait jamais vivre plus.</td>
+<td><code>budget</code></td>
+<td>Nombre</td>
+<td>250</td>
+<td>de 0 à 5000</td>
+</tr>
+<tr>
+<td>Personne ne naît à moins de (m)</td>
+<td>Un passant naît toujours plus loin que cela du joueur, et hors de sa vue.</td>
+<td><code>rayon_min</code></td>
+<td>Nombre</td>
+<td>35</td>
+<td>de 0 à 1000</td>
+</tr>
+<tr>
+<td>Caché, naît dès (m)</td>
+<td>Derrière un mur ou un bâtiment, là où la caméra ne voit pas, un passant peut naître plus près, jusqu'à cette distance du joueur.</td>
+<td><code>rayon_cache</code></td>
+<td>Nombre</td>
+<td>15</td>
+<td>de 15 à 1000</td>
+</tr>
+<tr>
+<td>Marge autour de la vue (degrés)</td>
+<td>Personne ne naît dans l'image de la caméra, ni dans cette marge autour d'elle : le joueur qui tourne un peu la tête ne voit jamais quelqu'un apparaître.</td>
+<td><code>marge_vue</code></td>
+<td>Nombre</td>
+<td>15</td>
+<td>de 0 à 60</td>
+</tr>
+<tr>
+<td>Naissances jusqu'à (m)</td>
+<td>La limite de l'anneau où les passants naissent.</td>
+<td><code>rayon_max</code></td>
+<td>Nombre</td>
+<td>100</td>
+<td>de 1 à 1000</td>
+</tr>
+<tr>
+<td>Partent au-delà de (m)</td>
+<td>Plus loin que cela du joueur, un passant part (il rentre dans la réserve).</td>
+<td><code>rayon_depart</code></td>
+<td>Nombre</td>
+<td>120</td>
+<td>de 1 à 2000</td>
+</tr>
+<tr>
+<td>Naissances par pas au plus</td>
+<td>Le rythme : au plus tant de passants naissent à chaque pas du jeu, pour éviter les à-coups.</td>
+<td><code>par_pas</code></td>
+<td>Nombre</td>
+<td>4</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Voitures garées</td>
+<td>Vos voitures modèles, cachées dans la scène. Chaque voiture garée est une copie de l'une d'elles, montrée à portée, solide à moins de 15 m du joueur. Aucune ligne : les objets qui portent l'étiquette population.voiture.</td>
+<td><code>garees_modeles</code></td>
+<td>Liste de « Modèle »</td>
+<td>(vide)</td>
+<td>une ligne par « Modèle » : <a href="#champs-garees_modeles">ses champs</a></td>
+</tr>
+<tr>
+<td>Voitures garées visibles jusqu'à (m)</td>
+<td>Plus loin que cela du joueur, les voitures garées ne sont pas montrées.</td>
+<td><code>garees_portee</code></td>
+<td>Nombre</td>
+<td>150</td>
+<td>de 1 à 5000</td>
+</tr>
+<tr>
+<td>Allègement des voitures garées</td>
+<td>Un facteur appliqué par-dessus la part des places occupées de chaque zone et du réglage général (0,5 : moitié moins de voitures garées partout, quartiers compris). L'agent le baisse quand la machine visée est trop chargée ; 1 : rien n'est allégé.</td>
+<td><code>garees_allegement</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Les mêmes reviennent pendant (s)</td>
+<td>Un passant qui part hors de la vue est retenu ce temps-là : si le joueur revient, c'est le même qui revient (même personnage, même trottoir, même sens), avancé du temps écoulé. 0 : jamais retenu.</td>
+<td><code>memoire_courte</code></td>
+<td>Nombre</td>
+<td>60</td>
+<td>de 0 à 3600</td>
+</tr>
+<tr>
+<td>Les traces durent (s)</td>
+<td>Une voiture abîmée, une place vidée, un passant touché restent tels quels ce temps de jeu (600 : 10 minutes), puis la rue redevient ordinaire. Ils vont dans la sauvegarde.</td>
+<td><code>traces_duree</code></td>
+<td>Nombre</td>
+<td>600</td>
+<td>de 0 à 86 400</td>
+</tr>
+<tr>
+<td>Traces au plus</td>
+<td>Le nombre de traces gardées à la fois : au-delà, la plus vieille part d'abord. Ce que le joueur laisse n'y compte pas.</td>
+<td><code>traces_max</code></td>
+<td>Nombre</td>
+<td>64</td>
+<td>de 0 à 4096</td>
+</tr>
+<tr>
+<td>Garder ce que le joueur laisse (s)</td>
+<td>Une voiture garée, un objet lâché par le joueur l'attendent ce temps de jeu (1 800 : 30 minutes), même s'il part loin : il peut changer d'avis et revenir. 0 : toujours. Sa dernière voiture est toujours gardée. Va dans la sauvegarde.</td>
+<td><code>garder_laisse</code></td>
+<td>Nombre</td>
+<td>1800</td>
+<td>de 0 à 864 000</td>
+</tr>
+<tr>
+<td>Ce que le joueur laisse, au plus</td>
+<td>Combien d'objets laissés sont gardés par joueur : au-delà, le plus vieux part d'abord. La dernière voiture du joueur ne part jamais.</td>
+<td><code>laisse_max</code></td>
+<td>Nombre</td>
+<td>32</td>
+<td>de 0 à 1024</td>
+</tr>
+<tr>
+<td>Vitesse de marche (m/s)</td>
+<td>La vitesse moyenne des passants ; chacun marche un peu plus ou moins vite.</td>
+<td><code>vitesse</code></td>
+<td>Nombre</td>
+<td>1.3</td>
+<td>de 0.1 à 20</td>
+</tr>
+<tr>
+<td>Des voitures qui roulent</td>
+<td>Coché : des voitures naissent sur les voies autour du joueur, hors de sa vue, suivent leur voie, s'arrêtent au feu rouge, cèdent le passage et tournent aux carrefours.</td>
+<td><code>voitures</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Voitures pour 100 m de voie</td>
+<td>Combien de voitures roulent sur 100 m de voie autour du joueur (× le curseur).</td>
+<td><code>voitures_100m</code></td>
+<td>Nombre</td>
+<td>1.5</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Places de stationnement occupées</td>
+<td>La part des cases des bandes de stationnement où une voiture est garée (0,6 : six sur dix). Chaque case est tirée de la graine de la partie : la même case a toujours la même voiture. Rien n'est écrit dans la scène.</td>
+<td><code>garees</code></td>
+<td>Nombre</td>
+<td>0.6</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Selon l'heure</td>
+<td>Comment le nombre de passants change d'une heure à l'autre, partout où une zone ne donne pas ses propres heures. « Ville » : presque personne à 4 h, du monde à 8 h et à 18 h.</td>
+<td><code>heures</code></td>
+<td>Heures de la journée</td>
+<td>Ville (creux à 4 h, pics à 8 h et 18 h)</td>
+<td><code>ville</code> : Ville (creux à 4 h, pics à 8 h et 18 h)<br><code>ville_nuit</code> : Ville qui ne dort jamais<br><code>village</code> : Village (vide la nuit)<br><code>constant</code> : Toujours pareil<br>ou 24 nombres à soi (0 h à 23 h), de 0 à 4</td>
+</tr>
+<tr>
+<td>Selon l'heure du monde</td>
+<td>Coché : l'heure du ciel ou du module Jour et nuit change le nombre de passants. Décoché : le même nombre à toute heure.</td>
+<td><code>selon_heure</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Les voitures qu'on voit</td>
+<td>Vos voitures modèles, cachées dans la scène, avec leurs roues en enfants (par exemple les voitures libres CC0 du Realistic Car Pack de Quaternius). Chaque voiture est une copie de l'une d'elles ; sa longueur est lue sur ses bornes. Aucune ligne : les objets qui portent l'étiquette population.voiture.</td>
+<td><code>modeles_voitures</code></td>
+<td>Liste de « Modèle »</td>
+<td>(vide)</td>
+<td>une ligne par « Modèle » : <a href="#champs-modeles_voitures">ses champs</a></td>
+</tr>
+<tr>
+<td>Voitures au plus</td>
+<td>Le nombre de voitures qui roulent à la fois, quelle que soit la densité.</td>
+<td><code>budget_voitures</code></td>
+<td>Nombre</td>
+<td>80</td>
+<td>de 0 à 2000</td>
+</tr>
+<tr>
+<td>Aucune voiture ne naît à moins de (m)</td>
+<td>Une voiture naît toujours plus loin que cela du joueur, et hors de sa vue.</td>
+<td><code>rayon_min_voitures</code></td>
+<td>Nombre</td>
+<td>60</td>
+<td>de 0 à 2000</td>
+</tr>
+<tr>
+<td>Voitures nées jusqu'à (m)</td>
+<td>La limite de l'anneau où les voitures naissent.</td>
+<td><code>rayon_max_voitures</code></td>
+<td>Nombre</td>
+<td>200</td>
+<td>de 1 à 2000</td>
+</tr>
+<tr>
+<td>Voitures parties au-delà de (m)</td>
+<td>Plus loin que cela du joueur, une voiture part (elle rentre dans la réserve).</td>
+<td><code>rayon_depart_voitures</code></td>
+<td>Nombre</td>
+<td>240</td>
+<td>de 1 à 4000</td>
+</tr>
+<tr>
+<td>Vitesse sans panneau (m/s)</td>
+<td>La vitesse des voitures sur une rue sans panneau de limite (13,9 m/s : 50 km/h). Avec un panneau, elles suivent sa limite.</td>
+<td><code>vitesse_voiture</code></td>
+<td>Nombre</td>
+<td>13.9</td>
+<td>de 0.5 à 80</td>
+</tr>
+<tr>
+<td>Écart entre deux voitures arrêtées (m)</td>
+<td>La distance d'un pare-chocs à l'autre quand une voiture s'arrête derrière une autre.</td>
+<td><code>ecart_voitures</code></td>
+<td>Nombre</td>
+<td>2.5</td>
+<td>de 2 à 30</td>
+</tr>
+<tr>
+<td>Niveaux de simulation</td>
+<td>Coché : près du joueur, un passant a un vrai corps (il s'écarte, on peut le bousculer) et une voiture aussi (on la heurte, elle freine) ; plus loin, ils suivent leur ligne ; hors de la vue, ils ne sont plus que des données. Décoché : tous suivent leur ligne.</td>
+<td><code>niveaux</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Passants proches à moins de (m)</td>
+<td>Plus près que cela du joueur, un passant a un vrai corps : il évite les autres et peut être bousculé. Il le perd 5 m plus loin.</td>
+<td><code>rayon_proche</code></td>
+<td>Nombre</td>
+<td>25</td>
+<td>de 0 à 500</td>
+</tr>
+<tr>
+<td>Voitures proches à moins de (m)</td>
+<td>Plus près que cela du joueur, une voiture qui roule a un corps : on la heurte, et elle freine devant le joueur. Elle le perd 5 m plus loin.</td>
+<td><code>rayon_proche_voitures</code></td>
+<td>Nombre</td>
+<td>25</td>
+<td>de 0 à 500</td>
+</tr>
+<tr>
+<td>Peur autour d'un coup de feu (m)</td>
+<td>Un coup de feu, un impact ou une mort (population.danger aussi) fait fuir les passants à moins de cette distance, et arrête les voitures qui y vont. Pour une explosion, son rayon s'ajoute. 0 : personne ne réagit.</td>
+<td><code>peur_rayon</code></td>
+<td>Nombre</td>
+<td>30</td>
+<td>de 0 à 1000</td>
+</tr>
+<tr>
+<td>La peur dure (s)</td>
+<td>Combien de temps ils fuient, les voitures restent arrêtées et personne ne naît autour ; puis la rue redevient ordinaire.</td>
+<td><code>peur_duree</code></td>
+<td>Nombre</td>
+<td>20</td>
+<td>de 0 à 3600</td>
+</tr>
+<tr>
+<td>Part des passants qui fuient</td>
+<td>0,9 : neuf passants sur dix fuient, les autres continuent leur chemin. Tiré de la graine de la partie.</td>
+<td><code>peur_part</code></td>
+<td>Nombre</td>
+<td>0.9</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Fuite (× la marche)</td>
+<td>Combien de fois plus vite qu'en marchant ils fuient, avec leur clip de course s'ils en ont un.</td>
+<td><code>peur_vitesse</code></td>
+<td>Nombre</td>
+<td>2.5</td>
+<td>de 1 à 10</td>
+</tr>
+<tr>
+<td>Hors de la vue : seulement des données</td>
+<td>Coché : un passant ou une voiture hors de la vue n'est plus montré ni posé ; seule sa place avance, et il réapparaît à la bonne place quand on le revoit.</td>
+<td><code>donnees</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-zones">Les champs de chaque « Zone »<a class="headerlink" href="#champs-zones" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Zone » a son cadre, numéroté ; <strong>Ajouter : Zone</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Où</td>
+<td>Le nom d'un quartier de la ville ou d'un secteur de la carte, ou « partout ».</td>
+<td><code>lieu</code></td>
+<td>Texte</td>
+<td><code>partout</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Passants pour 100 m de trottoir</td>
+<td>Combien de passants marchent sur 100 m de trottoir dans cette zone, à l'heure la plus pleine.</td>
+<td><code>passants</code></td>
+<td>Nombre</td>
+<td>6</td>
+<td>de 0 à 200</td>
+</tr>
+<tr>
+<td>Voitures qui roulent par km de voie</td>
+<td>Combien de voitures roulent sur 1 km de voie dans cette zone (× le curseur) : elles y naissent d'autant plus souvent, et le nombre voulu autour du joueur le suit (0 : aucune n'y naît). Les heures ne changent que les passants. -1 : comme le reste (celles du quartier, sinon le réglage général).</td>
+<td><code>voitures</code></td>
+<td>Nombre</td>
+<td>-1</td>
+<td>de -1 à 500</td>
+</tr>
+<tr>
+<td>Places de stationnement occupées</td>
+<td>La part des places occupées dans cette zone (0,6 : six sur dix ; 0 : aucune voiture garée). Chaque case de la zone est tirée de la graine avec cette part : la même case a toujours la même voiture. -1 : comme le reste (celle du quartier, sinon le réglage général).</td>
+<td><code>garees</code></td>
+<td>Nombre</td>
+<td>-1</td>
+<td>de -1 à 1</td>
+</tr>
+<tr>
+<td>Selon l'heure</td>
+<td>Les heures de cette zone : un quartier de bureaux vide la nuit, un quartier de bars plein le soir. « Comme le reste » : celles du quartier, sinon le réglage général.</td>
+<td><code>heures</code></td>
+<td>Heures de la journée</td>
+<td>Comme le reste</td>
+<td><code>""</code> : Comme le reste<br><code>ville</code> : Ville<br><code>ville_nuit</code> : Ville qui ne dort jamais<br><code>village</code> : Village<br><code>constant</code> : Toujours pareil<br>ou 24 nombres à soi (0 h à 23 h), de 0 à 4</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-modeles">Les champs de chaque « Modèle »<a class="headerlink" href="#champs-modeles" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Modèle » a son cadre, numéroté ; <strong>Ajouter : Modèle</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Personnage modèle</td>
+<td>Un personnage de votre scène, caché : il ne joue pas lui-même, on le copie.</td>
+<td><code>modele</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-garees_modeles">Les champs de chaque « Modèle »<a class="headerlink" href="#champs-garees_modeles" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Modèle » a son cadre, numéroté ; <strong>Ajouter : Modèle</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voiture modèle</td>
+<td>Une voiture de votre scène, cachée : on la copie sur les places.</td>
+<td><code>modele</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-modeles_voitures">Les champs de chaque « Modèle »<a class="headerlink" href="#champs-modeles_voitures" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Modèle » a son cadre, numéroté ; <strong>Ajouter : Modèle</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Voiture modèle</td>
+<td>Une voiture de votre scène, cachée : elle ne roule pas elle-même, on la copie.</td>
+<td><code>modele</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#populationapparait"><code>population.apparait</code></a></td>
+<td><code>cible</code> (id), <code>sorte</code> (text)</td>
+<td>A pedestrian appeared around the player, out of sight (Population module): a copy from the pool, tagged population.</td>
+</tr>
+<tr>
+<td><a href="../../events/#populationdisparait"><code>population.disparait</code></a></td>
+<td><code>cible</code> (id), <code>sorte</code> (text), <code>important</code> (boolean?)</td>
+<td>A pedestrian left (Population module): too far or behind the player, back to the pool. Its id may come back as another pedestrian. important: it had been kept (touched, named by a quest) and nothing names it any more.</td>
+</tr>
+<tr>
+<td><a href="../../events/#populationtouche"><code>population.touche</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id), <code>comment</code> (text), <code>sorte</code> (text)</td>
+<td>A pedestrian became important (Population module): a player touched it (comment frappe, tue, parle, monte) or something keeps it (quetes, accompagner, garder, emmene). The director never takes it back while something names it; it stays itself.</td>
+</tr>
+<tr>
+<td><a href="../../events/#populationfuite"><code>population.fuite</code></a></td>
+<td><code>lieu</code> (vector), <code>rayon</code> (number), <code>passants</code> (number)</td>
+<td>A danger made pedestrians flee (Population module): lieu is where it happened, rayon how far it scared, passants how many fled.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#populationgarder"><code>population.garder</code></a></td>
+<td><code>cible</code> (id)</td>
+<td>Ask the Population module to never take back this object (it puts the tag population.garder on it).</td>
+</tr>
+<tr>
+<td><a href="../../events/#populationliberer"><code>population.liberer</code></a></td>
+<td><code>cible</code> (id)</td>
+<td>Ask the Population module to let this object go again (it removes the tag population.garder).</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesdebut"><code>quetes.debut</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest started: quete is its title. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetescreee"><code>quetes.creee</code></a></td>
+<td><code>modele</code> (text), <code>quete</code> (text), <code>valeurs</code> (table), <code>groupe</code> (boolean?)</td>
+<td>A quest was made from a template (Journal de quêtes 15, events version 34): quete is its own title, modele the template's, valeurs the value of each hole (an object's id, a number, a text). Sent before its quetes.debut. groupe: true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesetape"><code>quetes.etape</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>texte</code> (text), <code>issue</code> (number?), <code>suite</code> (text?), <code>groupe</code> (boolean?)</td>
+<td>A step of a quest is done: etape is its rank in the quest (from 1), texte what it said. Sent before quetes.fin when it was the last one. issue (Journal de quêtes 11): the rank (from 1) of the other way to end the step that did it, absent when the step itself did; texte is then that way's text. suite (Journal de quêtes 11): the label the quest goes to next (fin, echec or a step's label), absent when it simply goes on to the next row. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesetape_debut"><code>quetes.etape_debut</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>texte</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A step of a quest starts (Journal de quêtes 11, events version 33): it becomes one to do now, its other ways to end it too. etape is its rank in the quest (from 1), texte what it says. Sent after quetes.debut for the first steps, then after the quetes.etape that opened it, and again when the step starts over (an "Also fails if" row set to recommence) or the quest resumes at it (quetes.reprise); its own annonce_debut event follows. Not sent again when a saved game is loaded. groupe (Journal de quêtes 8): true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesetape_echec"><code>quetes.etape_echec</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>alors</code> (text), <code>manquee</code> (boolean?), <code>groupe</code> (boolean?)</td>
+<td>A step of a quest failed (Journal de quêtes 11, events version 33): one of its "Also fails if" rows happened. etape is its rank in the quest (from 1), alors what that row does: echoue (the quest fails, quetes.echec follows), recommence (the step starts again from zero) or etiquette (the quest goes to the row's label). Also sent for an "Also fails if" row under the quest itself that does not make it fail (recommence: the quest starts again; etiquette), etape being then the step it was waiting for (0: none). For an optional step, manquee is true: the step is only missed, the quest goes on without it. groupe: true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesreprise"><code>quetes.reprise</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>groupe</code> (boolean?)</td>
+<td>A quest resumes (Journal de quêtes 11, events version 33): tried again after a failure (the log's Try again button, reessayer auto, quetes.reessayer, or given again when it does not start over), or started again by an "Also fails if" row of the quest set to recommence. etape is the step it resumes at (from 1; 0: none). The steps before it stay done; marks stay set and the world is not put back as it was: a Trigger rule on the step's annonce_debut does that. groupe: true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesfin"><code>quetes.fin</code></a></td>
+<td><code>quete</code> (text), <code>xp</code> (number?), <code>piste</code> (text?), <code>groupe</code> (boolean?), <code>facultatives</code> (table?)</td>
+<td>A quest is finished: all its steps are done. Its reward, if any, has been asked to the inventory. xp and piste (version 28): its XP for the Progression module and the track that gets it (empty: the main one). facultatives (Journal de quêtes 11): {faites, total}, how many of its optional steps were done, out of how many; absent when it has none. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesechec"><code>quetes.echec</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest failed: an event, a mark, its time ran out, or quetes.echouer. It gives no reward; it may be given again if its settings allow it. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesabandon"><code>quetes.abandon</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>The player abandoned a quest from the log (or quetes.abandonner asked for it). It gives no reward; it may be given again if its settings allow it. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#accompagnersuivre"><code>accompagner.suivre</code></a></td>
+<td><code>cible</code> (id?), <code>qui</code> (id?), <code>lieu</code> (id?)</td>
+<td>Ask a character carrying the Companion system to follow someone (Companion module, version 34): qui, a player or an object (missing: the one it followed last, else the host); lieu, a place where it announces accompagner.arrive once it gets there while following. cible: the character, by id or name; missing, every character carrying the system in the scene. "Follow me" after accompagner.attendre.</td>
+</tr>
+<tr>
+<td><a href="../../events/#accompagneraller"><code>accompagner.aller</code></a></td>
+<td><code>cible</code> (id?), <code>lieu</code> (id?), <code>qui</code> (id?)</td>
+<td>Ask a Companion character to walk to a place (lieu, an object or a point; missing: its setting destination), waiting whenever the player qui is too far; there it announces accompagner.arrive and waits. cible: as for accompagner.suivre.</td>
+</tr>
+<tr>
+<td><a href="../../events/#accompagnerfuir"><code>accompagner.fuir</code></a></td>
+<td><code>cible</code> (id?), <code>de</code> (id?), <code>distance</code> (number?), <code>qui</code> (id?)</td>
+<td>Ask a Companion character to run away from de (an object or a point; missing: qui, else the nearest player) until distance metres (missing: its setting distance_fuite); it announces accompagner.arrive once safe, and runs again if approached. cible: as for accompagner.suivre.</td>
+</tr>
+<tr>
+<td><a href="../../events/#accompagnerattendre"><code>accompagner.attendre</code></a></td>
+<td><code>cible</code> (id?)</td>
+<td>Ask a Companion character to wait where it is ("Wait here"), remembering whom it followed: accompagner.suivre without qui makes it follow them again. cible: as for accompagner.suivre.</td>
+</tr>
+<tr>
+<td><a href="../../events/#accompagnerarreter"><code>accompagner.arreter</code></a></td>
+<td><code>cible</code> (id?)</td>
+<td>Ask a Companion character to stop whatever it does and forget whom it followed. cible: as for accompagner.suivre.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santeblesser"><code>sante.blesser</code></a></td>
+<td><code>cible</code> (id), <code>montant</code> (number), <code>source</code> (id?)</td>
+<td>Ask the health module to remove health from an object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#santemort"><code>sante.mort</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id?)</td>
+<td>An object's health reached zero. What happens next belongs to the game: the health module does nothing else, unless its setting says to destroy the object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#dialoguefin"><code>dialogue.fin</code></a></td>
+<td><code>cible</code> (id)</td>
+<td>A dialogue window closed: after its last line, or a choice leading to fin.</td>
+</tr>
+<tr>
+<td><a href="../../events/#vehiculemonte"><code>vehicule.monte</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>A player got into a vehicle (an object carrying the vehicule system) and now drives it: qui and joueur are their character (the host's, or a guest's). Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#vehiculedescendu"><code>vehicule.descendu</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>A player got out of a vehicle. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#populationlaisser"><code>population.laisser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id?)</td>
+<td>Tell the Population module that a player left this object born of the population (put down, dropped, abandoned): it is kept as it is for its setting garder_laisse (30 minutes of play by default, 0: always), at most laisse_max per player, and saved. Ignored for an object the author placed (the world already remembers it). Getting out of a car born of the population (vehicule.descendu) does it by itself.</td>
+</tr>
+<tr>
+<td><a href="../../events/#jour_nuitheure"><code>jour_nuit.heure</code></a></td>
+<td><code>heure</code> (number), <code>jour</code> (number)</td>
+<td>A new hour of the world started (0 to 23), on day jour (1 the first day).</td>
+</tr>
+<tr>
+<td><a href="../../events/#populationdanger"><code>population.danger</code></a></td>
+<td><code>lieu</code> (vector), <code>rayon</code> (number?), <code>force</code> (number?), <code>sorte</code> (text?), <code>source</code> (id?)</td>
+<td>Tell the Population module that something dangerous happens here (a shot, an explosion, a fight a game wants to signal): pedestrians within rayon (its setting peur_rayon when missing) flee, cars heading there stop, nobody appears there while the fear lasts. force (1 by default) multiplies the share who flee and how long. Gunshots (tir.tir), explosions (tir.explosion), impacts (projectile.touche) and deaths (sante.mort) do it by themselves. A game script can replace the reaction with game.override("population.reagir", function(default, e) ... end).</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirtir"><code>tir.tir</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text), <code>origine</code> (vector), <code>direction</code> (vector)</td>
+<td>The player fired a ranged weapon (version 25), whether it hits or not: origine is the muzzle, direction the aim before spread. For a sound, a noise that alerts enemies, a counter.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirexplosion"><code>tir.explosion</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text), <code>point</code> (vector), <code>rayon</code> (number)</td>
+<td>A shot of the player exploded (version 25): a grenade at the end of its fuse or a rocket on impact. Health was removed within rayon metres, with no wall in between.</td>
+</tr>
+<tr>
+<td><a href="../../events/#projectiletouche"><code>projectile.touche</code></a></td>
+<td><code>projectile</code> (number), <code>owner</code> (id?), <code>cible</code> (id?), <code>point</code> (vector), <code>normale</code> (vector), <code>partie</code> (text?), <code>os</code> (text?), <code>vitesse</code> (vector), <code>eau</code> (boolean?), <code>data</code> (table?)</td>
+<td>A projectile launched by game.projectile hit something: cible is the object hit (nil for the terrain and for water), partie the part of a character's body (tete, torse, bras, jambes; missing for an object), os the bone, vitesse its velocity on arrival (m/s), data the table given at launch. eau = true when it entered water (point on the surface): it goes on, strongly slowed, and sinks (put a splash there, game.effect("eclaboussure", e.point), or stop it with game.stop_projectile). Announced by the engine; a projectile that bounces announces each hit.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-quun-script-peut-remplacer-gameoverride">Points qu'un script peut remplacer (game.override)<a class="headerlink" href="#points-quun-script-peut-remplacer-gameoverride" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<ul>
+<li><code>population.reagir</code> : function(default, e) -&gt; anything. Called for every danger the Population module hears: a gunshot (tir.tir), an explosion (tir.explosion), an impact (projectile.touche), a death (sante.mort) or population.danger. e: lieu (a vector), rayon (metres, or nil: the setting peur_rayon), force (or nil: 1), sorte (tir, explosion, impact, mort or danger), source (who caused it, or nil). The default makes the pedestrians around flee and stops the cars heading there (game.population_danger). Return without calling default to replace it; call default(e) with changed fields to adjust it.</li>
+</ul>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="population-population">Population (<code>population</code>)<a class="headerlink" href="#population-population" title="Permanent link">&para;</a></h3>
+<p>Pedestrians who appear on the city pavements around the player, out of sight, walk along the streets and leave behind them. <strong>Use it whenever a city must feel alive: never write pedestrians in the scene, never animate them with timelines or scripts.</strong> The scene holds only these settings; the engine (<code>engine/game/game_population.cpp</code>) does the work at the start of each step. Never edit the module: set its values (<code>modules_set</code>).</p>
+<h4 id="filling-a-city-step-by-step">Filling a city, step by step<a class="headerlink" href="#filling-a-city-step-by-step" title="Permanent link">&para;</a></h4>
+<ol>
+<li>The city needs its lanes: a generated city writes its pavements, lanes and parking bays in <code>voies.json</code>. With none, the report's <code>probleme</code> says so and nobody appears: generate or regenerate the city first, never write pedestrians in the scene.</li>
+<li>Add the module if the game has none (<code>modules_add</code> <code>population</code>), then set it with <code>modules_set</code>. Never edit the module, its script or its <code>module.json</code>.</li>
+<li>The models: place hidden model objects in the scene and list them in <code>modeles</code> (pedestrians), <code>modeles_voitures</code> (driving cars, wheels as children) and <code>garees_modeles</code> (parked cars). Only models whose licence lets the game ship them: the mannequin shipped with the editor, CC0 or CC-BY models (with their credit), the free cars and passers-by of a pack. Never a paid pack's model in a shipped game, and never change a model (its mesh, size or materials): measure its bounds, the director reads them.</li>
+<li>How many, overall: <code>curseur</code> (0 nobody, 1 the set density, 2 twice) for everything at once; <code>passants_100m</code> for pedestrians, <code>voitures_100m</code> for driving cars, <code>garees</code> for the share of parking bays taken. <code>voitures</code> (unticked) removes the driving cars.</li>
+<li>Where (zones): <code>zones</code>, one row per place (<code>lieu</code>: a city district name, a map sector name or id, or <code>partout</code>; <code>passants</code>, <code>voitures</code>, <code>garees</code>, <code>heures</code>). A generated city already gives each district its values; write a row only to change one district (empty a park, fill a market street).</li>
+<li>When (hours): <code>heures</code> (<code>ville</code>, <code>ville_nuit</code>, <code>village</code>, <code>constant</code>, or 24 numbers of your own) with <code>selon_heure</code> ticked to follow the hour of the sky or of the Day and night module.</li>
+<li>Keep a character (a quest giver met in the street, a witness): name it in a quest (it is kept until the quest ends), or send <code>population.garder</code> {<code>cible</code>} (and <code>population.liberer</code> to give it back); see "Who is never taken back".</li>
+<li>Change how the street reacts to a danger: <code>game.override("population.reagir", ...)</code>, or send <code>population.danger</code> from a script or a Trigger rule; to empty a place, set its <code>zones</code> row; see "Reactions".</li>
+<li>Before raising a density, estimate it (<code>city_perf</code> with <code>{"population": {...}}</code>, see "Lightening on your own"); after, prove it with <code>game_run</code> (see "Proving it").</li>
+</ol>
+<h4 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Where: the pavements (<code>trottoirs</code>) of the city lanes (<code>voies.json</code> of each tile, the graph of <code>game.route</code>). A game with no generated city has no pavement yet: nobody appears.</li>
+<li>Who: copies of the model characters in <code>modeles</code> (hidden objects of the scene; usually the animated mannequin <code>animations/quaternius-ual1/UAL1_Standard.glb</code> shipped with the editor, placed hidden). No row: every object tagged <code>population.passant</code>. Each copy plays its model's own walk clip (the clip whose name says walk, a loop first). Never make up a pose.</li>
+<li>On arrival (the scene loads, or the player jumps further than <code>rayon_min</code> in one step): the whole disc up to <code>rayon_max</code> fills at once, in view too, before the first image. The pool of copies is prepared when the scene loads, not during play.</li>
+<li>How many: <code>passants_100m</code> (6) per 100 m of pavement within <code>rayon_max</code> of the player, times <code>curseur</code> (1), at most <code>budget</code> (250) at once.</li>
+<li>Where and when (zones and hours): each piece of pavement takes the density of the zone it lies in, times the coefficient of the hour, times <code>curseur</code>. <code>heures</code> is the overall hour model (<code>ville</code>: low at 4 am, peaks at 8 am and 6 pm; <code>ville_nuit</code>: the city that never sleeps; <code>village</code>: empty at night; <code>constant</code>); <code>selon_heure</code> (ticked) follows the hour of the realistic sky, or the <code>jour_nuit.heure</code> event of the Day and night module; no hour known: coefficient 1. <code>zones</code> (under Advanced) has one row per place: <code>lieu</code> (a city district name, a map sector name or id, or <code>partout</code>), <code>passants</code> (per 100 m of pavement), <code>voitures</code> (moving cars per km of lane: births and the director's target follow the zone where the car appears, 0 for none; hours do not change it) and <code>garees</code> (share of parking spaces taken, 0 to 1: each bay of the zone is drawn from the seed with it, 0 for none), both -1 for like elsewhere (version 6), <code>heures</code> (empty: like elsewhere). Any <code>heures</code> is a model name or 24 numbers of your own (0 h to 23 h, 0 to 4): the editor draws it as a 24 h curve whose points the user drags. A generated city writes its districts with the <code>population</code> block of their style (pedestrians, cars, parked share, hour model, varying with the district density) in its lanes: those are the defaults. A <code>zones</code> row naming a district replaces its values (one value shown in two places: the district panel writes the same row). To empty or fill a district, set its row; never write pedestrians.</li>
+<li>The rings (Medium quality): nobody appears in sight. In sight means inside the camera's cone (its horizontal and vertical openings, each widened by <code>marge_vue</code>, 15 degrees) and not hidden: three rays from the camera to the pedestrian's head, waist and knees all hit a wall or a building to hide it. Further than <code>rayon_min</code> (35 m), out of the cone or hidden is enough; between <code>rayon_cache</code> (15 m) and <code>rayon_min</code>, only hidden behind the scenery; never within <code>rayon_cache</code>. They appear up to <code>rayon_max</code> (100 m), at most <code>par_pas</code> (4) per step; they leave beyond <code>rayon_depart</code> (120 m), or when out of sight for 4 s, further than 60 m and behind the player.</li>
+<li>They walk along their pavement at <code>vitesse</code> (1.3 m/s, each a little faster or slower); at the end of a pavement they take another one that touches it, or turn back.</li>
+<li>The copies come from a pool prepared once at the start (<code>game.pool</code>): no object is created during play. They carry the tags <code>population</code> and <code>population.passant</code>, and saves leave them out.</li>
+</ul>
+<h4 id="cars-driving">Cars (driving)<a class="headerlink" href="#cars-driving" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Where: the lanes of the city (<code>voies</code> and <code>liaisons</code> of <code>voies.json</code>), never a pavement. Each car follows its lane at the street's speed limit (the <code>limite_vitesse</code> signs of the city, in km/h or mph; <code>vitesse_voiture</code>, 13.9 m/s, on a street without a sign), keeps <code>ecart_voitures</code> (2.5 m) behind the car in front, stops at a red light of its junction (the <code>feu</code> lights: <code>game.data(light).feu</code>, the same cycle as their lamps), stops at amber when it can, gives way when it enters a roundabout (<code>cede</code> links) or turns left, never enters a junction while a car is on a crossing path or its exit is full, and picks one of its lane's links at each junction (straight, right, left, the left-turn lanes). No physics, except near the player (see Simulation levels).</li>
+<li>Who: copies of <code>modeles_voitures</code> (hidden cars of the scene, with their wheels as children: the pool copies the whole group), or every object tagged <code>population.voiture</code>. Only redistributable cars (CC0, such as the free cars of Quaternius' Realistic Car Pack); never a paid pack model. Their length and width are read from their bounds.</li>
+<li>How many: <code>voitures_100m</code> (1.5) per 100 m of lane within <code>rayon_max_voitures</code>, times <code>curseur</code>, at most <code>budget_voitures</code> (80). They appear between <code>rayon_min_voitures</code> (60 m; hidden behind a building, from 30 m) and <code>rayon_max_voitures</code> (200 m), out of sight, never on a junction nor within 12 m of another car on their lane; they leave beyond <code>rayon_depart_voitures</code> (240 m), or out of sight and behind the player. They carry the tags <code>population</code> and <code>population.voiture</code>.</li>
+</ul>
+<h4 id="simulation-levels-niveaux">Simulation levels (<code>niveaux</code>)<a class="headerlink" href="#simulation-levels-niveaux" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Near (closer than <code>rayon_proche</code>, 25 m; lost 5 m further): a pedestrian gets a capsule (<code>game.character</code>), walks to its place on its pavement by physics, steps aside from the player and the others (avoidance) and can be bumped; a driving car gets its model's collider (it can be hit) and brakes in front of the player or a near pedestrian (<code>rayon_proche_voitures</code>, 25 m).</li>
+<li>On its line (further): as above, no physics. Out of sight (<code>donnees</code>, unticked by default; ticked): only its place moves on; the object is hidden and no longer placed, and it is placed before it shows again. Level changes never jump: the capsule starts where the pedestrian is shown, and one leaving the near level gives back its gap to the line slowly.</li>
+<li><code>niveaux = false</code>: everyone stays on its line (the behaviour before). The report gives <code>niveaux</code> {<code>passants_proches</code>, <code>passants_en_donnees</code>, <code>voitures_proches</code>, <code>voitures_en_donnees</code>, <code>montees</code>, <code>descentes</code>, <code>bouscules</code>, <code>freinages</code>, <code>pire_saut_m</code>}.</li>
+</ul>
+<h4 id="who-is-never-taken-back-the-important-ones">Who is never taken back (the important ones)<a class="headerlink" href="#who-is-never-taken-back-the-important-ones" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The director only ever takes back its own copies: anything the author placed in the scene (a quest giver, a guard, a shop keeper) is never touched.</li>
+<li>A pedestrian leaves the director, stays itself and stops walking its pavement (an object like any other) as soon as: it carries the tag <code>population.garder</code> (<code>game.add_tag</code>, or the events <code>population.garder</code> / <code>population.liberer</code> {<code>cible</code>}); it goes with the player to the next scene (<code>game.bring_along</code>); a quest that has started names it (its <code>donneur</code>, or the <code>fin_cible</code>, <code>fin_lieu</code>, <code>echec_cible</code>, <code>echec_lieu</code>, <code>reprise_lieu</code> of any of its rows, and the values of a quest created from a template), until the quest ends, completed, failed or abandoned; Accompagner makes it follow, go, flee or wait (until <code>accompagner.arreter</code>); a player touches it: hurts it or kills it (<code>sante.blesser</code>, <code>sante.mort</code> with a player as <code>source</code>), talks to it (<code>dialogue.fin</code>), gets in it (<code>vehicule.monte</code>). Another one is born to keep the density.</li>
+<li>When nothing names it any more, it goes back to the pool once the player is further than twice <code>rayon_depart</code> and it is out of sight. A quest object therefore persists until the end of its quest, then becomes ordinary again.</li>
+<li>A script or a Trigger rule never writes these lists: set tags, send events. Name a pedestrian by its id (copies share their model's name). Engine calls behind the module: <code>game.population_garder(reason, list)</code>, <code>game.population_touche(target, player, how)</code> and <code>game.population_laisse(target, player, how)</code>.</li>
+</ul>
+<h4 id="what-it-remembers-the-memory">What it remembers (the memory)<a class="headerlink" href="#what-it-remembers-the-memory" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The short memory: a pedestrian who leaves out of sight is remembered <code>memoire_courte</code> (60) s. If the player comes back and the place is in the ring again, the same one comes back first (same model, same pavement, same direction), moved on by the time spent. After that, the next one there is another. The density still decides: a remembered pedestrian comes back only as the zone and the hour allow (always the same draw for the same one), and only while fewer are alive than the density asks for.</li>
+<li>Traces: a parked car the game changed (colour, tags, size: dented, painted), a parked car pushed or taken from its bay (the bay stays empty, the bay reads its trace before its seed), a touched pedestrian, stay as they are when the player comes back, for <code>traces_duree</code> (600) s of play, at most <code>traces_max</code> (64), the oldest goes first.</li>
+<li>What the player leaves (a car they got out of, <code>vehicule.descendu</code>; any object born of the population sent with <code>population.laisser</code> {<code>cible</code>, <code>joueur</code>?}) waits for them <code>garder_laisse</code> (1800) s of play, 0 = always, at most <code>laisse_max</code> (32) per player, never pushed out by other traces: they can change their mind and come back. Their last car is always kept.</li>
+<li>Traces and what the player leaves go into the save with their age (<code>game.save</code> / <code>game.load</code>); the short memory does not.</li>
+<li>Objects the author placed are not concerned: the world already remembers them.</li>
+</ul>
+<h4 id="reactions-version-5">Reactions (version 5)<a class="headerlink" href="#reactions-version-5" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A danger empties the street around it: a gunshot (<code>tir.tir</code>, at the muzzle), an explosion (<code>tir.explosion</code>: its radius is added to <code>peur_rayon</code>), a projectile impact (<code>projectile.touche</code>), a death (<code>sante.mort</code>), or <code>population.danger</code> {<code>lieu</code>, <code>rayon</code>?, <code>force</code>?, <code>sorte</code>?, <code>source</code>?} sent by any script or Trigger rule (a fight, a siren, a fire: anything a game wants to signal).</li>
+<li>Within <code>peur_rayon</code> (30 m): a share <code>peur_part</code> (0.9, drawn from the seed) of the pedestrians flee along their pavement, away from the danger, <code>peur_vitesse</code> (2.5) times faster, with their own run clip if they have one (a clip named run, sprint, jog, course), otherwise their walk clip played faster; for <code>peur_duree</code> (20) s, then they walk on their line again, or leave out of sight like the others. Cars within the radius heading towards the danger stop where they are while the fear lasts; those driving away go on. Nobody appears within the radius while the fear lasts (the density drops there for a while). <code>force</code> multiplies the share and the duration; several dangers at the same place (under 2 m) extend the fear.</li>
+<li>The important ones do not flee: a quest giver kept by its quest, a companion, a pedestrian touched by a player or tagged <code>population.garder</code> is no longer a pedestrian of the director. A game that wants them to flee sends <code>accompagner.fuir</code>.</li>
+<li>To change the reaction, never edit the module: <code>game.override("population.reagir", function(default, e) ... end)</code> receives every danger <code>e</code> {<code>lieu</code>, <code>rayon</code>?, <code>force</code>?, <code>sorte</code> = <code>tir</code>, <code>explosion</code>, <code>impact</code>, <code>mort</code> or <code>danger</code>, <code>source</code>?}. Return without calling <code>default</code> to replace it (nobody flees: the game does its own thing), or call <code>default(e)</code> with changed fields (a larger <code>rayon</code>, a smaller <code>force</code>). Engine call behind it: <code>game.population_danger(lieu, rayon?, force?)</code>.</li>
+</ul>
+<h4 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>population.apparait</code> {<code>cible</code>, <code>sorte</code> = <code>passant</code> or <code>voiture</code>}: a pedestrian or a car appears.</li>
+<li><code>population.disparait</code> {<code>cible</code>, <code>sorte</code> = <code>passant</code> or <code>voiture</code>}: it leaves (back to the pool). Never keep its id after this.</li>
+<li><code>population.touche</code> {<code>cible</code>, <code>joueur</code>, <code>comment</code>, <code>sorte</code> = <code>passant</code>}: a pedestrian becomes important (<code>comment</code>: <code>frappe</code>, <code>tue</code>, <code>parle</code>, <code>monte</code>, or what keeps it: <code>quetes</code>, <code>accompagner</code>, <code>garder</code>, <code>emmene</code>).</li>
+<li><code>population.fuite</code> {<code>lieu</code>, <code>rayon</code>, <code>passants</code>}: a danger made pedestrians flee (how many).</li>
+<li>Listens to <code>population.garder</code> and <code>population.liberer</code> {<code>cible</code>}: put or remove the tag <code>population.garder</code>; to <code>population.laisser</code> {<code>cible</code>, <code>joueur</code>?} and <code>vehicule.descendu</code>: what the player leaves (above); to <code>population.danger</code>, <code>tir.tir</code>, <code>tir.explosion</code>, <code>projectile.touche</code> and <code>sante.mort</code>: the reactions (above).</li>
+</ul>
+<h4 id="proving-it-game_run">Proving it (<code>game_run</code>)<a class="headerlink" href="#proving-it-game_run" title="Permanent link">&para;</a></h4>
+<p>After any change, run <code>game_run</code> with a walk through the city (the player moving and turning the camera) and read the report's <code>population</code> part. A proof says, with the numbers: <code>naissances_vues</code> = 0 and <code>voitures.naissances_vues</code> = 0 (nothing appeared in sight), <code>plus_vivants</code> within <code>budget</code>, and the cost (<code>cout.mesure_ms</code> next to <code>cout.estime_ms</code>, under <code>cout.budget_ms</code>). If the part has an <code>alerte</code> list, a rule is broken: say it to the user as it is, fix it (an <code>alerte</code> on cost: see "Lightening on your own"), and run again.</p>
+<p>The report has a <code>population</code> part: <code>heure</code> (the hour used, -1 when unknown), <code>zones</code> (zones in use, city districts included), <code>vivants</code> (alive now), <code>plus_vivants</code>, <code>cible</code> (what the density asks for), <code>naissances</code>, <code>departs</code>, <code>departs_derriere</code>, <code>refus_trop_pres</code> and <code>refus_dans_la_vue</code> (places drawn then refused: too close, or in view), <code>naissances_cachees</code> (born closer or in the cone because hidden by the scenery), <code>naissances_vues</code> (births checked again in the exact camera image with free rays: it must stay 0), <code>remplis</code> and <code>remplissages</code> (pedestrians placed on arrival, and how many arrivals), <code>reserve_ms</code> and <code>remplissage_ms</code> (the pool and the arrival fill, outside the steps), <code>naissance_la_plus_proche_m</code>, <code>importants</code> (kept now), <code>importants_touches</code>, <code>importants_devenus</code>, <code>importants_rendus</code>, <code>memoire_courte</code> (pedestrians remembered now), <code>revenus</code> (came back the same), <code>traces</code> (ordinary traces now), <code>traces_faites</code>, <code>laisses</code> (what players left, kept now), <code>trottoirs_m</code>, <code>modeles</code>, <code>reactions</code> {<code>dangers</code> (received), <code>dangers_vifs</code> (still scaring now), <code>fuyards</code> (fleeing now), <code>ont_fui</code> (fled in all), <code>voitures_arretees_pas</code> (car steps held by fear), and the four <code>peur_*</code> values}, <code>ms_par_pas</code>, <code>pire_ms</code>, <code>budget</code> (the setting), <code>niveaux</code> (see Simulation levels), <code>garees</code> (the parked cars: <code>part</code>, <code>cases</code>, <code>tirees</code>, <code>montrees</code>, <code>solides</code>, <code>plus_montrees</code>, <code>ms_par_pas</code>, <code>budget</code>; also at the report's root as <code>population_garees</code>), <code>cout</code> {<code>mesure_ms</code> (the measured population step, parked cars included), <code>estime_ms</code>, <code>estime_cpu_ms</code> and <code>estime_gpu_ms</code> (the estimate of what lived at the busiest, same rates as <code>city_perf</code>), <code>budget_ms</code> (what the aimed machine allows, see below), <code>qualite</code>, <code>images_s</code>, and <code>allegement</code> when the cost is over the budget}, <code>alerte</code> (only when a rule is broken: a pedestrian or a car born in sight, more alive than a budget, a cost over the aimed machine's budget; one line each), and <code>probleme</code> when no model or no pavement was found. Its <code>voitures</code> part says the same for cars (<code>vivantes</code>, <code>naissances</code>, <code>departs</code>, <code>naissances_vues</code>...) plus <code>arrets_au_feu</code> (stops at a red light), <code>arretees_au_feu</code> (waiting at a red light now), <code>attentes_carrefour</code> (steps spent waiting to give way or for a free junction), <code>ecart_min_m</code> (the smallest bumper-to-bumper gap to the car in front: never under 2 m), <code>ecart_gabarits_min_m</code> (the smallest gap between the outlines of any two cars: above 0, no car goes through another), <code>voies_m</code>, <code>feux</code> (junctions with lights), its <code>budget</code> (the <code>budget_voitures</code> setting) and its own <code>ms_par_pas</code> and <code>pire_ms</code>.</p>
+<h4 id="lightening-on-your-own-the-aimed-machine">Lightening on your own (the aimed machine)<a class="headerlink" href="#lightening-on-your-own-the-aimed-machine" title="Permanent link">&para;</a></h4>
+<p>You estimate the cost of a request and lighten it yourself; the user does not have to ask. Never touch the models (no simpler mesh, no smaller texture) and never edit the module: only its settings.</p>
+<ul>
+<li>The aimed machine is the game's performance targets (<code>world_set</code> <code>performanceTargets</code>: <code>quality</code> and <code>fps</code>; by default Medium at 60 fps). The population may take a share of each frame: 4% in low (a weak machine), 9% in medium (1.5 ms at 60 fps), 12% in high, 15% in ultra. That is <code>budget_ms</code> in <code>city_perf</code>'s <code>population</code> part and in <code>game_run</code>'s <code>cout</code>. Change the targets only when the user names another machine or frame rate.</li>
+<li>Before raising a density (or filling a new city), call <code>city_perf</code> with <code>{"population": {...}}</code> and the values you want. Its <code>population</code> part gives <code>cout_estime_ms</code>, <code>budget_ms</code> and <code>au_dessus_du_budget</code>; when it is over, <code>allegement</code> gives <code>modules_set</code> values (<code>budget</code>, <code>budget_voitures</code>, <code>garees_allegement</code>: a factor on top of every zone's and the overall <code>garees</code>, so it also thins districts that set their own) and their <code>cout_estime_ms</code>, under the budget (<code>sous_le_budget</code>). Write them with <code>modules_set</code> (keeping the user's density: the streets look as full near the player, fewer live at the busiest point), and tell the user what you lowered, the cost before and after, and why.</li>
+<li><code>game_run</code> does the same from what really lived: when <code>cout.mesure_ms</code> plus the drawing, or <code>cout.estime_ms</code>, is over <code>budget_ms</code>, its <code>cout.allegement</code> proposes the same settings.</li>
+<li>If it is still too high, in this order: shorten the reach (<code>rayon_max</code>, <code>rayon_max_voitures</code>, <code>garees_portee</code>), keep <code>niveaux</code> ticked (only the near ones get physics) and tick <code>donnees</code> (out of sight, only the place moves on), then lower <code>curseur</code> last (it thins the whole city). Run <code>city_perf</code>, then <code>game_run</code> again, and give the numbers.</li>
+</ul>
+<h4 id="not-yet">Not yet<a class="headerlink" href="#not-yet" title="Permanent link">&para;</a></h4>
+<p>Spinning wheels, real physics near the player, the fine view cone and walls, richer reactions (hiding, calling the police, cars swerving), being shoved hard, several players: later missions of the population design (<code>docs/superpowers/specs/2026-11-26-population-dynamique-design.md</code>).</p>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/population/module.json</code>, <code>modules/population/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../physique/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Physique">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Physique
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../chiffon/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Poupée de chiffon">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Poupée de chiffon
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

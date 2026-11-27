@@ -1,0 +1,4616 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/butin/">
+      
+      
+      
+        <link rel="prev" href="../boutique/">
+      
+      
+        <link rel="next" href="../carte/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Butin - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Butin
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Accompagner
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Table »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-lignes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-raretes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Rareté »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-bonus_hasard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Bonus »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-collecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ressource »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Quête »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loot-butin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Loot (<code>butin</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commerces
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-tables" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Table »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-lignes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-raretes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Rareté »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-bonus_hasard" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Bonus »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-modeles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Modèle »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-collecte" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ressource »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Quête »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-sur-chaque-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages sur chaque objet
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loot-butin" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Loot (<code>butin</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="butin">Butin<a class="headerlink" href="#butin" title="Permanent link">&para;</a></h1>
+<p>Des tables de butin, tirées quand un ennemi meurt, quand un coffre s'ouvre, à la récolte, à la fin d'une quête ou par le Déclencheur : ce qui tombe, avec sa rareté (couleur, lueur), ses bonus au hasard et son nom généré pour les exemplaires uniques. Au sol, dans l'inventaire, ou dans une fenêtre « Tout prendre ».</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>butin</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>oui</td>
+</tr>
+<tr>
+<td>Active aussi</td>
+<td><a href="../inventaire/">Inventaire</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans le panneau <strong>Systèmes</strong> (mode Développeur), en ouvrant la carte du système.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tables de butin</td>
+<td>Chaque table a un nom, le nombre de tirages qu'elle fait et sa chance de ne rien donner. Ses lignes (ce qui peut tomber) sont dans la liste « Lignes des tables ». Un ennemi, un coffre, une récolte ou une quête cite une table par son nom.</td>
+<td><code>tables</code></td>
+<td>Liste de « Table »</td>
+<td>(vide)</td>
+<td>une ligne par « Table » : <a href="#champs-tables">ses champs</a></td>
+</tr>
+<tr>
+<td>Lignes des tables</td>
+<td>Ce qui peut tomber de chaque table : une sorte d'objet ou une autre table, son poids (ou un pourcentage tenté à part), sa quantité, ses conditions, et « garanti ».</td>
+<td><code>lignes</code></td>
+<td>Liste de « Ligne »</td>
+<td>(vide)</td>
+<td>une ligne par « Ligne » : <a href="#champs-lignes">ses champs</a></td>
+</tr>
+<tr>
+<td>Raretés</td>
+<td>Les raretés de votre jeu, de la plus commune à la plus rare : nom, couleur (le nom de l'objet, sa lueur au sol), chance, nombre de bonus tirés au hasard, multiplicateur de leur force, chance d'emplacements de gemmes, son et lueur à la chute. Seuls les exemplaires uniques (Inventaire) en reçoivent une.</td>
+<td><code>raretes</code></td>
+<td>Liste de « Rareté »</td>
+<td><code>[{'nom': 'Commun', 'couleur': '#c8c8c8', 'chance': 60, 'bonus': 0, 'multiplicateur': 1, 'chance_gemmes': 0, 'son': '', 'lueur': False}, {'nom': 'Peu commun', 'couleur': '#3fbf4a', 'chance': 25, 'bonus': 1, 'multiplicateur': 1, 'chance_gemmes': 0, 'son': '', 'lueur': True}, {'nom': 'Rare', 'couleur': '#3f7fff', 'chance': 10, 'bonus': 2, 'multiplicateur': 1.2, 'chance_gemmes': 0.1, 'son': '', 'lueur': True}, {'nom': 'Épique', 'couleur': '#a03fff', 'chance': 4, 'bonus': 3, 'multiplicateur': 1.5, 'chance_gemmes': 0.3, 'son': '', 'lueur': True}, {'nom': 'Légendaire', 'couleur': '#ff9f1f', 'chance': 1, 'bonus': 4, 'multiplicateur': 2, 'chance_gemmes': 0.6, 'son': '', 'lueur': True}]</code></td>
+<td>une ligne par « Rareté » : <a href="#champs-raretes">ses champs</a></td>
+</tr>
+<tr>
+<td>Bonus au hasard</td>
+<td>Les bonus qu'un exemplaire unique peut recevoir : la valeur modifiable qu'il change, sa fourchette, les catégories d'objets qui le reçoivent, la rareté minimale, et un morceau de nom (« tranchante », « du Loup »).</td>
+<td><code>bonus_hasard</code></td>
+<td>Liste de « Bonus »</td>
+<td>(vide)</td>
+<td>une ligne par « Bonus » : <a href="#champs-bonus_hasard">ses champs</a></td>
+</tr>
+<tr>
+<td>Croissance des bonus avec le niveau d'objet</td>
+<td>Comment les fourchettes grandissent avec le niveau d'objet (celui de l'ennemi ou de la zone) : en ligne droite, ou de plus en plus vite. La même courbe que la croissance des ennemis (Progression).</td>
+<td><code>croissance_forme</code></td>
+<td>Choix dans une liste</td>
+<td>En ligne droite</td>
+<td><code>lineaire</code> : En ligne droite<br><code>exponentielle</code> : De plus en plus vite</td>
+</tr>
+<tr>
+<td>Hausse par niveau d'objet</td>
+<td>0,1 : +10 % de la fourchette par niveau au-dessus du premier. 0 : les fourchettes ne bougent pas.</td>
+<td><code>croissance_taux</code></td>
+<td>Nombre</td>
+<td>0.1</td>
+<td>de -1 à 100</td>
+</tr>
+<tr>
+<td>Emplacements de gemmes au plus</td>
+<td>Combien d'emplacements un objet peut recevoir, chacun tenté avec la chance de sa rareté.</td>
+<td><code>gemmes_max</code></td>
+<td>Nombre</td>
+<td>3</td>
+<td>de 0 à 32, en nombre entier</td>
+</tr>
+<tr>
+<td>Comment le butin apparaît</td>
+<td>Au sol, à ramasser ; directement dans l'inventaire ; ou dans une fenêtre « Tout prendre » en utilisant le corps (ou le coffre).</td>
+<td><code>apparition</code></td>
+<td>Choix dans une liste</td>
+<td>Au sol, à ramasser</td>
+<td><code>sol</code> : Au sol, à ramasser<br><code>inventaire</code> : Directement dans l'inventaire<br><code>fenetre</code> : Dans une fenêtre « Tout prendre »</td>
+</tr>
+<tr>
+<td>Lueur de la rareté au sol</td>
+<td>Coché : un objet au sol brille de la couleur de sa rareté, dans le monde (si sa rareté a « Lueur au sol ») : ce qui passe devant la cache, et elle se voit de jour comme de nuit.</td>
+<td><code>lueur</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Style de la lueur</td>
+<td>Un faisceau : une colonne de lumière qui monte de l'objet, sur un pied lumineux, qui le signale de loin. Des étincelles : des étoiles qui tournent autour de lui, avec une petite lumière.</td>
+<td><code>style_lueur</code></td>
+<td>Choix dans une liste</td>
+<td>Un faisceau qui monte</td>
+<td><code>faisceau</code> : Un faisceau qui monte<br><code>etincelles</code> : Des étincelles autour</td>
+</tr>
+<tr>
+<td>Taille de la lueur</td>
+<td>1 : un faisceau d'environ 1,5 m de haut. 2 le double, 0,5 la moitié.</td>
+<td><code>taille_lueur</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0.1 à 5</td>
+</tr>
+<tr>
+<td>Nom flottant au-dessus du butin</td>
+<td>Coché : le nom de l'objet, à la couleur de sa rareté, flotte au-dessus de lui quand le joueur est proche.</td>
+<td><code>nom_flottant</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Distance du nom flottant (m)</td>
+<td>Le nom ne se montre qu'à moins de cette distance.</td>
+<td><code>distance_nom</code></td>
+<td>Nombre</td>
+<td>8</td>
+<td>de 1 à 100</td>
+</tr>
+<tr>
+<td>Disparition du butin au sol (s, 0 : jamais)</td>
+<td>Le butin non ramassé disparaît après ce nombre de secondes.</td>
+<td><code>disparition</code></td>
+<td>Nombre</td>
+<td>300</td>
+<td>de 0 à 86 400</td>
+</tr>
+<tr>
+<td>Garder le butin au sol dans la sauvegarde</td>
+<td>Coché : le butin encore au sol revient au chargement de la partie, avec son délai restant.</td>
+<td><code>garder_au_sol</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Modèles au sol</td>
+<td>Pour chaque sorte d'objet, l'objet de la scène (d'ordinaire caché) dont une copie se pose au sol. Une sorte absente prend le modèle par défaut.</td>
+<td><code>modeles</code></td>
+<td>Liste de « Modèle »</td>
+<td>(vide)</td>
+<td>une ligne par « Modèle » : <a href="#champs-modeles">ses champs</a></td>
+</tr>
+<tr>
+<td>Modèle par défaut au sol</td>
+<td>L'objet de la scène (d'ordinaire caché, un petit sac de votre jeu) copié pour une sorte sans modèle (ni dans « Modèles au sol », ni dans les « Modèles en main » de l'Inventaire). Vide : la forme du moteur ci-dessous.</td>
+<td><code>modele_defaut</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sans aucun modèle réglé</td>
+<td>Ce qui se pose au sol pour une sorte sans modèle, quand aucun modèle par défaut n'est choisi : une petite forme du moteur (aucun fichier, aucun pack), de la couleur de sa rareté, avec son nom flottant et sa lueur ; ou directement dans l'inventaire.</td>
+<td><code>forme_sans_modele</code></td>
+<td>Choix dans une liste</td>
+<td>Un petit cube</td>
+<td><code>cube</code> : Un petit cube<br><code>sphere</code> : Une petite sphère<br><code>inventaire</code> : Directement dans l'inventaire</td>
+</tr>
+<tr>
+<td>Taille de la forme (m)<br><em>affiché seulement si <strong>Sans aucun modèle réglé</strong> est « Un petit cube » ou « Une petite sphère »</em></td>
+<td>La largeur du petit cube ou de la petite sphère posés au sol sans modèle, en mètres.</td>
+<td><code>taille_forme</code></td>
+<td>Nombre</td>
+<td>0.15</td>
+<td>de 0.02 à 2</td>
+</tr>
+<tr>
+<td>Partage du butin (à plusieurs)</td>
+<td>Libre : le premier qui ramasse. Personnel : chacun son tirage, que lui seul peut prendre. Réservé au tueur quelques secondes, puis libre. Chacun son tour : chaque objet est réservé à un joueur, à tour de rôle.</td>
+<td><code>partage</code></td>
+<td>Choix dans une liste</td>
+<td>Libre</td>
+<td><code>libre</code> : Libre<br><code>personnel</code> : Personnel<br><code>tueur</code> : Réservé au tueur, puis libre<br><code>tour</code> : Chacun son tour</td>
+</tr>
+<tr>
+<td>Réservé au tueur pendant (s)</td>
+<td>Avec « Réservé au tueur » : le temps avant que tout le monde puisse le prendre.</td>
+<td><code>delai_tueur</code></td>
+<td>Nombre</td>
+<td>30</td>
+<td>de 0 à 3600</td>
+</tr>
+<tr>
+<td>À sa mort, le joueur lâche</td>
+<td>Avec le module « Mort et réapparition » (joueur.mort) : ce que le joueur perd de son sac à sa mort, posé là où il tombe. Rien par défaut. Les exemplaires uniques gardent leur fiche.</td>
+<td><code>mort_sac</code></td>
+<td>Choix dans une liste</td>
+<td>Rien</td>
+<td><code>rien</code> : Rien<br><code>tout</code> : Tout le sac<br><code>part</code> : Une part du sac</td>
+</tr>
+<tr>
+<td>Part du sac lâchée (%)<br><em>affiché seulement si <strong>À sa mort, le joueur lâche</strong> est « Une part du sac »</em></td>
+<td>De chaque pile, cette part (arrondie) ; des exemplaires uniques, cette part aussi, les premiers du sac.</td>
+<td><code>mort_part</code></td>
+<td>Nombre</td>
+<td>50</td>
+<td>de 1 à 100</td>
+</tr>
+<tr>
+<td>Ce qui est lâché va<br><em>affiché seulement si <strong>À sa mort, le joueur lâche</strong> est « Tout le sac » ou « Une part du sac »</em></td>
+<td>Un sac à sa place, qui s'ouvre (fenêtre « Tout prendre ») et disparaît vide ; ou chaque objet au sol, comme un butin.</td>
+<td><code>mort_forme</code></td>
+<td>Choix dans une liste</td>
+<td>Dans un sac à ramasser</td>
+<td><code>sac</code> : Dans un sac à ramasser<br><code>sol</code> : Chaque objet au sol</td>
+</tr>
+<tr>
+<td>Modèle du sac lâché<br><em>affiché seulement si <strong>À sa mort, le joueur lâche</strong> est « Tout le sac » ou « Une part du sac »</em></td>
+<td>L'objet de la scène (d'ordinaire caché) copié pour le sac. Aucun : un petit cube du moteur, deux fois la « Taille de la forme ».</td>
+<td><code>mort_modele_sac</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Réservé au mort pendant (s)<br><em>affiché seulement si <strong>À sa mort, le joueur lâche</strong> est « Tout le sac » ou « Une part du sac »</em></td>
+<td>Pendant ce temps, lui seul reprend ce qu'il a lâché ; ensuite, tout le monde. 0 : à tous tout de suite.</td>
+<td><code>mort_reserve</code></td>
+<td>Nombre</td>
+<td>60</td>
+<td>de 0 à 86 400</td>
+</tr>
+<tr>
+<td>Chance de butin de départ</td>
+<td>La valeur modifiable chance_butin (équipement, effets et niveaux la font monter) : elle multiplie les chances des raretés au-dessus de la plus commune et divise la chance de ne rien donner.</td>
+<td><code>chance_base</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 1000</td>
+</tr>
+<tr>
+<td>Protection contre la malchance</td>
+<td>Coché : après chaque tirage sans objet rare, la chance d'un objet rare monte, jusqu'à ce qu'il en tombe un.</td>
+<td><code>protection_active</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Rareté visée par la protection</td>
+<td>Le nom d'une rareté : celle-ci et les plus rares comptent comme « rare ».</td>
+<td><code>protection_rang</code></td>
+<td>Texte</td>
+<td><code>Rare</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Hausse par échec</td>
+<td>0,1 : +10 % de chance pour le rare après chaque tirage raté.</td>
+<td><code>protection_hausse</code></td>
+<td>Nombre</td>
+<td>0.1</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Bonus rares de la Collecte</td>
+<td>Pour une ressource récoltée, une table tirée en plus, avec une chance (une pépite dans un rocher).</td>
+<td><code>collecte</code></td>
+<td>Liste de « Ressource »</td>
+<td>(vide)</td>
+<td>une ligne par « Ressource » : <a href="#champs-collecte">ses champs</a></td>
+</tr>
+<tr>
+<td>Récompenses tirées des Quêtes</td>
+<td>Pour une quête finie, une table tirée en récompense, en plus de la sienne.</td>
+<td><code>quetes</code></td>
+<td>Liste de « Quête »</td>
+<td>(vide)</td>
+<td>une ligne par « Quête » : <a href="#champs-quetes">ses champs</a></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-tables">Les champs de chaque « Table »<a class="headerlink" href="#champs-tables" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Table » a son cadre, numéroté ; <strong>Ajouter : Table</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom</td>
+<td>Le nom de la table, comme « Loup » ou « Coffre de la grotte ».</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Tirages</td>
+<td>Combien de fois la table tire une ligne (au poids) à chaque fois qu'elle sert.</td>
+<td><code>tirages</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 100, en nombre entier</td>
+</tr>
+<tr>
+<td>Tirages au plus (0 : toujours le nombre ci-dessus)</td>
+<td>Au-dessus de « Tirages » : un nombre au hasard entre les deux.</td>
+<td><code>tirages_max</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100, en nombre entier</td>
+</tr>
+<tr>
+<td>Chance de ne rien donner (0 à 1)</td>
+<td>À chaque tirage, la chance qu'il ne tombe rien : 0,3 pour 30 %. La chance de butin la fait baisser.</td>
+<td><code>rien</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-lignes">Les champs de chaque « Ligne »<a class="headerlink" href="#champs-lignes" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ligne » a son cadre, numéroté ; <strong>Ajouter : Ligne</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table</td>
+<td>La table à laquelle cette ligne appartient (son nom).</td>
+<td><code>table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Sorte d'objet</td>
+<td>La sorte d'objet qui tombe, telle que l'Inventaire la range. Vide si la ligne tire une autre table.</td>
+<td><code>objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ou une autre table</td>
+<td>Le nom d'une autre table, tirée « quantité » fois (une table de gemmes dans celle d'un boss). Une boucle (A tire B qui tire A) est refusée.</td>
+<td><code>sous_table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Poids</td>
+<td>Plus il est grand, plus la ligne est choisie souvent, face aux autres lignes de la table : 3 contre 1 tombe trois fois plus.</td>
+<td><code>poids</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 1 000 000 000</td>
+</tr>
+<tr>
+<td>Ou un pourcentage, tenté à part (0 : au poids)</td>
+<td>Au-dessus de 0 : la ligne est tentée à chaque tirage avec cette chance (5 pour 5 %), en plus de la ligne choisie au poids.</td>
+<td><code>pourcentage</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100</td>
+</tr>
+<tr>
+<td>Quantité</td>
+<td>Combien il en tombe.</td>
+<td><code>quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Quantité au plus (0 : toujours la même)</td>
+<td>Au-dessus de « Quantité » : un nombre au hasard entre les deux (de 1 à 3).</td>
+<td><code>quantite_max</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Garanti</td>
+<td>Coché : tombe toujours, une fois, quoi qu'il arrive (la clé d'un boss).</td>
+<td><code>garanti</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Niveau de la source au moins</td>
+<td>La ligne ne compte que si l'ennemi (ou la zone) a au moins ce niveau. 0 : sans condition.</td>
+<td><code>niveau_min</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Niveau de la source au plus</td>
+<td>La ligne ne compte que jusqu'à ce niveau de l'ennemi. 0 : sans condition.</td>
+<td><code>niveau_max</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Niveau du joueur au moins</td>
+<td>La ligne ne compte que si le joueur a au moins ce niveau (Progression). 0 : sans condition.</td>
+<td><code>joueur_min</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Niveau du joueur au plus</td>
+<td>0 : sans condition.</td>
+<td><code>joueur_max</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Seulement dans la zone</td>
+<td>Le nom d'une zone (module Zone) : la ligne ne compte que si le joueur y est. Vide : partout.</td>
+<td><code>zone</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement pendant la quête</td>
+<td>Le titre d'une quête en cours : la ligne ne compte que pendant celle-ci. Vide : toujours.</td>
+<td><code>quete</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-raretes">Les champs de chaque « Rareté »<a class="headerlink" href="#champs-raretes" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Rareté » a son cadre, numéroté ; <strong>Ajouter : Rareté</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nom</td>
+<td>Le nom montré dans l'infobulle, comme « Rare ».</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Couleur</td>
+<td>La couleur du nom de l'objet et de sa lueur au sol.</td>
+<td><code>couleur</code></td>
+<td>Couleur</td>
+<td><span class="wm-couleur" style="background:#ffffff"></span> <code>#ffffff</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Chance (poids)</td>
+<td>Face aux autres raretés : 60 contre 1 rend celle-ci soixante fois plus fréquente.</td>
+<td><code>chance</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 1 000 000 000</td>
+</tr>
+<tr>
+<td>Bonus tirés au hasard</td>
+<td>Combien de bonus de la liste « Bonus au hasard » l'objet reçoit.</td>
+<td><code>bonus</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 64, en nombre entier</td>
+</tr>
+<tr>
+<td>Force des bonus (×)</td>
+<td>Multiplie la valeur de chaque bonus tiré : 1,5 les rend moitié plus forts.</td>
+<td><code>multiplicateur</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 1000</td>
+</tr>
+<tr>
+<td>Chance d'emplacement de gemme (0 à 1)</td>
+<td>Tentée pour chaque emplacement possible (« Emplacements de gemmes au plus »).</td>
+<td><code>chance_gemmes</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1</td>
+</tr>
+<tr>
+<td>Son à la chute</td>
+<td>Un son du projet joué quand un objet de cette rareté tombe. Vide : aucun.</td>
+<td><code>son</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Lueur au sol</td>
+<td>Coché : l'objet au sol brille de la couleur de sa rareté.</td>
+<td><code>lueur</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-bonus_hasard">Les champs de chaque « Bonus »<a class="headerlink" href="#champs-bonus_hasard" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Bonus » a son cadre, numéroté ; <strong>Ajouter : Bonus</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Valeur modifiable</td>
+<td>Le nom d'une valeur de la Progression, comme degats ou sante_max.</td>
+<td><code>valeur</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Au moins</td>
+<td>Le bas de la fourchette, au niveau d'objet 1.</td>
+<td><code>min</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de -1 000 000 000 à 1 000 000 000</td>
+</tr>
+<tr>
+<td>Au plus</td>
+<td>Le haut de la fourchette, au niveau d'objet 1. Les deux grandissent avec le niveau d'objet.</td>
+<td><code>max</code></td>
+<td>Nombre</td>
+<td>3</td>
+<td>de -1 000 000 000 à 1 000 000 000</td>
+</tr>
+<tr>
+<td>En pourcentage</td>
+<td>Coché : la fourchette est en % (5 à 10 : +5 % à +10 %).</td>
+<td><code>pourcent</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Catégories (séparées par des virgules)</td>
+<td>Les catégories d'objets (Inventaire) qui peuvent recevoir ce bonus, comme « arme, outil ». Vide : toutes.</td>
+<td><code>categories</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Rareté minimale</td>
+<td>Le nom d'une rareté : seuls les objets de celle-ci ou plus rares le reçoivent. Vide : toutes.</td>
+<td><code>rarete_min</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Morceau de nom</td>
+<td>Ajouté au nom de l'objet : « tranchante » donne « Épée tranchante ». Vide : le nom ne change pas.</td>
+<td><code>nom</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Place du morceau</td>
+<td>Avant ou après le nom de la sorte.</td>
+<td><code>place</code></td>
+<td>Choix dans une liste</td>
+<td>Après le nom</td>
+<td><code>apres</code> : Après le nom<br><code>avant</code> : Avant le nom</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-modeles">Les champs de chaque « Modèle »<a class="headerlink" href="#champs-modeles" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Modèle » a son cadre, numéroté ; <strong>Ajouter : Modèle</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorte d'objet</td>
+<td>La sorte telle que l'Inventaire la range.</td>
+<td><code>objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Modèle (un objet de la scène)</td>
+<td>L'objet copié au sol.</td>
+<td><code>modele</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-collecte">Les champs de chaque « Ressource »<a class="headerlink" href="#champs-collecte" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ressource » a son cadre, numéroté ; <strong>Ajouter : Ressource</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ressource</td>
+<td>La ressource récoltée, comme « Pierre ». Vide : toutes.</td>
+<td><code>ressource</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Table tirée</td>
+<td>Le nom d'une table de butin.</td>
+<td><code>table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Chance (0 à 1)</td>
+<td>0,05 : une récolte sur vingt.</td>
+<td><code>chance</code></td>
+<td>Nombre</td>
+<td>0.05</td>
+<td>de 0 à 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-quetes">Les champs de chaque « Quête »<a class="headerlink" href="#champs-quetes" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Quête » a son cadre, numéroté ; <strong>Ajouter : Quête</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Quête</td>
+<td>Le titre de la quête.</td>
+<td><code>quete</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Table tirée</td>
+<td>Le nom d'une table de butin.</td>
+<td><code>table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-sur-chaque-objet">Réglages sur chaque objet<a class="headerlink" href="#reglages-sur-chaque-objet" title="Permanent link">&para;</a></h2>
+<p>Dans les <strong>Propriétés</strong> d'un objet ou d'un dossier qui porte le système, section <strong>Systèmes</strong>. Un dossier transmet ses valeurs à ce qu'il contient ; un objet peut changer une valeur pour lui seul.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Table de butin</td>
+<td>La table tirée quand cet objet meurt (un ennemi). Vide : rien.</td>
+<td><code>table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Niveau d'objet (0 : celui de l'ennemi)</td>
+<td>Le niveau des objets tirés ici. 0 : le niveau que la Progression a donné à l'ennemi, sinon 1.</td>
+<td><code>niveau</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000, en nombre entier</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#butintombe"><code>butin.tombe</code></a></td>
+<td><code>table</code> (text), <code>nombre</code> (number), <code>cible</code> (text?), <code>joueur</code> (id?)</td>
+<td>Loot was rolled and placed (on the ground, in the inventory or in a content): how many lines dropped.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinramasse"><code>butin.ramasse</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?), <code>joueur</code> (id)</td>
+<td>A player took a piece of loot (from the ground or a Take all window). fiche: the unique item's record, if it is one.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinrefus"><code>butin.refus</code></a></td>
+<td><code>cible</code> (text), <code>joueur</code> (id), <code>raison</code> (text)</td>
+<td>The host refused a player taking loot reserved for someone else (sharing personal, killer or in turn).</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinouvrir"><code>butin.ouvrir</code></a></td>
+<td><code>cible</code> (text), <code>joueur</code> (id?)</td>
+<td>Open the Take all window of a content (a body, a chest) for a player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butincontenu"><code>butin.contenu</code></a></td>
+<td><code>cible</code> (text), <code>nombre</code> (number)</td>
+<td>A content (a body, a chest) changed: its Take all windows redraw.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinprendre"><code>butin.prendre</code></a></td>
+<td><code>cible</code> (text), <code>numero</code> (number?), <code>joueur</code> (id)</td>
+<td>A player asks the host to take from a content: one line (numero) or all they may take.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairesortir"><code>inventaire.sortir</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>case</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to take one item out of the bag without destroying it (version 16): objet is its kind, fiche a unique copy (it keeps its record; whoever takes it says its new holder). The Equipment module takes what it makes the player wear. A stack gives one from its smallest stack, or from case (version 21), a slot's key.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinsac"><code>butin.sac</code></a></td>
+<td><code>joueur</code> (id), <code>cible</code> (id?), <code>nombre</code> (number), <code>position</code> (vector)</td>
+<td>A dead player dropped their bag (Loot setting mort_sac): cible is the bag left where they fell (nil: each item on the ground), nombre the lines dropped.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#santemort"><code>sante.mort</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id?)</td>
+<td>An object's health reached zero. What happens next belongs to the game: the health module does nothing else, unless its setting says to destroy the object.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionniveau_ennemi"><code>progression.niveau_ennemi</code></a></td>
+<td><code>cible</code> (id), <code>niveau</code> (number)</td>
+<td>The Progression module gave an enemy its level (fixed, per zone, matched to the players or growing with time): its health and damage grew with it. To show it above its head.</td>
+</tr>
+<tr>
+<td><a href="../../events/#collecterecolte"><code>collecte.recolte</code></a></td>
+<td><code>cible</code> (id), <code>ressource</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>xp</code> (number?), <code>piste</code> (text?)</td>
+<td>A resource was used up and gave what it holds. The inventory, if present, has been asked to add it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesdebut"><code>quetes.debut</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest started: quete is its title. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesfin"><code>quetes.fin</code></a></td>
+<td><code>quete</code> (text), <code>xp</code> (number?), <code>piste</code> (text?), <code>groupe</code> (boolean?), <code>facultatives</code> (table?)</td>
+<td>A quest is finished: all its steps are done. Its reward, if any, has been asked to the inventory. xp and piste (version 28): its XP for the Progression module and the track that gets it (empty: the main one). facultatives (Journal de quêtes 11): {faites, total}, how many of its optional steps were done, out of how many; absent when it has none. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesabandon"><code>quetes.abandon</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>The player abandoned a quest from the log (or quetes.abandonner asked for it). It gives no reward; it may be given again if its settings allow it. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesechec"><code>quetes.echec</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest failed: an event, a mark, its time ran out, or quetes.echouer. It gives no reward; it may be given again if its settings allow it. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#zoneentree"><code>zone.entree</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something entered a zone (an object carrying the zone system): a player, a character or a moving object, depending on what the zone detects (joueur: every player). joueur is set when qui is a player. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#zonesortie"><code>zone.sortie</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something left a zone. Not announced for an object removed from the game while inside.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireplein"><code>inventaire.plein</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>reste</code> (number?)</td>
+<td>An item could not be added: every slot holds another kind of item (or another unique copy), or (version 21) every stack of its kind is full. reste: picked up in part, how many stayed on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinlacher"><code>butin.lacher</code></a></td>
+<td><code>table</code> (text), <code>position</code> (vector?), <code>cible</code> (id?), <code>niveau</code> (number?), <code>joueur</code> (id?)</td>
+<td>Ask the Loot module to roll a table and drop what it gives (the Trigger, a script). position or cible: where; niveau: the item level; joueur: for whom (the killer, for sharing).</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinremplir"><code>butin.remplir</code></a></td>
+<td><code>cle</code> (text), <code>table</code> (text), <code>niveau</code> (number?), <code>joueur</code> (id?), <code>joueur_seul</code> (id?)</td>
+<td>Ask the Loot module to roll a table into a content (a chest of the Chests module): cle names the content, joueur_seul reserves it for one player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinprendre"><code>butin.prendre</code></a></td>
+<td><code>cible</code> (text), <code>numero</code> (number?), <code>joueur</code> (id)</td>
+<td>A player asks the host to take from a content: one line (numero) or all they may take.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinrefus"><code>butin.refus</code></a></td>
+<td><code>cible</code> (text), <code>joueur</code> (id), <code>raison</code> (text)</td>
+<td>The host refused a player taking loot reserved for someone else (sharing personal, killer or in turn).</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinouvrir"><code>butin.ouvrir</code></a></td>
+<td><code>cible</code> (text), <code>joueur</code> (id?)</td>
+<td>Open the Take all window of a content (a body, a chest) for a player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butincontenu"><code>butin.contenu</code></a></td>
+<td><code>cible</code> (text), <code>nombre</code> (number)</td>
+<td>A content (a body, a chest) changed: its Take all windows redraw.</td>
+</tr>
+<tr>
+<td><a href="../../events/#interactionutiliser"><code>interaction.utiliser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id)</td>
+<td>The player used the object in reach: a door, a merchant, an item to pick up. Whoever owns that object decides what it does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#languechange"><code>langue.change</code></a></td>
+<td><code>langue</code> (text)</td>
+<td>Sent by the engine when the player changes the game's language (game.set_language, the Menu options). A module redraws what it already shows: its texts go through game.t and game.language.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueurmort"><code>joueur.mort</code></a></td>
+<td><code>joueur</code> (id), <code>cible</code> (id), <code>source</code> (id?), <code>position</code> (vector)</td>
+<td>A player died (death and respawn module): they control nothing until they respawn. Other systems hook here: drop the bag, a grave, a counter.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fenetresfermer"><code>fenetres.fermer</code></a></td>
+<td><code>joueur</code> (id?), <code>raison</code> (text?)</td>
+<td>Close every window a player has open (loot, inventory, equipment, workshop...), sent by the Death module when they die; any script may send it (a cutscene). joueur: that player (missing: everyone). Each module with a window closes its own.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinranger"><code>butin.ranger</code></a></td>
+<td><code>cible</code> (text), <code>objet</code> (text), <code>fiche</code> (number?), <code>quantite</code> (number?), <code>case</code> (text?), <code>joueur</code> (id)</td>
+<td>A player asks the host to put an item of their bag into a chest they may search (the three-part inventory window): a stack (quantite) or a unique copy (fiche). The bag loses it first; nothing enters if the bag no longer has it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairemanque"><code>inventaire.manque</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Items could not be removed: there are not enough.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="loot-butin">Loot (<code>butin</code>)<a class="headerlink" href="#loot-butin" title="Permanent link">&para;</a></h3>
+<p>Loot tables rolled by the host (ADR-039 § 8 to § 10). It needs the inventory. Never edit its scripts: change its settings, listen to its events, or use <code>game.override</code> from a script of the game.</p>
+<ul>
+<li><strong>Tables</strong> (<code>tables</code>: <code>nom</code>, <code>tirages</code>, <code>tirages_max</code>, <code>rien</code> from 0 to 1) and their <strong>rows</strong> (<code>lignes</code>: <code>table</code>, <code>objet</code> or <code>sous_table</code>, <code>poids</code>, or <code>pourcentage</code> tried apart on each roll, <code>quantite</code>, <code>quantite_max</code>, <code>garanti</code> once per table, conditions <code>niveau_min</code>, <code>niveau_max</code>, <code>joueur_min</code>, <code>joueur_max</code>, <code>zone</code>, <code>quete</code>). A loop between tables (a -&gt; b -&gt; a) is refused: nothing drops and the reason goes to the log.</li>
+<li><strong>Rarities</strong> (<code>raretes</code>, from the most common to the rarest; five by default, Commun to Légendaire): <code>nom</code>, <code>couleur</code> (the item's name, its glow on the ground), <code>chance</code> (a weight), <code>bonus</code> (how many random bonuses), <code>multiplicateur</code>, <code>chance_gemmes</code> (tried <code>gemmes_max</code> times), <code>son</code>, <code>lueur</code>. Only kinds with <code>uniques</code> ticked in the inventory's <code>sortes_objets</code> get a rarity, bonuses and a generated name; a stack stays a stack.</li>
+<li><strong>Random bonuses</strong> (<code>bonus_hasard</code>): <code>valeur</code> (a Progression value: <code>degats</code>, <code>sante_max</code>...), <code>min</code>, <code>max</code> (at item level 1), <code>pourcent</code>, <code>categories</code> (comma separated, the kind's <code>categorie</code>), <code>rarete_min</code>, <code>nom</code> (a piece of name) and <code>place</code> (<code>apres</code>, <code>avant</code>). The <strong>item level</strong> is the enemy's (event <code>progression.niveau_ennemi</code>) or the object setting <code>niveau</code>; ranges grow with it along <code>croissance_forme</code> and <code>croissance_taux</code> (the Progression's growth curve).</li>
+<li><strong>Sources</strong>: an object carrying this system with <code>table</code> (an enemy) drops it on <code>sante.mort</code>; <code>collecte</code> rows (a resource, a table, a chance); <code>quetes</code> rows (a quest, a table); <code>butin.lacher</code> {table, cible or position, niveau, joueur} (the Trigger's action « Lâcher un butin », a script); chests (module <code>coffres</code>, through <code>butin.remplir</code>).</li>
+<li><strong>Appearance</strong> (<code>apparition</code>): <code>sol</code>: a copy of the kind's model (<code>modeles</code>, else the inventory's <code>en_main</code> model of that kind, else <code>modele_defaut</code>, all set by the creator; nothing is assumed of a pack; with none, <code>forme_sans_modele</code>: a small engine cube or sphere in its rarity color, <code>taille_forme</code> metres wide (0.15, measured on the shape), set on the ground; or into the inventory), glowing in its rarity color in the world, hidden by what passes in front, by day and night, with no asset (<code>lueur</code>; <code>style_lueur</code>: <code>faisceau</code>, a column of light rising from it, or <code>etincelles</code>, sparkles around it; <code>taille_lueur</code>, 1 for a beam about 1.5 m high; light enough for 50 items on the ground), a floating name (<code>nom_flottant</code>, <code>distance_nom</code>), gone after <code>disparition</code> seconds (once empty, it shows « Plus rien. » for 1.5 s and closes by itself; <code>fenetres.fermer</code> closes it); a model must not carry the « inventaire » system itself; <code>inventaire</code>; <code>fenetre</code>: the body becomes usable and opens the « Tout prendre » window, delivered as a screen the user restyles in the screen editor: « Butin » (<code>Fenêtre</code>, <code>Titre</code>, <code>Vide</code>, the list <code>Objets</code>: one row per item, <code>Image</code> and the button <code>Objet</code>, <code>Objet#2</code> the second; <code>Tout prendre</code>, <code>Fermer</code>; actions <code>prendre</code>, <code>tout</code>, <code>fermer</code>); a refusal shows « Message du butin » (<code>Message</code>). Never draw these windows yourself, and do not name another screen like these. The floating names follow the world and stay HUD (<code>butin.nom.&lt;object&gt;</code>). With the Inventory's <code>disposition_fenetre</code> <code>trois_parties</code> (version 3), that window stays closed: the content shows in the inventory's right column, and a bag slot dragged onto a chest's content is put in it with <code>butin.ranger</code> {cible, objet, fiche?, quantite, joueur?} (chests only, <code>coffre/...</code>, with their sharing rules; checked by the host; without <code>joueur</code>, the host's player).</li>
+<li><strong>Dropping the bag on death</strong> (<code>mort_sac</code>, off by default: <code>rien</code>): with the module <code>mort</code> (its event <code>joueur.mort</code>), <code>tout</code> or <code>part</code> (<code>mort_part</code> %, of each stack and of the unique items, the first in the bag) of the dead player's bag leaves it (<code>inventaire.retirer</code>, <code>inventaire.sortir</code>: a unique item keeps its record), left where they fell: <code>mort_forme</code> <code>sac</code> (a bag to open with « Tout prendre », a copy of <code>mort_modele_sac</code>, an object chosen by the creator, else a small engine cube; it disappears when empty) or <code>sol</code> (each item on the ground, like loot). Reserved for them <code>mort_reserve</code> seconds (0: anyone), then anyone. Announced by <code>butin.sac</code> {joueur, cible, nombre, position}. Nothing is dropped when the Inventory's bag is shared by the group. Saved with the game (the bag comes back where it was).</li>
+<li><strong>Luck</strong>: the value <code>chance_butin</code> (base <code>chance_base</code>) multiplies the chance of every rarity but the first and divides the chance of nothing. <code>protection_active</code>, <code>protection_rang</code>, <code>protection_hausse</code>: the bad-luck protection, counted per player on the host.</li>
+<li><strong>Online</strong>: an item set on the ground is seen by every guest, a copy of its model or the engine shape in its rarity color, at the same place and size (protocol 25), and leaves when picked up.</li>
+<li><strong>Several players</strong> (<code>partage</code>): <code>libre</code>, <code>personnel</code> (one roll per player, never on the ground where others would see it: in that player's own « Tout prendre » window on the body, or straight into their bag; the records of one player's share are never sent to the others' machines), <code>tueur</code> (<code>delai_tueur</code> seconds), <code>tour</code>. Only the host rolls and checks each pickup; a refusal sends <code>butin.refus</code> (<code>raison</code> <code>reserve</code>) and shows a message to that player.</li>
+<li><strong>A full bag never loses an item</strong>: what does not fit stays on the ground or in the window (<code>butin.refus</code> with <code>raison</code> <code>plein</code>, and a message); given straight to the bag, it drops at the player's feet.</li>
+<li><strong>Conditions</strong> receive the player's zone (<code>zone.entree</code>: the zone's name without its number), their quests in progress (<code>quetes.debut</code> until <code>quetes.fin</code>, <code>quetes.abandon</code>, <code>quetes.echec</code>) and their level; a zone object carrying this system with <code>niveau</code> gives the item level of what drops while the player is in it (when the source has no level).</li>
+<li><strong>Save</strong>: loot on the ground (when <code>garder_au_sol</code>, with its time left; a unique item keeps its record), the contents of bodies and chests (a body opens its window again after a load; identical stacks are merged), and each player's bad-luck count.</li>
+<li><strong>Events</strong>: emits <code>butin.tombe</code>, <code>butin.ramasse</code>, <code>butin.refus</code>, <code>butin.ouvrir</code>, <code>butin.contenu</code>, <code>butin.sac</code>, <code>inventaire.ajouter</code>, <code>inventaire.retirer</code>, <code>inventaire.sortir</code>; listens to <code>butin.lacher</code>, <code>butin.remplir</code>, <code>butin.prendre</code>, <code>sante.mort</code>, <code>joueur.mort</code>, <code>collecte.recolte</code>, <code>quetes.fin</code>, <code>progression.niveau_ennemi</code>, <code>interaction.utiliser</code>.</li>
+<li><strong>Scripts</strong>: <code>game.loot_roll(table, {niveau, niveau_joueur, zone, quetes, chance, joueur})</code> returns the list rolled without creating anything; <code>game.loot_simulate(table, n)</code> rolls n times (the editor's simulator). Under the module's settings, the editor offers the genre presets (Survie, Jeu de rôle, Tir) and « Tirer cette table N fois ».</li>
+</ul>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/butin/module.json</code>, <code>modules/butin/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../boutique/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Boutique">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Boutique
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../carte/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Carte">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Carte
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,5223 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/systems/equipement/">
+      
+      
+      
+        <link rel="prev" href="../ennemis/">
+      
+      
+        <link rel="next" href="../brouillard/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Equipment - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Equipment
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game's systems and settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creator mode
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: screens, menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hosting your own lobby
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Your data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What's new
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Companion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Death and respawn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-emplacements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Slot”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-sortes_equipables" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Kind”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-bonus_sortes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Bonus”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-amelioration_niveaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Level”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-amelioration_bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Bonus”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-gemmes_bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Gem”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-couts_station" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Cost”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-ensembles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Set”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-ensembles_paliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Tier”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Value”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-visible_corps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Body”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls-added-to-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controls added to the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equipment-equipement" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Equipment (<code>equipement</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Knowledge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Race
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Round
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shops of the city
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Status effects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-emplacements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Slot”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-sortes_equipables" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Kind”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-bonus_sortes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Bonus”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-amelioration_niveaux" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Level”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-amelioration_bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Bonus”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-gemmes_bonus" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Gem”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-couts_station" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Cost”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-ensembles" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Set”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-ensembles_paliers" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Tier”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-valeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Value”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-visible_corps" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Body”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls-added-to-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controls added to the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#equipment-equipement" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Equipment (<code>equipement</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="equipment">Equipment<a class="headerlink" href="#equipment" title="Permanent link">&para;</a></h1>
+<p>The player wears items in slots (head, chest, weapon, rings...) that you invent: their bonuses add to their characteristics, and they can show on the character. They wear an item by double-clicking it in the inventory or dragging it onto a slot.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td><code>equipement</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Placed on objects</td>
+<td>no</td>
+</tr>
+<tr>
+<td>Also activates</td>
+<td><a href="../inventaire/">Inventory</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-for-the-whole-game">Settings for the whole game<a class="headerlink" href="#settings-for-the-whole-game" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Systems</strong> panel (Developer mode), by opening the system's card.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starting slots</td>
+<td>The slots used while the "Slots" list is empty. Role-playing: head, chest, hands, legs, feet, weapon, off hand, two rings, amulet, back. Survival: head, chest, legs, feet, bag, tool. Shooter: helmet, vest, main weapon, secondary weapon. To change them, fill in the list.</td>
+<td><code>prereglage</code></td>
+<td>Choice in a list</td>
+<td>Role-playing</td>
+<td><code>jeu_de_role</code>: Role-playing<br><code>survie</code>: Survival<br><code>tir</code>: Shooter</td>
+</tr>
+<tr>
+<td>Slots</td>
+<td>Your slots, each with its name, icon, the categories of items it accepts (the Inventory's), its number (two rings) and whether it shows. Empty: the starting slots.</td>
+<td><code>emplacements</code></td>
+<td>List of “Slot”</td>
+<td>(empty)</td>
+<td>one line per “Slot”: <a href="#champs-emplacements">its fields</a></td>
+</tr>
+<tr>
+<td>Wearable kinds</td>
+<td>One row per kind that is worn: its slot, "two slots", its conditions, its effect and what shows. A kind with no row is still worn in a slot that accepts its category, with nothing more.</td>
+<td><code>sortes_equipables</code></td>
+<td>List of “Kind”</td>
+<td>(empty)</td>
+<td>one line per “Kind”: <a href="#champs-sortes_equipables">its fields</a></td>
+</tr>
+<tr>
+<td>Bonuses of kinds</td>
+<td>The fixed bonuses of a kind when worn, added to its record's: one row per value (damage, defense...).</td>
+<td><code>bonus_sortes</code></td>
+<td>List of “Bonus”</td>
+<td>(empty)</td>
+<td>one line per “Bonus”: <a href="#champs-bonus_sortes">its fields</a></td>
+</tr>
+<tr>
+<td>Durability: at zero</td>
+<td>Broken: the item stays, greyed, "Broken", without its bonuses, until repaired. Destroyed: it disappears.</td>
+<td><code>a_zero</code></td>
+<td>Choice in a list</td>
+<td>Broken</td>
+<td><code>casse</code>: Broken<br><code>detruit</code>: Destroyed</td>
+</tr>
+<tr>
+<td>Durability: warn below (%)</td>
+<td>Below this percentage of its maximum durability, a message warns and the item's slot turns red.</td>
+<td><code>seuil_usure</code></td>
+<td>Number</td>
+<td>20</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Repair at the station (its name)</td>
+<td>The name of a Crafting station, such as "Workbench": its Crafting window gets a "Workshop" tab, which repairs for the "Costs at the station". Empty: no repair at a station.</td>
+<td><code>station_reparation</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Repair at merchants</td>
+<td>Ticked: a merchant (Shop) repairs, at the price below, in proportion to the durability lost.</td>
+<td><code>boutique_reparation</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Price of a full repair</td>
+<td>At a merchant: the price for an item at zero; half worn, it costs half (rounded up).</td>
+<td><code>prix_reparation</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000 000</td>
+</tr>
+<tr>
+<td>Repair kit (a kind)</td>
+<td>An Inventory kind: a double click on it repairs the most worn of what is worn or held, and uses it up. Empty: no kit.</td>
+<td><code>kit_reparation</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>The kit restores (0: all)</td>
+<td>The durability a kit restores; 0: it repairs fully.</td>
+<td><code>kit_montant</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+<tr>
+<td>Each repair lowers the maximum durability by</td>
+<td>0: never. Otherwise the item wears faster and faster (never below 1).</td>
+<td><code>baisse_reparation</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+<tr>
+<td>Money for services (empty: the merchant's)</td>
+<td>The kind paid at a merchant to repair, upgrade, set or remove a gem. Empty: that merchant's money.</td>
+<td><code>monnaie</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Upgrade at the station (its name)</td>
+<td>The name of a station, such as "Forge". Empty: no upgrade at a station.</td>
+<td><code>station_amelioration</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Upgrade at merchants</td>
+<td>Ticked: a merchant upgrades, at the price of the level aimed for ("Upgrade levels").</td>
+<td><code>boutique_amelioration</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Upgrade levels</td>
+<td>One row per level aimed for: its chance of success and its price at a merchant. A level with no row takes the row before; with no row at all: 100%, free (the cost at a station is in "Costs at the station").</td>
+<td><code>amelioration_niveaux</code></td>
+<td>List of “Level”</td>
+<td>(empty)</td>
+<td>one line per “Level”: <a href="#champs-amelioration_niveaux">its fields</a></td>
+</tr>
+<tr>
+<td>Failed upgrade</td>
+<td>What happens when the roll fails (the cost is paid).</td>
+<td><code>echec_amelioration</code></td>
+<td>Choice in a list</td>
+<td>Nothing</td>
+<td><code>rien</code>: Nothing<br><code>niveau_perdu</code>: A level lost<br><code>casse</code>: The item broken</td>
+</tr>
+<tr>
+<td>Bonuses per level</td>
+<td>Fixed bonuses added at each upgrade level (times the level): one row per kind and value.</td>
+<td><code>amelioration_bonus</code></td>
+<td>List of “Bonus”</td>
+<td>(empty)</td>
+<td>one line per “Bonus”: <a href="#champs-amelioration_bonus">its fields</a></td>
+</tr>
+<tr>
+<td>Category of gems</td>
+<td>The Inventory category that makes a kind a gem.</td>
+<td><code>categorie_gemme</code></td>
+<td>Text</td>
+<td><code>gemme</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Bonuses of gems</td>
+<td>What a set gem gives: one row per gem and value. "On the category": only on an item of that category (a ruby: damage on a weapon, health on armour); empty: on any item with no row for its category.</td>
+<td><code>gemmes_bonus</code></td>
+<td>List of “Gem”</td>
+<td>(empty)</td>
+<td>one line per “Gem”: <a href="#champs-gemmes_bonus">its fields</a></td>
+</tr>
+<tr>
+<td>Set gems at the station (its name)</td>
+<td>The name of a station, such as "Jeweller's bench". Empty: no setting at a station.</td>
+<td><code>station_sertissage</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Set gems at merchants</td>
+<td>Ticked: a merchant sets and removes gems.</td>
+<td><code>boutique_sertissage</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Price of a setting</td>
+<td>At a merchant, in money.</td>
+<td><code>prix_sertissage</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000 000, as a whole number</td>
+</tr>
+<tr>
+<td>Removing a gem</td>
+<td>Impossible; the gem is destroyed; or it goes back to the bag, for the price below (or the "Costs at the station").</td>
+<td><code>retrait_gemme</code></td>
+<td>Choice in a list</td>
+<td>Impossible</td>
+<td><code>impossible</code>: Impossible<br><code>detruite</code>: Gem destroyed<br><code>rendue</code>: Gem returned for a cost</td>
+</tr>
+<tr>
+<td>Price of a removal</td>
+<td>At a merchant, in money, when the gem is returned.</td>
+<td><code>prix_retrait</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000 000, as a whole number</td>
+</tr>
+<tr>
+<td>Costs at the station</td>
+<td>What each service costs at its station, like a recipe: one row per item. "Level aimed for": for upgrades (0: all).</td>
+<td><code>couts_station</code></td>
+<td>List of “Cost”</td>
+<td>(empty)</td>
+<td>one line per “Cost”: <a href="#champs-couts_station">its fields</a></td>
+</tr>
+<tr>
+<td>Sets</td>
+<td>A set: its name and its pieces (kinds, separated by commas). Its bonuses are in "Set tiers".</td>
+<td><code>ensembles</code></td>
+<td>List of “Set”</td>
+<td>(empty)</td>
+<td>one line per “Set”: <a href="#champs-ensembles">its fields</a></td>
+</tr>
+<tr>
+<td>Set tiers</td>
+<td>A set's bonuses by how many of its pieces are worn: one row per tier and value (2 pieces: +5 defence; 4 pieces: +10% damage). Set and removed by themselves, source "ensemble:&lt;name&gt;".</td>
+<td><code>ensembles_paliers</code></td>
+<td>List of “Tier”</td>
+<td>(empty)</td>
+<td>one line per “Tier”: <a href="#champs-ensembles_paliers">its fields</a></td>
+</tr>
+<tr>
+<td>Values shown and their names</td>
+<td>The values shown in the window, with their displayed, translated name ("degats": "Damage"). A value Progression already names keeps its name.</td>
+<td><code>valeurs</code></td>
+<td>List of “Value”</td>
+<td>(empty)</td>
+<td>one line per “Value”: <a href="#champs-valeurs">its fields</a></td>
+</tr>
+<tr>
+<td>What shows, by body</td>
+<td>One row per kind and per body: another model, bone or offset for that body (the helmet of a female and of a male body). The body is read from the player's profile (field below).</td>
+<td><code>visible_corps</code></td>
+<td>List of “Body”</td>
+<td>(empty)</td>
+<td>one line per “Body”: <a href="#champs-visible_corps">its fields</a></td>
+</tr>
+<tr>
+<td>Profile field that says the body</td>
+<td>The field of the player's profile (character creation) that says their body.</td>
+<td><code>champ_corps</code></td>
+<td>Text</td>
+<td><code>corps</code></td>
+<td></td>
+</tr>
+<tr>
+<td>The weapon held comes from</td>
+<td>The Inventory's hotbar (as before), the slot that "holds the weapon in hand", or both linked (the weapon worn comes back in hand when the bar holds nothing). In the last two, the Inventory holds the weapon worn like the bar's: its model and hold come from its "Models in hand" list.</td>
+<td><code>arme_en_main</code></td>
+<td>Choice in a list</td>
+<td>The hotbar</td>
+<td><code>barre</code>: The hotbar<br><code>emplacement</code>: The weapon slot<br><code>lies</code>: Both, linked</td>
+</tr>
+<tr>
+<td>Wear with a double click in the inventory</td>
+<td>Two clicks on an inventory slot (or A twice on a gamepad) wear the item.</td>
+<td><code>double_clic</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Compare in the tooltip</td>
+<td>An inventory item's tooltip shows the difference with what is worn at the same place: green what goes up, red what goes down.</td>
+<td><code>comparer</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Equipment window with a key (O)</td>
+<td>The "Open the equipment window" control opens and closes it.</td>
+<td><code>fenetre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Opens with the inventory</td>
+<td>The equipment window opens next to the inventory's, to drag items onto it.</td>
+<td><code>avec_inventaire</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Stop the game while the window is open</td>
+<td>As for the inventory.</td>
+<td><code>pause_fenetre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Window: horizontal position (0 to 1)</td>
+<td>The middle of the window: 0.115 puts it left of the inventory. The window is now the screen "Équipement": left at 0.115, its place is that of its shape "Fenêtre", to move in the screen editor; another value puts it at that place, as before.</td>
+<td><code>fenetre_x</code></td>
+<td>Number</td>
+<td>0.115</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Workshop: horizontal position (old)</td>
+<td>No longer used: the workshop (repair, upgrade, set gems) is now the screen "Atelier de l'équipement", shown in the tab of the station's window (Crafting) or the merchant's (Shop). Kept for the games that set it.</td>
+<td><code>atelier_x</code></td>
+<td>Number</td>
+<td>0.875</td>
+<td>from 0 to 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-emplacements">The fields of each “Slot”<a class="headerlink" href="#champs-emplacements" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Slot” has its own numbered frame; <strong>Add: Slot</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>The name shown, such as "Head". It also names it for scripts ("tete").</td>
+<td><code>nom</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Icon</td>
+<td>An image shown in the window, optional.</td>
+<td><code>icone</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Categories accepted</td>
+<td>Separated by commas: "helmet, hat". They are the categories of the Inventory's "Kinds of items".</td>
+<td><code>categories</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Number</td>
+<td>How many places of this kind: 2 for two rings.</td>
+<td><code>nombre</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 1 to 8, as a whole number</td>
+</tr>
+<tr>
+<td>Shows on the character</td>
+<td>Unticked: what is worn here never shows (a ring), whatever the kind's settings.</td>
+<td><code>visible</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Body part (bone found by measuring)</td>
+<td>Where what shows is attached, when the kind chooses no bone: the bone of this part, found by measuring the character's skeleton, whatever its pack (the head, the right hand...). None: the kind must choose its bone.</td>
+<td><code>partie</code></td>
+<td>Choice in a list</td>
+<td>None</td>
+<td><code>`: None&lt;br&gt;</code>tete<code>: Head&lt;br&gt;</code>cou<code>: Neck&lt;br&gt;</code>poitrine<code>: Chest&lt;br&gt;</code>bassin<code>: Hips&lt;br&gt;</code>main_droite<code>: Right hand&lt;br&gt;</code>main_gauche<code>: Left hand&lt;br&gt;</code>avant_bras_droit<code>: Right forearm&lt;br&gt;</code>avant_bras_gauche<code>: Left forearm&lt;br&gt;</code>cuisse_droite<code>: Right thigh&lt;br&gt;</code>cuisse_gauche<code>: Left thigh&lt;br&gt;</code>pied_droit<code>: Right foot&lt;br&gt;</code>pied_gauche`: Left foot</td>
+</tr>
+<tr>
+<td>Holds the weapon in hand</td>
+<td>Ticked: what is worn here is held in hand, after the setting "The weapon held comes from".</td>
+<td><code>arme</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-sortes_equipables">The fields of each “Kind”<a class="headerlink" href="#champs-sortes_equipables" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Kind” has its own numbered frame; <strong>Add: Kind</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The kind as the inventory stores it, such as "Iron helmet".</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Slot (empty: by its category)</td>
+<td>The name of the slot it goes to, such as "Head". Empty: a slot that accepts its category.</td>
+<td><code>emplacement</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Takes two slots</td>
+<td>A two-handed weapon: it also takes the slot below (empty: another place of the same slot).</td>
+<td><code>deux_emplacements</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Second slot taken</td>
+<td>With "Takes two slots": such as "Off hand".</td>
+<td><code>autre_emplacement</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Level required (0: none)</td>
+<td>With Progression: the level to reach on the track below to wear it. Progression's required levels apply too.</td>
+<td><code>niveau_requis</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100 000, as a whole number</td>
+</tr>
+<tr>
+<td>Level track (empty: the highest)</td>
+<td>The key of the Progression track, such as "personnage".</td>
+<td><code>piste</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Characteristic required</td>
+<td>A value, such as "force": at least the minimum below is needed.</td>
+<td><code>carac_requise</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Characteristic minimum</td>
+<td>The total to reach.</td>
+<td><code>carac_min</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1 000 000 to 1 000 000</td>
+</tr>
+<tr>
+<td>Temporary effect while worn</td>
+<td>With the Temporary effects module: the effect set while the item is worn (with no duration), removed when taken off.</td>
+<td><code>effet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>What shows</td>
+<td>A model attached to a bone, pieces of the character shown or hidden, both, or nothing.</td>
+<td><code>visible</code></td>
+<td>Choice in a list</td>
+<td>Nothing</td>
+<td><code>rien</code>: Nothing<br><code>modele</code>: A model attached<br><code>pieces</code>: Pieces of the character<br><code>les_deux</code>: Both</td>
+</tr>
+<tr>
+<td>Model attached (an object of the scene, usually hidden)</td>
+<td>The object a copy of which shows on the character. Best: put it on the character in the editor (the helmet on the head), hide it, and choose it here: its exact place is reused.</td>
+<td><code>modele</code></td>
+<td>Object of the scene</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Bone to attach it to (empty: the slot's body part)</td>
+<td>A bone of the character's skeleton, chosen in its model. Empty: the bone of the slot's body part (the head...), found by measuring the skeleton; otherwise the place of the object set in the editor.</td>
+<td><code>os</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Offset X (m)</td>
+<td>Moves the model along the bone's first axis, in metres.</td>
+<td><code>decalage_x</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Offset Y (m)</td>
+<td>Moves the model along the bone's second axis, in metres.</td>
+<td><code>decalage_y</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Offset Z (m)</td>
+<td>Moves the model along the bone's third axis, in metres.</td>
+<td><code>decalage_z</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Rotation X (°)</td>
+<td>Turns the model around the bone's first axis, in degrees.</td>
+<td><code>rotation_x</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Rotation Y (°)</td>
+<td>Turns the model around the bone's second axis, in degrees.</td>
+<td><code>rotation_y</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Rotation Z (°)</td>
+<td>Turns the model around the bone's third axis, in degrees.</td>
+<td><code>rotation_z</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Size X (× the model's)</td>
+<td>Enlarges or shrinks the attached model along its X axis, to fit the measured head or body: 1 keeps its size.</td>
+<td><code>echelle_x</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.01 to 100</td>
+</tr>
+<tr>
+<td>Size Y (× the model's)</td>
+<td>Enlarges or shrinks the attached model along its Y (height) axis, to fit the measured head or body: 1 keeps its size.</td>
+<td><code>echelle_y</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.01 to 100</td>
+</tr>
+<tr>
+<td>Size Z (× the model's)</td>
+<td>Enlarges or shrinks the attached model along its Z (depth) axis, to fit the measured head or body: 1 keeps its size.</td>
+<td><code>echelle_z</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.01 to 100</td>
+</tr>
+<tr>
+<td>Character pieces to show</td>
+<td>The names of the pieces (objects of the character) shown while it is worn, separated by commas: chosen in the model, such as "Armor_chest".</td>
+<td><code>pieces_montrer</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Character pieces to hide</td>
+<td>The names of the pieces hidden while it is worn, separated by commas (the hair under a helmet).</td>
+<td><code>pieces_cacher</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Maximum durability (0: does not wear)</td>
+<td>The durability of a new copy. Each use lowers it; at zero the item is broken or destroyed (setting "Durability: at zero").</td>
+<td><code>usure_max</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000, as a whole number</td>
+</tr>
+<tr>
+<td>What wears it</td>
+<td>Weapon: each hit (Combat) or shot (Shooting) while in hand. Armour: each hit taken while worn (Health). Tool: each harvest while in hand (Gathering).</td>
+<td><code>usee_par</code></td>
+<td>Choice in a list</td>
+<td>Nothing</td>
+<td><code>aucun</code>: Nothing<br><code>attaque</code>: A hit or a shot (weapon)<br><code>coup_recu</code>: A hit taken (armour)<br><code>recolte</code>: A harvest (tool)</td>
+</tr>
+<tr>
+<td>Durability lost each time</td>
+<td>How much durability goes with each hit, shot, hit taken or harvest.</td>
+<td><code>perte</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+<tr>
+<td>Maximum upgrade level (0: none)</td>
+<td>How far the item can be upgraded at a station or a merchant; its name shows the level ("Iron sword +2").</td>
+<td><code>niveau_max</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100, as a whole number</td>
+</tr>
+<tr>
+<td>Each level: % of the bonuses</td>
+<td>Each level adds this percentage of the item's bonuses (10: +2 gives 20% more). 0: only the "Bonuses per level".</td>
+<td><code>amelioration_pct</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1000</td>
+</tr>
+<tr>
+<td>Gem sockets</td>
+<td>How many gems a copy of this kind can take (Loot can also roll them).</td>
+<td><code>emplacements_gemmes</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 8, as a whole number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-bonus_sortes">The fields of each “Bonus”<a class="headerlink" href="#champs-bonus_sortes" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Bonus” has its own numbered frame; <strong>Add: Bonus</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The kind as the inventory stores it, such as "Iron helmet".</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Value</td>
+<td>Such as "degats", "defense", "sante_max". An unknown value is declared (base 0).</td>
+<td><code>valeur</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Added (+n)</td>
+<td>Added to the total.</td>
+<td><code>add</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1 000 000 to 1 000 000</td>
+</tr>
+<tr>
+<td>Added (%)</td>
+<td>10 for +10 %.</td>
+<td><code>pct</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1000 to 1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-amelioration_niveaux">The fields of each “Level”<a class="headerlink" href="#champs-amelioration_niveaux" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Level” has its own numbered frame; <strong>Add: Level</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Level aimed for</td>
+<td>The level reached if the upgrade succeeds.</td>
+<td><code>niveau</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 1 to 100, as a whole number</td>
+</tr>
+<tr>
+<td>Chance of success (%)</td>
+<td>Rolled on the host.</td>
+<td><code>chance</code></td>
+<td>Number</td>
+<td>100</td>
+<td>from 0 to 100</td>
+</tr>
+<tr>
+<td>Price at a merchant</td>
+<td>In money.</td>
+<td><code>prix</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000 000, as a whole number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-amelioration_bonus">The fields of each “Bonus”<a class="headerlink" href="#champs-amelioration_bonus" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Bonus” has its own numbered frame; <strong>Add: Bonus</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The upgraded kind.</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Value</td>
+<td>A value, such as "degats".</td>
+<td><code>valeur</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Added per level</td>
+<td>Added to the value for each upgrade level.</td>
+<td><code>add</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1 000 000 to 1 000 000</td>
+</tr>
+<tr>
+<td>% per level</td>
+<td>Percentage added for each level (10: +10% per level).</td>
+<td><code>pct</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1000 to 1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-gemmes_bonus">The fields of each “Gem”<a class="headerlink" href="#champs-gemmes_bonus" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Gem” has its own numbered frame; <strong>Add: Gem</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gem (a kind)</td>
+<td>The gem's kind, such as "Ruby" (its Inventory category: the gems' one).</td>
+<td><code>gemme</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>On the category (empty: all)</td>
+<td>The category of the item that takes the gem, such as "arme". Empty: any item with no row for its category.</td>
+<td><code>categorie</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Value</td>
+<td>A value, such as "degats".</td>
+<td><code>valeur</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Added</td>
+<td>Added to the value while the gem is set and the item worn.</td>
+<td><code>add</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1 000 000 to 1 000 000</td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td>Percentage added (10: +10%).</td>
+<td><code>pct</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1000 to 1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-couts_station">The fields of each “Cost”<a class="headerlink" href="#champs-couts_station" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Cost” has its own numbered frame; <strong>Add: Cost</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Service</td>
+<td>The service this item pays for.</td>
+<td><code>action</code></td>
+<td>Choice in a list</td>
+<td>Repair</td>
+<td><code>reparer</code>: Repair<br><code>ameliorer</code>: Upgrade<br><code>sertir</code>: Set a gem<br><code>retirer_gemme</code>: Remove a gem</td>
+</tr>
+<tr>
+<td>Level aimed for (0: all)</td>
+<td>For "Upgrade": only for this level aimed for; 0: for all.</td>
+<td><code>niveau</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 100, as a whole number</td>
+</tr>
+<tr>
+<td>Item</td>
+<td>An Inventory kind.</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Number</td>
+<td>How many items are taken.</td>
+<td><code>nombre</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 1 to 1 000 000, as a whole number</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-ensembles">The fields of each “Set”<a class="headerlink" href="#champs-ensembles" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Set” has its own numbered frame; <strong>Add: Set</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Name</td>
+<td>Shown in the tooltip: "Wolf armour (2/4)".</td>
+<td><code>nom</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Pieces (kinds)</td>
+<td>Such as "Wolf helmet, Wolf chestplate".</td>
+<td><code>pieces</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-ensembles_paliers">The fields of each “Tier”<a class="headerlink" href="#champs-ensembles_paliers" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Tier” has its own numbered frame; <strong>Add: Tier</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Set (its name)</td>
+<td>The set's name, as written in "Sets".</td>
+<td><code>ensemble</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Pieces worn</td>
+<td>How many pieces of the set must be worn for this bonus.</td>
+<td><code>nombre</code></td>
+<td>Number</td>
+<td>2</td>
+<td>from 1 to 20, as a whole number</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>A value, such as "defense".</td>
+<td><code>valeur</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Added</td>
+<td>Added to the value while the tier is reached.</td>
+<td><code>add</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1 000 000 to 1 000 000</td>
+</tr>
+<tr>
+<td>Percentage</td>
+<td>Percentage added (10: +10%).</td>
+<td><code>pct</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1000 to 1000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-valeurs">The fields of each “Value”<a class="headerlink" href="#champs-valeurs" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Value” has its own numbered frame; <strong>Add: Value</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value</td>
+<td>Its name in scripts, such as "defense".</td>
+<td><code>valeur</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Name shown</td>
+<td>Such as "Defense": translated like the game's other texts.</td>
+<td><code>libelle</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Base (if it does not exist yet)</td>
+<td>Its base when Equipment declares it itself.</td>
+<td><code>base</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -1 000 000 to 1 000 000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-visible_corps">The fields of each “Body”<a class="headerlink" href="#champs-visible_corps" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Body” has its own numbered frame; <strong>Add: Body</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The kind as the inventory stores it, such as "Iron helmet".</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Body</td>
+<td>The profile value for that body, such as "femme".</td>
+<td><code>corps</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Model attached (an object of the scene, usually hidden)</td>
+<td>The object a copy of which shows on the character. Best: put it on the character in the editor (the helmet on the head), hide it, and choose it here: its exact place is reused.</td>
+<td><code>modele</code></td>
+<td>Object of the scene</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Bone to attach it to (empty: the slot's body part)</td>
+<td>A bone of the character's skeleton, chosen in its model. Empty: the bone of the slot's body part (the head...), found by measuring the skeleton; otherwise the place of the object set in the editor.</td>
+<td><code>os</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Offset X (m)</td>
+<td>Moves the model along the bone's first axis, in metres.</td>
+<td><code>decalage_x</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Offset Y (m)</td>
+<td>Moves the model along the bone's second axis, in metres.</td>
+<td><code>decalage_y</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Offset Z (m)</td>
+<td>Moves the model along the bone's third axis, in metres.</td>
+<td><code>decalage_z</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Rotation X (°)</td>
+<td>Turns the model around the bone's first axis, in degrees.</td>
+<td><code>rotation_x</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Rotation Y (°)</td>
+<td>Turns the model around the bone's second axis, in degrees.</td>
+<td><code>rotation_y</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Rotation Z (°)</td>
+<td>Turns the model around the bone's third axis, in degrees.</td>
+<td><code>rotation_z</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Size X (× the model's)</td>
+<td>Enlarges or shrinks the attached model along its X axis, to fit the measured head or body: 1 keeps its size.</td>
+<td><code>echelle_x</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.01 to 100</td>
+</tr>
+<tr>
+<td>Size Y (× the model's)</td>
+<td>Enlarges or shrinks the attached model along its Y (height) axis, to fit the measured head or body: 1 keeps its size.</td>
+<td><code>echelle_y</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.01 to 100</td>
+</tr>
+<tr>
+<td>Size Z (× the model's)</td>
+<td>Enlarges or shrinks the attached model along its Z (depth) axis, to fit the measured head or body: 1 keeps its size.</td>
+<td><code>echelle_z</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0.01 to 100</td>
+</tr>
+<tr>
+<td>Character pieces to show</td>
+<td>The names of the pieces (objects of the character) shown while it is worn, separated by commas: chosen in the model, such as "Armor_chest".</td>
+<td><code>pieces_montrer</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Character pieces to hide</td>
+<td>The names of the pieces hidden while it is worn, separated by commas (the hair under a helmet).</td>
+<td><code>pieces_cacher</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="controls-added-to-the-game">Controls added to the game<a class="headerlink" href="#controls-added-to-the-game" title="Permanent link">&para;</a></h2>
+<p>They appear in the <strong>Game controls</strong> panel (Developer mode), where you can change their key.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Name for scripts</th>
+<th>Key</th>
+<th>Gamepad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open the equipment window</td>
+<td><code>equipment</code></td>
+<td>O</td>
+<td>Y</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<h3 id="what-it-announces">What it announces<a class="headerlink" href="#what-it-announces" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#equipementporte"><code>equipement.porte</code></a></td>
+<td><code>joueur</code> (id), <code>emplacement</code> (text), <code>objet</code> (text), <code>fiche</code> (number?)</td>
+<td>The player now wears an item: emplacement is the slot key, objet its kind, fiche its record (a unique copy). Its bonuses have the source equipement:&lt;emplacement&gt;.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementretire"><code>equipement.retire</code></a></td>
+<td><code>joueur</code> (id), <code>emplacement</code> (text), <code>objet</code> (text), <code>fiche</code> (number?)</td>
+<td>The player took off an item: it is back in the bag, and its bonuses are gone.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementrefus"><code>equipement.refus</code></a></td>
+<td><code>joueur</code> (id), <code>raison</code> (text)</td>
+<td>Wearing was refused: raison is the text shown (a condition, the game's equipement.avant hook, a record that is not the player's, no slot).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairesortir"><code>inventaire.sortir</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>case</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to take one item out of the bag without destroying it (version 16): objet is its kind, fiche a unique copy (it keeps its record; whoever takes it says its new holder). The Equipment module takes what it makes the player wear. A stack gives one from its smallest stack, or from case (version 21), a slot's key.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairetenir_porte"><code>inventaire.tenir_porte</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>prioritaire</code> (boolean?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to hold in hand an item worn (version 17): the Equipment module hands it the weapon of its slot, so it is held, shown (its row of the list Models in hand, measured hold included) and announced (inventaire.en_main) exactly like the bar's. objet "" : nothing worn in hand any more. prioritaire: it comes before the bar; otherwise only when the bar holds nothing.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementcasse"><code>equipement.casse</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>usure</code> (number), <code>usure_max</code> (number)</td>
+<td>A unique copy's durability reached zero and it is broken (setting a_zero casse): kept, greyed, without its bonuses until repaired.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementdetruit"><code>equipement.detruit</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>usure</code> (number), <code>usure_max</code> (number)</td>
+<td>A unique copy's durability reached zero and it is destroyed (setting a_zero detruit).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementusure_alerte"><code>equipement.usure_alerte</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>usure</code> (number), <code>usure_max</code> (number)</td>
+<td>A unique copy's durability went below the warning threshold (seuil_usure, 20% by default).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementrepare"><code>equipement.repare</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>par</code> (text), <code>usure</code> (number), <code>usure_max</code> (number)</td>
+<td>A unique copy was repaired: par station, boutique or kit; usure and usure_max its new durability.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementameliore"><code>equipement.ameliore</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>reussi</code> (boolean), <code>niveau</code> (number), <code>echec</code> (text?)</td>
+<td>An upgrade was tried: reussi says whether the roll succeeded, niveau the copy's level now, echec what a failure did (rien, niveau_perdu, casse).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementserti"><code>equipement.serti</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>gemme</code> (text)</td>
+<td>A gem was set into a unique copy.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementdesserti"><code>equipement.desserti</code></a></td>
+<td><code>joueur</code> (id), <code>fiche</code> (number), <code>objet</code> (text), <code>gemme</code> (text), <code>rendue</code> (boolean)</td>
+<td>A gem was removed from a unique copy: rendue says whether it went back to the bag.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementretirer"><code>equipement.retirer</code></a></td>
+<td><code>emplacement</code> (text), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to take off what is worn at a slot (its key, such as tete, or its name): it goes back to the bag.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementreparer"><code>equipement.reparer</code></a></td>
+<td><code>fiche</code> (number?), <code>par</code> (text?), <code>cible</code> (id?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to repair a unique copy (ADR-039 section 6): par is station (at the station named by station_reparation, cible that station), boutique (cible a merchant, with boutique_reparation), or kit (one repair kit taken from the bag; without fiche, the most worn of what is worn or held). On the host, the record must be the player's (game.item_citable).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationouvrir"><code>fabrication.ouvrir</code></a></td>
+<td><code>etabli</code> (text?), <code>cible</code> (text?), <code>onglet</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the crafting system to open its window, with the recipes of the station object cible, or of the kind of station named etabli (empty or missing: bare-handed): a Trigger rule, a button of a drawn screen. onglet opens it on another module's tab (equipement.atelier: the workshop). It opens for joueur only; without joueur, for the host only (never for every player).</td>
+</tr>
+<tr>
+<td><a href="../../events/#boutiqueouvrir"><code>boutique.ouvrir</code></a></td>
+<td><code>cible</code> (id), <code>onglet</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the shop system to open the shop of cible, as if the player had used it: from a dialogue answer, a trigger, a script. onglet opens it on another module's tab (equipement.atelier: the services). It opens for joueur only; without joueur, for the host only (never for every player).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-it-listens-to">What it listens to<a class="headerlink" href="#what-it-listens-to" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#equipementporter"><code>equipement.porter</code></a></td>
+<td><code>objet</code> (text?), <code>fiche</code> (number?), <code>emplacement</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to make the player wear an item of their bag: objet its kind, fiche a unique copy (it must be in this player's bag), emplacement a slot key or name (missing: the first free slot accepting it).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementretirer"><code>equipement.retirer</code></a></td>
+<td><code>emplacement</code> (text), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to take off what is worn at a slot (its key, such as tete, or its name): it goes back to the bag.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechoisi"><code>inventaire.choisi</code></a></td>
+<td><code>objet</code> (text), <code>total</code> (number), <code>fiche</code> (number?), <code>double</code> (boolean?), <code>case</code> (text?)</td>
+<td>The player clicked a slot of the inventory window: objet is the kind of item, total how many they carry. What it does belongs to the game: eat, equip, read. case (version 21) is the slot's key ("Wood~2" for a second stack).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireglisse"><code>inventaire.glisse</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>cible</code> (text), <code>joueur</code> (id?), <code>case</code> (text?)</td>
+<td>The player dragged a slot of the inventory window (mouse button pressed on it, released elsewhere, version 16): cible is the key of the HUD element under the cursor. The Equipment module wears an item dragged onto a slot. case (version 21): the dragged slot's key.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairefenetre"><code>inventaire.fenetre</code></a></td>
+<td><code>ouverte</code> (boolean), <code>joueur</code> (id?)</td>
+<td>The inventory window opened or closed (version 16): ouverte. The Equipment window opens beside it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#objetchange"><code>objet.change</code></a></td>
+<td><code>numero</code> (number), <code>sorte</code> (text), <code>champs</code> (table)</td>
+<td>Sent by the engine when the host changed the record of a unique item (game.item_set): champs lists the fields given.</td>
+</tr>
+<tr>
+<td><a href="../../events/#languechange"><code>langue.change</code></a></td>
+<td><code>langue</code> (text)</td>
+<td>Sent by the engine when the player changes the game's language (game.set_language, the Menu options). A module redraws what it already shows: its texts go through game.t and game.language.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementreparer"><code>equipement.reparer</code></a></td>
+<td><code>fiche</code> (number?), <code>par</code> (text?), <code>cible</code> (id?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to repair a unique copy (ADR-039 section 6): par is station (at the station named by station_reparation, cible that station), boutique (cible a merchant, with boutique_reparation), or kit (one repair kit taken from the bag; without fiche, the most worn of what is worn or held). On the host, the record must be the player's (game.item_citable).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementameliorer"><code>equipement.ameliorer</code></a></td>
+<td><code>fiche</code> (number), <code>par</code> (text?), <code>cible</code> (id?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to upgrade a unique copy by one level (ADR-039 section 7): par station or boutique, cible the station or merchant. The chance is rolled on the host.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementsertir"><code>equipement.sertir</code></a></td>
+<td><code>fiche</code> (number), <code>gemme</code> (text?), <code>gemme_fiche</code> (number?), <code>par</code> (text?), <code>cible</code> (id?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to set a gem into a unique copy: gemme its kind (a stack of the bag) or gemme_fiche (a unique gem); par station or boutique, cible the station or merchant.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementdesertir"><code>equipement.desertir</code></a></td>
+<td><code>fiche</code> (number), <code>index</code> (number?), <code>par</code> (text?), <code>cible</code> (id?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to remove gem number index (missing: the last) from a unique copy, after the setting retrait_gemme: impossible, the gem destroyed, or returned for a cost.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementatelier"><code>equipement.atelier</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id?)</td>
+<td>Open the Equipment workshop (repair, upgrade, set gems) at this station or merchant: the station's Crafting window, or the merchant's Shop window, opened on its workshop tab, for joueur only (without joueur, for the host only).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementporte"><code>equipement.porte</code></a></td>
+<td><code>joueur</code> (id), <code>emplacement</code> (text), <code>objet</code> (text), <code>fiche</code> (number?)</td>
+<td>The player now wears an item: emplacement is the slot key, objet its kind, fiche its record (a unique copy). Its bonuses have the source equipement:&lt;emplacement&gt;.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementretire"><code>equipement.retire</code></a></td>
+<td><code>joueur</code> (id), <code>emplacement</code> (text), <code>objet</code> (text), <code>fiche</code> (number?)</td>
+<td>The player took off an item: it is back in the bag, and its bonuses are gone.</td>
+</tr>
+<tr>
+<td><a href="../../events/#objetcree"><code>objet.cree</code></a></td>
+<td><code>numero</code> (number), <code>sorte</code> (text)</td>
+<td>Sent by the engine (ADR-039) when the host created the record of a unique item (game.item_create): numero is its number, sorte its kind.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireen_main"><code>inventaire.en_main</code></a></td>
+<td><code>objet</code> (text), <code>avant</code> (text), <code>place</code> (number), <code>chargement</code> (boolean?), <code>joueur</code> (id?), <code>fiche</code> (number?), <code>source</code> (text?)</td>
+<td>What the player holds in hand changed (version 24): the slot chosen in the inventory's bar (keys 1 to 9, wheel), an item used up, a load (chargement true). objet is the kind held, "" for empty hands; avant the one held before; place the bar slot (0: nothing). Gathering checks the tool held; a game script equips a sword with it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairemanque"><code>inventaire.manque</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Items could not be removed: there are not enough.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?), <code>fiche</code> (number?), <code>jete</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up. For a unique copy (version 15), objet is its kind, fiche its record's number, total how many of that kind. With several stacks of a kind (version 21), total counts all of them; jete is true when a slot was dropped on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#combatattaque"><code>combat.attaque</code></a></td>
+<td><code>source</code> (id)</td>
+<td>Someone struck, whether it hit or not: the stamina module counts it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#combatcoup"><code>combat.coup</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id), <code>montant</code> (number)</td>
+<td>An attack hit something. The health module, if present, has been asked to remove the damage.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirtir"><code>tir.tir</code></a></td>
+<td><code>source</code> (id), <code>arme</code> (text), <code>origine</code> (vector), <code>direction</code> (vector)</td>
+<td>The player fired a ranged weapon (version 25), whether it hits or not: origine is the muzzle, direction the aim before spread. For a sound, a noise that alerts enemies, a counter.</td>
+</tr>
+<tr>
+<td><a href="../../events/#tirtouche"><code>tir.touche</code></a></td>
+<td><code>cible</code> (id), <code>source</code> (id), <code>arme</code> (text), <code>montant</code> (number), <code>partie</code> (text?), <code>point</code> (vector), <code>tete</code> (boolean)</td>
+<td>A shot of the player hit something carrying Health (version 25); the health module has been asked to remove montant (before armor). partie is tete, torse, bras or jambes (missing for an object or an explosion); tete is true for a head shot. All the pellets of one shotgun shot on the same target make one tir.touche.</td>
+</tr>
+<tr>
+<td><a href="../../events/#collecterecolte"><code>collecte.recolte</code></a></td>
+<td><code>cible</code> (id), <code>ressource</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>xp</code> (number?), <code>piste</code> (text?)</td>
+<td>A resource was used up and gave what it holds. The inventory, if present, has been asked to add it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fenetresfermer"><code>fenetres.fermer</code></a></td>
+<td><code>joueur</code> (id?), <code>raison</code> (text?)</td>
+<td>Close every window a player has open (loot, inventory, equipment, workshop...), sent by the Death module when they die; any script may send it (a cutscene). joueur: that player (missing: everyone). Each module with a window closes its own.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fabricationonglet"><code>fabrication.onglet</code></a></td>
+<td><code>joueur</code> (id), <code>onglet</code> (text), <code>cible</code> (id?), <code>etabli</code> (text?), <code>parent</code> (text?), <code>largeur</code> (number?)</td>
+<td>The crafting window opened another module's tab at a station (onglet, its key; parent, the empty panel to fill; largeur, the window's width), or left it (onglet empty). The module whose tab it is fills the panel.</td>
+</tr>
+<tr>
+<td><a href="../../events/#boutiqueonglet"><code>boutique.onglet</code></a></td>
+<td><code>joueur</code> (id), <code>onglet</code> (text), <code>cible</code> (id?), <code>parent</code> (text?), <code>largeur</code> (number?)</td>
+<td>The shop window opened another module's tab (onglet, its key; parent, the empty panel to fill; largeur, the window's width), or left it (onglet empty). The module whose tab it is fills the panel.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-a-script-can-replace-gameoverride">Points a script can replace (game.override)<a class="headerlink" href="#points-a-script-can-replace-gameoverride" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<ul>
+<li><code>equipement.corps</code>: function(default, joueur) -&gt; the object that shows what the player wears, and its kind of body (a text matched against the rows of visible_corps). The default is the player's character and its profile field champ_corps. For a game whose other body is another object following the player. The Inventory's item in hand follows it too (its hook inventaire.porteur).</li>
+<li><code>equipement.avant</code>: function(default, infos) -&gt; true, or false and the reason shown: whether the player may wear this item. infos is {joueur, emplacement, objet, fiche, second}. The default is true. For "no heavy armour for a mage".</li>
+</ul>
+<h2 id="what-the-agent-knows-about-this-system">What the agent knows about this system<a class="headerlink" href="#what-the-agent-knows-about-this-system" title="Permanent link">&para;</a></h2>
+<p>The text the agent reads before using this system.</p>
+<h3 id="equipment-equipement">Equipment (<code>equipement</code>)<a class="headerlink" href="#equipment-equipement" title="Permanent link">&para;</a></h3>
+<p>The player wears items in <strong>slots</strong> (head, chest, weapon, two rings...): their bonuses add to the player's values, and they can show on the character. It requires the Inventory: the items worn come from the bag and go back to it. Prefer it to your own script; adapt it through its settings, its events and <code>game.override</code>, never by editing it.</p>
+<ul>
+<li><strong>Slots</strong>: the list <code>emplacements</code> (a row per slot: <code>nom</code>, <code>icone</code>, <code>categories</code> (the Inventory's categories it accepts, separated by commas), <code>nombre</code> (2 for two rings), <code>visible</code>, <code>partie</code> (the body part where what shows is attached: its bone is found by measuring the character's skeleton, <code>game.body_bone</code>), <code>arme</code> (holds the weapon in hand)). Empty: the preset <code>prereglage</code> (<code>jeu_de_role</code>: head, chest, hands, legs, feet, weapon, off hand, two rings, amulet, back; <code>survie</code>: head, chest, legs, feet, bag, tool; <code>tir</code>: helmet, vest, main weapon, secondary weapon). A slot's key in scripts is its name in lowercase without accents (« Main secondaire » -&gt; <code>main_secondaire</code>, two rings -&gt; <code>anneau_1</code>, <code>anneau_2</code>).</li>
+<li><strong>Wearable kinds</strong>: give the kind a <code>categorie</code> in the Inventory's <code>sortes_objets</code> (« casque »): it then goes to a slot accepting it. A row in <code>sortes_equipables</code> adds: <code>emplacement</code> (a precise slot), <code>deux_emplacements</code> with <code>autre_emplacement</code> (a two-handed weapon takes « Arme » and « Main secondaire »), conditions (<code>niveau_requis</code> on <code>piste</code>, <code>carac_requise</code> with <code>carac_min</code>; the Progression's required levels apply too), <code>effet</code> (with the Temporary effects module: set while worn, source <code>equipement</code>), and what shows (below). Fixed bonuses: <code>bonus_sortes</code> (a row per kind and value: <code>valeur</code>, <code>add</code>, <code>pct</code> in %), added to the record's bonuses of a unique copy.</li>
+<li><strong>Wearing</strong>: a double click on an inventory slot (A twice on a gamepad), or dragging it onto a slot of the equipment window (control <code>equipment</code>, O; it also opens beside the inventory, <code>avec_inventaire</code>; with the Inventory's <code>disposition_fenetre</code> <code>trois_parties</code>, the slots are drawn in the inventory's left column instead, through <code>shared.equipement.places()</code> and <code>shared.equipement.placesPour(kind)</code>, version 6). A click on a worn slot takes it off. Scripts: <code>game.emit("equipement.porter", {objet = "Casque", fiche = 12, emplacement = "tete", joueur = id})</code> (<code>fiche</code> for a unique copy, <code>emplacement</code> optional) and <code>game.emit("equipement.retirer", {emplacement = "tete", joueur = id})</code>. Read what is worn: <code>shared.equipement.porte(player)</code>; what shows for a kind on the player's body: <code>shared.equipement.apparence(kind)</code> -&gt; <code>{[slot key] = {objet, fiche, nom, double?}}</code> (<code>double</code>: the second slot of a two-slot item, naming the main one).</li>
+<li><strong>What happens</strong>: the item leaves the bag (<code>inventaire.sortir</code>); a unique copy's record gets the holder <code>equipement:&lt;player entity&gt;</code>, and <code>inventaire:&lt;player entity&gt;</code> again when taken off. Bonuses go through <code>game.stat_bonus</code>, source <code>equipement:&lt;slot key&gt;</code>, and are removed exactly. Events <code>equipement.porte</code> and <code>equipement.retire</code> {joueur, emplacement, objet, fiche}; <code>equipement.refus</code> {joueur, raison}. The hook <code>equipement.avant</code> refuses: <code>game.override("equipement.avant", function(default, infos) if infos.objet == "Armure lourde" then return false, "Pas pour un mage" end return default(infos) end)</code> (infos: joueur, emplacement, objet, fiche, second).</li>
+<li><strong>Effective bonuses</strong>: one function, <code>shared.equipement.bonusEffectifs(record, kind)</code> -&gt; <code>{{valeur, add, pct}}</code>: the record's bonuses plus the kind's, raised by its upgrade level, plus its gems; a broken record (<code>usure_max &gt; 0</code> and <code>usure == 0</code>) gives nothing. When a worn record changes (<code>objet.change</code>), its bonuses are computed again.</li>
+<li><strong>What shows</strong> (<code>visible</code> on the kind's row): <code>modele</code> (a copy of an object attached to a bone: best, set the model on the character in the editor — the helmet on the head —, check it with a capture, hide it, and choose it in <code>modele</code>: its exact place is reused; <code>os</code> (a bone chosen in the character's skeleton; empty: the slot's measured body part), the offsets and <code>echelle_x/y/z</code> (sizes fitted to the measured head or body) override it), <code>pieces</code> (objects of the character shown or hidden while worn: <code>pieces_montrer</code>, <code>pieces_cacher</code>, names separated by commas, chosen in the model), <code>les_deux</code>, or <code>rien</code>. By body: a row in <code>visible_corps</code> (<code>objet</code>, <code>corps</code>, then another model, bone, offset, size or pieces) is used when the player's profile field <code>champ_corps</code> (« corps ») has that value. Never assume a bone, a model, a clip or a size, and never write a pack's bone name: use the slot's body part (measured), or a bone chosen in the character's skeleton, and measure the head before setting sizes. The equipment's models are the creator's, kind by kind: there is no default model.</li>
+<li><strong>The weapon in hand</strong> (<code>arme_en_main</code>): <code>barre</code> (the Inventory's hotbar, as before), <code>emplacement</code> (the weapon worn in the slot that holds the weapon is handed to the Inventory, <code>inventaire.tenir_porte</code>: held, shown and announced exactly like the bar's, with its row of <code>en_main</code>, whose <code>prise</code> can be the measured weapon hold), or <code>lies</code> (both: the weapon worn comes back in hand when the bar holds nothing). Equipment never attaches the weapon in hand itself. With the hook <code>equipement.corps</code> (another body following the player), the Inventory holds the weapon in that body's hand too (its hook <code>inventaire.porteur</code>, whose default follows <code>equipement.corps</code>).</li>
+<li><strong>The window</strong>: one line per slot (its name, then what is worn; a slot in use takes the theme's selected state) and the totals of the values worn and of the list <code>valeurs</code>; control <code>equipment</code> (O, Y on a gamepad); styles <code>fenetre.equipement</code>, <code>titre.equipement</code>, <code>case.equipement</code> (<code>case.rare</code> for a rare item worn), <code>texte.equipement</code>, <code>bouton.fermer</code>. <strong>The tooltip</strong> of an inventory item compares it with what is worn at the same place (<code>comparer</code>): green what goes up, red what goes down. One piece of information per bonus: an upgraded or set item shows its effective total (« +9 Dégâts », green) instead of the record's raw bonus; a broken item shows its raw bonuses greyed, followed by « (sans effet) ». Tier and comparison colors are made readable on the theme's image by the engine (<code>hudReadableTint</code>).</li>
+<li><strong>Durability (ADR-039 § 6), only when the user asks for wear</strong>: give the kind's row in <code>sortes_equipables</code> a <code>usure_max</code> (0: never wears; a new copy's record gets it), <code>usee_par</code> (<code>attaque</code>: each hit, <code>combat.attaque</code>, or shot, <code>tir.tir</code>, while held; <code>coup_recu</code>: each hit taken while worn, <code>combat.coup</code> or <code>tir.touche</code> on the player; <code>recolte</code>: each harvest while held, <code>collecte.recolte</code>) and <code>perte</code> (lost each time). At zero, <code>a_zero</code>: <code>casse</code> (kept, greyed, « Cassé » in the tooltip, no bonuses until repaired: <code>bonusEffectifs</code> gives nothing) or <code>detruit</code> (taken off and destroyed). Below <code>seuil_usure</code> % (20), a message and the slot turns red (<code>equipement.usure_alerte</code>). Events <code>equipement.casse</code>, <code>equipement.detruit</code>.</li>
+<li><strong>Repair</strong>, each path optional: at a station whose name is <code>station_reparation</code> (Crafting's station kind, « Établi »: its Crafting window gets a <strong>workshop</strong> tab, « Atelier », costs in <code>couts_station</code> rows with <code>action</code> <code>reparer</code>), at a merchant if <code>boutique_reparation</code> (the Shop window gets a « Services » tab) (price <code>prix_reparation</code> for an item at zero, in proportion to what is lost; money <code>monnaie</code>, else the merchant's), or a kit (<code>kit_reparation</code>, an Inventory kind: a double click on it repairs the most worn item worn or held; <code>kit_montant</code> 0: all). <code>baisse_reparation</code> lowers the maximum at each repair. Script: <code>game.emit("equipement.reparer", {fiche = n, par = "station"|"boutique"|"kit", cible = station or merchant})</code>; announces <code>equipement.repare</code>.</li>
+<li><strong>Sets (§ 7)</strong>: <code>ensembles</code> (<code>nom</code>, <code>pieces</code>: kinds separated by commas) and <code>ensembles_paliers</code> (<code>ensemble</code>, <code>nombre</code> of pieces worn, <code>valeur</code>, <code>add</code>, <code>pct</code> in %): set and removed by themselves, source <code>ensemble:&lt;name key&gt;</code>; a broken piece does not count. The tooltip shows « Loup (2/4) » and each tier, green with « (actif) » when reached, grey with « (encore 2) » (the pieces still missing) otherwise: a written mark, not only a color (texts <code>palier_atteint</code>, <code>palier_manque</code>).</li>
+<li><strong>Upgrade (§ 7)</strong>: the kind's row <code>niveau_max</code> (0: none) and <code>amelioration_pct</code> (each level adds that % of the item's bonuses), plus fixed bonuses per level in <code>amelioration_bonus</code>. Where: <code>station_amelioration</code> (« Forge »; costs <code>couts_station</code> with <code>action</code> <code>ameliorer</code>, <code>niveau</code> the level aimed for or 0) or merchants (<code>boutique_amelioration</code>, price per level in <code>amelioration_niveaux</code>). <code>amelioration_niveaux</code> (<code>niveau</code>, <code>chance</code> %, <code>prix</code>): 100 % without a row; the roll is made on the host. On failure, <code>echec_amelioration</code>: <code>rien</code>, <code>niveau_perdu</code> or <code>casse</code>. The name shows « Épée de fer +2 ». Script: <code>equipement.ameliorer {fiche, par, cible}</code>; announces <code>equipement.ameliore</code> {reussi, niveau, echec}.</li>
+<li><strong>Gems (§ 7)</strong>: a kind whose Inventory <code>categorie</code> is <code>categorie_gemme</code> (« gemme »); its bonuses in <code>gemmes_bonus</code> (<code>gemme</code>, <code>categorie</code> of the item receiving it, empty for any other, <code>valeur</code>, <code>add</code>, <code>pct</code>). Sockets: the kind's row <code>emplacements_gemmes</code>, or rolled by Loot. Set at <code>station_sertissage</code> or merchants (<code>boutique_sertissage</code>, <code>prix_sertissage</code>); <code>retrait_gemme</code>: <code>impossible</code>, <code>detruite</code>, or <code>rendue</code> (for <code>prix_retrait</code>, or <code>couts_station</code> <code>retirer_gemme</code>). Scripts: <code>equipement.sertir {fiche, gemme or gemme_fiche, par, cible}</code>, <code>equipement.desertir {fiche, index, par, cible}</code>; announce <code>equipement.serti</code>, <code>equipement.desserti</code>.</li>
+<li><strong>The workshop</strong>: one window at a station or a merchant, never two. At a station named in <code>station_reparation</code>, <code>station_amelioration</code> or <code>station_sertissage</code>, the Crafting window has two tabs, « Fabrication » (its recipes) and « Atelier »; at a merchant with a service ticked, the Shop window has « Marchandise » and « Services » (hooks <code>fabrication.onglets</code>, <code>boutique.onglets</code>). The workshop tab lists the player's unique items with Repair, Upgrade, Set and Remove buttons and their cost. A station without recipes, fuel or level to gain, or a merchant selling nothing, opens on the workshop tab at once. <code>equipement.atelier {cible, joueur}</code> opens the station's or merchant's window on that tab from a script, for that player only (without <code>joueur</code>: the host). <code>atelier_x</code> is no longer used (version 5). Refusals go through <code>equipement.refus</code> with the reason shown. All this changes only the record (<code>usure</code>, <code>usure_max</code>, <code>amelioration</code>, <code>gemmes</code>): the bonuses follow through <code>bonusEffectifs</code> and <code>objet.change</code>, and the save keeps them with the records.</li>
+<li><strong>The screens</strong> (version 8), delivered by the system and filled by its scripts: never draw an equipment window with <code>game.hud_*</code>, and never edit the system; change their look, places and sizes with <code>screens_set</code> (styles, not hand-made values). « Équipement » (<code>modules/equipement/ecrans/fenetre.json</code>): <code>Fenêtre</code>, <code>Titre</code>, the list <code>Emplacements</code> (row <code>Ligne</code>: <code>Image</code> of the item worn, hidden without one; <code>Case</code>, a button with the action <code>retirer</code>), <code>Caractéristiques</code>, the list <code>Valeurs</code> (row <code>Valeur</code>, hidden when empty), <code>Fermer</code> (action <code>fermer</code>, B or Escape). Keys of a row: <code>Équipement/Case#N</code>, N in the order of the slots (<code>Équipement/Case#1</code>: the first, « Tête » in <code>jeu_de_role</code>); dragging an inventory slot onto it wears the item there. The script sets each <code>Case</code> to the width of its row (minus the image), read on screen. <code>fenetre_x</code> left at 0.115: the window stays where its shape <code>Fenêtre</code> is (move it in the screen); another value puts it there, as before. « Atelier de l'équipement » (<code>ecrans/atelier.json</code>): shown inside the host window's tab shape (<code>Fabrication/Onglet ouvert</code>, <code>Boutique/Onglet ouvert</code>) with <code>game.screen_show(name, {inside = key})</code>: <code>Atelier</code>, <code>Rien</code>, the list <code>Objets</code> (row <code>Ligne</code>: <code>Objet</code>, <code>Action 1</code> to <code>Action 6</code>, buttons with the action <code>service</code>; an item with more services goes on to the next row; up to two services each button keeps its width in the screen, more share the width of two). « Message de l'équipement » (<code>ecrans/message.json</code>): its <code>Message</code>, at the top, red for a refusal, gone after a few seconds. With several players, each player has their own screens.</li>
+<li><strong>Displayed names of values</strong>: the list <code>valeurs</code> (<code>valeur</code>, <code>libelle</code>, translated) names values everywhere (<code>game.stat_name</code>, which also works in a guest's game: the names go with the progression); the Progression names its own.</li>
+<li><strong>Several players</strong>: one copy per player, on the host. A guest's request (to wear, repair, upgrade, set a gem) only cites their own records (<code>game.item_citable</code>), and the upgrade roll is made on the host; what shows is an attached copy that guests receive. What is worn is saved per player and per world.</li>
+</ul>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>modules/equipement/module.json</code>, <code>modules/equipement/AGENT.md</code>, <code>modules/events.json</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../ennemis/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Enemies">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Enemies
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../brouillard/" class="md-footer__link md-footer__link--next" aria-label="Next: Fog volume">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Fog volume
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

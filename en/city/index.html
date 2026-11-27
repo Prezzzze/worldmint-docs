@@ -1,0 +1,4298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/city/">
+      
+      
+      
+        <link rel="prev" href="../terrain/">
+      
+      
+        <link rel="next" href="../lighting/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Cities and roads - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../assets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cities and roads
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="./.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game's systems and settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creator mode
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-find-the-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Where to find the tool
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-a-city" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Generating a city
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#several-towns" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several towns
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-streets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawing streets
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-worldmint-builds-around-the-streets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What WorldMint builds around the streets
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roads-outside-the-city" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Roads outside the city
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#road-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Road materials
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#painted-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Painted paths
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-profile-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The profile gallery
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjusting-a-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Adjusting a profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-materials-of-one-street" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The materials of one street
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-upkeep-of-a-road" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The upkeep of a road
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-districts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawing districts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Drawing districts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-a-style-or-creating-your-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Setting a style, or creating your own
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-density-of-a-district" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The density of a district
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-plan-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The plan view
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcels-and-their-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parcels and their changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buildings-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Buildings mode
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shops" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shops
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#near-and-far-the-facade-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Near and far: the facade distance
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-facade-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A facade kit
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-game-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game map
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shortcuts
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        With the agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-saved" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What is saved
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-paid-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A paid extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Known limits
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: screens, menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hosting your own lobby
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Your data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What's new
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../reference/systems/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Companion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Death and respawn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Knowledge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Race
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Round
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shops of the city
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Status effects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/systems/zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reference/agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#where-to-find-the-tool" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Where to find the tool
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#generating-a-city" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Generating a city
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#several-towns" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several towns
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-streets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawing streets
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-worldmint-builds-around-the-streets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What WorldMint builds around the streets
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#roads-outside-the-city" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Roads outside the city
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#road-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Road materials
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#painted-paths" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Painted paths
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-profile-gallery" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The profile gallery
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#adjusting-a-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Adjusting a profile
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-materials-of-one-street" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The materials of one street
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-upkeep-of-a-road" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The upkeep of a road
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#drawing-districts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Drawing districts
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Drawing districts">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#setting-a-style-or-creating-your-own" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Setting a style, or creating your own
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-density-of-a-district" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The density of a district
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-plan-view" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The plan view
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcels-and-their-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Parcels and their changes
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buildings-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Buildings mode
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shops" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shops
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#near-and-far-the-facade-distance" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Near and far: the facade distance
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-facade-kit" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A facade kit
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-game-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The game map
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shortcuts" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Shortcuts
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#with-the-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        With the agent
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-saved" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What is saved
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#a-paid-extension" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A paid extension
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#known-limits" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Known limits
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<h1 id="cities-and-roads">Cities and roads<a class="headerlink" href="#cities-and-roads" title="Permanent link">&para;</a></h1>
+<p>The <strong>Cities and roads</strong> tool lays out a city on the ground. You draw the plan (the streets, their profile, their junctions, the districts), or have it generated in one go; WorldMint builds the roadway, the sidewalks, the markings, the pedestrian crossings, the street trees and the bridges, and flattens the ground under them.</p>
+<p>This is the <strong>Cities and roads</strong> extension: it appears by itself in the editor when it is installed (see <a href="#a-paid-extension">A paid extension</a>).</p>
+<p><img alt="The Cities and roads tool in Streets mode: two streets that cross, a street's right-click menu, the options bar at the bottom of the view and the street profiles on the right" src="../assets/captures/ville-rues.png" /></p>
+<h2 id="where-to-find-the-tool">Where to find the tool<a class="headerlink" href="#where-to-find-the-tool" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>In the palette</strong>, left of the view: the map icon (under the terrain tools when the scene has a terrain). When picked, it opens its <strong>options bar</strong> at the bottom of the view: <strong>Streets</strong> or <strong>Districts</strong>, <strong>Plan view</strong>, the profile or the style of the next drawings, a help (the <strong>i</strong>) and the cross that puts the tool away (like <strong>Escape</strong>).</li>
+<li><strong>In the properties</strong>, when nothing is selected (<strong>This game</strong>): the <strong>Cities and roads</strong> section. It gives the number of streets and junctions and their length, the <strong>Towns</strong> list and the <strong>New town…</strong> button, the list of <strong>Street profiles</strong>, the <strong>Plan view</strong> switch, the list of <strong>Districts</strong> and the list of <strong>District styles</strong>.</li>
+</ul>
+<h2 id="generating-a-city">Generating a city<a class="headerlink" href="#generating-a-city" title="Permanent link">&para;</a></h2>
+<p>To start from a whole city rather than a blank page:</p>
+<ol>
+<li><strong>Cities and roads</strong> section of the properties, under <strong>Towns</strong>: <strong>New town…</strong>.</li>
+<li><strong>Size</strong>: small (500 × 500 m), medium (1 × 1 km), large (1.4 × 1.4 km, i.e. 2 km²) or custom (from 200 to 3,000 m on each side).</li>
+<li><strong>Center</strong>: in the middle of the view, or at the center of the ground.</li>
+<li><strong>Seed</strong>: a number. The same number gives the same city again; <strong>Random</strong> draws another one.</li>
+<li><strong>Districts</strong>: tick the styles you want (business center, old town, dense residential, suburban houses, shopping area, industrial area, port, American quarter, housing estates, seaside) and give the share of each; the percentage next to it says what it gives. The most central ones go in the middle, the suburban houses on the edge, the port and the seaside by the water (unticked when there is no water).</li>
+<li><strong>Generate</strong>.</li>
+</ol>
+<p><img alt="The &quot;Generate a city&quot; window: the seed and the wanted districts" src="../assets/captures/ville-generer.png" /></p>
+<p>The city is built in the background: the status line says "Generating the city…", and the editor stays free. You get districts, streets between them, two avenues that cross the city following the ground, and the streets of each district after its style (a grid, an old winding layout, suburban houses with their dead ends), each with a name. The axes follow a <strong>hierarchy</strong> set by the district style: in the business center, the American quarter, the shopping area, the seafront and the housing estates, the avenues become <strong>grand boulevards with 2 × 4 lanes</strong> and a planted median, and one street in three of the grid an <strong>arterial road with 2 × 3 lanes</strong>; in the industrial area and the port, one street in two (large blocks, for the trucks); in the working-class district and the upmarket district, the avenues become <strong>arterial roads with 2 × 3 lanes</strong>, with no other arterial road; the other styles have none yet. A wide road is laid only where the ground fits its maximum grade: on steeper ground the street keeps its usual profile. A district with large blocks, which has fewer streets each way than the number asked for, takes its middle street as the arterial road. Each district style sets it (<strong>Profile of the main axes</strong>, <strong>Profile of the arterial roads</strong>, <strong>An arterial road every N streets</strong>). At the approach of a crossing, the raised median of an arterial road or a grand boulevard gives way, over 25 m, to a <strong>left-turn lane</strong> for the arriving cars (the <strong>Left-turn lane</strong> setting of the profile, 0: none); what is left of the median keeps its curb. Only for the cars that can turn left: at a T junction, the way with no street on its left gets no left-turn lane, and its median, with its trees, runs on to the pedestrian crossing. An area almost entirely under water gets neither district nor street.</p>
+<p>The city arrives as <strong>one single step</strong>: one <strong>Ctrl+Z</strong> removes it at once, ground included. If the scene already has streets, the window says so and the button becomes <strong>Replace the city</strong>: the street profiles and the district styles are kept, and Ctrl+Z gives the old city back.</p>
+<p><img alt="A generated city: its streets and junctions on the ground, and an avenue's name on hover" src="../assets/captures/ville-generee.png" /></p>
+<p>Then shape it with the gestures below: a generated city is changed like a city drawn by hand.</p>
+<h2 id="several-towns">Several towns<a class="headerlink" href="#several-towns" title="Permanent link">&para;</a></h2>
+<p>A map can hold several small towns side by side, each with its own name and mood.</p>
+<ol>
+<li>In the <strong>Cities and roads</strong> section, under <strong>Towns</strong>, click <strong>New town…</strong>: the tool is picked up.</li>
+<li>Draw the town's area on the terrain:</li>
+<li><strong>Rectangle</strong>: drag on the terrain. Then pull a corner to resize it, and the circle above it to rotate it.</li>
+<li><strong>Outline</strong>: one click per point (to follow a coast, for example). A double-click or Enter closes the outline, Backspace
+     removes the last point, Esc cancels. Once closed, drag any point to move it.</li>
+<li>The drawing snaps to the edge of a neighbouring town (within a few metres): the two towns touch without overlapping. An area
+   that overlaps another town turns <strong>red</strong>, with the reason when you hover over it.</li>
+<li>Enter or <strong>Continue…</strong> opens the window: the area's surface, the town's <strong>name</strong> (drawn at random, change it as you like),
+   its <strong>mood</strong> (European, American, seaside…), the seed and the districts. <strong>Generate</strong> adds the town without touching the
+   others; its streets join those of its neighbour at the border. Ctrl+Z removes it.</li>
+</ol>
+<p>The <strong>Towns</strong> list shows each town, its mood and its surface. A click selects one: its outline lights up and the view frames it.
+Then:</p>
+<ul>
+<li>the name field <strong>renames</strong> it (Enter keeps the name);</li>
+<li><strong>Regenerate</strong> remakes it in the same area with another seed; its name is kept;</li>
+<li><strong>Delete</strong> removes its streets, junctions and districts; the other towns stay. Ctrl+Z brings it back.</li>
+</ul>
+<p>The snapping distance is set in the plan's data (<code>townSnapDistance</code>, 8 m by default; 0: no snapping).</p>
+<h2 id="drawing-streets">Drawing streets<a class="headerlink" href="#drawing-streets" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Pick the <strong>Cities and roads</strong> tool, in <strong>Streets</strong> mode.</li>
+<li>Choose the <strong>Profile</strong> of the new streets in the list: each profile shows its cross-section (the lanes and their direction, the median, the parking, the sidewalks, the trees). The starting profiles are the 2 × 2 lane avenue, the two-way street, the one-way street, the alley and the pedestrian street (their names, written by the extension, are in French).</li>
+<li>Click on the ground to place the points of the street. <strong>Enter</strong>, or a <strong>double click</strong>, ends it. <strong>Escape</strong> drops it; a <strong>right click</strong> removes the last point.</li>
+</ol>
+<p>The street shows at once as lines. The roadway arrives a few moments later: meanwhile, the status line says "Updating the city…", and you can keep working. Once the roadway is made, the lines become discreet: the nodes only appear around the mouse and on the chosen street. On hover, a street tells its name and profile.</p>
+<p><strong>Connecting streets</strong>:</p>
+<ul>
+<li>a point placed <strong>on a street</strong> or <strong>on a junction</strong> connects the new street to it and ends it: a T junction;</li>
+<li>a street that <strong>crosses</strong> another one makes a junction there;</li>
+<li>a click on a <strong>node</strong> (a street end, a junction) starts a new street there;</li>
+<li>two junctions placed <strong>too close</strong> to each other (the piece of street between them shorter than the room their corners need, which depends on the street widths and angles: farther apart for avenues than for streets) become <strong>a single one</strong>, halfway between them, with one junction square and its corner sidewalks. Your plan keeps both nodes: move them apart to get two junctions back.</li>
+</ul>
+<p><strong>Changing</strong>:</p>
+<ul>
+<li><strong>Drag</strong> a node or a waypoint: the street follows, and the city is rebuilt around it on release.</li>
+<li><strong>A click on a street</strong> chooses it (it lights up). <strong>Delete</strong> deletes it, with the nodes that no longer connect anything; the roadway goes, the ground comes back. A second click on the chosen street starts a new street there. While the Cities and roads tool is picked, <strong>Delete</strong> only deletes the chosen street, never an object of the scene.</li>
+<li><strong>Right click on a street</strong>: <strong>Street profile</strong> (the illustrated list), <strong>Rename the street…</strong>, <strong>Delete the street</strong>.</li>
+<li><strong>Right click on a junction</strong>: <strong>Roundabout</strong> (choosing it again gives it back its ordinary shape). Cars drive round the ring, the island on their left (counterclockwise seen from above, since the city drives on the right): they enter and leave along curves, take the outer lane for the first exits and the inner lane to turn left or back on a two-lane ring, and give way to the ring when they enter.</li>
+</ul>
+<h2 id="what-worldmint-builds-around-the-streets">What WorldMint builds around the streets<a class="headerlink" href="#what-worldmint-builds-around-the-streets" title="Permanent link">&para;</a></h2>
+<p>None of this is done by hand: everything is rebuilt when the plan changes, and comes back as it was when a street is removed.</p>
+<ul>
+<li><strong>The flattened ground.</strong> The terrain flattens under each street, with gentle banks (a slope of 1 in 2) on each side. Streets follow the ground within the slope their profile allows (12%, 8% for an avenue); junctions, their pedestrian crossings and their stop lines stay flat. Removing the city gives the original ground back, exactly.</li>
+<li><strong>No retaining walls.</strong> The ground always meets the streets with a bank, never a wall. On a steep side, the bank takes the room it needs and gets steeper at its end to meet the terrain; it never rises above a sidewalk or a roadway.</li>
+<li><strong>Bridges.</strong> A street that crosses a hollow deeper than 3 m, or water, becomes a bridge: a deck, railings and piers set on the ground (30 m at most between two). The roadway enters it without a step.</li>
+<li><strong>Street trees</strong>, along the sidewalks, at the spacing the profile gives, outside junctions and bridges. When the profile names no tree model, WorldMint plants its shipped trees ("Realistic Trees Collection" by Jungle Jim, CC BY 4.0, credited on the Credits page): a medium tree along the sidewalks, a large one on a median at least 4 m wide, each at a size that keeps its leaves off the facades. They are copied with their licence into the project's <code>ville/arbres/</code> folder. Along the sidewalks they are pruned like city trees: a pruned copy is written to the project cache (<code>.worldmint/ville/arbres/</code>; the shipped model is never touched) without the low branches (below 2.4 m, <code>treeClearance</code>), without anything over the roadway below 4.5 m (<code>treeRoadClearance</code>, room for trucks), without anything entering the facade or reaching more than 1.5 m over the roadway (<code>treeCrownOverRoad</code>). A removed branch goes with its leaves and the branches it carries: no leaf is left floating; the trunk always stays. A pruned tree always keeps at least 40% of its leaves (<code>treeMinFoliage</code>): otherwise WorldMint takes the same tree taller (its crown rises above the roadway), slightly smaller, or another shipped tree; if none fits, the simple shape. At the foot of each sidewalk tree there is a 1.3 m square tree pit (<code>treePitSize</code>, 0 for none): a frame of the same stone as the sidewalk curb, with rounded corners and edges, cut into blocks like the curb, which you can walk on, and a soil bed, the trunk in the middle; no street furniture is placed on it. The soil and the granite of the curbs are real Poly Haven textures (CC0, "Mud Forest" and "Granite Tile 03", credited on the Credits page), copied into the project (ville/matieres/) where you can change them. A model chosen in the profile always comes first; <code>shippedTrees: false</code> in the generation settings brings back the simple shape.</li>
+<li><strong>Cleared grass.</strong> The plants sown by the terrain grow neither on the roadway, nor on the sidewalks, nor in the junctions: the grass stops at the edge of the sidewalk. Under a bridge, they only move away where the ground is close to the deck.</li>
+</ul>
+<h2 id="roads-outside-the-city">Roads outside the city<a class="headerlink" href="#roads-outside-the-city" title="Permanent link">&para;</a></h2>
+<p>The same tool also draws roads through fields and mountains. Street profiles come in four <strong>families</strong>: <strong>City</strong> (streets, the avenue, the boulevard, the cobbled street, the arterial road with 2 × 3 lanes, the grand boulevard with 2 × 4 lanes…), <strong>Country</strong> (the secondary road, the expressway with 2 × 2 lanes, the small country road), <strong>Mountain</strong> (the mountain road) and <strong>Paths</strong> (the forest track, the dirt path, the footpath, the paved path). A road joins a street through a real junction.</p>
+<p>A country road has no sidewalk, so no curb:</p>
+<ul>
+<li><strong>Shoulders</strong>: a strip on each side, level with the road, between the roadway and the ditch. At junctions, the corners are roadway up to the edge; the sidewalk of a street that arrives there ends with a curb.</li>
+<li><strong>Ditches</strong>: a hollow on each side, beyond the shoulder, dug into the ground. Removing the road gives the original ground back. Grass and plants grow in the ditch.</li>
+<li><strong>Barriers</strong>: a steel <strong>guardrail</strong> or a <strong>railing</strong>, set on both sides, only where the ground drops beside the road, or <strong>automatically</strong>: only where a car can leave the road, along a high embankment and on the outside of a bend too tight for the road's design speed. The roads outside the city (secondary road, expressway, country, mountain) have automatic guardrails; city streets have none. There are none on a bridge (it has its own railings), in a junction, along a street with sidewalks, or in short isolated pieces. A model of the project can replace the made guardrail: it is repeated along the road at its measured length.</li>
+<li><strong>Markings</strong>: <strong>full</strong> (lines between lanes, edge lines along the lanes, crossings at junctions), <strong>edge only</strong> (the two lines along the edges) or <strong>none</strong>. A city street has no edge line: its sidewalks border it.</li>
+<li><strong>The marking standard</strong>: <strong>American</strong> by default (the usage of American streets, the MUTCD) or <strong>European</strong>. In American: a <strong>yellow</strong> line separates the two directions (double solid, or broken on small streets, then doubled before junctions, or none); <strong>white</strong> dashes of 3 m every 12 m separate lanes going the same way; a median has yellow edges, the left-turn lane a double yellow line on its left, its arrow and the word <strong>ONLY</strong>; give way is a row of white <strong>triangles</strong> pointing at the incoming cars (only where the YIELD sign stands); crosswalks have <strong>bars</strong> (continental) at junctions with traffic lights and <strong>two lines</strong> elsewhere. At American <strong>roundabouts</strong>: white triangles at each entry (traffic yields to the ring), a solid <strong>yellow</strong> line along the island and, on a two-lane ring, white dashes between its lanes; on an entry of two lanes or more, one arrow per lane (left and straight on the leftmost, straight and right on the rightmost). The standard is chosen for <strong>the whole city</strong> in the <strong>generation settings</strong> (American by default); a profile follows it (<strong>The city's</strong>, the default) or forces its own. Every measure is set in the profile's <strong>Markings</strong> group. In European, the markings stay as before (white lines, dashes at give-way lines).</li>
+<li><strong>Trees</strong>: on a road without sidewalks, street trees are planted beyond the ditch.</li>
+</ul>
+<p>The width of shoulders and ditches, the depth of ditches, the kind of barrier and the markings are settings of each profile. The height of guardrails and railings, the spacing of their posts and their color are settings shared by the whole city. A long road (several kilometers) is laid down without freezing the editor.</p>
+<h2 id="road-materials">Road materials<a class="headerlink" href="#road-materials" title="Permanent link">&para;</a></h2>
+<p>Every part of a road has its <strong>material</strong>: the roadway, the sidewalks, the curbs, the gutters, the shoulders and the markings. By default the tool <strong>makes its own</strong> materials, without downloading anything: asphalt, cobblestones, paving slabs, concrete, granite, gravel, earth and road paint. They are real images (color, relief, shine), with no visible seam, at the right size: a cobblestone is about ten centimeters, a slab half a meter. They are kept in the project's hidden folder and made again only when a recipe changes.</p>
+<p>Each material has its <strong>states</strong>: <strong>new</strong>, <strong>worn</strong>, <strong>cracked</strong> or <strong>patched</strong>; markings can also be <strong>faded</strong> (the paint has holes). The state changes from one street to the next, always the same for the same plan:</p>
+<ul>
+<li>in the city, the <strong>district style</strong> decides (new in the business district, worn and patched in the industrial zone, cobbled in the old town);</li>
+<li>outside the city, it comes from the road profile, or from the <strong>upkeep</strong> chosen for a street (new, worn, cracked, patched);</li>
+<li>a patched roadway has <strong>patches</strong>: rectangles of newer asphalt laid in the lanes (their material, its state and their tint are set in <code>contenu/matieres_route.json</code>, the <code>patches</code> section of the patched state: a little darker than the roadway, without standing out).</li>
+</ul>
+<p>Two neighboring streets do not show the same pattern at the same place, and the pattern follows the street around its bends. In a crossroads it keeps the direction of the widest street: the cobblestones do not suddenly turn when you go from the street into the crossroads. When a street goes on from one piece to the next, the pattern turns with it, and around a sidewalk corner the slabs follow the curve of the curb.</p>
+<p><strong>The curb and the gutter</strong>, as in a real street:</p>
+<ul>
+<li>the <strong>curb</strong> is a row of granite (or concrete) <strong>blocks</strong> that holds the sidewalk: you see their <strong>top</strong> (15 to 30 cm wide), their <strong>edge</strong> on the roadway side, rounded (a quarter round) rather than cut at an angle, and a <strong>joint</strong> about every meter. The sidewalk starts behind it. In the profile, group <strong>Edges</strong>: the curb top width, the block length, the chamfer; its color is set with the curb tint (yellow, as in Miami);</li>
+<li>the <strong>gutter</strong> is a strip of cobblestones or slabs at the <strong>foot of the curb</strong>, at the level of the roadway, where water runs off (25 to 50 cm). It is taken from the roadway: the lanes do not move. Its width is set in <strong>Edges</strong> (0: no gutter) and its material in the <strong>Gutter</strong> place. City streets have one; the modern avenue does not.</li>
+</ul>
+<p><strong>Replacing a material with one of your project</strong>: each part of a profile can use a material from your project (a <code>.wmmat</code> file in the <code>materials</code> folder, made for example from Poly Haven or ambientCG images, or from a pack). The size of its pattern is <strong>the one of the material</strong>: set it in the material, the road follows. If the file is missing, the road goes back to the made material and says so (the agent sees it too with <code>city_check</code>). The exported game takes the made materials and the images of the materials in use.</p>
+<p><strong>Real photos in place of the made materials</strong>: the catalog <code>contenu/matieres_ville/matieres.json</code> lists the photo textures shipped with WorldMint. Each entry gives its folder (<code>id</code>), its <strong>real size</strong> in metres (<code>size</code>: the photo is laid at that size, never stretched to the pattern of a made material), <code>rotate</code> (<code>false</code> for a material with a direction: brick, tiles, wood) and <code>replaces</code>, the made materials it stands in for, with the states it covers (<code>["asphalte"]</code> for all states, or <code>[{"recipe": "asphalte", "wears": ["worn", "cracked"]}]</code>). On the streets and on the buildings alike, a made material that a photo replaces is drawn with the photo, copied into the project (<code>ville/matieres/</code>, with its licence) as a material you can change there; without a photo, the made material stays. The first entry that covers a material wins. You can edit the catalog by hand, or choose a material of your project for a part, which always comes first.</p>
+<p><strong>Choose online…</strong>: under the material of each part (in the profile's <strong>Materials</strong> group), this button opens a small window of the <a href="../editor/library/">online library</a>, on the sources you have <strong>already chosen</strong> (the asset browser's <strong>Online</strong> folder, <strong>Sources</strong> button: Poly Haven, ambientCG). With no source chosen, the window says so and nothing is contacted. It shows textures with their preview, their <strong>licence</strong> and their <strong>real size</strong>; the word of the part is searched beforehand (“paving” for the sidewalk, “asphalt” for the roadway), change it as you like. A click downloads the texture into the project (a progress bar shows it, the editor does not freeze), makes it a material at its real size, then puts it on the part. <strong>Ctrl+Z</strong> removes it. The credits the sources ask for (“Powered by Poly Haven”) stay at the bottom of the window.</p>
+<h2 id="painted-paths">Painted paths<a class="headerlink" href="#painted-paths" title="Permanent link">&para;</a></h2>
+<p>The <strong>trail</strong>, the <strong>dirt track</strong> and the <strong>forest track</strong> are not laid like a road: they are <strong>painted into the ground</strong>, like the ground material brush. There is no roadway, no curb and no marking: the dirt or gravel blends into the grass, with a soft, slightly uneven edge. A worn path is a little fainter, with a more uneven edge.</p>
+<ul>
+<li><strong>The ground shape</strong>: under a path, the ground is only flattened a little (a profile setting: little for a trail, more for a track). The path follows the slope, with no bank and no wall.</li>
+<li><strong>Plants</strong>: nothing grows across the width of the path; grass and trees come back up to its edge.</li>
+<li><strong>Junctions</strong>: two trails that meet blend into each other. A trail that reaches a street starts at the edge of the junction, which is laid like the others.</li>
+<li><strong>Ground materials</strong>: a path is painted with the ground materials. If the terrain has none yet, the first path turns them on (Terrain ▸ Ground materials); Ctrl+Z removes them with the path. The ground can have at most 16 materials: if it already has them, the path is not painted and the agent says so.</li>
+<li><strong>Removal without a trace</strong>: removing a path, or Ctrl+Z, gives back the ground exactly as before: its shape, its paint and its plants.</li>
+</ul>
+<p>The material of a path (dirt, gravel) is made in the project folder; it can be replaced by a project material in the profile. The ground paint has one cell per metre: a very narrow trail stays a little blurry seen up close.</p>
+<h2 id="the-profile-gallery">The profile gallery<a class="headerlink" href="#the-profile-gallery" title="Permanent link">&para;</a></h2>
+<p>The <strong>Profile</strong> list of the options bar, and the <strong>Street profiles</strong> list of the section, sort the profiles into four groups: <strong>City</strong>, <strong>Countryside</strong>, <strong>Mountain</strong> and <strong>Paths</strong>. Each profile shows its cross-section: its lanes and their direction, its median, its parking, its sidewalks, and outside the city its shoulders (light grey, at the level of the roadway), its ditches (a dip under the ground line) and its barriers (two small upright strokes). A path painted in the ground shows as a band of earth blended on the ground line, with no thickness.</p>
+<h2 id="adjusting-a-profile">Adjusting a profile<a class="headerlink" href="#adjusting-a-profile" title="Permanent link">&para;</a></h2>
+<p>In the section, a click on a profile picks it for the next streets and opens its settings, in groups that fold:</p>
+<ul>
+<li><strong>General</strong>: the family of the profile (where it goes in the gallery), its surface (<strong>Paved</strong>: a raised roadway; <strong>Painted in the ground</strong>: a dirt track, a footpath), pedestrian street, intended dead end;</li>
+<li><strong>Lanes</strong>: the width and direction of each lane, <strong>Add a lane</strong>, and the cross to remove one;</li>
+<li><strong>Edges</strong>: the median, the parking, the sidewalk width and its curb height, the curb top width, the length of its blocks, its chamfer, the gutter width, the shoulder width, the ditch width and depth, the barrier (none, guardrail, railing), its placement (on both sides, where the ground drops, or automatic, with the ground drop, the grip in bends, the margin before and after a bend and the shortest length) and its model (<strong>Guardrail model…</strong>, a model of the project, or the made guardrail);</li>
+<li><strong>Markings</strong>: full, edge lines only or none;</li>
+<li><strong>Ground</strong>: the steepest slope, the deepest cutting and the highest embankment, the design speed (the road rises and falls gently, without bumps, to be driven at that speed; 0: it follows the ground), the flattening, the soft edge of a painted path;</li>
+<li><strong>Trees</strong>: their spacing and height;</li>
+<li><strong>Materials</strong>: for each part of the way in use (the roadway, the sidewalk and its curb, the gutter, the shoulder, the markings; a painted path has only its roadway), the <strong>material</strong> (one made by the editor, with its colour swatch, or a material of your project; with no material in the project, the list says so), the <strong>tint</strong>, and the allowed <strong>states</strong>: each state has its box and its weight in the draw (new, worn, cracked, patched; markings can be faded, never cracked or patched). A material chosen here wins over the one the district style gives its streets (the concrete sidewalks of the industrial zone, for example); left as shipped, the district's shows.</li>
+</ul>
+<p>A refused setting (a value out of range, no state allowed) is written in red under the settings, and the profile does not change. Each change is undone with <strong>Ctrl+Z</strong>; a dragged slider makes only one. The buttons: <strong>New profile</strong> (a copy of the open profile, to adjust without touching the streets that keep the original), <strong>Rename the profile…</strong>, <strong>Delete the profile</strong> (refused while a street uses it) and <strong>Restore this profile</strong> (a built-in profile gets its original values back).</p>
+<p>In the settings of a district style, the <strong>Streets and furniture</strong> group also has <strong>Street wear</strong> (the share of each state, in %, for the streets of the district; the shares always add up to 100%, changing one adjusts the others: new in a business district, worn and patched in an industrial area) and <strong>Street materials of the district</strong> (the roadway and the sidewalk of city streets: <strong>The profile's own</strong>, a made material such as the cobbles of an old town, or a project material). A project material chosen in a profile always wins.</p>
+<h2 id="the-materials-of-one-street">The materials of one street<a class="headerlink" href="#the-materials-of-one-street" title="Permanent link">&para;</a></h2>
+<p><strong>Right-click a street ▸ Materials of this street…</strong> opens a small window with each part of the street: <strong>Roadway</strong>, <strong>Sidewalk</strong>, <strong>Curb</strong>, <strong>Gutter</strong>, <strong>Shoulder</strong> and <strong>Markings</strong>. For each one: its swatch and the list of materials (the made materials, then the project materials, which replace the made material), <strong>Choose online…</strong> for a realistic texture from the online library, a <strong>Tint</strong>, and <strong>Back to the district's</strong>. The material chosen for a street comes before the one of its district and its profile: a cobbled lane in an asphalt district, a yellow curb on a single avenue. Only the tiles of this street are made again, neither the ground nor the roadway. Each change is undone with <strong>Ctrl+Z</strong>.</p>
+<h2 id="the-upkeep-of-a-road">The upkeep of a road<a class="headerlink" href="#the-upkeep-of-a-road" title="Permanent link">&para;</a></h2>
+<p>The state of each street is drawn once and for all: the same plan always gives the same states. In the city, it comes from the style of the district; outside any district, or for a painted path, from the weights of the profile. <strong>Right-click a street ▸ Upkeep</strong> forces it on the whole street: <strong>As the district says</strong> (the draw), <strong>New</strong>, <strong>Worn</strong>, <strong>Cracked</strong> or <strong>Patched</strong>. When you hover over a street, it tells its profile and the state of its roadway (“Worn, from the district Industrial area”, “New, set by hand”). Each choice is undone with <strong>Ctrl+Z</strong>.</p>
+<h2 id="drawing-districts">Drawing districts<a class="headerlink" href="#drawing-districts" title="Permanent link">&para;</a></h2>
+<p>The city is divided into <strong>districts</strong>, each with a <strong>style</strong>: business center, old town, dense residential, suburban houses, shopping area, industrial area, port, American quarter (brick buildings, fire escapes, water tanks on the roofs), housing estates (1970s slabs and towers, loggias), seaside (light render, arcades, roof terraces) (in the gallery, their names are in French for now: « Centre d'affaires », « Centre ancien », « Résidentiel dense », « Pavillons », « Zone commerciale », « Zone industrielle », « Port », « Quartier américain », « Grands ensembles », « Bord de mer »). The style says how its blocks are cut into parcels and what will be built on them: the size of the parcels, the built share, the floors, the setbacks, the roofs, the shops.</p>
+<p><strong>The houses of the detached houses district.</strong> The Pavillons style lays a real whole house on each built parcel, instead of the generated building: two houses ship with WorldMint ("American House" by AleixoAlonso and "Suburban House V2" by Bogdan Strielecki, CC BY 4.0, credited on the Credits page). Each house has its garage door turned to the street when it has one (the American House), with a concrete driveway from the street to it, and otherwise its front door, with a paved path to it; its front on the setback line of the parcel, and stays at least 1 m from the other limits: never on the sidewalk nor on the neighbour. A house too big for its parcel is never shrunk: the parcel keeps the generated building. The list of houses of a style is data (the style's "houses": the project folder and, for each model, the side of its front door, its share, and the measured middle of its front door and of its garage door): you can put your own there, or ask the agent. Detached-house parcels are 20 to 28 m wide, as in an American suburb; a corner parcel keeps the generated building, which keeps the setback on both streets. A house is whole up to 25 m (the generation setting <strong>houseDetailDistance</strong>), its lightened version beyond, up to the horizon. <strong>Fences</strong>: each parcel with a house is fenced, low and continuous along the street (open only on its driveway or its path), higher on the sides and at the back, one fence on a shared limit; each street has its type (white or wooden picket, chain link, wooden screen); no gate by default (<strong>gateShare</strong> 0: a gate model of your own can close the opening). The shipped fences (TampaJoey, Visthétique) are CC BY 4.0, credited on the Credits page; the list is style data ("fences"), where you can put your own. Each parcel can change its fences side by side (street, left, right, back, seen from the street): no fence, the street's fence, another shipped fence or a model of the project; the change is kept when the city is generated again (ask the agent: city_building_set with "fences").</p>
+<ol>
+<li>In the options bar of the <strong>Cities and roads</strong> tool, switch from <strong>Streets</strong> to <strong>Districts</strong>.</li>
+<li>Choose the <strong>Style</strong> of the new districts in the gallery: each style shows its color and a small silhouette of its buildings.</li>
+<li>Click on the ground to place the points of the area (a point placed near a junction snaps to it). <strong>Enter</strong>, or a <strong>double click</strong>, closes it; <strong>Escape</strong> drops it; a <strong>right click</strong> removes the last point.</li>
+</ol>
+<p><img alt="Districts mode: a &quot;Pavillons&quot; district drawn, and a style's settings in the properties" src="../assets/captures/ville-quartiers.png" /></p>
+<p>To change a district:</p>
+<ul>
+<li><strong>A click</strong> in a district chooses it: its points become handles. <strong>Drag</strong> a point to change its shape. <strong>Delete</strong> removes the chosen district (the streets stay).</li>
+<li><strong>Right click on a point</strong>: <strong>Remove this point</strong>; <strong>on a side</strong>: <strong>Add a point on this side</strong>.</li>
+<li><strong>Right click in the district</strong>: <strong>District style</strong> (the gallery), <strong>Rename the district…</strong>, <strong>Another draw</strong> (its parcels are cut another way), <strong>Delete the district</strong>.</li>
+</ul>
+<h3 id="setting-a-style-or-creating-your-own">Setting a style, or creating your own<a class="headerlink" href="#setting-a-style-or-creating-your-own" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Cities and roads</strong> section, the <strong>Districts</strong> list shows each district with its color, its style and its area. Under <strong>District styles</strong>, a click on a style opens its settings, arranged in groups: <strong>Parcels</strong>, <strong>Buildings</strong>, <strong>Shops</strong>, <strong>Streets and furniture</strong>, and its <strong>colour on the plan</strong>. Each setting has its tooltip.</p>
+<ul>
+<li><strong>Setting a style changes all its districts.</strong> To change only one, first make a <strong>New style</strong> (a copy of the open style), set it, then give it to that district (right click › <strong>District style</strong>).</li>
+<li><strong>Rename the style…</strong> changes its name; <strong>Restore this style</strong> gives a starting style its original values back; <strong>Delete the style</strong> is refused as long as a district uses it.</li>
+<li>The <strong>Facades</strong> group gives the material of each facade <strong>use</strong> of the style (brick, render, stone, tiles, and the entrance <strong>Steps</strong>, a granite without joints by default, and the length of their <strong>Step blocks</strong>…): made, or a project material, with the same <strong>Choose online…</strong>. It also has the <strong>Grime decal</strong>, a project image with transparency (an ambientCG <code>Leaking</code> decal, for instance, chosen online among the <strong>decals</strong>). This setting is <strong>prepared</strong>: facade placement will use it later, with real decals; the computed facade grime has been removed, so it has no effect for now.</li>
+<li>The <strong>Streets and furniture</strong> group is used by <strong>Generate a city</strong>: the street layout of the district (grid, organic or suburban), the size of the blocks, the profile of its streets, its place in the city (<strong>Centrality</strong>, <strong>By the water</strong>).</li>
+</ul>
+<p>Each gesture can be undone with <strong>Ctrl+Z</strong>; a dragged slider makes only one step.</p>
+<h3 id="the-density-of-a-district">The density of a district<a class="headerlink" href="#the-density-of-a-district" title="Permanent link">&para;</a></h3>
+<p>Each district has its <strong>type</strong> (its style: old town, business, houses, working-class district, upmarket district…), which sets its look, and a <strong>Density</strong>, from 0 to 100 %, which tunes that type from one district to the next. Choose the district in the <strong>Districts</strong> list: the <strong>District density</strong> slider appears under it.</p>
+<ul>
+<li><strong>Higher</strong>: smaller blocks, narrower and shallower parcels, more built parcels, deeper buildings (less wasted yard) and taller ones, fewer gardens.</li>
+<li><strong>Lower</strong>: large blocks, large plots, more setback from the street, lower buildings, more gardens.</li>
+<li><strong>50 %</strong>: the style as it is set. It is the density of a district of an older city: nothing changes there until you move the slider.</li>
+</ul>
+<p>The <strong>Generate a city</strong> window also has a <strong>Density</strong>, given to every district of the new city; it also changes the size of the blocks of its streets. You then set it district by district. Two types go with it: the <strong>working-class district</strong> (<em>Quartier populaire</em>: joined, tight buildings of 4 to 7 floors, small blocks, narrow fronts) and the <strong>upmarket district</strong> (<em>Quartier huppé</em>: villas of 2 to 3 levels on large plots, deep setbacks, gardens, pitched roofs); the European mood has both, the American mood has the upmarket one.</p>
+<p>What the density changes, style by style, is in the styles file (<code>styles_quartier.json</code>): <code>lowDensity</code> and <code>highDensity</code> give the value of some settings at 0 % and at 100 % (block size, parcels, built share, built depth, floors, setbacks, planted share); in between, WorldMint goes from one to the other. A setting absent there does not change with the density.</p>
+<h2 id="the-plan-view">The plan view<a class="headerlink" href="#the-plan-view" title="Permanent link">&para;</a></h2>
+<p>The <strong>Plan view</strong> switch (in the options bar and in the Cities and roads section) shows the city from above: the view frames the whole city, each district is filled with the color of its style, the streets are light lines at their width, with their name. Turning it off leaves the view where it is.</p>
+<p><img alt="The plan view: the districts in colors, the streets as light lines with their name" src="../assets/captures/ville-vue-plan.png" /></p>
+<h2 id="parcels-and-their-changes">Parcels and their changes<a class="headerlink" href="#parcels-and-their-changes" title="Permanent link">&para;</a></h2>
+<p>Each block (the space between streets) is cut into <strong>parcels</strong> along its streets, by the style of its district: their width on the street, their depth, the built share. In Districts mode and in the plan view, each parcel is drawn with a thin outline; an <strong>open</strong> parcel (yard, garden, parking) is hatched in pale green, a parcel <strong>without access</strong> (too narrow, or the ground too high or too low compared to the sidewalk) is red, a <strong>changed</strong> parcel has a small mark. On hover, a tooltip gives its street and side, its frontage, depth, slope, district, style and access. The cutting is redone in the background: "Cutting the parcels…" in the status line.</p>
+<p>In Districts mode, a <strong>right-click on a parcel</strong> offers, at the top of the district menu:</p>
+<ul>
+<li><strong>Leave open (yard, garden, parking)</strong>, or <strong>Build</strong> for an open parcel;</li>
+<li><strong>Style of the parcel ▸</strong>: another style for this parcel only;</li>
+<li><strong>Back to the generation</strong>: removes its change.</li>
+</ul>
+<p>Each change is one step, undone by Ctrl+Z. It stays on its parcel when the city is rebuilt (a node moved, a style set), and follows it when its street is cut by a new junction. When its street is removed, it <strong>no longer holds</strong>: nothing is lost, the Cities and roads section lists it under <strong>Changes that no longer hold</strong>, with the reason. <strong>Reattach to the nearest</strong> gives it to the parcel nearest to where it was; <strong>Delete the change</strong> removes it.</p>
+<h2 id="buildings-mode">Buildings mode<a class="headerlink" href="#buildings-mode" title="Permanent link">&para;</a></h2>
+<p>In the tool bar, <strong>Streets | Districts | Buildings</strong>: in <strong>Buildings</strong> mode, the buildings of the city are worked out in the background ("Working out the buildings…" in the status line); the editor never freezes. The building under the mouse gets a thin outline; a <strong>click</strong> selects it (a bold outline). A click away from any building, or <strong>Esc</strong>, selects nothing.</p>
+<p>The <strong>building panel</strong> opens in the Cities and roads section:</p>
+<ul>
+<li><strong>its parcel</strong>: its street and side, its frontage, depth and slope;</li>
+<li><strong>Style</strong>: another style for its parcel only;</li>
+<li><strong>Height (floors)</strong>: the floors above the ground floor, with the height in metres next to it;</li>
+<li><strong>Roof</strong>: Flat, Pitched or Terrace;</li>
+<li><strong>Facade</strong>: the recipe of the windows, doors and balconies;</li>
+<li><strong>Wall</strong>: the wall material, with its swatch, among those of its style; <strong>Other…</strong> gives those of the other styles of the city;</li>
+<li><strong>Tint</strong>: the colour of the wall; <strong>Drawn tint</strong> gives back the one of the generation;</li>
+<li><strong>Shop</strong>: None, a kind, or <strong>Drawn by the style</strong>;</li>
+<li>for a two-wing <strong>corner building</strong> only: <strong>Corner shape</strong> (Sharp, Cut corner or Rounding) and <strong>Corner use</strong> (the use of the corner ground floor: Shop, Café, Hotel, Housing, Pharmacy, Bank or Bakery: the shop fronts, the sign, the blind or the terrace of the corner face);</li>
+<li><strong>Changes to this building</strong>: each changed setting, with its cross to remove it;</li>
+<li><strong>Replace with…</strong>: <strong>A model from the library…</strong> puts a model of the project in its place, as a landmark (its +z side facing the street); <strong>Nothing: I build it myself</strong> leaves the parcel empty, as a landmark, for your own objects; its name shows above it in the view, and the empty parcel is outlined with dashes;</li>
+<li><strong>Lock</strong>: the building stays as it is, whatever becomes of its style or the seed of the city; a padlock shows above it. <strong>Unlock</strong> gives it back to the generation;</li>
+<li><strong>Back to the generation</strong>: removes all its building changes (its style and use stay).</li>
+</ul>
+<p>A <strong>right-click on a building</strong> gives the same actions, plus <strong>One floor higher</strong> and <strong>One floor lower</strong>. Each change is one step, undone by Ctrl+Z; it stays on its parcel when the city is rebuilt.</p>
+<p><strong>Moving a building inside its parcel.</strong> The chosen building has a <strong>handle</strong>: a dot at the foot of its street front. With the mouse over it, it turns mint. Drag it: the outline of the building on the ground follows the mouse, toward the street, toward the back or sideways. It stops at the edge of its parcel: never on the sidewalk, never on the neighbour, and it keeps its size. Released, the handle sets the building's <strong>Shift</strong>, in one step (Ctrl+Z undoes it). <strong>Escape</strong> during the drag leaves it where it was. If it already touches the edge on the side you drag toward, it does not move: the handle turns orange and a sentence says why.</p>
+<p><strong>Swapping two buildings.</strong> Drag the handle and drop it on another building: its parcel is outlined in mint while you hover it. The two buildings swap places: each takes the height, roof, facade, wall, tint and shop of the other, in the shape of its new parcel. It is one step (Ctrl+Z undoes it), and the swap stays when the city is regenerated. A landmark, a locked building, a two-wing corner building or a court building does not swap: the handle turns orange and the sentence says why. Not in this version: turning a building freely, or placing it across two parcels.</p>
+<p><strong>The ground under the buildings.</strong> The city lays a <strong>slab</strong> on each paved parcel: a flat ground, at least as high as the sidewalk, with a joint all around. In Buildings mode, a <strong>click on the ground of a parcel</strong> (beside the building) chooses its slab: its outline turns mint and the <strong>Ground</strong> panel opens:</p>
+<ul>
+<li><strong>Material</strong>: a solid made material (concrete, asphalt, slabs, setts, granite, brick…; no metal, no grime) or a project material, as for the ground of a style;</li>
+<li><strong>Height</strong>: its height above the sidewalk, in metres (0: level with the sidewalk, never below). Under a building, the slab keeps the building's height;</li>
+<li><strong>Draw a slab</strong> (also in the tool bar): drag a rectangle in a parcel. It <strong>snaps</strong> to the edges of the other slabs and of the parcel. The new slab replaces the ground under it and is laid at the same level, with a single joint between the two. It first takes the material of the slab where you started: change it afterwards in the panel. For a ground <strong>half concrete, half asphalt</strong>, draw a slab over half of the parcel and give it asphalt;</li>
+<li><strong>Remove this slab</strong> (or <strong>Delete</strong>): for an added slab, the ground underneath comes back;</li>
+<li><strong>Back to the city's ground</strong>: removes all the added slabs and changed materials of the parcel.</li>
+</ul>
+<p>Each gesture is one step that Ctrl+Z undoes; it stays when the city is regenerated. <strong>Esc</strong> no longer chooses a slab, or stops the drawing.</p>
+<p>A <strong>landmark</strong> is also chosen with a click, on its parcel. Its panel gives:</p>
+<ul>
+<li><strong>Name</strong>: <strong>Rename…</strong> opens the field, Enter sets it;</li>
+<li><strong>Model</strong> (<strong>Change the model…</strong>): another model of the project, or <strong>Nothing: I build it myself</strong>;</li>
+<li><strong>Turn by 90°</strong>: a quarter turn, to put its front on the street side;</li>
+<li><strong>Size</strong>: <strong>Real size</strong> (measured on the model) or <strong>Fit to the parcel</strong>;</li>
+<li><strong>Ground level</strong>: the height of the model set at the sidewalk level. <strong>Measured</strong> takes the largest flat surface near the bottom of the model (a car park, a lawn, the ground floor): a pool or a basement goes below the street instead of lifting the model; within half a metre of the bottom (a plinth, a walkway), the bottom of the model stays at the sidewalk. <strong>Set by hand</strong>: a height in metres above the bottom of the model (it starts from the measured one);</li>
+<li><strong>Tied objects</strong>: the scene objects you placed on the parcel and tied to it; a click in the list selects one. <strong>Tie the selected objects</strong> adds the objects selected in the scene; <strong>Untie</strong> removes the selected ones (they stay in the scene). A tied object follows the parcel if the street moves; it is tied to one landmark only.</li>
+</ul>
+<p>The building settings of a <strong>style</strong> (Districts mode, <strong>Buildings</strong> group of its settings): besides the floors, heights, setbacks and roofs, <strong>Facade</strong> (the recipe), <strong>Facade kit</strong> (<strong>Made modules</strong>, or a folder of models of the project), <strong>Wall materials</strong> (each with its swatch and <strong>Replace with a project material…</strong>; <strong>Add a material</strong>, the cross to remove it), <strong>Wear</strong> (the share of New, Worn and Cracked, in %; the shares always add up to 100%, changing one adjusts the others), <strong>Side gap</strong> (min and max; 0: buildings touch), <strong>Top floor step back</strong>, <strong>Roof pitch</strong>, then, for two-wing corner buildings, <strong>Corner shape</strong> (the share of Sharp, Cut corner and Rounding, in %) and <strong>Corner use</strong> (the share of each use of the corner ground floor, in %), like the wear, the <strong>Radius of the rounded corner</strong> and the <strong>Width of the cut corner</strong> (in metres). Each change is one step; a locked building does not change.</p>
+<p>Two buildings close together without touching do not look into each other's windows: a wall that is not on the street and faces another building of the block closer than <strong>Blind wall when facing</strong> (4 m by default) has no window there; closer than <strong>Few windows when facing</strong> (8 m by default), it keeps one small window in two or three, never opposite the neighbour's. The distance is measured straight out from the wall, across its whole width: only the close part of a wall changes, and a floor that sees over the roof opposite keeps its windows. Street fronts never change. 0 and 0: the rule does not apply.</p>
+<h2 id="shops">Shops<a class="headerlink" href="#shops" title="Permanent link">&para;</a></h2>
+<p>Each district has its <strong>shop share</strong> (the <strong>Shops</strong> group of the style) and the <strong>kinds</strong> it draws: convenience store, clothing store, bank, café, gas station, pharmacy, bakery… The kinds come from a catalogue (the extension's <code>commerces.json</code> file), where each has its shown name ("Convenience store", not <code>superette</code>), the corner use it takes on a corner building (a green cross only on a pharmacy, a bank front only on a bank), the patterns of its shop names, a logo (an image of the project) and its hours. You can add your own: in the style, <strong>Add a kind</strong> then <strong>Other kind</strong>, or by asking the agent.</p>
+<p><strong>Where shops go.</strong> The share of the district is multiplied by the <strong>Shop weight</strong> of the street's profile (the <strong>Edges</strong> group of the profile): 150% along avenues, boulevards and pedestrian streets, 100% in a street, 30% in a back lane. Shops line the big streets, as in real towns.</p>
+<p><strong>The name of a shop.</strong> The city draws a name from the kind, always the same for the same seed: "Café des Tilleuls", "Corner Café". Common names only, never a brand or a real person. In Buildings mode, click a shop: its panel shows its kind and its <strong>Shop name</strong>; <strong>Rename the shop…</strong> changes it (Enter sets it, Ctrl+Z undoes it), the arrow gives back the drawn name.</p>
+<p><strong>Shops you can visit.</strong> The <strong>Visitable share</strong> of the style says which share of its shops will have an interior to visit (25% by default); the <strong>Visitable</strong> box in a shop's panel sets it for that shop alone. A visitable shop has its <strong>room</strong> behind the window: a tiled or wooden floor depending on its kind (<code>floor</code> in the catalogue), plastered walls, a ceiling with lit ceiling lights, and its furniture from the <strong>recipe</strong> of its kind. Its <strong>glass door</strong> is open: in Play, you walk in and out, with no loading screen; elsewhere the facade stays a wall. Nearer than the <strong>Interior range</strong> (30 m by default, generation settings), the window is clear and shows the lit room; farther, it shows the fake shop. The <strong>Interior depth</strong> (12 m at most) bounds the room, which always stops before the back of the building. A shop front without a glass door shows its room but does not open; a stepped or two-wing building has no room yet.</p>
+<p><strong>Interior recipes.</strong> Each kind of the catalogue may have a recipe (<code>interior</code>) that furnishes its room, as data: the width of the aisles (<code>aisle</code>, 1.2 m at least) and items sorted by <strong>zone</strong> — the <strong>counter</strong> (by the door, at the back, or at the back facing the door — <code>face</code>, centred and sized to the room —, the seller behind it, the till on it; behind it, bread shelves or shelving along its length, and a sign: a lit green cross, no brand), items <strong>against a wall</strong> (fridges, shelves, plants), the <strong>shop window</strong> (low displays along the windows, which do not hide the street), <strong>sales</strong> (rows of shelves, cut by aisles), the <strong>room</strong> (round or square tables and their chairs) and the <strong>ceiling</strong> (ceiling lights). Each item has a <strong>role</strong> (shelf, fridge, counter, till, table, chair, display, ceiling light, decoration; and clothes rack, folding table <code>etal</code>, fitting room, mirror, teller window, queue post, desk, cash machine, chilled display case, bread shelves <code>pain</code>, mannequin, bench <code>banquette</code>), its sizes, its gap and its count (a <code>centre</code> island stands in the middle of the room, in front of the counter; a <code>paint</code> colour paints the body of a made piece, such as the white shelving of a pharmacy) — or, with <code>per</code>, the m² of floor for each: the number then follows the area, and a large room fills up like a real shop. In the room zone any role stands as an island (a <code>rond</code> rack becomes a round rack). The walls of a kind (<code>walls</code>) have their paint, a lower part (wood panels or tiles) and a ceiling: plaster, a suspended tile ceiling with light panels (<code>dalles</code>) or track spotlights (<code>rails</code>). An aisle always stays free from the door to the back and to the till; what does not fit is left out. Six kinds have theirs: the <strong>convenience store</strong> (rows of shelves, lit glass fridges at the back, till by the entrance), the <strong>café</strong> (counter at the back, tables and chairs, a display in the window), the <strong>clothing store</strong> (racks on the walls, alternating rows of racks and folding tables, round racks, mannequins, a bench, clothes on hangers in twelve shades, curtained fitting rooms and a mirror at the back, till by the door, wood panelling and track spotlights), the <strong>bank</strong> (teller windows behind a glass screen on a counter across the whole back, a queue between two rows of strap posts, advisers' desks in the room facing the entrance with a visitor's chair, benches, plants, an unbranded cash machine by the entrance, no cash register, wood panelling, a suspended ceiling, a marble floor with the online library), the <strong>pharmacy</strong> (white shelving full of boxes on every free wall, low gondolas in the middle, a counter facing the entrance with shelving behind it and a lit green cross above, tiles, pale green walls and a suspended ceiling) and the <strong>bakery</strong> (a long counter facing the entrance with its chilled pastry case, bread shelves behind it along its whole length and on the walls, tables of bread baskets in the window and as islands in the middle, tiered cake stands, a few standing tables, subway tiles two metres high); the gas station keeps an empty room for now (its parcel shape, canopy and pumps, will come). The furniture is made by WorldMint, in simple shapes; solid furniture stops the character (chairs do not). The recipe also keeps the <strong>stops</strong> of customers (in front of shelves, at the till, at the chairs) and the <strong>seller's place</strong>, for the customers and sellers to come. A recipe is changed with the agent (<code>city_shop_kind_set</code>).</p>
+<p><strong>Hide or replace a piece of furniture.</strong> Each piece has a fixed name, its role and its rank in the room ("rayon#3", "comptoir#1"): the same when the city regenerates the same way. In the panel of a visitable shop, the <strong>Furniture</strong> list (folded) shows them one by one, with <strong>Hide</strong> (nothing takes its place, and one walks where it was) and <strong>Replace with…</strong> (one of your project models, or the made piece again); it is kept when the city regenerates. A model is placed by its measured bounds in the place of the piece: at its real size (scaled down only if it does not fit), its front turned like the piece, on the floor (a ceiling light hangs from the ceiling); several copies line up along a shelf when they fit. For every shop of a kind, the recipe accepts <code>model</code>, <code>front</code> (the axis the model's front faces; by default <code>+z</code>, except a shelf, fridge, display or counter much shallower along X than along Z, turned to <code>+x</code>) and <code>off</code>. <strong>The goods of a piece of furniture.</strong> Under each stocked piece, its goods, with <strong>Change the goods…</strong> (tick the goods shipped with WorldMint or add one of your models; <strong>Those of the kind</strong> goes back to the recipe) and <strong>No goods</strong> (the piece stays, empty); it is kept when the city regenerates. The agent does the same with <code>city_building_set</code> (<code>interior</code> <code>goods</code>, by piece or by role) for one shop, and <code>city_shop_kind_set</code> (the <code>goods</code> of a recipe line) for the whole kind. A bakery keeps its bread behind the counter, in the wall of baskets tilted toward the customers, the baguettes leaning in tall baskets; its pastries in the counter's display case.</p>
+<p><strong>The wall behind the counter.</strong> A back counter always has something on the wall behind it: the café's bottles, the bakery's wall of bread baskets, the pharmacy's shelves, or closed <strong>cabinets</strong> (role <code>armoire</code>: low cabinets with a worktop, tall ones above, a handle per door, wood or the item's <code>paint</code> colour), which cover the whole wall behind the counter and its passage; the bank has them. Above them, the top of the wall is dressed too: a wooden <strong>band</strong> under the ceiling (role <code>bandeau</code>), the <strong>sign with the shop's name</strong> (role <code>enseigne</code> with place <code>nom</code>: the name in gold letters on a dark panel, or the <code>paint</code> colour) and <strong>frames</strong> on both sides (role <code>cadre</code>, <code>count</code> at most); the bank has them.</p>
+<p><strong>The bar and the walls.</strong> The café has a real bar at the back: the counter dressed with battens and a foot rail, the espresso machine on the counter, and behind it, against the wall, a low back bar and three shelves of bottles (roles <code>machine</code> and <code>bouteilles</code> of the recipe). The walls of the room are dressed by kind (<code>walls</code> in the catalogue): a paint of the chosen colour and a lower part in wood panels or tiles. The shelves of a model can take goods (<code>goods</code>): they line up on its measured shelves, facing the customers. A whole bar from a pack (the counter and the back wall with its shelves, as one model) is set with the <code>bar</code> place of the counter line: in one piece against the back wall, centred, at its real size (up to 30 m, bounded by the room width), its customer side facing the room; the till and the machine go on its real measured worktop, and the made back bar and bottles are not set. If it does not fit in the room it is never shrunk: the made counter replaces it, and the editor and the agent say so. The images of an FBX cited on its author's disk are looked for by name in the model's folders, and those plugged into the diffuse color of a 3ds Max V-Ray material are read, its reflection glossiness and strength becoming a roughness (never a mirror).</p>
+<p><strong>Dressing the room.</strong> In the panel of a visitable shop, the <strong>Room</strong> section (folded) sets the <strong>Floor</strong>, the <strong>Lower walls</strong>, the <strong>Walls</strong> and the <strong>Ceiling</strong>: each takes a material of your project from the same list as the other materials of the city, or <strong>The city's own</strong>; the arrow gives back the kind's. The size of the pattern is the one written in the material (its real size when it comes from the online library). <strong>Wall colour</strong> and <strong>Ceiling colour</strong> set the paint. When ticked, <strong>For every shop of this kind</strong> writes the choice into the kind: all its shops take it, except those that have their own. It is kept when the city regenerates. The furniture made by the city (counters, back counters) also takes real materials of its kind: the wood of the bodies (<code>furnitureMaterial</code>) and of the worktops (<code>worktopMaterial</code>).</p>
+<p><strong>Room size.</strong> Each kind of shop has a largest room: its width along the shop window and its depth from it (a convenience store 18 × 14 m, a bank 14 × 11 m, a clothing store 12 × 12 m, a gas station 12 × 10 m, a pharmacy 11 × 11 m, a café 10 × 11 m, a bakery 10 × 10 m: a neighbourhood shop, not a hangar). A larger ground floor keeps a room of that size around the door; the rest becomes a closed back room, behind a full wall, with a closed door marked "Privé" (nobody goes in). The shop window stays whole: beyond the room, its glass shows the fake shop. Furniture counted by area (<code>per</code>) follows the limited room, and the free aisle from the door to the back and to the till stays. In the <strong>Room</strong> section of the panel, <strong>Largest room width</strong> and <strong>Largest room depth</strong> set it (0: no limit), for this shop or, with the box ticked, for its whole kind; the line below gives the size of the room and the size the ground floor allowed. The agent does the same with <code>city_shop_kind_set</code> (<code>room</code>: <code>width</code>, <code>depth</code>, <code>privateLabel</code>) and <code>city_building_set</code> (<code>interior</code> <code>roomWidth</code>, <code>roomDepth</code>).</p>
+<p><strong>Furniture from the online library.</strong> The common furniture (shelves, till, round tables, chairs, plants, lights, plastic crates) can come from Poly Haven (public domain, CC0): the list of models by role is in <code>contenu/meubles_bibliotheque.json</code>. The agent adds them to the project through the online library, with their licence, when the Poly Haven source is on; the pieces proper to a shop (gondolas, fridges, counter) stay made by WorldMint. Without Poly Haven or without network, the made pieces stay, with no error.
+<strong>Storefronts.</strong> Each shop has a ground-floor style, drawn among those of its kind: <strong>Classic painted shopfront</strong> (painted wood, pilasters, fascia and cornice, panelled stall riser, fanlight), <strong>Modern glass front</strong> (thin aluminium frame, one big pane, flat fascia), <strong>Stone arcade front</strong> (stone arches between stone piers), <strong>Café with a covered terrace</strong> (striped awning on posts over the terrace, only where the pavement leaves a free way), <strong>Bank with columns</strong> (paired stone columns, entablature, grille in front of the glass), <strong>Simple local shop</strong> (metal frame, coloured fascia, canopy). Each shop takes one colour of its style's palette for its woodwork, fascia and awning. In a shop's panel, <strong>Storefront</strong> chooses another one (the dots show its colours); None gives back the plain shop front of the facade. The styles are in the extension's <code>devantures.json</code> file; the agent changes them or creates new ones.</p>
+<p><strong>Storefront colours and materials.</strong> Each shop draws its two colours from the palette of its style: the first for the woodwork, the fascia and the awning, the second for one stripe out of two of the awning. In its panel, <strong>Storefront colour</strong> and <strong>Second colour</strong> choose them by hand (the arrow gives back the drawn colour). The bank has real classical columns (fluted shaft, moulded base, capital, entablature) and a wrought-iron grille; its columns, ornaments and grille each have their own material (stone, dark stone, marble, wrought iron), which the agent changes by style or by shop. No furniture is made on the pavement: room for a terrace is kept for models of the project, later.</p>
+<p><strong>Signs.</strong> The name of each shop is written in real letters, in the Manrope font shipped with WorldMint: <strong>raised letters</strong> (their sides light up at night), <strong>light box</strong> (a box that glows at night, with the name and a fallback logo: a disc with the initials), <strong>neon</strong> (a tube following the outline of the letters), <strong>painted letters</strong> on the fascia, or painted letters and a <strong>flag</strong> with the initials on the first floor. Each storefront says which signs suit it; the agent chooses another one per shop. Signs light up when night falls, like the other lights of models, and only during the shop's opening hours: the sign, the ceiling lights and the lights of the room of a shop you can visit follow the hours of its kind (a convenience store from 7 am to 10 pm; two equal hours: always open, like the gas station), at the hour of the realistic sky. Without the realistic sky, they stay on. A name too long for the shop front gets no sign rather than unreadable letters.</p>
+<p><strong>Shops you can visit.</strong> The <strong>Visitable share</strong> of the style says which share of its shops will have an interior to visit (25% by default); the <strong>Visitable</strong> box in a shop's panel sets it for that shop alone. A visitable shop has its <strong>room</strong> behind the window: a tiled or wooden floor depending on its kind (<code>floor</code> in the catalogue), plastered walls, a ceiling with lit ceiling lights, a simple counter at the back. Its <strong>glass door</strong> is open: in Play, you walk in and out, with no loading screen; elsewhere the facade stays a wall. Nearer than the <strong>Interior range</strong> (30 m by default, generation settings), the window is clear and shows the lit room; farther, it shows the fake shop. The <strong>Interior depth</strong> (12 m at most) bounds the room, which always stops before the back of the building. A shop front without a glass door shows its room but does not open; a stepped or two-wing building has no room yet. Furniture comes in the next versions.</p>
+<p><strong>Gas stations.</strong> A gas station is a parcel form, not a ground floor: along an avenue or an arterial (at least 4 lanes, adjustable), on a parcel large enough, the generation lays a one-storey <strong>kiosk</strong> at the back (a visitable "Gas station" shop: fridges, shelves, a counter by the door) and in front of it, on the paved forecourt, a <strong>canopy</strong> on posts (4.8 m clear, the kiosk's name on the fascia, its underside lit at night during opening hours) over 2 or 3 <strong>pump islands</strong> (a raised concrete island, a pump, yellow guards), solid in Play. The style sets their share (suburban houses and industrial zone 15%, commercial zone 10% with 3 islands); the <strong>Gas station</strong> section of the building panel (folded) and the agent change one station: present or not, islands, colours, name, logo image, replacement canopy and pump models. The forecourt is one level from the sidewalk to the kiosk. The pumps are a shipped model (credited in Credits) repainted for each station: its colours on the large flat areas, its name and a drop (or your logo image) where the logo goes, the fuel names Regular, Premium and Diesel on the labels; one change of name or colour updates the fascia and the pumps together. The kiosk's shelves hold groceries (cans, a jar, cocoa, a box, coffee), like the convenience store's. No real brand anywhere.</p>
+<p><strong>Shop windows by kind.</strong> Behind the window of a shop that is not visited (or seen from afar), a <strong>fake shop</strong> painted by its kind, so you recognise it from the sidewalk: stocked shelves for a convenience store, clothes racks, café tables, a counter with bank desks, display stands for a pharmacy or a gas station. Each kind has its light (bright white in a convenience store, warm in a café), its wall tint and its brightness (<code>window</code> in the catalogue, or ask the agent). The window <strong>follows the opening hours</strong> of its kind with the sky's hour (realistic sky, Day and night in Play): lit while open; outside its hours, the <strong>metal shutter is down</strong> if the kind wants it, sized to the opening, else the window stays dark. By default, as on US streets: a shutter for clothing, the pharmacy and the bakery; the convenience store and the gas station are open day and night (never a shutter); the bank keeps a dark window. The <strong>lit sign</strong> (neon, light box, backlit letters) lights up at night during opening hours and goes dark when the shop is closed. In a shop's panel: <strong>Shop window</strong> gives this shop alone another fake shop ("From its kind" goes back to its kind's), <strong>Shutter down after hours</strong> changes its shutter, and <strong>Settings of the kind</strong> changes the window, hours and shutter of every shop of the kind. Nothing is rebuilt as the hour goes by: the window reads the hour every frame. Without a realistic sky the hour is unknown and windows stay open.</p>
+<p><strong>Shops are places of the game.</strong> Every shop, visitable or not, has its <strong>place</strong> in the game: a small invisible object on the pavement before its door, tagged <code>commerce</code> and <code>commerce:&lt;kind&gt;</code> (<code>commerce:banque</code>, <code>commerce:superette</code>…). A mission finds it without placing anything by hand: "the nearest bank" is <code>game.near(game.player(), 2000, "commerce:banque", {asleep = true})[1]</code>, and <code>game.data(place)</code> gives its kind, its name, its door, the centre of its room, whether it can be visited and its hours. When the player walks through the door of a visitable shop, the game announces <strong>commerce.entree</strong>, and <strong>commerce.sortie</strong> when they walk out: a Trigger rule "a named event" answers it without code. Just ask the agent for "a mission: go to the nearest bank".</p>
+<p><strong>Clerks and items.</strong> The system <strong>Shops of the city</strong> (<code>commerces</code>, Systems panel) makes each visitable shop a merchant, without code: when the player comes near (40 m by default), a <strong>clerk</strong> stands behind the counter, at the place the kind's recipe left for them, facing the room, with their model's idle clip; used (E), they open the <strong>Shop</strong> in the shop's name, with the items of its kind, their price and stock; buying takes the inventory's money, as with any merchant. The clerk is a character of your project (usually hidden), chosen by kind or for one shop: without a character, no clerk. In the panel of a visitable shop, the folded section <strong>Clerk and items</strong> picks the <strong>Character</strong> and adds or removes items, for the kind or, with <strong>For this shop only</strong>, for it alone; the money and the distance at which clerks appear are settings of the system. The stock stays with the shop when the clerk leaves and comes back. A purchase announces <strong>commerce.achat</strong>; scripts read the items, buy or find the clerk of a shop (<code>shared.commerces</code>), and change the clerk, the items or the opening through <code>game.override</code> (<code>commerces.vendeur</code>, <code>commerces.articles</code>, <code>commerces.ouvert</code>). Ask the agent "the grocery sells sodas at 2 dollars, kept by this character".</p>
+<h2 id="near-and-far-the-facade-distance">Near and far: the facade distance<a class="headerlink" href="#near-and-far-the-facade-distance" title="Permanent link">&para;</a></h2>
+<p>Each block is drawn with its full facades up to the <strong>Facade distance</strong> (in the section, under <strong>Generation settings</strong>; 160 m by default), and beyond as a light box of the same shape: the walls with their real material and tint, the roof, the plinth, a simple plate for anything standing out more than 50 cm (balconies, awnings, fire-escape landings, arcades), and the same windows in the same places, lit the same at night. The two fade into each other by dithering, without a jump. <strong>Medium</strong> quality multiplies the distance by 0.75 (120 m), <strong>Low</strong> by 0.5 (80 m). <strong>0</strong> keeps the full facades everywhere, with no box: slower in a big city. The box of a 30-storey tower takes about a hundred triangles, against more than 13,000 for its full facade.</p>
+<p>The agent sets it too (<code>city_style_set</code>, <code>kind: "generation"</code>, <code>values: {"facadeDistance": 200}</code>).</p>
+<h2 id="a-facade-kit">A facade kit<a class="headerlink" href="#a-facade-kit" title="Permanent link">&para;</a></h2>
+<p>A <strong>facade kit</strong> is a folder of project models (windows, doors, shop fronts, wall panels, bought or made by you) that the buildings of a style use instead of the modules WorldMint makes. The folder is chosen in the <strong>Buildings</strong> group of the style (<strong>Facade kit</strong>); it is described by a <code>kit.json</code> file, placed in the folder itself. The models are never changed.</p>
+<p><strong>Describe the kit…</strong> (under <strong>Facade kit</strong>) opens the panel that writes this file. Each model of the folder is shown with its thumbnail and its measures (« 1.20 × 1.50 × 0.30 m, 412 triangles »). For each one, you choose:</p>
+<ul>
+<li><strong>Role</strong>: Window, French window, Door, Building entrance, Shop front, Garage, Pier (plain wall), Curtain wall, a band (<strong>Base</strong>, <strong>String course</strong>, <strong>Cornice</strong>), a piece of a band (<strong>Band end</strong>, <strong>Band corner</strong>), or <strong>Not in the facade</strong> (a door leaf, a piece for another use);</li>
+<li><strong>Front</strong>: the side of the model that faces the street; each of the four buttons shows the model turned as it would be placed;</li>
+<li><strong>Weight</strong>: its share among the models of the same role and size;</li>
+<li><strong>Replaces the wall</strong>: the model carries its own wall, nothing is made behind it;</li>
+<li><strong>Leaf</strong> (for a door): another model of the folder, placed in the frame;</li>
+<li><strong>Nodes</strong> (for a piece taken from a node): « Add a node to this piece » lays another node of the same file with it, at its place in the file (a pierced wall and its window stored apart); the leaf can be a node too;</li>
+<li><strong>Bays</strong> and <strong>Floors</strong>: the room it takes (a garage door over two bays, a glazed bay over three floors); the cells it covers get nothing else;</li>
+<li><strong>Band</strong> and <strong>Side</strong> (for a <strong>Band end</strong> or a <strong>Band corner</strong>): the band it ends or turns (base, string course, cornice), and the side it is drawn for, seen from the street. An end is laid where its band stops short (against a door or a shop front down to the ground, against a party wall, at the end of a face), mirrored for the other side. A corner (an L-shaped model) is laid at a square salient corner instead of the mitre: its front leg along the wall, its return leg going back, measured from its bounds. Without them, the bands stay as before. In <code>kit.json</code>: <code>"band"</code> and <code>"side"</code> (<code>"start"</code> or <code>"end"</code>);</li>
+<li><strong>Maximum projection</strong> (for a band): how far it stands out in front of the wall at most; a deeper model is flattened against the wall when laid, its shape kept. « By role »: 5 cm for a base (a base stays a flat band against the wall), no limit for a string course or a cornice. In <code>kit.json</code>: <code>"proud"</code>, in metres.</li>
+</ul>
+<p>For the whole kit: <strong>Allowed stretch</strong> (in %) and the <strong>Kit materials</strong>, where each material name read in the models gets its place: Wall, Glass, Frame, Door, Metal or Trim (a material not chosen is a trim). Nothing is filled in advance from a file or material name: everything is your choice. The problems of the kit (a model that cannot be read, without triangles, too heavy) are shown at the top of the panel.</p>
+<p>The <strong>bands</strong> of the kit are laid along the facade, in place of the bands WorldMint makes: the <strong>base</strong> at the bottom, all around the building, cut at the doors; the <strong>string course</strong> where the recipe has a band (the closest in height, if there are several); the <strong>cornice</strong> at the top, where the recipe has a cornice. Each keeps the height of its model, is repeated per bay (stretched to fit) and mitred at the corners. Without a band of a role, the made band stays.</p>
+<p><strong>Save the kit</strong> writes <code>kit.json</code> in the folder; the old one is kept as <code>kit.json.bak</code>. A file is not a step of the history: Ctrl+Z does not undo it.</p>
+<p>What is measured, when the kit is read: the size of each model turned towards the street, its triangles (above the limit for a kit piece, it is simplified), and its <strong>plain wall</strong>, the part of its wall plane that reaches its edges. What is not: its role, its front and its materials, which only you describe. To fill a cell larger or smaller than itself, a model with plain wall around its opening stretches <strong>in nine cells</strong>: only the wall bands grow or shrink, the opening, its frame and its mouldings keep their size, and the brick keeps its density. Without plain wall, the model stretches as one block, by at most the <strong>Allowed stretch</strong>; beyond that, the cell keeps the made module.</p>
+<p>For now, the kit is described, read and checked (<code>city_check</code> reports a kit with a problem); placing its pieces on the buildings comes in a later version.</p>
+<h2 id="the-game-map">The game map<a class="headerlink" href="#the-game-map" title="Permanent link">&para;</a></h2>
+<p>The <strong>Make the game map</strong> button, under the plan view in the Cities and roads section, writes the image of the plan seen from above (the districts in the colour of their style, the painted paths in the shade of their material, the sidewalks and roadways in light greys, without text) to <code>cartes/plan_ville.png</code>, in the project folder. If the game has the <strong>Map</strong> system, the image becomes its drawn map, with the area it covers: the game minimap shows the city, north up. It is one step: Ctrl+Z brings back the previous map. Without the Map system, the image is only written, and the log says so. Make the map again after changing the city.</p>
+<h2 id="shortcuts">Shortcuts<a class="headerlink" href="#shortcuts" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Gesture</th>
+<th>In Streets mode</th>
+<th>In Districts mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Click</strong> on the ground</td>
+<td>Places a point of the street</td>
+<td>Places a point of the area</td>
+</tr>
+<tr>
+<td><strong>Enter</strong>, <strong>double click</strong></td>
+<td>Ends the street</td>
+<td>Closes the area</td>
+</tr>
+<tr>
+<td><strong>Right click</strong> while drawing</td>
+<td>Removes the last point</td>
+<td>Removes the last point</td>
+</tr>
+<tr>
+<td><strong>Escape</strong></td>
+<td>Drops the drawing, or clears the choice; otherwise puts the tool away</td>
+<td>Same</td>
+</tr>
+<tr>
+<td><strong>Click</strong> on a street, a district</td>
+<td>Chooses the street</td>
+<td>Chooses the district</td>
+</tr>
+<tr>
+<td><strong>Drag</strong> a node, a point</td>
+<td>Moves the street (a single step)</td>
+<td>Changes the district's shape</td>
+</tr>
+<tr>
+<td><strong>Right click</strong> on a street, a junction, a district</td>
+<td>Profile, name, delete; roundabout</td>
+<td>Style, name, another draw, delete; remove or add a point</td>
+</tr>
+<tr>
+<td><strong>Delete</strong></td>
+<td>Deletes the chosen street</td>
+<td>Deletes the chosen district</td>
+</tr>
+<tr>
+<td><strong>Ctrl+Z</strong>, <strong>Ctrl+Y</strong></td>
+<td>Undo, redo</td>
+<td>Undo, redo</td>
+</tr>
+</tbody>
+</table>
+<h2 id="with-the-agent">With the agent<a class="headerlink" href="#with-the-agent" title="Permanent link">&para;</a></h2>
+<p>The agent works on the same plan as you, with its own tools:</p>
+<table>
+<thead>
+<tr>
+<th>Agent tool</th>
+<th>What it does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>city_generate</code></td>
+<td>Generates a whole city (a size, districts, a seed). It asks you before replacing yours. It also lays out a town in a zone (an outline, or a turned rectangle), with its ambiance and its name, next to the others. In a scene without terrain, it makes a flat ground under the city, in the same step (one Ctrl+Z removes both); the ground materials the city turns on (its grass, its painted paths) enter the project in that same step.</td>
+</tr>
+<tr>
+<td><code>city_town_set</code></td>
+<td>Renames a town, lays it out again in its zone with another seed (in a scene without terrain, it first makes the same flat ground as <code>city_generate</code>), or deletes it.</td>
+</tr>
+<tr>
+<td><code>city_road_add</code></td>
+<td>Adds a street between two places or two nodes, with a profile and a name.</td>
+</tr>
+<tr>
+<td><code>city_road_set</code></td>
+<td>Changes the profile, the name or the path of a street, deletes it; turns a junction into a roundabout; forces its upkeep (new, worn, cracked, patched) or gives it back to the district; chooses the material and the tint of a part of this street only (<code>materials</code>). It can also refuse a bridge on a street.</td>
+</tr>
+<tr>
+<td><code>city_get</code></td>
+<td>Reads the plan: the streets, the junctions, the districts and the styles; counts the blocks, the parcels and the buildings (landmarks, changed, locked, mean and highest floors per style), lists the parcels of a street and describes one building.</td>
+</tr>
+<tr>
+<td><code>city_check</code></td>
+<td>Looks for what is wrong: an unwanted dead end, a slope too steep, two streets crossing without a junction, a section too short, a parcel without access; and for buildings: an unknown facade recipe or wall material, a facade kit that cannot be read, a parcel too shallow for a building, a building buried in the slope, the missing model of a landmark, a building too detailed for its triangle budget.</td>
+</tr>
+<tr>
+<td><code>city_district_set</code></td>
+<td>Draws a district, changes its style, its name or its outline, redraws it, deletes it.</td>
+</tr>
+<tr>
+<td><code>city_style_set</code></td>
+<td>Creates or sets a district style (with the states and materials of its streets, the materials of its facades and its grime decal, <code>grimeDecal</code>) or a street profile (its lanes, edges, markings, materials and their states). A project material can come from the online library: the agent searches it with <code>library_search</code> and adds it with <code>library_add</code>, on the sources you chose.</td>
+</tr>
+<tr>
+<td><code>city_building_set</code></td>
+<td>Changes a parcel and its building: leave it free, build on it, give it another style; the floors, the roof, the facade, the wall, the tint, the shift, the shop; the slabs of its ground (their material, their height, an added slab); lock it as it is; replace it with a landmark (a model of the project, or the parcel left empty). It changes one remarkable building at a time: for a whole district, it changes the style. It reattaches or removes a change that no longer fits.</td>
+</tr>
+<tr>
+<td><code>city_shop_kind_set</code></td>
+<td>The catalogue of the kinds of shops: with no argument, the list (shown name, corner use, name patterns, logo, hours, floor, interior recipe) and how many shops of each kind the city has; a kind and its values change it or add one ("librairie"); an added kind can be removed. A single shop is renamed with <code>city_building_set</code> (<code>shopName</code>, <code>shopLogo</code>, <code>visitable</code>).</td>
+</tr>
+<tr>
+<td><code>city_shop_kind_set</code></td>
+<td>The catalogue of the kinds of shops: with no argument, the list (shown name, corner use, name patterns, logo, hours) and how many shops of each kind the city has; a kind and its values change it or add one ("librairie"); an added kind can be removed. A single shop is renamed with <code>city_building_set</code> (<code>shopName</code>, <code>shopLogo</code>, <code>visitable</code>).</td>
+</tr>
+<tr>
+<td><code>city_storefront_set</code></td>
+<td>The storefront styles: with no argument, the list (name, colours, params) and how many shops of the city take each; a style and its values change it or add one (<code>from</code>: copied from another); an added style can be removed. A single shop changes its storefront with <code>city_building_set</code> (<code>storefront</code>).</td>
+</tr>
+<tr>
+<td><code>city_kit_set</code></td>
+<td>Describes a facade kit: without <code>kit</code>, lists the models of the folder (size, triangles, material names) and the current <code>kit.json</code>; with <code>kit</code>, writes <code>kit.json</code> (the old one kept as <code>kit.json.bak</code>). Like <strong>Describe the kit…</strong>: nothing is guessed from a name, and it is not an undoable step.</td>
+</tr>
+</tbody>
+</table>
+<p>Each of its gestures is one step, undone with <strong>Ctrl+Z</strong>. It checks its work by looking at images of the city.</p>
+<p>A few requests: "Generate a medium city with a port and an old town", "An avenue from the port to the hill", "Make the town hall junction a roundabout", "The suburban houses to the north, more spread out", "Put the town hall on the corner of the square, and lock the building opposite".</p>
+<h2 id="what-is-saved">What is saved<a class="headerlink" href="#what-is-saved" title="Permanent link">&para;</a></h2>
+<p>The plan (streets, districts, styles, profiles) is saved in the scene. The roadway is stored in the project folder (<code>.worldmint/ville/</code>) and taken along by the export: <strong>an exported game shows the city without the extension</strong>. Outside a project, the streets only show as lines.</p>
+<p>The roadway, the sidewalks and the bridges are objects <strong>produced by the extension</strong>: they can be seen and chosen in the scene, but not moved or deleted by hand. To change them, change the plan, with the Cities and roads tool.</p>
+<h2 id="a-paid-extension">A paid extension<a class="headerlink" href="#a-paid-extension" title="Permanent link">&para;</a></h2>
+<p><strong>Cities and roads</strong> is a paid extension of WorldMint. What stays in the free engine:</p>
+<ul>
+<li><strong>games</strong>: a game made with the city plays and exports everywhere, without the extension;</li>
+<li><strong>scenes</strong>: a scene that has a city also opens without the extension; the roadway shows, and the city's plan is kept intact;</li>
+<li><strong>the generic hooks</strong> the extension uses (tools added to the editor and the agent, produced objects stored in the project, areas where the terrain sows no plants, a framed top view): they serve every extension, and are described in <a href="../extensions/">Writing an extension</a>.</li>
+</ul>
+<p>Today, the extension opens as soon as it is installed. Later, it will depend on the licence of your WorldMint account; without a licence, the editor will say so once at startup, and the city's data will stay kept in your scenes.</p>
+<h2 id="known-limits">Known limits<a class="headerlink" href="#known-limits" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>No buildings yet.</strong> The districts and their styles prepare the parcels and what will be built on them, but the buildings are not built yet.</li>
+<li><strong>A district drawn larger than its streets</strong> keeps parcels on the outer side of its edge streets (a generated city stops at the centre line of its edge streets).</li>
+<li><strong>Changes that no longer fit</strong>: their buttons can be half cut off at the bottom of the panel.</li>
+<li><strong>Two avenue junctions very close together</strong> (about twenty metres) can give a tight join: move them apart.</li>
+<li><strong>In the plan view</strong>, the names of two neighbouring streets can overlap.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../terrain/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The terrain">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                The terrain
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../lighting/" class="md-footer__link md-footer__link--next" aria-label="Next: Light and shadows">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Light and shadows
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

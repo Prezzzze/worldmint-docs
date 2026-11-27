@@ -1,0 +1,4908 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="The user guide of WorldMint, the 3D game editor where you build your game with an AI agent.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/en/reference/systems/inventaire/">
+      
+      
+      
+        <link rel="prev" href="../interface/">
+      
+      
+        <link rel="next" href="../articulation/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Inventory - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Skip to content
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Inventory
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Light theme"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Light theme" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Dark theme"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Dark theme" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Select language">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Search</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation and first launch
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Getting started
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The editor
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  The editor
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scene tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game's systems and settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Scripts tab
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The 3D view
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The library
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The properties
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus and shortcuts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Preferences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creator mode
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projects and scenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Cities and roads
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Light and shadows
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Materials
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game rules and menus
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game rules and menus
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The Trigger: "when… then…"
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animate and make cutscenes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Adjusting a character's pose
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Creating a move
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics, zones and character walking
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicles, joints and ragdolls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The game interface: screens, menus, lists, text fields
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Videos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particles and decals
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Translating your game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Saved games
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Playing with several players
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Hosting your own lobby
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Making a survival game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game controls
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sound and the sound mixer
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Display settings
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporting a game
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Writing an extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Frequently asked questions
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Your data
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What's new
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Reference
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Reference
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Every editor control
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game systems
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Game systems
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Basic combat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Building
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chests
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Companion
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Crafting
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Day and night
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Death and respawn
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Decal
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Enemies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Equipment
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fog volume
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Gathering
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Healing
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Health bar
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventory
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-en_main" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Item”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-sortes_objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Kind”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-poids_objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Kind”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-paliers_poids" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Step”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-on-each-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings on each object
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls-added-to-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controls added to the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inventory-inventaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inventory (<code>inventaire</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inventory (inventaire)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-bigger-bar-and-two-rows-version-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A bigger bar, and two rows (version 27)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kinds-of-items-and-unique-copies-version-15-off-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Kinds of items and unique copies (version 15, off by default)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-off-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Weight (off by default)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rarity-in-the-tooltip-and-jeter-version-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rarity in the tooltip and « Jeter » (version 16)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stacks-split-merge-and-drop-version-21-adr-042" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stacks, split, merge and drop (version 21, ADR-042)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-the-equipment-module-version-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        For the Equipment module (version 16)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Version 17
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Version 22
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-window-in-three-parts-version-24-disposition_fenetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The window in three parts (version 24, <code>disposition_fenetre</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Joint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Knowledge
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Loot
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Map
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Needs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Particle effect
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physics
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quetes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Quest log
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Race
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ragdoll
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ranged weapons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Round
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shop
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Shops of the city
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sounds
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Stamina
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Status effects
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Trigger
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vehicle
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  System events
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Game scripts (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  What the agent does
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  The agent's guide
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#settings-for-the-whole-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings for the whole game
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Settings for the whole game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-en_main" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Item”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-sortes_objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Kind”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-poids_objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Kind”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#champs-paliers_poids" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The fields of each “Step”
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#settings-on-each-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Settings on each object
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controls-added-to-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Controls added to the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Events">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-it-announces" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it announces
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-it-listens-to" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What it listens to
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-a-script-can-replace-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points a script can replace (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-agent-knows-about-this-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        What the agent knows about this system
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="What the agent knows about this system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#inventory-inventaire" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Inventory (<code>inventaire</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Inventory (inventaire)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-bigger-bar-and-two-rows-version-27" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        A bigger bar, and two rows (version 27)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#kinds-of-items-and-unique-copies-version-15-off-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Kinds of items and unique copies (version 15, off by default)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#weight-off-by-default" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Weight (off by default)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rarity-in-the-tooltip-and-jeter-version-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rarity in the tooltip and « Jeter » (version 16)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stacks-split-merge-and-drop-version-21-adr-042" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Stacks, split, merge and drop (version 21, ADR-042)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#for-the-equipment-module-version-16" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        For the Equipment module (version 16)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Version 17
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-22" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Version 22
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-window-in-three-parts-version-24-disposition_fenetre" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The window in three parts (version 24, <code>disposition_fenetre</code>)
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="inventory">Inventory<a class="headerlink" href="#inventory" title="Permanent link">&para;</a></h1>
+<p>What carries this system can be picked up, and the player keeps it, grouped by kind. The game can give some, take some, and react to each change. Optionally, a weight: each item weighs, the player has a maximum load, and carrying too much slows them.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifier</td>
+<td><code>inventaire</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>32</td>
+</tr>
+<tr>
+<td>Placed on objects</td>
+<td>yes</td>
+</tr>
+<tr>
+<td>Also activates</td>
+<td><a href="../interaction/">Interaction</a></td>
+</tr>
+<tr>
+<td>Also needs, on the same object</td>
+<td><a href="../interaction/">Interaction</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-for-the-whole-game">Settings for the whole game<a class="headerlink" href="#settings-for-the-whole-game" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Systems</strong> panel (Developer mode), by opening the system's card.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Most kinds of items</td>
+<td>How many different kinds of items the player can carry. Once full, they no longer pick up a new kind, but still more of the kinds they have.</td>
+<td><code>places</code></td>
+<td>Number</td>
+<td>20</td>
+<td>from 1 to 1000, as a whole number</td>
+</tr>
+<tr>
+<td>Pick up by walking over, without a key</td>
+<td>Ticked: the player picks up an item just by walking over it. Unticked: they have to use it (E by default).</td>
+<td><code>au_contact</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Reach to pick up by walking over (m)</td>
+<td>The distance, in meters, at which an item is picked up by walking over it, when picking up by contact is ticked.</td>
+<td><code>distance_contact</code></td>
+<td>Number</td>
+<td>1.2</td>
+<td>from 0.1 to 10</td>
+</tr>
+<tr>
+<td>One bag for the whole group (several players)</td>
+<td>In a game with several players: ticked, all players share the same bag; what one picks up, the others can use. Unticked, each has their own. No effect in a single-player game.</td>
+<td><code>sac_commun</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Show the content on screen</td>
+<td>Shows at the top right of the screen what the player carries, such as "Apple x3".</td>
+<td><code>afficher</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Inventory window with a key (I)</td>
+<td>Ticked: the Open the inventory control (I, or Back on a gamepad) opens a window with one slot per kind of item, and closes it. A click on a slot tells the game (inventaire.choisi).</td>
+<td><code>fenetre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Slots per row in the window</td>
+<td>How many slots the window lines up before starting the next row. Beyond four rows, the grid scrolls with the mouse wheel.</td>
+<td><code>colonnes</code></td>
+<td>Number</td>
+<td>5</td>
+<td>from 1 to 8, as a whole number</td>
+</tr>
+<tr>
+<td>Look of the inventory window</td>
+<td>A grid only: the small window from before, with one slot per item. Three parts: as in survival games, a window that fills the screen, with the character and what they wear on the left (if the game has Equipment), the bag and the hotbar in the middle, and on the right what is being searched (a chest, a body) or the details of the chosen item.</td>
+<td><code>disposition_fenetre</code></td>
+<td>Choice in a list</td>
+<td>A grid only</td>
+<td><code>grille</code>: A grid only<br><code>trois_parties</code>: Three parts: character, bag, search</td>
+</tr>
+<tr>
+<td>Width left for the character (three parts)</td>
+<td>In the three-part window, the empty space between the two columns of slots, as a share of the screen width (0.14: a little more than a seventh). Set 0 to bring the slots together.</td>
+<td><code>espace_personnage</code></td>
+<td>Number</td>
+<td>0.14</td>
+<td>from 0 to 0.4</td>
+</tr>
+<tr>
+<td>Show the character between the slots (three parts)</td>
+<td>Ticked: when the three-part window opens, the game camera turns toward the player's character, who appears in the empty space between their equipment slots, as in role-playing games. It goes back behind them when the window closes. The framing follows the character's size. No effect with the grid only, or without Equipment.</td>
+<td><code>montrer_personnage</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>A "Drop" button in the window (key G)</td>
+<td>Ticked: the whole slot can be dropped on the ground from the window, with "Drop" in the small window a click on the slot opens, the G key (the one hovered) or by dragging it out of the window. A stack falls as one object ("Wood x40") picked up in one go; a unique copy keeps its record.</td>
+<td><code>bouton_jeter</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Size of a dropped item (metres)</td>
+<td>A dropped slot takes its kind's model (the one in hand, the one kept on pickup, or an object of that kind in the world). With no model at all, a small engine shape, measured then set to this size.</td>
+<td><code>taille_jete</code></td>
+<td>Number</td>
+<td>0.3</td>
+<td>from 0.05 to 5</td>
+</tr>
+<tr>
+<td>Stop the game while the window is open</td>
+<td>Ticked: the world stops while the inventory window is open. Unticked: the game goes on behind it, enemies included.</td>
+<td><code>pause_fenetre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>A bar of items to hold in hand (keys 1 to 9, wheel)</td>
+<td>Ticked: as in survival games, a bar of slots chooses what the player holds in hand, with keys 1 to 9 (then 0, - and = beyond 9 slots), the mouse wheel or the gamepad's d-pad left (it goes round the slots). Untick it if the player never holds anything. What they pick up goes into it by itself, and the key of the slot already chosen puts the item away. The tool held is used to gather (Gathering); a game script can use it too (inventaire.en_main).</td>
+<td><code>barre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Slots in the bar</td>
+<td>How many slots the bar of items in hand has, from 1 to 12: keys 1 to 9, then 0, - and = (the top row of the keyboard) choose them. Set the number of things the player really holds: 2 for an axe and a pickaxe, 3 to 5 in a shooter, 6 to 8 in a survival game, 10 to 12 in a role-playing game.</td>
+<td><code>cases_barre</code></td>
+<td>Number</td>
+<td>5</td>
+<td>from 1 to 12, as a whole number</td>
+</tr>
+<tr>
+<td>Rows in the bar</td>
+<td>1 or 2. With 2, a second row with as many slots shows above the first one (or beside it, in a column), as in online role-playing games. Shift + a slot's key chooses the slot of the second row (the key can be changed in the Options). What is picked up fills the first row first; the wheel goes round both.</td>
+<td><code>rangees_barre</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 1 to 2, as a whole number</td>
+</tr>
+<tr>
+<td>Show the bar on screen</td>
+<td>Shows the slots of the bar, their number, what they hold and the chosen slot. Untick it if your game draws its own bar (an editor screen, for example): the keys still work.</td>
+<td><code>afficher_barre</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Place of the bar</td>
+<td>Where the bar of items in hand is drawn on screen: at the bottom in the middle, as in most games, at the top, or in a column on one side.</td>
+<td><code>place_barre</code></td>
+<td>Choice in a list</td>
+<td>At the bottom, in the middle</td>
+<td><code>bas</code>: At the bottom, in the middle<br><code>haut</code>: At the top, in the middle<br><code>gauche</code>: On the left, in a column<br><code>droite</code>: On the right, in a column</td>
+</tr>
+<tr>
+<td>Show the item held in the character's hand</td>
+<td>Ticked: the model of the item held appears in the character's hand and follows their moves. Its model comes from the "Models in hand" list, otherwise from the item picked up. The hand is found by measuring the character's skeleton.</td>
+<td><code>montrer_en_main</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Bone that holds the item (empty: found by itself)</td>
+<td>The name of a bone of the character where the item held goes. Empty: the bone made for holding under the right hand if the model has one, otherwise the right hand, recognised by its name or the shape of the skeleton.</td>
+<td><code>os_main</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Models in hand</td>
+<td>For each kind of item held, the model shown in the hand and its place. Best: put the model in the character's hand in the editor, hide it, and choose it here; its exact place is reused. A kind missing from the list shows the model of the item picked up.</td>
+<td><code>en_main</code></td>
+<td>List of “Item”</td>
+<td>(empty)</td>
+<td>one line per “Item”: <a href="#champs-en_main">its fields</a></td>
+</tr>
+<tr>
+<td>Kinds of items</td>
+<td>One row per kind of item that needs more than a name: its description (shown in the tooltip), its category, its default rarity, its picture in the slots, and "Unique copies". A kind missing from the list stacks as before.</td>
+<td><code>sortes_objets</code></td>
+<td>List of “Kind”</td>
+<td>(empty)</td>
+<td>one line per “Kind”: <a href="#champs-sortes_objets">its fields</a></td>
+</tr>
+<tr>
+<td>Weight: each item weighs, the player has a maximum load</td>
+<td>Ticked: each item has a weight, the player carries at most a load, and carrying too much slows them, stops them running or picking up, after the steps below. Unticked (default): nothing weighs. Slots and weight can be used together.</td>
+<td><code>poids_actif</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Starting maximum load</td>
+<td>What the player carries without trouble, in the game's unit. It is the base of the value charge_max: Strength from Progression, a level or a backpack raise it.</td>
+<td><code>charge_base</code></td>
+<td>Number</td>
+<td>50</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+<tr>
+<td>Weight unit shown</td>
+<td>Written after each weight, such as "kg", "lb" or "stones". It is translated like the game's other texts.</td>
+<td><code>unite</code></td>
+<td>Text</td>
+<td><code>kg</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Weight of an item with no weight set</td>
+<td>The weight of one item of a kind that has neither a weight on the item picked up nor a row in the list below.</td>
+<td><code>poids_defaut</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+<tr>
+<td>Weight of each kind of item</td>
+<td>One row per kind: its weight for one item. Useful for what scripts give (a reward, a purchase), which no item picked up describes. The weight set on an item picked up comes before its row; a kind with neither weighs the default weight.</td>
+<td><code>poids_objets</code></td>
+<td>List of “Kind”</td>
+<td>(empty)</td>
+<td>one line per “Kind”: <a href="#champs-poids_objets">its fields</a></td>
+</tr>
+<tr>
+<td>Overload steps</td>
+<td>What carrying too much costs. Each step starts beyond a share of the maximum load (100 %: the full load); the highest reached applies. By default: beyond 100 %, 30 % slower and no running; beyond 150 %, not a step nor a pickup.</td>
+<td><code>paliers_poids</code></td>
+<td>List of “Step”</td>
+<td><code>[{'seuil': 100, 'ralentir': 30, 'sans_course': True, 'sans_saut': False, 'sans_ramasser': False, 'immobile': False, 'endurance': 0, 'message': '', 'libelle': 'Surchargé', 'couleur': '#f08c33'}, {'seuil': 150, 'ralentir': 0, 'sans_course': True, 'sans_saut': True, 'sans_ramasser': True, 'immobile': True, 'endurance': 0, 'message': '', 'libelle': 'Écrasé', 'couleur': '#e8473a'}]</code></td>
+<td>one line per “Step”: <a href="#champs-paliers_poids">its fields</a></td>
+</tr>
+<tr>
+<td>Color of "Loaded" (before the first step)</td>
+<td>The color of the "Loaded" indicator when the player nears the maximum load, before any step. Each step has its own.</td>
+<td><code>couleur_charge</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#f2bf4d"></span> <code>#f2bf4d</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Show "loaded" from (% of the load)</td>
+<td>The small weight indicator appears from this share of the maximum load, before the first step. 0: always visible.</td>
+<td><code>alerte_charge</code></td>
+<td>Number</td>
+<td>80</td>
+<td>from 0 to 10 000</td>
+</tr>
+<tr>
+<td>An item that would go over the limit</td>
+<td>What happens when the player picks up an item that would take them over the limit below: they take it and the steps apply, or the item stays on the ground with a message.</td>
+<td><code>trop_lourd</code></td>
+<td>Choice in a list</td>
+<td>Pick it up anyway (the steps apply)</td>
+<td><code>permettre</code>: Pick it up anyway (the steps apply)<br><code>refuser</code>: Refuse it, with a message</td>
+</tr>
+<tr>
+<td>Limit to pick up (% of the load)</td>
+<td>With "Refuse it": an item that would go beyond this share of the maximum load stays on the ground. 100: never more than the full load.</td>
+<td><code>limite_ramasser</code></td>
+<td>Number</td>
+<td>100</td>
+<td>from 1 to 10 000</td>
+</tr>
+<tr>
+<td>Refusal: the slot lights up (seconds, 0: never)</td>
+<td>When an item is refused because it is too heavy, its slot lights up for a moment to say why: the slot of its kind in the hotbar and in the window, otherwise the hotbar slot it would have gone to. The color, or the "alert" image, comes from the Interface system's theme. 0: only the message.</td>
+<td><code>signal_refus</code></td>
+<td>Number</td>
+<td>1.5</td>
+<td>from 0 to 30</td>
+</tr>
+<tr>
+<td>Who carries the shared bag?</td>
+<td>With one bag for the whole group: its weight is split equally between the players present (default), weighs fully on each, or on nobody.</td>
+<td><code>poids_sac_commun</code></td>
+<td>Choice in a list</td>
+<td>Shared: each carries their share</td>
+<td><code>partage</code>: Shared: each carries their share<br><code>chacun</code>: Each carries all of it<br><code>aucun</code>: It weighs on nobody</td>
+</tr>
+<tr>
+<td>Show the weight carried on screen</td>
+<td>A small indicator, "Loaded" or "Overloaded" with the weight and the load, when the player nears or goes over their load. The inventory window always shows the weight.</td>
+<td><code>afficher_poids</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>Weight indicator: horizontal position (0 to 1)</td>
+<td>0 at the left edge of the screen, 1 at the right edge. On the right half, the indicator lines up to the right of this point.</td>
+<td><code>poids_x</code></td>
+<td>Number</td>
+<td>0.98</td>
+<td>from 0 to 1</td>
+</tr>
+<tr>
+<td>Weight indicator: vertical position (0 to 1)</td>
+<td>0 at the top of the screen, 1 at the bottom. 0.08 puts it under the list of what the player carries.</td>
+<td><code>poids_y</code></td>
+<td>Number</td>
+<td>0.08</td>
+<td>from 0 to 1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-en_main">The fields of each “Item”<a class="headerlink" href="#champs-en_main" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Item” has its own numbered frame; <strong>Add: Item</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The kind as the inventory stores it, such as "Axe".</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Model (an object of the scene, usually hidden)</td>
+<td>The object a copy of which shows in the hand. If it is already set on a bone of the character in the editor, its exact place is reused; otherwise it goes on the bone that holds, with the offset and rotation below.</td>
+<td><code>modele</code></td>
+<td>Object of the scene</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Model (a file, if no object is chosen)</td>
+<td>The file of the model shown in the hand when no object of the scene is chosen above: a weapon shipped with WorldMint (armes/...), copied into the project with its licence. With several players, each guest loads the same file from their copy of the game and sees it held the same way.</td>
+<td><code>modele_fichier</code></td>
+<td>model</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Way to hold</td>
+<td>Placed: the exact place of the object set in the hand in the editor, otherwise the offset. Measured: the handle found by measuring the model (its longest round, narrow part) and gripped in the fist, the head or blade forward; "upright", its length across the fist, like a sword.</td>
+<td><code>prise</code></td>
+<td>Choice in a list</td>
+<td>Placed (the object's place, or the offset below)</td>
+<td><code>placee</code>: Placed (the object's place, or the offset below)<br><code>arme</code>: Measured, a melee weapon or a tool (the handle in the fist)<br><code>debout</code>: Measured, upright in the fist (a sword, a bow)</td>
+</tr>
+<tr>
+<td>Real length (m, 0: the model's)</td>
+<td>With a measured hold: the real length of the item for a 1.8 m character, scaled to the character's size (0.95 for a sword, 0.3 for a dagger).</td>
+<td><code>longueur</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 5</td>
+</tr>
+<tr>
+<td>Front of the model (measured hold)</td>
+<td>The tip of the item (the point of a blade, the head of an axe): found by itself, the side of its longest axis with the most material outside the handle.</td>
+<td><code>avant</code></td>
+<td>Choice in a list</td>
+<td>Found by itself</td>
+<td><code>auto</code>: Found by itself<br><code>+x</code>: +X<br><code>-x</code>: −X<br><code>+y</code>: +Y<br><code>-y</code>: −Y<br><code>+z</code>: +Z<br><code>-z</code>: −Z</td>
+</tr>
+<tr>
+<td>Offset X (m)</td>
+<td>Moves the model in the hand, along the bone's first axis, in metres.</td>
+<td><code>decalage_x</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Offset Y (m)</td>
+<td>Moves the model in the hand, along the bone's second axis (often along the fingers), in metres.</td>
+<td><code>decalage_y</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Offset Z (m)</td>
+<td>Moves the model in the hand, along the bone's third axis, in metres.</td>
+<td><code>decalage_z</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -2 to 2</td>
+</tr>
+<tr>
+<td>Rotation X (°)</td>
+<td>Turns the model in the hand around the bone's first axis, in degrees: 90 to lay a handle down.</td>
+<td><code>rotation_x</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Rotation Y (°)</td>
+<td>Turns the model in the hand around the bone's second axis, in degrees.</td>
+<td><code>rotation_y</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+<tr>
+<td>Rotation Z (°)</td>
+<td>Turns the model in the hand around the bone's third axis, in degrees.</td>
+<td><code>rotation_z</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from -180 to 180</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-sortes_objets">The fields of each “Kind”<a class="headerlink" href="#champs-sortes_objets" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Kind” has its own numbered frame; <strong>Add: Kind</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The kind as the inventory stores it, such as "Iron sword".</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Unique copies</td>
+<td>No: items of this kind stack, all alike. Yes: each copy has its own record (its name, its bonuses, its wear...), kept with the world; it takes a slot of its own and does not stack.</td>
+<td><code>uniques</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Description</td>
+<td>The text shown in the item's tooltip, translated like the game's other texts.</td>
+<td><code>description</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Category</td>
+<td>Free: weapon, armour, tool, gem... The Equipment and Loot modules will use it to know where the item goes.</td>
+<td><code>categorie</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Default rarity</td>
+<td>The rarity written on a new copy's record (common, rare...). Empty: none.</td>
+<td><code>rarete</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Max. stack</td>
+<td>How many items of this kind fit in one slot, such as 100 for Wood. Beyond it, a new slot opens; totals stay those of the kind. 0: no limit, a single slot, as before.</td>
+<td><code>pile_max</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1 000 000, as a whole number</td>
+</tr>
+<tr>
+<td>Picture</td>
+<td>The item's picture in the slots (bag, quick bar, equipment, chest, crafting, shop): drag it from the Library, preferably square on a transparent background. The quantity is written small in a corner, the name stays in the tooltip. Empty: its name.</td>
+<td><code>icone</code></td>
+<td>Image from the library</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-poids_objets">The fields of each “Kind”<a class="headerlink" href="#champs-poids_objets" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Kind” has its own numbered frame; <strong>Add: Kind</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item</td>
+<td>The kind as the inventory stores it, such as "Stone".</td>
+<td><code>objet</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Weight of one item</td>
+<td>In the game's unit: 0.01 for a coin, 5 for a log.</td>
+<td><code>poids</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 0 to 1 000 000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-paliers_poids">The fields of each “Step”<a class="headerlink" href="#champs-paliers_poids" title="Permanent link">&para;</a></h3>
+<p>In the <strong>Properties</strong>, each “Step” has its own numbered frame; <strong>Add: Step</strong> adds one, the cross removes it. A field only appears when it is useful: under its name, the table says when.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beyond (% of the maximum load)</td>
+<td>The step applies when the weight carried goes beyond this share of the maximum load: 100 for the full load, 150 for half as much again.</td>
+<td><code>seuil</code></td>
+<td>Number</td>
+<td>100</td>
+<td>from 0 to 10 000</td>
+</tr>
+<tr>
+<td>Slow down by (%)</td>
+<td>How much slower the player walks, runs and swims: 30 for 30 % less. It is a negative bonus from the source "poids" on the value vitesse_deplacement.</td>
+<td><code>ralentir</code></td>
+<td>Number</td>
+<td>30</td>
+<td>from 0 to 95</td>
+</tr>
+<tr>
+<td>No running</td>
+<td>Ticked: the player can only walk.</td>
+<td><code>sans_course</code></td>
+<td>Yes or no</td>
+<td>yes</td>
+<td></td>
+</tr>
+<tr>
+<td>No jumping</td>
+<td>Ticked: the player can no longer jump.</td>
+<td><code>sans_saut</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>No picking up</td>
+<td>Ticked: the player picks up nothing while at this step; a message tells them. What scripts give still goes in.</td>
+<td><code>sans_ramasser</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Stop all moving</td>
+<td>Ticked: the player cannot take a step until their load gets lighter.</td>
+<td><code>immobile</code></td>
+<td>Yes or no</td>
+<td>no</td>
+<td></td>
+</tr>
+<tr>
+<td>Extra stamina spent (%)</td>
+<td>With the Stamina system: running, jumping and striking cost this much more. 50: one and a half times. Without it, nothing.</td>
+<td><code>endurance</code></td>
+<td>Number</td>
+<td>0</td>
+<td>from 0 to 1000</td>
+</tr>
+<tr>
+<td>Label on screen</td>
+<td>The word the weight indicator shows at this step, followed by the weight carried: "Overloaded: 52 / 40 kg", "Crushed: 70 / 40 kg".</td>
+<td><code>libelle</code></td>
+<td>Text</td>
+<td><code>Surchargé</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Color on screen</td>
+<td>The color of the indicator and of the window's "Weight" line at this step: orange, then red for the heaviest.</td>
+<td><code>couleur</code></td>
+<td>Color</td>
+<td><span class="wm-couleur" style="background:#f08c33"></span> <code>#f08c33</code></td>
+<td></td>
+</tr>
+<tr>
+<td>Message on entering this step</td>
+<td>Shown to the player when they reach this step. Empty: "Too heavy" with their weight, or "Far too heavy" if they can no longer move.</td>
+<td><code>message</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="settings-on-each-object">Settings on each object<a class="headerlink" href="#settings-on-each-object" title="Permanent link">&para;</a></h2>
+<p>In the <strong>Properties</strong> of an object or folder that carries the system, <strong>Systems</strong> section. A folder passes its values on to what it contains; an object can change a value for itself only.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What it does</th>
+<th>Name in code</th>
+<th>Type</th>
+<th>Default</th>
+<th>Limits or choices</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Kind of item (empty: its name, without number)</td>
+<td>The kind of item it is stored under, such as "Apple": items of the same kind add up. Empty: its name without number ("Apple 3" is an "Apple").</td>
+<td><code>nom</code></td>
+<td>Text</td>
+<td>(empty)</td>
+<td></td>
+</tr>
+<tr>
+<td>Quantity picked up</td>
+<td>How many one pickup gives: 50 for a bag of 50 coins.</td>
+<td><code>quantite</code></td>
+<td>Number</td>
+<td>1</td>
+<td>from 1 to 1 000 000, as a whole number</td>
+</tr>
+<tr>
+<td>Weight of one item (-1: its kind's)</td>
+<td>With weight ticked in the game settings: what one item weighs, in the game's unit. -1: its kind's weight in the game's list, otherwise the default weight.</td>
+<td><code>poids</code></td>
+<td>Number</td>
+<td>-1</td>
+<td>from -1 to 1 000 000</td>
+</tr>
+</tbody>
+</table>
+<h2 id="controls-added-to-the-game">Controls added to the game<a class="headerlink" href="#controls-added-to-the-game" title="Permanent link">&para;</a></h2>
+<p>They appear in the <strong>Game controls</strong> panel (Developer mode), where you can change their key.</p>
+<table>
+<thead>
+<tr>
+<th>Control</th>
+<th>Name for scripts</th>
+<th>Key</th>
+<th>Gamepad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Open the inventory</td>
+<td><code>inventory</code></td>
+<td>I</td>
+<td>Back</td>
+</tr>
+<tr>
+<td>Next item in hand</td>
+<td><code>item_next</code></td>
+<td>Wheel down</td>
+<td>←</td>
+</tr>
+<tr>
+<td>Previous item in hand</td>
+<td><code>item_previous</code></td>
+<td>Wheel up</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Drop the hovered slot (inventory window)</td>
+<td><code>item_drop</code></td>
+<td>G</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Split while dragging (hold)</td>
+<td><code>item_split</code></td>
+<td>Left Shift</td>
+<td>—</td>
+</tr>
+<tr>
+<td>Second row of the bar (hold with a number)</td>
+<td><code>item_second_row</code></td>
+<td>Left Shift</td>
+<td>—</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events<a class="headerlink" href="#events" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<h3 id="what-it-announces">What it announces<a class="headerlink" href="#what-it-announces" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?), <code>fiche</code> (number?), <code>jete</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up. For a unique copy (version 15), objet is its kind, fiche its record's number, total how many of that kind. With several stacks of a kind (version 21), total counts all of them; jete is true when a slot was dropped on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireplein"><code>inventaire.plein</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>reste</code> (number?)</td>
+<td>An item could not be added: every slot holds another kind of item (or another unique copy), or (version 21) every stack of its kind is full. reste: picked up in part, how many stayed on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairemanque"><code>inventaire.manque</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Items could not be removed: there are not enough.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechoisi"><code>inventaire.choisi</code></a></td>
+<td><code>objet</code> (text), <code>total</code> (number), <code>fiche</code> (number?), <code>double</code> (boolean?), <code>case</code> (text?)</td>
+<td>The player clicked a slot of the inventory window: objet is the kind of item, total how many they carry. What it does belongs to the game: eat, equip, read. case (version 21) is the slot's key ("Wood~2" for a second stack).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireen_main"><code>inventaire.en_main</code></a></td>
+<td><code>objet</code> (text), <code>avant</code> (text), <code>place</code> (number), <code>chargement</code> (boolean?), <code>joueur</code> (id?), <code>fiche</code> (number?), <code>source</code> (text?)</td>
+<td>What the player holds in hand changed (version 24): the slot chosen in the inventory's bar (keys 1 to 9, wheel), an item used up, a load (chargement true). objet is the kind held, "" for empty hands; avant the one held before; place the bar slot (0: nothing). Gathering checks the tool held; a game script equips a sword with it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairepoids"><code>inventaire.poids</code></a></td>
+<td><code>poids</code> (number), <code>charge</code> (number), <code>palier</code> (number), <code>seuil</code> (number), <code>avant</code> (number)</td>
+<td>With the weight on (inventory setting poids_actif): the weight a player carries, their maximum load (the value charge_max) or their overload step changed. palier is the step's row number in paliers_poids (0: none), seuil its share of the load in %, avant the step before.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairetrop_lourd"><code>inventaire.trop_lourd</code></a></td>
+<td><code>objet</code> (text), <code>poids</code> (number), <code>porte</code> (number), <code>charge</code> (number), <code>raison</code> (text)</td>
+<td>With the weight on: a pickup was refused, the item stays where it is. raison: limite (it would go beyond limite_ramasser, with trop_lourd set to refuser) or palier (the current overload step forbids picking up).</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireglisse"><code>inventaire.glisse</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>cible</code> (text), <code>joueur</code> (id?), <code>case</code> (text?)</td>
+<td>The player dragged a slot of the inventory window (mouse button pressed on it, released elsewhere, version 16): cible is the key of the HUD element under the cursor. The Equipment module wears an item dragged onto a slot. case (version 21): the dragged slot's key.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairefenetre"><code>inventaire.fenetre</code></a></td>
+<td><code>ouverte</code> (boolean), <code>joueur</code> (id?)</td>
+<td>The inventory window opened or closed (version 16): ouverte. The Equipment window opens beside it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairejeter"><code>inventaire.jeter</code></a></td>
+<td><code>objet</code> (text), <code>case</code> (text?), <code>fiche</code> (number?), <code>quantite</code> (number?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to drop a whole slot (version 15 for a unique copy, version 21 for a stack): case is the slot's key ("Wood~2"), otherwise fiche a unique copy, otherwise the first slot of the kind objet. It is put down in front of the player as one object that gives the same quantity back in one pickup (its prompt says "Wood x40"); a unique copy's record follows it and comes back with it. quantite (version 21): only that many from a stack (Shift + drag out of the window drops half); the slot keeps the rest.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementporter"><code>equipement.porter</code></a></td>
+<td><code>objet</code> (text?), <code>fiche</code> (number?), <code>emplacement</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to make the player wear an item of their bag: objet its kind, fiche a unique copy (it must be in this player's bag), emplacement a slot key or name (missing: the first free slot accepting it).</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementretirer"><code>equipement.retirer</code></a></td>
+<td><code>emplacement</code> (text), <code>joueur</code> (id?)</td>
+<td>Ask the Equipment module to take off what is worn at a slot (its key, such as tete, or its name): it goes back to the bag.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinprendre"><code>butin.prendre</code></a></td>
+<td><code>cible</code> (text), <code>numero</code> (number?), <code>joueur</code> (id)</td>
+<td>A player asks the host to take from a content: one line (numero) or all they may take.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinranger"><code>butin.ranger</code></a></td>
+<td><code>cible</code> (text), <code>objet</code> (text), <code>fiche</code> (number?), <code>quantite</code> (number?), <code>case</code> (text?), <code>joueur</code> (id)</td>
+<td>A player asks the host to put an item of their bag into a chest they may search (the three-part inventory window): a stack (quantite) or a unique copy (fiche). The bag loses it first; nothing enters if the bag no longer has it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="what-it-listens-to">What it listens to<a class="headerlink" href="#what-it-listens-to" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Fields</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#interactionutiliser"><code>interaction.utiliser</code></a></td>
+<td><code>cible</code> (id), <code>joueur</code> (id)</td>
+<td>The player used the object in reach: a door, a merchant, an item to pick up. Whoever owns that object decides what it does.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairetenir"><code>inventaire.tenir</code></a></td>
+<td><code>objet</code> (text?), <code>place</code> (number?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to hold something in hand (version 24): a bar slot (place), or a kind of item (objet; one outside the bar takes the chosen slot). objet "" puts the item away: empty hands.</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueuroccupe"><code>joueur.occupe</code></a></td>
+<td><code>occupe</code> (boolean), <code>par</code> (text)</td>
+<td>The player's hands are taken by something else than fighting (version 23): a building mode where the click places a piece, a tool being aimed. occupe true when it starts, false when it ends; par names who says it ("construction"), so several can overlap. Fighting modules do not strike nor block while any of them keeps the player busy.</td>
+</tr>
+<tr>
+<td><a href="../../events/#hudclic"><code>hud.clic</code></a></td>
+<td><code>cible</code> (text), <code>joueur</code> (id?)</td>
+<td>A button of the HUD was clicked: pressed, then released on it; or chosen with A (Enter) while it has the gamepad or keyboard focus; or the window's back button (back = true), with B (Escape). cible is the button's key (game.hud_button), joueur the player who clicked (a guest clicks on their own computer; the host plays the click). Announced by the engine, before the scripts' on_update of that step.</td>
+</tr>
+<tr>
+<td><a href="../../events/#languechange"><code>langue.change</code></a></td>
+<td><code>langue</code> (text)</td>
+<td>Sent by the engine when the player changes the game's language (game.set_language, the Menu options). A module redraws what it already shows: its texts go through game.t and game.language.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairejeter"><code>inventaire.jeter</code></a></td>
+<td><code>objet</code> (text), <code>case</code> (text?), <code>fiche</code> (number?), <code>quantite</code> (number?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to drop a whole slot (version 15 for a unique copy, version 21 for a stack): case is the slot's key ("Wood~2"), otherwise fiche a unique copy, otherwise the first slot of the kind objet. It is put down in front of the player as one object that gives the same quantity back in one pickup (its prompt says "Wood x40"); a unique copy's record follows it and comes back with it. quantite (version 21): only that many from a stack (Shift + drag out of the window drops half); the slot keeps the rest.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairesortir"><code>inventaire.sortir</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>case</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to take one item out of the bag without destroying it (version 16): objet is its kind, fiche a unique copy (it keeps its record; whoever takes it says its new holder). The Equipment module takes what it makes the player wear. A stack gives one from its smallest stack, or from case (version 21), a slot's key.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairetenir_porte"><code>inventaire.tenir_porte</code></a></td>
+<td><code>objet</code> (text), <code>fiche</code> (number?), <code>prioritaire</code> (boolean?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to hold in hand an item worn (version 17): the Equipment module hands it the weapon of its slot, so it is held, shown (its row of the list Models in hand, measured hold included) and announced (inventaire.en_main) exactly like the bar's. objet "" : nothing worn in hand any more. prioritaire: it comes before the bar; otherwise only when the bar holds nothing.</td>
+</tr>
+<tr>
+<td><a href="../../events/#objetchange"><code>objet.change</code></a></td>
+<td><code>numero</code> (number), <code>sorte</code> (text), <code>champs</code> (table)</td>
+<td>Sent by the engine when the host changed the record of a unique item (game.item_set): champs lists the fields given.</td>
+</tr>
+<tr>
+<td><a href="../../events/#fenetresfermer"><code>fenetres.fermer</code></a></td>
+<td><code>joueur</code> (id?), <code>raison</code> (text?)</td>
+<td>Close every window a player has open (loot, inventory, equipment, workshop...), sent by the Death module when they die; any script may send it (a cutscene). joueur: that player (missing: everyone). Each module with a window closes its own.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairediviser"><code>inventaire.diviser</code></a></td>
+<td><code>case</code> (text), <code>quantite</code> (number?), <code>vers</code> (text?), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to split a stack (version 21): quantite items of the slot case (missing: half, rounded down) move to a new slot, or with vers onto that stack of the same kind, up to its maximum stack (the rest stays in case). Refused, with a message and the slot lit up, when a new slot is needed and none is free; a stack of 1 or a unique copy does not split.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireregrouper"><code>inventaire.regrouper</code></a></td>
+<td><code>de</code> (text), <code>vers</code> (text), <code>joueur</code> (id?)</td>
+<td>Ask the inventory to merge two stacks of the same kind (version 21): the slot de pours into the slot vers, up to the kind's maximum stack; the rest stays where it was.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairedecrire"><code>inventaire.decrire</code></a></td>
+<td><code>objet</code> (text), <code>description</code> (text)</td>
+<td>Describe a kind of item during the game (version 29), when « Sortes d'objets » gives it no description: the tooltip and the item's details show it. An empty description removes it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinouvrir"><code>butin.ouvrir</code></a></td>
+<td><code>cible</code> (text), <code>joueur</code> (id?)</td>
+<td>Open the Take all window of a content (a body, a chest) for a player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butincontenu"><code>butin.contenu</code></a></td>
+<td><code>cible</code> (text), <code>nombre</code> (number)</td>
+<td>A content (a body, a chest) changed: its Take all windows redraw.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementporte"><code>equipement.porte</code></a></td>
+<td><code>joueur</code> (id), <code>emplacement</code> (text), <code>objet</code> (text), <code>fiche</code> (number?)</td>
+<td>The player now wears an item: emplacement is the slot key, objet its kind, fiche its record (a unique copy). Its bonuses have the source equipement:&lt;emplacement&gt;.</td>
+</tr>
+<tr>
+<td><a href="../../events/#equipementretire"><code>equipement.retire</code></a></td>
+<td><code>joueur</code> (id), <code>emplacement</code> (text), <code>objet</code> (text), <code>fiche</code> (number?)</td>
+<td>The player took off an item: it is back in the bag, and its bonuses are gone.</td>
+</tr>
+<tr>
+<td><a href="../../events/#scenechange"><code>scene.change</code></a></td>
+<td><code>depuis</code> (text), <code>vers</code> (text)</td>
+<td>Sent by the engine once the player has arrived in another scene of the game (game.go_to, or a passage). Scripts keep running across scenes: this is when a module looks at the objects of the new scene.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-a-script-can-replace-gameoverride">Points a script can replace (game.override)<a class="headerlink" href="#points-a-script-can-replace-gameoverride" title="Permanent link">&para;</a></h2>
+<p>The descriptions come from the code.</p>
+<ul>
+<li><code>inventaire.porteur</code>: function(default, joueur) -&gt; the object that holds the item in hand (its model is attached to that object's hand bone). The default is the object given by the hook equipement.corps when a game overrides it, otherwise the player's character. For a game whose visible body is another object following the player.</li>
+<li><code>inventaire.sorte</code>: function(default, id) -&gt; the kind of item this object gives when picked up (text). The default is its nom setting, or its name without a trailing number.</li>
+<li><code>inventaire.permise</code>: function(default, objet, usage) -&gt; true, or false: whether the player may hold (usage tenir: chosen in the bar) or use (usage utiliser: a click on its slot) that kind of item (version 10). The default is true. The Progression module uses it for required levels; say why yourself (a message), the inventory only refuses.</li>
+<li><code>inventaire.infobulle</code>: function(default, lignes, infos) -&gt; the lines of an item's tooltip (version 16): lignes is the list of texts shown ([b], [color=#rrggbb] allowed), infos is {objet, fiche, joueur}. Return the lines, with yours added: the Equipment module adds the comparison with what is worn at the same place.</li>
+<li><code>inventaire.poids</code>: function(default, objet) -&gt; the weight of one item of that kind (a number), when the weight is on (version 11). The default is the weight set on the item picked up, else its row in the list Weight of each kind, else the default weight. For a weight that changes (a full or empty water skin), or one computed by the game.</li>
+</ul>
+<h2 id="what-the-agent-knows-about-this-system">What the agent knows about this system<a class="headerlink" href="#what-the-agent-knows-about-this-system" title="Permanent link">&para;</a></h2>
+<p>The text the agent reads before using this system.</p>
+<h3 id="inventory-inventaire">Inventory (<code>inventaire</code>)<a class="headerlink" href="#inventory-inventaire" title="Permanent link">&para;</a></h3>
+<p>Keeps what the player carries, grouped by kind. Activating it activates the interaction module; placing it on an object places interaction there too, so the player can use it.</p>
+<ul>
+<li>An item to pick up: an object carrying this system (<code>systems_attach</code>), or every child of a group carrying it. Its kind is <code>nom</code> if set (<code>systems_set</code>), otherwise its name without a trailing number: "Apple 3" is an "Apple". <code>quantite</code> is how many one pickup gives: a bag of 50 coins. Name items in the user's language.</li>
+<li>Picking up: the player uses the item (E by default), or walks over it if the game setting <code>au_contact</code> is on. The item leaves the world.</li>
+<li>Give or take items from your scripts, such as a reward or a payment: <code>game.emit("inventaire.ajouter", {objet = "Apple", quantite = 2})</code>, <code>game.emit("inventaire.retirer", {objet = "Gold", quantite = 10})</code>.</li>
+<li>Know what the player has: listen to <code>inventaire.change</code> (<code>objet</code>, <code>quantite</code>, <code>total</code>). A shop checks <code>total</code> before selling, or listens to <code>inventaire.manque</code>, sent when there are not enough.</li>
+<li><code>inventaire.plein</code> is sent when every slot holds another kind of item (game setting <code>places</code>).</li>
+<li>The content shows at the top right with the HUD key <code>inventaire</code>.</li>
+<li>The window: the control <code>inventory</code> (I, or Back on a gamepad) opens a grid of <strong>every place of the bag</strong> (<code>places</code> slots, empty ones included, <code>colonnes</code> per row), and closes it (game setting <code>fenetre</code>). Rows that do not fit scroll with the wheel; <code>pause_fenetre</code> stops the world while it is open. With <code>disposition_fenetre</code> <code>grille</code> (default) it is the system's screen « Inventaire » (version 30, <code>modules/inventaire/ecrans/inventaire.json</code>): <code>Inventaire/Fenêtre</code>, <code>Inventaire/Titre</code>, <code>Inventaire/Poids</code>, the list <code>Inventaire/Cases</code> whose rows are the places, <code>Inventaire/Case#N</code> (full or empty, the empty one fainter; same theme role <code>case.inventaire</code>), N being the slot's number in the grid, and <code>Inventaire/Bouton Fermer</code>. Change its look in the screen editor (styles, theme), never in the script. The three-part window is still drawn by the script, with keys starting with <code>inventaire.</code> (<code>inventaire.case.N</code>, <code>inventaire.place.N</code>). Beyond 200 places (a weight-only game with <code>places</code> 1000), the grid shows the rows up to the last item and one empty row more.</li>
+<li><strong>Each item keeps its slot</strong> (version 28): dragged onto an empty slot it goes there (with Shift, half of a stack starts a new stack there); dragged onto another kind (or a full stack, or a unique copy) the two slots swap; onto a stack of the same kind they merge as before. What is picked up or given goes into the first free slot; « Trier » (three-part window) packs everything at the start, in sorted order; emptying a slot leaves it empty (nothing shifts). Saved games keep each item's slot (<code>case</code> in the save, written only when it is not the next one, so a bag never rearranged saves exactly as before); an older save fills the first slots in order. Each player, guests included, has their own (the host keeps a guest's bag with its slots).</li>
+<li>Gamepad and keyboard: the first slot has the focus, the d-pad or the arrows move it, A or Enter chooses it, B or Escape closes the window (<code>Inventaire/Bouton Fermer</code> is its back button; <code>inventaire.fermer</code> in three parts).</li>
+<li>Saved games: <code>game.save</code> keeps what the player carries, and <code>game.load</code> gives it back; then the inventory announces each kind again with <code>inventaire.change</code> and <code>chargement = true</code> (nothing was picked up), so that every system knows the totals. Do not re-add items after a load.</li>
+<li><strong>The item in hand</strong> (game setting <code>barre</code>, on by default): a bar of <code>cases_barre</code> slots (5) at the bottom of the screen (<code>place_barre</code>; <code>afficher_barre</code> off if the game draws its own). It is the system's screen « Barre rapide » (version 30): <code>Barre rapide/Fond</code>, the lists <code>Barre rapide/Rangée</code> (keys 1 to 9...) and <code>Barre rapide/Seconde rangée</code> (Shift), each slot <code>Barre rapide/Case#N</code> with <code>Icône#N</code> (the kind's image) and <code>Texte#N</code> (<code>Case 2#N</code>, <code>Icône 2#N</code>, <code>Texte 2#N</code> in the second row); the script places it and lays its rows out for <code>place_barre</code>. What is picked up fills the first free slot; keys 1 to 9 (then 0, - and =, up to 12 slots; a second row with <code>rangees_barre</code>: see version 27 below), the wheel (<code>item_next</code>, <code>item_previous</code>) and the d-pad left (<code>item_next</code>: it goes round the slots; every other gamepad button already belongs to a system) choose the slot, and its key again puts the item away. What is held is announced by <code>inventaire.en_main</code> (<code>objet</code>, "" for empty hands, <code>avant</code>, <code>place</code>): <code>collecte</code> gathers with the tool held, a game script equips a sword with it. Choose it from a script with <code>game.emit("inventaire.tenir", {objet = "Axe"})</code> (or <code>place</code>, or <code>objet = ""</code>); <code>objet</code> and <code>place</code> together put that item at that slot of the bar and hold it (what the slot held takes the slot it left): a game window that drags an item onto the bar sends just that, without taking the item out of the bag. In the window, a number key puts the hovered slot at that place of the bar. The bar, the chosen slot and what is held are saved; each player has their own.</li>
+<li><strong>Its model in the hand</strong> (<code>montrer_en_main</code>, on): a copy of its model follows the character's hand bone, found by measuring the skeleton (<code>game.hand_bone</code>: a bone made for holding under the right hand, else the right hand; <code>os_main</code> overrides it). The model comes from the list <code>en_main</code> (a row per kind: <code>objet</code>, <code>modele</code>, an object of the scene, usually hidden, and an offset and rotation along the bone), else from the first item of that kind picked up. <strong>An item the game gives (at the start, a reward, crafted) was never picked up: without its <code>en_main</code> row, nothing shows in the hand</strong> (the game log says <code>inventaire: « Hache » est tenu sans modèle</code>). Give every tool and weapon its row: <code>modele_fichier</code> (the model file) and <code>prise</code> <code>arme</code> are enough. Best: set the model in the character's hand in the editor (<code>entities_create</code> with <code>attach_bone</code>), check it with a capture, hide it, and name it in <code>en_main</code>: its exact place is reused. Do not leave a visible model in the hand, nor write a script that shows or hides one.</li>
+<li><strong>Holding a melee weapon right</strong> (<code>prise</code> <code>placee</code>): the copy takes the exact place of its model RELATIVE TO THE HAND BONE. An example the creator put in (or right next to) the character's hand in the editor is enough as <code>modele</code>, even if it is not attached to a bone: its place relative to the measured hand bone, in the scene (the rest pose the editor shows), is copied. Too far from the hand (more than 15 % of the character's height), nothing is copied and the game log says <code>attach: ... from the hand</code>: read it after <code>game_run</code>. To make the example follow the hand in the editor too, attach it without moving it: <code>entities_update</code> with <code>parent</code> (the character), then a second <code>entities_update</code> with <code>attach_bone</code> (from <code>game.hand_bone</code> or <code>asset_info</code> bones) and <code>keep_place: true</code> (the editor's button "Attach to the hand (keep its place)" does the same); never retype its numbers.</li>
+<li><strong>Never delete, move or "clean up" an example object the creator placed</strong> (a weapon put in the hand to show the grip, even if it looks like it floats or counts as a spawn point): it is the reference. Hide it, or ask; do not remove it. Then hide it and name it in <code>modele</code>. Without an example, use <code>prise</code> <code>arme</code> (the grip measured on the model). Every pack differs (pivot at the pommel or the guard, long axis x, y or z, centimetres): measure or copy, never guess an axis.</li>
+<li>Check every melee weapon on a capture in game, standing and during a hit (the clip of the combat module): the fist closes on the handle, no finger nor hand goes through the handle or the blade, the blade is not inside the arm or the body. One weapon held right does not mean the others are: check each row of <code>en_main</code>.</li>
+<li>A click on a slot sends <code>inventaire.choisi</code> (<code>objet</code>, <code>total</code>). What it does belongs to the game: eat an apple (<code>inventaire.retirer</code>, then <code>sante.soigner</code>), equip a sword, read a letter. Write that in a game script, or a <code>declencheur</code> rule on the event.</li>
+</ul>
+<h4 id="a-bigger-bar-and-two-rows-version-27">A bigger bar, and two rows (version 27)<a class="headerlink" href="#a-bigger-bar-and-two-rows-version-27" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>cases_barre</code> goes from 1 to 12: keys 1 to 9, then 0, - and = for slots 10, 11 and 12 (the top row of the keyboard, as in World of Warcraft). Keys are read by their place on the keyboard, not the character they type: on an AZERTY keyboard, the two keys right of 0 (<code>)</code> and <code>=</code>) are the - and = of the bar.</li>
+<li><code>rangees_barre</code> = 1 (default) or 2. With 2, a second row of <code>cases_barre</code> slots shows above the first one at the bottom (<code>bas</code>), below it at the top (<code>haut</code>), and beside it on the screen side in a column (<code>gauche</code>, <code>droite</code>). The control <code>item_second_row</code> (« Deuxième rangée de la barre », left Shift by default, changeable in the Options) held with a slot's key chooses the slot of the second row: Shift+2 is its second slot (it shows « Maj+2 »). The second row's slots are numbered 13 to 24 whatever <code>cases_barre</code> is (<code>place</code> of <code>inventaire.en_main</code> and <code>inventaire.tenir</code>): 13 is its first slot.</li>
+<li>What is picked up fills the first row first, then the second. The wheel and the d-pad go round every slot of both rows. The three-part window shows both rows under the bag. Saved games keep both rows; each player, guests included, has their own.</li>
+<li>Too many slots for the screen (12 slots on a 4:3 screen, a long column): every slot shrinks the same way, nothing goes past the screen's edge. The Progression's XP bar sits above the whole bar, both rows.</li>
+<li><strong>Fit the bar to the game.</strong> <code>cases_barre</code> = the number of things the player really holds: 2 for an axe and a pickaxe, 3 to 5 in a shooter, 6 to 8 in a survival game, 10 to 12 and <code>rangees_barre</code> 2 for an action RPG or an online RPG. Untick <code>barre</code> when the player never holds anything (a puzzle game, a racing game).</li>
+</ul>
+<h4 id="kinds-of-items-and-unique-copies-version-15-off-by-default">Kinds of items and unique copies (version 15, off by default)<a class="headerlink" href="#kinds-of-items-and-unique-copies-version-15-off-by-default" title="Permanent link">&para;</a></h4>
+<p>The list <code>sortes_objets</code> (« Sortes d'objets ») gives a kind more than a name: a row per kind with <code>objet</code> (the kind), <code>description</code> (shown in the item's tooltip, translated like the game's texts), <code>categorie</code> (free: arme, armure, outil, gemme... the coming Equipment and Loot modules read it), <code>rarete</code> (the default rarity written on a new copy's record), <code>icone</code> (« Image », version 25: see below) and <code>uniques</code> (« Exemplaires uniques », off). A kind missing from the list, or with <code>uniques</code> off, stacks exactly as before, saved games included.</p>
+<p><strong>The item's picture (version 25)</strong>: the column <code>icone</code> (an image file; an image given to <code>modules_set</code> is copied into the project, like every image setting). Every slot that shows the item then shows its picture filling the slot (proportions kept, a small margin) with the quantity small in a corner (« x4 »), the name staying in the tooltip and the card: the bag (<code>grille</code> and <code>trois_parties</code>), the hotbar at the bottom of the screen and in the window, the worn equipment slots, the card (a bigger picture at its top), the searched chest or body, the Loot window, Crafting (<code>liste</code> and <code>detaillee</code>), shops (a small picture left of the name) and the Equipment window. Empty, or a file that cannot be found: the name is written as before, without any error. <strong>Give a picture to every kind of item</strong>: the game's own item pictures, or the generic icons of a UI pack (<code>icon_*</code>) only when one really matches the item. Other systems and a game's own windows read it with <code>shared.inventaire_icone(kind)</code> (the file, or nil), or <code>game.module_settings("inventaire").sortes_objets</code>. The <code>hud</code> report of <code>game_run</code> gives a slot button's <code>image</code>. In a game with several players, the picture is a game setting: each guest sees it in their own slots (one image per slot).</p>
+<ul>
+<li><strong>Unique copies</strong> (<code>uniques</code> on): each copy picked up or given gets its own <strong>record</strong> (<code>game.item_create</code>, kept with the world's save, written by the host only): its number, kind, rarity, displayed name, bonuses, wear, upgrade level, gem slots and gems, item level and free data (see the script reference, <code>game.item_*</code>). Each copy takes a slot of its own and never stacks; it weighs like one item of its kind.</li>
+<li><strong>What the inventory says</strong>: <code>inventaire.change</code>, <code>inventaire.en_main</code>, <code>inventaire.choisi</code> and <code>inventaire.plein</code> give <code>objet</code> = the kind and, for a unique copy, <code>fiche</code> = its record's number (<code>total</code> counts the copies of that kind). Read a copy with <code>game.item_get(e.fiche)</code>.</li>
+<li><strong>Give a copy already made</strong> (a reward with chosen bonuses): <code>local n = game.item_create("Épée de fer", {bonus = {{valeur = "degats", add = 4}}})</code>, then <code>game.emit("inventaire.ajouter", {objet = "Épée de fer", fiche = n})</code>. Without <code>fiche</code>, the inventory makes a new record with the kind's default rarity.</li>
+<li><strong>Take one</strong>: <code>game.emit("inventaire.retirer", {objet = "Épée de fer", fiche = n})</code> (without <code>fiche</code>: the first copies of that kind); their records are destroyed. <strong>Drop one</strong>: <code>game.emit("inventaire.jeter", {objet = "Épée de fer", fiche = n})</code> puts it in front of the player with its record (its <code>porteur</code> becomes <code>objet:&lt;scene&gt;/&lt;id&gt;</code>); picked up again, the same record comes back.</li>
+<li><strong>The tooltip</strong>: hovering a slot of the window (or giving it the focus) shows the record's name, the kind's <code>description</code> and the record's bonuses (HUD key <code>inventaire.infobulle</code>, theme role <code>infobulle.objet</code>). The hook <code>inventaire.infobulle</code> receives <code>{objet, fiche, joueur, bonus = {debut, fin}}</code>: <code>bonus</code> says which lines are the record's bonuses, so Equipment replaces them by their total or greys them instead of adding lines. A stack without description shows no tooltip. Rarity colours come with the Loot module.</li>
+<li><strong>Several players</strong>: the records stay on the host; each guest receives the records of their own items and of those on the ground (protocol 21), so their tooltips show the same thing.</li>
+</ul>
+<h4 id="weight-off-by-default">Weight (off by default)<a class="headerlink" href="#weight-off-by-default" title="Permanent link">&para;</a></h4>
+<p>In the editor, every weight setting is in the folding group « Poids » of the Inventory's card.</p>
+<p>Ticking the game setting <code>poids_actif</code> (<code>modules_set</code>) gives every item a weight and the player a maximum load; off, nothing weighs and nothing changes. Slots (<code>places</code>, the value <code>inventaire_places</code>) and weight work together or apart: a game uses slots, weight, or both.</p>
+<ul>
+<li><strong>The weight of one item</strong>, in the game's unit (<code>unite</code>, « kg » by default, translated like the game's texts): the <code>poids</code> set on the item picked up (<code>systems_set</code>; -1: its kind's), else its kind's row in <code>poids_objets</code> (<code>objet</code>, <code>poids</code>: use it for what scripts give, such as gold at 0.01), else <code>poids_defaut</code> (1). A script can compute it with the hook <code>inventaire.poids</code>: <code>game.override("inventaire.poids", function(default, objet) if objet == "Water skin" then return 0.2 + 0.8 * full end return default(objet) end)</code>.</li>
+<li><strong>The maximum load</strong> is the value <code>charge_max</code> (<code>game.stat(player, "charge_max")</code>), whose base is <code>charge_base</code> (50). It grows like any value: a Progression characteristic (« Force: +2 kg of load per point » is the row <code>effet</code>, <code>valeur</code> <code>charge_max</code>, <code>ajout</code> 2), a level reward (<code>bonus</code> on <code>charge_max</code>), later equipment (<code>game.stat_bonus(player, "charge_max", "sac_a_dos", {add = 20})</code>).</li>
+<li><strong>Overload steps</strong> (<code>paliers_poids</code>): each row starts beyond <code>seuil</code> % of the load; the highest reached applies. Its effects: <code>ralentir</code> (% slower: a negative bonus from the source « poids » on <code>vitesse_deplacement</code>, which the engine applies on the host and in a guest's prediction), <code>sans_course</code>, <code>sans_saut</code>, <code>sans_ramasser</code>, <code>immobile</code> (no step at all), <code>endurance</code> (% more stamina spent running, jumping and striking, with the <code>endurance</code> system: the value <code>endurance_cout</code>), <code>message</code> (shown on entering it; empty: « Trop chargé : 12 / 10 kg. », or « Bien trop chargé » when immobile). Leaving every step says « Vous n'êtes plus surchargé. ». Defaults: beyond 100 %, 30 % slower and no running; beyond 150 %, no step and no pickup.</li>
+<li><strong>Picking up</strong>: <code>trop_lourd</code> = <code>permettre</code> (default: picked up, the steps apply) or <code>refuser</code> (an item that would go beyond <code>limite_ramasser</code> % of the load stays on the ground, with « Enclume est trop lourd (7 kg). »). A step with <code>sans_ramasser</code> refuses every pickup. Both send <code>inventaire.trop_lourd</code> (<code>objet</code>, <code>poids</code>, <code>porte</code>, <code>charge</code>, <code>raison</code> <code>limite</code> or <code>palier</code>). The refused item's slot lights up for <code>signal_refus</code> seconds (1.5 by default, 0: never): its kind's slot in the hotbar and the window, otherwise the hotbar slot it would have gone to; the color, or the <code>alerte</code> image, comes from the <code>interface</code> theme. While the window is open, the weight message sits under it. What scripts give (<code>inventaire.ajouter</code>: a reward) always goes in: the steps then apply.</li>
+<li><strong>On screen</strong>: the window shows « Poids : 7 / 10 kg » under its title (<code>Inventaire/Poids</code>; <code>inventaire.poids.total</code> in three parts) and each slot the weight of its stack; a small indicator (<code>inventaire.poids</code>, at <code>poids_x</code>, <code>poids_y</code>; <code>afficher_poids</code>) says « Chargé : 8 / 10 kg » in amber (<code>couleur_charge</code>) from <code>alerte_charge</code> % (80), then each step's own <code>libelle</code> and <code>couleur</code> (by default « Surchargé : 12 / 10 kg » in orange, then « Écrasé : 16 / 10 kg » in red; the window's « Poids » line takes the step's color too); the step's message is <code>inventaire.poids.message</code>, on the discreet backing of announcements (<code>inventaire.poids.message.fond</code>, role <code>panneau.annonce.poids</code>), for 3 seconds, even while the window pauses the game. Restyle them by those keys like the rest of the HUD.</li>
+<li><strong>Events</strong>: <code>inventaire.poids</code> (<code>poids</code>, <code>charge</code>, <code>palier</code> the row number, 0 for none, <code>seuil</code>, <code>avant</code>) when the weight, the load or the step changes. A Trigger rule or a script reacts to it (a panting sound, a tip).</li>
+<li><strong>Several players</strong>: computed on the host, one copy per player: each guest has their own weight, load and steps, sees their own indicator and window, and their prediction walks at the slowed speed and without running, as the host makes them walk. With <code>sac_commun</code>, <code>poids_sac_commun</code> says who carries the shared bag: <code>partage</code> (default: its weight split equally between the players present), <code>chacun</code> (each carries all of it) or <code>aucun</code>.</li>
+<li>Running and jumping are also taken by <code>endurance</code> (exhausted) and <code>besoins</code> (an empty need): each system asks again every step while it needs it, so none gives them back to a player another one still holds.</li>
+</ul>
+<p>Examples:
+- <strong>Survival</strong>: <code>poids_actif</code> on, <code>charge_base</code> 40, <code>unite</code> « kg »; <code>poids_objets</code> Wood 2, Stone 3, Iron ore 4, Berries 0.1, Gold 0.01; steps 100 % (<code>ralentir</code> 25, <code>sans_course</code>, <code>endurance</code> 50) and 130 % (<code>immobile</code>, <code>sans_ramasser</code>); <code>trop_lourd</code> <code>permettre</code>; with Progression, Force +2 <code>charge_max</code> per point, and a backpack (a script on <code>inventaire.choisi</code>) adding +20.
+- <strong>RPG</strong>: <code>poids_actif</code> on, <code>charge_base</code> 100, <code>unite</code> « lb », <code>places</code> 1000 (weight only); swords 8, armour 25, potions 0.5, scrolls 0.1; one step at 100 % (<code>ralentir</code> 50, <code>sans_course</code>, <code>sans_saut</code>); <code>trop_lourd</code> <code>refuser</code> with <code>limite_ramasser</code> 120; Force +5 <code>charge_max</code> per point.</p>
+<h4 id="rarity-in-the-tooltip-and-jeter-version-16">Rarity in the tooltip and « Jeter » (version 16)<a class="headerlink" href="#rarity-in-the-tooltip-and-jeter-version-16" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The tooltip of a unique copy shows its name in its rarity's color and the rarity written under it, when the <code>butin</code> module sets that rarity (<code>raretes</code>); without it, the theme's color.</li>
+<li><code>bouton_jeter</code> (on): « Jeter » in the small window of a clicked slot drops it, and the control <code>item_drop</code> (G) drops the one hovered, with <code>inventaire.jeter</code>. Since version 21, stacks are dropped too (see below).</li>
+</ul>
+<h4 id="stacks-split-merge-and-drop-version-21-adr-042">Stacks, split, merge and drop (version 21, ADR-042)<a class="headerlink" href="#stacks-split-merge-and-drop-version-21-adr-042" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Maximum stack</strong>: the column <code>pile_max</code> (« Pile max. ») of <code>sortes_objets</code>, an integer; 0 or missing: no limit, one slot per kind, exactly as before (saved games included). With it, a kind can take several slots: the first stack keeps the kind as its key (<code>"Bois"</code>), the next ones are <code>"Bois~2"</code>, <code>"Bois~3"</code>... A unique copy keeps <code>"kind#record"</code>.</li>
+<li><strong>Adding</strong> fills the kind's stacks that are not full (in slot order), then opens new slots. A pickup from the world takes what fits and the object keeps the rest (<code>inventaire.plein</code> with <code>reste</code>); what scripts give (<code>inventaire.ajouter</code>: Loot, Crafting, a shop) is all or nothing, as before.</li>
+<li><strong>Totals never change meaning</strong>: <code>inventaire.change.total</code>, what Crafting, Gathering, Needs and Quests count, <code>inventaire.retirer</code> and <code>inventaire.sortir</code> all work on the kind, all its slots together. Removing takes from the smallest stack first; an empty stack frees its slot and leaves the bar. The bar holds a slot (a precise stack).</li>
+<li><strong>Events</strong> (from any script or a game's own window):</li>
+<li><code>inventaire.jeter</code> {objet, case?, fiche?}: drops the slot <code>case</code> (its key), otherwise the unique copy <code>fiche</code>, otherwise the first slot of kind <code>objet</code>. The <strong>whole slot</strong> falls in front of the player as ONE object (the kind's model in hand, the one kept at pickup, or an object of that kind in the world; with none, a <code>builtin:cube</code> measured then scaled to <code>taille_jete</code> metres), set on the measured ground, never on a body. Its prompt says « Bois x40 »; E picks the same quantity back in one go. A unique copy keeps its record. The dropped object is kept by the saved game.</li>
+<li><code>inventaire.diviser</code> {case, quantite?, vers?}: <code>quantite</code> items of that slot (missing: half, rounded down) go to a new slot right after it, or with <code>vers</code> onto that stack of the same kind, up to <code>pile_max</code> (the rest stays in <code>case</code>). Refused when a new slot is needed and none is free (« Plus de place dans le sac. », the slot lights up like other refusals); a stack of 1 or a unique copy does not split.</li>
+<li><code>inventaire.jeter</code> {case, quantite}: only <code>quantite</code> items of a stack fall (one object « Bois x5 »); the slot keeps the rest.</li>
+<li><code>inventaire.regrouper</code> {de, vers}: two stacks of the same kind merge, up to <code>pile_max</code>; the rest stays where it was.</li>
+<li><code>inventaire.decrire</code> {objet, description} (version 29): describes a kind during the game when its row of <code>sortes_objets</code> gives no description (that row wins); the tooltip and the three-part details show it. An empty description removes it.</li>
+<li><strong>Reading the slots one by one</strong>: <code>shared.inventaire_contenu[player]()</code> returns the list of slots in order, each <code>{cle, objet, quantite, fiche}</code> (<code>cle</code> is the slot key to send to the events above), and whether the bag is shared.</li>
+<li><strong>The module's window</strong>: a click on a slot (A on a gamepad) opens its <strong>small window</strong> next to it (HUD key <code>inventaire.menu</code>, theme role <code>panneau.menu.inventaire</code>): the name and quantity, « Jeter », « Diviser en deux » and a quantity (« − », « 5 sur 10 », « + », « Valider »); a unique copy or a stack of 1 only has « Jeter ». It closes with Escape or B (its « Fermer » button), a click elsewhere, or once the action is done; near the right edge it opens on the slot's left. The single click still sends <code>inventaire.choisi</code> (eating an apple by a click keeps working); the double click keeps its role (use, equip) and closes the small window. Right click splits a slot in two in place. Dragging a stack onto another of the same kind merges them; dragging a slot out of every window drops it. <strong>Shift + drag</strong> (the control <code>item_split</code>, « Diviser en glissant (tenir) », left Shift by default, read when the drag starts or when it is released) moves only half: onto an empty place of the window, a new stack; onto a stack of the same kind, up to <code>pile_max</code>, the rest goes back; out of the window, half falls on the ground. A stack of 1 or a unique copy drags as usual. <code>item_split</code> shares left Shift with <code>run</code>: both are held together, which is harmless (the window pauses the world, or the player is not moving). While the window pauses the game, <code>item_drop</code> and <code>item_split</code> still reach it. <code>inventaire.choisi</code> and <code>inventaire.glisse</code> also give <code>case</code>.</li>
+<li><strong>A game's own window</strong> (a survival game's bag): draw each slot from <code>shared.inventaire_contenu[game.player()]()</code>, keep its <code>cle</code>, and add your buttons: Drop sends <code>game.emit("inventaire.jeter", {objet = c.objet, case = c.cle})</code>, Split sends <code>game.emit("inventaire.diviser", {case = c.cle})</code> (or with <code>quantite</code>), dropping a stack on another sends <code>game.emit("inventaire.regrouper", {de = a.cle, vers = b.cle})</code>. For Shift + drag, read <code>game.action("item_split")</code> when the drag starts or ends and send <code>inventaire.diviser</code> {case, quantite = half, vers = the target stack} (or without <code>vers</code> onto an empty place), or <code>inventaire.jeter</code> {case, quantite = half} out of the window. Redraw on <code>inventaire.change</code>. Never edit the module.</li>
+<li><strong>Several players</strong>: each player drops and splits in their own bag; what is dropped is a world object everyone sees and can pick up.</li>
+</ul>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>One copy per player: each player has their own bag by default. The game setting <code>sac_commun</code> ("One bag for the whole group") gives everyone the same bag; with the weight on, <code>poids_sac_commun</code> says who carries it (split by default). The host's saved game keeps each guest's bag under their player key: they find it again when they come back.</p>
+<h4 id="for-the-equipment-module-version-16">For the Equipment module (version 16)<a class="headerlink" href="#for-the-equipment-module-version-16" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>inventaire.sortir</code> {objet, fiche?}: takes one item out of the bag without destroying it (a unique copy keeps its record).</li>
+<li>A double click on a slot (or A twice on a gamepad) sends <code>inventaire.choisi</code> with <code>double = true</code>; dragging a slot onto another element of the HUD sends <code>inventaire.glisse</code> {objet, fiche, cible, joueur}; opening or closing the window sends <code>inventaire.fenetre</code> {ouverte, joueur}.</li>
+<li>The hook <code>inventaire.infobulle</code> (lines, {objet, fiche, joueur}) -&gt; lines: other systems add lines to an item's tooltip ([b] and [color=#rrggbb] allowed). Bonuses show their value's displayed name (<code>game.stat_name</code>).</li>
+<li><code>inventaire.tenir</code> {objet = kind} also finds a unique copy of that kind (or <code>fiche</code> for a precise one). With <code>place</code> too (version 20), that copy goes to that slot.</li>
+</ul>
+<h4 id="version-17">Version 17<a class="headerlink" href="#version-17" title="Permanent link">&para;</a></h4>
+<ul>
+<li>The hook <code>inventaire.porteur</code> (default, player) -&gt; the object that holds the item in hand (the model is attached to its hand bone). The default is the object the hook <code>equipement.corps</code> gives when the game overrides it (one hook for a game whose visible body is another object following the player: what is worn and the weapon in hand follow it), otherwise the player's character.</li>
+<li><code>inventaire.tenir_porte</code> {objet, fiche?, prioritaire?}: the Equipment module hands the weapon worn in its slot to the inventory, which holds, shows and announces it like the bar's (prioritaire: before the bar; otherwise when the bar holds nothing; objet "": none).</li>
+<li>The list <code>en_main</code> gains <code>modele_fichier</code> (a model file, such as a weapon shipped in armes/), <code>prise</code> (<code>placee</code> as before; <code>arme</code> or <code>debout</code>: the measured weapon hold of ADR-034, the grip found on the model), <code>longueur</code> (its real length for a 1.8 m character) and <code>avant</code>. Online, guests load the same <code>modele_fichier</code> from their copy of the game and see it held the same way (protocol 23).</li>
+</ul>
+<h4 id="version-22">Version 22<a class="headerlink" href="#version-22" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>prise</code> <code>arme</code> is the measured hold of a melee weapon or a tool (<code>game.attach</code> <code>melee</code>): the handle is the longest round, narrow part of the model, measured slice by slice along its longest side; the fist grips it from its end away from the head (the middle of a sword grip, low on an axe haft), the head or blade forward, on the thumb side. <code>avant</code> forces the side of the head. A model whose handle is flat, or whose round blade is longer than its grip, is measured wrong: use <code>placee</code> with an example in the hand. A firearm stays held by the Shooting module (<code>tir</code>).</li>
+<li><code>os_main</code> also applies to a measured hold. A bone the character does not have (<code>hand_r</code> on a KayKit, which has <code>handslot.r</code>): the bone found by measuring the skeleton holds the item, and the game log says it once (<code>attach: ... has no bone named ...</code>).</li>
+</ul>
+<h4 id="the-window-in-three-parts-version-24-disposition_fenetre">The window in three parts (version 24, <code>disposition_fenetre</code>)<a class="headerlink" href="#the-window-in-three-parts-version-24-disposition_fenetre" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>disposition_fenetre</code> = <code>grille</code> (default, the window above, unchanged) or <code>trois_parties</code>: one window that fills the screen, as in Rust (Tab), Valheim or Enshrouded. Choose <code>trois_parties</code> for a survival game or an RPG (equipment, chests, bodies to search); keep <code>grille</code> for a small game with a few items.</li>
+<li><strong>Left</strong> (only with the <code>equipement</code> system): the slots the game defined in Equipment, as slots (not a list), in two columns on each side of an empty space for the character (<code>espace_personnage</code>, a share of the screen width, 0.14; 0 brings them together), the weapon slots at the bottom of each column (version 26: the slots spread over the whole height of the column, and the space goes from the top of the first slot to the bottom of the last one, with no slot in it). Dragging an item of the bag onto a slot wears it (<code>equipement.porter</code>), a click on a worn slot takes it off (<code>equipement.retirer</code>): the Equipment module does the rest, as always. Its own window (O) still works; it no longer opens beside the inventory (<code>avec_inventaire</code>) in this layout.</li>
+<li><strong>Centre</strong>: the bag (title with the slots used out of <code>places</code>, the weight if on), the grid (<code>colonnes</code>), the <strong>hotbar</strong> under it, separate (drag a bag slot onto it, drag it back onto the bag to empty that place; two bar slots swap), « Trier » (sorts by the <code>categorie</code> of <code>sortes_objets</code>, then kind, then name) and « Fermer ».</li>
+<li><strong>Right</strong>: what is searched when the player opens a chest or a body (everything that sends <code>butin.ouvrir</code>; the Loot module's own window then stays closed), with « Tout prendre » (role <code>bouton.principal</code>): dragging an item to the bag takes it (<code>butin.prendre</code>), dragging a bag slot onto it puts it in a chest (<code>butin.ranger</code>, chests only, with the chest's sharing rules). Otherwise the details of the chosen item: its name in its rarity's colour, description, bonuses (the <code>inventaire.infobulle</code> hook, so Equipment's comparison too), quantity, weight, and « Équiper » (<code>bouton.principal</code>, if equipable), « Diviser en deux », « Jeter » (<code>bouton.danger</code>). In this layout, a click on a slot shows its details instead of the small window, and the hover tooltip is not shown.</li>
+<li>HUD keys: <code>inventaire.fenetre</code>, <code>inventaire.gauche</code>, <code>inventaire.centre</code>, <code>inventaire.droite</code>, <code>inventaire.grille</code>, <code>inventaire.case.N</code>, <code>inventaire.fbarre.N</code>, <code>inventaire.equip.&lt;slot&gt;</code>, <code>inventaire.fouille.N</code>, <code>inventaire.fouille.tout</code>, <code>inventaire.trier</code>, <code>inventaire.equiper</code>. Roles: <code>fenetre.inventaire</code>, <code>titre.inventaire</code>, <code>case.inventaire</code>, <code>case.barre_rapide</code>, <code>case.equipement</code>, <code>case.rare</code>, <code>case.butin</code>, <code>fenetre.butin</code> (the right column while searching), <code>bouton.principal</code>, <code>bouton.danger</code>.</li>
+<li>Everything else stays: drop and split (Shift + drag), weight, stacks, unique copies, keys 1 to 9 (and 0, - and =; with two rows, <code>inventaire.fbarre.13</code> to <code>.24</code> under the first), gamepad (focus, A, B on « Fermer »), several players (each their own window; a guest's take or put goes through the host).</li>
+<li>Behind the window, a dark veil over the whole screen (<code>inventaire.voile</code>, role <code>fond.voile</code>); dropping a dragged slot on it drops the item on the ground. A slot holding a rare-or-better copy (bag, hotbar of the window, searched content, worn slot) gets a thin frame in its rarity's colour (the one set in Loot's <code>raretes</code>), the panel <code>&lt;slot key&gt;.cadre</code> with role <code>fond.case.rare</code>: an interface pack with a <code>case.rare</code> row replaces it with its own image.</li>
+<li><strong>The character in the empty space (version 26, <code>montrer_personnage</code>, on)</strong>: while the three-part window is open, the game camera turns toward the player's character, who stands in the empty space between the equipment slots, as in Baldur's Gate 3 or Diablo. The camera is made for it (<code>game.spawn_camera</code>), faces the character at the height of its centre, and its distance comes from the character's measured size (<code>game.bounds</code>) and the place of <code>inventaire.personnage</code> on screen: a 1 m or a 2.5 m character fills the space the same way. The character fills about 85 % of the space's height (of at most three times its width, on a narrow 4:3 screen, so that its shoulders do not go behind the slots) (framed on its height: a rest pose that is a T or an A pose makes its bounds wide, so its arms may go a little past the space rather than the character shrinking). On opening, the character is put at once in the rest state of its animation graph (its entry state, <code>game.rest_pose</code>), so it is never frozen mid-step, and its idle clip keeps playing while the window pauses the world. It glides there in 0.25 s and comes back to the player's camera (or to the placed camera that was active before) when the window closes, on death, on <code>fenetres.fermer</code> and on a scene change; the camera made is destroyed. The dark veil goes round that space, which stays clear; the window then has no background of a single block: each column has its own, and the left column's is drawn in pieces round the space (<code>inventaire.fond.haut</code>, <code>.bas</code>, <code>.gauche</code>, <code>.droite</code>). With an interface pack, they keep the window's look: their roles (<code>fenetre.inventaire.equipement</code>, <code>fenetre.inventaire.sac</code>, <code>fenetre.inventaire.fiche</code>) take the theme's <code>fenetre.inventaire</code> row. Online, each player sees their own character through their own camera, at home; nobody else sees a camera nor an object. Off, or with <code>grille</code>, or without Equipment: nothing changes. A wall right in front of the character can hide it: nothing moves the camera around it. Never write your own camera script for this: tick or untick the setting.</li>
+</ul>
+<hr />
+<p><em>This page is generated automatically from the WorldMint code (<code>modules/inventaire/module.json</code>, <code>modules/inventaire/AGENT.md</code>, <code>modules/events.json</code>): it always matches the editor.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../interface/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Interface">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Interface
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../articulation/" class="md-footer__link md-footer__link--next" aria-label="Next: Joint">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Joint
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>

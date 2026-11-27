@@ -1,0 +1,4925 @@
+
+<!doctype html>
+<html lang="fr" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Le mode d&#x27;emploi de WorldMint, l&#x27;éditeur de jeux 3D où l&#x27;on construit son jeu avec un agent IA.">
+      
+      
+      
+        <link rel="canonical" href="https://prezzzze.github.io/worldmint-docs/fr/reference/systems/quetes/">
+      
+      
+      
+        <link rel="prev" href="../jour_nuit/">
+      
+      
+        <link rel="next" href="../manche/">
+      
+      
+        
+          <link rel="alternate" href="/worldmint-docs/fr/" hreflang="fr">
+        
+          <link rel="alternate" href="/worldmint-docs/en/" hreflang="en">
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.1.0">
+    
+    
+      
+        <title>Journal de quêtes - WorldMint</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../../../assets/stylesheets/modern/main.4ab2de0c.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/modern/palette.b60ce83d.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_scope.pathname.endsWith("/")||(__md_scope=new URL(__md_scope.pathname+"/",location)),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,_=__md_scope)=>JSON.parse(t.getItem(_.pathname+"."+e)),__md_set=(e,t,_=localStorage,a=__md_scope)=>{try{_.setItem(a.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-hidden="true"></label>
+    <div data-md-component="skip">
+      <a href="#__skip" class="md-skip">
+        Aller au contenu
+      </a>
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="En-tête">
+    <a href="../../.." title="WorldMint" class="md-header__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+      <span class="md-visually-hidden">Navigation</span>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            WorldMint
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Journal de quêtes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème clair"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Thème clair" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal"  aria-label="Thème sombre"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Thème sombre" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+      <div class="md-header__option">
+  <div class="md-select">
+    
+    <button class="md-header__button md-icon" aria-label="Sélectionner la langue">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-languages" viewBox="0 0 24 24"><path d="m5 8 6 6M4 14l6-6 2-3M2 5h12M7 2h1M22 22l-5-10-5 10M14 18h6"/></svg>
+    </button>
+    <div class="md-select__inner">
+      <ul class="md-select__list">
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/fr/" hreflang="fr" class="md-select__link">
+              Français
+            </a>
+          </li>
+        
+          <li class="md-select__item">
+            <a href="/worldmint-docs/en/" hreflang="en" class="md-select__link">
+              English
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</div>
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+          <span class="md-visually-hidden">Recherche</span>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Recherche">
+  <button type="button" class="md-search__button">
+    Recherche
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="WorldMint" class="md-nav__button md-logo" aria-label="WorldMint" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 5v16M20.001 19A2 2 0 0 0 22 17V5a2 2 0 0 0-1.999-2L16 3.002A5 5 0 0 0 12 5a5 5 0 0 0-4-2H4a2 2 0 0 0-2 2v12a2 2 0 0 0 1.999 2H8a5 5 0 0 1 4 2 5 5 0 0 1 4-2z"/></svg>
+
+    </a>
+    WorldMint
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  WorldMint
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Installation et premier lancement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../getting-started/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Prise en main
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../editor/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'éditeur
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_4">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  L'éditeur
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scene-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scène
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/game-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les systèmes et les réglages du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/scripts-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'onglet Scripts
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/viewport/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La vue 3D
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/library/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La bibliothèque
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/properties/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les propriétés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/menus/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menus et raccourcis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/preferences/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les préférences
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../editor/creator-mode/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le mode Créateur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../agent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../projects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Projets et scènes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terrain/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le terrain
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../city/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Villes et routes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lighting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La lumière et les ombres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../materials/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les matériaux
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../shaders/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les shaders
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les règles et les menus du jeu
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+            <label class="md-nav__title" for="__nav_12">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Les règles et les menus du jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le Déclencheur : « quand… alors… »
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../animation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Animer et faire des cinématiques
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../poses/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ajuster la pose d'un personnage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../mouvements/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Créer un mouvement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../physics-zones/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  La physique, les zones et la marche des personnages
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../vehicles-joints/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicules, articulations et chiffons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../game-interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  L'interface du jeu : écrans, menus, listes, champs de saisie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../videos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les vidéos
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../effects/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les particules et les décalcomanies
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../translations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Traduire son jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../saves/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les sauvegardes de partie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../multiplayer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le jeu à plusieurs
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lobby-hosting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Héberger son propre salon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../survival/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Faire un jeu de survie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../controls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les commandes du jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../sound/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le son et la table de mixage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../display-settings/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les réglages d'affichage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Exporter un jeu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Écrire une extension
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Questions fréquentes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../your-data/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Vos données
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Nouveautés
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Référence
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22" id="__nav_22_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_22_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Référence
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chaque élément de l'éditeur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_22_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Systèmes de jeu
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_22_3" id="__nav_22_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        
+          <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_22_3_label" aria-expanded="true">
+            <label class="md-nav__title" for="__nav_22_3">
+              <span class="md-nav__icon md-icon"></span>
+              
+  
+  Systèmes de jeu
+
+            </label>
+            <ul class="md-nav__list" data-md-scrollfix>
+              
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../accompagner/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Accompagner
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Armes à distance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../articulation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Articulation
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../barre_de_vie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Barre de vie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../besoins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Besoins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../boutique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Boutique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../butin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Butin
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../carte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Carte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Chat
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coffres/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Coffres
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../collecte/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Collecte
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../combat-basique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Combat simple
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commerces/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Commerces
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../construction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Construction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../course/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Course
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dialogue/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Dialogue
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../decalcomanie/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Décalcomanie
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../declencheur/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Déclencheur
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../particules/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effet de particules
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../alterations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Effets temporaires
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../endurance/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Endurance
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ennemis/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ennemis
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fabrication/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Fabrication
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interaction
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interface/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Interface
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../inventaire/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Inventaire
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jour_nuit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Jour et nuit
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Journal de quêtes
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quest-log-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quest log (<code>quetes</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quest log (quetes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-list-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The list <code>quetes</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rewards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches-quests-with-dans_l_ordre-on-the-same-keys-as-the-dialogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Branches (quests with <code>dans_l_ordre</code> on), the same keys as the <code>dialogue</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-and-repeatable-quests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Prerequisites and repeatable quests
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates-quests-made-during-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Templates: quests made during the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Failures
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resuming-and-trying-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resuming and trying again
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recipes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-scripts-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events, scripts, saves
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens-texts-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Screens, texts, tests
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../manche/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Manche
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../menu/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Menu
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mort/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Mort et réapparition
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../passage/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Passage
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../physique/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Physique
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Population
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chiffon/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Poupée de chiffon
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../progression/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Progression
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sante/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Santé
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../savoir/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Savoir
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../soins/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Soins
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sons/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Sons
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../brouillard/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Volume de brouillard
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vehicule/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Véhicule
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Zone
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../equipement/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Équipement
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../events/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les événements des systèmes
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../scripts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Les scripts de jeu (Luau)
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Ce que fait l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+                
+                  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../agent-guide/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+  Le guide de l'agent
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+                
+              
+            </ul>
+          </nav>
+        
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#reglages-pour-tout-le-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Réglages pour tout le jeu
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Réglages pour tout le jeu">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#champs-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les champs de chaque « Ligne »
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commandes-ajoutees-au-jeu" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Commandes ajoutées au jeu
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#evenements" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Événements
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Événements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-annonce" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il annonce
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ce-quil-ecoute" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce qu'il écoute
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#points-quun-script-peut-remplacer-gameoverride" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Points qu'un script peut remplacer (game.override)
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ce-que-lagent-sait-de-ce-systeme" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Ce que l'agent sait de ce système
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Ce que l&#x27;agent sait de ce système">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quest-log-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Quest log (<code>quetes</code>)
+      </span>
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Quest log (quetes)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-list-quetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        The list <code>quetes</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rewards" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Rewards
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#branches-quests-with-dans_l_ordre-on-the-same-keys-as-the-dialogue" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Branches (quests with <code>dans_l_ordre</code> on), the same keys as the <code>dialogue</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites-and-repeatable-quests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Prerequisites and repeatable quests
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#templates-quests-made-during-the-game" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Templates: quests made during the game
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#failures" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Failures
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resuming-and-trying-again" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Resuming and trying again
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recipes" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Recipes
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#events-scripts-saves" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Events, scripts, saves
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#screens-texts-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Screens, texts, tests
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#several-players" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Several players
+      </span>
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                <a id="__skip" tabindex="-1"></a>
+                
+                  
+
+
+<!-- Page générée par tools/docs/generate.py : ne pas la modifier à la main, la régénérer. -->
+
+<h1 id="journal-de-quetes">Journal de quêtes<a class="headerlink" href="#journal-de-quetes" title="Permanent link">&para;</a></h1>
+<p>Les quêtes du jeu et leurs étapes, qui avancent toutes seules : sur un événement (une règle du Déclencheur, une réponse d'un Dialogue, un ennemi vaincu), une marque du Dialogue, des objets portés ou remis, un lieu atteint, un temps tenu. Une étape peut avoir d'autres issues qui mènent ailleurs (des branches), être facultative, ou échouer pour plusieurs motifs. Une quête finie peut donner une récompense ; une quête peut aussi échouer (un événement, une marque, un temps écoulé, un objet perdu, le joueur trop loin) ou être abandonnée depuis le journal, puis être reprise au début, à l'étape ratée ou au dernier point de reprise. Une quête peut aussi être un modèle, avec des trous comme {lieu} : pendant la partie, quetes.creer en fait une quête réelle (« Livraison 3 »), ses trous remplis par un script, une règle du Déclencheur ou un tirage (un commerce au hasard, à telle distance). Un journal s'ouvre avec J, et une notification annonce chaque nouvelle quête, chaque étape et chaque fin.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identifiant</td>
+<td><code>quetes</code></td>
+</tr>
+<tr>
+<td>Version</td>
+<td>18</td>
+</tr>
+<tr>
+<td>Se pose sur des objets</td>
+<td>non</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reglages-pour-tout-le-jeu">Réglages pour tout le jeu<a class="headerlink" href="#reglages-pour-tout-le-jeu" title="Permanent link">&para;</a></h2>
+<p>Dans le panneau <strong>Systèmes</strong> (mode Développeur), en ouvrant la carte du système.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Les quêtes et leurs étapes</td>
+<td>Chaque quête est une ligne « Quête », suivie de ses étapes, dans l'ordre. Une quête commence au début du jeu, sur un événement, une marque ou la fin d'une autre ; elle se termine quand toutes ses étapes sont faites. Elle peut aussi échouer, ou être abandonnée par le joueur. Sous une étape, une ligne « Autre issue de l'étape » donne une autre façon de la finir ; sous une quête ou une étape, une ligne « Échoue aussi si » ajoute un motif d'échec ; une ligne « Test » choisit la suite selon une marque ou un objet porté.</td>
+<td><code>quetes</code></td>
+<td>Liste de « Ligne »</td>
+<td>(vide)</td>
+<td>une ligne par « Ligne » : <a href="#champs-quetes">ses champs</a></td>
+</tr>
+<tr>
+<td>Journal avec une touche (J)</td>
+<td>Coché : la commande Ouvrir le journal de quêtes (J, ou → à la manette) ouvre une fenêtre avec les quêtes en cours, leurs étapes, et celles terminées. La même touche la referme.</td>
+<td><code>fenetre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Arrêter le jeu quand le journal est ouvert</td>
+<td>Coché : le monde s'arrête tant que le journal est ouvert. Décoché : le jeu continue derrière, les ennemis compris.</td>
+<td><code>pause_fenetre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Annoncer à l'écran les quêtes et les étapes</td>
+<td>Coché : un petit message en haut de l'écran annonce une nouvelle quête, une étape faite et une quête terminée, avec sa récompense.</td>
+<td><code>notifications</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Durée d'une annonce (s)</td>
+<td>Combien de secondes de jeu chaque annonce reste à l'écran. Elle attend pendant une pause.</td>
+<td><code>duree_notification</code></td>
+<td>Nombre</td>
+<td>4</td>
+<td>de 1 à 30</td>
+</tr>
+<tr>
+<td>Montrer l'étape en cours à l'écran</td>
+<td>Coché : à droite de l'écran, le titre de la dernière quête commencée et ce qu'il reste à faire, avec la progression (2/5).</td>
+<td><code>suivi</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Quêtes du groupe (à plusieurs)</td>
+<td>Dans une partie à plusieurs : coché, les quêtes sont celles de tout le groupe. N'importe quel joueur fait avancer une étape, tous voient la même étape et le même suivi, et la quête se termine pour tous ; un joueur qui arrive en cours de partie trouve où en est le groupe. Décoché, chacun a ses quêtes. Sans effet à un joueur.</td>
+<td><code>groupe</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Récompense d'une quête du groupe</td>
+<td>Avec « Quêtes du groupe » : au groupe, une fois, la récompense va dans le sac commun de l'Inventaire s'il est coché, sinon dans le sac de celui qui termine la quête ; à chacun, chaque joueur présent la reçoit dans son sac.</td>
+<td><code>recompense_groupe</code></td>
+<td>Choix dans une liste</td>
+<td>Au groupe, une fois</td>
+<td><code>groupe</code> : Au groupe, une fois<br><code>chacun</code> : À chacun</td>
+</tr>
+<tr>
+<td>Jour d'une quête à refaire</td>
+<td>Pour les quêtes « Une fois par jour » : un jour du jeu commence au lever du soleil du système Jour et nuit (sans lui, le jour ne change pas) ; un jour réel, à minuit, d'après la date de l'ordinateur (celui de l'hôte).</td>
+<td><code>jour_repetition</code></td>
+<td>Choix dans une liste</td>
+<td>Un jour du jeu (Jour et nuit)</td>
+<td><code>jeu</code> : Un jour du jeu (Jour et nuit)<br><code>reel</code> : Un jour réel (la date)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="champs-quetes">Les champs de chaque « Ligne »<a class="headerlink" href="#champs-quetes" title="Permanent link">&para;</a></h3>
+<p>Dans les <strong>Propriétés</strong>, chaque « Ligne » a son cadre, numéroté ; <strong>Ajouter : Ligne</strong> en ajoute un, la croix le retire. Un champ n'apparaît que lorsqu'il sert : sous son nom, le tableau dit quand.</p>
+<table>
+<thead>
+<tr>
+<th>Réglage</th>
+<th>Ce qu'il fait</th>
+<th>Nom dans le code</th>
+<th>Type</th>
+<th>Par défaut</th>
+<th>Limites ou choix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sorte de ligne</td>
+<td>Une quête, avec son titre, son départ et sa récompense ; une étape, qui appartient à la quête au-dessus d'elle ; une autre issue, une autre façon de finir l'étape au-dessus ; un test, qui choisit la suite ; un motif d'échec de plus, pour la quête ou l'étape au-dessus ; un prérequis de la quête au-dessus, sans lequel elle n'est pas donnée ; sous un modèle, un tirage au hasard qui remplit un de ses trous ; ou une récompense de plus (un objet, de l'XP, un butin, une marque), donnée à la fin de la quête, de l'étape ou de l'issue au-dessus.</td>
+<td><code>sorte</code></td>
+<td>Choix dans une liste</td>
+<td>Quête</td>
+<td><code>quete</code> : Quête<br><code>etape</code> : Étape<br><code>issue</code> : Autre issue de l'étape<br><code>test</code> : Test<br><code>echec</code> : Échoue aussi si<br><code>condition</code> : Seulement si (prérequis)<br><code>tirage</code> : Tirage au hasard (modèle)<br><code>recompense</code> : Récompense</td>
+</tr>
+<tr>
+<td>Titre<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Le nom de la quête, comme « Les loups du moulin » : le journal et les notifications l'affichent, et il la désigne dans les événements.</td>
+<td><code>titre</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Description<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Une ou deux phrases sous le titre, dans le journal : qui la demande, pourquoi.</td>
+<td><code>description</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Modèle (des quêtes créées pendant la partie)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Coché : cette quête ne commence jamais elle-même et n'est pas dans le journal. Ses textes et ses lieux ont des trous, comme « Livrer le colis à {lieu} » ; l'événement quetes.creer, ou son événement de départ, en fait une quête réelle, « Livraison 1 », « Livraison 2 »… avec les trous remplis : par le script ou la règle du Déclencheur qui l'envoie, sinon par ses lignes « Tirage au hasard ». {n} dans le texte d'une étape en est aussi le nombre à atteindre.</td>
+<td><code>modele</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Commence<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Ce qui donne la quête au joueur : le début du jeu, un événement (une réponse d'un Dialogue, une règle du Déclencheur), une marque du Dialogue, ou la fin d'une autre quête. L'événement quetes.demarrer la donne aussi.</td>
+<td><code>depart</code></td>
+<td>Choix dans une liste</td>
+<td>Au début du jeu</td>
+<td><code>debut</code> : Au début du jeu<br><code>evenement</code> : Quand un événement arrive<br><code>marque</code> : Quand une marque est posée<br><code>quete</code> : Quand une autre quête se termine</td>
+</tr>
+<tr>
+<td>Nom de l'événement<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ; affiché seulement si <strong>Commence</strong> est « Quand un événement arrive »</em></td>
+<td>Le nom exact de l'événement qui donne la quête, comme « loups.accepte », envoyé par une réponse d'un Dialogue ou une règle du Déclencheur.</td>
+<td><code>depart_evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Marque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ; affiché seulement si <strong>Commence</strong> est « Quand une marque est posée »</em></td>
+<td>Le mot de la marque, posée par un Dialogue, comme « meunier_rencontre ». Si elle l'est déjà, la quête commence aussitôt.</td>
+<td><code>depart_marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Titre de la quête d'avant<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ; affiché seulement si <strong>Commence</strong> est « Quand une autre quête se termine »</em></td>
+<td>Le titre exact de la quête qui doit être finie pour que celle-ci commence : une suite de quêtes.</td>
+<td><code>depart_quete</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Personnage qui la donne (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Le personnage au-dessus duquel la Carte montre un « ! » tant que la quête peut être donnée. Vide : chaque personnage dont un Dialogue envoie l'événement de départ ou pose la marque de départ. Utile quand une règle du Déclencheur la donne près de lui.</td>
+<td><code>donneur</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Étapes l'une après l'autre<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Coché : une étape ne commence qu'une fois la précédente faite, et le journal ne montre pas encore les suivantes. Décoché : toutes les étapes sont à faire en même temps, dans n'importe quel ordre.</td>
+<td><code>dans_l_ordre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Donne<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Récompense »</em></td>
+<td>Ce que cette récompense donne, une seule fois, à la fin de la quête, de l'étape ou de l'issue au-dessus d'elle : un objet et sa quantité (l'inventaire), de l'XP (le système Progression), une table du système Butin (tirée et lâchée près du joueur), ou une marque (comme celles du Dialogue). Mettez-en autant de lignes que de récompenses. Le journal montre l'objet et l'XP à venir, l'annonce de fin les cite.</td>
+<td><code>donne</code></td>
+<td>Choix dans une liste</td>
+<td>Un objet</td>
+<td><code>objet</code> : Un objet<br><code>xp</code> : De l'XP<br><code>butin</code> : Une table de butin<br><code>marque</code> : Une marque</td>
+</tr>
+<tr>
+<td>Récompense : sorte d'objet (vide : aucune)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Récompense » ; affiché seulement si <strong>Donne</strong> est «  » ou « Un objet »</em></td>
+<td>L'objet que l'inventaire reçoit quand la quête se termine (ou, sur une ligne « Récompense », ce qu'elle a au-dessus d'elle), comme « Or » ou « Épée ». Vide : pas de récompense. D'autres récompenses : des lignes « Récompense » sous la quête.</td>
+<td><code>recompense</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien en récompense<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Récompense » ; affiché seulement si <strong>Donne</strong> est «  » ou « Un objet »</em></td>
+<td>Combien d'exemplaires de la récompense : 50 pour 50 pièces d'or.</td>
+<td><code>recompense_quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>XP donnée<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Récompense » ; affiché seulement si <strong>Donne</strong> est « De l'XP »</em></td>
+<td>L'XP gagnée, si le jeu a le système Progression (elle passe par ses multiplicateurs). À plusieurs, chaque joueur présent la reçoit pour une quête du groupe.</td>
+<td><code>donne_xp</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1 000 000</td>
+</tr>
+<tr>
+<td>Piste qui reçoit l'XP (vide : la principale)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Récompense » ; affiché seulement si <strong>Donne</strong> est « De l'XP »</em></td>
+<td>L'identifiant d'une piste du système Progression, comme « forge ».</td>
+<td><code>donne_piste</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Table de butin<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Récompense » ; affiché seulement si <strong>Donne</strong> est « Une table de butin »</em></td>
+<td>Le nom d'une table du système Butin : elle est tirée et ce qu'elle donne tombe près du joueur (ou dans son sac, selon les réglages du Butin).</td>
+<td><code>donne_table</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Marque posée<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Récompense » ; affiché seulement si <strong>Donne</strong> est « Une marque »</em></td>
+<td>Le mot d'une marque, comme « pont_repare » : les Dialogues, les tests et les autres quêtes la voient. Le joueur ne la voit pas.</td>
+<td><code>donne_marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>XP de récompense (système Progression)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>L'XP gagnée à la fin de la quête, si le jeu a le système Progression. 0 : aucune.</td>
+<td><code>xp</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 1 000 000</td>
+</tr>
+<tr>
+<td>Piste qui reçoit l'XP (vide : la principale)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>L'identifiant d'une piste du système Progression.</td>
+<td><code>piste_xp</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Échoue<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si »</em></td>
+<td>Ce qui fait échouer la quête en cours : un événement (le marchand à escorter meurt), une marque du Dialogue (le garde a été trahi), un temps limité, un objet perdu (le colis à livrer) ou le joueur trop loin d'un lieu. Une quête échouée s'arrête, sans récompense. L'événement quetes.echouer la fait échouer aussi. Sur une ligne « Échoue aussi si » : un motif de plus, pour la quête ou l'étape au-dessus ; « Jamais » n'y fait rien.</td>
+<td><code>echec</code></td>
+<td>Choix dans une liste</td>
+<td>Jamais</td>
+<td><code>aucun</code> : Jamais<br><code>evenement</code> : Quand un événement arrive<br><code>marque</code> : Quand une marque est posée<br><code>temps</code> : Quand le temps est écoulé<br><code>objet</code> : Quand le joueur perd un objet<br><code>eloigne</code> : Quand le joueur s'éloigne</td>
+</tr>
+<tr>
+<td>Nom de l'événement<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand un événement arrive »</em></td>
+<td>Le nom exact de l'événement qui fait échouer la quête, comme « sante.mort ». Il ne compte que pendant la quête.</td>
+<td><code>echec_evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement pour l'objet nommé (vide : n'importe lequel)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand un événement arrive »</em></td>
+<td>Le nom de l'objet que l'événement doit concerner, sans numéro : avec sante.mort et « Marchand », la quête échoue si le marchand meurt.</td>
+<td><code>echec_cible</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Marque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand une marque est posée »</em></td>
+<td>Le mot de la marque qui fait échouer la quête, posée par un Dialogue ou une autre quête, comme « garde_trahi ». Si elle l'est déjà, la quête échoue aussitôt (seulement avec « La quête échoue » : recommencer ou aller à une étiquette attend qu'elle soit posée pendant la quête).</td>
+<td><code>echec_marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Temps pour la finir (s)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand le temps est écoulé »</em></td>
+<td>Combien de secondes de jeu le joueur a pour finir la quête, depuis son début (sur une ligne « Échoue aussi si » sous une étape : depuis le début de l'étape). Le temps attend pendant une pause ; le suivi et le journal montrent ce qui reste.</td>
+<td><code>echec_delai</code></td>
+<td>Nombre</td>
+<td>60</td>
+<td>de 1 à 86 400</td>
+</tr>
+<tr>
+<td>Seulement si le joueur en est l'auteur<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand un événement arrive »</em></td>
+<td>Coché : l'événement ne compte que si le joueur l'a causé (sa source), ou le véhicule qu'il conduit : avec sante.mort et « Passant », la quête échoue si le joueur tue un passant, pas si un autre le fait.</td>
+<td><code>echec_par_joueur</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Objet (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand le joueur perd un objet »</em></td>
+<td>La sorte d'objet que le joueur ne doit pas perdre, comme « Colis ». Le motif ne compte qu'une fois que le joueur en a porté assez : la quête n'échoue pas avant qu'il l'ait pris. Le remettre par une étape « Quand le joueur remet des objets » n'est pas le perdre.</td>
+<td><code>echec_objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien au moins<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand le joueur perd un objet »</em></td>
+<td>Échoue quand le joueur en porte moins que ce nombre.</td>
+<td><code>echec_quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Lieu : un objet de la scène<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand le joueur s'éloigne »</em></td>
+<td>L'objet dont le joueur ne doit pas s'éloigner : un personnage à escorter, un quartier. Il peut bouger : la distance suit sa position. Le motif ne compte qu'une fois que le joueur en a été assez près : il n'échoue pas avant de l'avoir rejoint.</td>
+<td><code>echec_lieu</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Distance au-delà de laquelle elle échoue (m)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ou « Échoue aussi si » ; affiché seulement si <strong>Échoue</strong> est « Quand le joueur s'éloigne »</em></td>
+<td>Mesurée à plat, comme sur la carte. À plusieurs, quêtes du groupe : quand tous les joueurs sont trop loin.</td>
+<td><code>echec_rayon</code></td>
+<td>Nombre</td>
+<td>30</td>
+<td>de 0.5 à 5000</td>
+</tr>
+<tr>
+<td>Ce qui se passe<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Échoue aussi si »</em></td>
+<td>La quête échoue (sous une étape facultative, l'étape est seulement manquée) ; l'étape au-dessus recommence (sous la quête : elle reprend comme le dit « Après un échec, reprendre », sans échouer) ; ou la quête passe à une étiquette, un plan B.</td>
+<td><code>alors</code></td>
+<td>Choix dans une liste</td>
+<td>La quête échoue</td>
+<td><code>echoue</code> : La quête échoue<br><code>recommence</code> : L'étape recommence<br><code>etiquette</code> : Elle mène à une étiquette</td>
+</tr>
+<tr>
+<td>Étiquette où aller<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Échoue aussi si » ; affiché seulement si <strong>Ce qui se passe</strong> est « Elle mène à une étiquette »</em></td>
+<td>L'étiquette de l'étape où la quête continue, comme « fuir ».</td>
+<td><code>alors_suite</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Le joueur peut l'abandonner<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Coché : le journal montre un bouton Abandonner sous la quête en cours (un second appui confirme). Décoché : une quête importante ne s'abandonne pas. L'événement quetes.abandonner l'abandonne dans tous les cas.</td>
+<td><code>abandon</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Peut être reprise après un échec ou un abandon<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Coché : ce qui donne la quête (son événement, quetes.demarrer) la redonne : depuis le début, ou, après un échec, d'où le dit « Après un échec, reprendre ». Décoché : une quête échouée ou abandonnée l'est pour de bon.</td>
+<td><code>reprendre</code></td>
+<td>Oui ou non</td>
+<td>oui</td>
+<td></td>
+</tr>
+<tr>
+<td>Après un échec, reprendre<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>D'où repart la quête quand elle est reprise après un échec : au début, à l'étape ratée, ou à la dernière étape cochée « Point de reprise ». Les étapes d'avant restent faites ; les marques posées restent, et le monde n'est pas remis en état.</td>
+<td><code>reprise</code></td>
+<td>Choix dans une liste</td>
+<td>Au début</td>
+<td><code>debut</code> : Au début<br><code>etape</code> : À l'étape ratée<br><code>point</code> : Au dernier point de reprise</td>
+</tr>
+<tr>
+<td>Réessayer après un échec<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Après un échec : attendre que ce qui donne la quête la redonne, montrer un bouton Réessayer dans le journal, ou la reprendre toute seule. Sert seulement si « Peut être reprise » est coché.</td>
+<td><code>reessayer</code></td>
+<td>Choix dans une liste</td>
+<td>Non : elle doit être redonnée</td>
+<td><code>non</code> : Non : elle doit être redonnée<br><code>bouton</code> : Par un bouton Réessayer du journal<br><code>auto</code> : Toute seule</td>
+</tr>
+<tr>
+<td>Après combien de secondes<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ; affiché seulement si <strong>Réessayer après un échec</strong> est « Toute seule »</em></td>
+<td>Combien de secondes de jeu après l'échec la quête reprend toute seule.</td>
+<td><code>reessai_delai</code></td>
+<td>Nombre</td>
+<td>3</td>
+<td>de 0 à 600</td>
+</tr>
+<tr>
+<td>Peut être refaite<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Non : une quête finie l'est pour de bon. Oui : ce qui la donne (son événement, quetes.demarrer) la redonne dès qu'elle est finie. Une fois par jour : redonnée un autre jour que celui où elle a été finie, un jour du jeu (le lever du soleil du système Jour et nuit) ou un jour réel, selon le réglage « Jour d'une quête à refaire » ; une quête du début du jeu, d'une marque ou d'une autre quête revient alors toute seule. Le journal la montre « disponible » ou « à refaire demain ».</td>
+<td><code>repetable</code></td>
+<td>Choix dans une liste</td>
+<td>Non : une seule fois</td>
+<td><code>non</code> : Non : une seule fois<br><code>toujours</code> : Oui, dès qu'elle est finie<br><code>chaque_jour</code> : Une fois par jour</td>
+</tr>
+<tr>
+<td>Combien par jour<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ; affiché seulement si <strong>Modèle (des quêtes créées pendant la partie)</strong> est coché ; affiché seulement si <strong>Peut être refaite</strong> est « Une fois par jour »</em></td>
+<td>Un modèle « Une fois par jour » : le nombre de quêtes qu'il crée chaque jour, chacune d'un nouveau tirage (une mission différente). Donné au début du jeu, par une marque ou une autre quête : toutes au début de chaque jour. Donné par un événement (un donneur de quête, une règle du Déclencheur) : une à chaque fois, jusqu'à ce nombre ; ensuite, plus rien avant le lendemain et le « ! » du donneur est gris. La sauvegarde garde le jour et le compte : recharger le même jour ne recrée rien.</td>
+<td><code>par_jour</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 20, en nombre entier</td>
+</tr>
+<tr>
+<td>La quête d'hier pas finie<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête » ; affiché seulement si <strong>Modèle (des quêtes créées pendant la partie)</strong> est coché ; affiché seulement si <strong>Peut être refaite</strong> est « Une fois par jour »</em></td>
+<td>Un modèle « Une fois par jour » : au nouveau jour, une quête qu'il a créée un autre jour et pas encore finie. Gardée : le joueur peut encore la finir. Retirée : elle est abandonnée, sans compter comme un échec (« Quête abandonnée », l'événement quetes.abandon).</td>
+<td><code>hier</code></td>
+<td>Choix dans une liste</td>
+<td>Gardée</td>
+<td><code>garder</code> : Gardée<br><code>retirer</code> : Retirée (abandonnée, sans échec)</td>
+</tr>
+<tr>
+<td>Pose la marque si elle échoue ou est abandonnée (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Un mot que le jeu retient quand la quête échoue ou est abandonnée, comme « loups_rates » : le meunier peut s'en plaindre dans son Dialogue.</td>
+<td><code>marque_echec</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Envoie l'événement si elle échoue ou est abandonnée (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête »</em></td>
+<td>Un nom d'événement, comme « pont.effondre », envoyé quand la quête échoue ou est abandonnée. Une règle du Déclencheur « Quand l'événement » y réagit.</td>
+<td><code>annonce_echec</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement si<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) »</em></td>
+<td>Ce qu'il faut pour que la quête au-dessus soit donnée : un niveau du système Progression, des objets portés, une marque posée ou pas, une autre quête finie. Tant qu'il manque une condition, ce qui la donne est ignoré et le « ! » de son donneur est gris ; une quête du début du jeu, d'une marque ou d'une autre quête est donnée dès que tout y est.</td>
+<td><code>condition</code></td>
+<td>Choix dans une liste</td>
+<td>Un niveau atteint</td>
+<td><code>niveau</code> : Un niveau atteint<br><code>objet</code> : Il porte un objet<br><code>sans_objet</code> : Il ne porte pas un objet<br><code>marque</code> : Une marque est posée<br><code>sans_marque</code> : Une marque n'est pas posée<br><code>quete</code> : Une autre quête</td>
+</tr>
+<tr>
+<td>Niveau au moins<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Un niveau atteint »</em></td>
+<td>Le niveau qu'il faut avoir atteint, comme 5. À plusieurs, quêtes du groupe : celui d'un des joueurs.</td>
+<td><code>condition_niveau</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Piste (vide : la principale)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Un niveau atteint »</em></td>
+<td>L'identifiant d'une piste du système Progression, comme « bucheronnage ». Vide : le niveau principal du joueur.</td>
+<td><code>condition_piste</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Objet (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Il porte un objet » ou « Il ne porte pas un objet »</em></td>
+<td>La sorte d'objet, telle que l'inventaire la range, comme « Clé ».</td>
+<td><code>condition_objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien au moins<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Il porte un objet » ou « Il ne porte pas un objet »</em></td>
+<td>Le nombre qu'il faut porter (ou, pour « ne porte pas », à partir duquel c'est non).</td>
+<td><code>condition_quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Marque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Une marque est posée » ou « Une marque n'est pas posée »</em></td>
+<td>Le mot de la marque, posée par un Dialogue ou une quête, comme « meunier_rencontre ».</td>
+<td><code>condition_marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Titre de l'autre quête<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Une autre quête »</em></td>
+<td>Le titre exact de l'autre quête, dans la langue d'origine du jeu.</td>
+<td><code>condition_quete</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Où elle en est<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Seulement si (prérequis) » ; affiché seulement si <strong>Seulement si</strong> est « Une autre quête »</em></td>
+<td>Finie (le plus courant), en cours, pas commencée, échouée ou abandonnée : ce que le journal tient déjà.</td>
+<td><code>condition_etat</code></td>
+<td>Choix dans une liste</td>
+<td>Finie</td>
+<td><code>finie</code> : Finie<br><code>en_cours</code> : En cours<br><code>pas_commencee</code> : Pas commencée<br><code>echouee</code> : Échouée<br><code>abandonnee</code> : Abandonnée</td>
+</tr>
+<tr>
+<td>Trou à remplir (son nom, sans accolades)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) »</em></td>
+<td>Le nom du trou que ce tirage remplit, comme « lieu » pour {lieu}. Une valeur donnée par le script ou la règle qui crée la quête passe avant le tirage.</td>
+<td><code>tirage_trou</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Tirer<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) »</em></td>
+<td>Un objet de la scène au hasard, parmi ceux qui portent l'étiquette et sont à la bonne distance du joueur ; ou un nombre entier au hasard entre deux bornes. Le même tirage, avec la même graine, donne le même résultat. Deux trous tirés dans une même quête ne reçoivent jamais le même objet.</td>
+<td><code>tirage</code></td>
+<td>Choix dans une liste</td>
+<td>Un objet portant une étiquette</td>
+<td><code>objet</code> : Un objet portant une étiquette<br><code>nombre</code> : Un nombre</td>
+</tr>
+<tr>
+<td>Étiquette<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) » ; affiché seulement si <strong>Tirer</strong> est « Un objet portant une étiquette »</em></td>
+<td>L'étiquette que l'objet doit porter. Les commerces d'une ville portent « commerce » et « commerce:&lt;sorte&gt; », comme « commerce:superette » : ils sont des lieux sans rien de plus.</td>
+<td><code>tirage_etiquette</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>À au moins (m du joueur)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) » ; affiché seulement si <strong>Tirer</strong> est « Un objet portant une étiquette »</em></td>
+<td>La distance la plus courte entre le joueur et l'objet tiré, mesurée à plat comme sur la carte : 100 pour ne pas livrer à la porte d'à côté.</td>
+<td><code>tirage_distance_min</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de 0 à 100 000</td>
+</tr>
+<tr>
+<td>À au plus (m du joueur)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) » ; affiché seulement si <strong>Tirer</strong> est « Un objet portant une étiquette »</em></td>
+<td>La distance la plus longue. Aucun objet entre les deux : la quête n'est pas créée, et l'événement quetes.creation_impossible en dit la raison.</td>
+<td><code>tirage_distance_max</code></td>
+<td>Nombre</td>
+<td>300</td>
+<td>de 1 à 100 000</td>
+</tr>
+<tr>
+<td>De<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) » ; affiché seulement si <strong>Tirer</strong> est « Un nombre »</em></td>
+<td>Le plus petit nombre tiré, compris.</td>
+<td><code>tirage_nombre_min</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 0 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>À<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Tirage au hasard (modèle) » ; affiché seulement si <strong>Tirer</strong> est « Un nombre »</em></td>
+<td>Le plus grand nombre tiré, compris. Avec {n} dans le texte d'une étape, c'est aussi le nombre à atteindre : « Rapporter {n} pommes ».</td>
+<td><code>tirage_nombre_max</code></td>
+<td>Nombre</td>
+<td>5</td>
+<td>de 0 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Ce qu'il faut faire<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape »</em></td>
+<td>L'étape telle que le journal l'écrit, comme « Vaincre les loups » ou « Parler au meunier ».</td>
+<td><code>texte</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Étiquette (pour y mener)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Test »</em></td>
+<td>Un mot qui nomme cette ligne, comme « alerte ». Une suite qui est ce mot mène ici.</td>
+<td><code>etiquette</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Ensuite : étiquette (vide : l'étape d'après ; fin : la quête est réussie ; echec : elle échoue)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape »</em></td>
+<td>Où va la quête une fois cette ligne faite : l'étiquette d'une étape (en arrière aussi : les étapes où l'on revient sont à refaire), « fin », « echec », ou vide pour l'étape d'après.</td>
+<td><code>suite</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Facultative (la quête peut finir sans elle)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape »</em></td>
+<td>Cochée : la quête passe aussitôt à l'étape suivante, et celle-ci reste faisable jusqu'à la fin de la quête. Son échec ne fait pas échouer la quête : elle est seulement manquée.</td>
+<td><code>facultative</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Point de reprise<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape »</em></td>
+<td>Coché : une quête reprise après un échec « au dernier point de reprise » repart de cette étape.</td>
+<td><code>point_de_reprise</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Où le joueur repart (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ; affiché seulement si <strong>Point de reprise</strong> est coché</em></td>
+<td>Un objet de la scène où le joueur est replacé quand la quête reprend ici (à plusieurs, quêtes du groupe : tous les joueurs). Un joueur mort y est replacé quand il réapparaît. Vide : il reste où il est.</td>
+<td><code>reprise_lieu</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Envoie l'événement au début (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape »</em></td>
+<td>Un nom d'événement, comme « loups.apparaitre », envoyé quand l'étape commence. Une règle du Déclencheur « Quand l'événement » fait apparaître ce qu'il faut à cette étape.</td>
+<td><code>annonce_debut</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Faite<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape »</em></td>
+<td>Ce qui termine l'étape : un événement (une règle du Déclencheur, une réponse d'un Dialogue, un ennemi vaincu), une marque du Dialogue, un nombre d'objets dans l'inventaire, ou des objets remis : sur l'événement (une conversation finie, par exemple), l'inventaire les reprend. Ou bien le joueur arrive à un lieu, ou il tient un temps (près d'un lieu, s'il est donné).</td>
+<td><code>fin</code></td>
+<td>Choix dans une liste</td>
+<td>Quand un événement arrive</td>
+<td><code>evenement</code> : Quand un événement arrive<br><code>marque</code> : Quand une marque est posée<br><code>objet</code> : Quand le joueur porte assez d'un objet<br><code>remettre</code> : Quand le joueur remet des objets<br><code>lieu</code> : Quand le joueur arrive à un lieu<br><code>tenir</code> : Quand il a tenu assez longtemps</td>
+</tr>
+<tr>
+<td>Nom de l'événement<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand un événement arrive » ou « Quand le joueur remet des objets »</em></td>
+<td>Le nom exact de l'événement, comme « porte.ouvrir », « sante.mort » (quelque chose meurt) ou « dialogue.fin » (une conversation finie). Il ne compte que pendant l'étape.</td>
+<td><code>fin_evenement</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement pour l'objet nommé (vide : n'importe lequel)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand un événement arrive » ou « Quand le joueur remet des objets »</em></td>
+<td>Le nom de l'objet que l'événement doit concerner, sans numéro : « Loup » compte « Loup 1 » et « Loup 2 ». Avec sante.mort, seuls les loups vaincus comptent ; avec dialogue.fin, seule la conversation avec ce personnage.</td>
+<td><code>fin_cible</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien de fois<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand un événement arrive »</em></td>
+<td>Combien de fois l'événement doit arriver : 5 pour vaincre cinq loups. Le journal montre où en est le joueur, comme 2/5.</td>
+<td><code>fin_fois</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 100 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Marque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand une marque est posée »</em></td>
+<td>Le mot de la marque, posée par un Dialogue ou une autre quête, comme « garde_convaincu ». Si elle l'est déjà, l'étape est faite aussitôt.</td>
+<td><code>fin_marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Objet (sorte d'objet de l'inventaire)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand le joueur porte assez d'un objet », « Quand le joueur remet des objets » ou « Quand un événement arrive »</em></td>
+<td>La sorte d'objet à porter ou à remettre, telle que l'inventaire la range, comme « Peau de loup ». Avec un événement : seulement s'il porte sur cette sorte d'objet (boutique.achat et « Pomme », butin.ramasse et « Clé ») ; vide : n'importe laquelle.</td>
+<td><code>fin_objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien au moins<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand le joueur porte assez d'un objet » ou « Quand le joueur remet des objets »</em></td>
+<td>Le nombre à porter en même temps, ou à remettre : 3 peaux. Le journal montre où en est le joueur, comme 1/3. S'il n'en a pas assez quand il les remet, une annonce dit combien il en manque.</td>
+<td><code>fin_quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Compter les quantités<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand un événement arrive »</em></td>
+<td>Coché : un événement compte sa quantité, et « Combien de fois » devient le total : un achat de 6 pommes fait « Acheter 6 pommes ». Décoché : chaque événement compte 1.</td>
+<td><code>fin_compter</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Seulement si le joueur en est l'auteur<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand un événement arrive »</em></td>
+<td>Coché : l'événement ne compte que si le joueur l'a causé (sa source), ou le véhicule qu'il conduit : un loup tué par un autre ne compte pas.</td>
+<td><code>fin_par_joueur</code></td>
+<td>Oui ou non</td>
+<td>non</td>
+<td></td>
+</tr>
+<tr>
+<td>Lieu : un objet de la scène<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand le joueur arrive à un lieu » ou « Quand il a tenu assez longtemps »</em></td>
+<td>Où aller : un objet qui porte le système Zone compte à son entrée ; un autre objet, à moins du rayon (il peut bouger). Pour tenir : facultatif ; donné, le temps ne passe que dans le rayon.</td>
+<td><code>fin_lieu</code></td>
+<td>Objet de la scène</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Rayon autour du lieu (m)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand le joueur arrive à un lieu » ou « Quand il a tenu assez longtemps »</em></td>
+<td>À quelle distance du lieu le joueur doit être, mesurée à plat, comme sur la carte.</td>
+<td><code>fin_rayon</code></td>
+<td>Nombre</td>
+<td>5</td>
+<td>de 0.5 à 5000</td>
+</tr>
+<tr>
+<td>Combien de temps tenir (s)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Étape » ou « Autre issue de l'étape » ; affiché seulement si <strong>Faite</strong> est « Quand il a tenu assez longtemps »</em></td>
+<td>Les secondes de jeu à tenir pendant que l'étape est active. Le temps attend pendant une pause ; le suivi montre ce qui reste.</td>
+<td><code>fin_duree</code></td>
+<td>Nombre</td>
+<td>30</td>
+<td>de 1 à 86 400</td>
+</tr>
+<tr>
+<td>Question<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Test »</em></td>
+<td>Ce que le test regarde, au moment où la quête l'atteint : le joueur porte-t-il un objet, une marque est-elle posée.</td>
+<td><code>test</code></td>
+<td>Choix dans une liste</td>
+<td>Porte-t-il un objet ?</td>
+<td><code>objet</code> : Porte-t-il un objet ?<br><code>marque</code> : Une marque est-elle posée ?</td>
+</tr>
+<tr>
+<td>Objet<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Test » ; affiché seulement si <strong>Question</strong> est « Porte-t-il un objet ? »</em></td>
+<td>La sorte d'objet, telle que l'inventaire la range, comme « Clé » ou « Or ».</td>
+<td><code>test_objet</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Combien au moins<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Test » ; affiché seulement si <strong>Question</strong> est « Porte-t-il un objet ? »</em></td>
+<td>Le nombre qu'il faut porter pour répondre oui, comme 10 pièces d'or.</td>
+<td><code>test_quantite</code></td>
+<td>Nombre</td>
+<td>1</td>
+<td>de 1 à 1 000 000, en nombre entier</td>
+</tr>
+<tr>
+<td>Marque<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Test » ; affiché seulement si <strong>Question</strong> est « Une marque est-elle posée ? »</em></td>
+<td>Le mot de la marque, comme « roi_trahi ».</td>
+<td><code>test_marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Si oui : étiquette (vide : la ligne d'après ; fin : la quête est réussie ; echec : elle échoue)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Test »</em></td>
+<td>Où va la quête si la réponse est oui : l'étiquette d'une étape ou d'un test, « fin », « echec », ou vide pour la ligne d'après.</td>
+<td><code>si_oui</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Si non : étiquette (vide : la ligne d'après ; fin : la quête est réussie ; echec : elle échoue)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Test »</em></td>
+<td>Où va la quête si la réponse est non : l'étiquette d'une étape ou d'un test, « fin », « echec », ou vide pour la ligne d'après.</td>
+<td><code>si_non</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Pose la marque à la fin (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête », « Étape » ou « Autre issue de l'étape »</em></td>
+<td>Un mot que le jeu retient quand cette quête ou cette étape se termine (ou se termine par cette issue), comme « loups_chasses ». Les tests et les réponses des Dialogues peuvent s'en servir : le meunier remercie le joueur.</td>
+<td><code>marque</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>Change la réputation auprès de (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête », « Étape » ou « Autre issue de l'étape »</em></td>
+<td>L'identifiant d'une piste de réputation du système Progression, comme « bandits » : à la fin de cette quête, de cette étape ou de cette issue (une branche), la réputation du joueur auprès de cette faction change de la valeur ci-dessous. Vide : aucune.</td>
+<td><code>reputation</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+<tr>
+<td>De combien (négatif : elle baisse)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête », « Étape » ou « Autre issue de l'étape »</em></td>
+<td>+50 : la faction apprécie ; -100 : elle aime moins le joueur, par exemple après une branche où il a trahi ses gens. Bornée par la piste.</td>
+<td><code>reputation_valeur</code></td>
+<td>Nombre</td>
+<td>0</td>
+<td>de -1 000 000 à 1 000 000</td>
+</tr>
+<tr>
+<td>Envoie l'événement à la fin (facultatif)<br><em>affiché seulement si <strong>Sorte de ligne</strong> est « Quête », « Étape » ou « Autre issue de l'étape »</em></td>
+<td>Un nom d'événement, comme « pont.reparer », envoyé quand cette quête ou cette étape se termine (ou se termine par cette issue). Une règle du Déclencheur « Quand l'événement » ou un script y réagit.</td>
+<td><code>annonce</code></td>
+<td>Texte</td>
+<td>(vide)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="commandes-ajoutees-au-jeu">Commandes ajoutées au jeu<a class="headerlink" href="#commandes-ajoutees-au-jeu" title="Permanent link">&para;</a></h2>
+<p>Elles apparaissent dans le panneau <strong>Commandes du jeu</strong> (mode Développeur), où l'on peut changer leur touche.</p>
+<table>
+<thead>
+<tr>
+<th>Commande</th>
+<th>Nom pour les scripts</th>
+<th>Touche</th>
+<th>Manette</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ouvrir le journal de quêtes</td>
+<td><code>journal</code></td>
+<td>J</td>
+<td>→</td>
+</tr>
+</tbody>
+</table>
+<h2 id="evenements">Événements<a class="headerlink" href="#evenements" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<h3 id="ce-quil-annonce">Ce qu'il annonce<a class="headerlink" href="#ce-quil-annonce" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#progressionreputation"><code>progression.reputation</code></a></td>
+<td><code>joueur</code> (id?), <code>piste</code> (text), <code>faction</code> (text?), <code>valeur</code> (number), <code>fixer</code> (boolean?), <code>groupe</code> (boolean?), <code>source</code> (text?)</td>
+<td>Ask the Progression module to change the player's reputation with a faction (Progression 9): piste is a track of kind reputation (faction is accepted too); valeur is added (negative: it goes down), or set when fixer is true; it stays within the track's bounds. Sent by a quest, a step or a way to end it (its reputation field), a Trigger rule or a script. groupe: every player present.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressiondonner"><code>progression.donner</code></a></td>
+<td><code>joueur</code> (id?), <code>xp</code> (number), <code>piste</code> (text?), <code>source</code> (text?)</td>
+<td>Ask the Progression module to give xp to the player (a Trigger rule, a script): it goes through the multipliers and the hook progression.gain, on the host. piste: a track's identifier (empty or missing: the main one); source: a short name for the repetition and the cap.</td>
+</tr>
+<tr>
+<td><a href="../../events/#butinlacher"><code>butin.lacher</code></a></td>
+<td><code>table</code> (text), <code>position</code> (vector?), <code>cible</code> (id?), <code>niveau</code> (number?), <code>joueur</code> (id?)</td>
+<td>Ask the Loot module to roll a table and drop what it gives (the Trigger, a script). position or cible: where; niveau: the item level; joueur: for whom (the killer, for sharing).</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesdebut"><code>quetes.debut</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest started: quete is its title. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetescreee"><code>quetes.creee</code></a></td>
+<td><code>modele</code> (text), <code>quete</code> (text), <code>valeurs</code> (table), <code>groupe</code> (boolean?)</td>
+<td>A quest was made from a template (Journal de quêtes 15, events version 34): quete is its own title, modele the template's, valeurs the value of each hole (an object's id, a number, a text). Sent before its quetes.debut. groupe: true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetescreation_impossible"><code>quetes.creation_impossible</code></a></td>
+<td><code>modele</code> (text), <code>motif</code> (text), <code>raison</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest could not be made from a template (Journal de quêtes 15, events version 34); nothing was created. motif: modele_inconnu (no quest of that title), pas_un_modele (the quest is not ticked modele), aucun_candidat (no object with the tag at that distance), valeur_manquante (a hole has no value and no draw), conditions (the template's prerequisites are not met), titre_pris (the title given is already a quest's). raison says it in a sentence, also written in the game log.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesetape_debut"><code>quetes.etape_debut</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>texte</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A step of a quest starts (Journal de quêtes 11, events version 33): it becomes one to do now, its other ways to end it too. etape is its rank in the quest (from 1), texte what it says. Sent after quetes.debut for the first steps, then after the quetes.etape that opened it, and again when the step starts over (an "Also fails if" row set to recommence) or the quest resumes at it (quetes.reprise); its own annonce_debut event follows. Not sent again when a saved game is loaded. groupe (Journal de quêtes 8): true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesetape"><code>quetes.etape</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>texte</code> (text), <code>issue</code> (number?), <code>suite</code> (text?), <code>groupe</code> (boolean?)</td>
+<td>A step of a quest is done: etape is its rank in the quest (from 1), texte what it said. Sent before quetes.fin when it was the last one. issue (Journal de quêtes 11): the rank (from 1) of the other way to end the step that did it, absent when the step itself did; texte is then that way's text. suite (Journal de quêtes 11): the label the quest goes to next (fin, echec or a step's label), absent when it simply goes on to the next row. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesetape_echec"><code>quetes.etape_echec</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>alors</code> (text), <code>manquee</code> (boolean?), <code>groupe</code> (boolean?)</td>
+<td>A step of a quest failed (Journal de quêtes 11, events version 33): one of its "Also fails if" rows happened. etape is its rank in the quest (from 1), alors what that row does: echoue (the quest fails, quetes.echec follows), recommence (the step starts again from zero) or etiquette (the quest goes to the row's label). Also sent for an "Also fails if" row under the quest itself that does not make it fail (recommence: the quest starts again; etiquette), etape being then the step it was waiting for (0: none). For an optional step, manquee is true: the step is only missed, the quest goes on without it. groupe: true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesfin"><code>quetes.fin</code></a></td>
+<td><code>quete</code> (text), <code>xp</code> (number?), <code>piste</code> (text?), <code>groupe</code> (boolean?), <code>facultatives</code> (table?)</td>
+<td>A quest is finished: all its steps are done. Its reward, if any, has been asked to the inventory. xp and piste (version 28): its XP for the Progression module and the track that gets it (empty: the main one). facultatives (Journal de quêtes 11): {faites, total}, how many of its optional steps were done, out of how many; absent when it has none. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesechec"><code>quetes.echec</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>A quest failed: an event, a mark, its time ran out, or quetes.echouer. It gives no reward; it may be given again if its settings allow it. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesabandon"><code>quetes.abandon</code></a></td>
+<td><code>quete</code> (text), <code>groupe</code> (boolean?)</td>
+<td>The player abandoned a quest from the log (or quetes.abandonner asked for it). It gives no reward; it may be given again if its settings allow it. groupe (Journal de quêtes 8): true for a quest of the whole group (game setting groupe), sent once for the group, joueur being who moved it on.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesreprise"><code>quetes.reprise</code></a></td>
+<td><code>quete</code> (text), <code>etape</code> (number), <code>groupe</code> (boolean?)</td>
+<td>A quest resumes (Journal de quêtes 11, events version 33): tried again after a failure (the log's Try again button, reessayer auto, quetes.reessayer, or given again when it does not start over), or started again by an "Also fails if" row of the quest set to recommence. etape is the step it resumes at (from 1; 0: none). The steps before it stay done; marks stay set and the world is not put back as it was: a Trigger rule on the step's annonce_debut does that. groupe: true for a quest of the whole group.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireajouter"><code>inventaire.ajouter</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>joueur</code> (id?), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to add items, such as a reward. Answered by inventaire.change, or inventaire.plein. With several players, joueur says whose bag; without it, the player whose action is being handled, or every player.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventaireretirer"><code>inventaire.retirer</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>fiche</code> (number?)</td>
+<td>Ask the inventory to remove items, such as a payment. Answered by inventaire.change, or inventaire.manque if there are not enough. For a kind with unique copies (version 15): fiche removes that copy, otherwise the first ones; their records are destroyed.</td>
+</tr>
+<tr>
+<td><a href="../../events/#dialoguemarquer"><code>dialogue.marquer</code></a></td>
+<td><code>marque</code> (text), <code>retirer</code> (boolean?)</td>
+<td>Ask the dialogue system to set a mark, from a script or another system; with retirer true, to remove it. Dialogue conditions then see it.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ce-quil-ecoute">Ce qu'il écoute<a class="headerlink" href="#ce-quil-ecoute" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Événement</th>
+<th>Champs</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../../events/#quetesdemarrer"><code>quetes.demarrer</code></a></td>
+<td><code>quete</code> (text)</td>
+<td>Ask the quest log to give a quest to the player, by its title: from a script, a dialogue or a trigger. Nothing happens if it was already given.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetescreer"><code>quetes.creer</code></a></td>
+<td><code>modele</code> (text), <code>valeurs</code> (table?), <code>titre</code> (text?), <code>graine</code> (number?)</td>
+<td>Ask the quest log to make a real quest from a template (Journal de quêtes 15, events version 34): modele is the template's title (a quest ticked modele). Its holes {name} are filled from valeurs ({lieu = id, n = 3}), or from a field of the event with the hole's name (cible, from a Trigger rule), otherwise by the template's draw rows (an object with a tag at a distance from the player, a number); a value given comes before the draw. titre: its title, holes allowed (empty: the template's title and the next number, "Livraison 3"). graine: the seed of the draw (the same seed gives the same result; empty: drawn from the game). The quest starts at once; quetes.creee follows, or quetes.creation_impossible.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesechouer"><code>quetes.echouer</code></a></td>
+<td><code>quete</code> (text)</td>
+<td>Ask the quest log to make a quest in progress fail, by its title: from a script or a trigger. Nothing happens if it is not in progress.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesabandonner"><code>quetes.abandonner</code></a></td>
+<td><code>quete</code> (text)</td>
+<td>Ask the quest log to abandon a quest in progress, by its title, as the player does from the log. Nothing happens if it is not in progress.</td>
+</tr>
+<tr>
+<td><a href="../../events/#quetesreessayer"><code>quetes.reessayer</code></a></td>
+<td><code>quete</code> (text)</td>
+<td>Ask the quest log to try a failed quest again, by its title (Journal de quêtes 11, events version 33): the same as its Try again button in the log. It resumes from where its setting reprise says (the start, the failed step or the last checkpoint). Nothing happens if it has not failed or cannot be taken up again (reprendre).</td>
+</tr>
+<tr>
+<td><a href="../../events/#joueurreapparu"><code>joueur.reapparu</code></a></td>
+<td><code>joueur</code> (id), <code>cible</code> (id), <code>position</code> (vector)</td>
+<td>A dead player stands up again (death and respawn module): respawned, or brought back by sante.ranimer.</td>
+</tr>
+<tr>
+<td><a href="../../events/#inventairechange"><code>inventaire.change</code></a></td>
+<td><code>objet</code> (text), <code>quantite</code> (number), <code>total</code> (number), <code>chargement</code> (boolean?), <code>fiche</code> (number?), <code>jete</code> (boolean?)</td>
+<td>The quantity of an item changed. total is the new quantity. chargement is true when a saved game gives the items back (game.load): nothing was picked up. For a unique copy (version 15), objet is its kind, fiche its record's number, total how many of that kind. With several stacks of a kind (version 21), total counts all of them; jete is true when a slot was dropped on the ground.</td>
+</tr>
+<tr>
+<td><a href="../../events/#dialoguemarque"><code>dialogue.marque</code></a></td>
+<td><code>marque</code> (text)</td>
+<td>A dialogue set a mark: a word the game remembers (a line shown, an answer chosen). Every dialogue's conditions can use it.</td>
+</tr>
+<tr>
+<td><a href="../../events/#zoneentree"><code>zone.entree</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>Something entered a zone (an object carrying the zone system): a player, a character or a moving object, depending on what the zone detects (joueur: every player). joueur is set when qui is a player. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#vehiculemonte"><code>vehicule.monte</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>A player got into a vehicle (an object carrying the vehicule system) and now drives it: qui and joueur are their character (the host's, or a guest's). Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#vehiculedescendu"><code>vehicule.descendu</code></a></td>
+<td><code>cible</code> (id), <code>qui</code> (id), <code>joueur</code> (id?)</td>
+<td>A player got out of a vehicle. Announced by the engine.</td>
+</tr>
+<tr>
+<td><a href="../../events/#jour_nuitlever"><code>jour_nuit.lever</code></a></td>
+<td><code>jour</code> (number)</td>
+<td>The sun rose: day jour begins. Lamps tagged for the night went out.</td>
+</tr>
+<tr>
+<td><a href="../../events/#progressionniveau"><code>progression.niveau</code></a></td>
+<td><code>joueur</code> (id?), <code>cle</code> (text), <code>piste</code> (text), <code>niveau</code> (number), <code>ancien</code> (number)</td>
+<td>Sent by the engine for each level a player reached on a track (several levels at once: several events), also when an admin sets a level. The Progression module gives the rewards of that level; a Trigger rule can play a sound or open a door.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="points-quun-script-peut-remplacer-gameoverride">Points qu'un script peut remplacer (game.override)<a class="headerlink" href="#points-quun-script-peut-remplacer-gameoverride" title="Permanent link">&para;</a></h2>
+<p>Les descriptions viennent du code et sont en anglais, la langue de travail de l'agent.</p>
+<ul>
+<li><code>quetes.texte</code> : function(default, key) -&gt; the text the quest log shows for that key: titre, aucune, en_cours, terminees, fermer, fait, nouvelle, etape, finie, recompense, echouee, abandonnee, ratees, echouee_court, abandonnee_court, abandonner, confirmer, reste, manque, ou, facultatif, manquee, etape_ratee, reprise, reessayer, demain, disponible, recompense_xp, a_venir. It may hold {quete}, {etape}, {objet}, {n}, {total} and {liste}, replaced afterwards (in the player's language). The default is the game's translation of the text in the original language (translations_get lists them as built-in texts of the quest log); without one, French or English, after the player's language.</li>
+<li><code>quetes.compte</code> : function(default, e, quete, etape) -&gt; how much the event e counts for a step that ends on an event (0: not at all), once its fin_cible matched. quete is the quest's title, etape the step's row (its settings, plus numero, its rank from 1), or the row of one of its other ways to end it (plus issue, its rank among them from 1). The default applies fin_objet (the kind of item of e.objet or e.ressource), fin_par_joueur (e.source, e.joueur or e.qui is the player or the vehicle they drive) and fin_compter (e.quantite, otherwise 1). To add a condition without touching the system: only at night, only with a given weapon.</li>
+</ul>
+<h2 id="ce-que-lagent-sait-de-ce-systeme">Ce que l'agent sait de ce système<a class="headerlink" href="#ce-que-lagent-sait-de-ce-systeme" title="Permanent link">&para;</a></h2>
+<p>Le texte que l'agent lit avant de se servir de ce système (en anglais, la langue de travail de l'agent).</p>
+<h3 id="quest-log-quetes">Quest log (<code>quetes</code>)<a class="headerlink" href="#quest-log-quetes" title="Permanent link">&para;</a></h3>
+<p>The game's quests and their steps, written in its settings and moved on by events, without code. Notifications announce each new quest, step done, failure and resume; the current steps show on the right of the screen; a log window opens with the control <code>journal</code> (J, or → on a gamepad). Add it once with <code>modules_add</code>; it is for the whole game, not placed on objects. Use it whenever the user talks about quests, missions, objectives or tasks: <strong>set its list with <code>modules_set</code>, never write a quest in a script</strong>, never copy a quest into a script, never edit the system (override its hooks with <code>game.override</code>).</p>
+<h4 id="the-list-quetes">The list <code>quetes</code><a class="headerlink" href="#the-list-quetes" title="Permanent link">&para;</a></h4>
+<p>Its game setting <code>quetes</code> is a list of rows, in order. Its kinds (<code>sorte</code>):</p>
+<table>
+<thead>
+<tr>
+<th><code>sorte</code></th>
+<th>What it is</th>
+<th>Under</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>quete</code></td>
+<td>Starts a quest; the rows after it belong to it.</td>
+<td>—</td>
+</tr>
+<tr>
+<td><code>etape</code></td>
+<td>A step: <code>texte</code> (what to do, as the log writes it) and <code>fin</code> (what ends it).</td>
+<td>its quest</td>
+</tr>
+<tr>
+<td><code>issue</code></td>
+<td>Another way to end the step right above it ("Other way to end the step"), with its own <code>texte</code>, end fields and <code>suite</code>.</td>
+<td>right under its step</td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>An instant switch on a mark or an item carried.</td>
+<td>its quest</td>
+</tr>
+<tr>
+<td><code>echec</code></td>
+<td>"Also fails if": one more failure reason, for the quest (right under the <code>quete</code> row) or for one step (right under it).</td>
+<td>its quest or step</td>
+</tr>
+<tr>
+<td><code>condition</code></td>
+<td>"Only if": a prerequisite of the quest; without it, the quest is not given.</td>
+<td>its quest</td>
+</tr>
+<tr>
+<td><code>tirage</code></td>
+<td>"Random draw": fills a hole of a template (<code>modele</code>) when a quest is made from it.</td>
+<td>its template</td>
+</tr>
+<tr>
+<td><code>recompense</code></td>
+<td>"Reward": one more reward, given at the end of the row above it.</td>
+<td>right under its quest, step or <code>issue</code></td>
+</tr>
+</tbody>
+</table>
+<p>Step numbers (in events, saves and the map's <code>quete_etape</code>) are the rank among the <code>etape</code> rows of the quest, from 1; <code>issue</code>, <code>test</code> and <code>echec</code> rows are not counted.</p>
+<p><strong><code>quete</code></strong>: <code>titre</code> (shown, and names the quest in events), <code>description</code>, <code>depart</code> (when the player gets it): <code>debut</code> (game start), <code>evenement</code> (the event <code>depart_evenement</code>: a <code>dialogue</code> answer's <code>annonce</code>, a <code>declencheur</code> rule), <code>marque</code> (the Dialogue mark <code>depart_marque</code>, at once if set), <code>quete</code> (when the quest titled <code>depart_quete</code> ends: a chain). Also <code>dans_l_ordre</code> (on: one step after the other; off: all at once), <code>recompense</code> and <code>recompense_quantite</code> (items given at the end; needs <code>inventaire</code>), <code>abandon</code> (an Abandonner button in the log, pressed twice), <code>reprendre</code> (on: what gives it gives it again after a failure or an abandon; a quest starting with the game is given again by <code>quetes.demarrer</code>), <code>marque_echec</code> and <code>annonce_echec</code> (a mark and an event when it fails or is abandoned). <code>donneur</code> (a scene object, optional): the character above whom the <code>carte</code> shows a "!" while the quest can be given; empty, every character whose <code>dialogue</code> sends <code>depart_evenement</code> or sets <code>depart_marque</code> gets it. Set it when a <code>declencheur</code> rule gives the quest near someone.</p>
+<p><strong>Step ends (<code>fin</code>)</strong>, on <code>etape</code> and <code>issue</code>:</p>
+<ul>
+<li><code>evenement</code>: the event <code>fin_evenement</code> happens <code>fin_fois</code> times while the step is active. Filters: <code>fin_cible</code> (only about an object of that name: "Loup" counts "Loup 2"), <code>fin_objet</code> (only that kind of item, from the event's <code>objet</code> or <code>ressource</code>, any case: <code>boutique.achat</code> + "Pomme"), <code>fin_compter</code> (each event counts its <code>quantite</code>; <code>fin_fois</code> is the total), <code>fin_par_joueur</code> (only if the player caused it, its <code>source</code>, or the vehicle they drive; with several players, only the author's copy counts, or any player with <code>groupe</code>). "Defeat", "talk", "buy" are <code>evenement</code> steps (<code>sante.mort</code>, <code>dialogue.fin</code>, <code>boutique.achat</code>): never ask for another kind.</li>
+<li><code>marque</code>: the Dialogue mark <code>fin_marque</code> is set (at once if it already is).</li>
+<li><code>objet</code>: the player carries <code>fin_quantite</code> of <code>fin_objet</code> (from the inventory).</li>
+<li><code>remettre</code>: on <code>fin_evenement</code> (for <code>fin_cible</code>, such as <code>dialogue.fin</code> with "Meunier"), if the player carries <code>fin_quantite</code> of <code>fin_objet</code>, the inventory takes them and the step is done; otherwise an announcement says how many are missing. "Bring 3 pelts to the miller".</li>
+<li><code>lieu</code>: the player reaches the scene object <code>fin_lieu</code>: within <code>fin_rayon</code> metres, measured flat (it may move: a character, a car), or, if it carries the <code>zone</code> system, when they enter the zone. Write this rather than <code>evenement</code> + <code>zone.entree</code>. An object missing from the scene: the step waits (one line in the game log).</li>
+<li><code>tenir</code>: hold on <code>fin_duree</code> seconds of play while the step is active; with <code>fin_lieu</code>, time only passes within <code>fin_rayon</code> of it. "Survive 90 s", "Defend the farm 60 s". Time waits during a pause; the tracker and the log show what is left ("Reste 0:42").</li>
+</ul>
+<p>For any other condition ("only at night"), a game script overrides <code>quetes.compte</code>, which says how much an event counts for a step (0: nothing): <code>game.override("quetes.compte", function(default, e, quete, etape) if quete == "Chasse nocturne" and not shared.nuit then return 0 end return default(e, quete, etape) end)</code> (<code>etape</code> is the step's row, with <code>numero</code>; <code>shared.nuit</code> stands for your game's condition).</p>
+<p><strong>On every step and <code>issue</code></strong>: <code>marque</code> (a mark set when it ends, seen by every dialogue) and <code>annonce</code> (an event sent when it ends, for a <code>declencheur</code> rule: a bridge appears). Also on the quest itself (at its end): <code>reputation</code> (a reputation track of the <code>progression</code> system, such as <code>bandits</code>) and <code>reputation_valeur</code> (added to it, negative to lower it: "the bandits like the player less after this branch"); with <code>groupe</code>, every player present. Never a script for it. A step also has <code>annonce_debut</code>: an event sent when it starts (and again when it starts over or the quest resumes at it), for a <code>declencheur</code> rule that makes what this step needs appear (<code>copier</code>, <code>montrer</code>): the wolves of this step only, the parcel again.</p>
+<h4 id="rewards">Rewards<a class="headerlink" href="#rewards" title="Permanent link">&para;</a></h4>
+<p>The quest's <code>recompense</code>/<code>recompense_quantite</code> (and <code>xp</code>/<code>piste_xp</code>) stay its first reward. For more, add <code>recompense</code> rows right under the quest (given when it ends), a step (when the step itself is done, optional ones too) or an <code>issue</code> (when that way is taken). Each row gives one thing, chosen by <code>donne</code>: <code>objet</code> (<code>recompense</code> and <code>recompense_quantite</code>, into the inventory; with <code>groupe</code>, as <code>recompense_groupe</code> says), <code>xp</code> (<code>donne_xp</code> on the Progression track <code>donne_piste</code>, empty: the main one; with <code>groupe</code>, every player present), <code>butin</code> (the <code>butin</code> table <code>donne_table</code>, rolled and dropped near the player) or <code>marque</code> (the mark <code>donne_marque</code>). Each is given <strong>once</strong>: never again on a load, a resume after a failure or a step done again after a branch back; only a <code>repetable</code> quest that starts over gives them again. The log shows the items and XP to come ("Reward: Gold x50, 100 XP"); the end announcement names them. Never a script or a <code>declencheur</code> rule for a quest's reward.</p>
+<p><strong>Recipe, a quest with three rewards</strong>: <code>{"sorte": "quete", "titre": "The mill", "recompense": "Or", "recompense_quantite": 50}</code>, <code>{"sorte": "recompense", "donne": "xp", "donne_xp": 100}</code>, <code>{"sorte": "recompense", "donne": "butin", "donne_table": "&lt;a table of the user's butin&gt;"}</code>, <code>{"sorte": "etape", "texte": "Find the miller", "fin": "marque", "fin_marque": "meunier_vu"}</code>, <code>{"sorte": "recompense", "donne": "objet", "recompense": "Pain", "recompense_quantite": 2}</code> (the bread comes when this step is done). Use only items, tables and tracks the game has.</p>
+<h4 id="branches-quests-with-dans_l_ordre-on-the-same-keys-as-the-dialogue">Branches (quests with <code>dans_l_ordre</code> on), the same keys as the <code>dialogue</code><a class="headerlink" href="#branches-quests-with-dans_l_ordre-on-the-same-keys-as-the-dialogue" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>etiquette</code> on a step or a test names it. <code>suite</code> on a step or an <code>issue</code> says where the quest goes once it is done: a label (backwards too: the steps gone back to are to do again, counts and times from zero), <code>fin</code> (the quest succeeds), <code>echec</code> (it fails), or empty: the next row. A missing label: the quest waits there, and the game log says so (<code>quetes: step 3 of 'X' leads to no label 'Y'</code>).</li>
+<li><code>issue</code> rows: the step and its other ways are active together; the first one done wins, the others close. A player's choice in a Dialogue: each answer sets a mark or sends an event, each <code>issue</code> waits for one. Never invent an event to jump to a label: send the event an <code>issue</code> waits for.</li>
+<li><code>test</code> rows: when the quest reaches one, it looks at once at <code>test</code> <code>marque</code> (<code>test_marque</code> set?) or <code>objet</code> (carrying <code>test_quantite</code> of <code>test_objet</code>?) and goes to <code>si_oui</code> or <code>si_non</code> (label, <code>fin</code>, <code>echec</code>, empty: the next row). For a mark set elsewhere (the player betrayed the king). Tests leading to each other stop after 100 jumps (game log).</li>
+<li>With <code>dans_l_ordre</code> off, <code>suite</code> and tests are ignored (game log); <code>issue</code> rows still work.</li>
+<li>The editor's quest map ("Show the map", editable like the <code>dialogue</code>'s) changes these same rows: dragging an arrow sets its <code>suite</code> (or <code>si_oui</code>, <code>si_non</code>, <code>alors_suite</code>) to the target's <code>etiquette</code>, giving the target one from its text if it has none; an added step goes at the end of its quest with its own <code>etiquette</code> (the last step's empty <code>suite</code> becomes <code>fin</code>, so nothing else changes); removing a step sets what named it to <code>fin</code>. To link or add yourself, write the same rows: an <code>etiquette</code> on the target, the label in <code>suite</code>, a new <code>etape</code> row before the next <code>quete</code> row. Its "All quests" view draws the chains (<code>depart: quete</code>, <code>depart_quete</code>): nothing to write for it.</li>
+<li><code>facultative</code> on a step: optional (a bonus, a hidden chest). It becomes active and the quest moves on at once; it stays doable until the quest ends, which does not wait for it. Its <code>marque</code> and <code>annonce</code> are its reward. An <code>echec</code> row under it makes it <strong>missed</strong> ("find the chest within 2 minutes"), never the quest failed.</li>
+</ul>
+<h4 id="prerequisites-and-repeatable-quests">Prerequisites and repeatable quests<a class="headerlink" href="#prerequisites-and-repeatable-quests" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>condition</code> rows (any number, under the quest): <code>condition</code> <code>niveau</code> (the player's level on the Progression track <code>condition_piste</code>, empty: the main level, at least <code>condition_niveau</code>; with <code>groupe</code>, any player's), <code>objet</code> / <code>sans_objet</code> (carrying at least <code>condition_quantite</code> of <code>condition_objet</code>, or not), <code>marque</code> / <code>sans_marque</code> (<code>condition_marque</code> set, or not), <code>quete</code> (the quest <code>condition_quete</code> is at <code>condition_etat</code>, <code>finie</code> by default). The same keys as a <code>dialogue</code> answer's condition. While one is missing, whatever gives the quest (its event, mark, <code>quetes.demarrer</code>) is <strong>ignored</strong> (one line in the game log: <code>quetes: 'X' is not available yet</code>) and the <code>carte</code> shows its giver's "!" in grey (<code>icone_indisponible_couleur</code>); a quest given at the start, by a mark or by another quest is given as soon as everything is met. "Only from level 5" is a <code>condition</code> row, never a script or a mark.</li>
+<li><code>repetable</code> on the quest: <code>non</code> (default: once), <code>toujours</code> (what gives it gives it again as soon as it is done), <code>chaque_jour</code> (given again on another day than its last end; a quest given at the start, by a mark or by another quest comes back by itself that day). The day is set by the game setting <code>jour_repetition</code>: <code>jeu</code> (default: a day of the game starts at the <code>jour_nuit</code> sunrise, <code>jour_nuit.lever</code>; without that system the day never changes) or <code>reel</code> (the computer's date, <code>game.today()</code>). Saves keep the day of the last end. The log writes a repeatable quest already done "(available)" or "(again tomorrow)". A daily delivery: <code>{"sorte": "quete", "titre": "Delivery", "depart": "evenement", "depart_evenement": "delivery.accepted", "repetable": "chaque_jour"}</code>.</li>
+<li>A character who offers it only when it can be given: a <code>dialogue</code> test <code>quete</code> with <code>test_etat</code> <code>disponible</code>.</li>
+</ul>
+<h4 id="templates-quests-made-during-the-game">Templates: quests made during the game<a class="headerlink" href="#templates-quests-made-during-the-game" title="Permanent link">&para;</a></h4>
+<ul>
+<li>A quest with <code>modele</code> on is a <strong>template</strong>: it never starts by itself and is not in the log. Its texts and its object fields (<code>fin_lieu</code>, <code>echec_lieu</code>, <code>reprise_lieu</code>, <code>donneur</code>) and <code>fin_cible</code> have holes <code>{name}</code> (<code>{cible}</code>, <code>{lieu}</code>, <code>{objet}</code>, <code>{n}</code>, any name). <code>game.emit("quetes.creer", {modele = "Delivery", valeurs = {lieu = id}, titre = "...", graine = 7})</code> (or the template's own <code>depart</code> <code>evenement</code>) makes a real quest from it: its rows copied, holes filled, its own title (<code>titre</code>, holes allowed; empty: the template's title and the next number, "Delivery 3"), then it starts. Saves keep it (same title, values, progress); <code>quetes.creee</code> (<code>quete</code>, <code>modele</code>, <code>valeurs</code>) announces it.</li>
+<li>Values, first found wins: the event's <code>valeurs</code>; a field of the event with the hole's name (a <code>declencheur</code> rule <code>envoyer</code> sends <code>cible</code>, its object: <code>{cible}</code>); then the template's <code>tirage</code> rows. A <code>tirage</code> row (under the template): <code>tirage_trou</code> (the hole's name, no braces), <code>tirage</code> <code>objet</code> (a scene object carrying the tag <code>tirage_etiquette</code>, between <code>tirage_distance_min</code> and <code>tirage_distance_max</code> metres from the player, flat; two holes of one quest never get the same object) or <code>nombre</code> (a whole number from <code>tirage_nombre_min</code> to <code>tirage_nombre_max</code>). The draw uses <code>graine</code> (same seed, same result). In an object field a hole gets the object's id, in a text its name. <code>{n}</code> in a step's <code>texte</code> also sets its number to reach (<code>fin_quantite</code>, <code>fin_fois</code>, <code>fin_duree</code>).</li>
+<li>A town's shops are tagged <code>commerce</code> and <code>commerce:&lt;kind&gt;</code> (<code>city_get</code>, building): they are draw candidates with nothing more. Never place objects or tag them for a template unless the user asks.</li>
+<li>Nothing to draw, a hole with no value, an unknown template, unmet <code>condition</code> rows: nothing is created, <code>quetes.creation_impossible</code> (<code>modele</code>, <code>motif</code>: <code>modele_inconnu</code>, <code>pas_un_modele</code>, <code>aucun_candidat</code>, <code>valeur_manquante</code>, <code>conditions</code>, <code>titre_pris</code>; <code>raison</code>, also in the game log). A <code>declencheur</code> rule "When the event" on it can tell the player.</li>
+<li><strong>Recipe, a generated delivery</strong> (write the template; never write the deliveries themselves): <code>{"sorte": "quete", "titre": "Delivery", "modele": true, "depart": "evenement", "depart_evenement": "delivery.ask", "description": "A parcel for {lieu}."}</code>, <code>{"sorte": "tirage", "tirage_trou": "depart", "tirage_etiquette": "commerce:boulangerie", "tirage_distance_max": 200}</code>, <code>{"sorte": "tirage", "tirage_trou": "lieu", "tirage_etiquette": "commerce:superette", "tirage_distance_min": 150, "tirage_distance_max": 600}</code>, <code>{"sorte": "etape", "texte": "Pick up the parcel at {depart}", "fin": "lieu", "fin_lieu": "{depart}"}</code>, <code>{"sorte": "etape", "texte": "Deliver it to {lieu}", "fin": "lieu", "fin_lieu": "{lieu}"}</code>; a <code>dialogue</code> answer <code>annonce: "delivery.ask"</code> (or a <code>declencheur</code> rule <code>envoyer</code>) gives one more each time. The <code>carte</code> shows the drawn place's marker like any <code>lieu</code> step.</li>
+<li><strong>Daily quests</strong>: a template with <code>repetable</code> <code>chaque_jour</code> makes <code>par_jour</code> quests (default 1) per day (the day of <code>jour_repetition</code>: the game's sunrise or the real date), each from a new draw, so a different mission every day. When depends on its <code>depart</code>: <code>debut</code> (or a mark, or another quest finished): all of them at the start of the game and at each new day; <code>evenement</code> (a quest giver's <code>dialogue</code> answer <code>annonce</code>, a <code>declencheur</code> rule): one each time, up to <code>par_jour</code>, then nothing before the next day (the giver's "!" turns grey; one line in the game log). <code>hier</code>: <code>garder</code> (default: yesterday's unfinished quest stays) or <code>retirer</code> (abandoned on the new day, not a failure: <code>quetes.abandon</code>). Saves keep the last day and its count: loading on the same day makes nothing again. A quest made by it is not repeatable itself.</li>
+<li><strong>Recipe, the delivery of the day</strong> (write the template; never the deliveries): <code>{"sorte": "quete", "titre": "Delivery of the day", "modele": true, "repetable": "chaque_jour", "par_jour": 1, "hier": "retirer", "description": "A parcel for {lieu}."}</code>, <code>{"sorte": "tirage", "tirage_trou": "lieu", "tirage_etiquette": "commerce:superette", "tirage_distance_min": 100, "tirage_distance_max": 500}</code>, <code>{"sorte": "etape", "texte": "Deliver the parcel to {lieu}", "fin": "lieu", "fin_lieu": "{lieu}"}</code>. Given by a character instead: <code>"depart": "evenement", "depart_evenement": "delivery.ask"</code>, <code>"donneur": "&lt;the character's id&gt;"</code> and his <code>dialogue</code> answer <code>annonce: "delivery.ask"</code>.</li>
+</ul>
+<h4 id="failures">Failures<a class="headerlink" href="#failures" title="Permanent link">&para;</a></h4>
+<p>The quest's own <code>echec</code> field is its main reason; <code>echec</code> rows add more, with the same keys. Reasons (<code>echec</code>):</p>
+<ul>
+<li><code>aucun</code>: never (the default; an <code>echec</code> row left on it does nothing);</li>
+<li><code>evenement</code>: <code>echec_evenement</code> happens, about <code>echec_cible</code> if given (<code>sante.mort</code> with "Marchand": the escorted merchant died); <code>echec_par_joueur</code>: only if the player caused it (<code>sante.mort</code> with "Passant");</li>
+<li><code>marque</code>: the mark <code>echec_marque</code> is set (a mark already set counts at once only with <code>alors</code> <code>echoue</code>);</li>
+<li><code>temps</code>: <code>echec_delai</code> seconds of play since the quest started, or, on a row under a step, since <strong>the step</strong> started ("Deliver within 60 s"); shown as "Reste 0:42";</li>
+<li><code>objet</code>: the player carries fewer than <code>echec_quantite</code> of <code>echec_objet</code>, once they carried enough: it does not fail before they took the parcel; handing it over with <code>remettre</code> is not losing it;</li>
+<li><code>eloigne</code>: the player is more than <code>echec_rayon</code> metres (flat) from the scene object <code>echec_lieu</code>, once they were close enough (escort); with <code>groupe</code>, when all the players are.</li>
+</ul>
+<p><code>alors</code> on an <code>echec</code> row says what happens: <code>echoue</code> (default: the quest fails; under an optional step, the step is missed), <code>recommence</code> (the step starts again from zero: counts, time, other ways, its <code>annonce_debut</code> again, announcement "Étape ratée : …"; under the quest: it resumes as <code>reprise</code> says, without failing), <code>etiquette</code> (the quest goes to the label <code>alors_suite</code>: a plan B, "spotted: flee").</p>
+<h4 id="resuming-and-trying-again">Resuming and trying again<a class="headerlink" href="#resuming-and-trying-again" title="Permanent link">&para;</a></h4>
+<p>Only with <code>reprendre</code> on. <code>reprise</code> on the quest: <code>debut</code> (default: from the start), <code>etape</code> (at the failed step) or <code>point</code> (at the last step ticked <code>point_de_reprise</code> that it reached; none: the start). The steps before stay done; the quest's time limit starts again in full; the step's <code>annonce_debut</code> is sent again. <strong>Marks stay set and the world is not put back</strong>: a <code>declencheur</code> rule on that <code>annonce_debut</code> brings the enemies or the parcel back. A checkpoint step's <code>reprise_lieu</code> (a scene object): the player is put there (dead: when the <code>mort</code> module respawns them; with <code>groupe</code>, every player).</p>
+<p><code>reessayer</code> on the quest: <code>non</code> (default: what gives the quest gives it again), <code>bouton</code> (a "Try again" button under it in the log), <code>auto</code> (by itself after <code>reessai_delai</code> seconds of play). A script or a rule sends <code>quetes.reessayer</code> (<code>quete</code>) for the same effect.</p>
+<h4 id="recipes">Recipes<a class="headerlink" href="#recipes" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>A branch by a Dialogue answer</strong>: step <code>{"texte": "Get through the gate", "fin": "lieu", "fin_lieu": "Gate"}</code>, under it <code>{"sorte": "issue", "texte": "Pay the guard", "fin": "evenement", "fin_evenement": "guard.paid", "suite": "paid"}</code> and <code>{"sorte": "issue", "texte": "Anger the guard", "fin": "marque", "fin_marque": "guard_angry", "suite": "alarm"}</code>; the guard's answers send <code>guard.paid</code> (<code>annonce</code>) or set <code>guard_angry</code> (<code>marque</code>); then a step labelled <code>paid</code> with <code>"suite": "fin"</code> and a step labelled <code>alarm</code>.</li>
+<li><strong>Deliver within 60 s without losing the parcel, to A or B</strong>: step <code>{"texte": "Take the parcel", "fin": "objet", "fin_objet": "Parcel"}</code>; step <code>{"texte": "Deliver it to Anne", "fin": "lieu", "fin_lieu": "Anne", "suite": "fin", "point_de_reprise": true, "reprise_lieu": "Depot", "annonce_debut": "parcel.again"}</code>, under it <code>{"sorte": "issue", "texte": "Deliver it to Bruno", "fin": "lieu", "fin_lieu": "Bruno", "suite": "fin"}</code>, <code>{"sorte": "echec", "echec": "temps", "echec_delai": 60}</code> and <code>{"sorte": "echec", "echec": "objet", "echec_objet": "Parcel"}</code>; on the quest <code>"reprise": "point", "reessayer": "auto"</code>; a <code>declencheur</code> rule on <code>parcel.again</code> gives the parcel back.</li>
+<li><strong>Defend the farm 60 s, start again at the checkpoint</strong>: step <code>{"texte": "Defend the farm", "fin": "tenir", "fin_duree": 60, "fin_lieu": "Farm", "fin_rayon": 15, "point_de_reprise": true, "reprise_lieu": "Farm", "annonce_debut": "farm.wave"}</code>, under it <code>{"sorte": "echec", "echec": "evenement", "echec_evenement": "sante.mort", "echec_cible": "Farmer"}</code>; on the quest <code>"echec": "evenement", "echec_evenement": "joueur.mort", "reprise": "point", "reessayer": "bouton"</code>; a <code>declencheur</code> rule on <code>farm.wave</code> brings the enemies.</li>
+<li><strong>Escort a character to a place</strong>: the character carries the <code>accompagner</code> system (read its notes: <code>teleportation</code> off, <code>destination</code> the place). Step <code>{"texte": "Escort the merchant", "fin": "evenement", "fin_evenement": "accompagner.arrive", "fin_cible": "Merchant", "annonce_debut": "accompagner.suivre"}</code>, under it <code>{"sorte": "echec", "echec": "eloigne", "echec_lieu": "&lt;merchant id&gt;", "echec_rayon": 25}</code> and <code>{"sorte": "echec", "echec": "evenement", "echec_evenement": "sante.mort", "echec_cible": "Merchant"}</code>. Never script the walking.</li>
+<li><strong>A miller's wolves</strong>: his <code>dialogue</code> answer "I'll do it" with <code>annonce: "loups.accepte"</code>; then <code>{"sorte": "quete", "titre": "Les loups du moulin", "depart": "evenement", "depart_evenement": "loups.accepte", "recompense": "Or", "recompense_quantite": 50}</code>, <code>{"sorte": "etape", "texte": "Vaincre 3 loups", "fin": "evenement", "fin_evenement": "sante.mort", "fin_cible": "Loup", "fin_fois": 3, "fin_par_joueur": true, "marque": "loups_chasses"}</code>, <code>{"sorte": "etape", "texte": "Revenir voir le meunier", "fin": "evenement", "fin_evenement": "dialogue.fin", "fin_cible": "Meunier"}</code>.</li>
+</ul>
+<p>Write titles and steps in the user's language, short.</p>
+<h4 id="events-scripts-saves">Events, scripts, saves<a class="headerlink" href="#events-scripts-saves" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Sent: <code>quetes.debut</code> (<code>quete</code>), <code>quetes.etape_debut</code> (<code>quete</code>, <code>etape</code>, <code>texte</code>), <code>quetes.etape</code> (<code>quete</code>, <code>etape</code>, <code>texte</code>; <code>issue</code>: rank of the other way that did it; <code>suite</code>: the label taken), <code>quetes.etape_echec</code> (<code>quete</code>, <code>etape</code>, <code>alors</code>; <code>manquee</code> for an optional step), <code>quetes.fin</code> (<code>quete</code>, <code>facultatives</code> {<code>faites</code>, <code>total</code>}), <code>quetes.echec</code>, <code>quetes.abandon</code>, <code>quetes.reprise</code> (<code>quete</code>, <code>etape</code>: where it resumes). For one quest, prefer its <code>annonce</code> or <code>annonce_echec</code>.</li>
+<li>Listened: <code>game.emit("quetes.demarrer", {quete = "..."})</code> (without <code>quete</code>: the first quest not started), <code>quetes.echouer</code>, <code>quetes.abandonner</code>, <code>quetes.reessayer</code> (<code>quete</code>), <code>quetes.creer</code> (<code>modele</code>, <code>valeurs</code>, <code>titre</code>, <code>graine</code>: a quest from a template, above). Sent too: <code>quetes.creee</code>, <code>quetes.creation_impossible</code>.</li>
+<li>Another system needing the quests in progress reads <code>shared.quetes_en_cours[player]()</code>: <code>{title -&gt; {faites, actives, chemin, issues, manquees, cibles, lieux, place, suivie, rendre}}</code> (<code>suivie</code>: the tracked quest; <code>rendre</code>: lower-case names to talk to or hand something to for an active step). The givers: <code>shared.quetes_donneurs[player]()</code> -&gt; <code>{{id, titre, disponible}}</code>. Where one quest is: <code>shared.quetes_etat(player, title)</code> -&gt; <code>etat</code> (<code>pas_commencee</code>, <code>en_cours</code>, <code>finie</code>, <code>echouee</code>, <code>abandonnee</code>; nil: no quest of that title), <code>etape</code> (the step to do now), <code>actives</code> (<code>{number -&gt; true, label -&gt; true}</code>), <code>disponible</code> (it can be given now: prerequisites met, not done today); the <code>dialogue</code> test and answer condition <code>quete</code> and the <code>declencheur</code> condition <code>quete</code> read it (the log answers <code>declencheur.condition</code> itself). A character who speaks according to a quest, or a rule that only acts during it: use those, never marks that copy the quest's state. The <code>carte</code> reads both (its on-screen marker and "! / ?" icons): never compute what is active elsewhere.</li>
+<li>Saves: <code>game.save</code> keeps every quest's state, the branch taken, counts, times and marks; <code>game.load</code> gives them back without announcing, with the day a repeatable quest was last done. Nothing to write.</li>
+</ul>
+<h4 id="screens-texts-tests">Screens, texts, tests<a class="headerlink" href="#screens-texts-tests" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Game settings: <code>fenetre</code> (the log with J), <code>pause_fenetre</code>, <code>notifications</code>, <code>duree_notification</code>, <code>suivi</code> (the current steps on the right, with progress such as 2/5). They hide during a pause.</li>
+<li>The log and the tracker show the path taken (done steps in grey), missed optional steps ("(missed)"), the active steps ("(optional)") with their other ways under them ("or: Pay the guard"); branches not taken never show.</li>
+<li>Three screens delivered by the system (<code>modules/quetes/ecrans/</code>): « Journal de quêtes » (<code>Fenêtre</code>, <code>Titre</code>, <code>Liste</code> with row <code>Ligne</code> in shapes <code>Rubrique</code>, <code>Quête</code>, <code>Description</code>, <code>Étape</code>, <code>Reste</code>, <code>Quête passée</code>, <code>Abandonner</code>, <code>Réessayer</code>, <code>Vide</code>; <code>Fermer</code>), « Suivi des quêtes » (<code>Fond</code>, <code>Titre</code>, <code>Étapes</code> row <code>Étape</code>, <code>Reste</code>), « Annonces des quêtes » (<code>Fond</code>, <code>Lignes</code> row <code>Annonce</code>). Restyle them with <code>screens_set</code>; never redraw them with <code>game.hud_*</code>. B or Escape closes the log.</li>
+<li>Texts follow the player's language. The log's own texts are built-in (French and English), listed by <code>translations_get</code>: translate them there for other languages. Titles and steps are translated with the game's tables; events keep the original title. To change a word: <code>game.override("quetes.texte", function(default, key) if key == "titre" then return "Missions" end return default(key) end)</code> (keys in <code>modules_info</code>).</li>
+<li>Testing: in <code>game_run</code>, do what each step asks (walk to the place, wait out a time limit), then read the report's <code>hud</code>: <code>Suivi des quêtes/Étape#1</code>, <code>Suivi des quêtes/Reste</code>, <code>Annonces des quêtes/Annonce#1</code>, and, with <code>journal</code> pressed, <code>Journal de quêtes/Quête#2</code>, <code>Journal de quêtes/Étape#3</code>. A script that <code>game.log</code>s the <code>quetes.*</code> events shows the order (step taken, <code>issue</code>, failure, resume).</li>
+</ul>
+<h4 id="several-players">Several players<a class="headerlink" href="#several-players" title="Permanent link">&para;</a></h4>
+<p>By default each player has their own quests, steps, log and rewards. For a cooperative game, tick <code>groupe</code> (« Quêtes du groupe »; never copy quests between players in a script): any player moves a step on, everyone sees the same state, an event that names no player counts once, a newcomer finds where the group is. <code>recompense_groupe</code>: <code>groupe</code> (once, into the Inventory's shared bag with <code>sac_commun</code>, else the finisher's bag) or <code>chacun</code> (every player present). <code>quetes.*</code> events are then sent once with <code>groupe: true</code> and <code>joueur</code> the player who moved it on. Pair it with <code>sac_commun</code> and chests in <code>mode</code> <code>groupe</code> (<code>coffres</code>).</p>
+<hr />
+<p><em>Cette page est générée automatiquement depuis le code de WorldMint (<code>modules/quetes/module.json</code>, <code>modules/quetes/AGENT.md</code>, <code>modules/events.json</code>) : elle suit toujours l'éditeur.</em></p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Retour en haut de la page
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Pied de page" >
+        
+          
+          <a href="../jour_nuit/" class="md-footer__link md-footer__link--prev" aria-label="Précédent: Jour et nuit">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-left" viewBox="0 0 24 24"><path d="m12 19-7-7 7-7M19 12H5"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Précédent
+              </span>
+              <div class="md-ellipsis">
+                Jour et nuit
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../manche/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Manche">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Manche
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog" role="status" aria-atomic="true">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      
+      
+        
+        
+      <script id="__config" type="application/json">{"annotate":null,"base":"../../..","features":["navigation.sections","navigation.indexes","navigation.top","navigation.footer","search.highlight","content.code.copy","toc.follow"],"redirect":null,"search":"../../../assets/javascripts/workers/search.719e0d91.min.js","tags":null,"translations":{"clipboard.copied":"Copié dans le presse-papier","clipboard.copy":"Copier dans le presse-papier","clipboard.error":"Could not copy to clipboard","search.result.more.one":"1 de plus sur cette page","search.result.more.other":"# de plus sur cette page","search.result.none":"Aucun document trouvé","search.result.one":"1 document trouvé","search.result.other":"# documents trouvés","search.result.placeholder":"Taper pour démarrer la recherche","search.result.term.missing":"Non trouvé","select.version":"Sélectionner la version"},"version":null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.d31f0ffa.min.js"></script>
+      
+    
+  </body>
+</html>
